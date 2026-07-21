@@ -1,0 +1,83 @@
+[
+  {
+    "numero": "01",
+    "titulo": "Base Completa — 27 Sistemas",
+    "descricao": "Do inglês de escola ao inglês que nativos falam. 27 sistemas do A1 ao C1 e uma jornada guiada de 120 passos — do zero à fluência.",
+    "cor": "#64DFDF",
+    "icone": "📚",
+    "tags": ["27 sistemas", "A1 → C1", "Completo"],
+    "pasta": "Sistema 01 — Base. Fluência. Gramática"
+  },
+  {
+    "numero": "02",
+    "titulo": "Reduções do Inglês Real",
+    "descricao": "O inglês que nativos falam — não o que ensinam. Wanna, gonna, gotta e mais 47 reduções do dia a dia, com músicas, filmes e treino de ouvido.",
+    "cor": "#F59E0B",
+    "icone": "🎙️",
+    "tags": ["4 pilares", "B1–B2", "50 reduções"],
+    "pasta": "Sistema 02 — Reduções do Inglês Real"
+  },
+  {
+    "numero": "03",
+    "titulo": "Motor de Verbos por Sentido",
+    "descricao": "100 verbos, 142 sentidos. Cada verbo no tempo certo — afirmativo, negativo e pergunta, do jeito que o brasileiro precisa ver.",
+    "cor": "#6366F1",
+    "icone": "⚡",
+    "tags": ["5 grupos", "A2–B1", "142 sentidos"],
+    "pasta": "Sistema 03 — Motor de Verbos"
+  },
+  {
+    "numero": "04",
+    "titulo": "Conectar Frases",
+    "descricao": "Question words, conectivos e discourse markers — o que liga ideias e faz o inglês soar natural. Com construtor de frases.",
+    "cor": "#10B981",
+    "icone": "🔗",
+    "tags": ["3 módulos", "A2–B1", "41 conectores"],
+    "pasta": "Sistema 04 — Conectar Frases"
+  },
+  {
+    "numero": "05",
+    "titulo": "Situar a Frase",
+    "descricao": "Preposições, quantificadores e estruturas fixas — onde, quando, quanto e como. Com modo autoteste.",
+    "cor": "#EC4899",
+    "icone": "📍",
+    "tags": ["3 módulos", "A2–B1", "23 estruturas"],
+    "pasta": "Sistema 05 — Situar a Frase"
+  },
+  {
+    "numero": "06",
+    "titulo": "Baseado em Desenho Infantil",
+    "descricao": "Aprenda como uma criança aprende: cenas de desenho animado, das primeiras palavras às conversas reais. 7 níveis progressivos, do básico ao avançado.",
+    "cor": "#A855F7",
+    "icone": "📺",
+    "tags": ["7 níveis", "A1 → B2", "Vídeo"],
+    "pasta": "Sistema 06 — Baseado em Desenho Infântil"
+  },
+  {
+    "numero": "07",
+    "titulo": "Transcrições e Canais",
+    "descricao": "Transcrições de canais e podcasts reais — All Ears English, Luke's English Podcast e mais. Treine o ouvido com o inglês do dia a dia.",
+    "cor": "#EF4444",
+    "icone": "🎬",
+    "tags": ["16 canais", "B1 → C1", "Áudio real"],
+    "pasta": "Sistema 07 — Transcrições e Canais"
+  },
+  {
+    "numero": "08",
+    "titulo": "Baseado em Livros",
+    "descricao": "Guias e livros de inglês transformados em painéis: métodos, dicas e ferramentas para aprender mais rápido — do primeiro passo às habilidades avançadas.",
+    "cor": "#0EA5E9",
+    "icone": "📖",
+    "tags": ["14 livros", "Todos os níveis", "Métodos"],
+    "pasta": "Sistema 08 — Baseado em LIvros"
+  },
+  {
+    "numero": "09",
+    "titulo": "Dúvidas Pontuais",
+    "descricao": "Gramática sob medida — os pontos específicos que você quis dominar. DID, WENT e mais, cada um num card de referência rápida.",
+    "cor": "#F97316",
+    "icone": "🎯",
+    "tags": ["DID, WENT e mais", "A1", "Referência"],
+    "pasta": "Sistema 09 — Dúvidas Pontuais"
+  }
+]

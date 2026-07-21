@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 09 — Dúvidas Pontuais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F97316;--ok:#22C55E;--no:#EF4444;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-10%;right:0;width:50%;height:55%;background:radial-gradient(ellipse,rgba(249,115,22,.06),transparent 70%);}
+.wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 22px;}
+.back{display:inline-flex;gap:.4rem;margin-top:26px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:8px 16px;border-radius:30px;transition:.2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1 em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:640px;line-height:1.6;}
+
+/* toggle */
+.toggle{display:inline-flex;background:var(--surface2);border:1px solid var(--border);border-radius:30px;padding:4px;margin:30px 0 24px;gap:4px;}
+.toggle button{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.95rem;cursor:pointer;background:none;border:none;color:var(--muted);padding:9px 26px;border-radius:24px;transition:.2s;}
+.toggle button.active{background:var(--accent);color:#3a1a00;}
+
+.sheet{display:none;} .sheet.active{display:block;animation:fade .3s;}
+@keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;}}
+.tags{display:flex;gap:8px;margin-bottom:12px;}
+.tag{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(249,115,22,.35);background:rgba(249,115,22,.08);padding:4px 11px;border-radius:20px;}
+.word{font-family:'Space Grotesk',sans-serif;font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1;}
+.tagline{color:var(--muted);margin:6px 0 22px;font-size:1rem;}
+.def{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px;font-size:.95rem;color:var(--muted);line-height:1.6;}
+.def b{color:var(--text);}
+
+h3.blk{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;margin:30px 0 12px;}
+.funcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+.func{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:15px;}
+.func .lbl{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);}
+.func .form{font-family:'Space Grotesk',sans-serif;font-size:.82rem;color:var(--text);margin:5px 0;}
+.func .ex{font-size:.85rem;color:var(--muted);font-style:italic;}
+
+.golden{background:linear-gradient(135deg,rgba(249,115,22,.14),rgba(249,115,22,.05));border:1px solid rgba(249,115,22,.4);border-radius:14px;padding:20px 22px;margin:26px 0;}
+.golden .star{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--accent);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;}
+.golden p{font-size:1rem;line-height:1.55;}
+
+table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+th{background:var(--surface2);text-align:left;padding:11px 14px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);}
+td{padding:11px 14px;border-top:1px solid var(--border);}
+tr:nth-child(even){background:rgba(255,255,255,.015);}
+.wrong{color:#fca5a5;} .right{color:#bbf7d0;} .why{color:var(--muted);font-size:.85rem;}
+.scroll{overflow-x:auto;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+  <a href="../index.html" class="back">← Voltar ao início</a>
+  <div class="eyebrow">Sistema 09 · gramática sob medida</div>
+  <h1>Dúvidas <em>Pontuais</em></h1>
+  <p class="lead">Os pontos específicos que confundem o brasileiro, cada um numa ficha de referência rápida. Sem enrolação: o que é, a regra de ouro e os erros para nunca mais cometer.</p>
+
+  <div class="toggle">
+    <button class="active" data-s="did">DID</button>
+    <button data-s="went">WENT</button>
+  </div>
+
+  <!-- DID -->
+  <section class="sheet active" id="did">
+    <div class="tags"><span class="tag">Auxiliar</span><span class="tag">Nível A1</span></div>
+    <div class="word">DID</div>
+    <p class="tagline">O passado de DO — e a razão nº1 pela qual o verbo depois dele volta ao normal.</p>
+    <div class="def">DID é o passado do verbo <b>DO</b> (fazer). Ele tem duas vidas: pode ser o <b>verbo principal</b> (<i>I did my homework</i> — fiz minha lição) ou o <b>auxiliar do passado</b>, a palavrinha que aparece só para montar perguntas e negações. Como auxiliar, serve para todas as pessoas — I, you, he, she, we, they — sem mudar de forma.</div>
+
+    <h3 class="blk">As 4 funções do DID</h3>
+    <div class="funcs">
+      <div class="func"><div class="lbl">A · Perguntas</div><div class="form">DID + sujeito + verbo base</div><div class="ex">"Did you call her?" — Você ligou para ela?</div></div>
+      <div class="func"><div class="lbl">B · Negações</div><div class="form">DIDN'T + verbo base</div><div class="ex">"I didn't see it." — Eu não vi isso.</div></div>
+      <div class="func"><div class="lbl">C · Verbo principal</div><div class="form">did = fez / fizeram</div><div class="ex">"She did a great job." — Ela fez um ótimo trabalho.</div></div>
+      <div class="func"><div class="lbl">D · Ênfase</div><div class="form">did + verbo base (reforço)</div><div class="ex">"I did clean the room!" — Eu limpei o quarto, sim!</div></div>
+    </div>
+
+    <div class="golden"><div class="star">⭐ Regra de Ouro</div>
+      <p>Quando DID aparece como auxiliar, o verbo principal <b>NÃO vai ao passado</b> — ele volta para a forma base. O DID já carrega o passado sozinho; o outro verbo fica "limpo".</p></div>
+
+    <h3 class="blk">Erros comuns do brasileiro</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Errado ❌</th><th>Certo ✅</th><th>Por quê</th></tr></thead>
+      <tbody>
+        <tr><td class="wrong">Did you went?</td><td class="right">Did you go?</td><td class="why">DID já marca o passado — o verbo volta a <i>go</i>.</td></tr>
+        <tr><td class="wrong">I didn't saw.</td><td class="right">I didn't see.</td><td class="why">DIDN'T já marca o passado — o verbo volta a <i>see</i>.</td></tr>
+        <tr><td class="wrong">Did she liked?</td><td class="right">Did she like?</td><td class="why">DID já marca o passado — sem o -ed em <i>like</i>.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="blk">Resumo rápido</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Tipo</th><th>Exemplo</th><th>Tradução</th></tr></thead>
+      <tbody>
+        <tr><td>Afirmativa</td><td>She cleaned the house.</td><td class="why">Ela limpou a casa.</td></tr>
+        <tr><td>Interrogativa</td><td>Did she clean the house?</td><td class="why">Ela limpou a casa?</td></tr>
+        <tr><td>Negativa</td><td>She didn't clean the house.</td><td class="why">Ela não limpou a casa.</td></tr>
+        <tr><td>Ênfase</td><td>She did clean the house!</td><td class="why">Ela limpou a casa, sim!</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- WENT -->
+  <section class="sheet" id="went">
+    <div class="tags"><span class="tag">Irregular</span><span class="tag">Nível A1</span></div>
+    <div class="word">WENT</div>
+    <p class="tagline">O passado de GO — e por que ele desaparece nas perguntas e negações.</p>
+    <div class="def">WENT é o passado irregular do verbo <b>GO</b> (ir). Não ganha -ed: é uma palavra totalmente nova. Diferente do DID, o WENT <b>nunca é auxiliar</b> — é sempre verbo principal, com significado próprio (<i>foi / foram</i>). Por isso ele só cabe num lugar: a <b>frase afirmativa</b>. Nas perguntas e negações, quem assume o passado é o DID, e o GO volta à forma base.</div>
+
+    <h3 class="blk">A diferença crucial: WENT vs DID + GO</h3>
+    <div class="funcs">
+      <div class="func"><div class="lbl">✅ Afirmativa</div><div class="form">… WENT …</div><div class="ex">"I went to the party." — Eu fui à festa.</div></div>
+      <div class="func"><div class="lbl">✅ Negativa</div><div class="form">DIDN'T + GO</div><div class="ex">"I didn't go to the party." <span style="color:#fca5a5">(não: didn't went)</span></div></div>
+      <div class="func"><div class="lbl">✅ Pergunta</div><div class="form">DID + GO</div><div class="ex">"Did you go to the party?" <span style="color:#fca5a5">(não: Did you went?)</span></div></div>
+    </div>
+
+    <div class="golden"><div class="star">⭐ Regra de Ouro</div>
+      <p>WENT só aparece sozinho em <b>frases afirmativas</b>. Nas demais, ele some e o GO volta — o passado passa a ser trabalho do <b>DID</b>.</p></div>
+
+    <h3 class="blk">Erros comuns do brasileiro</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Errado ❌</th><th>Certo ✅</th><th>Por quê</th></tr></thead>
+      <tbody>
+        <tr><td class="wrong">I didn't went.</td><td class="right">I didn't go.</td><td class="why">DIDN'T já é o passado — depois dele vem o verbo base <i>go</i>.</td></tr>
+        <tr><td class="wrong">Did you went?</td><td class="right">Did you go?</td><td class="why">DID já é o passado — depois dele vem o verbo base <i>go</i>.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="blk">Resumo rápido</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Tipo</th><th>Exemplo</th><th>Tradução</th></tr></thead>
+      <tbody>
+        <tr><td>Afirmativa</td><td>She went home.</td><td class="why">Ela foi para casa.</td></tr>
+        <tr><td>Negativa</td><td>She didn't go home.</td><td class="why">Ela não foi para casa.</td></tr>
+        <tr><td>Pergunta</td><td>Did she go home?</td><td class="why">Ela foi para casa?</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <p style="color:var(--dim);font-size:.85rem;margin-top:30px;">Próximos itens sugeridos: WAS vs WERE · HAVE vs HAS · BEEN · CAN vs COULD · DO vs DOES.</p>
+</div>
+<footer>Sistema 09 · Dúvidas Pontuais — a regra certa, na hora certa</footer>
+
+<script>
+document.querySelectorAll('.toggle button').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.toggle button').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.sheet').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); document.getElementById(b.dataset.s).classList.add('active');
+  };
+});
+</script>
+</body>
+</html>

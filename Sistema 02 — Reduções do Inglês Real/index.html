@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 02 — Reduções do Inglês Real</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;--cyan:#64DFDF;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-10%;right:0;width:50%;height:55%;background:radial-gradient(ellipse,rgba(245,158,11,.06),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{display:inline-flex;gap:.4rem;margin-top:26px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:8px 16px;border-radius:30px;transition:.2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1 em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:640px;line-height:1.6;}
+h2.sec{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;margin:48px 0 6px;display:flex;align-items:center;gap:10px;}
+h2.sec::before{content:'';width:22px;height:3px;background:var(--accent);border-radius:2px;}
+.sub{color:var(--muted);font-size:.92rem;margin-bottom:18px;}
+
+/* PILARES */
+.pilares{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+.pilar{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;border-top:3px solid var(--accent);}
+.pilar .p{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--accent);}
+.pilar h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin:6px 0;}
+.pilar p{font-size:.85rem;color:var(--muted);line-height:1.5;}
+
+/* BUILDER */
+.builder{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:26px;}
+.builder .ctx{font-size:.8rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;font-family:'Space Grotesk',sans-serif;}
+.phrase-box{min-height:120px;font-size:1.25rem;line-height:1.6;margin:16px 0;font-family:'Space Grotesk',sans-serif;}
+.phrase-box .layer{opacity:.28;transition:.35s;}
+.phrase-box .layer.on{opacity:1;color:var(--text);}
+.phrase-box .layer.new{color:var(--accent);}
+.layers-ctrl{display:flex;gap:8px;flex-wrap:wrap;}
+.layers-ctrl button{font-family:'Space Grotesk',sans-serif;font-weight:700;cursor:pointer;background:var(--surface2);color:var(--muted);border:1px solid var(--border);width:42px;height:42px;border-radius:10px;font-size:1rem;transition:.15s;}
+.layers-ctrl button.active{background:var(--accent);color:#0a0a0a;border-color:var(--accent);}
+.vocab{margin-top:16px;font-size:.85rem;color:var(--muted);}
+.vocab b{color:var(--cyan);font-weight:600;}
+
+/* REDUCTIONS TABLE */
+.rtable{width:100%;border-collapse:collapse;font-size:.92rem;overflow:hidden;border-radius:12px;border:1px solid var(--border);}
+.rtable th{background:var(--surface2);text-align:left;padding:12px 16px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.rtable td{padding:11px 16px;border-top:1px solid var(--border);}
+.rtable tr:nth-child(even){background:rgba(255,255,255,.015);}
+.rtable .written{color:var(--cyan);font-family:'Space Grotesk',sans-serif;}
+.rtable .spoken{color:var(--accent);font-family:'Space Grotesk',sans-serif;font-weight:700;}
+.rtable .tr{color:var(--muted);}
+
+/* PATTERNS */
+.patterns{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;}
+.pat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;}
+.pat h4{font-family:'Space Grotesk',sans-serif;color:var(--accent);font-size:1rem;margin-bottom:10px;}
+.pat ul{list-style:none;display:grid;gap:6px;}
+.pat li{font-size:.88rem;color:var(--text);padding-left:16px;position:relative;}
+.pat li::before{content:'›';position:absolute;left:0;color:var(--accent);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+  <a href="../index.html" class="back">← Voltar ao início</a>
+  <div class="eyebrow">Sistema 02 · o inglês que ninguém te ensinou</div>
+  <h1>Reduções do<br><em>Inglês Real</em></h1>
+  <p class="lead">Nativos não falam como os livros escrevem. Aqui o inglês aparece do jeito que sai da boca — <b style="color:var(--cyan)">forma escrita</b> vira <b style="color:var(--accent)">forma falada</b>. Do básico ao natural, em quatro pilares.</p>
+
+  <h2 class="sec">Os 4 Pilares</h2>
+  <p class="sub">Como o sistema está montado — cada pilar ataca uma parte da fala real.</p>
+  <div class="pilares">
+    <div class="pilar"><div class="p">PILAR 1</div><h3>Frases Crescentes</h3><p>20 situações × 6 camadas. Você monta a frase pedaço por pedaço até ela ficar completa e natural.</p></div>
+    <div class="pilar"><div class="p">PILAR 2</div><h3>1.000 Frases Reais</h3><p>Do básico ao avançado em 10 níveis — de "Sobrevivência" a "Fluência".</p></div>
+    <div class="pilar"><div class="p">PILAR 3</div><h3>30 Padrões</h3><p>Estruturas que desbloqueiam tudo: um molde, oito frases. Troca a ponta e fala infinito.</p></div>
+    <div class="pilar"><div class="p">PILAR 4</div><h3>150 Textos</h3><p>Contexto visual, agrupados por tema — o inglês em blocos que grudam.</p></div>
+  </div>
+
+  <h2 class="sec">Frase Crescente — experimente</h2>
+  <p class="sub">Clique nos números e veja a frase crescer camada por camada (Situação 01 — Manhã no escritório).</p>
+  <div class="builder">
+    <div class="ctx">🏢 Trabalho · Manhã no escritório</div>
+    <div class="phrase-box" id="pbox"></div>
+    <div class="layers-ctrl" id="ctrl"></div>
+    <div class="vocab">Vocabulário-chave: <b>work</b> · <b>office</b> · <b>start</b> · <b>finish</b> · <b>tired</b> · <b>always</b><br>
+    Forma falada: <span style="color:var(--accent)">"I'm always tired" → "aim always tired"</span></div>
+  </div>
+
+  <h2 class="sec">Dicionário de Reduções</h2>
+  <p class="sub">As formas faladas que aparecem ao longo do sistema — o que muda quando o inglês acelera.</p>
+  <div style="overflow-x:auto;">
+  <table class="rtable">
+    <thead><tr><th>Forma escrita</th><th>Forma falada</th><th>Significado</th></tr></thead>
+    <tbody>
+      <tr><td class="written">going to</td><td class="spoken">gonna</td><td class="tr">vou / vai (futuro)</td></tr>
+      <tr><td class="written">got to / have to</td><td class="spoken">gotta</td><td class="tr">tenho que</td></tr>
+      <tr><td class="written">need to</td><td class="spoken">needa</td><td class="tr">preciso</td></tr>
+      <tr><td class="written">kind of</td><td class="spoken">kinda</td><td class="tr">meio que / tipo</td></tr>
+      <tr><td class="written">I don't know</td><td class="spoken">I dunno</td><td class="tr">não sei</td></tr>
+      <tr><td class="written">see you</td><td class="spoken">see ya</td><td class="tr">até mais</td></tr>
+      <tr><td class="written">what's up?</td><td class="spoken">wassup?</td><td class="tr">e aí? (resposta: "not much")</td></tr>
+      <tr><td class="written">alright</td><td class="spoken">aight</td><td class="tr">beleza / tá certo</td></tr>
+      <tr><td class="written">yes</td><td class="spoken">yeah / yep</td><td class="tr">sim (informal — "yes" soa formal)</td></tr>
+      <tr><td class="written">no</td><td class="spoken">nope / no way</td><td class="tr">não / de jeito nenhum</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 class="sec">Padrões que desbloqueiam tudo</h2>
+  <p class="sub">Um molde, várias frases. Decore a estrutura e só troque o final.</p>
+  <div class="patterns">
+    <div class="pat"><h4>I need to… <span style="color:var(--muted);font-weight:400;font-size:.8rem">(preciso…)</span></h4>
+      <ul><li>I need to go.</li><li>I need to think about it.</li><li>I need to make a decision.</li><li>I need to stop procrastinating.</li></ul></div>
+    <div class="pat"><h4>I want to… <span style="color:var(--muted);font-weight:400;font-size:.8rem">(quero…)</span></h4>
+      <ul><li>I want to help.</li><li>I want to learn English.</li><li>I want to change my life.</li><li>I want to make a difference.</li></ul></div>
+    <div class="pat"><h4>I'm trying to… <span style="color:var(--muted);font-weight:400;font-size:.8rem">(estou tentando…)</span></h4>
+      <ul><li>I'm trying to sleep.</li><li>I'm trying to focus.</li><li>I'm trying to understand.</li><li>I'm trying to be patient.</li></ul></div>
+  </div>
+
+</div>
+<footer>Sistema 02 · Reduções do Inglês Real — fale como nativo, não como livro</footer>
+
+<script>
+const layers = [
+  "I work.",
+  "I work at an office.",
+  "I work at an office every day.",
+  "I work at an office every day. I start at 9am.",
+  "I work at an office every day. I start at 9am and finish at 6pm.",
+  "I work at an office every day. I start at 9am and finish at 6pm. I'm always tired on Fridays."
+];
+// diffs (extra text per layer)
+const extra = [
+  "I work.",
+  " at an office.",
+  " every day.",
+  " I start at 9am.",
+  " and finish at 6pm.",
+  " I'm always tired on Fridays."
+];
+const pbox = document.getElementById('pbox');
+const ctrl = document.getElementById('ctrl');
+let level = 1;
+
+function render(){
+  let html = "";
+  for(let i=0;i<6;i++){
+    const cls = i < level ? (i === level-1 ? 'layer on new' : 'layer on') : 'layer';
+    html += `<span class="${cls}">${extra[i]}</span>`;
+  }
+  pbox.innerHTML = html;
+  [...ctrl.children].forEach((b,i)=>b.classList.toggle('active', i < level));
+}
+for(let i=1;i<=6;i++){
+  const b=document.createElement('button');
+  b.textContent=i;
+  b.onclick=()=>{ level=i; render(); };
+  ctrl.appendChild(b);
+}
+render();
+</script>
+</body>
+</html>

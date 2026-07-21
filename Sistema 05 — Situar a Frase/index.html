@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 05 — Situar a Frase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#EC4899;--ok:#22C55E;--no:#EF4444;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-10%;right:5%;width:50%;height:55%;background:radial-gradient(ellipse,rgba(236,72,153,.06),transparent 70%);}
+.wrap{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:0 22px;}
+.back{display:inline-flex;gap:.4rem;margin-top:26px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:8px 16px;border-radius:30px;transition:.2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1 em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:640px;line-height:1.6;}
+h2.sec{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;margin:46px 0 4px;display:flex;align-items:center;gap:10px;}
+h2.sec::before{content:'';width:22px;height:3px;background:var(--accent);border-radius:2px;}
+.sub{color:var(--muted);font-size:.92rem;margin-bottom:18px;}
+
+/* QUIZ */
+.progress{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.bar{flex:1;height:6px;background:var(--surface2);border-radius:4px;overflow:hidden;}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:.4s;}
+.score{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--muted);font-size:.85rem;}
+.quiz{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;}
+.qlevel{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.1em;color:var(--accent);background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.3);padding:3px 10px;border-radius:20px;display:inline-block;}
+.qprompt{font-size:1.15rem;margin:14px 0 18px;font-family:'Space Grotesk',sans-serif;line-height:1.4;}
+.opts{display:grid;gap:10px;}
+.opt{text-align:left;font-family:inherit;font-size:.95rem;cursor:pointer;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:13px 16px;border-radius:10px;transition:.15s;}
+.opt:hover:not(:disabled){border-color:var(--accent);}
+.opt:disabled{cursor:default;}
+.opt.correct{border-color:var(--ok);background:rgba(34,197,94,.12);color:#bbf7d0;}
+.opt.wrong{border-color:var(--no);background:rgba(239,68,68,.1);color:#fecaca;}
+.expl{margin-top:16px;padding:14px 16px;background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;font-size:.9rem;color:var(--muted);display:none;}
+.expl.show{display:block;animation:fade .3s;}
+@keyframes fade{from{opacity:0;}to{opacity:1;}}
+.nav{display:flex;justify-content:flex-end;margin-top:18px;}
+.nav button{font-family:'Space Grotesk',sans-serif;font-weight:700;cursor:pointer;background:var(--accent);color:#3d0a25;border:none;padding:11px 22px;border-radius:10px;font-size:.9rem;transition:.15s;}
+.nav button:disabled{opacity:.3;cursor:default;}
+.result{text-align:center;padding:30px;}
+.result .big{font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:800;color:var(--accent);}
+
+/* PREPS */
+.preps{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;}
+.prep{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:13px 15px;}
+.prep .w{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--accent);font-size:1rem;}
+.prep .m{font-size:.78rem;color:var(--dim);margin:2px 0 6px;}
+.prep .e{font-size:.82rem;color:var(--muted);font-style:italic;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+  <a href="../index.html" class="back">← Voltar ao início</a>
+  <div class="eyebrow">Sistema 05 · onde, quando, quanto e como</div>
+  <h1>Situar a <em>Frase</em></h1>
+  <p class="lead">O que dá endereço à frase: preposições, tempo e estrutura. Comece descobrindo seu nível com um teste que sobe de A1 a C1 — e depois firme as preposições que situam tudo no espaço e no tempo.</p>
+
+  <h2 class="sec">Teste seu Nível</h2>
+  <p class="sub">9 questões, do básico ao avançado. Escolha uma opção para ver a resposta e a explicação.</p>
+  <div class="progress"><div class="bar"><i id="barfill"></i></div><div class="score" id="score">0 / 9</div></div>
+  <div class="quiz" id="quiz"></div>
+
+  <h2 class="sec">Preposições no Contexto</h2>
+  <p class="sub">As palavrinhas que situam a frase no espaço — o alicerce do "onde".</p>
+  <div class="preps" id="preps"></div>
+
+</div>
+<footer>Sistema 05 · Situar a Frase — dê endereço às suas ideias</footer>
+
+<script>
+const Q = [
+  {lv:"A1",p:"___ is your name? I'm Maria.",o:["Whom","What","Who"],c:1,e:"\"What\" pede informações (nome, profissão). \"Who\" se refere a pessoas. \"Whom\" é formal e funciona como objeto."},
+  {lv:"A1",p:"She ___ two cats.",o:["have","has","is having"],c:1,e:"Com he/she/it usamos \"has\". Para posse usamos o Simple Present, não o Continuous."},
+  {lv:"A1",p:"There ___ a park near my house.",o:["is","are","am"],c:0,e:"\"There is\" + singular (um parque). \"There are\" + plural. \"Am\" só vai com I."},
+  {lv:"A1",p:"Qual soa mais natural?",o:["I go often to the gym.","Often I go to the gym.","I often go to the gym."],c:2,e:"Advérbios de frequência (often, usually) geralmente vão ANTES do verbo principal."},
+  {lv:"A1",p:"She ___ like pizza.",o:["don't","doesn't","hasn't"],c:1,e:"Com she/he/it no negativo usamos \"doesn't\". \"Don't\" vai com I/you/we/they."},
+  {lv:"A2",p:"Brenda has lived here ___ three years.",o:["since","for","during"],c:1,e:"\"For\" + período (three years). \"Since\" + ponto de início (since 2020). Aqui é duração → for."},
+  {lv:"B1",p:"I ___ working here since January.",o:["am","have been","was"],c:1,e:"Present Perfect Continuous (have been + -ing) para ações que começaram no passado e CONTINUAM. \"Since\" exige tempo perfeito."},
+  {lv:"B2",p:"Technical issues ___ us ___ for over an hour.",o:["held / up","took / over","cut / off"],c:0,e:"\"Hold up\" = atrasar. Comum: \"I got held up in traffic.\" \"Take over\" = assumir. \"Cut off\" = desconectar."},
+  {lv:"C1",p:"Melhor paráfrase de: 'After years of neglecting her mental health, Sarah decided to completely overhaul her approach to wellness.'",o:["Sarah ignored her mental health for years, so she changed her wellness routine.","Having neglected her mental health for years, Sarah resolved to transform her approach to well-being completely.","Years of ignoring her mental health led Sarah to think negatively about wellness."],c:1,e:"B captura tudo: o período, a decisão ativa e a escala da mudança. A usa \"routine\" (mais estreito). C muda o significado."},
+];
+let idx=0, score=0, answered=false;
+const quiz=document.getElementById('quiz');
+function render(){
+  if(idx>=Q.length){
+    quiz.innerHTML=`<div class="result"><div class="big">${score}/${Q.length}</div>
+      <p style="color:var(--muted);margin-top:10px;">${score>=8?'Nível avançado! 🎉':score>=6?'Ótimo — intermediário sólido.':score>=4?'No caminho — pré-intermediário.':'Começo de jornada — siga firme!'}</p>
+      <div class="nav" style="justify-content:center;margin-top:20px;"><button onclick="restart()">↻ Refazer</button></div></div>`;
+    document.getElementById('barfill').style.width='100%';
+    return;
+  }
+  const q=Q[idx]; answered=false;
+  quiz.innerHTML=`<span class="qlevel">Nível ${q.lv}</span>
+    <div class="qprompt">${q.p}</div>
+    <div class="opts">${q.o.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join('')}</div>
+    <div class="expl" id="expl">${q.e}</div>
+    <div class="nav"><button id="next" disabled>Próxima →</button></div>`;
+  quiz.querySelectorAll('.opt').forEach(b=>b.onclick=()=>choose(+b.dataset.i));
+  document.getElementById('next').onclick=()=>{ idx++; render(); };
+  document.getElementById('score').textContent=`${score} / ${Q.length}`;
+}
+function choose(i){
+  if(answered)return; answered=true;
+  const q=Q[idx];
+  quiz.querySelectorAll('.opt').forEach((b,j)=>{ b.disabled=true;
+    if(j===q.c)b.classList.add('correct');
+    else if(j===i)b.classList.add('wrong'); });
+  if(i===q.c)score++;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('next').disabled=false;
+  document.getElementById('score').textContent=`${score} / ${Q.length}`;
+  document.getElementById('barfill').style.width=`${((idx+1)/Q.length)*100}%`;
+}
+function restart(){ idx=0; score=0; document.getElementById('barfill').style.width='0'; render(); }
+render();
+
+const P=[
+  ["at","em (local / hora)","She is at school."],["in","dentro de / em","My phone is in my bag."],
+  ["on","sobre / em cima","The book is on the table."],["under","embaixo de","The cat is under the chair."],
+  ["behind","atrás de","The boy is behind the door."],["between","entre (duas coisas)","Between the bank and the café."],
+  ["next to","ao lado de","The school is next to the park."],["in front of","na frente de","She is in front of the building."],
+  ["near","perto de","A hospital near my house."],["above","acima de","The lamp is above the table."],
+];
+document.getElementById('preps').innerHTML=P.map(([w,m,e])=>
+  `<div class="prep"><div class="w">${w}</div><div class="m">${m}</div><div class="e">"${e}"</div></div>`).join('');
+</script>
+</body>
+</html>

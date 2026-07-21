@@ -1,0 +1,26 @@
+# ── Arquivos grandes / compactados ──────────────────────────
+*.zip
+*.rar
+*.7z
+
+# ── Sistema operacional ─────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# ── Dependências / builds ───────────────────────────────────
+node_modules/
+dist/
+build/
+.cache/
+
+# ── Editores / IDEs ─────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*~
+
+# ── Temporários ─────────────────────────────────────────────
+*.tmp
+*.log

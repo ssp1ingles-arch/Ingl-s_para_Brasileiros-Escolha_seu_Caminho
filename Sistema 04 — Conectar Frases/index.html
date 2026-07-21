@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 04 — Conectar Frases</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#10B981;--red:#fca5a5;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-10%;left:0;width:50%;height:55%;background:radial-gradient(ellipse,rgba(16,185,129,.06),transparent 70%);}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{display:inline-flex;gap:.4rem;margin-top:26px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:8px 16px;border-radius:30px;transition:.2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1 em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:640px;line-height:1.6;}
+
+/* TABS */
+.tabs{display:flex;gap:8px;margin:32px 0 22px;flex-wrap:wrap;border-bottom:1px solid var(--border);}
+.tabs button{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.92rem;cursor:pointer;background:none;border:none;color:var(--muted);padding:12px 6px;position:relative;transition:.2s;}
+.tabs button::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);transform:scaleX(0);transition:.2s;}
+.tabs button.active{color:var(--text);}
+.tabs button.active::after{transform:scaleX(1);}
+.panel{display:none;} .panel.active{display:block;animation:fade .3s;}
+@keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;}}
+
+/* Q&A */
+.dialogue{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;}
+.dialogue .cx{font-family:'Space Grotesk',sans-serif;color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
+.qa{margin-bottom:14px;}
+.qa .q{font-weight:600;color:var(--text);}
+.qa .q b{color:var(--accent);}
+.qa .a{color:var(--muted);padding-left:16px;border-left:2px solid var(--border);margin-top:3px;}
+.themes{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.theme{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:.82rem;}
+.theme b{display:block;font-family:'Space Grotesk',sans-serif;color:var(--text);margin-bottom:3px;font-size:.86rem;}
+.theme span{color:var(--accent);font-size:.74rem;}
+
+/* COLLOCATIONS */
+.filter{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+.filter button{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:7px 14px;border-radius:20px;transition:.15s;}
+.filter button.active{background:var(--accent);color:#052e22;border-color:var(--accent);}
+.collocs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;}
+.col{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:15px;}
+.col .en{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--accent);font-size:.98rem;}
+.col .pt{font-size:.85rem;color:var(--text);margin:4px 0 8px;}
+.col .err{font-size:.78rem;color:var(--red);}
+
+/* IDIOMS */
+.idioms{display:grid;gap:12px;}
+.idiom{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:16px 18px;}
+.idiom .en{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;}
+.idiom .def{color:var(--muted);font-size:.88rem;margin:5px 0;}
+.idiom .br{font-size:.85rem;color:var(--accent);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+  <a href="../index.html" class="back">← Voltar ao início</a>
+  <div class="eyebrow">Sistema 04 · o que liga as ideias</div>
+  <h1>Conectar <em>Frases</em></h1>
+  <p class="lead">Perguntar, combinar palavras e soar natural. Três frentes que transformam frases soltas em conversa de verdade — das perguntas do dia a dia às expressões que nativos realmente usam.</p>
+
+  <div class="tabs">
+    <button class="active" data-t="p1">Palavras que Perguntam</button>
+    <button data-t="p2">Colocações</button>
+    <button data-t="p3">Expressões</button>
+  </div>
+
+  <!-- PANEL 1 -->
+  <section class="panel active" id="p1">
+    <div class="dialogue">
+      <div class="cx">💬 Conversa 01 — Rotina diária de trabalho · <b>What / How / When</b></div>
+      <div class="qa"><div class="q"><b>What</b> time do you get up?</div><div class="a">I get up at around 6 a.m.</div></div>
+      <div class="qa"><div class="q"><b>How</b> do you get to work?</div><div class="a">I usually walk to work.</div></div>
+      <div class="qa"><div class="q"><b>When</b> does your work day start?</div><div class="a">It starts at 9:00 a.m.</div></div>
+      <div class="qa"><div class="q"><b>How</b> long is your lunch break?</div><div class="a">It's about 1 hour long.</div></div>
+      <div class="qa"><div class="q"><b>When</b> do you finish work?</div><div class="a">I finish at 5:00 p.m.</div></div>
+    </div>
+    <p style="color:var(--muted);font-size:.9rem;margin:20px 0 10px;">São <b style="color:var(--accent)">14 conversas</b> · 98 pares de pergunta e resposta. Cada tema treina um conjunto de <i>question words</i>:</p>
+    <div class="themes" id="themes"></div>
+  </section>
+
+  <!-- PANEL 2 -->
+  <section class="panel" id="p2">
+    <p style="color:var(--muted);font-size:.9rem;margin-bottom:14px;">Colocações são as combinações que soam naturais. Errar o verbo é o deslize nº1 do brasileiro — a tradução literal engana.</p>
+    <div class="filter" id="filter"></div>
+    <div class="collocs" id="collocs"></div>
+  </section>
+
+  <!-- PANEL 3 -->
+  <section class="panel" id="p3">
+    <p style="color:var(--muted);font-size:.9rem;margin-bottom:16px;">Expressões que você não deve traduzir ao pé da letra — o significado está no uso, não nas palavras.</p>
+    <div class="idioms" id="idioms"></div>
+  </section>
+
+</div>
+<footer>Sistema 04 · Conectar Frases — pergunte, combine, soe natural</footer>
+
+<script>
+// Themes
+const themes = [
+  ["Cidade natal","Where / How / What / Will"],["Filmes e cinema","What / Why / Who / How often"],
+  ["Video games","What / How often / Where / Would"],["Restaurante","Can / Do / How about / When"],
+  ["Celular e tecnologia","What / How long / Why / When"],["Limpeza da casa","Why / When / Should / What"],
+  ["Hotel","Where / How much / When / What time"],["Cozinhando","What / How / Why / Where"],
+  ["Transporte e direções","Where / How / How long / Is there"],["Tempo e clima","How's / How cold / Will there"],
+  ["Viagem e férias","Where / How long / Was / Would"],["Aprendendo inglês","Why / How long / How often / Have"],
+  ["Chegando atrasado","Why / When / How / What if"],
+];
+const tw = document.getElementById('themes');
+themes.forEach(([t,q])=>{ const d=document.createElement('div'); d.className='theme';
+  d.innerHTML=`<b>${t}</b><span>${q}</span>`; tw.appendChild(d); });
+
+// Collocations
+const C = [
+  ["MAKE","make a decision","tomar uma decisão","❌ do / take a decision"],
+  ["MAKE","make a mistake","cometer um erro","❌ do a mistake"],
+  ["MAKE","make progress","fazer progresso / avançar","❌ do progress"],
+  ["MAKE","make an effort","fazer um esforço","❌ do / give an effort"],
+  ["MAKE","make a difference","fazer diferença","❌ do a difference"],
+  ["MAKE","make friends","fazer amigos","❌ do / create friends"],
+  ["HAVE","have a shower","tomar banho (chuveiro)","❌ take a shower (UK usa have)"],
+  ["HAVE","have a break","fazer uma pausa","❌ do a break"],
+  ["HAVE","have a look","dar uma olhada","❌ do a look"],
+  ["HAVE","have a rest","descansar","❌ do a rest"],
+  ["HAVE","have a word","conversar brevemente","❌ do a word"],
+  ["HAVE","have an argument","ter uma discussão / brigar","❌ do an argument"],
+];
+const filterBox = document.getElementById('filter');
+const collocBox = document.getElementById('collocs');
+const verbs = ["Todos","MAKE","HAVE"];
+let current = "Todos";
+function renderColl(){
+  collocBox.innerHTML = C.filter(c=>current==="Todos"||c[0]===current).map(([v,en,pt,err])=>
+    `<div class="col"><div class="en">${en}</div><div class="pt">${pt}</div><div class="err">${err}</div></div>`).join('');
+}
+verbs.forEach(v=>{ const b=document.createElement('button'); b.textContent=v;
+  if(v==="Todos")b.classList.add('active');
+  b.onclick=()=>{ current=v; [...filterBox.children].forEach(x=>x.classList.remove('active')); b.classList.add('active'); renderColl(); };
+  filterBox.appendChild(b); });
+renderColl();
+
+// Idioms
+const I = [
+  ["A headscratcher","Algo difícil de entender / genuinamente confuso.","Isso é um enigma / não tô entendendo nada"],
+  ["Hit me","Me diz / manda ver — mesmo que seja difícil de ouvir.","Manda / pode falar"],
+  ["Drop it","Pare de falar disso / deixa pra lá.","Deixa pra lá / esquece"],
+  ["Spit it out","Fala logo, para de hesitar.","Fala logo / para de enrolar"],
+  ["I don't have the heart to…","Emocionalmente incapaz de fazer algo que parece cruel ou triste.","Não tive coragem / não tive coração para"],
+  ["I can't bring myself to…","Algo dentro de você resiste; não consegue se forçar a agir.","Não consigo me forçar a"],
+  ["I don't have it in me","Não tenho energia (física ou emocional) para isso agora.","Não tenho pique / tô sem forças"],
+];
+document.getElementById('idioms').innerHTML = I.map(([en,def,br])=>
+  `<div class="idiom"><div class="en">${en}</div><div class="def">${def}</div><div class="br">🇧🇷 ${br}</div></div>`).join('');
+
+// Tabs
+document.querySelectorAll('.tabs button').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); document.getElementById(b.dataset.t).classList.add('active');
+  };
+});
+</script>
+</body>
+</html>

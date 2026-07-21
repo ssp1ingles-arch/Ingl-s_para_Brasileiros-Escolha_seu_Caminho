@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 08 — Guia Definitivo para Aprender Inglês Mais Rápido</title>
+<style>
+  :root{
+    --teal:#0d6b6b; --teal-d:#084f4f; --amber:#e0a500; --amber-d:#b98600;
+    --coral:#e2603f; --ink:#2b2620; --muted:#6d6357; --paper:#f5efe2;
+    --card:#fffdf8; --line:#e6dcc6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Georgia','Iowan Old Style',serif;color:var(--ink);
+    background:var(--paper);line-height:1.6;padding-bottom:60px;
+  }
+  .sans{font-family:'Segoe UI',system-ui,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+  /* HERO */
+  header.hero{
+    background:linear-gradient(135deg,var(--teal-d),var(--teal));color:#fdf7e8;
+    padding:52px 20px 46px;text-align:center;position:relative;
+    border-bottom:6px solid var(--amber);
+  }
+  header.hero::before{content:"📚";position:absolute;font-size:5rem;opacity:.12;top:14px;left:6%}
+  header.hero::after{content:"🚀";position:absolute;font-size:5rem;opacity:.12;bottom:6px;right:6%}
+  .kicker{font-family:'Segoe UI',sans-serif;letter-spacing:3px;font-size:.8rem;
+    text-transform:uppercase;color:var(--amber);font-weight:700}
+  header.hero h1{font-size:clamp(1.8rem,4.6vw,2.9rem);margin:12px 0 6px;line-height:1.15}
+  header.hero .book{font-size:.95rem;opacity:.85;font-style:italic}
+  header.hero p.lead{max-width:640px;margin:18px auto 0;font-size:1.08rem;opacity:.95}
+
+  /* SECTION SHELL */
+  section{padding:40px 0 6px}
+  .sec-title{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .sec-title .n{font-family:'Segoe UI',sans-serif;font-weight:800;font-size:.9rem;
+    background:var(--teal);color:#fff;width:34px;height:34px;border-radius:8px;
+    display:flex;align-items:center;justify-content:center;flex:none}
+  .sec-title h2{font-size:1.6rem;line-height:1.15}
+  .sec-lead{color:var(--muted);margin:0 0 22px 48px;font-size:1rem}
+  @media(max-width:560px){.sec-lead{margin-left:0}}
+
+  /* MOTIVOS / STATS */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px;box-shadow:0 3px 10px rgba(13,107,107,.06)}
+  .stat .big{font-family:'Segoe UI',sans-serif;font-weight:800;font-size:2rem;color:var(--coral);line-height:1}
+  .stat p{font-size:.95rem;color:var(--muted);margin-top:8px}
+
+  /* CALLOUT */
+  .callout{background:#e7f2f0;border-left:6px solid var(--teal);border-radius:0 14px 14px 0;
+    padding:20px 24px;margin-top:6px}
+  .callout h3{color:var(--teal-d);font-size:1.2rem;margin-bottom:6px}
+
+  /* SKILLS (4 habilidades) */
+  .skills{display:grid;gap:18px}
+  .skill{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    box-shadow:0 4px 14px rgba(43,38,32,.06)}
+  .skill-head{display:flex;align-items:center;gap:16px;padding:16px 22px;color:#fff}
+  .skill-head .ic{font-size:1.9rem}
+  .skill-head h3{font-size:1.3rem;font-family:'Segoe UI',sans-serif}
+  .skill-head .lvl{margin-left:auto;font-family:'Segoe UI',sans-serif;font-size:.72rem;
+    background:rgba(255,255,255,.25);padding:4px 12px;border-radius:20px;letter-spacing:1px}
+  .skill-body{padding:18px 22px 20px}
+  .skill-body p{margin-bottom:12px}
+  .skill-body p:last-child{margin-bottom:0}
+  .skill-body b{color:var(--teal-d)}
+
+  /* METHOD STEPS (filmes) */
+  .method{background:#fff6e0;border:1px dashed var(--amber-d);border-radius:14px;padding:18px 22px;margin-top:14px}
+  .method h4{font-family:'Segoe UI',sans-serif;color:var(--amber-d);margin-bottom:12px}
+  .method ol{list-style:none;counter-reset:m;display:grid;gap:10px}
+  .method li{counter-increment:m;padding-left:40px;position:relative}
+  .method li::before{content:counter(m);position:absolute;left:0;top:0;width:27px;height:27px;
+    background:var(--amber);color:#fff;font-family:'Segoe UI',sans-serif;font-weight:700;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+  .warn{margin-top:12px;font-size:.92rem;color:#8a3b26;background:#fbe4dc;
+    padding:9px 14px;border-radius:10px}
+
+  /* ROADMAP (7 passos) */
+  .road{display:grid;gap:12px}
+  .step{display:flex;gap:16px;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px;align-items:flex-start}
+  .step .num{font-family:'Segoe UI',sans-serif;font-weight:800;font-size:1.5rem;color:var(--teal);
+    flex:none;width:40px;text-align:center}
+  .step h4{font-family:'Segoe UI',sans-serif;font-size:1.08rem;margin-bottom:3px}
+  .step p{font-size:.95rem;color:var(--muted)}
+
+  /* PHRASES */
+  .phrasebox{background:linear-gradient(135deg,#0d6b6b,#0a5555);color:#fdf7e8;border-radius:16px;
+    padding:26px 28px;margin-top:6px}
+  .phrasebox h3{font-family:'Segoe UI',sans-serif;margin-bottom:14px;color:var(--amber)}
+  .phrasebox .q{border-left:3px solid var(--amber);padding:6px 0 6px 16px;margin-bottom:14px;font-style:italic;font-size:1.05rem}
+  .phrasebox .q:last-child{margin-bottom:0}
+
+  /* DO / DONT */
+  .dd{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.dd{grid-template-columns:1fr}}
+  .dd-col{border-radius:14px;padding:18px 20px}
+  .dd-col.do{background:#e6f4e6;border:1px solid #b9e0b9}
+  .dd-col.dont{background:#fbe4dc;border:1px solid #f0c2b4}
+  .dd-col h4{font-family:'Segoe UI',sans-serif;margin-bottom:10px;font-size:1.1rem}
+  .dd-col.do h4{color:#2e7d32} .dd-col.dont h4{color:#b23a1e}
+  .dd-col ul{list-style:none;display:grid;gap:8px}
+  .dd-col li{padding-left:26px;position:relative;font-size:.95rem}
+  .dd-col.do li::before{content:"✔";position:absolute;left:0;color:#2e7d32;font-weight:bold}
+  .dd-col.dont li::before{content:"✕";position:absolute;left:0;color:#b23a1e;font-weight:bold}
+
+  /* TOOLS */
+  .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .tool h4{font-family:'Segoe UI',sans-serif;color:var(--teal-d);margin-bottom:6px;display:flex;gap:8px;align-items:center}
+  .tool p{font-size:.92rem;color:var(--muted)}
+  .links{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:16px}
+  .links h4{font-family:'Segoe UI',sans-serif;color:var(--teal-d);margin-bottom:10px}
+  .links a{color:var(--teal);word-break:break-all;font-family:'Segoe UI',sans-serif;font-size:.9rem}
+  .links li{margin-bottom:7px;list-style:none;padding-left:22px;position:relative}
+  .links li::before{content:"🔗";position:absolute;left:0}
+
+  footer{text-align:center;margin-top:50px;padding-top:24px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.9rem}
+  footer .see{font-size:1.3rem;color:var(--teal);font-style:italic;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<a href="../index.html" style="position:fixed;top:16px;left:16px;z-index:10;background:rgba(255,255,255,.15);color:#fdf7e8;font-family:'Segoe UI',sans-serif;font-weight:600;text-decoration:none;padding:9px 16px;border-radius:30px;border:1px solid rgba(255,255,255,.3);font-size:.85rem;backdrop-filter:blur(4px);">← Voltar ao início</a>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Sistema 08 · Baseado em Livros</div>
+    <h1>O Guia Definitivo para Aprender Inglês Mais Rápido</h1>
+    <div class="book">Conteúdo extraído e organizado do e-book de Lorena Batista</div>
+    <p class="lead">Um caminho completo — da motivação inicial às ferramentas certas. Comece pelo porquê, mergulhe na imersão, desenvolva as quatro habilidades e siga os 7 passos rumo à fluência.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- 1. MOTIVOS -->
+  <section>
+    <div class="sec-title"><span class="n">01</span><h2>Por que vale a pena</h2></div>
+    <p class="sec-lead">Antes do "como", entenda o "porquê". Os números mostram o tamanho da oportunidade.</p>
+    <div class="stats">
+      <div class="stat"><div class="big">5%</div><p>dos brasileiros falam inglês — e só <b>1%</b> é fluente. Imagine o seu diferencial.</p></div>
+      <div class="stat"><div class="big">+80%</div><p>dos melhores artigos e livros estão em inglês e sem tradução.</p></div>
+      <div class="stat"><div class="big">+52%</div><p>de salário: quem fala inglês é mais valorizado dentro das empresas.</p></div>
+      <div class="stat"><div class="big">100%</div><p>mais proveitosa é uma viagem ao exterior quando você domina o idioma.</p></div>
+    </div>
+    <div class="callout" style="margin-top:18px">
+      <h3>💰 Bônus prático</h3>
+      <p>Sabendo inglês você pode fazer traduções, dar aulas e conseguir renda extra. Em países de língua inglesa, há empregos que exigem apenas fluência — sem formação acadêmica.</p>
+    </div>
+  </section>
+
+  <!-- 2. IMERSÃO -->
+  <section>
+    <div class="sec-title"><span class="n">02</span><h2>Comece pela imersão</h2></div>
+    <p class="sec-lead">O primeiro e mais importante passo: cercar-se do idioma o tempo todo.</p>
+    <div class="callout">
+      <h3>🌊 O que é imersão profunda</h3>
+      <p>Durante a maior parte do seu tempo, esteja em contato com o inglês. <b>Mude o idioma do seu celular</b> para inglês. <b>Troque o idioma dos filmes.</b> No começo parece complicado, mas logo você se acostuma — e é isso que faz o cérebro se familiarizar com a língua de verdade.</p>
+    </div>
+  </section>
+
+  <!-- 3. AS 4 HABILIDADES -->
+  <section>
+    <div class="sec-title"><span class="n">03</span><h2>As 4 habilidades — do mais fácil ao mais difícil</h2></div>
+    <p class="sec-lead">Desenvolva na ordem natural: primeiro absorva (ouvir e ler), depois produza (escrever e falar).</p>
+    <div class="skills">
+
+      <div class="skill">
+        <div class="skill-head" style="background:#0d6b6b"><span class="ic">🎧</span><h3>1 · Ouvir</h3><span class="lvl">MAIS FÁCIL</span></div>
+        <div class="skill-body">
+          <p>Busque <b>podcasts e canais do YouTube</b> sobre os assuntos que você mais gosta e inscreva-se. Assim o aprendizado fica prazeroso e você absorve gírias e vocabulário do seu tema favorito.</p>
+          <p><b>Músicas:</b> use o app <b>Letras.mus.br</b> — busque a música, assista ao vídeo e acompanhe a letra em inglês ou português.</p>
+          <div class="method">
+            <h4>🎬 O método dos filmes e séries — assista 3 vezes</h4>
+            <ol>
+              <li>Áudio em <b>inglês</b> + legenda em <b>português</b>.</li>
+              <li>Áudio em <b>inglês</b> + legenda em <b>inglês</b>.</li>
+              <li>Áudio em <b>inglês</b> + <b>sem legenda</b>.</li>
+            </ol>
+            <div class="warn">⚠️ Nunca, jamais, assista dublado. Seu cérebro precisa associar o que é dito com o que acontece na cena.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-head" style="background:#12787a"><span class="ic">📖</span><h3>2 · Ler</h3><span class="lvl">FÁCIL</span></div>
+        <div class="skill-body">
+          <p>Leia tudo o que puder em inglês. <b>Pesquise no Google usando o termo em inglês</b> — gosta de filmes? Busque por "movies". Não sabe uma palavra? Recorra ao <b>Google Tradutor</b>.</p>
+          <p><b>Tome notas do seu vocabulário.</b> Você não fixa tudo de primeira; anote no caderninho ou no bloco de notas do celular e revise depois. Dica de app para memorizar: <b>AnkiDroid</b> (flashcards).</p>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-head" style="background:#c48a00"><span class="ic">✍️</span><h3>3 · Escrever</h3><span class="lvl">INTERMEDIÁRIO</span></div>
+        <div class="skill-body">
+          <p>Reescrever textos em inglês faz o cérebro entender que aquilo é <b>relevante</b> e guardar na memória de longo prazo.</p>
+          <p>Depois, leia em voz alta o que escreveu, <b>grave e escute</b>: você acompanha seu progresso e melhora a pronúncia ao mesmo tempo.</p>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-head" style="background:#e2603f"><span class="ic">🗣️</span><h3>4 · Falar</h3><span class="lvl">MAIS DIFÍCIL</span></div>
+        <div class="skill-body">
+          <p>Muita gente entende inglês mas não fala — porque foca só em ouvir e <b>não se arrisca</b>. Seja desinibido: sempre que puder, converse com pessoas reais, pessoalmente ou por chamada de vídeo.</p>
+          <p><b>Converse com um amigo</b> que queira entrar na mesma jornada, faça amizades com nativos pela internet e poste em comunidades: <i>"Estou à procura de alguém para praticar inglês comigo"</i>.</p>
+          <p>Tem uma graninha para investir? O app <b>Cambly</b> conecta você a professores nativos sobre o assunto que quiser.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. 7 PASSOS -->
+  <section>
+    <div class="sec-title"><span class="n">04</span><h2>Os 7 passos para aprender mais rápido</h2></div>
+    <p class="sec-lead">A rotina e a disciplina que transformam contato com o idioma em fluência de verdade.</p>
+    <div class="road">
+      <div class="step"><div class="num">1</div><div><h4>Tenha um forte motivo</h4><p>Intercâmbio? Carreira? Filmes sem legenda? Escreva uma frase que resuma seu objetivo e leia todos os dias. Ela te segura nos dias difíceis.</p></div></div>
+      <div class="step"><div class="num">2</div><div><h4>Divida em partes</h4><p>Comece pelo inglês do cotidiano ("Eu acordo, me levanto, escovo os dentes…"). Depois avance para inglês de negócios, viagens etc. Todo aprendizado é uma escada.</p></div></div>
+      <div class="step"><div class="num">3</div><div><h4>Crie uma rotina de estudos</h4><p>Reserve um horário só para o inglês, longe de notificações. Bastam <b>30 minutos por dia</b> para já fazer grande diferença — com exercícios de escrita e de fala.</p></div></div>
+      <div class="step"><div class="num">4</div><div><h4>Aproveite o tempo ocioso</h4><p>Fila do banco, ônibus, cama antes de dormir: transforme esses "tempinhos" em prática, ouvindo ou lendo.</p></div></div>
+      <div class="step"><div class="num">5</div><div><h4>Não foque demais na gramática</h4><p>Você aprendeu português falando antes de estudar regras. Ouça e leia muito primeiro; a gramática se assimila naturalmente.</p></div></div>
+      <div class="step"><div class="num">6</div><div><h4>Não fique com dúvidas</h4><p>Pergunte muito — a professores, em cursos, em comunidades. Dúvida acumulada trava o progresso.</p></div></div>
+      <div class="step"><div class="num">7</div><div><h4>Faça intercâmbios no exterior</h4><p>Se puder, viaje para países de língua inglesa. Nada substitui o contato real e diário com o idioma.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 5. FRASES DE MOTIVAÇÃO -->
+  <section>
+    <div class="sec-title"><span class="n">05</span><h2>Frases para ler todos os dias</h2></div>
+    <p class="sec-lead">Modelos do próprio guia. Personalize e repita — o cérebro obedece ao que você reforça.</p>
+    <div class="phrasebox">
+      <h3>✨ Seu forte motivo, em palavras</h3>
+      <div class="q">"Eu quero muito aprender inglês em até (tempo), pois sei que vou ser promovido no meu trabalho e poder morar fora do Brasil e viver a vida que sempre desejei."</div>
+      <div class="q">"Eu quero muito aprender inglês em até (tempo), pois meu desejo é fazer um intercâmbio, estudar em faculdades renomadas e ter um futuro de grande sucesso."</div>
+      <div class="q">Troque "eu não vou conseguir" por: <b>"Estou aprendendo inglês e melhorando cada dia mais"</b> · <b>"Nem todo dia será fácil, mas não vou desistir"</b> · <b>"Estou muito melhor do que há 6 meses"</b>.</div>
+    </div>
+  </section>
+
+  <!-- 6. FAÇA / EVITE -->
+  <section>
+    <div class="sec-title"><span class="n">06</span><h2>Faça &amp; Evite</h2></div>
+    <p class="sec-lead">Um resumo rápido dos acertos e dos erros que atrasam o aprendizado.</p>
+    <div class="dd">
+      <div class="dd-col do">
+        <h4>✅ Faça</h4>
+        <ul>
+          <li>Mude o idioma do celular para inglês.</li>
+          <li>Assista filmes/séries pelo método das 3 vezes.</li>
+          <li>Anote e revise seu vocabulário sempre.</li>
+          <li>Fale com pessoas reais, mesmo errando.</li>
+          <li>Estude ao menos 30 minutos por dia.</li>
+          <li>Mantenha o aprendizado divertido e prazeroso.</li>
+        </ul>
+      </div>
+      <div class="dd-col dont">
+        <h4>🚫 Evite</h4>
+        <ul>
+          <li>Assistir dublado "pra treinar".</li>
+          <li>Ficar preso a regras de gramática no início.</li>
+          <li>Só ouvir e nunca se arriscar a falar.</li>
+          <li>Dizer "eu não vou conseguir".</li>
+          <li>Acumular dúvidas sem perguntar.</li>
+          <li>Esperar o "dia perfeito" para começar.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FERRAMENTAS -->
+  <section>
+    <div class="sec-title"><span class="n">07</span><h2>Ferramentas recomendadas</h2></div>
+    <p class="sec-lead">Aplicativos, canais e dicionários citados no guia para acelerar seus estudos.</p>
+    <div class="tools">
+      <div class="tool"><h4>🦉 Duolingo</h4><p>Transforma o aprendizado num jogo com fases que precisam ser vencidas para desbloquear novas etapas.</p></div>
+      <div class="tool"><h4>🌐 Busuu</h4><p>11 idiomas e forte ênfase na interação com falantes nativos por meio da comunidade do app.</p></div>
+      <div class="tool"><h4>🧠 Memrise</h4><p>Memorização por textos e imagens: observe desenhos e fotos com descrições e recorde os significados.</p></div>
+      <div class="tool"><h4>🎵 Letras.mus.br</h4><p>Acompanhe a letra das músicas em inglês (ou português) enquanto assiste ao vídeo.</p></div>
+      <div class="tool"><h4>🗂️ AnkiDroid</h4><p>Flashcards com repetição espaçada para fixar o vocabulário que você anotou.</p></div>
+      <div class="tool"><h4>💬 Cambly</h4><p>Converse com professores nativos sobre o assunto que você escolher (pago).</p></div>
+    </div>
+
+    <div class="links">
+      <h4>📺 Canais e playlists no YouTube</h4>
+      <ul>
+        <li><a href="https://www.youtube.com/playlist?list=PLX18fdrdsRzVILJHzNI4TpaOb_c8dU2j2" target="_blank" rel="noopener">Playlist com áudio e legenda em inglês (nível fácil)</a></li>
+        <li><a href="https://www.youtube.com/watch?v=_KXmZKW_cag" target="_blank" rel="noopener">Vídeo recomendado para iniciantes</a></li>
+        <li><a href="https://www.youtube.com/channel/UC8mWYDxedkJmUReAiA3ze9w" target="_blank" rel="noopener">Canal para treinar o listening</a></li>
+      </ul>
+      <p class="sans" style="font-size:.9rem;color:var(--muted);margin-top:8px">Coloque o fone, dê play, reassista e anote as palavras que não souber.</p>
+    </div>
+
+    <div class="links">
+      <h4>📔 Dicionários online</h4>
+      <ul>
+        <li><a href="http://michaelis.uol.com.br/moderno/ingles/" target="_blank" rel="noopener">Michaelis — Inglês</a></li>
+        <li><a href="https://dictionary.cambridge.org/pt/dicionario/ingles-portugues/" target="_blank" rel="noopener">Cambridge — Inglês/Português</a></li>
+        <li><a href="https://pt.bab.la/dicionario/ingles-portugues/" target="_blank" rel="noopener">bab.la — Inglês/Português</a></li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<footer class="wrap">
+  <div class="see">See you soon! 👋</div>
+  <p>O melhor dia para começar é exatamente hoje. Mãos à obra!</p>
+  <p style="margin-top:8px;font-size:.82rem">Sistema 08 — Baseado em Livros · Fonte: <i>O Guia Definitivo para Aprender Inglês Mais Rápido</i> (Lorena Batista) · Inglês para Brasileiros: Escolha seu Caminho</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 03 — Motor de Verbos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#6366F1;
+--past:#EF4444;--present:#22C55E;--future:#3B82F6;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-10%;left:20%;width:55%;height:55%;background:radial-gradient(ellipse,rgba(99,102,241,.07),transparent 70%);}
+.wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 22px;}
+.back{display:inline-flex;gap:.4rem;margin-top:26px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:8px 16px;border-radius:30px;transition:.2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1 em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:640px;line-height:1.6;}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:20px 0 0;font-family:'Space Grotesk',sans-serif;font-size:.8rem;}
+.legend span{display:inline-flex;align-items:center;gap:6px;color:var(--muted);}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+h2.sec{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;margin:46px 0 4px;display:flex;align-items:center;gap:10px;}
+h2.sec::before{content:'';width:22px;height:3px;background:var(--accent);border-radius:2px;}
+.sub{color:var(--muted);font-size:.92rem;margin-bottom:18px;}
+
+/* MATRIX */
+.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:720px){.matrix{grid-template-columns:1fr;}}
+.colhead{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.9rem;text-align:center;padding:6px;letter-spacing:.05em;text-transform:uppercase;}
+.tense{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:15px;border-top:3px solid var(--tc);cursor:pointer;transition:.2s;}
+.tense:hover{transform:translateY(-3px);border-color:var(--tc);}
+.tense .nm{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;}
+.tense .formula{font-family:'Space Grotesk',sans-serif;font-size:.76rem;color:var(--tc);margin:5px 0;}
+.tense .ex{font-size:.86rem;color:var(--text);font-style:italic;margin-top:6px;}
+.tense .detail{max-height:0;overflow:hidden;transition:max-height .3s;}
+.tense.open .detail{max-height:200px;}
+.tense .detail-in{padding-top:10px;margin-top:10px;border-top:1px solid var(--border);font-size:.82rem;color:var(--muted);}
+.tense .detail-in .err{color:#fca5a5;}
+
+/* IRREGULARS */
+.irr{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.vcard{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;}
+.vchain{display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.95rem;flex-wrap:wrap;}
+.vchain .v1{color:var(--present);} .vchain .v2{color:var(--past);} .vchain .v3{color:var(--future);}
+.vchain .ar{color:var(--dim);}
+.vcard .pt{font-size:.78rem;color:var(--dim);margin:6px 0 8px;}
+.vcard .s{font-size:.82rem;color:var(--muted);font-style:italic;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+  <a href="../index.html" class="back">← Voltar ao início</a>
+  <div class="eyebrow">Sistema 03 · a máquina por trás das frases</div>
+  <h1>Motor de <em>Verbos</em></h1>
+  <p class="lead">Todo verbo em inglês roda em 3 tempos e 4 aspectos. Domine essa matriz e você monta qualquer frase — do passado ao futuro, do simples ao perfeito. Toque em cada tempo para ver o uso e o erro clássico do brasileiro.</p>
+  <div class="legend">
+    <span><i style="background:var(--past)"></i>Passado</span>
+    <span><i style="background:var(--present)"></i>Presente</span>
+    <span><i style="background:var(--future)"></i>Futuro</span>
+  </div>
+
+  <h2 class="sec">A Matriz dos 12 Tempos</h2>
+  <p class="sub">Colunas = quando · Linhas = como (Simples, Contínuo, Perfeito, Perfeito Contínuo).</p>
+  <div class="matrix">
+    <div class="colhead" style="color:var(--past)">Passado</div>
+    <div class="colhead" style="color:var(--present)">Presente</div>
+    <div class="colhead" style="color:var(--future)">Futuro</div>
+  </div>
+  <div class="matrix" id="matrix" style="margin-top:12px;"></div>
+
+  <h2 class="sec">Verbos Irregulares — os 6 campeões</h2>
+  <p class="sub">Os que mais aparecem e mais confundem. Base <span style="color:var(--present)">(presente)</span> → <span style="color:var(--past)">passado</span> → <span style="color:var(--future)">particípio</span>.</p>
+  <div class="irr" id="irr"></div>
+
+</div>
+<footer>Sistema 03 · Motor de Verbos — 12 tempos, 1 lógica</footer>
+
+<script>
+// [nome, tempo(past/present/future), formula, exemplo, uso, erro]
+const T = [
+  // Simples
+  ["Past Simple","past","Subject + V2","I played football yesterday.","Ações completadas no passado, com tempo definido.","I writed ❌ → I wrote ✓"],
+  ["Present Simple","present","Subject + V (+s)","She cooks delicious food.","Rotinas, fatos e verdades gerais.","He play ❌ → He plays ✓ (não esqueça o -s!)"],
+  ["Future Simple","future","Subject + will + V","I will play football tomorrow.","Decisões do momento, promessas e previsões.",""],
+  // Contínuo
+  ["Past Continuous","past","was/were + V-ing","I was reading when you called.","Ação em progresso no passado, interrompida por outra.",""],
+  ["Present Continuous","present","am/is/are + V-ing","I am reading a book now.","Ação acontecendo AGORA; planos futuros confirmados.","She is cook ❌ → She is cooking ✓"],
+  ["Future Continuous","future","will be + V-ing","I will be reading at 8PM tomorrow.","Ação que estará em progresso num momento do futuro.",""],
+  // Perfeito
+  ["Past Perfect","past","had + V3","I had finished before dinner.","Ação que aconteceu ANTES de outra ação passada.",""],
+  ["Present Perfect","present","have/has + V3","I have finished my homework.","Experiências de vida e ações com resultado presente.","'Have you ever been…?' = experiência (sem data)"],
+  ["Future Perfect","future","will have + V3","I will have finished by 8PM.","Ação completa antes de um momento futuro.",""],
+  // Perfeito Contínuo
+  ["Past Perfect Cont.","past","had been + V-ing","She had been working there for 5 years.","Ação em progresso por um tempo antes de outra ação passada.",""],
+  ["Present Perfect Cont.","present","have/has been + V-ing","He has been working here for 3 years.","Começou no passado e continua até agora (ênfase na duração).",""],
+  ["Future Perfect Cont.","future","will have been + V-ing","By next year, I will have been working here for 10 years.","Ação em progresso por um período antes de um ponto futuro (raro/formal).",""],
+];
+const colorFor = t => t==='past'?'var(--past)':t==='present'?'var(--present)':'var(--future)';
+const m = document.getElementById('matrix');
+T.forEach(([nm,t,f,ex,uso,err])=>{
+  const d=document.createElement('div');
+  d.className='tense'; d.style.setProperty('--tc',colorFor(t));
+  d.innerHTML=`<div class="nm">${nm}</div><div class="formula">${f}</div><div class="ex">"${ex}"</div>
+    <div class="detail"><div class="detail-in">${uso}${err?`<br><span class="err">⚠ ${err}</span>`:''}</div></div>`;
+  d.onclick=()=>d.classList.toggle('open');
+  m.appendChild(d);
+});
+
+const V = [
+  ["GO","WENT","GONE","ir","I went to the market yesterday."],
+  ["HAVE","HAD","HAD","ter","I have had this job for 5 years."],
+  ["DO","DID","DONE","fazer","I have done everything I can."],
+  ["SPEAK","SPOKE","SPOKEN","falar","I spoke to him this morning."],
+  ["COME","CAME","COME","vir","I have come a long way."],
+  ["TAKE","TOOK","TAKEN","pegar / levar","I took a shower after work."],
+];
+const irr=document.getElementById('irr');
+V.forEach(([v1,v2,v3,pt,s])=>{
+  const c=document.createElement('div');
+  c.className='vcard';
+  c.innerHTML=`<div class="vchain"><span class="v1">${v1}</span><span class="ar">→</span><span class="v2">${v2}</span><span class="ar">→</span><span class="v3">${v3}</span></div>
+    <div class="pt">${pt}</div><div class="s">"${s}"</div>`;
+  irr.appendChild(c);
+});
+</script>
+</body>
+</html>

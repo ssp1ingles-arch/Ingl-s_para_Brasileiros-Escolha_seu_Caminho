@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 07 — Transcrições e Canais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#EF4444;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-10%;left:10%;width:50%;height:55%;background:radial-gradient(ellipse,rgba(239,68,68,.06),transparent 70%);}
+.wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 22px;}
+.back{display:inline-flex;gap:.4rem;margin-top:26px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:8px 16px;border-radius:30px;transition:.2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1 em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:660px;line-height:1.6;}
+.stats{display:flex;gap:26px;margin:22px 0 0;flex-wrap:wrap;}
+.stat b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;}
+.stat span{font-size:.78rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.search{width:100%;margin:26px 0 20px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;}
+.search:focus{outline:none;border-color:var(--accent);}
+.search::placeholder{color:var(--dim);}
+
+.channel{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;transition:.2s;}
+.ch-head{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;user-select:none;}
+.ch-head:hover{background:var(--surface2);}
+.ch-ic{width:38px;height:38px;border-radius:9px;background:rgba(239,68,68,.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex:none;}
+.ch-head h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;flex:1;}
+.ch-head .count{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:700;color:var(--accent);background:rgba(239,68,68,.1);padding:3px 10px;border-radius:20px;}
+.ch-head .arrow{color:var(--dim);transition:.25s;}
+.channel.open .ch-head .arrow{transform:rotate(90deg);color:var(--accent);}
+.eps{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.channel.open .eps{max-height:1400px;}
+.eps-in{padding:0 20px 14px;}
+.ep{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:9px;text-decoration:none;color:var(--text);border:1px solid transparent;transition:.15s;}
+.ep:hover{background:var(--surface2);border-color:var(--border);}
+.ep .dot{color:var(--accent);font-size:.9rem;margin-top:2px;}
+.ep .t{font-size:.88rem;line-height:1.4;color:var(--muted);}
+.ep:hover .t{color:var(--text);}
+.noresult{color:var(--dim);text-align:center;padding:30px;font-style:italic;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+  <a href="../index.html" class="back">← Voltar ao início</a>
+  <div class="eyebrow">Sistema 07 · o inglês do dia a dia, de quem fala de verdade</div>
+  <h1>Transcrições <em>e Canais</em></h1>
+  <p class="lead">Uma biblioteca de transcrições de canais e podcasts reais de inglês. Treine o ouvido com material autêntico — do listening lento aos podcasts nativos. Busque um tema ou abra um canal para ver os episódios.</p>
+  <div class="stats">
+    <div class="stat"><b>16</b><span>canais</span></div>
+    <div class="stat"><b>45</b><span>episódios</span></div>
+    <div class="stat"><b>B1 → C1</b><span>áudio real</span></div>
+  </div>
+
+  <input class="search" id="search" placeholder="🔎 Buscar por canal ou episódio…">
+  <div id="dir"></div>
+</div>
+<footer>Sistema 07 · Transcrições e Canais — ouça, leia, repita</footer>
+
+<script type="application/json" id="data">
+{"All Ears English":[{"title":"2519 - Não leve ao pé da letra! Quatro novas expressões em inglês","file":"All Ears English _ 2519 - Não leve ao pé da letra! Quatro novas expressões em inglês.docx"},{"title":"2630 - Não tem coragem de fazer isso_ O que dizer em inglês","file":"All Ears English _ 2630 - Não tem coragem de fazer isso_ O que dizer em inglês.docx"},{"title":"2649 - 3 dicas para começar a pensar em inglês","file":"All Ears English _ 2649 - 3 dicas para começar a pensar em inglês.docx"},{"title":"AEE - Will Learning Another Language Ruin Your English_","file":"All Ears English _ AEE - Will Learning Another Language Ruin Your English_.docx"}],"Aprenda Inglês com Kendry":[{"title":"Pare de Estudar Inglês Comece a Assistir Filmes","file":"Aprenda Inglês com Kendry _  Pare de Estudar Inglês Comece a Assistir Filmes.docx"},{"title":"Aprenda Inglês Através De Filmes Em Inglês Com Legendas Em Português (4)","file":"Aprenda Inglês com Kendry _ Aprenda Inglês Através De Filmes Em Inglês Com Legendas Em Português (4).docx"},{"title":"Aprenda Inglês com Trechos de Filmes _ Frases Reais","file":"Aprenda Inglês com Kendry _ Aprenda Inglês com Trechos de Filmes _ Frases Reais.docx"}],"Basic English Speaking":[{"title":"English Listening & Conversation Practice - Improve English Listening Skills","file":"Basic English Speaking _  English Listening & Conversation Practice - Improve English Listening Skills .docx"}],"Daily American English":[{"title":"Stop Studying English, Watch Movies! (Learn Native English)","file":"Daily American English _ Stop Studying English, Watch Movies! (Learn Native English).docx"},{"title":"Childhood Memories in English _ What Lily and Tom Remember","file":"Daily English Talk _ Childhood Memories in English _ What Lily and Tom Remember.docx"}],"Derek Polyglot - Escola de Idiomas":[{"title":"1000 FRASES PARA APRENDER INGLÊS - PARTE 1 - ( ÁUDIO_ PORTUGUÊS x INGLÊS)","file":"Derek Polyglot - Escola de Idiomas _ 1000 FRASES PARA APRENDER INGLÊS - PARTE 1 - ( ÁUDIO_ PORTUGUÊS x INGLÊS).docx"},{"title":"Aprenda 1200 FRASES em INGLÊS para usar em 27 situações diferentes","file":"Derek Polyglot - Escola de Idiomas _ Aprenda 1200 FRASES em INGLÊS para usar em 27 situações diferentes.docx"}],"English Coach Chad":[{"title":"English SPEAKING Practice - Let_s say it together!","file":"English Coach Chad _   English SPEAKING Practice - Let_s say it together!.docx"},{"title":"Listen, Learn, Repeat & Shadow English","file":"English Coach Chad _  Listen, Learn, Repeat & Shadow English.docx"},{"title":"Listening, Learning, Repeating, and Shadowing_ English Speaking Skills","file":"English Coach Chad _  Listening, Learning, Repeating, and Shadowing_ English Speaking Skills.docx"},{"title":"SHADOWING + Speaking Practice = English Fluecy Training","file":"English Coach Chad _  SHADOWING + Speaking Practice = English Fluecy Training.docx"},{"title":"English SHADOWING Practice_ Listen, Learn, Repeat & Shadow_ Repeat After Me","file":"English Coach Chad _ English SHADOWING Practice_ Listen, Learn, Repeat & Shadow_ Repeat After Me.docx"},{"title":"Just LISTEN or SHADOW_ Repeat after me or Say it with me_ Practice Speaking English","file":"English Coach Chad _ Just LISTEN or SHADOW_ Repeat after me or Say it with me_ Practice Speaking English.docx"},{"title":"Repeat-After-Me or just LISTEN or for English Speaking Fluency SHADOWING Practice","file":"English Coach Chad _ Repeat-After-Me or just LISTEN or for English Speaking Fluency SHADOWING Practice.docx"}],"English Cozy Chat":[{"title":"Slow English Conversation with my American friend!","file":"English Cozy Chat _ Slow English Conversation with my American friend!.docx"}],"English Evolution Step 1":[{"title":"Improve English Practice _ English Grammar Tenses A1.","file":"English Evolution Step 1 _ Improve English Practice _ English Grammar Tenses A1. .docx"},{"title":"Improve English Practice_ Real-life Sentences A1 to A2.","file":"English Evolution Step 1 _ Improve English Practice_ Real-life Sentences A1 to A2. .docx"},{"title":"Improve English Practice_ Real-life Sentences From A1 to A2.","file":"English Evolution Step 1 _ Improve English Practice_ Real-life Sentences From A1 to A2..docx"},{"title":"Improve English Practice_ Transportation in English.","file":"English Evolution Step 1 _ Improve English Practice_ Transportation in English..docx"},{"title":"Improve English Speaking Practice_ Action Verbs And Phrases.","file":"English Evolution Step 1 _ Improve English Speaking Practice_ Action Verbs And Phrases..docx"},{"title":"Improve English_ A1 English Prepositions & Phrasal Verbs.","file":"English Evolution Step 1 _ Improve English_ A1 English Prepositions & Phrasal Verbs..docx"},{"title":"Improve English_ Action Verbs In English A2 Examples.","file":"English Evolution Step 1 _ Improve English_ Action Verbs In English A2 Examples..docx"},{"title":"Improve English_ Action Verbs With Pronouns in English A1.","file":"English Evolution Step 1 _ Improve English_ Action Verbs With Pronouns in English A1..docx"},{"title":"Personal Pronouns In English Grammar for (A1–C2).","file":"English Evolution Step 1 _ Personal Pronouns In English Grammar for (A1–C2)..docx"}],"English Speaking TV":[{"title":"Daily Life English Conversation Practice - Practice Speaking English Everyday","file":"English Speaking TV _  Daily Life English Conversation Practice - Practice Speaking English Everyday.docx"},{"title":"Daily life English dialogues - Basic English Speaking - English Conversations Practice","file":"English Speaking TV _  Daily life English dialogues - Basic English Speaking - English Conversations Practice.docx"},{"title":"English Conversation and Listening Practice _ Intermediate English Listening Comprehension","file":"English Speaking TV _  English Conversation and Listening Practice _ Intermediate English Listening Comprehension .docx"},{"title":"English Listening Skills with Easy Conversation Lessons - Speaking and Listening English Everyday","file":"English Speaking TV _  English Listening Skills with Easy Conversation Lessons - Speaking and Listening English Everyday.docx"},{"title":"Practice & Improve English Listening and Speaking Skills Quickly - Everyday English Conversations","file":"English Speaking TV _ Practice & Improve English Listening and Speaking Skills Quickly - Everyday English Conversations.docx"}],"English With Collins":[{"title":"Como falar inglês melhor RÁPIDO (Técnicas simples que funcionam)","file":"English With Collins _ Como falar inglês melhor RÁPIDO (Técnicas simples que funcionam).docx"}],"English With Kayla (Kayla)":[{"title":"Ouça e Repita_ FALE inglês comigo","file":"English With Kayla (Kayla) _ Ouça e Repita_ FALE inglês comigo.docx"}],"English is EZ with Connor":[{"title":"how to _actually_ improve your English speaking skills 2","file":"English is EZ with Connor _ how to _actually_ improve your English speaking skills 2.docx"},{"title":"how to _actually_ improve your English speaking skills","file":"English is EZ with Connor _ how to _actually_ improve your English speaking skills.docx"},{"title":"the BEST way to improve English speaking skills _ 4.5 Hours of Super Sentences speaking practice","file":"English is EZ with Connor _ the BEST way to improve English speaking skills _ 4.5 Hours of Super Sentences speaking practice.docx"}],"Fale inglês agora":[{"title":"500 PERGUNTAS E RESPOSTAS EM INGLÊS PARA TREINAR CONVERSAÇÃO TODOS OS DIAS 🎧✨ INGLÊS NA PRÁTICA (1)","file":"Fale inglês agora _ 500 PERGUNTAS E RESPOSTAS EM INGLÊS PARA TREINAR CONVERSAÇÃO TODOS OS DIAS 🎧✨ INGLÊS NA PRÁTICA(1).docx"},{"title":"500 PERGUNTAS E RESPOSTAS EM INGLÊS PARA TREINAR CONVERSAÇÃO TODOS OS DIAS 🎧✨ INGLÊS NA PRÁTICA","file":"Fale inglês agora _ 500 PERGUNTAS E RESPOSTAS EM INGLÊS PARA TREINAR CONVERSAÇÃO TODOS OS DIAS 🎧✨ INGLÊS NA PRÁTICA.docx"}],"Inglês com Frases":[{"title":"Aprenda a falar Inglês montando frases. Aula de Inglês para conversação. #38","file":"Inglês com Frases _ Aprenda a falar Inglês montando frases. Aula de Inglês para conversação. #38.docx"}],"Luke_s English Podcast":[{"title":"(x) 872. The Birthday Party (Learn English with a Short Story)","file":"Luke_s English Podcast _ (x) 872. The Birthday Party (Learn English with a Short Story).docx"},{"title":"How to Learn English with my podcast 🎧 [959]","file":"Luke_s English Podcast _ How to Learn English with my podcast 🎧 [959].docx"}],"The Whole Human Experience":[{"title":"A More Human Way to Learn Languages _ Valentina Mazeikaite","file":"The Whole Human Experience _ A More Human Way to Learn Languages _ Valentina Mazeikaite.docx"}]}
+</script>
+
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const dir = document.getElementById('dir');
+const CH = "Sistema 07 — Transcrições e Canais"; // not used in href — pages live inside this folder
+
+function build(filter=""){
+  const f = filter.trim().toLowerCase();
+  dir.innerHTML = "";
+  let shown = 0;
+  Object.entries(DATA).forEach(([ch, eps])=>{
+    const matchCh = ch.toLowerCase().includes(f);
+    const matchedEps = eps.filter(e => matchCh || e.title.toLowerCase().includes(f));
+    if(matchedEps.length === 0) return;
+    shown++;
+    const el = document.createElement('div');
+    el.className = 'channel' + (f ? ' open' : '');
+    el.innerHTML = `
+      <div class="ch-head">
+        <div class="ch-ic">🎧</div>
+        <h3>${ch}</h3>
+        <span class="count">${matchedEps.length} ep${matchedEps.length>1?'s':''}</span>
+        <span class="arrow">▸</span>
+      </div>
+      <div class="eps"><div class="eps-in">
+        ${matchedEps.map(e=>`<a class="ep" href="${encodeURIComponent(ch)}/${encodeURIComponent(e.file)}">
+            <span class="dot">▸</span><span class="t">${e.title}</span></a>`).join('')}
+      </div></div>`;
+    el.querySelector('.ch-head').onclick = ()=> el.classList.toggle('open');
+    dir.appendChild(el);
+  });
+  if(shown === 0) dir.innerHTML = `<div class="noresult">Nenhum canal ou episódio encontrado para "${filter}".</div>`;
+}
+document.getElementById('search').addEventListener('input', e => build(e.target.value));
+build();
+</script>
+</body>
+</html>

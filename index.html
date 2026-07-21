@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inglês para Brasileiros — Escolha seu Caminho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0a;
+  --surface:#141414;
+  --surface2:#1b1b1b;
+  --border:#242424;
+  --border-h:#3a3a3a;
+  --text:#e5e5e5;
+  --muted:#8a8a8a;
+  --dim:#5a5a5a;
+
+  /* acentos usados no cabeçalho e no brilho de fundo */
+  --s01-accent:#64DFDF;   /* ciano */
+  --s02-accent:#F59E0B;   /* âmbar */
+  --s03-accent:#6366F1;   /* índigo */
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;}
+
+/* BACKGROUND */
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-15%;left:8%;width:45%;height:55%;background:radial-gradient(ellipse,rgba(100,223,223,.05) 0%,transparent 70%);border-radius:50%;}
+.bg-glow::after{content:'';position:absolute;bottom:-10%;right:6%;width:45%;height:55%;background:radial-gradient(ellipse,rgba(99,102,241,.05) 0%,transparent 70%);border-radius:50%;}
+
+/* HEADER */
+.painel-header{position:relative;z-index:1;text-align:center;padding:72px 24px 40px;}
+.marca{font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.02em;color:var(--muted);display:inline-flex;align-items:center;gap:.5rem;margin-bottom:2.5rem;}
+.marca span{color:var(--s01-accent);font-size:1rem;}
+.painel-header h1{font-size:clamp(2.5rem,6vw,5rem);font-family:'Space Grotesk',sans-serif;font-weight:800;line-height:1.05;letter-spacing:-.02em;margin:16px 0;}
+.painel-header em{font-style:normal;background:linear-gradient(120deg,var(--s01-accent),var(--s02-accent),var(--s03-accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.painel-header .sub{font-size:1.05rem;color:var(--muted);max-width:520px;margin:1rem auto 0;line-height:1.6;}
+
+/* GRID */
+.portais-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1080px;margin:0 auto;padding:24px 24px 40px;width:100%;}
+
+/* CARD */
+.portal-card{--accent:var(--muted);display:flex;flex-direction:column;gap:12px;padding:30px;background:var(--surface);border:1px solid var(--border);border-radius:16px;text-decoration:none;color:var(--text);position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;}
+.portal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:.7;}
+.portal-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.45);}
+
+.portal-top{display:flex;align-items:center;justify-content:space-between;}
+.portal-num{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+.portal-icon{font-size:2rem;line-height:1;}
+.portal-title{font-size:1.4rem;font-family:'Space Grotesk',sans-serif;font-weight:800;margin:6px 0 0;line-height:1.15;}
+.portal-desc{font-size:.9rem;color:var(--muted);line-height:1.55;flex:1;}
+.portal-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+.portal-meta span{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:4px 10px;border-radius:6px;}
+.portal-cta{font-family:'Space Grotesk',sans-serif;font-size:.86rem;font-weight:700;color:var(--accent);margin-top:8px;display:flex;align-items:center;gap:.35rem;transition:gap .2s;}
+.portal-card:hover .portal-cta{gap:.65rem;}
+
+/* MENSAGEM (loading / erro) */
+.grid-msg{grid-column:1/-1;text-align:center;color:var(--muted);padding:48px 24px;border:1px dashed var(--border);border-radius:16px;line-height:1.7;}
+.grid-msg strong{color:var(--text);display:block;font-size:1.1rem;margin-bottom:8px;font-family:'Space Grotesk',sans-serif;}
+.grid-msg code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;font-size:.85em;color:var(--s01-accent);}
+.grid-msg .tec{margin-top:12px;font-size:.78rem;color:var(--dim);}
+
+/* FOOTER */
+.painel-footer{position:relative;z-index:1;margin-top:auto;text-align:center;padding:28px 24px 40px;}
+.painel-footer p{font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:600;color:var(--dim);letter-spacing:.04em;}
+
+@media(max-width:560px){
+  .painel-header{padding:56px 20px 28px;}
+  .portal-card{padding:24px;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<header class="painel-header">
+  <div class="marca"><span>◈</span> Inglês para Brasileiros</div>
+  <h1>Escolha seu<br><em>caminho</em></h1>
+  <p class="sub" id="painel-sub">Carregando sistemas…</p>
+</header>
+
+<main class="portais-grid" id="portais-grid">
+  <div class="grid-msg"><strong>Carregando sistemas…</strong></div>
+</main>
+
+<footer class="painel-footer">
+  <p>Plataforma completa · Do zero à fluência · Sem mensalidade</p>
+</footer>
+
+<script>
+const grid = document.getElementById('portais-grid');
+const sub  = document.getElementById('painel-sub');
+
+// Escapa texto para evitar quebra de HTML caso o JSON traga caracteres especiais.
+const esc = (s='') => String(s).replace(/[&<>"']/g, c => (
+  {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
+));
+
+function renderCards(sistemas){
+  if(!Array.isArray(sistemas) || sistemas.length === 0){
+    grid.innerHTML = `<div class="grid-msg"><strong>Nenhum sistema encontrado</strong>
+      Adicione entradas ao arquivo <code>sistemas.json</code>.</div>`;
+    sub.textContent = 'Escolha seu caminho.';
+    return;
+  }
+
+  sub.textContent = `${sistemas.length} sistemas independentes. Cada um com propósito, ritmo e formato próprios.`;
+
+  grid.innerHTML = sistemas.map(s => {
+    const href = encodeURI(`${s.pasta}/index.html`);
+    const tags = (s.tags || []).map(t => `<span>${esc(t)}</span>`).join('');
+    return `
+      <a href="${href}" class="portal-card" style="--accent:${esc(s.cor)}">
+        <div class="portal-top">
+          <div class="portal-num">${esc(s.numero)}</div>
+          <div class="portal-icon">${esc(s.icone)}</div>
+        </div>
+        <h2 class="portal-title">${esc(s.titulo)}</h2>
+        <p class="portal-desc">${esc(s.descricao)}</p>
+        <div class="portal-meta">${tags}</div>
+        <div class="portal-cta">Entrar →</div>
+      </a>`;
+  }).join('');
+}
+
+function showError(err){
+  const local = location.protocol === 'file:';
+  grid.innerHTML = `<div class="grid-msg">
+    <strong>Não foi possível carregar sistemas.json</strong>
+    ${local
+      ? `Você abriu o arquivo direto do disco (<code>file://</code>), e o navegador bloqueia a leitura de arquivos locais.<br>
+         Rode um servidor simples nesta pasta:<br>
+         <code>python -m http.server</code> e acesse <code>http://localhost:8000</code>.<br>
+         Na versão publicada (GitHub Pages) os cards carregam normalmente.`
+      : `Verifique se o arquivo <code>sistemas.json</code> está na mesma pasta do painel.`}
+    <div class="tec">Detalhe técnico: ${esc(err.message || err)}</div>
+  </div>`;
+  sub.textContent = 'Escolha seu caminho.';
+}
+
+fetch('sistemas.json', { cache: 'no-store' })
+  .then(r => { if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(renderCards)
+  .catch(showError);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Normaliza quebras de linha: texto no repositório usa LF,
+# no checkout o Git ajusta ao sistema. Binários ficam intactos.
+* text=auto
+
+# Tratados como binários (nunca converter EOL)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.docx binary
+*.zip binary
