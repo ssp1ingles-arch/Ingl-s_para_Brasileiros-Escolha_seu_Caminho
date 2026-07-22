@@ -154,9 +154,24 @@ function showError(err){
   sub.textContent = 'Escolha seu caminho.';
 }
 
+// ── Restaurar posição do scroll ao voltar ao painel principal ──
+// Ao clicar em qualquer link (ex.: "Entrar →"), guarda a posição atual.
+window.addEventListener('click', e => {
+  if (e.target.closest('a')) sessionStorage.setItem('scrollPos', window.scrollY);
+});
+// Volta para onde o usuário estava. Como os cards são renderizados de
+// forma assíncrona (fetch), a restauração roda tanto no 'load' quanto
+// logo após os cards existirem — o que acontecer por último com valor
+// salvo é que realmente reposiciona.
+function restoreScroll(){
+  const pos = sessionStorage.getItem('scrollPos');
+  if (pos) { window.scrollTo(0, parseInt(pos)); sessionStorage.removeItem('scrollPos'); }
+}
+window.addEventListener('load', restoreScroll);
+
 fetch('sistemas.json', { cache: 'no-store' })
   .then(r => { if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-  .then(renderCards)
+  .then(sistemas => { renderCards(sistemas); restoreScroll(); })
   .catch(showError);
 </script>
 
