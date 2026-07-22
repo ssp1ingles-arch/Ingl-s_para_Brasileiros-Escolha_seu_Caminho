@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 02 · Conversação para Viagem — Sistema 08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#0EA5E9;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+/* markdown article */
+.md h1,.md h2,.md h3,.md h4{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+.md h1{font-size:1.5rem;margin:30px 0 10px;color:var(--text);}
+.md h2{font-size:1.28rem;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.md h3{font-size:1.08rem;margin:22px 0 8px;color:var(--accent);}
+.md h4{font-size:.98rem;margin:16px 0 6px;color:var(--text);}
+.md p{margin:10px 0;color:#cfcfcf;}
+.md strong{color:var(--text);}
+.md em{color:var(--accent);font-style:normal;}
+.md ul,.md ol{margin:10px 0 10px 22px;color:#cfcfcf;}
+.md li{margin:4px 0;}
+.md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.md code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--accent);font-family:'Space Grotesk',monospace;}
+.md pre.code{background:#0f0f0f;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:12px 0;}
+.md pre.code code{background:none;border:none;color:#d7d7d7;padding:0;font-family:'Space Grotesk',ui-monospace,monospace;font-size:.9rem;line-height:1.7;white-space:pre;}
+.md .tablewrap{overflow-x:auto;margin:14px 0;}
+.md table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.md th{background:var(--surface2);text-align:left;padding:10px 13px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+.md td{padding:10px 13px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+.md tr:nth-child(even){background:rgba(255,255,255,.015);}
+.md blockquote{border-left:3px solid var(--accent);background:var(--surface);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;color:var(--muted);font-style:italic;}
+.md blockquote strong{color:var(--text);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+
+.search{width:100%;margin:26px 0 8px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;}
+.search:focus{outline:none;border-color:var(--accent);}
+.search::placeholder{color:var(--dim);}
+.hint{color:var(--dim);font-size:.82rem;margin-bottom:16px;}
+.group{margin-bottom:10px;border:1px solid var(--border);border-radius:12px;background:var(--surface);overflow:hidden;}
+.group > summary{cursor:pointer;list-style:none;padding:14px 18px;display:flex;align-items:center;gap:12px;font-family:'Space Grotesk',sans-serif;font-weight:700;}
+.group > summary::-webkit-details-marker{display:none;}
+.group > summary::before{content:'▸';color:var(--accent);transition:.2s;}
+.group[open] > summary::before{transform:rotate(90deg);}
+.g-t{flex:1;}.g-c{font-size:.7rem;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);padding:3px 10px;border-radius:20px;}
+.dgrid{padding:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;}
+.dica{background:#101010;border:1px solid var(--border);border-radius:11px;padding:15px;display:flex;flex-direction:column;}
+.d-top{display:flex;align-items:baseline;gap:8px;margin-bottom:9px;}
+.d-n{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.72rem;color:var(--accent);letter-spacing:.05em;}
+.d-w{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;line-height:1.2;}
+.d-en{font-family:'Space Grotesk',sans-serif;color:var(--text);font-size:.95rem;line-height:1.5;background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:9px 12px;}
+.d-tr{color:var(--muted);font-size:.86rem;margin-top:7px;line-height:1.45;}
+.d-note{margin-top:10px;font-size:.8rem;color:#9fd3ec;background:color-mix(in srgb,var(--accent) 8%,transparent);border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:8px;padding:8px 11px;line-height:1.45;}
+.noresult{color:var(--dim);text-align:center;padding:30px;font-style:italic;display:none;}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+<a href="index.html" class="back">← Voltar ao Sistema 08</a>
+<div class="eyebrow">Sistema 08 · Livro 02</div>
+<h1 class="title">Conversação <em>para Viagem</em></h1>
+<p class="lead">Inglês real extraído do guia <i>"Inglês — Conversação para Viagem" (Michaelis Tour)</i>: as frases que o viajante realmente fala e ouve, organizadas por situação, do primeiro contato às mais complexas.</p>
+<div class="metrics"><div class="metric"><b>261</b><span>frases de viagem</span></div><div class="metric"><b>9</b><span>contextos</span></div></div>
+<input class="search" id="search" placeholder="Buscar frase, palavra ou situação…">
+<p class="hint">Cada card traz a frase em inglês e o que ela quer dizer. Use a busca ou navegue pelos contextos.</p>
+<div id="nr" class="noresult">Nada encontrado.</div>
+<!--LIVRO02-START--><style id="livro02-css">
+.book-sep{margin:44px 0 8px;padding:20px 22px;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;}
+.book-sep .bs-flag{font-family:'Space Grotesk',sans-serif;font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
+.book-sep h2{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;margin:6px 0 6px;}
+.book-sep p{color:var(--muted);font-size:.9rem;line-height:1.55;margin:0;}
+.pb-sub{grid-column:1/-1;font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--accent);text-transform:uppercase;margin:6px 2px 0;padding-top:8px;border-top:1px dashed var(--border);}
+.dica .d-w.pb-en{font-size:.98rem;}
+</style>
+<div class="book-sep"><div class="bs-flag">Livro 02 · fonte</div><h2>Inglês — Conversação para Viagem <span style="color:var(--muted);font-weight:600;">(Michaelis Tour)</span></h2><p>O inglês que o viajante realmente fala e ouve, extraído do guia de conversação — organizado por situação, do primeiro contato às situações mais complexas. Cada item traz a frase em inglês e o que ela quer dizer.</p></div>
+<details class="group">
+<summary><span class="g-t">Cumprimentos e Frases do Dia a Dia</span><span class="g-c">40</span></summary>
+<div class="dgrid">
+<div class="dica" data-s="hello / hi olá / oi"><div class="d-top"><span class="d-w pb-en">Hello / Hi</span></div><div class="d-tr">Olá / Oi</div></div>
+<div class="dica" data-s="good morning bom dia"><div class="d-top"><span class="d-w pb-en">Good morning</span></div><div class="d-tr">Bom dia</div></div>
+<div class="dica" data-s="good afternoon boa tarde"><div class="d-top"><span class="d-w pb-en">Good afternoon</span></div><div class="d-tr">Boa tarde</div></div>
+<div class="dica" data-s="good evening boa noite (ao chegar)"><div class="d-top"><span class="d-w pb-en">Good evening</span></div><div class="d-tr">Boa noite (ao chegar)</div></div>
+<div class="dica" data-s="how are you doing? / how are you? como vai?"><div class="d-top"><span class="d-w pb-en">How are you doing? / How are you?</span></div><div class="d-tr">Como vai?</div></div>
+<div class="dica" data-s="fine, thanks estou bem, obrigado"><div class="d-top"><span class="d-w pb-en">Fine, thanks</span></div><div class="d-tr">Estou bem, obrigado</div></div>
+<div class="dica" data-s="fine, and you? estou bem, e você?"><div class="d-top"><span class="d-w pb-en">Fine, and you?</span></div><div class="d-tr">Estou bem, e você?</div></div>
+<div class="dica" data-s="is everything ok? está tudo bem?"><div class="d-top"><span class="d-w pb-en">Is everything OK?</span></div><div class="d-tr">Está tudo bem?</div></div>
+<div class="dica" data-s="ok tudo bem"><div class="d-top"><span class="d-w pb-en">OK</span></div><div class="d-tr">Tudo bem</div></div>
+<div class="pb-sub">Despedida — Farewell</div>
+<div class="dica" data-s="until next time até logo"><div class="d-top"><span class="d-w pb-en">Until next time</span></div><div class="d-tr">Até logo</div></div>
+<div class="dica" data-s="until tomorrow até amanhã"><div class="d-top"><span class="d-w pb-en">Until tomorrow</span></div><div class="d-tr">Até amanhã</div></div>
+<div class="dica" data-s="goodbye adeus"><div class="d-top"><span class="d-w pb-en">Goodbye</span></div><div class="d-tr">Adeus</div></div>
+<div class="dica" data-s="bye, bye tchau"><div class="d-top"><span class="d-w pb-en">Bye, bye</span></div><div class="d-tr">Tchau</div></div>
+<div class="dica" data-s="pleased to meet you foi um prazer"><div class="d-top"><span class="d-w pb-en">Pleased to meet you</span></div><div class="d-tr">Foi um prazer</div></div>
+<div class="dica" data-s="good night boa noite (ao se retirar)"><div class="d-top"><span class="d-w pb-en">Good night</span></div><div class="d-tr">Boa noite (ao se retirar)</div></div>
+<div class="pb-sub">Datas — Birthday, Christmas &amp; New Year</div>
+<div class="dica" data-s="happy birthday feliz aniversário"><div class="d-top"><span class="d-w pb-en">Happy birthday</span></div><div class="d-tr">Feliz aniversário</div></div>
+<div class="dica" data-s="best wishes tudo de bom"><div class="d-top"><span class="d-w pb-en">Best wishes</span></div><div class="d-tr">Tudo de bom</div></div>
+<div class="dica" data-s="merry christmas feliz natal"><div class="d-top"><span class="d-w pb-en">Merry Christmas</span></div><div class="d-tr">Feliz Natal</div></div>
+<div class="dica" data-s="happy new year feliz ano novo"><div class="d-top"><span class="d-w pb-en">Happy New Year</span></div><div class="d-tr">Feliz Ano Novo</div></div>
+<div class="dica" data-s="season&#x27;s greetings boas festas"><div class="d-top"><span class="d-w pb-en">Season&#x27;s Greetings</span></div><div class="d-tr">Boas Festas</div></div>
+<div class="pb-sub">Desculpas e Pêsames — Apologies &amp; Sympathy</div>
+<div class="dica" data-s="excuse me, please desculpe-me, por favor"><div class="d-top"><span class="d-w pb-en">Excuse me, please</span></div><div class="d-tr">Desculpe-me, por favor</div></div>
+<div class="dica" data-s="please, forgive me por favor, perdoe-me"><div class="d-top"><span class="d-w pb-en">Please, forgive me</span></div><div class="d-tr">Por favor, perdoe-me</div></div>
+<div class="dica" data-s="i&#x27;m sorry sinto muito"><div class="d-top"><span class="d-w pb-en">I&#x27;m sorry</span></div><div class="d-tr">Sinto muito</div></div>
+<div class="dica" data-s="sorry to keep you waiting desculpe fazê-lo(a) esperar"><div class="d-top"><span class="d-w pb-en">Sorry to keep you waiting</span></div><div class="d-tr">Desculpe fazê-lo(a) esperar</div></div>
+<div class="dica" data-s="that&#x27;s all right tudo bem"><div class="d-top"><span class="d-w pb-en">That&#x27;s all right</span></div><div class="d-tr">Tudo bem</div></div>
+<div class="dica" data-s="my condolences minhas condolências"><div class="d-top"><span class="d-w pb-en">My condolences</span></div><div class="d-tr">Minhas condolências</div></div>
+<div class="dica" data-s="i&#x27;d like to express my sympathy meus pêsames"><div class="d-top"><span class="d-w pb-en">I&#x27;d like to express my sympathy</span></div><div class="d-tr">Meus pêsames</div></div>
+<div class="dica" data-s="i am very sorry eu realmente sinto muito"><div class="d-top"><span class="d-w pb-en">I am very sorry</span></div><div class="d-tr">Eu realmente sinto muito</div></div>
+<div class="pb-sub">Frases para todos os dias — Everyday phrases</div>
+<div class="dica" data-s="yes sim"><div class="d-top"><span class="d-w pb-en">Yes</span></div><div class="d-tr">Sim</div></div>
+<div class="dica" data-s="no não"><div class="d-top"><span class="d-w pb-en">No</span></div><div class="d-tr">Não</div></div>
+<div class="dica" data-s="i don&#x27;t know eu não sei"><div class="d-top"><span class="d-w pb-en">I don&#x27;t know</span></div><div class="d-tr">Eu não sei</div></div>
+<div class="dica" data-s="excuse me desculpe-me / com licença"><div class="d-top"><span class="d-w pb-en">Excuse me</span></div><div class="d-tr">Desculpe-me / Com licença</div></div>
+<div class="dica" data-s="i beg your pardon? / i didn&#x27;t understand não entendi"><div class="d-top"><span class="d-w pb-en">I beg your pardon? / I didn&#x27;t understand</span></div><div class="d-tr">Não entendi</div></div>
+<div class="dica" data-s="please, speak slowly por favor, fale devagar"><div class="d-top"><span class="d-w pb-en">Please, speak slowly</span></div><div class="d-tr">Por favor, fale devagar</div></div>
+<div class="dica" data-s="please, write it down por favor, escreva"><div class="d-top"><span class="d-w pb-en">Please, write it down</span></div><div class="d-tr">Por favor, escreva</div></div>
+<div class="dica" data-s="please, show me the word in the book por favor, mostre a palavra no livro"><div class="d-top"><span class="d-w pb-en">Please, show me the word in the book</span></div><div class="d-tr">Por favor, mostre a palavra no livro</div></div>
+<div class="dica" data-s="good luck! boa sorte!"><div class="d-top"><span class="d-w pb-en">Good luck!</span></div><div class="d-tr">Boa sorte!</div></div>
+<div class="dica" data-s="please por favor"><div class="d-top"><span class="d-w pb-en">Please</span></div><div class="d-tr">Por favor</div></div>
+<div class="dica" data-s="thank you obrigado"><div class="d-top"><span class="d-w pb-en">Thank you</span></div><div class="d-tr">Obrigado</div></div>
+<div class="dica" data-s="you are welcome / don&#x27;t mention it de nada"><div class="d-top"><span class="d-w pb-en">You are welcome / Don&#x27;t mention it</span></div><div class="d-tr">De nada</div></div>
+</div></details>
+<details class="group">
+<summary><span class="g-t">Pedindo Ajuda e Conversando</span><span class="g-c">42</span></summary>
+<div class="dgrid">
+<div class="dica" data-s="i am brazilian / portuguese eu sou brasileiro / português"><div class="d-top"><span class="d-w pb-en">I am Brazilian / Portuguese</span></div><div class="d-tr">Eu sou brasileiro / português</div></div>
+<div class="dica" data-s="my name is... meu nome é..."><div class="d-top"><span class="d-w pb-en">My name is...</span></div><div class="d-tr">Meu nome é...</div></div>
+<div class="dica" data-s="i am hungry eu estou com fome"><div class="d-top"><span class="d-w pb-en">I am hungry</span></div><div class="d-tr">Eu estou com fome</div></div>
+<div class="dica" data-s="i am thirsty eu estou com sede"><div class="d-top"><span class="d-w pb-en">I am thirsty</span></div><div class="d-tr">Eu estou com sede</div></div>
+<div class="dica" data-s="do you take traveller&#x27;s cheques? você aceita cheques de viagem?"><div class="d-top"><span class="d-w pb-en">Do you take traveller&#x27;s cheques?</span></div><div class="d-tr">Você aceita cheques de viagem?</div></div>
+<div class="dica" data-s="do you take credit cards? você aceita cartões de crédito?"><div class="d-top"><span class="d-w pb-en">Do you take credit cards?</span></div><div class="d-tr">Você aceita cartões de crédito?</div></div>
+<div class="pb-sub">Ajuda — Help</div>
+<div class="dica" data-s="can you help me? você pode me ajudar?"><div class="d-top"><span class="d-w pb-en">Can you help me?</span></div><div class="d-tr">Você pode me ajudar?</div></div>
+<div class="dica" data-s="do you speak portuguese / spanish? você fala português / espanhol?"><div class="d-top"><span class="d-w pb-en">Do you speak Portuguese / Spanish?</span></div><div class="d-tr">Você fala português / espanhol?</div></div>
+<div class="dica" data-s="does anybody here speak portuguese / spanish? alguém aqui fala português / espanhol?"><div class="d-top"><span class="d-w pb-en">Does anybody here speak Portuguese / Spanish?</span></div><div class="d-tr">Alguém aqui fala português / espanhol?</div></div>
+<div class="dica" data-s="i don&#x27;t speak much english eu não falo inglês muito bem"><div class="d-top"><span class="d-w pb-en">I don&#x27;t speak much English</span></div><div class="d-tr">Eu não falo inglês muito bem</div></div>
+<div class="dica" data-s="do you understand me? você me compreende?"><div class="d-top"><span class="d-w pb-en">Do you understand me?</span></div><div class="d-tr">Você me compreende?</div></div>
+<div class="dica" data-s="i (don&#x27;t) understand eu (não) compreendo"><div class="d-top"><span class="d-w pb-en">I (don&#x27;t) understand</span></div><div class="d-tr">Eu (não) compreendo</div></div>
+<div class="dica" data-s="what does this word mean? o que significa esta palavra?"><div class="d-top"><span class="d-w pb-en">What does this word mean?</span></div><div class="d-tr">O que significa esta palavra?</div></div>
+<div class="dica" data-s="what do you call this? qual o nome disto?"><div class="d-top"><span class="d-w pb-en">What do you call this?</span></div><div class="d-tr">Qual o nome disto?</div></div>
+<div class="dica" data-s="would you say that again, please? você pode repetir, por favor?"><div class="d-top"><span class="d-w pb-en">Would you say that again, please?</span></div><div class="d-tr">Você pode repetir, por favor?</div></div>
+<div class="dica" data-s="can you translate this for me, please? pode me traduzir isso, por favor?"><div class="d-top"><span class="d-w pb-en">Can you translate this for me, please?</span></div><div class="d-tr">Pode me traduzir isso, por favor?</div></div>
+<div class="dica" data-s="how do you say this in english? como se diz isto em inglês?"><div class="d-top"><span class="d-w pb-en">How do you say this in English?</span></div><div class="d-tr">Como se diz isto em inglês?</div></div>
+<div class="pb-sub">Perguntas — Questions</div>
+<div class="dica" data-s="how much is it? quanto custa?"><div class="d-top"><span class="d-w pb-en">How much is it?</span></div><div class="d-tr">Quanto custa?</div></div>
+<div class="dica" data-s="when? quando?"><div class="d-top"><span class="d-w pb-en">When?</span></div><div class="d-tr">Quando?</div></div>
+<div class="dica" data-s="how? como?"><div class="d-top"><span class="d-w pb-en">How?</span></div><div class="d-tr">Como?</div></div>
+<div class="dica" data-s="how much / many? quantos?"><div class="d-top"><span class="d-w pb-en">How much / many?</span></div><div class="d-tr">Quantos?</div></div>
+<div class="dica" data-s="who? quem?"><div class="d-top"><span class="d-w pb-en">Who?</span></div><div class="d-tr">Quem?</div></div>
+<div class="dica" data-s="where? onde?"><div class="d-top"><span class="d-w pb-en">Where?</span></div><div class="d-tr">Onde?</div></div>
+<div class="pb-sub">Conhecendo pessoas — Meeting people</div>
+<div class="dica" data-s="i like / i don&#x27;t like this eu gosto / eu não gosto disso"><div class="d-top"><span class="d-w pb-en">I like / I don&#x27;t like this</span></div><div class="d-tr">Eu gosto / eu não gosto disso</div></div>
+<div class="dica" data-s="do you like ice cream? você gosta de sorvete?"><div class="d-top"><span class="d-w pb-en">Do you like ice cream?</span></div><div class="d-tr">Você gosta de sorvete?</div></div>
+<div class="dica" data-s="what is your profession? qual a sua profissão?"><div class="d-top"><span class="d-w pb-en">What is your profession?</span></div><div class="d-tr">Qual a sua profissão?</div></div>
+<div class="dica" data-s="would you care for a drink? você aceita uma bebida?"><div class="d-top"><span class="d-w pb-en">Would you care for a drink?</span></div><div class="d-tr">Você aceita uma bebida?</div></div>
+<div class="dica" data-s="yes, please sim, por favor"><div class="d-top"><span class="d-w pb-en">Yes, please</span></div><div class="d-tr">Sim, por favor</div></div>
+<div class="dica" data-s="no, thank you não, obrigado"><div class="d-top"><span class="d-w pb-en">No, thank you</span></div><div class="d-tr">Não, obrigado</div></div>
+<div class="dica" data-s="i&#x27;d love to adoraria"><div class="d-top"><span class="d-w pb-en">I&#x27;d love to</span></div><div class="d-tr">Adoraria</div></div>
+<div class="dica" data-s="that&#x27;s very kind of you é muito gentil de sua parte"><div class="d-top"><span class="d-w pb-en">That&#x27;s very kind of you</span></div><div class="d-tr">É muito gentil de sua parte</div></div>
+<div class="dica" data-s="would you like to go dancing? você gostaria de ir dançar?"><div class="d-top"><span class="d-w pb-en">Would you like to go dancing?</span></div><div class="d-tr">Você gostaria de ir dançar?</div></div>
+<div class="dica" data-s="would you like to go for dinner? você gostaria de jantar?"><div class="d-top"><span class="d-w pb-en">Would you like to go for dinner?</span></div><div class="d-tr">Você gostaria de jantar?</div></div>
+<div class="dica" data-s="where shall we meet? onde podemos nos encontrar?"><div class="d-top"><span class="d-w pb-en">Where shall we meet?</span></div><div class="d-tr">Onde podemos nos encontrar?</div></div>
+<div class="dica" data-s="what time shall we meet? a que horas podemos nos encontrar?"><div class="d-top"><span class="d-w pb-en">What time shall we meet?</span></div><div class="d-tr">A que horas podemos nos encontrar?</div></div>
+<div class="dica" data-s="what is your address? qual é o seu endereço?"><div class="d-top"><span class="d-w pb-en">What is your address?</span></div><div class="d-tr">Qual é o seu endereço?</div></div>
+<div class="dica" data-s="i am staying at the plaza hotel eu estou no hotel plaza"><div class="d-top"><span class="d-w pb-en">I am staying at the Plaza Hotel</span></div><div class="d-tr">Eu estou no Hotel Plaza</div></div>
+<div class="dica" data-s="i&#x27;ll wait for you at the hotel lobby vou lhe esperar no hall do hotel"><div class="d-top"><span class="d-w pb-en">I&#x27;ll wait for you at the hotel lobby</span></div><div class="d-tr">Vou lhe esperar no hall do hotel</div></div>
+<div class="pb-sub">Você pode ouvir — What you&#x27;ll hear</div>
+<div class="dica" data-s="your passport, please seu passaporte, por favor"><div class="d-top"><span class="d-w pb-en">Your passport, please</span></div><div class="d-tr">Seu passaporte, por favor</div></div>
+<div class="dica" data-s="may i help you? posso lhe ajudar?"><div class="d-top"><span class="d-w pb-en">May I help you?</span></div><div class="d-tr">Posso lhe ajudar?</div></div>
+<div class="dica" data-s="do you have change? você tem trocado?"><div class="d-top"><span class="d-w pb-en">Do you have change?</span></div><div class="d-tr">Você tem trocado?</div></div>
+<div class="dica" data-s="what would you like? o que você deseja?"><div class="d-top"><span class="d-w pb-en">What would you like?</span></div><div class="d-tr">O que você deseja?</div></div>
+</div></details>
+<details class="group">
+<summary><span class="g-t">Aeroporto e Alfândega</span><span class="g-c">44</span></summary>
+<div class="dgrid">
+<div class="pb-sub">Você pode ouvir da imigração</div>
+<div class="dica" data-s="have you anything to declare? tem algo a declarar?"><div class="d-top"><span class="d-w pb-en">Have you anything to declare?</span></div><div class="d-tr">Tem algo a declarar?</div></div>
+<div class="dica" data-s="what is the purpose of your travel? qual o motivo de sua viagem?"><div class="d-top"><span class="d-w pb-en">What is the purpose of your travel?</span></div><div class="d-tr">Qual o motivo de sua viagem?</div></div>
+<div class="dica" data-s="where are you going? para onde você vai?"><div class="d-top"><span class="d-w pb-en">Where are you going?</span></div><div class="d-tr">Para onde você vai?</div></div>
+<div class="dica" data-s="where are you staying? onde vai se hospedar?"><div class="d-top"><span class="d-w pb-en">Where are you staying?</span></div><div class="d-tr">Onde vai se hospedar?</div></div>
+<div class="dica" data-s="how long are you staying? quanto tempo você vai ficar?"><div class="d-top"><span class="d-w pb-en">How long are you staying?</span></div><div class="d-tr">Quanto tempo você vai ficar?</div></div>
+<div class="dica" data-s="where do you come from? de onde você vem?"><div class="d-top"><span class="d-w pb-en">Where do you come from?</span></div><div class="d-tr">De onde você vem?</div></div>
+<div class="pb-sub">Alfândega — Customs</div>
+<div class="dica" data-s="how many suitcases do you have? quantas malas o senhor tem?"><div class="d-top"><span class="d-w pb-en">How many suitcases do you have?</span></div><div class="d-tr">Quantas malas o senhor tem?</div></div>
+<div class="dica" data-s="just this one (these two) só esta aqui (estas duas)"><div class="d-top"><span class="d-w pb-en">Just this one (these two)</span></div><div class="d-tr">Só esta aqui (estas duas)</div></div>
+<div class="dica" data-s="would you please open it (them)? poderia abri-la(s)?"><div class="d-top"><span class="d-w pb-en">Would you please open it (them)?</span></div><div class="d-tr">Poderia abri-la(s)?</div></div>
+<div class="dica" data-s="any more luggage? mais alguma bagagem?"><div class="d-top"><span class="d-w pb-en">Any more luggage?</span></div><div class="d-tr">Mais alguma bagagem?</div></div>
+<div class="dica" data-s="only this hand luggage só esta bagagem de mão"><div class="d-top"><span class="d-w pb-en">Only this hand luggage</span></div><div class="d-tr">Só esta bagagem de mão</div></div>
+<div class="dica" data-s="anything to declare? algo a declarar?"><div class="d-top"><span class="d-w pb-en">Anything to declare?</span></div><div class="d-tr">Algo a declarar?</div></div>
+<div class="dica" data-s="yes, some medicines / no sim, alguns remédios / não"><div class="d-top"><span class="d-w pb-en">Yes, some medicines / No</span></div><div class="d-tr">Sim, alguns remédios / Não</div></div>
+<div class="dica" data-s="passengers passageiros"><div class="d-top"><span class="d-w pb-en">Passengers</span></div><div class="d-tr">Passageiros</div></div>
+<div class="dica" data-s="delay atraso"><div class="d-top"><span class="d-w pb-en">Delay</span></div><div class="d-tr">Atraso</div></div>
+<div class="dica" data-s="flight vôo"><div class="d-top"><span class="d-w pb-en">Flight</span></div><div class="d-tr">Vôo</div></div>
+<div class="dica" data-s="gate number portão número"><div class="d-top"><span class="d-w pb-en">Gate number</span></div><div class="d-tr">Portão número</div></div>
+<div class="dica" data-s="departure partida"><div class="d-top"><span class="d-w pb-en">Departure</span></div><div class="d-tr">Partida</div></div>
+<div class="pb-sub">Chegando ao aeroporto de destino</div>
+<div class="dica" data-s="where is the duty-free shop? onde fica o free-shop?"><div class="d-top"><span class="d-w pb-en">Where is the duty-free shop?</span></div><div class="d-tr">Onde fica o free-shop?</div></div>
+<div class="dica" data-s="where can i change some money? onde posso trocar dinheiro?"><div class="d-top"><span class="d-w pb-en">Where can I change some money?</span></div><div class="d-tr">Onde posso trocar dinheiro?</div></div>
+<div class="dica" data-s="where do i get the bus to the hotel? onde posso pegar o ônibus para o hotel?"><div class="d-top"><span class="d-w pb-en">Where do I get the bus to the hotel?</span></div><div class="d-tr">Onde posso pegar o ônibus para o hotel?</div></div>
+<div class="dica" data-s="where do i get a taxi / cab? onde eu pego um táxi?"><div class="d-top"><span class="d-w pb-en">Where do I get a taxi / cab?</span></div><div class="d-tr">Onde eu pego um táxi?</div></div>
+<div class="dica" data-s="where are the telephones? onde ficam os telefones?"><div class="d-top"><span class="d-w pb-en">Where are the telephones?</span></div><div class="d-tr">Onde ficam os telefones?</div></div>
+<div class="dica" data-s="i have not found my luggage não achei minha bagagem"><div class="d-top"><span class="d-w pb-en">I have not found my luggage</span></div><div class="d-tr">Não achei minha bagagem</div></div>
+<div class="dica" data-s="where is the lost and found sector? onde fica a seção de achados e perdidos?"><div class="d-top"><span class="d-w pb-en">Where is the lost and found sector?</span></div><div class="d-tr">Onde fica a seção de achados e perdidos?</div></div>
+<div class="pb-sub">Comprando passagem</div>
+<div class="dica" data-s="where can i buy tickets? onde posso comprar passagens?"><div class="d-top"><span class="d-w pb-en">Where can I buy tickets?</span></div><div class="d-tr">Onde posso comprar passagens?</div></div>
+<div class="dica" data-s="where is the varig / american airlines office? onde fica o escritório da varig / american airlines?"><div class="d-top"><span class="d-w pb-en">Where is the Varig / American Airlines office?</span></div><div class="d-tr">Onde fica o escritório da Varig / American Airlines?</div></div>
+<div class="dica" data-s="when is the next flight to brazil? quando é o próximo vôo para o brasil?"><div class="d-top"><span class="d-w pb-en">When is the next flight to Brazil?</span></div><div class="d-tr">Quando é o próximo vôo para o Brasil?</div></div>
+<div class="dica" data-s="at what time does the plane leave? a que horas o vôo sai?"><div class="d-top"><span class="d-w pb-en">At what time does the plane leave?</span></div><div class="d-tr">A que horas o vôo sai?</div></div>
+<div class="dica" data-s="i want to book a seat quero reservar um lugar"><div class="d-top"><span class="d-w pb-en">I want to book a seat</span></div><div class="d-tr">Quero reservar um lugar</div></div>
+<div class="dica" data-s="i want two tickets quero duas passagens"><div class="d-top"><span class="d-w pb-en">I want two tickets</span></div><div class="d-tr">Quero duas passagens</div></div>
+<div class="dica" data-s="is there a flight to orlando? há um vôo para orlando?"><div class="d-top"><span class="d-w pb-en">Is there a flight to Orlando?</span></div><div class="d-tr">Há um vôo para Orlando?</div></div>
+<div class="dica" data-s="how much is a round ticket to brazil? quanto custa uma passagem de ida e volta para o brasil?"><div class="d-top"><span class="d-w pb-en">How much is a round ticket to Brazil?</span></div><div class="d-tr">Quanto custa uma passagem de ida e volta para o Brasil?</div></div>
+<div class="pb-sub">No aeroporto, ao voltar</div>
+<div class="dica" data-s="i want to change my reservation quero mudar minha reserva"><div class="d-top"><span class="d-w pb-en">I want to change my reservation</span></div><div class="d-tr">Quero mudar minha reserva</div></div>
+<div class="dica" data-s="what is the flight number? qual o número do vôo?"><div class="d-top"><span class="d-w pb-en">What is the flight number?</span></div><div class="d-tr">Qual o número do vôo?</div></div>
+<div class="dica" data-s="which gate is it? qual o portão?"><div class="d-top"><span class="d-w pb-en">Which gate is it?</span></div><div class="d-tr">Qual o portão?</div></div>
+<div class="dica" data-s="is there a delay? está com atraso?"><div class="d-top"><span class="d-w pb-en">Is there a delay?</span></div><div class="d-tr">Está com atraso?</div></div>
+<div class="dica" data-s="is there a bar / snack bar / restaurant? há um bar / lanchonete / restaurante?"><div class="d-top"><span class="d-w pb-en">Is there a bar / snack bar / restaurant?</span></div><div class="d-tr">Há um bar / lanchonete / restaurante?</div></div>
+<div class="pb-sub">Saindo do aeroporto</div>
+<div class="dica" data-s="where can i get a cart? onde posso arrumar um carrinho?"><div class="d-top"><span class="d-w pb-en">Where can I get a cart?</span></div><div class="d-tr">Onde posso arrumar um carrinho?</div></div>
+<div class="dica" data-s="can you help me with my bags? pode me ajudar com as malas?"><div class="d-top"><span class="d-w pb-en">Can you help me with my bags?</span></div><div class="d-tr">Pode me ajudar com as malas?</div></div>
+<div class="dica" data-s="do you know how much is the taxi fare to downtown? você sabe quanto é a corrida de táxi até o centro?"><div class="d-top"><span class="d-w pb-en">Do you know how much is the taxi fare to downtown?</span></div><div class="d-tr">Você sabe quanto é a corrida de táxi até o centro?</div></div>
+<div class="dica" data-s="could you get me a cab (taxi)? pode me arrumar um táxi?"><div class="d-top"><span class="d-w pb-en">Could you get me a cab (taxi)?</span></div><div class="d-tr">Pode me arrumar um táxi?</div></div>
+<div class="dica" data-s="is there a bus service? existe serviço de ônibus?"><div class="d-top"><span class="d-w pb-en">Is there a bus service?</span></div><div class="d-tr">Existe serviço de ônibus?</div></div>
+<div class="dica" data-s="how much is the fare? quanto é a passagem?"><div class="d-top"><span class="d-w pb-en">How much is the fare?</span></div><div class="d-tr">Quanto é a passagem?</div></div>
+</div></details>
+<details class="group">
+<summary><span class="g-t">Orientações na Rua</span><span class="g-c">25</span></summary>
+<div class="dgrid">
+<div class="dica" data-s="excuse me, could you help me? desculpe-me, pode me ajudar?"><div class="d-top"><span class="d-w pb-en">Excuse me, could you help me?</span></div><div class="d-tr">Desculpe-me, pode me ajudar?</div></div>
+<div class="dica" data-s="how can i get to this address? como faço para chegar a este endereço?"><div class="d-top"><span class="d-w pb-en">How can I get to this address?</span></div><div class="d-tr">Como faço para chegar a este endereço?</div></div>
+<div class="dica" data-s="can i go there by foot? dá para ir a pé?"><div class="d-top"><span class="d-w pb-en">Can I go there by foot?</span></div><div class="d-tr">Dá para ir a pé?</div></div>
+<div class="dica" data-s="can you show me on this map where i am? pode me mostrar neste mapa onde estou?"><div class="d-top"><span class="d-w pb-en">Can you show me on this map where I am?</span></div><div class="d-tr">Pode me mostrar neste mapa onde estou?</div></div>
+<div class="dica" data-s="please, how can i get to the post office? por favor, como faço para chegar à agência de correio?"><div class="d-top"><span class="d-w pb-en">Please, how can I get to the post office?</span></div><div class="d-tr">Por favor, como faço para chegar à agência de correio?</div></div>
+<div class="pb-sub">Recebendo orientações</div>
+<div class="dica" data-s="go ahead three blocks vá em frente três quarteirões"><div class="d-top"><span class="d-w pb-en">Go ahead three blocks</span></div><div class="d-tr">Vá em frente três quarteirões</div></div>
+<div class="dica" data-s="turn left / right vire à esquerda / à direita"><div class="d-top"><span class="d-w pb-en">Turn left / right</span></div><div class="d-tr">Vire à esquerda / à direita</div></div>
+<div class="dica" data-s="stop pare"><div class="d-top"><span class="d-w pb-en">Stop</span></div><div class="d-tr">Pare</div></div>
+<div class="pb-sub">Vocabulário — Orientações</div>
+<div class="dica" data-s="here aqui"><div class="d-top"><span class="d-w pb-en">here</span></div><div class="d-tr">aqui</div></div>
+<div class="dica" data-s="avenue avenida"><div class="d-top"><span class="d-w pb-en">avenue</span></div><div class="d-tr">avenida</div></div>
+<div class="dica" data-s="right direita"><div class="d-top"><span class="d-w pb-en">right</span></div><div class="d-tr">direita</div></div>
+<div class="dica" data-s="ahead em frente"><div class="d-top"><span class="d-w pb-en">ahead</span></div><div class="d-tr">em frente</div></div>
+<div class="dica" data-s="left esquerda"><div class="d-top"><span class="d-w pb-en">left</span></div><div class="d-tr">esquerda</div></div>
+<div class="dica" data-s="corner esquina"><div class="d-top"><span class="d-w pb-en">corner</span></div><div class="d-tr">esquina</div></div>
+<div class="dica" data-s="there lá"><div class="d-top"><span class="d-w pb-en">there</span></div><div class="d-tr">lá</div></div>
+<div class="dica" data-s="block quarteirão"><div class="d-top"><span class="d-w pb-en">block</span></div><div class="d-tr">quarteirão</div></div>
+<div class="dica" data-s="street rua"><div class="d-top"><span class="d-w pb-en">street</span></div><div class="d-tr">rua</div></div>
+<div class="dica" data-s="north norte"><div class="d-top"><span class="d-w pb-en">north</span></div><div class="d-tr">norte</div></div>
+<div class="dica" data-s="south sul"><div class="d-top"><span class="d-w pb-en">south</span></div><div class="d-tr">sul</div></div>
+<div class="dica" data-s="east leste"><div class="d-top"><span class="d-w pb-en">east</span></div><div class="d-tr">leste</div></div>
+<div class="dica" data-s="west oeste"><div class="d-top"><span class="d-w pb-en">west</span></div><div class="d-tr">oeste</div></div>
+<div class="dica" data-s="up acima"><div class="d-top"><span class="d-w pb-en">up</span></div><div class="d-tr">acima</div></div>
+<div class="dica" data-s="down abaixo"><div class="d-top"><span class="d-w pb-en">down</span></div><div class="d-tr">abaixo</div></div>
+<div class="dica" data-s="near perto"><div class="d-top"><span class="d-w pb-en">near</span></div><div class="d-tr">perto</div></div>
+<div class="dica" data-s="far longe"><div class="d-top"><span class="d-w pb-en">far</span></div><div class="d-tr">longe</div></div>
+</div></details>
+<details class="group">
+<summary><span class="g-t">Táxi, Ônibus, Metrô e Trem</span><span class="g-c">33</span></summary>
+<div class="dgrid">
+<div class="pb-sub">Táxi — Taxi / Cab</div>
+<div class="dica" data-s="please, call me a taxi por favor, chame-me um táxi"><div class="d-top"><span class="d-w pb-en">Please, call me a taxi</span></div><div class="d-tr">Por favor, chame-me um táxi</div></div>
+<div class="dica" data-s="are you free? está livre?"><div class="d-top"><span class="d-w pb-en">Are you free?</span></div><div class="d-tr">Está livre?</div></div>
+<div class="dica" data-s="please, take me to the airport por favor, leve-me ao aeroporto"><div class="d-top"><span class="d-w pb-en">Please, take me to the airport</span></div><div class="d-tr">Por favor, leve-me ao aeroporto</div></div>
+<div class="dica" data-s="please, take me to downtown por favor, leve-me ao centro da cidade"><div class="d-top"><span class="d-w pb-en">Please, take me to downtown</span></div><div class="d-tr">Por favor, leve-me ao centro da cidade</div></div>
+<div class="dica" data-s="please, take me to this address por favor, leve-me a este endereço"><div class="d-top"><span class="d-w pb-en">Please, take me to this address</span></div><div class="d-tr">Por favor, leve-me a este endereço</div></div>
+<div class="dica" data-s="is it far? é longe?"><div class="d-top"><span class="d-w pb-en">Is it far?</span></div><div class="d-tr">É longe?</div></div>
+<div class="dica" data-s="how much will it be? quanto vai custar?"><div class="d-top"><span class="d-w pb-en">How much will it be?</span></div><div class="d-tr">Quanto vai custar?</div></div>
+<div class="dica" data-s="please, i&#x27;m late, can you hurry? por favor, estou atrasado, pode ir mais depressa?"><div class="d-top"><span class="d-w pb-en">Please, I&#x27;m late, can you hurry?</span></div><div class="d-tr">Por favor, estou atrasado, pode ir mais depressa?</div></div>
+<div class="dica" data-s="stop here, please pare aqui, por favor"><div class="d-top"><span class="d-w pb-en">Stop here, please</span></div><div class="d-tr">Pare aqui, por favor</div></div>
+<div class="dica" data-s="it&#x27;s too much! é demais!"><div class="d-top"><span class="d-w pb-en">It&#x27;s too much!</span></div><div class="d-tr">É demais!</div></div>
+<div class="pb-sub">Ônibus — Bus</div>
+<div class="dica" data-s="i want a bus to the airport quero um ônibus para o aeroporto"><div class="d-top"><span class="d-w pb-en">I want a bus to the airport</span></div><div class="d-tr">Quero um ônibus para o aeroporto</div></div>
+<div class="dica" data-s="how much is the bus fare? quanto é a passagem de ônibus?"><div class="d-top"><span class="d-w pb-en">How much is the bus fare?</span></div><div class="d-tr">Quanto é a passagem de ônibus?</div></div>
+<div class="dica" data-s="where do i get the bus to...? onde pego o ônibus para...?"><div class="d-top"><span class="d-w pb-en">Where do I get the bus to...?</span></div><div class="d-tr">Onde pego o ônibus para...?</div></div>
+<div class="dica" data-s="do i need to change buses? é preciso mudar de ônibus?"><div class="d-top"><span class="d-w pb-en">Do I need to change buses?</span></div><div class="d-tr">É preciso mudar de ônibus?</div></div>
+<div class="dica" data-s="the next bus / the last bus o próximo ônibus / o último ônibus"><div class="d-top"><span class="d-w pb-en">The next bus / The last bus</span></div><div class="d-tr">O próximo ônibus / O último ônibus</div></div>
+<div class="dica" data-s="is this seat free? este lugar está vago?"><div class="d-top"><span class="d-w pb-en">Is this seat free?</span></div><div class="d-tr">Este lugar está vago?</div></div>
+<div class="dica" data-s="can you tell me where to get off? você pode me avisar quando devo descer?"><div class="d-top"><span class="d-w pb-en">Can you tell me where to get off?</span></div><div class="d-tr">Você pode me avisar quando devo descer?</div></div>
+<div class="dica" data-s="i want to get off eu quero descer"><div class="d-top"><span class="d-w pb-en">I want to get off</span></div><div class="d-tr">Eu quero descer</div></div>
+<div class="dica" data-s="the next stop, please no próximo ponto, por favor"><div class="d-top"><span class="d-w pb-en">The next stop, please</span></div><div class="d-tr">No próximo ponto, por favor</div></div>
+<div class="dica" data-s="bus stop ponto de ônibus"><div class="d-top"><span class="d-w pb-en">bus stop</span></div><div class="d-tr">ponto de ônibus</div></div>
+<div class="dica" data-s="terminal, bus station rodoviária"><div class="d-top"><span class="d-w pb-en">terminal, bus station</span></div><div class="d-tr">rodoviária</div></div>
+<div class="pb-sub">Metrô — Subway / Underground</div>
+<div class="dica" data-s="where is the nearest subway / underground station? onde é a estação de metrô mais próxima?"><div class="d-top"><span class="d-w pb-en">Where is the nearest subway / underground station?</span></div><div class="d-tr">Onde é a estação de metrô mais próxima?</div></div>
+<div class="dica" data-s="do you have a subway / an underground map? você tem um mapa do metrô?"><div class="d-top"><span class="d-w pb-en">Do you have a subway / an underground map?</span></div><div class="d-tr">Você tem um mapa do metrô?</div></div>
+<div class="dica" data-s="i want to go to... eu quero ir para..."><div class="d-top"><span class="d-w pb-en">I want to go to...</span></div><div class="d-tr">Eu quero ir para...</div></div>
+<div class="dica" data-s="which line goes to...? qual linha vai para...?"><div class="d-top"><span class="d-w pb-en">Which line goes to...?</span></div><div class="d-tr">Qual linha vai para...?</div></div>
+<div class="dica" data-s="one / two ticket(s), please um / dois bilhete(s), por favor"><div class="d-top"><span class="d-w pb-en">One / two ticket(s), please</span></div><div class="d-tr">Um / dois bilhete(s), por favor</div></div>
+<div class="dica" data-s="i want a ticket to the ...station eu quero um bilhete para a estação..."><div class="d-top"><span class="d-w pb-en">I want a ticket to the ...station</span></div><div class="d-tr">Eu quero um bilhete para a estação...</div></div>
+<div class="pb-sub">Trem — Train (você pode ouvir)</div>
+<div class="dica" data-s="it leaves at half past eight sai às oito e meia"><div class="d-top"><span class="d-w pb-en">It leaves at half past eight</span></div><div class="d-tr">Sai às oito e meia</div></div>
+<div class="dica" data-s="it arrives at eight chega às oito"><div class="d-top"><span class="d-w pb-en">It arrives at eight</span></div><div class="d-tr">Chega às oito</div></div>
+<div class="dica" data-s="it&#x27;s platform number one é na plataforma número um"><div class="d-top"><span class="d-w pb-en">It&#x27;s platform number one</span></div><div class="d-tr">É na plataforma número um</div></div>
+<div class="dica" data-s="you have to change trains at... você tem de fazer baldeação em..."><div class="d-top"><span class="d-w pb-en">You have to change trains at...</span></div><div class="d-tr">Você tem de fazer baldeação em...</div></div>
+<div class="dica" data-s="when do you want the ticket for? para quando você quer a passagem?"><div class="d-top"><span class="d-w pb-en">When do you want the ticket for?</span></div><div class="d-tr">Para quando você quer a passagem?</div></div>
+<div class="dica" data-s="single or return ticket? passagem só de ida ou de ida e volta?"><div class="d-top"><span class="d-w pb-en">Single or return ticket?</span></div><div class="d-tr">Passagem só de ida ou de ida e volta?</div></div>
+</div></details>
+<details class="group">
+<summary><span class="g-t">Hotel</span><span class="g-c">39</span></summary>
+<div class="dgrid">
+<div class="pb-sub">Fazendo reservas</div>
+<div class="dica" data-s="i&#x27;d like to make a reservation gostaria de fazer uma reserva"><div class="d-top"><span class="d-w pb-en">I&#x27;d like to make a reservation</span></div><div class="d-tr">Gostaria de fazer uma reserva</div></div>
+<div class="dica" data-s="i&#x27;d like a room with a double bed quero um quarto com cama de casal"><div class="d-top"><span class="d-w pb-en">I&#x27;d like a room with a double bed</span></div><div class="d-tr">Quero um quarto com cama de casal</div></div>
+<div class="dica" data-s="...twin beds / king size / queen size beds ...2 camas de solteiros / cama king size / queen size"><div class="d-top"><span class="d-w pb-en">...twin beds / king size / queen size beds</span></div><div class="d-tr">...2 camas de solteiros / cama king size / queen size</div></div>
+<div class="dica" data-s="is breakfast included? o café da manhã está incluído?"><div class="d-top"><span class="d-w pb-en">Is breakfast included?</span></div><div class="d-tr">O café da manhã está incluído?</div></div>
+<div class="dica" data-s="how much will that be? quanto vai custar?"><div class="d-top"><span class="d-w pb-en">How much will that be?</span></div><div class="d-tr">Quanto vai custar?</div></div>
+<div class="dica" data-s="i&#x27;ll spell it... vou soletrar..."><div class="d-top"><span class="d-w pb-en">I&#x27;ll spell it...</span></div><div class="d-tr">Vou soletrar...</div></div>
+<div class="pb-sub">Você pode ouvir do recepcionista</div>
+<div class="dica" data-s="are you checking in? você vai se registrar?"><div class="d-top"><span class="d-w pb-en">Are you checking in?</span></div><div class="d-tr">Você vai se registrar?</div></div>
+<div class="dica" data-s="do you have a reservation? você tem reserva?"><div class="d-top"><span class="d-w pb-en">Do you have a reservation?</span></div><div class="d-tr">Você tem reserva?</div></div>
+<div class="dica" data-s="your name, please? seu nome, por favor?"><div class="d-top"><span class="d-w pb-en">Your name, please?</span></div><div class="d-tr">Seu nome, por favor?</div></div>
+<div class="dica" data-s="would you sign here, please assine aqui, por favor"><div class="d-top"><span class="d-w pb-en">Would you sign here, please</span></div><div class="d-tr">Assine aqui, por favor</div></div>
+<div class="dica" data-s="for how many nights? por quantas noites?"><div class="d-top"><span class="d-w pb-en">For how many nights?</span></div><div class="d-tr">Por quantas noites?</div></div>
+<div class="dica" data-s="how long will you be staying? quanto tempo você vai ficar?"><div class="d-top"><span class="d-w pb-en">How long will you be staying?</span></div><div class="d-tr">Quanto tempo você vai ficar?</div></div>
+<div class="dica" data-s="for how many people? para quantas pessoas?"><div class="d-top"><span class="d-w pb-en">For how many people?</span></div><div class="d-tr">Para quantas pessoas?</div></div>
+<div class="dica" data-s="with or without bath? com ou sem banho?"><div class="d-top"><span class="d-w pb-en">With or without bath?</span></div><div class="d-tr">Com ou sem banho?</div></div>
+<div class="dica" data-s="i&#x27;m sorry, we&#x27;re full sinto muito, não temos vagas"><div class="d-top"><span class="d-w pb-en">I&#x27;m sorry, we&#x27;re full</span></div><div class="d-tr">Sinto muito, não temos vagas</div></div>
+<div class="dica" data-s="this is the only room vacant este é o único quarto livre"><div class="d-top"><span class="d-w pb-en">This is the only room vacant</span></div><div class="d-tr">Este é o único quarto livre</div></div>
+<div class="dica" data-s="we shall have another room tomorrow devemos ter outro quarto amanhã"><div class="d-top"><span class="d-w pb-en">We shall have another room tomorrow</span></div><div class="d-tr">Devemos ter outro quarto amanhã</div></div>
+<div class="dica" data-s="breakfast is included o café-da-manhã está incluído"><div class="d-top"><span class="d-w pb-en">Breakfast is included</span></div><div class="d-tr">O café-da-manhã está incluído</div></div>
+<div class="dica" data-s="would you fill in the registration form, please? você pode preencher a ficha de registro, por favor?"><div class="d-top"><span class="d-w pb-en">Would you fill in the registration form, please?</span></div><div class="d-tr">Você pode preencher a ficha de registro, por favor?</div></div>
+<div class="pb-sub">Recepção — Front desk / Reception</div>
+<div class="dica" data-s="where is the front desk / reception? onde é a recepção?"><div class="d-top"><span class="d-w pb-en">Where is the front desk / reception?</span></div><div class="d-tr">Onde é a recepção?</div></div>
+<div class="dica" data-s="i have reservations in the name of... eu tenho reservas em nome de..."><div class="d-top"><span class="d-w pb-en">I have reservations in the name of...</span></div><div class="d-tr">Eu tenho reservas em nome de...</div></div>
+<div class="dica" data-s="i confirmed my booking by telephone / letter / fax eu confirmei minha reserva por telefone / carta / fax"><div class="d-top"><span class="d-w pb-en">I confirmed my booking by telephone / letter / fax</span></div><div class="d-tr">Eu confirmei minha reserva por telefone / carta / fax</div></div>
+<div class="dica" data-s="i want a single room quero um quarto individual"><div class="d-top"><span class="d-w pb-en">I want a single room</span></div><div class="d-tr">Quero um quarto individual</div></div>
+<div class="dica" data-s="i want a double room quero um quarto duplo"><div class="d-top"><span class="d-w pb-en">I want a double room</span></div><div class="d-tr">Quero um quarto duplo</div></div>
+<div class="dica" data-s="with bath / shower com banho / chuveiro"><div class="d-top"><span class="d-w pb-en">With bath / shower</span></div><div class="d-tr">Com banho / chuveiro</div></div>
+<div class="pb-sub">Serviço de quarto — Room service</div>
+<div class="dica" data-s="chambermaid arrumadeira"><div class="d-top"><span class="d-w pb-en">chambermaid</span></div><div class="d-tr">arrumadeira</div></div>
+<div class="dica" data-s="i want breakfast in the room, please quero o café da manhã no quarto, por favor"><div class="d-top"><span class="d-w pb-en">I want breakfast in the room, please</span></div><div class="d-tr">Quero o café da manhã no quarto, por favor</div></div>
+<div class="dica" data-s="come in entre"><div class="d-top"><span class="d-w pb-en">Come in</span></div><div class="d-tr">Entre</div></div>
+<div class="dica" data-s="put it on the table, please ponha sobre a mesa, por favor"><div class="d-top"><span class="d-w pb-en">Put it on the table, please</span></div><div class="d-tr">Ponha sobre a mesa, por favor</div></div>
+<div class="dica" data-s="can you call me at seven o&#x27;clock? pode me chamar às 7 horas?"><div class="d-top"><span class="d-w pb-en">Can you call me at seven o&#x27;clock?</span></div><div class="d-tr">Pode me chamar às 7 horas?</div></div>
+<div class="dica" data-s="can you do this laundry / dry-cleaning? pode lavar / lavar a seco esta roupa?"><div class="d-top"><span class="d-w pb-en">Can you do this laundry / dry-cleaning?</span></div><div class="d-tr">Pode lavar / lavar a seco esta roupa?</div></div>
+<div class="dica" data-s="how long will the laundry take? quanto tempo demora para lavar?"><div class="d-top"><span class="d-w pb-en">How long will the laundry take?</span></div><div class="d-tr">Quanto tempo demora para lavar?</div></div>
+<div class="dica" data-s="i want these shoes cleaned eu quero que limpem estes sapatos"><div class="d-top"><span class="d-w pb-en">I want these shoes cleaned</span></div><div class="d-tr">Eu quero que limpem estes sapatos</div></div>
+<div class="dica" data-s="when will it be ready? quando fica pronto?"><div class="d-top"><span class="d-w pb-en">When will it be ready?</span></div><div class="d-tr">Quando fica pronto?</div></div>
+<div class="dica" data-s="can you put it on the bill? pode colocar na conta?"><div class="d-top"><span class="d-w pb-en">Can you put it on the bill?</span></div><div class="d-tr">Pode colocar na conta?</div></div>
+<div class="dica" data-s="there&#x27;s no hot water não há água quente"><div class="d-top"><span class="d-w pb-en">There&#x27;s no hot water</span></div><div class="d-tr">Não há água quente</div></div>
+<div class="dica" data-s="the toilet won&#x27;t flush a descarga do vaso não funciona"><div class="d-top"><span class="d-w pb-en">The toilet won&#x27;t flush</span></div><div class="d-tr">A descarga do vaso não funciona</div></div>
+<div class="dica" data-s="the light doesn&#x27;t work a luz não funciona"><div class="d-top"><span class="d-w pb-en">The light doesn&#x27;t work</span></div><div class="d-tr">A luz não funciona</div></div>
+<div class="dica" data-s="the curtains are stuck as cortinas estão emperradas"><div class="d-top"><span class="d-w pb-en">The curtains are stuck</span></div><div class="d-tr">As cortinas estão emperradas</div></div>
+</div></details>
+<details class="group">
+<summary><span class="g-t">Restaurante</span><span class="g-c">18</span></summary>
+<div class="dgrid">
+<div class="dica" data-s="is there a (an inexpensive) restaurant / snack bar near here? há um restaurante / lanchonete (não muito caro) por perto?"><div class="d-top"><span class="d-w pb-en">Is there a (an inexpensive) restaurant / snack bar near here?</span></div><div class="d-tr">Há um restaurante / lanchonete (não muito caro) por perto?</div></div>
+<div class="dica" data-s="can you suggest a good restaurant? você pode sugerir um bom restaurante?"><div class="d-top"><span class="d-w pb-en">Can you suggest a good restaurant?</span></div><div class="d-tr">Você pode sugerir um bom restaurante?</div></div>
+<div class="dica" data-s="can you suggest a vegetarian restaurant? você pode sugerir um restaurante vegetariano?"><div class="d-top"><span class="d-w pb-en">Can you suggest a vegetarian restaurant?</span></div><div class="d-tr">Você pode sugerir um restaurante vegetariano?</div></div>
+<div class="pb-sub">No restaurante</div>
+<div class="dica" data-s="i would like to book a table for two people eu gostaria de reservar uma mesa para duas pessoas"><div class="d-top"><span class="d-w pb-en">I would like to book a table for two people</span></div><div class="d-tr">Eu gostaria de reservar uma mesa para duas pessoas</div></div>
+<div class="dica" data-s="...for eight o&#x27;clock ...para as 8:00"><div class="d-top"><span class="d-w pb-en">...for eight o&#x27;clock</span></div><div class="d-tr">...para as 8:00</div></div>
+<div class="dica" data-s="a table for one (two), please uma mesa para um (dois), por favor"><div class="d-top"><span class="d-w pb-en">A table for one (two), please</span></div><div class="d-tr">Uma mesa para um (dois), por favor</div></div>
+<div class="dica" data-s="is there a table on the terrace (by the window)? há uma mesa fora (perto da janela)?"><div class="d-top"><span class="d-w pb-en">Is there a table on the terrace (by the window)?</span></div><div class="d-tr">Há uma mesa fora (perto da janela)?</div></div>
+<div class="dica" data-s="is there a smoking (non-smoking) area? há um local para fumantes (não fumantes)?"><div class="d-top"><span class="d-w pb-en">Is there a smoking (non-smoking) area?</span></div><div class="d-tr">Há um local para fumantes (não fumantes)?</div></div>
+<div class="dica" data-s="where is the restroom? onde é o lavatório?"><div class="d-top"><span class="d-w pb-en">Where is the restroom?</span></div><div class="d-tr">Onde é o lavatório?</div></div>
+<div class="pb-sub">Você pode ouvir do maître ou garçom</div>
+<div class="dica" data-s="this way, please por aqui, por favor"><div class="d-top"><span class="d-w pb-en">This way, please</span></div><div class="d-tr">Por aqui, por favor</div></div>
+<div class="dica" data-s="we shall have a table free in half an hour deveremos ter uma mesa livre em meia hora"><div class="d-top"><span class="d-w pb-en">We shall have a table free in half an hour</span></div><div class="d-tr">Deveremos ter uma mesa livre em meia hora</div></div>
+<div class="pb-sub">Temperos e diversos — Vocabulário</div>
+<div class="dica" data-s="olive oil azeite de oliva"><div class="d-top"><span class="d-w pb-en">olive oil</span></div><div class="d-tr">azeite de oliva</div></div>
+<div class="dica" data-s="sauce molho"><div class="d-top"><span class="d-w pb-en">sauce</span></div><div class="d-tr">molho</div></div>
+<div class="dica" data-s="oil óleo"><div class="d-top"><span class="d-w pb-en">oil</span></div><div class="d-tr">óleo</div></div>
+<div class="dica" data-s="pepper pimenta"><div class="d-top"><span class="d-w pb-en">pepper</span></div><div class="d-tr">pimenta</div></div>
+<div class="dica" data-s="salt sal"><div class="d-top"><span class="d-w pb-en">salt</span></div><div class="d-tr">sal</div></div>
+<div class="dica" data-s="vinegar vinagre"><div class="d-top"><span class="d-w pb-en">vinegar</span></div><div class="d-tr">vinagre</div></div>
+<div class="dica" data-s="please, i want a bottle / can / packet of this por favor, eu quero uma garrafa / lata / um pacote disto"><div class="d-top"><span class="d-w pb-en">Please, I want a bottle / can / packet of this</span></div><div class="d-tr">Por favor, eu quero uma garrafa / lata / um pacote disto</div></div>
+</div></details>
+<details class="group">
+<summary><span class="g-t">Telefone</span><span class="g-c">14</span></summary>
+<div class="dgrid">
+<div class="pb-sub">Você pode ouvir</div>
+<div class="dica" data-s="hello? alô?"><div class="d-top"><span class="d-w pb-en">Hello?</span></div><div class="d-tr">Alô?</div></div>
+<div class="dica" data-s="who&#x27;s calling? quem está falando?"><div class="d-top"><span class="d-w pb-en">Who&#x27;s calling?</span></div><div class="d-tr">Quem está falando?</div></div>
+<div class="dica" data-s="hold on um momento"><div class="d-top"><span class="d-w pb-en">Hold on</span></div><div class="d-tr">Um momento</div></div>
+<div class="dica" data-s="one moment, please um momento, por favor"><div class="d-top"><span class="d-w pb-en">One moment, please</span></div><div class="d-tr">Um momento, por favor</div></div>
+<div class="dica" data-s="i&#x27;m trying to connect you estou tentando fazer a ligação"><div class="d-top"><span class="d-w pb-en">I&#x27;m trying to connect you</span></div><div class="d-tr">Estou tentando fazer a ligação</div></div>
+<div class="dica" data-s="sorry, wrong number desculpe, número errado"><div class="d-top"><span class="d-w pb-en">Sorry, wrong number</span></div><div class="d-tr">Desculpe, número errado</div></div>
+<div class="dica" data-s="don&#x27;t hang up não desligue"><div class="d-top"><span class="d-w pb-en">Don&#x27;t hang up</span></div><div class="d-tr">Não desligue</div></div>
+<div class="dica" data-s="you&#x27;re through pode falar"><div class="d-top"><span class="d-w pb-en">You&#x27;re through</span></div><div class="d-tr">Pode falar</div></div>
+<div class="dica" data-s="what&#x27;s the area code? qual o prefixo da região (cidade)?"><div class="d-top"><span class="d-w pb-en">What&#x27;s the area code?</span></div><div class="d-tr">Qual o prefixo da região (cidade)?</div></div>
+<div class="pb-sub">Pode ser necessário dizer</div>
+<div class="dica" data-s="where can i make a telephone call? onde posso telefonar?"><div class="d-top"><span class="d-w pb-en">Where can I make a telephone call?</span></div><div class="d-tr">Onde posso telefonar?</div></div>
+<div class="dica" data-s="local / long distance / abroad local / interurbano / internacional"><div class="d-top"><span class="d-w pb-en">Local / long distance / abroad</span></div><div class="d-tr">Local / interurbano / internacional</div></div>
+<div class="dica" data-s="i&#x27;d like this number... in brazil eu quero ligar para este número... no brasil"><div class="d-top"><span class="d-w pb-en">I&#x27;d like this number... in Brazil</span></div><div class="d-tr">Eu quero ligar para este número... no Brasil</div></div>
+<div class="dica" data-s="can you dial it for me? você pode discar para mim?"><div class="d-top"><span class="d-w pb-en">Can you dial it for me?</span></div><div class="d-tr">Você pode discar para mim?</div></div>
+<div class="dica" data-s="i want to make a phone call quero fazer uma ligação"><div class="d-top"><span class="d-w pb-en">I want to make a phone call</span></div><div class="d-tr">Quero fazer uma ligação</div></div>
+</div></details>
+<details class="group">
+<summary><span class="g-t">Alugando Carro</span><span class="g-c">6</span></summary>
+<div class="dgrid">
+<div class="pb-sub">Você pode ouvir</div>
+<div class="dica" data-s="the key, please a chave, por favor"><div class="d-top"><span class="d-w pb-en">The key, please</span></div><div class="d-tr">A chave, por favor</div></div>
+<div class="dica" data-s="you can&#x27;t park here você não pode estacionar aqui"><div class="d-top"><span class="d-w pb-en">You can&#x27;t park here</span></div><div class="d-tr">Você não pode estacionar aqui</div></div>
+<div class="dica" data-s="what kind of car do you want? que tipo de carro você quer?"><div class="d-top"><span class="d-w pb-en">What kind of car do you want?</span></div><div class="d-tr">Que tipo de carro você quer?</div></div>
+<div class="dica" data-s="your driving licence, please sua carteira de motorista, por favor"><div class="d-top"><span class="d-w pb-en">Your driving licence, please</span></div><div class="d-tr">Sua carteira de motorista, por favor</div></div>
+<div class="dica" data-s="fasten your seat belt ponha o cinto de segurança"><div class="d-top"><span class="d-w pb-en">Fasten your seat belt</span></div><div class="d-tr">Ponha o cinto de segurança</div></div>
+<div class="pb-sub">Pode ser necessário dizer</div>
+<div class="dica" data-s="i want to hire / rent a car eu quero alugar um carro"><div class="d-top"><span class="d-w pb-en">I want to hire / rent a car</span></div><div class="d-tr">Eu quero alugar um carro</div></div>
+</div></details>
+<!--LIVRO02-END-->
+</div>
+<footer>Sistema 08 · Baseado em Livros — inglês real, tirado da fonte</footer>
+<script>
+const search=document.getElementById('search');
+const groups=[...document.querySelectorAll('.group')];
+const allOpen=()=>groups.forEach(g=>g.open=false);
+search.addEventListener('input',()=>{
+  const q=search.value.trim().toLowerCase();
+  let any=false;
+  groups.forEach(g=>{
+    let shown=0;
+    g.querySelectorAll('.dica').forEach(d=>{
+      const hit=!q||d.dataset.s.includes(q);
+      d.style.display=hit?'':'none'; if(hit)shown++;
+    });
+    g.style.display=shown?'':'none';
+    if(q) g.open = shown>0;
+    if(shown)any=true;
+  });
+  if(!q){groups.forEach((g,i)=>g.open=(i===0));}
+  document.getElementById('nr').style.display=any?'none':'block';
+});
+</script>
+</body>
+</html>
