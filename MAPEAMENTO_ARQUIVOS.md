@@ -1,13 +1,19 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
-> Scan de S01–S10 em 2026-07-21. **Nada aqui foi implementado** — é um mapa para você decidir. Ordem: do mais valioso ao menos.
+> Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
+
+## 0. Atualização 2026-07-22 — leitura dos PDFs do S08 (LIVRO_03, 04, 13)
+
+- ✅ **LIVRO_03** — lido (61 pág.). É inglês real (60 expressões + 120 frases de exemplo + tradução). **Implementado** em `Sistema 08/livro03.html` + card no hub.
+- ⚠️ **LIVRO_13 "Short Stories in English for Beginners"** — **arquivo mal rotulado.** O PDF (312 pág.) é na verdade *"A Short History of English"*, de **Henry Cecil Wyld (1927)** — tratado acadêmico de filologia (mudanças fonéticas do inglês antigo/médio, dialetos, flexões). **Não são short stories, não é para iniciantes, não é conversação.** Falha as REGRAS do S08 → **não implementado.** Se quiser contos de verdade, é preciso o arquivo correto.
+- ❌ **LIVRO_04 "Como Aprender Inglês (Mairo Vergara)"** — lido (63 pág.). É um **guia de método** ("como aprender inglês"): ~**98,5%** texto de metodologia em português; só ~1,5% são frases-exemplo isoladas usadas para ilustrar técnicas de estudo (flashcards/Anki), não conversação real. Falha as REGRAS → **não implementado** (confirmado).
 
 ## 1. Conteúdo real de inglês — candidatos fortes a implementar
 
 | Sistema | Arquivo | O que é | Observação |
 |---|---|---|---|
-| **S08** | `LIVRO_03_120 frases para uma conversa em inglês` | 120 frases prontas de conversação | Alto valor. Mesmo formato de cards do LIVRO_01/02. Segue as REGRAS (inglês real). |
-| **S08** | `LIVRO_13_Short Stories in English for Beginners` | Contos curtos em inglês | Alto valor. Inglês real em contexto; ótimo para leitura. |
+| **S08** | `LIVRO_03_120 frases para uma conversa em inglês` | 120 frases prontas de conversação | ✅ **Implementado** (`livro03.html`). |
+| ~~**S08**~~ | ~~`LIVRO_13_Short Stories…`~~ | Na verdade tratado acadêmico (Wyld, *A Short History of English*) | ⚠️ Mal rotulado — **não é short stories.** Não implementar. |
 | **S06** | `Inglês em alguns minutos _ .docx` | 729 falas transcritas de desenho animado (níveis básicos) | **Parcialmente** implementado — o painel S06 já traz um subconjunto curado (Jenny, clima, fome). Há muitas cenas/falas ainda não extraídas (números, apresentações, escola…). |
 | **S08** | `LIVRO_12_Segredo da Fluência — aprender Inglês com Música` | Método + possíveis letras/frases | Só extrair o inglês real (letras/frases); o miolo é método (fora das REGRAS). |
 
@@ -15,7 +21,7 @@
 
 As REGRAS do S08 dizem: **só inglês real, nunca dicas/métodos/motivação.** Estes livros são "como aprender inglês" — metodologia. Sob a regra atual, geram pouco ou nenhum card:
 
-- `LIVRO_04_COMO APRENDER INGLÊS (MAURO VERGARA)`
+- `LIVRO_04_COMO APRENDER INGLÊS (MAURO VERGARA)` — ✅ confirmado por leitura: ~98,5% método, descartado
 - `LIVRO_05_Como aprender inglês de maneira natural`
 - `LIVRO_06_Como aprender Inglês fácil — Sonia Sánchez`
 - `LIVRO_07_Como não aprender Inglês`
