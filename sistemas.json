@@ -109,12 +109,21 @@
   },
   {
     "numero": "08 · V06",
+    "titulo": "Livros — Exercícios & Vocabulário",
+    "descricao": "Prática de gramática e vocabulário: English Grammar in Use Supplementary Exercises, Basic Grammar in Use, English Collocations in Use, Phrasal Verbs in Use e short stories para iniciantes.",
+    "cor": "#FBBF24",
+    "icone": "✍️",
+    "tags": ["6 livros", "Gramática + Vocab", "Em breve"],
+    "pasta": "Sistema 08 — Baseado em Livros V06"
+  },
+  {
+    "numero": "08 · Kids",
     "titulo": "Livros — Kids",
     "descricao": "Kid's Box (Cambridge), níveis 3 e 4 — inglês infantil garimpado para o adulto estudar. Level 3 já disponível: 11 seções, 242 frases com tradução. Level 4 em preparação.",
     "cor": "#FB7185",
     "icone": "🧸",
     "tags": ["2 livros", "Kids", "1 disponível"],
-    "pasta": "Sistema 08 — Baseado em Livros V06 — Kids"
+    "pasta": "Sistema 08 — Baseado em Livros — Kids"
   },
   {
     "numero": "09",

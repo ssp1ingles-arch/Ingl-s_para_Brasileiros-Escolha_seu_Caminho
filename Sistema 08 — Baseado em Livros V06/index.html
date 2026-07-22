@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sistema 08 — Baseado em Livros V06 — Kids</title>
+<title>Sistema 08 — Baseado em Livros V06</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#FB7185;}
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#FBBF24;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
@@ -27,6 +27,7 @@ h1.title em{font-style:normal;color:var(--accent);}
 .hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:28px 0 10px;}
 .hub-card{display:flex;flex-direction:column;gap:10px;padding:26px;background:var(--surface);border:1px solid var(--border);border-radius:16px;text-decoration:none;color:var(--text);position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;min-height:170px;}
 .hub-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:.75;}
+.hub-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.45);}
 .hc-top{display:flex;align-items:center;justify-content:space-between;}
 .hc-num{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
 .hc-icon{font-size:1.8rem;line-height:1;}
@@ -34,6 +35,7 @@ h1.title em{font-style:normal;color:var(--accent);}
 .hc-desc{color:var(--muted);font-size:.92rem;line-height:1.55;flex:1;}
 .hc-meta{display:flex;gap:8px;flex-wrap:wrap;}
 .hc-meta span{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:4px 10px;border-radius:6px;}
+.hc-cta{font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:700;color:var(--accent);margin-top:4px;}
 .hub-soon{opacity:.6;border-style:dashed;pointer-events:none;}
 .hub-soon::before{opacity:.3;}
 .note{margin:24px 0 0;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;color:var(--muted);font-size:.9rem;}
@@ -46,31 +48,53 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
 <div class="bg-glow"></div>
 <div class="wrap">
 <a href="../index.html" class="back">&#8592; Voltar ao início</a>
-<div class="eyebrow">Sistema 08 · V06 · Kids · inglês tirado direto do livro</div>
-<h1 class="title">Baseado em <em>Livros</em> &#8212; Kids</h1>
-<p class="lead"><b>Kid's Box</b> (Cambridge) — inglês para crianças, garimpado para o adulto estudar. Vocabulário, diálogos, letras de músicas/chants e estruturas simples em uso, níveis 3 e 4.</p>
+<div class="eyebrow">Sistema 08 · V06 · inglês tirado direto do livro</div>
+<h1 class="title">Baseado em <em>Livros</em> &#8212; Exercícios &amp; Vocabulário</h1>
+<p class="lead">Prática de gramática e vocabulário: exercícios do <b>Grammar in Use</b>, <b>Collocations in Use</b>, <b>Phrasal Verbs in Use</b> e <i>short stories</i> — só o inglês real das frases, sem os enunciados de exercício.</p>
 <div class="metrics">
-  <div class="metric"><b>2</b><span>livros</span></div>
-  <div class="metric"><b>1</b><span>disponível</span></div>
-  <div class="metric"><b>242</b><span>frases de inglês</span></div>
+  <div class="metric"><b>6</b><span>livros</span></div>
+  <div class="metric"><b>—</b><span>em preparação</span></div>
 </div>
 <div class="hub-grid">
-  <a class="hub-card" href="livro01.html">
-    <div class="hc-top"><span class="hc-num">Livro 01</span><span class="hc-icon">&#129528;</span></div>
-    <h2 class="hc-title">Kid's Box · Level 3</h2>
-    <p class="hc-desc">Cambridge · New Generation · Student's Book (American English). Vocabulário, diálogos, músicas e estruturas simples — por unidade, do <i>Hello!</i> ao tempo e ao passado (was/were).</p>
-    <div class="hc-meta"><span>11 seções</span><span>242 frases</span><span>+ tradução</span></div>
-    <span class="hc-cta">Abrir livro &#8594;</span>
-  </a>
   <div class="hub-card hub-soon">
-    <div class="hc-top"><span class="hc-num">Livro 02</span><span class="hc-icon">&#127880;</span></div>
-    <h2 class="hc-title">Kid's Box · Level 4</h2>
-    <p class="hc-desc">Cambridge · American English · Student's Book (2ª edição). Continuação com frases e vocabulário do dia a dia da criança.</p>
+    <div class="hc-top"><span class="hc-num">Livro 01</span><span class="hc-icon">&#9997;&#65039;</span></div>
+    <h2 class="hc-title">Grammar in Use — Supplementary</h2>
+    <p class="hc-desc">Raymond Murphy &amp; Louise Hashemi · Cambridge · 5ª ed. Exercícios extras do English Grammar in Use — frases-modelo de cada estrutura, do intermediário.</p>
+    <div class="hc-meta"><span>Em breve</span></div>
+  </div>
+  <div class="hub-card hub-soon">
+    <div class="hc-top"><span class="hc-num">Livro 02</span><span class="hc-icon">&#128216;</span></div>
+    <h2 class="hc-title">Basic Grammar in Use (Answers)</h2>
+    <p class="hc-desc">Raymond Murphy · Cambridge. Versão básica com respostas — estruturas fundamentais em frases reais de exemplo.</p>
+    <div class="hc-meta"><span>Em breve</span></div>
+  </div>
+  <div class="hub-card hub-soon">
+    <div class="hc-top"><span class="hc-num">Livro 03</span><span class="hc-icon">&#128279;</span></div>
+    <h2 class="hc-title">English Collocations in Use</h2>
+    <p class="hc-desc">McCarthy &amp; O'Dell · Cambridge · Intermediate. As combinações de palavras que soam naturais (make/do, heavy rain…), em contexto.</p>
+    <div class="hc-meta"><span>Em breve</span></div>
+  </div>
+  <div class="hub-card hub-soon">
+    <div class="hc-top"><span class="hc-num">Livro 04</span><span class="hc-icon">&#128217;</span></div>
+    <h2 class="hc-title">Basic Grammar in Use</h2>
+    <p class="hc-desc">Raymond Murphy · Cambridge · Student's Book. Gramática básica com frases de exemplo em uso.</p>
+    <div class="hc-meta"><span>Em breve</span></div>
+  </div>
+  <div class="hub-card hub-soon">
+    <div class="hc-top"><span class="hc-num">Livro 05</span><span class="hc-icon">&#128260;</span></div>
+    <h2 class="hc-title">English Phrasal Verbs in Use</h2>
+    <p class="hc-desc">McCarthy &amp; O'Dell · Cambridge · Intermediate. Os phrasal verbs do inglês real (get on, look after, give up…), cada um em frase de exemplo.</p>
+    <div class="hc-meta"><span>Em breve</span></div>
+  </div>
+  <div class="hub-card hub-soon">
+    <div class="hc-top"><span class="hc-num">Livro 06</span><span class="hc-icon">&#128218;</span></div>
+    <h2 class="hc-title">Short Stories for Beginners</h2>
+    <p class="hc-desc">Contos curtos em inglês para iniciantes — narrativa simples e diálogos em contexto real.</p>
     <div class="hc-meta"><span>Em breve</span></div>
   </div>
 </div>
-<p class="note">O <b>Level 4</b> (PDF) já está nesta pasta, aguardando extração do inglês real para painel — só vocabulário e frases em uso, conforme as REGRAS do Sistema 08.</p>
+<p class="note">Os seis livros (PDF) já estão nesta pasta, aguardando extração do inglês real para painel — só frases e exemplos em uso, conforme as REGRAS do Sistema 08.</p>
 </div>
-<footer>Sistema 08 V06 · Baseado em Livros (Kids) — inglês real, tirado da fonte</footer>
+<footer>Sistema 08 V06 · Baseado em Livros (Exercícios &amp; Vocabulário) — inglês real, tirado da fonte</footer>
 </body>
 </html>
