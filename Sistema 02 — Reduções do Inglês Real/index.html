@@ -58,6 +58,19 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
 .article > section{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--border);}
 .article > section:last-child{border-bottom:none;}
 .sec-flag{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:26px 0 10px;}
+.hub-card{display:flex;flex-direction:column;gap:9px;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:16px;text-decoration:none;color:var(--text);position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;min-height:172px;}
+.hub-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:.75;}
+.hub-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.45);}
+.hc-top{display:flex;align-items:center;justify-content:space-between;}
+.hc-num{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
+.hc-icon{font-size:1.7rem;line-height:1;}
+.hc-title{font-family:'Space Grotesk',sans-serif;font-size:1.18rem;font-weight:800;margin:2px 0 0;line-height:1.2;}
+.hc-desc{color:var(--muted);font-size:.9rem;line-height:1.5;flex:1;}
+.hc-meta{display:flex;gap:8px;flex-wrap:wrap;}
+.hc-meta span{font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:600;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:4px 9px;border-radius:6px;}
+.hc-cta{font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:700;color:var(--accent);margin-top:2px;}
+@media(max-width:560px){.hub-card{min-height:0;padding:20px;}}
 </style>
 </head>
 <body>
@@ -66,337 +79,24 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
 <a href="../index.html" class="back">← Voltar ao início</a>
 <div class="eyebrow">Sistema 02 · o inglês que ninguém te ensinou</div>
 <h1 class="title">Reduções do<br><em>Inglês Real</em></h1>
-<p class="lead">Nativos não falam como os livros escrevem. Os cinco tipos de redução (contrações, reduções coloquiais, com pronomes, formas fracas e elisões) com pronúncia aproximada e exemplos progressivos do dia a dia. O treino de produção — frases crescentes, 1.000 frases, padrões e textos — está no <strong>Sistema 10 · Prática Completa · 4 Pilares</strong>.</p>
-<div class="metrics"><div class="metric"><b>5</b><span>tipos de redução</span></div><div class="metric"><b>48+</b><span>reduções</span></div><div class="metric"><b>20</b><span>situações</span></div><div class="metric"><b>5</b><span>blocos progressivos</span></div></div>
-<div class="layout"><div class="toc"><div class="tt">Neste sistema</div><a href="#s0" style="font-weight:700;color:var(--text);margin-top:10px;">Os 5 Tipos de Redução · do mais curto ao mais longo</a><a href="#s0-tipo-1-contra-es-contractions" >Tipo 1 — Contrações (Contractions)</a><a href="#s0-tipo-2-redu-es-coloquiais-informal-reductions" >Tipo 2 — Reduções Coloquiais (Informal Reductions)</a><a href="#s0-tipo-3-redu-es-com-pronomes-pronoun-reductions" >Tipo 3 — Reduções com Pronomes (Pronoun Reductions)</a><a href="#s0-tipo-4-formas-fracas-weak-forms" >Tipo 4 — Formas Fracas (Weak Forms)</a><a href="#s0-tipo-5-elis-es-no-final-de-palavras" >Tipo 5 — Elisões no Final de Palavras</a><a href="#s0-contextos-do-dia-a-dia-exemplos-progressivos" >Contextos do Dia a Dia — Exemplos Progressivos</a><a href="#s0-por-que-isso-importa-para-brasileiros" >Por que isso importa para brasileiros?</a></div><div class="article md"><section id="s0"><div class="sec-flag">Os 5 Tipos de Redução · do mais curto ao mais longo</div><h1>Sistema 02 — Reduções do Inglês Real</h1>
-<h2 id="s0-tipo-1-contra-es-contractions">Tipo 1 — Contrações (Contractions)</h2>
-<p>As mais formais. Aceitas inclusive na escrita.</p>
-<div class="tablewrap"><table><thead><tr><th>Forma plena</th><th>Redução</th><th>Exemplo</th></tr></thead><tbody><tr><td>I am</td><td>I'm</td><td>I'm tired.</td></tr><tr><td>He is / He has</td><td>He's</td><td>He's here. / He's gone.</td></tr><tr><td>They are</td><td>They're</td><td>They're late.</td></tr><tr><td>Do not</td><td>Don't</td><td>Don't worry.</td></tr><tr><td>Would not</td><td>Wouldn't</td><td>I wouldn't do that.</td></tr><tr><td>I would / I had</td><td>I'd</td><td>I'd love to. / I'd already left.</td></tr><tr><td>I will</td><td>I'll</td><td>I'll be there.</td></tr><tr><td>I have</td><td>I've</td><td>I've seen it.</td></tr></tbody></table></div>
-<hr>
-<h2 id="s0-tipo-2-redu-es-coloquiais-informal-reductions">Tipo 2 — Reduções Coloquiais (Informal Reductions)</h2>
-<p>Muito usadas na fala natural. Brasileiros costumam não reconhecê-las de ouvido.</p>
-<div class="tablewrap"><table><thead><tr><th>Forma plena</th><th>Redução</th><th>Pronúncia aproximada</th></tr></thead><tbody><tr><td>going to</td><td>gonna</td><td><em>gona</em></td></tr><tr><td>want to</td><td>wanna</td><td><em>uona</em></td></tr><tr><td>got to / have got to</td><td>gotta</td><td><em>goda</em></td></tr><tr><td>have to</td><td>hafta</td><td><em>hefta</em></td></tr><tr><td>has to</td><td>hasta</td><td><em>hesta</em></td></tr><tr><td>kind of</td><td>kinda</td><td><em>kainda</em></td></tr><tr><td>sort of</td><td>sorta</td><td><em>sorta</em></td></tr><tr><td>out of</td><td>outta</td><td><em>auda</em></td></tr><tr><td>a lot of</td><td>a lotta</td><td><em>a loda</em></td></tr><tr><td>because</td><td>'cause / cuz</td><td><em>caz</em></td></tr><tr><td>give me</td><td>gimme</td><td><em>gimi</em></td></tr><tr><td>let me</td><td>lemme</td><td><em>lemi</em></td></tr><tr><td>come on</td><td>c'mon</td><td><em>cmón</em></td></tr><tr><td>don't know</td><td>dunno</td><td><em>dano</em></td></tr><tr><td>supposed to</td><td>s'posed to</td><td><em>sposta</em></td></tr><tr><td>used to</td><td>usta</td><td><em>iusta</em></td></tr></tbody></table></div>
-<hr>
-<h2 id="s0-tipo-3-redu-es-com-pronomes-pronoun-reductions">Tipo 3 — Reduções com Pronomes (Pronoun Reductions)</h2>
-<p>Quando o pronome vem depois de um verbo auxiliar, ele quase desaparece.</p>
-<div class="tablewrap"><table><thead><tr><th>Forma plena</th><th>Redução falada</th></tr></thead><tbody><tr><td>What do you…?</td><td>Whatcha / Whaddya…?</td></tr><tr><td>Did you…?</td><td>Didja…?</td></tr><tr><td>Would you…?</td><td>Wouldja…?</td></tr><tr><td>Could you…?</td><td>Couldja…?</td></tr><tr><td>Are you…?</td><td>Arya…?</td></tr><tr><td>Don't you…?</td><td>Doncha…?</td></tr><tr><td>Can't you…?</td><td>Cantcha…?</td></tr><tr><td>What are you doing?</td><td>Whatcha doin'?</td></tr><tr><td>Did you eat?</td><td>Didja eat?</td></tr></tbody></table></div>
-<hr>
-<h2 id="s0-tipo-4-formas-fracas-weak-forms">Tipo 4 — Formas Fracas (Weak Forms)</h2>
-<p>Palavras funcionais que perdem a vogal plena em contexto normal de frase.</p>
-<div class="tablewrap"><table><thead><tr><th>Palavra</th><th>Forma forte</th><th>Forma fraca</th></tr></thead><tbody><tr><td>the</td><td>/ðiː/</td><td>/ðə/ (antes de consoante)</td></tr><tr><td>a/an</td><td>/eɪ/</td><td>/ə/</td></tr><tr><td>of</td><td>/ɒv/</td><td>/əv/ → /ə/</td></tr><tr><td>to</td><td>/tuː/</td><td>/tə/</td></tr><tr><td>for</td><td>/fɔːr/</td><td>/fər/</td></tr><tr><td>at</td><td>/æt/</td><td>/ət/</td></tr><tr><td>and</td><td>/ænd/</td><td>/ən/ ou /n/</td></tr><tr><td>or</td><td>/ɔːr/</td><td>/ər/</td></tr><tr><td>that</td><td>/ðæt/</td><td>/ðət/</td></tr><tr><td>them</td><td>/ðɛm/</td><td>/əm/</td></tr><tr><td>him</td><td>/hɪm/</td><td>/ɪm/</td></tr><tr><td>her</td><td>/hɜːr/</td><td>/ər/</td></tr></tbody></table></div>
-<hr>
-<h2 id="s0-tipo-5-elis-es-no-final-de-palavras">Tipo 5 — Elisões no Final de Palavras</h2>
-<ul><li><strong>-ing → -in'</strong>: <em>"What are you doing?"</em> → <em>"What are you doin'?"</em></li><li><strong>-t final suprimido</strong>: <em>"I don't know"</em> → <em>"I dono"</em> / <em>"last night"</em> → <em>"las' night"</em></li><li><strong>-h inicial suprimido</strong>: <em>"Tell him"</em> → <em>"Tell 'im"</em> / <em>"Give her"</em> → <em>"Give 'er"</em></li></ul>
-<hr>
-<h2 id="s0-contextos-do-dia-a-dia-exemplos-progressivos">Contextos do Dia a Dia — Exemplos Progressivos</h2>
-<p>Organizados do mais curto ao mais longo. Cada bloco mostra a forma escrita formal → forma falada natural.</p>
-<h3>Bloco A — Frases curtíssimas (1–5 palavras)</h3>
-<div class="tablewrap"><table><thead><tr><th>Formal</th><th>Falado</th></tr></thead><tbody><tr><td>I do not know.</td><td>I dunno.</td></tr><tr><td>Give me that.</td><td>Gimme that.</td></tr><tr><td>Let me see.</td><td>Lemme see.</td></tr><tr><td>Come on!</td><td>C'mon!</td></tr><tr><td>I am fine.</td><td>I'm fine.</td></tr><tr><td>Going to go.</td><td>Gonna go.</td></tr><tr><td>Want to try?</td><td>Wanna try?</td></tr></tbody></table></div>
-<hr>
-<h3>Bloco B — Frases curtas (6–10 palavras)</h3>
-<div class="tablewrap"><table><thead><tr><th>Formal</th><th>Falado</th></tr></thead><tbody><tr><td>I am going to eat now.</td><td>I'm gonna eat now.</td></tr><tr><td>Did you see that?</td><td>Didja see that?</td></tr><tr><td>I do not know what to do.</td><td>I dunno what to do.</td></tr><tr><td>What do you want to eat?</td><td>Whatcha wanna eat?</td></tr><tr><td>He has got to be kidding.</td><td>He's gotta be kidding.</td></tr><tr><td>Could you give me a hand?</td><td>Couldja gimme a hand?</td></tr><tr><td>I would not do that.</td><td>I wouldn't do that.</td></tr><tr><td>She has to leave at eight.</td><td>She hasta leave at eight.</td></tr></tbody></table></div>
-<hr>
-<h3>Bloco C — Frases médias (11–20 palavras)</h3>
-<div class="tablewrap"><table><thead><tr><th>Formal</th><th>Falado</th></tr></thead><tbody><tr><td>I am going to the store because I have to buy some things.</td><td>I'm gonna the store cuz I hafta buy some stuff.</td></tr><tr><td>I do not know what you are talking about.</td><td>I dunno whatcha talking about.</td></tr><tr><td>Would you like to come with us to the park this afternoon?</td><td>Wouldja like to come with us to the park this afternoon?</td></tr><tr><td>What are you going to do about it? There is not a lot of time.</td><td>Whatcha gonna do about it? There's not a lotta time.</td></tr><tr><td>He has got to be somewhere around here — I just saw him a minute ago.</td><td>He's gotta be somewhere around here — I just saw 'im a minute ago.</td></tr></tbody></table></div>
-<hr>
-<h3>Bloco D — Situações reais</h3>
-<p>Contextos cotidianos onde as reduções aparecem de forma natural.</p>
-<h4>No café / restaurante</h4>
-<ul><li><strong>Formal:</strong> What do you want to order? I am going to have a cup of coffee.</li><li><strong>Falado:</strong> Whatcha wanna order? I'm gonna have a cup a coffee.</li></ul>
-<h4>No trabalho / reunião</h4>
-<ul><li><strong>Formal:</strong> Are you going to be at the meeting? I have got to finish this first.</li><li><strong>Falado:</strong> Arya gonna be at the meeting? I gotta finish this first.</li></ul>
-<h4>Em casa com amigos</h4>
-<ul><li><strong>Formal:</strong> Come on, let me show you something. I do not know if you have seen this before.</li><li><strong>Falado:</strong> C'mon, lemme show you something. I dunno if you've seen this before.</li></ul>
-<h4>No telefone</h4>
-<ul><li><strong>Formal:</strong> I was supposed to call her, but I do not know what to say.</li><li><strong>Falado:</strong> I was s'posed to call her, but I dunno what to say.</li></ul>
-<h4>Saindo de casa</h4>
-<ul><li><strong>Formal:</strong> Give me a second — I have to get my keys. Do you want to drive or should I?</li><li><strong>Falado:</strong> Gimme a second — I hafta get my keys. Wanna drive or should I?</li></ul>
-<hr>
-<h2 id="s0-por-que-isso-importa-para-brasileiros">Por que isso importa para brasileiros?</h2>
-<p>O português tem muito menos elisão sistemática na fala formal. O brasileiro tende a <strong>pronunciar cada sílaba com clareza</strong>, o que:</p>
-<ol><li>Soa artificial em inglês coloquial.</li><li>Dificulta a <strong>compreensão oral</strong>, porque o nativo fala com todas essas reduções e o ouvido brasileiro não reconhece as palavras.</li><li>Cria uma <strong>distância perceptual</strong>: o aluno aprende "going to" mas ouve "gonna" e não conecta os dois.</li></ol>
-<hr></section></div></div>
+<p class="lead">O inglês que nativos falam — não o que os livros escrevem. Escolha um módulo.</p>
+<div class="hub-grid">
+  <a class="hub-card" href="reducoes.html">
+    <div class="hc-top"><span class="hc-num">Módulo</span><span class="hc-icon">🗣️</span></div>
+    <h2 class="hc-title">Os 5 Tipos de Redução</h2>
+    <p class="hc-desc">Contrações, reduções coloquiais, com pronomes, formas fracas e elisões — com pronúncia aproximada e exemplos do dia a dia.</p>
+    <div class="hc-meta"><span>7 tabelas</span></div>
+    <span class="hc-cta">Abrir →</span>
+  </a>
+  <a class="hub-card" href="entender-nativos.html">
+    <div class="hc-top"><span class="hc-num">Material</span><span class="hc-icon">👂</span></div>
+    <h2 class="hc-title">Como Entender Nativos</h2>
+    <p class="hc-desc">Connected speech e reduções: por que o nativo fala rápido e você não entende — e os padrões que resolvem isso.</p>
+    <div class="hc-meta"><span>4 itens</span></div>
+    <span class="hc-cta">Abrir →</span>
+  </a>
 </div>
-<!--DIST-START--><style id="dist-css">
-.dist{margin-top:46px;}
-.dist-h{display:flex;align-items:center;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:8px;}
-.dist-flag{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.12em;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);background:color-mix(in srgb,var(--accent) 8%,transparent);padding:3px 9px;border-radius:20px;}
-.dist-h h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;flex:1;}
-.dist-count{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700;color:var(--accent);}
-.dsearch{width:100%;margin:10px 0 14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 15px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;}
-.dsearch:focus{outline:none;border-color:var(--accent);}
-.dsearch::placeholder{color:var(--dim);}
-.ditems{display:grid;gap:8px;}
-.ditem{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
-.ditem > summary{cursor:pointer;list-style:none;padding:12px 16px;display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;}
-.ditem > summary::-webkit-details-marker{display:none;}
-.ditem > summary::before{content:'▸';color:var(--accent);transition:.2s;flex:none;}
-.ditem[open] > summary::before{transform:rotate(90deg);}
-.ditem[open] > summary{border-bottom:1px solid var(--border);background:var(--surface2);}
-.dbody{padding:14px 18px;white-space:pre-wrap;color:#cfcfcf;font-size:.9rem;line-height:1.6;max-height:65vh;overflow-y:auto;}
-.dnr{color:var(--dim);font-style:italic;padding:14px;display:none;}
-</style><section class="dist"><div class="dist-h"><span class="dist-flag">Material distribuído</span><h2>Como Entender Nativos · connected speech e reduções</h2><span class="dist-count">4 itens</span></div><input class="dsearch" placeholder="Buscar em Como Entender Nativos · connected speech e reduções…"><div class="dnr">Nada encontrado.</div><div class="ditems"><details class="ditem" data-search="connected speech connected speech flap t question word: connected speech — flap t | inglês para brasileiros (a1–a2)
-connected speech — flap t = por que o nativo
-t
-fala rapido e voce nao entende
-nativos não falam palavras separadas — eles conectam os sons. o flap t é o exemplo mais comum dessa conexão.
-o que é connected speech (fala conectada)
-conceito explicação exemplo
-o que é nativos conectam as palavras ao falar — não é rapidez, é con"><summary>CONNECTED SPEECH CONNECTED SPEECH FLAP T</summary><div class="dbody">QUESTION WORD: CONNECTED SPEECH — FLAP T | Inglês para Brasileiros (A1–A2)
-CONNECTED SPEECH — FLAP T = POR QUE O NATIVO
-T
-FALA RAPIDO E VOCE NAO ENTENDE
-Nativos não falam palavras separadas — eles conectam os sons. O Flap T é o exemplo mais comum dessa conexão.
-O QUE É CONNECTED SPEECH (fala conectada)
-Conceito Explicação Exemplo
-O que é Nativos conectam as palavras ao falar — não é rapidez, é CONEXÃO de sons. Soa rápido, mas é um padrão previsível.
-Por que? Na fala natural, o final de uma palavra se conecta ao início da próxima. 'What are' → 'Whadder'
-Consequência Você ouve sons que não reconhece porque não existem no texto escrito. O som muda, a palavra não.
-Solução Aprenda os PADRÕES de conexão — não tente ouvir cada palavra separada. São 3 padrões principais.
-⚠️ A dificuldade de entender nativos NÃO é falta de vocabulário na maioria dos casos — é falta de conhecimento dos padrões de fala conectada.
-O QUE É O FLAP T
-Regra Onde ocorre Escrito Pronunciado
-T entre vogais No meio de palavras butter bu-**r**er (R suave)
-T entre vogais No meio de palavras water wa-**r**er (R suave)
-T entre vogais No meio de palavras potato pota-**r**o (R suave)
-T entre vogais Entre palavras na frase what are wha-**r** are
-T entre vogais Entre palavras na frase get out ge-**r** out
-T entre vogais Entre palavras na frase not at all no-**r** a-**r** all
-💡 O Flap T acontece quando o T fica entre dois sons de vogal — o T vira um R suave (como o R brasileiro em 'caro'). É automático na fala
-americana.
-EXEMPLOS DO FLAP T EM FRASES DO DIA A DIA
-Frase escrita Como soa Tradução
-What are you doing? 'Whad-**r**-ya doing?' O que você está fazendo?
-I got it. 'I go**r** it.' Eu entendi. / Eu peguei.
-Get out of here! 'Ge**r** out of here!' Sai daqui!
-I'll meet you at the… 'I'll mee**r** you at the…' Te encontro no/na…
-A little bit. 'A li**r**le bi**r**.' Um pouquinho.
-Put it on the table. 'Pu**r** it on the table.' Coloca na mesa.
-What a beautiful day! 'Wha**r**a beautiful day!' Que dia lindo!
-💡 Todos esses T em negrito viram um R suave na fala americana natural. Ouça nativos e identifique esse padrão.
-OUTROS PADRÕES DE CONNECTED SPEECH (além do Flap T)
-Padrão O que acontece Exemplo escrito Como soa
-Linking (ligação) Final consoante + vogal inicial se ligam turn it on 'tur-ni-ton'
-Elision (queda) Um som desaparece completamente next day 'nex day' (o T some)
-Assimilation Um som muda por influência do próximo ten people 'tem people' (N → M)
-Intrusion Um som aparece entre duas vogais she is 'she-w-is' (W surge)
-💡 O Flap T é o padrão mais frequente e mais fácil de identificar. Os outros vêm naturalmente com a exposição ao inglês falado.
-COMO TREINAR O CONNECTED SPEECH
-Passo Ação Exemplo prático
-1 — Ouça Assista séries/filmes SEM legendas por 2 min Tente identificar as conexões
-2 — Compare Releia o mesmo trecho COM legenda Veja onde os sons se fundem
-3 — Repita Imite o ritmo, não as palavras separadas 'Whadda you doing?' — repita
-4 — Grave Grave sua fala e compare com o nativo Você naturalmente vai ajustar
-⚠️ NÃO tente pronunciar cada palavra separada ao falar — soa robótico. Aprenda os blocos conectados: 'whadda', 'gonna', 'kinda'. Seu cérebro vai
-absorver os padrões com exposição.
-🔴 MITO: 'Os americanos falam errado / descuidado.' — NÃO! Connected speech é parte da gramática fonética do inglês. É a fala CORRETA e natural. Falar
-separado é que soa estranho.
-💡 RESUMO DA SALA 04 — PDF 1: Connected speech = conexão de sons (não rapidez) | Flap T = T entre vogais vira R suave | Ocorre em palavras
-(potato, water) e entre palavras (what are, get out) | Treine ouvindo nativos e imitando o ritmo.</div></details><details class="ditem" data-search="content function content words function words stress question word: content words vs function words | inglês para brasileiros (a1–a2)
-content words vs function words = palavras
-s
-de conteudo vs palavras de funcao
-nativos enfatizam as palavras importantes e 'engolem' as palavras gramaticais — por isso você não as ouve.
-o que são content words (palavras de conteúdo)
-tipo exemplos por quê são enfatizadas
-substantivos mall, house, coffee, people carrega"><summary>CONTENT FUNCTION CONTENT WORDS FUNCTION WORDS STRESS</summary><div class="dbody">QUESTION WORD: CONTENT WORDS VS FUNCTION WORDS | Inglês para Brasileiros (A1–A2)
-CONTENT WORDS VS FUNCTION WORDS = PALAVRAS
-S
-DE CONTEUDO vs PALAVRAS DE FUNCAO
-Nativos enfatizam as palavras importantes e 'engolem' as palavras gramaticais — por isso você não as ouve.
-O QUE SÃO CONTENT WORDS (palavras de conteúdo)
-Tipo Exemplos Por quê são enfatizadas
-Substantivos mall, house, coffee, people Carregam o significado principal
-Verbos principais go, eat, love, buy, work Indicam a ação da frase
-Adjetivos good, tired, happy, expensive Descrevem e qualificam
-Advérbios quickly, never, always, really Modificam a ação
-Números/nomes three, Monday, Maria, Brazil Informação específica
-💡 CONTENT WORDS = as palavras que carregam a MENSAGEM. Se você retirar as outras e ficar só com elas, ainda entende a ideia. Ex: 'I went
-mall' → entendeu!
-O QUE SÃO FUNCTION WORDS (palavras de função)
-Tipo Exemplos Como são pronunciadas
-Artigos the, a, an Muito reduzidos: 'thuh', 'uh'
-Preposições to, of, at, in, for, from Quase inaudíveis na fala rápida
-Pronomes I, you, he, she, it, we, they Reduzidos: 'ya', 'im', 'er'
-Auxiliares do, does, did, have, has, will Contraídos ou reduzidos
-Conjunções and, but, or, so, because 'n', 'bt', 'cz' — quase some
-⚠️ FUNCTION WORDS existem para dar estrutura gramatical à frase — não carregam significado novo. Por isso o nativo não gasta energia
-pronunciando-as.
-EXEMPLOS PRÁTICOS — como a frase soa vs como é escrita
-Frase escrita Como o nativo fala O que desaparece
-I went to the mall. 'I went t'the mall.' 'to' e 'the' quase somem
-Can you come at six? 'Canya come at six?' 'can you' → 'canya'
-I want to go home. 'I wanna go home.' 'want to' → 'wanna'
-He is at the store. 'He's at the store.' 'is' contraído, 'the' reduzido
-Do you want some water? 'D'ya want some water?' 'do you' → 'd'ya'
-Give it to me. 'Give it t'me.' 'to' quase some
-I'll meet you at noon. 'I'll meetcha at noon.' 'you' → 'cha' após T
-💡 Perceba: as CONTENT WORDS (mall, come, six, home, store, water, meet, noon) estão sempre CLARAS. As function words somem.
-COMO IDENTIFICAR O STRESS (ênfase) NA FRASE
-Tipo de frase Palavras enfatizadas Palavras reduzidas
-'I LOVE coffee.' LOVE, coffee I (fraco)
-'She WENT to the STORE.' WENT, STORE She, to, the (fracos)
-'DO you WANT some WATER?' WANT, WATER do, you, some (fracos)
-'I'm GOING to the GYM.' GOING, GYM I'm, to, the (fracos)
-'It's COLD today.' COLD, today It's (fraco)
-💡 Regra prática: se você OUVIU bem a palavra, provavelmente é CONTENT WORD. Se você quase não ouviu, é FUNCTION WORD — mas ainda
-está lá!
-COMO USAR ESSE CONHECIMENTO PARA OUVIR E FALAR MELHOR
-Situação O que fazer Resultado
-Ouvindo nativo Foque nas palavras que você consegue ouvir claramente São as content words — reconstituem o significado
-Não entendeu a frase Identifique os sons fortes = content words Deduza a estrutura pelas palavras chave
-Ao falar Enfatize as content words, relaxe nas function words Sua fala vai soar muito mais natural
-Ao estudar Aprenda as reduções das function words mais comuns to='t', the='thuh/theh', and='n', of='uh'
-💡 Resumo prático: ao ouvir inglês, CACE as content words — elas constroem o significado. As function words são o esqueleto gramatical que você já
-pode deduzir.
-🔴 ERRO COMUM: Tentar ouvir TODAS as palavras igualmente. O nativo não fala assim e você vai se perder. Treine o ouvido para captar as palavras
-FORTES (content) e deduzir as fracas (function).
-💡 RESUMO DA SALA 04 — PDF 2: CONTENT WORDS (substantivos, verbos, adjetivos) = enfatizadas, claras | FUNCTION WORDS (artigos, preposições,
-auxiliares) = reduzidas, quase inaudíveis | Foque nas content words para entender | Reduza as function words para soar natural.</div></details><details class="ditem" data-search="contractions contracoes essenciais fala natural question word: contractions — contrações essenciais | inglês para brasileiros (a1–a2)
-contractions — contrações essenciais =
-nativos sempre contraem — aprenda as mais
-'
-usadas
-contrações não são gíria nem erro — são a forma normal de falar inglês. nativo sem contração parece robô.
-contrações com to be (as mais básicas)
-forma completa contração exemplo completo exemplo contraído
-i am i'm i am tired"><summary>CONTRACTIONS CONTRACOES ESSENCIAIS FALA NATURAL</summary><div class="dbody">QUESTION WORD: CONTRACTIONS — CONTRAÇÕES ESSENCIAIS | Inglês para Brasileiros (A1–A2)
-CONTRACTIONS — CONTRAÇÕES ESSENCIAIS =
-NATIVOS SEMPRE CONTRAEM — APRENDA AS MAIS
-'
-USADAS
-Contrações não são gíria nem erro — são a forma NORMAL de falar inglês. Nativo sem contração parece robô.
-CONTRAÇÕES COM TO BE (as mais básicas)
-Forma completa Contração Exemplo completo Exemplo contraído
-I am I'm I am tired. I'm tired.
-You are You're You are right. You're right.
-He is He's He is at work. He's at work.
-She is She's She is my friend. She's my friend.
-It is It's It is cold today. It's cold today.
-We are We're We are ready. We're ready.
-They are They're They are here. They're here.
-⚠️ IT'S (it is) ≠ ITS (possessivo). 'It's cold.' = Está frio. / 'Its color is red.' = A cor dele é vermelha.
-CONTRAÇÕES NEGATIVAS — NOT (as mais usadas na fala)
-Forma completa Contração Exemplo completo Exemplo contraído
-do not don't I do not know. I don't know.
-does not doesn't She does not like it. She doesn't like it.
-did not didn't He did not come. He didn't come.
-will not won't I will not go. I won't go.
-cannot / can not can't I cannot do this. I can't do this.
-is not isn't It is not ready. It isn't ready.
-are not aren't They are not here. They aren't here.
-💡 WON'T é a contração mais irregular — não é 'willn't'. CANNOT é uma palavra só, CAN'T é a contração.
-CONTRAÇÕES COM WILL E HAVE (futuro e perfeito)
-Forma completa Contração Exemplo completo Exemplo contraído
-I will I'll I will be there. I'll be there.
-You will You'll You will love it. You'll love it.
-He will He'll He will call you. He'll call you.
-She will She'll She will come. She'll come.
-I have I've I have seen it. I've seen it.
-You have You've You have been there. You've been there.
-They have They've They have arrived. They've arrived.
-💡 I'LL, YOU'LL, HE'LL = futuro com WILL | I'VE, YOU'VE, THEY'VE = present perfect com HAVE. Ambos se contraem sempre na fala.
-CONTRAÇÕES COM WOULD E HAD
-Forma completa Contração Exemplo Tradução
-I would I'd I'd like a coffee. Eu gostaria de um café.
-I had I'd I'd already eaten. Eu já tinha comido.
-You would You'd You'd love this place. Você adoraria esse lugar.
-She would She'd She'd rather stay. Ela preferiria ficar.
-He had He'd He'd never been there. Ele nunca tinha ido.
-⚠️ I'D pode ser I WOULD ou I HAD — o contexto define. 'I'd like' = I would like. 'I'd finished' = I had finished.
-CONTRAÇÕES MAIS USADAS EM PERGUNTAS
-Pergunta completa Pergunta contraída Tradução
-What is your name? What's your name? Qual é o seu nome?
-Where is he? Where's he? Onde ele está?
-How is it going? How's it going? Como vai?
-What are you doing? What're you doing? O que você está fazendo?
-Who is there? Who's there? Quem está aí?
-Is it not true? Isn't it true? Não é verdade?
-Are you not coming? Aren't you coming? Você não está vindo?
-💡 Em perguntas, as contrações ficam no início: What's / Where's / How's / Who's. Aprenda essas estruturas como blocos fixos.
-🔴 MITO: 'Contração é informal / errado.' — NÃO! Falar 'I am going to the store' sem contração alguma soa artificial e robótico. Nativos SEMPRE contraem
-na fala. Até em inglês formal falado as contrações básicas são usadas.
-💡 RESUMO DA SALA 04 — PDF 3: Comece com I'm / You're / He's / She's / It's / We're / They're | Depois: don't / doesn't / didn't / won't / can't | Depois: I'll /
-I've / I'd | Cada contração que você usar torna seu inglês mais natural.</div></details><details class="ditem" data-search="gonna wanna gonna wanna gotta kinda reducoes informais question word: gonna / wanna / gotta / kinda / dunno / lemme / gimme | inglês para brasileiros (a1–a2)
-gonna / wanna / gotta / kinda / dunno / lemme /
-gimme = reducoes informais — o proximo nivel
-g
-das contracoes
-reduções que nativos usam constantemente na fala — você vai ouvir sempre em séries, filmes e conversas reais.
-gonna = going to (futuro informal)
-forma completa redução exemplo completo ex"><summary>GONNA WANNA GONNA WANNA GOTTA KINDA REDUCOES INFORMAIS</summary><div class="dbody">QUESTION WORD: GONNA / WANNA / GOTTA / KINDA / DUNNO / LEMME / GIMME | Inglês para Brasileiros (A1–A2)
-GONNA / WANNA / GOTTA / KINDA / DUNNO / LEMME /
-GIMME = REDUCOES INFORMAIS — O PROXIMO NIVEL
-G
-DAS CONTRACOES
-Reduções que nativos usam constantemente na fala — você vai ouvir SEMPRE em séries, filmes e conversas reais.
-GONNA = GOING TO (futuro informal)
-Forma completa Redução Exemplo completo Exemplo reduzido
-I am going to I'm gonna I am going to cry. I'm gonna cry.
-You are going to You're gonna You are going to love. You're gonna love it.
-He is going to He's gonna He is going to call. He's gonna call.
-She is going to She's gonna She is going to leave. She's gonna leave.
-We are going to We're gonna We are going to eat. We're gonna eat.
-They are going to They're gonna They are going to win. They're gonna win.
-⚠️ GONNA é redução de GOING TO — só é usado antes de VERBO. 'I'm gonna eat.' ✅ / 'I'm gonna the store.' ❌ (aí usa: I'm going to the store).
-WANNA / GOTTA / HAFTA (want to, have got to, have to)
-Forma completa Redução Exemplo completo Exemplo reduzido
-want to wanna I want to sleep. I wanna sleep.
-want a wanna I want a coffee. I wanna coffee.
-have got to gotta I have got to go. I gotta go.
-have to hafta I have to work. I hafta work.
-ought to oughta You ought to try it. You oughta try it.
-supposed to s'posed to I am supposed to go. I'm s'posed to go.
-💡 GOTTA é especialmente importante: 'I gotta go' = preciso ir / tenho que ir. Uma das frases mais ouvidas em inglês americano.
-KINDA / SORTA / LOTTA / BUNCHA (kind of, sort of, lot of, bunch of)
-Forma completa Redução Exemplo completo Exemplo reduzido
-kind of kinda It's kind of difficult. It's kinda difficult.
-sort of sorta It's sort of weird. It's sorta weird.
-a lot of lotta There's a lot of people. There's lotta people.
-a bunch of buncha I have a bunch of things. I have a buncha things.
-out of outta I'm out of time. I'm outta time.
-because 'cause/'cuz I left because I was tired. I left 'cause I was tired.
-💡 KINDA e SORTA = meio / tipo (suavizam o que você vai dizer). 'It's kinda weird.' = É meio estranho.
-DUNNO / LEMME / GIMME / GOTCHA / WHATCHA
-Redução Vem de Exemplo reduzido Tradução
-dunno don't know I dunno. Não sei.
-lemme let me Lemme think. Deixa eu pensar.
-gimme give me Gimme a sec. Me dá um segundo.
-gotcha got you Gotcha! Entendi! / Peguei você!
-whatcha what are you Whatcha doing? O que você está fazendo?
-ya you How are ya? Como você está?
-'em them Tell 'em I said hi. Diz pra eles que mando oi.
-💡 Essas reduções aparecem o tempo todo em séries americanas. Você não precisa usá-las para falar — mas PRECISA reconhecê-las para entender.
-COMO USAR ESSE CONHECIMENTO NA PRÁTICA
-Nível O que fazer Exemplo
-Ouvir Reconheça GONNA/WANNA/GOTTA quando ouvir 'I'm gonna go' = I am going to go
-Entender Não trave ao ouvir 'kinda' ou 'dunno' 'I dunno' = I don't know
-Falar Comece usando I'm gonna / I wanna / I gotta Soa muito mais natural
-Avançar Adicione 'kinda', 'lemme', 'gimme' aos poucos Use quando se sentir confortável
-Cuidado Evite em e-mails formais e entrevistas Gonna/wanna são informais
-⚠️ Essas reduções são da FALA INFORMAL. Não escreva 'gonna' num e-mail profissional. Na fala e em conversas casuais: use à vontade!
-🔴 GONNA ≠ GOING TO em todo contexto: 'I'm gonna eat' ✅ (vou comer) | 'I'm gonna the store' ❌ (não pode — going to + lugar precisa da forma
-completa: 'I'm going to the store') ✅
-💡 RESUMO DA SALA 04 — PDF 4: GONNA = going to (futuro) | WANNA = want to | GOTTA = have got to (preciso) | KINDA/SORTA = kind of/sort of (meio,
-tipo) | DUNNO = don't know | LEMME = let me | GIMME = give me. Reconheça ao ouvir, use aos poucos ao falar.</div></details></div></section><script id="dist-js">
-document.querySelectorAll('.dist').forEach(sec=>{
-  const inp=sec.querySelector('.dsearch');
-  const items=[...sec.querySelectorAll('.ditem')];
-  const nr=sec.querySelector('.dnr');
-  if(!inp) return;
-  inp.addEventListener('input',()=>{
-    const q=inp.value.trim().toLowerCase();let shown=0;
-    items.forEach(it=>{const hit=!q||it.dataset.search.includes(q);it.style.display=hit?'':'none';if(hit){shown++;it.open=!!q;}});
-    if(nr) nr.style.display=shown?'none':'block';
-  });
-});
-</script><!--DIST-END-->
+</div>
 <footer>Sistema 02 · Reduções do Inglês Real — fale como nativo, não como livro</footer>
-<script>
-const links=[...document.querySelectorAll('.toc a')];
-const map={};links.forEach(a=>map[a.getAttribute('href').slice(1)]=a);
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('on'));const a=map[e.target.id];if(a)a.classList.add('on');}})},{rootMargin:'-10% 0px -80% 0px'});
-document.querySelectorAll('.article h2[id]').forEach(h=>obs.observe(h));
-</script>
 </body>
 </html>

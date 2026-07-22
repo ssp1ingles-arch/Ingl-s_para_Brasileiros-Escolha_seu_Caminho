@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 05 · Teste seu Nível · 30 questões A1→C2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#EC4899;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+/* markdown article */
+.md h1,.md h2,.md h3,.md h4{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+.md h1{font-size:1.5rem;margin:30px 0 10px;color:var(--text);}
+.md h2{font-size:1.28rem;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.md h3{font-size:1.08rem;margin:22px 0 8px;color:var(--accent);}
+.md h4{font-size:.98rem;margin:16px 0 6px;color:var(--text);}
+.md p{margin:10px 0;color:#cfcfcf;}
+.md strong{color:var(--text);}
+.md em{color:var(--accent);font-style:normal;}
+.md ul,.md ol{margin:10px 0 10px 22px;color:#cfcfcf;}
+.md li{margin:4px 0;}
+.md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.md code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--accent);font-family:'Space Grotesk',monospace;}
+.md pre.code{background:#0f0f0f;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:12px 0;}
+.md pre.code code{background:none;border:none;color:#d7d7d7;padding:0;font-family:'Space Grotesk',ui-monospace,monospace;font-size:.9rem;line-height:1.7;white-space:pre;}
+.md .tablewrap{overflow-x:auto;margin:14px 0;}
+.md table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.md th{background:var(--surface2);text-align:left;padding:10px 13px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+.md td{padding:10px 13px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+.md tr:nth-child(even){background:rgba(255,255,255,.015);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+
+.layout{display:grid;grid-template-columns:230px 1fr;gap:34px;margin-top:30px;align-items:start;}
+@media(max-width:820px){.layout{grid-template-columns:1fr;}.toc{position:static!important;max-height:none!important;}}
+.toc{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;border-right:1px solid var(--border);padding-right:14px;}
+.toc .tt{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.84rem;padding:5px 0;border-left:2px solid transparent;padding-left:10px;margin-left:-2px;transition:.15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.article{min-width:0;}
+.article > section{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+.article > section:last-child{border-bottom:none;}
+.sec-flag{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+<a href="index.html" class="back">← Voltar ao Sistema 05</a>
+<div class="eyebrow">Sistema 05 · onde, quando, quanto e como</div>
+<div class="article md">
+<section id="s1"><div class="sec-flag">Teste seu Nível · 30 questões A1→C2</div><h1>SISTEMA 10 — TESTE SEU NÍVEL</h1>
+<hr>
+<h2 id="s1-estrutura-de-m-dulos-6-n-veis">ESTRUTURA DE MÓDULOS (6 NÍVEIS)</h2>
+<h3>NÍVEL A1 — Iniciante (Questões 1–5)</h3>
+<h3>NÍVEL A2 — Pré-Intermediário (Questões 6–10)</h3>
+<h3>NÍVEL B1 — Intermediário (Questões 11–15)</h3>
+<h3>NÍVEL B2 — Intermediário Superior (Questões 16–20)</h3>
+<h3>NÍVEL C1 — Avançado (Questões 21–25)</h3>
+<h3>NÍVEL C2 — Proficiência / Nativo (Questões 26–30)</h3>
+<hr>
+<h2 id="s1-conte-do-completo-30-quest-es">CONTEÚDO COMPLETO — 30 QUESTÕES</h2>
+<hr>
+<h3>NÍVEL A1 — INICIANTE</h3>
+<p><strong>Questão 1</strong><br>Escolha a palavra correta: '___ is your name? I'm Maria.'</p>
+<ul><li>A) Whom</li><li>B) What ✅</li><li>C) Who</li></ul>
+<p><strong>Explicação:</strong> "What" é usado para pedir informações (nome, profissão). "Who" se refere a pessoas ("Who is that?"). "Whom" é formal e funciona como objeto — não se aplica aqui.</p>
+<p><strong>Questão 2</strong><br>Qual frase está correta?</p>
+<ul><li>A) She have two cats.</li><li>B) She has two cats. ✅</li><li>C) She's having two cats.</li></ul>
+<p><strong>Explicação:</strong> Com "he/she/it" usamos "has", não "have". "She's having two cats" está errado porque usamos o Simple Present (não Continuous) para posse.</p>
+<p><strong>Questão 3</strong><br>'There ___ a park near my house.'</p>
+<ul><li>A) is ✅</li><li>B) are</li><li>C) am</li></ul>
+<p><strong>Explicação:</strong> "There is" + singular (um parque). "There are" + plural. "Am" só vai com "I".</p>
+<p><strong>Questão 4</strong><br>Qual frase soa mais natural?</p>
+<ul><li>A) I go often to the gym.</li><li>B) Often I go to the gym.</li><li>C) I often go to the gym. ✅</li></ul>
+<p><strong>Explicação:</strong> Advérbios de frequência (often, usually, sometimes) geralmente vão ANTES do verbo principal. A opção B é tecnicamente correta mas soa não-natural no inglês cotidiano.</p>
+<p><strong>Questão 5</strong><br>'She ___ like pizza.'</p>
+<ul><li>A) don't</li><li>B) doesn't ✅</li><li>C) hasn't</li></ul>
+<p><strong>Explicação:</strong> Com "she/he/it" no Simple Present negativo, usamos "doesn't". "Don't" vai com I/you/we/they.</p>
+<hr>
+<h3>NÍVEL A2 — PRÉ-INTERMEDIÁRIO</h3>
+<p><strong>Questão 6</strong><br>'Brenda has lived here ___ three years.'</p>
+<ul><li>A) since</li><li>B) for ✅</li><li>C) during</li></ul>
+<p><strong>Explicação:</strong> "For" + período de tempo (three years, two months). "Since" + ponto de início (since 2020, since Monday). Aqui temos uma duração → "for".</p>
+<p><strong>Questão 7</strong><br>'She's much ___ than her sister.'</p>
+<ul><li>A) more kind</li><li>B) kinder ✅</li><li>C) kindest</li></ul>
+<p><strong>Explicação:</strong> Adjetivos curtos (1-2 sílabas) formam o comparativo com -er: kind → kinder. "Kindest" é superlativo (comparar 3+). "More kind" não é padrão para adjetivos curtos.</p>
+<p><strong>Questão 8</strong><br>'I was really tired, ___ I went to bed early.'</p>
+<ul><li>A) but</li><li>B) because</li><li>C) so ✅</li></ul>
+<p><strong>Explicação:</strong> "So" = resultado/consequência. Estar cansado causou ir dormir cedo. "Because" introduz a causa, não o resultado.</p>
+<p><strong>Questão 9</strong><br>'You ___ park here. It's not allowed.'</p>
+<ul><li>A) don't have to</li><li>B) don't need to</li><li>C) mustn't ✅</li></ul>
+<p><strong>Explicação:</strong> "Mustn't" = proibição (não é permitido). "Don't have to" / "don't need to" = não é necessário (mas você pode se quiser). Aqui há proibição.</p>
+<p><strong>Questão 10</strong><br>Qual frase está correta?</p>
+<ul><li>A) I'm interesting in learning English.</li><li>B) I'm interested in learning English. ✅</li><li>C) Ambas estão corretas.</li></ul>
+<p><strong>Explicação:</strong> Adjetivos com -ED descrevem como a PESSOA se sente. Adjetivos com -ING descrevem o que CAUSA o sentimento. "The topic is interesting." → "I am interested in the topic."</p>
+<hr>
+<h3>NÍVEL B1 — INTERMEDIÁRIO</h3>
+<p><strong>Questão 11</strong><br>'I ___ working here since January.'</p>
+<ul><li>A) am</li><li>B) have been ✅</li><li>C) was</li></ul>
+<p><strong>Explicação:</strong> Present Perfect Continuous (have been + -ing) para ações que começaram no passado e CONTINUAM agora. "Since" marca o ponto de início → exige tempo perfeito.</p>
+<p><strong>Questão 12</strong><br>'The hotel offers excellent ___, including a gym and pool.'</p>
+<ul><li>A) facilities ✅</li><li>B) services</li><li>C) equipment</li></ul>
+<p><strong>Explicação:</strong> "Facilities" = instalações/recursos oferecidos (academia, piscina, sala de conferência). "Services" = o que é feito para você. "Equipment" = objetos/aparelhos físicos.</p>
+<p><strong>Questão 13</strong><br>'Gerald's phone ___ while he was traveling.'</p>
+<ul><li>A) is stealing</li><li>B) were stolen</li><li>C) was stolen ✅</li></ul>
+<p><strong>Explicação:</strong> Voz passiva (passive voice): sujeito recebe a ação. "The phone" é singular → "was stolen". Usamos passiva quando não sabemos ou não importa quem fez a ação.</p>
+<p><strong>Questão 14</strong><br>'I'd like to make a/an ___ for two people at 8 o'clock.'</p>
+<ul><li>A) reservation ✅</li><li>B) appointment</li><li>C) arrangement</li></ul>
+<p><strong>Explicação:</strong> "Reservation" = reserva em restaurante, hotel, viagem. "Appointment" = hora marcada com profissional (médico, cabeleireiro). "Arrangement" = combinação geral.</p>
+<p><strong>Questão 15</strong><br>'If I had ___ you needed help, I would have ___ the document for you.'</p>
+<ul><li>A) know / translate</li><li>B) known / translated ✅</li><li>C) knew / had translated</li></ul>
+<p><strong>Explicação:</strong> 3ª Condicional (situação imaginária no passado): IF + past perfect (had + particípio) + WOULD HAVE + particípio. "If I had known... I would have translated..."</p>
+<hr>
+<h3>NÍVEL B2 — INTERMEDIÁRIO SUPERIOR</h3>
+<p><strong>Questão 16</strong><br>'The meeting was supposed to start at 9, but technical issues ___ us ___ for over an hour.'</p>
+<ul><li>A) held / up ✅</li><li>B) took / over</li><li>C) cut / off</li></ul>
+<p><strong>Explicação:</strong> "Hold up" = atrasar alguém ou algo. Muito comum no passivo: "I got held up in traffic." / "Take over" = assumir o controle. "Cut off" = desconectar/isolar.</p>
+<p><strong>Questão 17</strong><br>'Buying in bulk is more ___ than buying single items.'</p>
+<ul><li>A) economic</li><li>B) economical ✅</li><li>C) Ambas corretas</li></ul>
+<p><strong>Explicação:</strong> "Economical" = econômico, que economiza dinheiro (custo-benefício). "Economic" = relacionado à economia como área/ciência. "An economical car" vs "economic policy."</p>
+<p><strong>Questão 18</strong><br>'The Council decided to ___ a survey to gather community feedback.'</p>
+<ul><li>A) conduct ✅</li><li>B) convert</li><li>C) construct</li></ul>
+<p><strong>Explicação:</strong> "Conduct" + pesquisa/investigação/reunião = organizar e realizar. "Convert" = transformar/converter. "Construct" = construir fisicamente.</p>
+<p><strong>Questão 19</strong><br>'We experienced technical issues ___ the presentation.'</p>
+<ul><li>A) during</li><li>B) throughout</li><li>C) Ambas corretas ✅</li></ul>
+<p><strong>Explicação:</strong> "During" = em algum momento durante (flexível). "Throughout" = durante TODO o tempo, do início ao fim (contínuo). Como a frase não especifica, ambas funcionam com nuances diferentes.</p>
+<p><strong>Questão 20</strong><br>'She suggested ___ the deadline rather than ___ the project entirely.'</p>
+<ul><li>A) to extend / to cancel</li><li>B) extending / cancelling ✅</li><li>C) extend / cancel</li></ul>
+<p><strong>Explicação:</strong> "Suggest" é seguido de gerúndio (-ing), não infinitivo. "Rather than" cria estrutura paralela: ambos os verbos tomam a mesma forma (-ing).</p>
+<hr>
+<h3>NÍVEL C1 — AVANÇADO</h3>
+<p><strong>Questão 21</strong><br>Qual parafraseia melhor: 'After years of neglecting her mental health, Sarah decided to completely overhaul her approach to wellness.'</p>
+<ul><li>A) Sarah ignored her mental health for years, so she decided to change her wellness routine.</li><li>B) Having neglected her mental health for years, Sarah resolved to transform her approach to well-being completely. ✅</li><li>C) Years of ignoring her mental health led Sarah to think negatively about wellness.</li></ul>
+<p><strong>Explicação:</strong> B captura tudo: o período de tempo, a decisão ativa e a escala da mudança. A usa "routine" (mais estreito que "approach"). C muda completamente o significado.</p>
+<p><strong>Questão 22</strong><br>'What Anna needed ___ a complete lifestyle overhaul, not just a new job.'</p>
+<ul><li>A) was ✅</li><li>B) to do</li><li>C) that was</li></ul>
+<p><strong>Explicação:</strong> "Cleft sentence" (frase clivada): começa com cláusula "what" + forma de "to be". Estrutura: What + sujeito + verbo + was + foco. Enfatiza a informação importante.</p>
+<p><strong>Questão 23</strong><br>'After hours of negotiation, both parties agreed to ___ a compromise.'</p>
+<ul><li>A) do</li><li>B) strike ✅</li><li>C) hit</li></ul>
+<p><strong>Explicação:</strong> "Strike a compromise" é a colocação natural em inglês. "Do a compromise" e "hit a compromise" não são colocações reconhecidas. Assim como "strike a deal", "strike a balance".</p>
+<p><strong>Questão 24</strong><br>'Hardly ____ concerns were raised about the funding allocation.'</p>
+<ul><li>A) the committee approved the budget then</li><li>B) had the committee approved the budget when ✅</li><li>C) when the committee approved the budget than</li></ul>
+<p><strong>Explicação:</strong> Inversão negativa com "Hardly": Hardly + auxiliar + sujeito + verbo principal + "when". Adiciona ênfase e formalidade. "Hardly had the committee approved the budget when..."</p>
+<p><strong>Questão 25</strong><br>Qual frase está mais clara e correta?</p>
+<ul><li>A) Hoping to reduce carbon emissions, the new transport policy was introduced by the council.</li><li>B) Hoping to reduce carbon emissions, the council introduced a new transport policy. ✅</li><li>C) The new transport policy, hoping to reduce carbon emissions, was introduced by the council.</li></ul>
+<p><strong>Explicação:</strong> Cláusulas não-finitas ("Hoping to...") devem ter o mesmo sujeito da cláusula principal. Em A e C, parece que a "política" tem esperanças — erro de sujeito lógico (dangling modifier).</p>
+<hr>
+<h3>NÍVEL C2 — PROFICIÊNCIA</h3>
+<p><strong>Questão 26</strong><br>'After the scandal, his reputation was in ___.'</p>
+<ul><li>A) remnants</li><li>B) shards</li><li>C) tatters ✅</li></ul>
+<p><strong>Explicação:</strong> "In tatters" = tão destruído que não pode ser salvo (colocação forte com "reputation"). "Remnants" = partes restantes de algo. "Shards" = fragmentos afiados (vidro).</p>
+<p><strong>Questão 27</strong><br>'___ the blink, ___ the doll, ___ the ball' — qual preposição?</p>
+<ul><li>A) in</li><li>B) on ✅</li><li>C) at</li></ul>
+<p><strong>Explicação:</strong> "On the blink" = com defeito/não funcionando. "On the doll" (BrE) = recebendo seguro-desemprego. "On the ball" = alerta, compreendendo o que está acontecendo.</p>
+<p><strong>Questão 28</strong><br>'I've failed completely,' she said, disappointedly. Qual melhor captura o tom?</p>
+<ul><li>A) She seethed over her failure.</li><li>B) She was livid at her failure.</li><li>C) She lamented her failure. ✅</li></ul>
+<p><strong>Explicação:</strong> "Lament" = expressar tristeza/decepção (tom da frase original). "Seethe" = raiva reprimida e intensa. "Livid" = furiosamente irritado. A e B expressam raiva, não tristeza.</p>
+<p><strong>Questão 29</strong><br>'___ for Sarah's patience, we ___ never have stopped being poles ___ on ___ the holiday plans.'</p>
+<ul><li>A) But / would / apart ✅</li><li>B) Not / will / away</li><li>C) Except / could / aside</li></ul>
+<p><strong>Explicação:</strong> "But for" = formal para "if it were not for / without" (condicional). + would have + particípio (3ª condicional implícita). "To be poles apart" = ter opiniões completamente opostas.</p>
+<p><strong>Questão 30</strong><br>'The exhibition assembles its gestures with immaculate assurance, yet the profusion of references feels more like a catalogue of influence than a conversation with it.' O crítico sugere principalmente:</p>
+<ul><li>A) A exposição demonstra confiança técnica mas depende demais de tradições artísticas existentes. ✅</li><li>B) A exposição reinterpreta com sucesso uma ampla gama de influências de forma original.</li><li>C) A exposição carece de coerência devido ao excesso de estilos artísticos concorrentes.</li></ul>
+<p><strong>Explicação:</strong> "Catalogue of influence" (listagem) vs "conversation with it" (retrabalho criativo) = técnica presente mas sem originalidade/diálogo. Não é falta de coerência (C), nem reinterpretação bem-sucedida (B).</p>
+<hr>
+<h2 id="s1-tabela-de-pontua-o">TABELA DE PONTUAÇÃO</h2>
+<div class="tablewrap"><table><thead><tr><th>Acertos</th><th>Nível estimado</th><th>Descrição</th></tr></thead><tbody><tr><td>0–5</td><td>A1</td><td>Iniciante — bases do inglês</td></tr><tr><td>6–10</td><td>A2</td><td>Pré-intermediário — estruturas básicas dominadas</td></tr><tr><td>11–15</td><td>B1</td><td>Intermediário — comunicação funcional</td></tr><tr><td>16–20</td><td>B2</td><td>Intermediário superior — fluência em contextos variados</td></tr><tr><td>21–25</td><td>C1</td><td>Avançado — domínio preciso e sofisticado</td></tr><tr><td>26–30</td><td>C2</td><td>Proficiência — nível próximo ao nativo</td></tr></tbody></table></div>
+<hr></section>
+</div>
+</div>
+<footer>Sistema 05 · Situar a Frase — dê endereço às suas ideias</footer>
+</body>
+</html>

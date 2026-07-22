@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 05 · Estruturas Fixas · chunks que montam a frase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#EC4899;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+/* markdown article */
+.md h1,.md h2,.md h3,.md h4{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+.md h1{font-size:1.5rem;margin:30px 0 10px;color:var(--text);}
+.md h2{font-size:1.28rem;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.md h3{font-size:1.08rem;margin:22px 0 8px;color:var(--accent);}
+.md h4{font-size:.98rem;margin:16px 0 6px;color:var(--text);}
+.md p{margin:10px 0;color:#cfcfcf;}
+.md strong{color:var(--text);}
+.md em{color:var(--accent);font-style:normal;}
+.md ul,.md ol{margin:10px 0 10px 22px;color:#cfcfcf;}
+.md li{margin:4px 0;}
+.md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.md code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--accent);font-family:'Space Grotesk',monospace;}
+.md pre.code{background:#0f0f0f;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:12px 0;}
+.md pre.code code{background:none;border:none;color:#d7d7d7;padding:0;font-family:'Space Grotesk',ui-monospace,monospace;font-size:.9rem;line-height:1.7;white-space:pre;}
+.md .tablewrap{overflow-x:auto;margin:14px 0;}
+.md table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.md th{background:var(--surface2);text-align:left;padding:10px 13px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+.md td{padding:10px 13px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+.md tr:nth-child(even){background:rgba(255,255,255,.015);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+
+.layout{display:grid;grid-template-columns:230px 1fr;gap:34px;margin-top:30px;align-items:start;}
+@media(max-width:820px){.layout{grid-template-columns:1fr;}.toc{position:static!important;max-height:none!important;}}
+.toc{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;border-right:1px solid var(--border);padding-right:14px;}
+.toc .tt{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.84rem;padding:5px 0;border-left:2px solid transparent;padding-left:10px;margin-left:-2px;transition:.15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.article{min-width:0;}
+.article > section{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+.article > section:last-child{border-bottom:none;}
+.sec-flag{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+<a href="index.html" class="back">← Voltar ao Sistema 05</a>
+<div class="eyebrow">Sistema 05 · material distribuído</div>
+<h1 class="title">Estruturas <em>Fixas</em></h1>
+<style id="dist-css">
+.dist{margin-top:46px;}
+.dist-h{display:flex;align-items:center;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:8px;}
+.dist-flag{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.12em;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);background:color-mix(in srgb,var(--accent) 8%,transparent);padding:3px 9px;border-radius:20px;}
+.dist-h h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;flex:1;}
+.dist-count{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700;color:var(--accent);}
+.dsearch{width:100%;margin:10px 0 14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 15px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;}
+.dsearch:focus{outline:none;border-color:var(--accent);}
+.dsearch::placeholder{color:var(--dim);}
+.ditems{display:grid;gap:8px;}
+.ditem{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.ditem > summary{cursor:pointer;list-style:none;padding:12px 16px;display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;}
+.ditem > summary::-webkit-details-marker{display:none;}
+.ditem > summary::before{content:'▸';color:var(--accent);transition:.2s;flex:none;}
+.ditem[open] > summary::before{transform:rotate(90deg);}
+.ditem[open] > summary{border-bottom:1px solid var(--border);background:var(--surface2);}
+.dbody{padding:14px 18px;white-space:pre-wrap;color:#cfcfcf;font-size:.9rem;line-height:1.6;max-height:65vh;overflow-y:auto;}
+.dnr{color:var(--dim);font-style:italic;padding:14px;display:none;}
+</style>
+<section class="dist"><div class="dist-h"><span class="dist-flag">Material distribuído</span><h2>Estruturas Fixas · chunks que montam a frase</h2><span class="dist-count">8 itens</span></div><input class="dsearch" placeholder="Buscar em Estruturas Fixas · chunks que montam a frase…"><div class="dnr">Nada encontrado.</div><div class="ditems"><details class="ditem" data-search="how adj how long far old much often question word: how long / how far / how old / how much / how many / how often / how soon / how tall | inglês para brasileiros (a1–a2)
+how long / how far / how old / how much / how
+many / how often / how soon / how tall =
+h
+quanto tempo / qual distancia / quantos anos /
+quanto custa...
+how + adjetivo = estrutura fixa com significado único — não traduza palavra por palavra
+uso 1 — how long = quanto "><summary>HOW ADJ HOW LONG FAR OLD MUCH OFTEN</summary><div class="dbody">QUESTION WORD: HOW LONG / HOW FAR / HOW OLD / HOW MUCH / HOW MANY / HOW OFTEN / HOW SOON / HOW TALL | Inglês para Brasileiros (A1–A2)
+HOW LONG / HOW FAR / HOW OLD / HOW MUCH / HOW
+MANY / HOW OFTEN / HOW SOON / HOW TALL =
+H
+QUANTO TEMPO / QUAL DISTANCIA / QUANTOS ANOS /
+QUANTO CUSTA...
+HOW + adjetivo = estrutura fixa com significado único — não traduza palavra por palavra
+USO 1 — HOW LONG = QUANTO TEMPO / QUAL O COMPRIMENTO
+Contexto Inglês Português
+duração How long does it take? Quanto tempo leva?
+duração How long have you lived here? Há quanto tempo você mora aqui?
+duração How long will the trip take? Quanto tempo vai durar a viagem?
+comprimento How long is the road? Qual é o comprimento da estrada?
+resposta It takes about 30 minutes. Leva cerca de 30 minutos.
+💡 HOW LONG = quanto tempo (duração) OU qual o comprimento (tamanho físico). Contexto define.
+USO 2 — HOW FAR / HOW OFTEN / HOW SOON
+Estrutura Inglês Português
+distância How far is it from here? Qual a distância daqui?
+distância How far did you walk? Qual distância você caminhou?
+frequência How often do you exercise? Com que frequência você se exercita?
+frequência How often does she call? Com que frequência ela liga?
+tempo How soon can you come? Em quanto tempo você pode vir?
+tempo How soon will it be ready? Em quanto tempo vai ficar pronto?
+⚠️ HOW OFTEN responde com: always, usually, once a week, every day. HOW SOON responde com: in 5 minutes, soon, right away.
+USO 3 — HOW OLD / HOW TALL / HOW MUCH / HOW MANY
+Estrutura Inglês Português
+idade How old are you? Quantos anos você tem?
+altura How tall is he? Qual é a altura dele?
+preço How much is it? Quanto custa?
+preço How much does it cost? Quanto custa?
+quantidade How many people came? Quantas pessoas vieram?
+quantidade How many brothers do you have? Quantos irmãos você tem?
+💡 HOW OLD = idade | HOW TALL = altura | HOW MUCH = preço ou quantidade incontável | HOW MANY = quantidade contável.
+USO 4 — HOW + outros adjetivos úteis
+Estrutura Inglês Português
+HOW BIG How big is the apartment? Qual é o tamanho do apartamento?
+HOW HEAVY How heavy is the package? Qual é o peso do pacote?
+HOW WIDE How wide is the road? Qual é a largura da estrada?
+HOW DEEP How deep is the pool? Qual é a profundidade da piscina?
+HOW FAST How fast can you run? Quão rápido você consegue correr?
+HOW HARD How hard is the exam? Quão difícil é a prova?
+💡 HOW + qualquer adjetivo = pergunta sobre o GRAU daquele adjetivo. Padrão: HOW + adj + verbo + sujeito?
+USO 5 — Respostas típicas para cada HOW
+Pergunta Resposta típica Tradução
+How long? About 2 hours. / Not long. Cerca de 2 horas. / Pouco tempo.
+How far? About 5km. / Very far. / Not far. Cerca de 5km. / Muito longe. / Perto.
+How often? Every day. / Twice a week. / Rarely. Todo dia. / Duas vezes/sem. / Raramente.
+How much? Ten dollars. / Not much. / A lot. Dez dólares. / Pouco. / Muito.
+How many? Three. / About twenty. / Not many. Três. / Uns vinte. / Poucos.
+How old? I'm 25. / About 30. Tenho 25. / Uns 30 anos.
+How soon? Right away. / In 10 minutes. / Soon. Já. / Em 10 minutos. / Logo.
+💡 Aprenda as perguntas E as respostas típicas juntas — é assim que o cérebro guarda estruturas fixas.
+🔴 ERRO DO BRASILEIRO: 'How much years?' ❌ — years é contável: 'How MANY years?' ✅ | 'How many money?' ❌ — money é incontável: 'How
+MUCH money?' ✅
+💡 RESUMO: HOW LONG=quanto tempo/comprimento | HOW FAR=distância | HOW OFTEN=frequência | HOW SOON=em quanto tempo | HOW
+OLD=idade | HOW TALL=altura | HOW MUCH=preço/incontável | HOW MANY=contável.</div></details><details class="ditem" data-search="what noun what kind time like going on question word: what kind of / what type / what time / what size / what's it like / what's going on | inglês para brasileiros (a1–a2)
+what kind of / what type / what time / what size /
+what's it like / what's going on = que tipo de / a
+w
+que horas / como e / o que esta acontecendo
+what + substantivo = estrutura fixa — o significado é diferente de what sozinho
+uso 1 — what kind of / what type of = q"><summary>WHAT NOUN WHAT KIND TIME LIKE GOING ON</summary><div class="dbody">QUESTION WORD: WHAT KIND OF / WHAT TYPE / WHAT TIME / WHAT SIZE / WHAT'S IT LIKE / WHAT'S GOING ON | Inglês para Brasileiros (A1–A2)
+WHAT KIND OF / WHAT TYPE / WHAT TIME / WHAT SIZE /
+WHAT'S IT LIKE / WHAT'S GOING ON = QUE TIPO DE / A
+W
+QUE HORAS / COMO E / O QUE ESTA ACONTECENDO
+WHAT + substantivo = estrutura fixa — o significado é diferente de WHAT sozinho
+USO 1 — WHAT KIND OF / WHAT TYPE OF = QUE TIPO DE
+Contexto Inglês Português
+preferência What kind of music do you like? Que tipo de música você gosta?
+preferência What kind of food is it? Que tipo de comida é?
+preferência What type of person is he? Que tipo de pessoa ele é?
+preferência What kind of work do you do? Que tipo de trabalho você faz?
+resposta I like pop music. / It's Italian food. Gosto de música pop. / É comida italiana.
+💡 WHAT KIND OF = WHAT TYPE OF = que tipo de. KIND é mais informal. TYPE é mais técnico/formal.
+USO 2 — WHAT TIME / WHAT DAY / WHAT PART OF
+Estrutura Inglês Português
+hora What time does it start? A que horas começa?
+hora What time are you leaving? A que horas você vai sair?
+dia What day is the meeting? Em que dia é a reunião?
+dia What day is today? Que dia é hoje?
+parte What part of Brazil are you from? De que parte do Brasil você é?
+💡 WHAT TIME = a que horas | WHAT DAY = que dia | WHAT PART OF = que parte de.
+USO 3 — WHAT'S IT LIKE? = COMO É?
+Contexto Inglês Português
+descrição What's the weather like? Como está o tempo?
+descrição What's the food like? Como é a comida?
+descrição What's he like? Como ele é?
+descrição What was the trip like? Como foi a viagem?
+resposta It's amazing! / He's very kind. / It was great. É incrível! / Ele é muito gentil. / Foi ótimo.
+⚠️ WHAT'S IT LIKE? ≠ WHAT DOES IT LOOK LIKE? — 'What's it like?' = descreva em geral. 'What does it look like?' = descreva a aparência.
+USO 4 — WHAT'S GOING ON / WHAT'S UP / WHAT'S WRONG
+Estrutura Inglês Português
+situação What's going on? O que está acontecendo?
+informal What's up? O que há? / Tudo bem?
+problema What's wrong? O que há de errado? / O que foi?
+problema What's wrong with you? O que você tem? / O que foi?
+situação What's the matter? O que foi? / O que está havendo?
+💡 Essas expressões são usadas o tempo todo. WHAT'S UP é a saudação informal mais comum dos americanos.
+USO 5 — WHAT'S IT FOR / WHAT'S IT ABOUT / WHAT SIZE / WHAT COLOR
+Estrutura Inglês Português
+finalidade What's this button for? Para que serve esse botão?
+assunto What's the movie about? Sobre o que é o filme?
+tamanho What size do you wear? Que tamanho você usa?
+cor What color is your car? Que cor é seu carro?
+cor What color do you want? Que cor você quer?
+💡 WHAT'S IT FOR? = para que serve? | WHAT'S IT ABOUT? = sobre o que é? (livro, filme) | WHAT SIZE = que tamanho.
+🔴 CONFUSÃO: 'What kind of music do you like?' (pergunta aberta) ✅ | 'Which kind of music?' ❌ — com KIND/TYPE usa-se WHAT, não WHICH, mesmo
+com opções.
+💡 RESUMO: WHAT KIND OF/TYPE OF=que tipo de | WHAT TIME=a que horas | WHAT DAY=que dia | WHAT'S IT LIKE?=como é? | WHAT'S GOING ON?
+=o que acontece? | WHAT'S UP?=e aí? | WHAT'S WRONG?=o que foi? | WHAT'S IT FOR?=para que serve?</div></details><details class="ditem" data-search="it there it is takes worth there is are question word: it is / it takes / it depends / it's worth / there is / there are | inglês para brasileiros (a1–a2)
+it is / it takes / it depends / it's worth / there is /
+there are = e / leva / depende / vale a pena / tem /
+i
+ha
+construções impessoais — não existem no português da mesma forma. sujeito it e there são obrigatórios.
+uso 1 — it is = é / está / faz (impessoal)
+contexto inglês português"><summary>IT THERE IT IS TAKES WORTH THERE IS ARE</summary><div class="dbody">QUESTION WORD: IT IS / IT TAKES / IT DEPENDS / IT'S WORTH / THERE IS / THERE ARE | Inglês para Brasileiros (A1–A2)
+IT IS / IT TAKES / IT DEPENDS / IT'S WORTH / THERE IS /
+THERE ARE = E / LEVA / DEPENDE / VALE A PENA / TEM /
+I
+HA
+Construções impessoais — não existem no português da mesma forma. Sujeito IT e THERE são obrigatórios.
+USO 1 — IT IS = É / ESTÁ / FAZ (impessoal)
+Contexto Inglês Português
+clima It is cold today. Está frio hoje.
+hora It is 3 o'clock. São 3 horas.
+distância It is far from here. É longe daqui.
+situação It is important to study. É importante estudar.
+identificar It is me! / It's me! Sou eu!
+dia It is Monday. É segunda-feira.
+⚠️ Em inglês o IT impessoal é OBRIGATÓRIO. 'Is raining.' ❌ → 'IT is raining.' ✅ — nunca omita!
+USO 2 — IT TAKES = LEVA (tempo)
+Contexto Inglês Português
+duração It takes 20 minutes by bus. Leva 20 minutos de ônibus.
+duração It takes time to learn English. Leva tempo para aprender inglês.
+duração It took me 2 hours to finish. Me levou 2 horas para terminar.
+duração It will take about an hour. Vai levar cerca de uma hora.
+duração How long does it take? Quanto tempo leva?
+💡 IT TAKES + tempo = leva... É uma das estruturas mais usadas para falar de duração.
+USO 3 — IT DEPENDS / IT'S WORTH / IT'S UP TO YOU
+Estrutura Inglês Português
+depende It depends on the weather. Depende do tempo.
+depende It depends on what you want. Depende do que você quer.
+vale a pena It's worth trying. Vale a pena tentar.
+vale a pena It's worth it. Vale a pena.
+decisão It's up to you. Depende de você. / É com você.
+não importa It doesn't matter. Não importa. / Tanto faz.
+💡 IT DEPENDS ON = depende de | IT'S WORTH + gerúndio = vale a pena | IT'S UP TO YOU = é você quem decide.
+USO 4 — THERE IS / THERE ARE = TEM / HÁ
+Número Inglês Português
+singular There is a problem. Tem um problema. / Há um problema.
+singular There is a café nearby. Tem um café perto.
+plural There are many people here. Tem muita gente aqui.
+plural There are no options left. Não tem mais opções.
+neg. sing. There isn't any milk. Não tem leite.
+neg. plur. There aren't any apples. Não tem maçãs.
+⚠️ THERE IS + singular | THERE ARE + plural. Na fala informal, 'There's' é usado para ambos: 'There's two options.' (aceito).
+USO 5 — THERE IS/ARE em perguntas e passado
+Tempo Inglês Português
+perg. pres. Is there a bathroom nearby? Tem um banheiro perto?
+perg. pres. Are there any tickets left? Ainda tem ingressos?
+passado There was a problem yesterday. Tinha um problema ontem.
+passado There were many people there. Tinha muita gente lá.
+futuro There will be a meeting tomorrow. Vai ter uma reunião amanhã.
+💡 THERE WAS = tinha (singular passado) | THERE WERE = tinham/tinha (plural passado) | THERE WILL BE = vai ter (futuro).
+🔴 ERROS CLÁSSICOS: 'Is a problem.' ❌ → 'THERE IS a problem.' ✅ | 'Is raining.' ❌ → 'IT is raining.' ✅ | 'Have problem.' ❌ → 'There IS a problem.' ✅
+— não use HAVE para existência!
+💡 RESUMO: IT IS = é/está/faz (impessoal, obrigatório) | IT TAKES = leva (tempo) | IT DEPENDS ON = depende de | IT'S WORTH = vale a pena | IT'S UP
+TO YOU = é com você | THERE IS/ARE = tem/há | THERE WAS/WERE = tinha/tinham.</div></details><details class="ditem" data-search="time fixed as soon as at first at least on time question word: as soon as / by the time / from now on / at first / at last / at least / all the time | inglês para brasileiros (a1–a2)
+as soon as / by the time / from now on / at first /
+at last / at least / all the time = assim que /
+t
+quando / de agora em diante / a principio /
+finalmente / pelo menos
+blocos temporais fixos — cada um é uma unidade com significado próprio
+uso 1 — as soon as / by "><summary>TIME FIXED AS SOON AS AT FIRST AT LEAST ON TIME</summary><div class="dbody">QUESTION WORD: AS SOON AS / BY THE TIME / FROM NOW ON / AT FIRST / AT LAST / AT LEAST / ALL THE TIME | Inglês para Brasileiros (A1–A2)
+AS SOON AS / BY THE TIME / FROM NOW ON / AT FIRST /
+AT LAST / AT LEAST / ALL THE TIME = ASSIM QUE /
+T
+QUANDO / DE AGORA EM DIANTE / A PRINCIPIO /
+FINALMENTE / PELO MENOS
+Blocos temporais fixos — cada um é uma unidade com significado próprio
+USO 1 — AS SOON AS / BY THE TIME / FROM NOW ON
+Estrutura Inglês Português
+imediato As soon as I arrive, I'll call. Assim que eu chegar, vou ligar.
+imediato As soon as possible. O mais rápido possível. (ASAP)
+quando By the time you read this, I'll be gone. Quando você ler isso, já terei ido.
+quando By the time she arrived, it was over. Quando ela chegou, já tinha acabado.
+futuro From now on, I'll study every day. De agora em diante, vou estudar todo dia.
+💡 AS SOON AS = assim que (imediato) | BY THE TIME = quando (algo já terá acontecido) | FROM NOW ON = de agora em diante.
+USO 2 — AT FIRST / AT LAST / AT LEAST / AT ONCE
+Estrutura Inglês Português
+início At first, it was really hard. A princípio / No início, foi muito difícil.
+início At first I didn't like it. No começo eu não gostava.
+fim At last, we arrived! Finalmente / Por fim, chegamos!
+mínimo At least try it. Pelo menos tente.
+mínimo At least he called. Pelo menos ele ligou.
+imediato Come here at once! Venha aqui imediatamente!
+⚠️ AT FIRST ≠ AT LAST: AT FIRST = no início (implica mudança depois). AT LAST = finalmente (após espera longa).
+USO 3 — ALL THE TIME / FROM...TO / AT THE SAME TIME
+Estrutura Inglês Português
+sempre She works all the time. Ela trabalha o tempo todo.
+período I work from Monday to Friday. Trabalho de segunda a sexta.
+período From 9am to 5pm. Das 9h às 17h.
+simultâneo We arrived at the same time. Chegamos ao mesmo tempo.
+meio-tempo In the meantime, wait here. Nesse meio tempo, espere aqui.
+💡 FROM...TO = de...a/às (período). ALL THE TIME = o tempo todo. AT THE SAME TIME = ao mesmo tempo.
+USO 4 — IN TIME / ON TIME / AHEAD OF TIME / IN NO TIME
+Estrutura Inglês Português
+dentro do prazo She arrived in time for the show. Ela chegou a tempo para o show.
+pontual He always comes on time. Ele sempre chega na hora certa.
+adiantado We finished ahead of time. Terminamos antes do prazo.
+rapidamente She learned it in no time. Ela aprendeu isso em tempo algum / rapidíssimo.
+atrasado The train is behind schedule. O trem está atrasado.
+⚠️ IN TIME = a tempo (chegar antes que seja tarde) ≠ ON TIME = pontual (na hora marcada). Diferença crucial!
+USO 5 — FOR A WHILE / ONCE IN A WHILE / ALL OF A SUDDEN
+Estrutura Inglês Português
+por um tempo Wait for a while. Espere um pouco.
+de vez em quando I see him once in a while. Eu o vejo de vez em quando.
+de repente All of a sudden, it started raining. De repente, começou a chover.
+de repente Out of nowhere, he appeared. Do nada, ele apareceu.
+logo Before long, she'll understand. Logo ela vai entender.
+💡 FOR A WHILE = por um tempo | ONCE IN A WHILE = de vez em quando | ALL OF A SUDDEN = de repente | OUT OF NOWHERE = do nada.
+🔴 IN TIME vs ON TIME: 'I arrived in time for the movie' (ainda dava) ✅ / 'I always arrive on time' (pontual, na hora marcada) ✅. São diferentes!
+💡 RESUMO: AS SOON AS=assim que | BY THE TIME=quando (já terá acontecido) | FROM NOW ON=de agora em diante | AT FIRST=no início | AT
+LAST=finalmente | AT LEAST=pelo menos | ALL THE TIME=o tempo todo | IN TIME=a tempo | ON TIME=pontual.</div></details><details class="ditem" data-search="opinion i think feel like seems sounds looks question word: i think that / i feel like / i'm not sure / it seems like / it sounds like / it looks like | inglês para brasileiros (a1–a2)
+i think that / i feel like / i'm not sure / it seems
+like / it sounds like / it looks like = acho que /
+o
+estou com vontade / parece que / pelo que
+ouvi / pelo que vejo
+estruturas para expressar opinião, sensação e percepção — essenciais na conversa
+uso 1 — i "><summary>OPINION I THINK FEEL LIKE SEEMS SOUNDS LOOKS</summary><div class="dbody">QUESTION WORD: I THINK THAT / I FEEL LIKE / I'M NOT SURE / IT SEEMS LIKE / IT SOUNDS LIKE / IT LOOKS LIKE | Inglês para Brasileiros (A1–A2)
+I THINK THAT / I FEEL LIKE / I'M NOT SURE / IT SEEMS
+LIKE / IT SOUNDS LIKE / IT LOOKS LIKE = ACHO QUE /
+O
+ESTOU COM VONTADE / PARECE QUE / PELO QUE
+OUVI / PELO QUE VEJO
+Estruturas para expressar opinião, sensação e percepção — essenciais na conversa
+USO 1 — I THINK / I BELIEVE / I FEEL (opinião pessoal)
+Estrutura Inglês Português
+opinião I think it's a good idea. Acho que é uma boa ideia.
+opinião I think that she is right. Acho que ela está certa.
+opinião I believe we can do it. Acredito que podemos fazer.
+sentimento I feel that something is wrong. Sinto que algo está errado.
+neg. opini. I don't think it's a good idea. Acho que não é uma boa ideia.
+💡 I THINK THAT = acho que. A negação vai no THINK: 'I DON'T think it's good' (não em 'I think it's NOT good').
+USO 2 — I FEEL LIKE / I'M NOT SURE / I CAN'T WAIT
+Estrutura Inglês Português
+vontade I feel like eating pizza. Estou com vontade de comer pizza.
+sensação I feel like something is wrong. Parece que algo está errado.
+incerteza I'm not sure about that. Não tenho certeza disso.
+incerteza I'm not sure if she'll come. Não sei se ela vai vir.
+ansiedade I can't wait to see you! Mal posso esperar para te ver!
+ansiedade I'm looking forward to the trip. Estou ansioso para a viagem.
+⚠️ I FEEL LIKE tem 2 usos: vontade (I feel like eating) e sensação/percepção (I feel like something is wrong). Contexto define.
+USO 3 — IT SEEMS LIKE / IT SOUNDS LIKE / IT LOOKS LIKE
+Estrutura Inglês Português
+parece (geral) It seems like rain today. Parece que vai chover hoje.
+parece (geral) It seems like she's upset. Parece que ela está chateada.
+parece (ouvir) It sounds like a great plan. Parece ótimo! (pelo que você disse)
+parece (ouvir) That sounds amazing! Isso parece incrível!
+parece (ver) It looks like she's tired. Parece que ela está cansada. (pelo visual)
+parece (ver) It looks like rain. Parece que vai chover. (céu cinza)
+💡 SEEMS = percepção geral | SOUNDS = percepção auditiva ou por informação | LOOKS = percepção visual.
+USO 4 — I'D RATHER / I'D LOVE TO / I'D PREFER
+Estrutura Inglês Português
+preferência I'd rather stay home. Prefiro ficar em casa.
+preferência I'd rather not go. Prefiro não ir.
+desejo I'd love to travel to Japan. Adoraria viajar ao Japão.
+desejo I'd love to, but I can't. Adoraria, mas não consigo.
+preferência I'd prefer to eat now. Prefiro comer agora.
+💡 I'D = I WOULD (contração). I'D RATHER + verbo base | I'D LOVE TO + verbo | I'D PREFER TO + verbo.
+USO 5 — Expressões de surpresa e reação
+Estrutura Inglês Português
+surpresa I had no idea. Não tinha a menor ideia.
+surpresa I can't believe it! Não consigo acreditar!
+concordar I couldn't agree more. Concordo plenamente.
+discordar I'm not so sure about that. Não tenho tanta certeza disso.
+neutro I suppose so. Suponho que sim. / Acho que sim.
+💡 Expressões de reação são essenciais para a conversa real. Aprenda como blocos prontos.
+🔴 I FEEL LIKE ≠ I FEEL: 'I feel tired.' (estou cansado) vs 'I feel like eating.' (estou com vontade de comer). O LIKE muda o sentido!
+💡 RESUMO: I THINK/BELIEVE/FEEL=acho/acredito/sinto | I FEEL LIKE=estou com vontade de / parece que | I'M NOT SURE=não tenho certeza | IT
+SEEMS/SOUNDS/LOOKS LIKE=parece que (geral/ouvir/ver) | I'D RATHER=prefiro | I'D LOVE TO=adoraria.</div></details><details class="ditem" data-search="polite could would mind wondering let me know question word: could you / would you mind / do you mind if / i was wondering / is it ok if / let me know | inglês para brasileiros (a1–a2)
+could you / would you mind / do you mind if / i
+was wondering / is it ok if / let me know = voce
+p
+poderia / voce se importaria / estava pensando /
+tudo bem se / me avise
+as estruturas mais educadas do inglês — essenciais para comunicação real e profissional
+us"><summary>POLITE COULD WOULD MIND WONDERING LET ME KNOW</summary><div class="dbody">QUESTION WORD: COULD YOU / WOULD YOU MIND / DO YOU MIND IF / I WAS WONDERING / IS IT OK IF / LET ME KNOW | Inglês para Brasileiros (A1–A2)
+COULD YOU / WOULD YOU MIND / DO YOU MIND IF / I
+WAS WONDERING / IS IT OK IF / LET ME KNOW = VOCE
+P
+PODERIA / VOCE SE IMPORTARIA / ESTAVA PENSANDO /
+TUDO BEM SE / ME AVISE
+As estruturas mais educadas do inglês — essenciais para comunicação real e profissional
+USO 1 — COULD YOU / WOULD YOU = pedido educado
+Estrutura Inglês Português
+pedido Could you help me, please? Você poderia me ajudar?
+pedido Could you speak more slowly? Você poderia falar mais devagar?
+pedido Would you mind waiting? Você se importaria de esperar?
+pedido Would you like some coffee? Você gostaria de um café?
+pedido Can you help me? (informal) Você pode me ajudar? (casual)
+💡 Escala de educação: CAN (casual) &lt; COULD (educado) &lt; WOULD YOU MIND (muito educado). Use conforme o contexto.
+USO 2 — DO YOU MIND IF / WOULD YOU MIND IF (pedir permissão)
+Estrutura Inglês Português
+permissão Do you mind if I sit here? Você se importa se eu sentar aqui?
+permissão Do you mind if I open the window? Você se importa se eu abrir a janela?
+permissão Would you mind if I left early? Você se importaria se eu saísse cedo?
+resposta + No, not at all. / Of course not. Não, de jeito nenhum. / Claro que não.
+resposta - Actually, I'd prefer if you didn't. Na verdade, prefiro que não.
+⚠️ A resposta para 'Do you mind?' é confusa: 'No, not at all' = PODE (não me importo). 'Yes, I do mind' = NÃO PODE (me importo).
+USO 3 — I WAS WONDERING IF / IS IT OK IF
+Estrutura Inglês Português
+muito educado I was wondering if you could help. Estava me perguntando se você poderia ajudar.
+muito educado I was wondering if it would be possible. Estava pensando se seria possível.
+permissão Is it OK if I leave early? Tudo bem se eu sair cedo?
+permissão Is it alright if I bring a friend? Tudo bem se eu trouxer um amigo?
+💡 I WAS WONDERING IF é a forma mais delicada de fazer um pedido — usada em e-mails e situações formais.
+USO 4 — LET ME KNOW / FEEL FREE TO / GO AHEAD
+Estrutura Inglês Português
+aviso Let me know when you arrive. Me avise quando chegar.
+aviso Let me know if you need anything. Me diga se precisar de qualquer coisa.
+permissão Feel free to ask questions. Fique à vontade para fazer perguntas.
+permissão Feel free to use my phone. Fique à vontade para usar meu celular.
+permissão Go ahead, I'm listening. Pode falar, estou ouvindo.
+💡 LET ME KNOW = me avise/diga | FEEL FREE TO = fique à vontade para | GO AHEAD = pode ir / pode falar.
+USO 5 — Respostas educadas e expressões de cortesia
+Situação Inglês Português
+agradecer Thank you so much. / Thanks a lot. Muito obrigado.
+agradecer I really appreciate it. Eu realmente agradeço.
+recusar pol. I'm afraid I can't. Infelizmente não posso.
+recusar pol. I'd love to, but I can't. Adoraria, mas não consigo.
+concordar That works for me. / Sounds good! Funciona para mim. / Ótimo!
+💡 'I'm afraid I can't' = forma educada de recusar. 'I really appreciate it' = agradecimento mais formal e sincero.
+🔴 ARMADILHA: 'Do you mind if I sit?' → Resposta 'YES' = NÃO PODE (sim, me importo) | Resposta 'NO' = PODE (não, não me importo). O contrário do
+português!
+💡 RESUMO: COULD YOU=poderia | WOULD YOU MIND=se importaria | DO YOU MIND IF=se importa se | I WAS WONDERING IF=estava pensando se
+(muito educado) | IS IT OK IF=tudo bem se | LET ME KNOW=me avise | FEEL FREE TO=fique à vontade.</div></details><details class="ditem" data-search="comparison as as the more so that too to kind of question word: as...as / the more...the more / so...that / too...to / enough to / kind of / more or less | inglês para brasileiros (a1–a2)
+as...as / the more...the more / so...that / too...to /
+enough to / kind of / more or less =
+c
+tao...quanto / quanto mais...mais / tao...que /
+demais para / suficiente / tipo / mais ou menos
+estruturas para comparar, intensificar e relativizar — muito usadas na "><summary>COMPARISON AS AS THE MORE SO THAT TOO TO KIND OF</summary><div class="dbody">QUESTION WORD: AS...AS / THE MORE...THE MORE / SO...THAT / TOO...TO / ENOUGH TO / KIND OF / MORE OR LESS | Inglês para Brasileiros (A1–A2)
+AS...AS / THE MORE...THE MORE / SO...THAT / TOO...TO /
+ENOUGH TO / KIND OF / MORE OR LESS =
+C
+TAO...QUANTO / QUANTO MAIS...MAIS / TAO...QUE /
+DEMAIS PARA / SUFICIENTE / TIPO / MAIS OU MENOS
+Estruturas para comparar, intensificar e relativizar — muito usadas na fala natural
+USO 1 — AS...AS / NOT AS...AS (comparação de igualdade)
+Estrutura Inglês Português
+igual She is as tall as her brother. Ela é tão alta quanto o irmão.
+igual This is as good as the other one. Isso é tão bom quanto o outro.
+não igual It's not as cold as yesterday. Não está tão frio quanto ontem.
+não igual He's not as fast as she is. Ele não é tão rápido quanto ela.
+expressão As soon as possible. O mais rápido possível.
+💡 AS + adj + AS = tão...quanto (igual). NOT AS + adj + AS = não tão...quanto (diferença).
+USO 2 — THE MORE...THE MORE (proporção)
+Estrutura Inglês Português
+proporção The more I study, the more I learn. Quanto mais estudo, mais aprendo.
+proporção The older he gets, the wiser he becomes. Quanto mais velho fica, mais sábio.
+proporção The more you practice, the better. Quanto mais você pratica, melhor.
+proporção The less you worry, the happier you'll be. Quanto menos se preocupa, mais feliz.
+💡 THE MORE...THE MORE = quanto mais...mais. Estrutura de proporção direta. THE LESS...THE MORE = quanto menos...mais.
+USO 3 — SO...THAT / SUCH...THAT (consequência intensificada)
+Estrutura Inglês Português
+SO + adj It was so cold that I couldn't sleep. Estava tão frio que não consegui dormir.
+SO + adj She was so tired that she slept all day. Ela estava tão cansada que dormiu o dia todo.
+SUCH + noun It was such a good movie that I watched it twice. Foi um filme tão bom que assisti duas vezes.
+SUCH + noun She had such good ideas that we all agreed. Ela tinha ideias tão boas que todos concordamos.
+⚠️ SO + adjetivo/advérbio | SUCH + (a/an) + substantivo. 'So good' vs 'Such a good movie'.
+USO 4 — TOO...TO / ENOUGH TO (resultado impossível ou possível)
+Estrutura Inglês Português
+TOO + adj + TO She's too tired to cook. Ela está cansada demais para cozinhar.
+TOO + adj + TO It's too hot to go outside. Está quente demais para sair.
+adj + ENOUGH TO He's old enough to drive. Ele tem idade suficiente para dirigir.
+adj + ENOUGH TO She's strong enough to carry it. Ela é forte o suficiente para carregar.
+💡 TOO + adj + TO = resultado impossível (demais para). adj + ENOUGH + TO = resultado possível (suficiente para).
+USO 5 — KIND OF / SORT OF / MORE OR LESS (suavizar)
+Estrutura Inglês Português
+suavizar It's kind of difficult. É tipo difícil. / É meio difícil.
+suavizar I'm sort of tired. Estou meio cansado.
+aproximar It takes more or less an hour. Leva mais ou menos uma hora.
+aproximar More or less, I agree. Mais ou menos, eu concordo.
+ênfase I totally agree. Concordo totalmente.
+ênfase It's absolutely amazing. É absolutamente incrível.
+💡 KIND OF / SORT OF = meio / tipo (informal, suaviza). MORE OR LESS = mais ou menos. TOTALLY/ABSOLUTELY = intensificadores fortes.
+🔴 SO vs SUCH: 'She is so beautiful.' ✅ (so + adj) / 'She is such beautiful.' ❌ → 'She is such a beautiful woman.' ✅ (such + a + adj + noun)
+💡 RESUMO: AS...AS=tão quanto | THE MORE...THE MORE=quanto mais...mais | SO...THAT=tão...que | SUCH...THAT=tão...que(noun) | TOO...TO=demais
+para | ENOUGH TO=suficiente para | KIND OF=meio/tipo | MORE OR LESS=mais ou menos.</div></details><details class="ditem" data-search="cause cond thats why even if no matter as long as question word: that's why / that's because / in that case / otherwise / even if / no matter what / as long as | inglês para brasileiros (a1–a2)
+that's why / that's because / in that case /
+otherwise / even if / no matter what / as long
+l
+as = e por isso que / e porque / nesse caso /
+caso contrario / mesmo se / nao importa o que
+estruturas fixas de causa, condição e consequência — muito usadas para"><summary>CAUSE COND THATS WHY EVEN IF NO MATTER AS LONG AS</summary><div class="dbody">QUESTION WORD: THAT'S WHY / THAT'S BECAUSE / IN THAT CASE / OTHERWISE / EVEN IF / NO MATTER WHAT / AS LONG AS | Inglês para Brasileiros (A1–A2)
+THAT'S WHY / THAT'S BECAUSE / IN THAT CASE /
+OTHERWISE / EVEN IF / NO MATTER WHAT / AS LONG
+L
+AS = E POR ISSO QUE / E PORQUE / NESSE CASO /
+CASO CONTRARIO / MESMO SE / NAO IMPORTA O QUE
+Estruturas fixas de causa, condição e consequência — muito usadas para explicar e argumentar
+USO 1 — THAT'S WHY / THAT'S BECAUSE / THAT'S HOW
+Estrutura Inglês Português
+resultado That's why I called. É por isso que eu liguei.
+resultado That's why she's upset. É por isso que ela está chateada.
+causa That's because it's new. É porque é novo.
+causa That's because she didn't study. É porque ela não estudou.
+modo That's how I learned English. Foi assim que eu aprendi inglês.
+💡 THAT'S WHY = é por isso que (resultado) | THAT'S BECAUSE = é porque (causa) | THAT'S HOW = foi assim que (modo).
+USO 2 — IN THAT CASE / OTHERWISE / BECAUSE OF THAT
+Estrutura Inglês Português
+consequência In that case, let's cancel. Nesse caso, vamos cancelar.
+consequência In that case, I'll stay home. Nesse caso, fico em casa.
+senão Call me, otherwise I'll worry. Me ligue, caso contrário vou me preocupar.
+senão Hurry up, otherwise we'll be late. Apresse-se, senão vamos nos atrasar.
+resultado Because of that, I missed the bus. Por causa disso, perdi o ônibus.
+💡 IN THAT CASE = nesse caso (decisão baseada no que foi dito) | OTHERWISE = caso contrário/senão.
+USO 3 — EVEN IF / EVEN THOUGH / NO MATTER WHAT
+Estrutura Inglês Português
+concessão I'll go even if it rains. Vou mesmo se chover.
+concessão Even if I fail, I'll try again. Mesmo se eu falhar, vou tentar de novo.
+contraste Even though it's hard, keep going. Mesmo sendo difícil, continue.
+absoluto No matter what, I'll be there. Não importa o que aconteça, estarei lá.
+absoluto No matter how hard it is, don't quit. Por mais difícil que seja, não desista.
+⚠️ EVEN IF = mesmo se (hipotético, futuro) | EVEN THOUGH = mesmo que (já acontece). Diferença importante!
+USO 4 — AS LONG AS / PROVIDED THAT / ON CONDITION THAT
+Estrutura Inglês Português
+condição As long as you try, I'll help. Desde que você tente, vou ajudar.
+condição I'll come as long as it's not late. Vou desde que não seja tarde.
+condição You can go provided that you call. Pode ir desde que ligue.
+condição I'll help on one condition. Vou ajudar com uma condição.
+💡 AS LONG AS = desde que (condição contínua, casual) | PROVIDED THAT = desde que (mais formal).
+USO 5 — Expressões de consequência e decisão
+Estrutura Inglês Português
+decisão Make up your mind. Tome uma decisão. / Decida-se.
+resultado It turned out well. Deu certo. / Acabou bem.
+resultado It worked out. Funcionou. / Deu certo.
+fracasso It didn't work out. Não funcionou. / Não deu certo.
+destino It all depends. Tudo depende. / Depende.
+💡 IT TURNED OUT = acabou sendo... | IT WORKED OUT = deu certo | MAKE UP YOUR MIND = decida-se. Expressões fixas essenciais.
+🔴 EVEN IF vs EVEN THOUGH: 'Even if it rains, I'll go.' (ainda não choveu — hipótese futura) ✅ / 'Even though it's raining, I'll go.' (está chovendo agora)
+✅. Tempo verbal diferente!
+💡 RESUMO: THAT'S WHY=é por isso que | THAT'S BECAUSE=é porque | IN THAT CASE=nesse caso | OTHERWISE=senão/caso contrário | EVEN
+IF=mesmo se (hipótese) | EVEN THOUGH=mesmo que (fato) | NO MATTER WHAT=não importa o quê | AS LONG AS=desde que.</div></details></div></section>
+</div>
+<footer>Sistema 05 · Situar a Frase — dê endereço às suas ideias</footer>
+<script id="dist-js">
+document.querySelectorAll('.dist').forEach(sec=>{
+  const inp=sec.querySelector('.dsearch');
+  const items=[...sec.querySelectorAll('.ditem')];
+  const nr=sec.querySelector('.dnr');
+  if(!inp) return;
+  inp.addEventListener('input',()=>{
+    const q=inp.value.trim().toLowerCase();let shown=0;
+    items.forEach(it=>{const hit=!q||it.dataset.search.includes(q);it.style.display=hit?'':'none';if(hit){shown++;it.open=!!q;}});
+    if(nr) nr.style.display=shown?'none':'block';
+  });
+});
+</script>
+</body>
+</html>

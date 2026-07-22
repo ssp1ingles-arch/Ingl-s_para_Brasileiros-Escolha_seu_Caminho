@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 04 · Expressões Idiomáticas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#10B981;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+/* markdown article */
+.md h1,.md h2,.md h3,.md h4{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+.md h1{font-size:1.5rem;margin:30px 0 10px;color:var(--text);}
+.md h2{font-size:1.28rem;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.md h3{font-size:1.08rem;margin:22px 0 8px;color:var(--accent);}
+.md h4{font-size:.98rem;margin:16px 0 6px;color:var(--text);}
+.md p{margin:10px 0;color:#cfcfcf;}
+.md strong{color:var(--text);}
+.md em{color:var(--accent);font-style:normal;}
+.md ul,.md ol{margin:10px 0 10px 22px;color:#cfcfcf;}
+.md li{margin:4px 0;}
+.md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.md code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--accent);font-family:'Space Grotesk',monospace;}
+.md pre.code{background:#0f0f0f;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:12px 0;}
+.md pre.code code{background:none;border:none;color:#d7d7d7;padding:0;font-family:'Space Grotesk',ui-monospace,monospace;font-size:.9rem;line-height:1.7;white-space:pre;}
+.md .tablewrap{overflow-x:auto;margin:14px 0;}
+.md table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.md th{background:var(--surface2);text-align:left;padding:10px 13px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+.md td{padding:10px 13px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+.md tr:nth-child(even){background:rgba(255,255,255,.015);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+
+.layout{display:grid;grid-template-columns:230px 1fr;gap:34px;margin-top:30px;align-items:start;}
+@media(max-width:820px){.layout{grid-template-columns:1fr;}.toc{position:static!important;max-height:none!important;}}
+.toc{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;border-right:1px solid var(--border);padding-right:14px;}
+.toc .tt{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.84rem;padding:5px 0;border-left:2px solid transparent;padding-left:10px;margin-left:-2px;transition:.15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.article{min-width:0;}
+.article > section{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+.article > section:last-child{border-bottom:none;}
+.sec-flag{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+<a href="index.html" class="back">← Voltar ao Sistema 04</a>
+<div class="eyebrow">Sistema 04 · o que liga as ideias</div>
+<div class="article md">
+<section id="s2"><div class="sec-flag">Expressões Idiomáticas · não leve ao pé da letra</div><h1>SISTEMA 15 — EXPRESSÕES IDIOMÁTICAS: NÃO LEVE AO PÉ DA LETRA</h1>
+<hr>
+<h2 id="s2-estrutura-2-grupos-tem-ticos">ESTRUTURA — 2 GRUPOS TEMÁTICOS</h2>
+<h3>Grupo 1 — Confusão &amp; Comunicação</h3>
+<p>Expressões para quando algo é difícil de entender ou quando você precisa que alguém fale logo.</p>
+<div class="tablewrap"><table><thead><tr><th>#</th><th>Expressão</th><th>Significado real</th><th>Armadilha BR</th></tr></thead><tbody><tr><td>1</td><td><strong>a headscratcher</strong></td><td>algo confuso, difícil de entender</td><td>Não é sobre coceira na cabeça com piolho 😅</td></tr><tr><td>2</td><td><strong>hit me</strong></td><td>"pode falar" / "tô pronto pra ouvir"</td><td>Não é sobre bater em alguém</td></tr><tr><td>3</td><td><strong>drop it</strong></td><td>deixa pra lá / para de falar sobre isso</td><td>Não é sobre largar algo físico</td></tr><tr><td>4</td><td><strong>spit it out</strong></td><td>fala logo / para de enrolar</td><td>Não é sobre cuspir literalmente</td></tr></tbody></table></div>
+<h3>Grupo 2 — Coragem &amp; Energia Emocional</h3>
+<p>Expressões para quando você não tem ânimo emocional para fazer algo difícil.</p>
+<div class="tablewrap"><table><thead><tr><th>#</th><th>Expressão</th><th>Significado real</th><th>Nuance importante</th></tr></thead><tbody><tr><td>5</td><td><strong>I don't have the heart to [do sth]</strong></td><td>não tenho coragem emocional / não consigo por empatia</td><td>Sobre empatia com o outro, não falta de coragem física</td></tr><tr><td>6</td><td><strong>I can't bring myself to [do sth]</strong></td><td>não consigo me forçar a fazer algo</td><td>Resistência interna, um pouco menos emotivo que o #5</td></tr><tr><td>7</td><td><strong>I don't have it in me</strong></td><td>não tenho energia (física OU emocional) pra isso</td><td>Pode ser usado sozinho como resposta completa</td></tr></tbody></table></div>
+<hr>
+<h2 id="s2-conte-do-principal">CONTEÚDO PRINCIPAL</h2>
+<h3>EXPRESSÃO 1 — A HEADSCRATCHER</h3>
+<p><strong>Definição:</strong> Something that is hard to figure out / genuinely confusing.</p>
+<p><strong>Registro:</strong> Informal (não é gíria, mas evitar em reuniões formais)</p>
+<p><strong>Exemplos reais do podcast:</strong></p>
+<ul><li><em>"I want to build my own furniture, but the directions are a real headscratcher."</em></li><li><em>"She explained the situation to me, but honestly, it was a headscratcher."</em></li><li><em>"The outfit she chose is kind of a headscratcher — I don't think she took the weather into consideration."</em></li></ul>
+<p><strong>Variações:</strong></p>
+<ul><li>It's a headscratcher.</li><li>It's a <strong>real</strong> headscratcher. (mais enfático)</li><li>That's kind of a headscratcher.</li></ul>
+<p><strong>Contexto de uso:</strong> Instruções de montagem, situações confusas, comportamentos inesperados, regras de esportes.</p>
+<p><strong>Tradução aproximada BR:</strong> "Isso é um enigma" / "Não tô entendendo nada" / "Que coisa estranha"</p>
+<hr>
+<h3>EXPRESSÃO 2 — HIT ME</h3>
+<p><strong>Definição:</strong> Tell me / give me the information — even if it's going to be hard to hear.</p>
+<p><strong>Registro:</strong> Casual/informal — sinal de que você está preparado para ouvir algo difícil.</p>
+<p><strong>Exemplos reais:</strong></p>
+<ul><li><em>"Hey, I have a story to tell you, but you might not like it." → "All right. Hit me."</em></li><li><em>"Do we have to start over?" → "Hit me."</em></li></ul>
+<p><strong>Formas relacionadas:</strong></p>
+<ul><li>"Hit me with it." (mais extenso)</li><li>"It hit me." = me caiu a ficha / percebi de repente</li><li>"Hit the follow button." = clique no botão seguir (outro uso completamente diferente)</li></ul>
+<p><strong>Armadilha:</strong> A mesma palavra "hit" existe em muitos contextos (hit a ball, hit someone, hit the road). Quando alguém diz "hit me" em conversa informal, é quase sempre convite para falar.</p>
+<p><strong>Tradução aproximada BR:</strong> "Pode falar" / "Tô pronto" / "Me diz"</p>
+<hr>
+<h3>EXPRESSÃO 3 — DROP IT</h3>
+<p><strong>Definição:</strong> Stop talking about something / let it go / stop pursuing it.</p>
+<p><strong>Registro:</strong> Casual. Pode ser usado com crianças, amigos, situações de trabalho informal.</p>
+<p><strong>Exemplos reais:</strong></p>
+<ul><li><em>"I really wanted to ask him about a raise, but I'm going to drop it until next year."</em></li><li><em>"I'm still a little upset, but I'm going to drop it. It's too much negativity for me."</em></li><li><em>"I wish you would just drop it."</em> (dito sobre uma briga em andamento)</li></ul>
+<p><strong>Nuance:</strong> Drop it pode ser pedido (drop it! = chega desse assunto!) ou decisão própria (I'm going to drop it = vou deixar pra lá).</p>
+<p><strong>Tradução aproximada BR:</strong> "Deixa pra lá" / "Esquece" / "Chega desse assunto"</p>
+<hr>
+<h3>EXPRESSÃO 4 — SPIT IT OUT</h3>
+<p><strong>Definição:</strong> Say it already. Stop hesitating. Just tell me.</p>
+<p><strong>Registro:</strong> Muito casual/informal. NÃO usar em contexto profissional formal.</p>
+<p><strong>Exemplos reais:</strong></p>
+<ul><li><em>"I don't know how to say this..." → "Oh, come on, Lindsay. Just spit it out."</em></li><li>Usado quando alguém está visivelmente enrolando para falar algo difícil.</li></ul>
+<p><strong>Nuance:</strong> Indica certa impaciência ou encorajamento. Pode soar brusco se usado no tom errado.</p>
+<p><strong>Tradução aproximada BR:</strong> "Fala logo" / "Para de enrolar" / "Cospe"</p>
+<hr>
+<h3>EXPRESSÃO 5 — I DON'T HAVE THE HEART TO [DO STH]</h3>
+<p><strong>Definição:</strong> Emocionalmente incapaz de fazer algo porque parece cruel, triste, ou hurtful.</p>
+<p><strong>Estrutura gramatical:</strong> I don't have the heart <strong>to</strong> + infinitivo</p>
+<ul><li>I don't have the heart to <strong>throw it away.</strong></li><li>I don't have the heart to <strong>say no.</strong></li><li>I don't have the heart to <strong>tell her.</strong></li></ul>
+<p><strong>Registro:</strong> Informal/conversacional. Sinaliza empatia alta.</p>
+<p><strong>Exemplos reais:</strong></p>
+<ul><li><em>"I didn't have the heart to unfollow him just yet."</em> (após um término)</li><li><em>"I didn't have the heart to say no."</em> (sobre aceitar convite que não queria)</li><li><em>"I don't have the heart to throw it away."</em> (sobre um desenho do filho)</li><li><em>"Dan didn't have the heart to tell my son there was only one ticket."</em></li></ul>
+<p><strong>Nuance vs. #6 e #7:</strong> Esta expressão é a mais emotiva e empática das três. Indica que você NÃO fez algo por considerar os sentimentos de outra pessoa.</p>
+<p><strong>Tradução aproximada BR:</strong> "Não tive coragem" / "Não tive coração para" / "Não consegui fazer isso com [a pessoa]"</p>
+<hr>
+<h3>EXPRESSÃO 6 — I CAN'T BRING MYSELF TO [DO STH]</h3>
+<p><strong>Definição:</strong> Algo dentro de você resiste. Você não consegue se forçar a agir.</p>
+<p><strong>Estrutura:</strong> I can't bring myself <strong>to</strong> + infinitivo</p>
+<p><strong>Exemplos reais:</strong></p>
+<ul><li><em>"I can't bring myself to ask him about the money he owes me."</em></li><li><em>"I can't bring myself to mute him."</em> (após término, sobre ex nas redes)</li><li><em>"I can't bring myself to watch the last episode."</em> (de uma série favorita)</li></ul>
+<p><strong>Nuance vs. #5:</strong> Menos sobre empatia com o outro, mais sobre resistência interna. Pode ser sobre você mesmo (não querer que uma série acabe) ou sobre evitar uma situação desconfortável.</p>
+<p><strong>Tradução aproximada BR:</strong> "Não consigo me forçar a" / "Não consigo fazer isso" / "Algo em mim não deixa"</p>
+<hr>
+<h3>EXPRESSÃO 7 — I DON'T HAVE IT IN ME</h3>
+<p><strong>Definição:</strong> Não tenho energia (física ou emocional) para isso agora.</p>
+<p><strong>Estrutura:</strong></p>
+<ul><li>Sozinha: <em>"I just don't have it in me."</em></li><li>Com verbo: <em>"I don't have it in me to argue anymore."</em></li><li><em>"I don't have it in me to dance tonight."</em></li></ul>
+<p><strong>Exemplos reais:</strong></p>
+<ul><li><em>"Will you make the final decision today?" → "Definitely not today. I don't have it in me."</em></li><li><em>"Do you want to talk about it more?" → "Honestly, I don't have it in me right now."</em></li><li><em>"I don't have it in me to go out in this weather."</em></li></ul>
+<p><strong>Nuance:</strong> Diferente das outras duas — não é sobre empatia nem resistência, é sobre <strong>esgotamento</strong>. Pode ser físico (cansaço) ou emocional (overdose de conversa difícil).</p>
+<p><strong>Tradução aproximada BR:</strong> "Não tenho pique pra isso" / "Não tenho energia" / "Tô sem forças"</p>
+<hr>
+<h2 id="s2-vocabul-rio-chave">VOCABULÁRIO CHAVE</h2>
+<div class="tablewrap"><table><thead><tr><th>Português</th><th>Inglês</th><th>Observação</th></tr></thead><tbody><tr><td>difícil de entender</td><td>a headscratcher</td><td>noun/adj informal</td></tr><tr><td>pode falar / tô pronto</td><td>hit me</td><td>resposta a "tenho algo difícil pra te contar"</td></tr><tr><td>deixa pra lá</td><td>drop it</td><td>parar de perseguir um assunto</td></tr><tr><td>fala logo / para de enrolar</td><td>spit it out</td><td>muito casual</td></tr><tr><td>não tenho coragem (por empatia)</td><td>I don't have the heart to</td><td>foco na empatia com o outro</td></tr><tr><td>não consigo me forçar</td><td>I can't bring myself to</td><td>resistência interna</td></tr><tr><td>não tenho energia pra isso</td><td>I don't have it in me</td><td>esgotamento físico ou emocional</td></tr><tr><td>braced for impact</td><td>preparado para o pior</td><td>expressão relacionada ao "hit me"</td></tr><tr><td>put it off / procrastinate</td><td>adiar</td><td>muito usado no contexto de "I don't have the heart to"</td></tr><tr><td>let it go</td><td>deixar ir / superar</td><td>relacionado a "drop it"</td></tr><tr><td>hang on to something</td><td>se apegar a algo</td><td>opp. de "drop it"</td></tr><tr><td>chip on your shoulder</td><td>rancor / magoa guardada</td><td>mencionado no ep. 2519</td></tr><tr><td>make yourself do it</td><td>se forçar a fazer</td><td>opp. de "I can't bring myself to"</td></tr><tr><td>unfollow</td><td>deixar de seguir</td><td>contexto redes sociais</td></tr><tr><td>mute</td><td>silenciar</td><td>contexto redes sociais</td></tr><tr><td>fill up to it</td><td>sentir energia para</td><td>variante de "have it in me"</td></tr></tbody></table></div>
+<hr>
+<h2 id="s2-roleplay-de-refer-ncia-contexto-montando-m-vel-jun">ROLEPLAY DE REFERÊNCIA — CONTEXTO: MONTANDO MÓVEL JUNTOS</h2>
+<p><em>(Extraído literalmente do All Ears English ep. 2519 — conversa real entre duas americanas nativas)</em></p>
+<p>&gt; <strong>A:</strong> So, what do we do now?<br>&gt; <strong>B:</strong> Michelle, <strong>spit it out</strong>.<br>&gt; <strong>A:</strong> Lindsay, we made a big mistake. The piece should go here.<br>&gt; <strong>B:</strong> Let me see that. I wish these directions were easier to understand. They are a <strong>headscratcher</strong> for sure. Okay, so what do we do?<br>&gt; <strong>A:</strong> <em>(hesita)</em> ...<br>&gt; <strong>B:</strong> <strong>Hit me</strong>.<br>&gt; <strong>A:</strong> Do we have to start over? I would ask Hazel to help, but she's still mad at me.<br>&gt; <strong>B:</strong> I wish you would just <strong>drop it</strong>.</p>
+<hr>
+<h2 id="s2-roleplay-de-refer-ncia-contexto-ap-s-um-t-rmino">ROLEPLAY DE REFERÊNCIA — CONTEXTO: APÓS UM TÉRMINO</h2>
+<p><em>(Extraído literalmente do All Ears English ep. 2630)</em></p>
+<p>&gt; <strong>A:</strong> Hey, how are you feeling about the breakup?<br>&gt; <strong>B:</strong> Well, I'm taking it day by day, but I keep seeing his stories online...<br>&gt; <strong>A:</strong> That makes sense. Why don't you just unfollow him?<br>&gt; <strong>B:</strong> Well, <strong>I don't have the heart to</strong> do that just yet.<br>&gt; <strong>A:</strong> Can't you just mute him then?<br>&gt; <strong>B:</strong> I should, but <strong>I can't even bring myself to</strong> mute him. I'm definitely still attached.<br>&gt; <strong>A:</strong> Do you want to talk about it more?<br>&gt; <strong>B:</strong> Honestly, <strong>I don't have it in me</strong> right now. Maybe tomorrow.</p>
+<hr></section>
+</div>
+</div>
+<footer>Sistema 04 · Conectar Frases — pergunte, combine, soe natural</footer>
+</body>
+</html>

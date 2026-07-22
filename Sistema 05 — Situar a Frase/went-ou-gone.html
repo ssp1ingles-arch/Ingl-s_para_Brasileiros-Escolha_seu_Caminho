@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 05 · Went ou Gone · a dúvida do passado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#EC4899;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+/* markdown article */
+.md h1,.md h2,.md h3,.md h4{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+.md h1{font-size:1.5rem;margin:30px 0 10px;color:var(--text);}
+.md h2{font-size:1.28rem;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.md h3{font-size:1.08rem;margin:22px 0 8px;color:var(--accent);}
+.md h4{font-size:.98rem;margin:16px 0 6px;color:var(--text);}
+.md p{margin:10px 0;color:#cfcfcf;}
+.md strong{color:var(--text);}
+.md em{color:var(--accent);font-style:normal;}
+.md ul,.md ol{margin:10px 0 10px 22px;color:#cfcfcf;}
+.md li{margin:4px 0;}
+.md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.md code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--accent);font-family:'Space Grotesk',monospace;}
+.md pre.code{background:#0f0f0f;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:12px 0;}
+.md pre.code code{background:none;border:none;color:#d7d7d7;padding:0;font-family:'Space Grotesk',ui-monospace,monospace;font-size:.9rem;line-height:1.7;white-space:pre;}
+.md .tablewrap{overflow-x:auto;margin:14px 0;}
+.md table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.md th{background:var(--surface2);text-align:left;padding:10px 13px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+.md td{padding:10px 13px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+.md tr:nth-child(even){background:rgba(255,255,255,.015);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+
+.layout{display:grid;grid-template-columns:230px 1fr;gap:34px;margin-top:30px;align-items:start;}
+@media(max-width:820px){.layout{grid-template-columns:1fr;}.toc{position:static!important;max-height:none!important;}}
+.toc{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;border-right:1px solid var(--border);padding-right:14px;}
+.toc .tt{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.84rem;padding:5px 0;border-left:2px solid transparent;padding-left:10px;margin-left:-2px;transition:.15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.article{min-width:0;}
+.article > section{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+.article > section:last-child{border-bottom:none;}
+.sec-flag{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+<a href="index.html" class="back">← Voltar ao Sistema 05</a>
+<div class="eyebrow">Sistema 05 · onde, quando, quanto e como</div>
+<div class="article md">
+<section id="s2"><div class="sec-flag">Went ou Gone · a dúvida do passado</div><h1>SISTEMA 9 — WENT OU GONE?</h1>
+<hr>
+<h2 id="s2-estrutura-de-m-dulos">ESTRUTURA DE MÓDULOS</h2>
+<h3>MÓDULO 1 — WENT (Passado Simples)</h3>
+<h3>MÓDULO 2 — HAVE GONE / HAS GONE (Present Perfect)</h3>
+<h3>MÓDULO 3 — WENT vs HAVE GONE (Comparação)</h3>
+<h3>MÓDULO 4 — HAVE BEEN (Bônus: fui e voltei)</h3>
+<h3>MÓDULO 5 — GONE como Adjetivo + Expressão "Been and Gone"</h3>
+<hr>
+<h2 id="s2-conte-do-detalhado">CONTEÚDO DETALHADO</h2>
+<hr>
+<h3>MÓDULO 1 — WENT</h3>
+<p><strong>O que é:</strong> Went é o passado simples de "go" — forma irregular.</p>
+<p><strong>Quando usar:</strong></p>
+<ul><li>Ação concluída em um momento específico do passado</li><li>Frequentemente acompanha expressões de tempo terminado: last week, yesterday, 2 years ago, an hour ago</li></ul>
+<p><strong>MACETE PARA BRASILEIROS:</strong><br>"Went" = ação ACABOU. A pessoa foi e nós não sabemos (ou não importa) se ainda está lá.<br>Se você tem uma expressão de tempo como "last week" ou "yesterday", use SEMPRE went.</p>
+<p><strong>Exemplos:</strong></p>
+<div class="tablewrap"><table><thead><tr><th>Português</th><th>Inglês</th></tr></thead><tbody><tr><td>Ela foi para Londres na semana passada.</td><td>She went to London last week.</td></tr><tr><td>Nós fomos para Darasha no ano passado.</td><td>We went to Darasha last year.</td></tr><tr><td>Ele foi à loja há cerca de uma hora.</td><td>He went to the shop about an hour ago.</td></tr><tr><td>Kelly foi pescar ontem.</td><td>Kelly went fishing yesterday.</td></tr><tr><td>Eu fui nadar na semana passada.</td><td>I went swimming last week.</td></tr><tr><td>Ele saiu há uma hora.</td><td>He went out an hour ago.</td></tr></tbody></table></div>
+<p><strong>ERRO CLÁSSICO:</strong><br>❌ "He's gone out an hour ago." → ✅ "He went out an hour ago."<br>❌ "I've gone swimming last week." → ✅ "I went swimming last week."<br>REGRA: NUNCA use "have gone" com expressão de tempo terminado!</p>
+<hr>
+<h3>MÓDULO 2 — HAVE GONE / HAS GONE</h3>
+<p><strong>O que é:</strong> Have/has gone é o present perfect de "go".</p>
+<ul><li>I have gone → I've gone</li><li>She has gone → She's gone</li><li>He has gone → He's gone</li></ul>
+<p><strong>Quando usar:</strong></p>
+<ul><li>A pessoa foi e AINDA está lá (ou a caminho / voltando)</li><li>Responde a perguntas como "Where is she NOW?"</li><li>Sem expressão de tempo terminado</li></ul>
+<p><strong>MACETE PARA BRASILEIROS:</strong><br>"Has gone" = a pessoa FOI e NÃO VOLTOU ainda. Tem relevância no PRESENTE.<br>Quando alguém pergunta "Where is she?" e ela ainda está lá → "She's gone to London."</p>
+<p><strong>Exemplos:</strong></p>
+<div class="tablewrap"><table><thead><tr><th>Português</th><th>Inglês</th></tr></thead><tbody><tr><td>Ela foi para Londres. (ainda está lá)</td><td>She's gone to London.</td></tr><tr><td>Ele foi à loja. (ainda está lá)</td><td>He's gone to the shop.</td></tr><tr><td>Meus pais foram para Darasha. (estão lá)</td><td>My parents have gone to Darasha.</td></tr><tr><td>Tom foi pegar algo para comer.</td><td>Tom's just gone to grab something to eat.</td></tr></tbody></table></div>
+<p><strong>COM ADVERBS (just / yet / already):</strong></p>
+<div class="tablewrap"><table><thead><tr><th>Exemplo</th><th>Inglês</th></tr></thead><tbody><tr><td>Tom acabou de sair para comer.</td><td>Tom's just gone to grab something to eat. He'll be back in a sec.</td></tr><tr><td>Eles já foram embora?</td><td>Have they gone home already?</td></tr></tbody></table></div>
+<p><strong>NOTA BRITÂNICO vs AMERICANO:</strong></p>
+<ul><li>Britânico: "He's gone to the gym." (presente perfeito preferido)</li><li>Americano: "He went to the gym." (passado simples mais comum)</li><li>Ambos são corretos! O contexto determina o melhor.</li></ul>
+<hr>
+<h3>MÓDULO 3 — WENT vs HAVE GONE (Comparação Direta)</h3>
+<p><strong>A REGRA DE OURO:</strong></p>
+<div class="tablewrap"><table><thead><tr><th>Situação</th><th>Use</th></tr></thead><tbody><tr><td>Ação concluída + tempo terminado (last week, ago)</td><td>WENT</td></tr><tr><td>Pessoa ainda está lá / relevância no presente</td><td>HAVE GONE</td></tr><tr><td>Pergunta sobre onde está AGORA</td><td>HAVE GONE</td></tr></tbody></table></div>
+<p><strong>PARES COMPARATIVOS:</strong></p>
+<div class="tablewrap"><table><thead><tr><th>Went</th><th>Have Gone</th></tr></thead><tbody><tr><td>He went to the shop about an hour ago.</td><td>He's gone to the shop. He'll probably be back soon.</td></tr><tr><td>We went to Darasha last year. We had a great time.</td><td>My parents have gone to Darasha. They are having a great time.</td></tr><tr><td>Kelly went fishing yesterday.</td><td>Kelly's gone fishing.</td></tr><tr><td>Where did Emma go? She was here a moment ago. (AmE)</td><td>Where has Emma gone? She was here a moment ago. (BrE)</td></tr></tbody></table></div>
+<p><strong>PERGUNTAS NO PASSADO:</strong></p>
+<ul><li>✅ "Did you go?" (passado simples — correto)</li><li>❌ "Did you went?" (ERRADO — nunca use "went" depois de "did")</li></ul>
+<hr>
+<h3>MÓDULO 4 — HAVE BEEN (Bônus)</h3>
+<p><strong>O que é:</strong> Have been é o present perfect de "be" — mas também tratado como particípio passado de "go" quando indica ida e volta.</p>
+<p><strong>Pronúncia:</strong> Em fala rápida, "been" = /bɪn/ (som curto de I). "They've been to Spain."</p>
+<p><strong>HAVE BEEN vs HAVE GONE:</strong></p>
+<div class="tablewrap"><table><thead><tr><th>Have Gone</th><th>Have Been</th></tr></thead><tbody><tr><td>Foram e ainda NÃO voltaram</td><td>Foram e JÁ voltaram</td></tr><tr><td>They've gone to Spain. (ainda estão lá)</td><td>They've been to Spain. (já voltaram)</td></tr></tbody></table></div>
+<p><strong>Exemplos:</strong></p>
+<div class="tablewrap"><table><thead><tr><th>Português</th><th>Inglês</th></tr></thead><tbody><tr><td>Eles foram para a Espanha. (ainda estão lá)</td><td>They've gone to Spain.</td></tr><tr><td>Eles foram à Espanha. (já voltaram)</td><td>They've been to Spain.</td></tr><tr><td>Onde você esteve? Senti sua falta.</td><td>Where have you been? I missed you.</td></tr><tr><td>Onde está Jack? Sinto falta dele.</td><td>Where has Jack gone? I miss him.</td></tr></tbody></table></div>
+<p><strong>HAVE YOU EVER BEEN — Experiências de vida:</strong></p>
+<ul><li>"Have you ever been on a roller coaster?" = Você já andou em montanha-russa? (em algum momento da vida)</li><li>Não usamos "ever" com "gone": ❌ "Have you ever gone on a roller coaster?" (não natural)</li></ul>
+<p><strong>GONE como ADJETIVO (depois do verbo TO BE):</strong><br>Significa "ter saído de um lugar".</p>
+<div class="tablewrap"><table><thead><tr><th>Português</th><th>Inglês</th></tr></thead><tbody><tr><td>Lily saiu há cerca de uma hora.</td><td>Lily's been gone for about an hour.</td></tr><tr><td>Eles foram antes de eu chegar.</td><td>They were gone before I got there.</td></tr></tbody></table></div>
+<hr>
+<h3>MÓDULO 5 — HAD GONE + "BEEN AND GONE"</h3>
+<p><strong>HAD GONE (Past Perfect):</strong><br>Usado quando uma ação do passado aconteceu ANTES de outra ação do passado.</p>
+<div class="tablewrap"><table><thead><tr><th>Português</th><th>Inglês</th></tr></thead><tbody><tr><td>Ele já tinha ido embora quando eu cheguei.</td><td>He'd already gone home by the time I arrived.</td></tr></tbody></table></div>
+<p><strong>EXPRESSÃO IDIOMÁTICA: "BEEN AND GONE"</strong><br>Significado: Alguém esteve em um lugar por pouco tempo e foi embora.<br>Pronúncia: "been 'n' gone" (and fraco, palavras unidas)</p>
+<div class="tablewrap"><table><thead><tr><th>Pergunta</th><th>Resposta</th></tr></thead><tbody><tr><td>Has Dylan been to see you?</td><td>Yes, but he's been and gone. He was in a rush. He was here for a moment and then he left.</td></tr></tbody></table></div>
+<hr>
+<h2 id="s2-quiz-do-sistema-9">QUIZ DO SISTEMA 9</h2>
+<p><strong>Parte 1 — Went ou Have Gone? (Complete com o correto)</strong></p>
+<ol><li>She ___ to Glasgow. She'll be back tomorrow. → <strong>has gone</strong></li><li>She ___ to Glasgow yesterday. → <strong>went</strong></li><li>We ___ to Darasha last year. We had a great time. → <strong>went</strong></li><li>My parents ___ to Darasha. They are having a great time. → <strong>have gone</strong></li><li>Tom's just ___ to grab something to eat. → <strong>gone</strong></li><li>Have they ___ home already? → <strong>gone</strong></li></ol>
+<p><strong>Parte 2 — Gone ou Been?</strong></p>
+<ol><li>Where have you ___? I missed you. → <strong>been</strong> (voltou)</li><li>Where has Jack ___? I miss him. → <strong>gone</strong> (ainda está fora)</li><li>They've ___ to Spain. (still there) → <strong>gone</strong></li><li>They've ___ to Spain. (came back) → <strong>been</strong></li></ol>
+<p><strong>Parte 3 — Corrija o erro:</strong></p>
+<ol><li>❌ "He's gone out an hour ago." → ✅ "He went out an hour ago."</li><li>❌ "I've gone swimming last week." → ✅ "I went swimming last week."</li><li>❌ "Did you went?" → ✅ "Did you go?"</li><li>❌ "Have you ever gone on a roller coaster?" → ✅ "Have you ever been on a roller coaster?"</li></ol>
+<hr>
+<h2 id="s2-vocabul-rio-do-sistema-9">VOCABULÁRIO DO SISTEMA 9</h2>
+<div class="tablewrap"><table><thead><tr><th>PT</th><th>EN</th></tr></thead><tbody><tr><td>ir</td><td>go</td></tr><tr><td>foi (passado)</td><td>went</td></tr><tr><td>ido (particípio)</td><td>gone</td></tr><tr><td>estado (particípio de be/go)</td><td>been</td></tr><tr><td>passado simples</td><td>past simple</td></tr><tr><td>present perfect</td><td>present perfect</td></tr><tr><td>relevante</td><td>relevant</td></tr><tr><td>expressão de tempo</td><td>time expression</td></tr><tr><td>já voltou</td><td>came back / returned</td></tr><tr><td>ainda está lá</td><td>still there</td></tr><tr><td>a caminho de volta</td><td>on the way back</td></tr><tr><td>acabou de</td><td>just</td></tr><tr><td>já</td><td>already</td></tr><tr><td>ainda (em perguntas/negativas)</td><td>yet</td></tr><tr><td>experiência de vida</td><td>life experience</td></tr><tr><td>expressão idiomática</td><td>idiomatic phrase</td></tr></tbody></table></div>
+<hr></section>
+</div>
+</div>
+<footer>Sistema 05 · Situar a Frase — dê endereço às suas ideias</footer>
+</body>
+</html>
