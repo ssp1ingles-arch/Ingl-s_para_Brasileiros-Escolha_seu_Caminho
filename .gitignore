@@ -1,7 +1,19 @@
 # ── Arquivos grandes / compactados ──────────────────────────
+*.pdf
 *.zip
 *.rar
 *.7z
+
+# ── Mídia (imagens / documentos) ────────────────────────────
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.docx
+
+# ── Config local do Claude ──────────────────────────────────
+.claude/settings.local.json
 
 # ── Sistema operacional ─────────────────────────────────────
 .DS_Store
