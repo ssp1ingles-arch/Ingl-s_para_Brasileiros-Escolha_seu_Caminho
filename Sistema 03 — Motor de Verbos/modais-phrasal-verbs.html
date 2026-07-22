@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modais e Phrasal Verbs — Sistema 03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#6366F1;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+/* markdown article */
+.md h1,.md h2,.md h3,.md h4{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+.md h1{font-size:1.5rem;margin:30px 0 10px;color:var(--text);}
+.md h2{font-size:1.28rem;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.md h3{font-size:1.08rem;margin:22px 0 8px;color:var(--accent);}
+.md h4{font-size:.98rem;margin:16px 0 6px;color:var(--text);}
+.md p{margin:10px 0;color:#cfcfcf;}
+.md strong{color:var(--text);}
+.md em{color:var(--accent);font-style:normal;}
+.md ul,.md ol{margin:10px 0 10px 22px;color:#cfcfcf;}
+.md li{margin:4px 0;}
+.md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.md code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--accent);font-family:'Space Grotesk',monospace;}
+.md pre.code{background:#0f0f0f;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:12px 0;}
+.md pre.code code{background:none;border:none;color:#d7d7d7;padding:0;font-family:'Space Grotesk',ui-monospace,monospace;font-size:.9rem;line-height:1.7;white-space:pre;}
+.md .tablewrap{overflow-x:auto;margin:14px 0;}
+.md table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.md th{background:var(--surface2);text-align:left;padding:10px 13px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+.md td{padding:10px 13px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+.md tr:nth-child(even){background:rgba(255,255,255,.015);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:20px 0 0;font-family:'Space Grotesk',sans-serif;font-size:.8rem;}
+.legend span{display:inline-flex;align-items:center;gap:6px;color:var(--muted);}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+.sec-h{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;margin:46px 0 4px;display:flex;align-items:center;gap:10px;}
+.sec-h::before{content:'';width:22px;height:3px;background:var(--accent);border-radius:2px;}
+.sub{color:var(--muted);font-size:.92rem;margin-bottom:18px;}
+.colhead{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.9rem;text-align:center;padding:6px;letter-spacing:.05em;text-transform:uppercase;}
+.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:720px){.matrix{grid-template-columns:1fr;}}
+.tense{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:15px;border-top:3px solid var(--tc);cursor:pointer;transition:.2s;}
+.tense:hover{transform:translateY(-3px);border-color:var(--tc);}
+.tense .nm{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;}
+.tense .formula{font-family:'Space Grotesk',sans-serif;font-size:.76rem;color:var(--tc);margin:5px 0;}
+.tense .ex{font-size:.86rem;color:var(--text);font-style:italic;margin-top:6px;}
+.tense .detail{max-height:0;overflow:hidden;transition:max-height .3s;}
+.tense.open .detail{max-height:220px;}
+.tense .detail-in{padding-top:10px;margin-top:10px;border-top:1px solid var(--border);font-size:.82rem;color:var(--muted);}
+.tense .detail-in .err{color:#fca5a5;}
+.irr{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.vcard{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;}
+.vchain{display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.95rem;flex-wrap:wrap;}
+.vchain .v1{color:#22C55E;}.vchain .v2{color:#EF4444;}.vchain .v3{color:#3B82F6;}.vchain .ar{color:var(--dim);}
+.vcard .pt{font-size:.78rem;color:var(--dim);margin:6px 0 8px;}
+.vcard .s{font-size:.82rem;color:var(--muted);font-style:italic;}
+details.full{margin-top:30px;border:1px solid var(--border);border-radius:14px;background:var(--surface);overflow:hidden;}
+details.full > summary{cursor:pointer;list-style:none;padding:18px 22px;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.1rem;display:flex;align-items:center;gap:10px;}
+details.full > summary::-webkit-details-marker{display:none;}
+details.full > summary::before{content:'▸';color:var(--accent);transition:.2s;}
+details.full[open] > summary::before{transform:rotate(90deg);}
+details.full .md{padding:0 22px 24px;}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+<a href="index.html" class="back">← Voltar ao Sistema 03</a>
+<div class="eyebrow">Sistema 03 · modais</div>
+<h1 class="title">Modais e <em>Phrasal Verbs</em></h1>
+<style id="dist-css">
+.dist{margin-top:46px;}
+.dist-h{display:flex;align-items:center;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:8px;}
+.dist-flag{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.12em;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);background:color-mix(in srgb,var(--accent) 8%,transparent);padding:3px 9px;border-radius:20px;}
+.dist-h h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;flex:1;}
+.dist-count{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700;color:var(--accent);}
+.dsearch{width:100%;margin:10px 0 14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 15px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;}
+.dsearch:focus{outline:none;border-color:var(--accent);}
+.dsearch::placeholder{color:var(--dim);}
+.ditems{display:grid;gap:8px;}
+.ditem{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.ditem > summary{cursor:pointer;list-style:none;padding:12px 16px;display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;}
+.ditem > summary::-webkit-details-marker{display:none;}
+.ditem > summary::before{content:'▸';color:var(--accent);transition:.2s;flex:none;}
+.ditem[open] > summary::before{transform:rotate(90deg);}
+.ditem[open] > summary{border-bottom:1px solid var(--border);background:var(--surface2);}
+.dbody{padding:14px 18px;white-space:pre-wrap;color:#cfcfcf;font-size:.9rem;line-height:1.6;max-height:65vh;overflow-y:auto;}
+.dnr{color:var(--dim);font-style:italic;padding:14px;display:none;}
+</style>
+<section class="dist"><div class="dist-h"><span class="dist-flag">Material distribuído</span><h2>Modais e Phrasal Verbs</h2><span class="dist-count">11 itens</span></div><input class="dsearch" placeholder="Buscar em Modais e Phrasal Verbs…"><div class="dnr">Nada encontrado.</div><div class="ditems"><details class="ditem" data-search="can could poder conseguir question word: can / could | inglês para brasileiros (a1–a2)
+can / could = poder / conseguir
+m
+habilidade, possibilidade e pedidos formais/informais
+uso 1 — can = consigo / posso (habilidade presente)
+estrutura inglês português
+habilidade i can speak english. eu consigo / sei falar inglês.
+habilidade she can swim very well. ela sabe nadar muito bem.
+habilidade he can drive. ele sabe dirigir.
+possi"><summary>CAN COULD PODER CONSEGUIR</summary><div class="dbody">QUESTION WORD: CAN / COULD | Inglês para Brasileiros (A1–A2)
+CAN / COULD = PODER / CONSEGUIR
+M
+Habilidade, possibilidade e pedidos formais/informais
+USO 1 — CAN = CONSIGO / POSSO (habilidade presente)
+Estrutura Inglês Português
+habilidade I can speak English. Eu consigo / sei falar inglês.
+habilidade She can swim very well. Ela sabe nadar muito bem.
+habilidade He can drive. Ele sabe dirigir.
+possibilidade It can be cold at night. Pode fazer frio à noite.
+pedido Can you help me? Você pode me ajudar?
+permissão Can I sit here? Posso sentar aqui?
+⚠️ CAN nunca usa TO depois: 'I can swim' ✅ / 'I can to swim' ❌. Mesma forma para todos os pronomes — sem S no he/she/it.
+USO 2 — CANNOT / CAN'T = NÃO CONSIGO / NÃO POSSO
+Estrutura Inglês Português
+neg. hab. I can't sing. Não sei / não consigo cantar.
+neg. hab. She can't drive. Ela não sabe dirigir.
+proibição You can't park here. Você não pode estacionar aqui.
+impossível I can't believe this! Não consigo acreditar nisso!
+💡 CANNOT = forma formal e enfática. CAN'T = forma usual na fala. Ambos corretos.
+USO 3 — COULD = CONSEGUIA / PODERIA (passado e pedidos educados)
+Uso Inglês Português
+passado When I was young, I could run fast. Quando jovem, eu conseguia correr rápido.
+pedido Could you help me, please? Poderia me ajudar, por favor?
+possib. It could rain today. Pode ser que chova hoje.
+sugestão You could try again. Você poderia tentar de novo.
+💡 COULD é mais EDUCADO que CAN para pedidos. 'Could you...?' = mais formal e polido que 'Can you...?'
+USO 4 — CAN vs COULD vs BE ABLE TO
+Forma Uso Exemplo Tradução
+CAN presente/geral I can swim. Sei nadar.
+COULD passado/educado I could swim as a child. Eu sabia nadar quando criança.
+BE ABLE TO todos os tempos I will be able to help. Vou conseguir ajudar.
+💡 BE ABLE TO substitui CAN em tempos onde CAN não existe: futuro ('will be able to'), perfect ('has been able to').
+🔴 ERROS: 'She cans swim.' ❌ — CAN nunca muda: 'She CAN swim.' ✅ | 'I can to help.' ❌ → 'I can help.' ✅
+💡 RESUMO: CAN = consigo/posso (habilidade/permissão/pedido) | CAN'T = não consigo/não posso | COULD = conseguia (passado) / poderia (educado) |
+BE ABLE TO = conseguir em outros tempos.</div></details><details class="ditem" data-search="must have to dever ter que precisar question word: must / have to / need to | inglês para brasileiros (a1–a2)
+must / have to / need to = dever / ter que /
+m
+precisar
+obrigação, necessidade e proibição — com nuances importantes
+uso 1 — must = devo / tenho que (obrigação forte, opinião pessoal)
+estrutura inglês português
+obrigação you must study more. você deve estudar mais.
+obrigação i must call her today. eu devo ligar para ela hoje"><summary>MUST HAVE TO DEVER TER QUE PRECISAR</summary><div class="dbody">QUESTION WORD: MUST / HAVE TO / NEED TO | Inglês para Brasileiros (A1–A2)
+MUST / HAVE TO / NEED TO = DEVER / TER QUE /
+M
+PRECISAR
+Obrigação, necessidade e proibição — com nuances importantes
+USO 1 — MUST = DEVO / TENHO QUE (obrigação forte, opinião pessoal)
+Estrutura Inglês Português
+obrigação You must study more. Você deve estudar mais.
+obrigação I must call her today. Eu devo ligar para ela hoje.
+conclusão She must be tired. Ela deve estar cansada (dedução).
+proibição You must not smoke here. Você não deve fumar aqui.
+⚠️ MUST vem do falante — é obrigação ou dedução PESSOAL. MUSTN'T = proibição forte.
+USO 2 — HAVE TO = TEM QUE / PRECISA (obrigação externa/regra)
+Estrutura Inglês Português
+regra ext. I have to work tomorrow. Tenho que trabalhar amanhã.
+regra ext. She has to wear a uniform. Ela tem que usar uniforme.
+passado He had to leave early. Ele teve que sair cedo.
+futuro We will have to wait. Vamos ter que esperar.
+neg. You don't have to come. Você não precisa vir (não é obrigatório).
+💡 DON'T HAVE TO = não é obrigatório (livre escolha). Diferente de MUSTN'T = é proibido!
+USO 3 — NEED TO = PRECISAR (necessidade)
+Estrutura Inglês Português
+necessidade I need to sleep. Eu preciso dormir.
+necessidade She needs to see a doctor. Ela precisa ver um médico.
+neg. You don't need to worry. Você não precisa se preocupar.
+passado I needed to talk to someone. Eu precisava falar com alguém.
+💡 NEED TO é mais suave que MUST/HAVE TO — indica necessidade prática.
+USO 4 — MUST vs HAVE TO vs DON'T HAVE TO vs MUSTN'T
+Forma Significado Exemplo Tradução
+MUST obrigação (pessoal) I must study. Devo estudar.
+HAVE TO obrigação (externa) I have to wear a uniform. Tenho que usar uniforme.
+DON'T HAVE TO não é obrigatório You don't have to come. Não precisa vir.
+MUSTN'T proibido You mustn't smoke here. Não pode fumar aqui.
+⚠️ DON'T HAVE TO ≠ MUSTN'T! 'Don't have to' = livre escolha. 'Mustn't' = proibição.
+🔴 CONFUSÃO PERIGOSA: 'You don't have to smoke here.' (pode fumar se quiser) ≠ 'You mustn't smoke here.' (é proibido). Significados opostos!
+💡 RESUMO: MUST = devo (obrigação/dedução pessoal) | HAVE TO = tenho que (regra externa) | NEED TO = preciso (necessidade) | MUSTN'T = proibido |
+DON'T HAVE TO = não é obrigatório.</div></details><details class="ditem" data-search="should ought to deveria seria bom question word: should / ought to | inglês para brasileiros (a1–a2)
+should / ought to = deveria / seria bom
+m
+conselho, recomendação e obrigação moral — mais suave que must
+uso 1 — should = deveria (conselho e recomendação)
+estrutura inglês português
+conselho you should see a doctor. você deveria ver um médico.
+conselho she should study more. ela deveria estudar mais.
+conselho i should call my mom."><summary>SHOULD OUGHT TO DEVERIA SERIA BOM</summary><div class="dbody">QUESTION WORD: SHOULD / OUGHT TO | Inglês para Brasileiros (A1–A2)
+SHOULD / OUGHT TO = DEVERIA / SERIA BOM
+M
+Conselho, recomendação e obrigação moral — mais suave que MUST
+USO 1 — SHOULD = DEVERIA (conselho e recomendação)
+Estrutura Inglês Português
+conselho You should see a doctor. Você deveria ver um médico.
+conselho She should study more. Ela deveria estudar mais.
+conselho I should call my mom. Eu deveria ligar para minha mãe.
+opinião We should leave now. A gente deveria sair agora.
+neg. You shouldn't eat so much sugar. Você não deveria comer tanto açúcar.
+💡 SHOULD = conselho gentil. Não é tão forte quanto MUST. Equivale a 'seria uma boa ideia'.
+USO 2 — SHOULD em perguntas (pedindo conselho)
+Estrutura Inglês Português
+conselho Should I call her? Será que eu deveria ligar para ela?
+conselho What should I do? O que eu deveria fazer?
+conselho Should we wait here? A gente deveria esperar aqui?
+conselho How much should I pay? Quanto eu deveria pagar?
+💡 'What should I do?' é uma das perguntas mais usadas em inglês — pedindo orientação ou conselho.
+USO 3 — SHOULD HAVE = DEVERIA TER (arrependimento do passado)
+Estrutura Inglês Português
+arrepend. I should have studied more. Eu deveria ter estudado mais.
+arrepend. She should have called earlier. Ela deveria ter ligado mais cedo.
+arrepend. You shouldn't have said that. Você não deveria ter dito isso.
+arrepend. We should have left earlier. A gente deveria ter saído mais cedo.
+⚠️ SHOULD HAVE + participado = arrependimento. Algo que DEVERIA ter acontecido mas NÃO aconteceu.
+USO 4 — OUGHT TO = DEVERIA (mais formal, mesmo significado)
+Estrutura Inglês Português
+conselho You ought to see a doctor. Você deveria ver um médico.
+obrig. moral We ought to respect others. A gente deveria respeitar os outros.
+expectativa The train ought to arrive soon. O trem deve chegar em breve.
+💡 OUGHT TO = SHOULD mas um pouco mais formal. Na fala, SHOULD é muito mais comum.
+🔴 NÃO CONFUNDA: SHOULD (conselho) ≠ MUST (obrigação). 'You should eat vegetables.' (conselho — faz bem) ≠ 'You must eat vegetables.' (obrigação
+forte).
+💡 RESUMO: SHOULD = deveria (conselho) | SHOULDN'T = não deveria | SHOULD HAVE = deveria ter (passado, arrependimento) | OUGHT TO = deveria
+(mais formal) | 'What should I do?' = o que devo fazer?</div></details><details class="ditem" data-search="may might talvez pode ser posso question word: may / might | inglês para brasileiros (a1–a2)
+may / might = talvez / pode ser / posso
+m
+possibilidade e permissão formal — graus diferentes de certeza
+uso 1 — may = talvez / pode ser (possibilidade — mais provável)
+estrutura inglês português
+possib. it may rain today. talvez chova hoje. (mais provável)
+possib. she may be right. pode ser que ela esteja certa.
+possib. i may go to the "><summary>MAY MIGHT TALVEZ PODE SER POSSO</summary><div class="dbody">QUESTION WORD: MAY / MIGHT | Inglês para Brasileiros (A1–A2)
+MAY / MIGHT = TALVEZ / PODE SER / POSSO
+M
+Possibilidade e permissão formal — graus diferentes de certeza
+USO 1 — MAY = TALVEZ / PODE SER (possibilidade — mais provável)
+Estrutura Inglês Português
+possib. It may rain today. Talvez chova hoje. (mais provável)
+possib. She may be right. Pode ser que ela esteja certa.
+possib. I may go to the party. Talvez eu vá à festa.
+permissão May I come in? Posso entrar? (formal)
+permissão You may leave now. Você pode sair agora. (formal)
+💡 MAY = ~50-60% de probabilidade. Também usado para permissão FORMAL — mais educado que CAN.
+USO 2 — MIGHT = TALVEZ (possibilidade — menos provável)
+Estrutura Inglês Português
+possib. It might rain. Talvez chova. (menos certo)
+possib. She might be there. Ela pode estar lá (não tenho certeza).
+possib. I might call you later. Talvez eu te ligue mais tarde.
+possib. He might know the answer. Pode ser que ele saiba a resposta.
+💡 MIGHT = ~30-40% de probabilidade. Mais incerto que MAY.
+USO 3 — MAY vs MIGHT vs CAN (comparação de permissão)
+Forma Registro Exemplo Tradução
+CAN informal Can I sit here? Posso sentar aqui?
+MAY formal May I sit here? Posso sentar aqui? (educado)
+COULD educado Could I sit here? Poderia sentar aqui? (muito educado)
+💡 Para permissão: CAN (dia a dia) → COULD (educado) → MAY (formal). Na fala, CAN e COULD são os mais usados.
+USO 4 — MIGHT HAVE / MAY HAVE (possibilidade no passado)
+Estrutura Inglês Português
+passado She may have left already. Ela pode já ter saído.
+passado He might have forgotten. Pode ser que ele tenha esquecido.
+passado They may have arrived by now. Eles podem já ter chegado.
+💡 MAY HAVE / MIGHT HAVE + particípio = possibilidade no PASSADO. Algo que PODE ter acontecido.
+🔴 CUIDADO: 'May I help you?' (formal) ✅ | 'Can I help you?' (casual) ✅ | MIGHT não é mais correto que MAY — apenas indica menor certeza.
+💡 RESUMO: MAY = talvez (mais provável ~60%) / posso (permissão formal) | MIGHT = talvez (menos provável ~30%) | MAY/MIGHT HAVE + particípio =
+possibilidade no passado.</div></details><details class="ditem" data-search="would gostaria costumava seria question word: would | inglês para brasileiros (a1–a2)
+would = gostaria / costumava / seria
+m
+educação, condicional e hábito no passado — um dos modais mais versáteis
+uso 1 — would = gostaria (pedido educado e oferta)
+estrutura inglês português
+pedido would you help me, please? você poderia me ajudar, por favor?
+desejo i would like a coffee. eu gostaria de um café.
+oferta would you like some water"><summary>WOULD GOSTARIA COSTUMAVA SERIA</summary><div class="dbody">QUESTION WORD: WOULD | Inglês para Brasileiros (A1–A2)
+WOULD = GOSTARIA / COSTUMAVA / SERIA
+M
+Educação, condicional e hábito no passado — um dos modais mais versáteis
+USO 1 — WOULD = GOSTARIA (pedido educado e oferta)
+Estrutura Inglês Português
+pedido Would you help me, please? Você poderia me ajudar, por favor?
+desejo I would like a coffee. Eu gostaria de um café.
+oferta Would you like some water? Você gostaria de água?
+preferência I would prefer to stay. Eu preferiria ficar.
+💡 'Would you like...?' é a forma mais educada de oferecer algo. 'I would like' = quero (educado).
+USO 2 — WOULD = COSTUMAVA (hábito no passado)
+Estrutura Inglês Português
+hábito When I was young, I would play soccer every day. Quando jovem, eu costumava jogar futebol todo dia.
+hábito She would always bring flowers. Ela sempre trazia flores (costumava trazer).
+hábito We would go to the beach every summer. A gente costumava ir à praia todo verão.
+💡 WOULD de hábito = USED TO. 'I would play' = 'I used to play'. Só para hábitos, não estados: 'I used to live there' ✅ / 'I would live there' ❌
+USO 3 — WOULD no condicional (se… então…)
+Estrutura Inglês Português
+cond. If I had money, I would travel. Se eu tivesse dinheiro, viajaria.
+cond. She would come if she could. Ela viria se pudesse.
+cond. What would you do? O que você faria?
+cond. I would love to visit Japan. Eu adoraria visitar o Japão.
+⚠️ No condicional: IF + passado simples / WOULD + verbo base. Não use WOULD no mesmo lado que IF.
+USO 4 — WOULD RATHER / WOULD PREFER (preferência)
+Estrutura Inglês Português
+prefer. I would rather walk. Eu preferiria caminhar.
+prefer. She would rather stay home. Ela preferiria ficar em casa.
+prefer. Would you rather have tea or coffee? Você prefere chá ou café?
+prefer. I would prefer to eat now. Eu prefiro comer agora.
+💡 WOULD RATHER + verbo base = preferiria. WOULD PREFER + to + infinitivo = preferiria.
+🔴 ERRO COMUM: 'If I would have money, I would travel.' ❌ — WOULD não vai depois de IF no condicional: 'If I HAD money, I would travel.' ✅
+💡 RESUMO: WOULD LIKE = gostaria (educado) | WOULD + verbo = costumava (hábito passado) | IF… WOULD = condicional | WOULD RATHER =
+preferiria | 'Would you like?' = quer? (educado)</div></details><details class="ditem" data-search="will shall will = futuro decisao promessa ôçö sha question word: will / shall | inglês para brasileiros (a1–a2)
+will / shall = will = futuro / decisao / promessa
+m
+— shall = oferta formal
+futuro espontâneo, promessas, decisões e ofertas formais
+uso 1 — will = futuro (decisão espontânea e promessa)
+estrutura inglês português
+decisão i will call you tonight. vou te ligar esta noite.
+promessa i will never forget you. nunca vou te esquecer.
+previsão "><summary>WILL SHALL WILL = FUTURO DECISAO PROMESSA ÔÇö SHA</summary><div class="dbody">QUESTION WORD: WILL / SHALL | Inglês para Brasileiros (A1–A2)
+WILL / SHALL = WILL = FUTURO / DECISAO / PROMESSA
+M
+— SHALL = OFERTA FORMAL
+Futuro espontâneo, promessas, decisões e ofertas formais
+USO 1 — WILL = FUTURO (decisão espontânea e promessa)
+Estrutura Inglês Português
+decisão I will call you tonight. Vou te ligar esta noite.
+promessa I will never forget you. Nunca vou te esquecer.
+previsão It will be cold tomorrow. Vai fazer frio amanhã.
+oferta I will help you with that. Vou te ajudar com isso.
+recusa I won't do that. Não vou fazer isso.
+💡 WILL = decisão tomada NO MOMENTO da fala. Para planos já decididos antes: GOING TO.
+USO 2 — WILL vs GOING TO (diferença crucial)
+Forma Uso Exemplo Tradução
+WILL decisão espontânea I'll answer the phone. Vou atender (decidi agora).
+GOING TO plano já decidido I'm going to call him later. Vou ligar para ele (já planejei).
+WILL promessa I'll always love you. Sempre vou te amar.
+GOING TO evidência visível Look! It's going to rain. Olha! Vai chover (vejo as nuvens).
+⚠️ WILL = espontâneo. GOING TO = planejado. Ambos corretos para futuro — contexto define.
+USO 3 — WILL em perguntas e negativas
+Estrutura Inglês Português
+perg. Will you come to the party? Você vai vir à festa?
+perg. Will she be there? Ela vai estar lá?
+neg. I won't be able to come. Não vou conseguir vir.
+neg. He won't listen to me. Ele não vai me ouvir.
+tag You'll come, won't you? Você vai vir, né?
+💡 WON'T = will not (contração). Uma das negações mais usadas para futuro.
+USO 4 — SHALL (formal, oferta, sugestão — inglês britânico)
+Uso Inglês Português
+sugestão Shall we go? Vamos? / Devemos ir?
+oferta Shall I open the window? Devo / Posso abrir a janela?
+formal The meeting shall begin at 9am. A reunião deverá começar às 9h.
+💡 SHALL é mais britânico e formal. No inglês americano, WILL substitui SHALL na maioria dos casos. 'Shall we?' = 'Vamos?'
+🔴 ERRO COMUM: 'I will to go.' ❌ — WILL nunca usa TO depois: 'I will go.' ✅ | 'She wills come.' ❌ — WILL não muda forma: 'She will come.' ✅
+💡 RESUMO: WILL = vou (decisão espontânea/promessa/previsão) | WON'T = não vou | WILL vs GOING TO: espontâneo vs planejado | SHALL = vamos?
+(oferta/sugestão formal, britânico)</div></details><details class="ditem" data-search="phrasal get phrasal verbs com get question word: get up / get out / get in / get on / get off / get back / get over / get along | inglês para brasileiros (a1–a2)
+get up / get out / get in / get on / get off / get
+back / get over / get along = phrasal verbs
+pv
+com get
+get é o verbo mais versátil do inglês — cada partícula muda completamente o sentido
+uso 1 — get up / get out / get in (movimento básico)
+phrasal verb inglês português"><summary>PHRASAL GET PHRASAL VERBS COM GET</summary><div class="dbody">QUESTION WORD: GET UP / GET OUT / GET IN / GET ON / GET OFF / GET BACK / GET OVER / GET ALONG | Inglês para Brasileiros (A1–A2)
+GET UP / GET OUT / GET IN / GET ON / GET OFF / GET
+BACK / GET OVER / GET ALONG = PHRASAL VERBS
+PV
+COM GET
+GET é o verbo mais versátil do inglês — cada partícula muda completamente o sentido
+USO 1 — GET UP / GET OUT / GET IN (movimento básico)
+Phrasal verb Inglês Português
+get up I get up at 6am every day. Acordo às 6h todo dia.
+get out Get out of here! Sai daqui!
+get out She got out of the car. Ela saiu do carro.
+get in He got in the car. Ele entrou no carro.
+get into She got into trouble. Ela se meteu em problema.
+⚠️ GET UP = levantar (da cama). GET OUT = sair (de espaço fechado). GET IN = entrar (carro, espaço).
+USO 2 — GET ON / GET OFF (transporte)
+Phrasal verb Inglês Português
+get on I get on the bus at 7am. Pego/Embarco no ônibus às 7h.
+get on How are you getting on? Como você está se saindo?
+get off She got off the train. Ela desceu/desembarcou do trem.
+get off Get off my property! Sai da minha propriedade!
+💡 GET ON = embarcar (ônibus, trem, avião) | GET OFF = desembarcar. Diferente de GET IN/OUT (carro — espaço pequeno).
+USO 3 — GET BACK / GET OVER (retorno e superação)
+Phrasal verb Inglês Português
+get back When did you get back? Quando você voltou?
+get back I'll get back to you later. Te retorno mais tarde.
+get over She got over her cold. Ela se recuperou do resfriado.
+get over He can't get over the breakup. Ele não consegue superar o término.
+💡 GET BACK = voltar | GET BACK TO = retornar (responder depois) | GET OVER = se recuperar / superar.
+USO 4 — GET ALONG / GET TOGETHER / GET AWAY
+Phrasal verb Inglês Português
+get along We get along very well. A gente se dá muito bem.
+get along with She doesn't get along with her boss. Ela não se dá bem com o chefe.
+get together Let's get together this weekend. Vamos nos reunir esse fim de semana.
+get away I need to get away for a while. Preciso me afastar por um tempo.
+💡 GET ALONG (WITH) = se dar bem (com) | GET TOGETHER = se reunir | GET AWAY = se afastar.
+🔴 GET ON vs GET IN: ônibus/trem/avião = GET ON. Carro/táxi (espaço pequeno) = GET IN. 'Get on the bus' ✅ / 'Get in the car' ✅.
+💡 RESUMO GET: get up=acordar | get out=sair | get in=entrar | get on=embarcar | get off=desembarcar | get back=voltar | get over=superar | get along=se
+dar bem.</div></details><details class="ditem" data-search="phrasal go phrasal verbs com go question word: go on / go out / go back / go through / go ahead / go away / go over | inglês para brasileiros (a1–a2)
+go on / go out / go back / go through / go
+ahead / go away / go over = phrasal verbs com
+pv
+go
+go + partícula — continuidade, saída, retorno, revisão e permissão
+uso 1 — go on / go ahead (continuar e dar permissão)
+phrasal verb inglês português
+go on please, go on. por favor, conti"><summary>PHRASAL GO PHRASAL VERBS COM GO</summary><div class="dbody">QUESTION WORD: GO ON / GO OUT / GO BACK / GO THROUGH / GO AHEAD / GO AWAY / GO OVER | Inglês para Brasileiros (A1–A2)
+GO ON / GO OUT / GO BACK / GO THROUGH / GO
+AHEAD / GO AWAY / GO OVER = PHRASAL VERBS COM
+PV
+GO
+GO + partícula — continuidade, saída, retorno, revisão e permissão
+USO 1 — GO ON / GO AHEAD (continuar e dar permissão)
+Phrasal verb Inglês Português
+go on Please, go on. Por favor, continue.
+go on What's going on? O que está acontecendo?
+go on The show must go on. O show deve continuar.
+go ahead Go ahead, I'm listening. Pode falar, estou ouvindo.
+go ahead Go ahead and start without me. Pode começar sem mim.
+💡 'What's going on?' é uma das perguntas mais usadas em inglês. GO AHEAD = pode fazer / pode falar.
+USO 2 — GO OUT / GO BACK / GO AWAY
+Phrasal verb Inglês Português
+go out Do you want to go out tonight? Você quer sair esta noite?
+go out She goes out with Tom. Ela namora o Tom.
+go back I want to go back to Brazil. Quero voltar para o Brasil.
+go away Go away! Vai embora! / Suma!
+go away The pain won't go away. A dor não passa.
+💡 GO OUT = sair / namorar | GO BACK = voltar | GO AWAY = ir embora / sumir / passar (dor).
+USO 3 — GO THROUGH / GO OVER (processo e revisão)
+Phrasal verb Inglês Português
+go through She went through a difficult time. Ela passou por um momento difícil.
+go through Let's go through the plan. Vamos revisar o plano.
+go over Can we go over this again? Podemos revisar isso de novo?
+go over She went over her notes. Ela revisou suas anotações.
+💡 GO THROUGH = passar por (dificuldade) / revisar (processo) | GO OVER = revisar, checar novamente.
+USO 4 — Outros GO phrasal verbs essenciais
+Phrasal verb Inglês Português
+go up Prices went up again. Os preços subiram de novo.
+go down The temperature went down. A temperatura caiu.
+go off The alarm went off at 6am. O alarme disparou às 6h.
+go with This shirt goes with those pants. Essa camisa combina com essa calça.
+💡 GO UP = subir | GO DOWN = cair/descer | GO OFF = disparar/tocar (alarme) | GO WITH = combinar com.
+🔴 'What's going on?' é muito usado e significa 'O que está acontecendo?' — não confunda com 'What's up?' (mais informal, mesmo sentido).
+💡 RESUMO GO: go on=continuar/'o que acontece' | go ahead=pode/fala | go out=sair/namorar | go back=voltar | go away=ir embora | go through=passar
+por/revisar | go over=revisar | go up/down=subir/cair.</div></details><details class="ditem" data-search="phrasal turn put take phrasal turn put take question word: turn on/off · put on/off · take off/on/out/away | inglês para brasileiros (a1–a2)
+turn on/off · put on/off · take off/on/out/away
+pv
+= phrasal verbs com turn / put / take
+três verbos essenciais com múltiplas partículas — controle, vestir e remover
+uso 1 — turn on / turn off (ligar e desligar)
+phrasal verb inglês português
+turn on turn on the lights, please. acenda / ligue as luzes, "><summary>PHRASAL TURN PUT TAKE PHRASAL TURN PUT TAKE</summary><div class="dbody">QUESTION WORD: TURN ON/OFF · PUT ON/OFF · TAKE OFF/ON/OUT/AWAY | Inglês para Brasileiros (A1–A2)
+TURN ON/OFF · PUT ON/OFF · TAKE OFF/ON/OUT/AWAY
+PV
+= PHRASAL VERBS COM TURN / PUT / TAKE
+Três verbos essenciais com múltiplas partículas — controle, vestir e remover
+USO 1 — TURN ON / TURN OFF (ligar e desligar)
+Phrasal verb Inglês Português
+turn on Turn on the lights, please. Acenda / Ligue as luzes, por favor.
+turn on Turn on the TV. Ligue a TV.
+turn off Turn off your phone. Desligue seu celular.
+turn off Don't forget to turn off the gas. Não esqueça de desligar o gás.
+turn up Turn up the volume! Aumenta o volume!
+turn down Can you turn down the music? Pode baixar a música?
+💡 TURN ON = ligar | TURN OFF = desligar | TURN UP = aumentar (volume) | TURN DOWN = diminuir (volume) / recusar.
+USO 2 — PUT ON / PUT OFF / PUT OUT (colocar, adiar, apagar)
+Phrasal verb Inglês Português
+put on She put on her coat. Ela colocou / vestiu o casaco.
+put on Put on some music. Coloca uma música.
+put off We put off the meeting. Adiamos a reunião.
+put out Put out the fire! Apague o fogo!
+put away Put away your toys. Guarde seus brinquedos.
+💡 PUT ON = vestir/colocar | PUT OFF = adiar | PUT OUT = apagar (fogo/cigarro) | PUT AWAY = guardar.
+USO 3 — TAKE OFF / TAKE ON / TAKE OUT / TAKE AWAY
+Phrasal verb Inglês Português
+take off The plane took off at noon. O avião decolou ao meio-dia.
+take off Take off your shoes. Tire os sapatos.
+take on She took on a new challenge. Ela assumiu um novo desafio.
+take out He took out the trash. Ele tirou o lixo.
+take out Can I take you out to dinner? Posso te levar para jantar?
+take away Take away the pain. Tira a dor.
+💡 TAKE OFF = decolar / tirar (roupa) | TAKE ON = assumir | TAKE OUT = tirar / levar para fora | TAKEAWAY = comida para viagem.
+🔴 SEPARÁVEIS: com pronome, a partícula DEVE ser separada: 'Turn it off.' ✅ / 'Turn off it.' ❌ | Com substantivo: ambos corretos: 'Turn off the lights' ✅ /
+'Turn the lights off' ✅.
+💡 RESUMO: TURN ON/OFF=ligar/desligar | TURN UP/DOWN=aumentar/diminuir | PUT ON=vestir | PUT OFF=adiar | PUT OUT=apagar | TAKE
+OFF=decolar/tirar | TAKE ON=assumir | TAKE OUT=tirar/levar para fora.</div></details><details class="ditem" data-search="phrasal look find run phrasal look find run question word: look for · look up · look after · find out · run out of · run into | inglês para brasileiros (a1–a2)
+look for · look up · look after · find out · run
+out of · run into = phrasal verbs com look /
+pv
+find / run
+buscar, descobrir e situações inesperadas — essenciais no dia a dia
+uso 1 — look for / look up / look after / look forward to
+phrasal verb inglês português
+look for i'm looking"><summary>PHRASAL LOOK FIND RUN PHRASAL LOOK FIND RUN</summary><div class="dbody">QUESTION WORD: LOOK FOR · LOOK UP · LOOK AFTER · FIND OUT · RUN OUT OF · RUN INTO | Inglês para Brasileiros (A1–A2)
+LOOK FOR · LOOK UP · LOOK AFTER · FIND OUT · RUN
+OUT OF · RUN INTO = PHRASAL VERBS COM LOOK /
+PV
+FIND / RUN
+Buscar, descobrir e situações inesperadas — essenciais no dia a dia
+USO 1 — LOOK FOR / LOOK UP / LOOK AFTER / LOOK FORWARD TO
+Phrasal verb Inglês Português
+look for I'm looking for my keys. Estou procurando minhas chaves.
+look up Look up the word in the dictionary. Procure a palavra no dicionário.
+look after She looks after her sister. Ela cuida da irmã.
+look forward to I'm looking forward to seeing you. Estou ansioso para te ver.
+look into We'll look into the problem. Vamos investigar o problema.
+💡 LOOK FOR = procurar | LOOK UP = consultar | LOOK AFTER = cuidar de | LOOK FORWARD TO = estar ansioso.
+USO 2 — FIND OUT (descobrir)
+Phrasal verb Inglês Português
+find out I found out the truth. Eu descobri a verdade.
+find out Did you find out where she lives? Você descobriu onde ela mora?
+find out I need to find out more. Preciso descobrir mais.
+find out How did you find out? Como você descobriu?
+💡 FIND OUT = descobrir (informação que não sabia). Diferente de FIND = encontrar (objeto).
+USO 3 — RUN OUT OF / RUN INTO / RUN AWAY
+Phrasal verb Inglês Português
+run out of We ran out of milk. Acabou o leite (ficamos sem).
+run out of I'm running out of time. Estou ficando sem tempo.
+run into I ran into Maria at the mall. Encontrei a Maria por acaso no shopping.
+run away The dog ran away. O cachorro fugiu.
+run over He was run over by a car. Ele foi atropelado por um carro.
+⚠️ RUN OUT OF = acabar (ficar sem algo) | RUN INTO = encontrar por acaso | RUN AWAY = fugir.
+🔴 LOOK FOR ≠ LOOK AT ≠ LOOK AFTER: 'look for' = procurar (algo perdido) | 'look at' = olhar para | 'look after' = cuidar de. Totalmente diferentes!
+💡 RESUMO: look for=procurar | look up=consultar | look after=cuidar | find out=descobrir | run out of=acabar/ficar sem | run into=encontrar por acaso | run
+away=fugir.</div></details><details class="ditem" data-search="phrasal give come make phrasal give come make break set question word: give up · give back · come up with · come across · make up · break up · set up · pick up | inglês para brasileiros (a1–a2)
+give up · give back · come up with · come across
+· make up · break up · set up · pick up = phrasal
+pv
+verbs essenciais variados
+os phrasal verbs mais usados de diferentes verbos — essenciais para fluência
+uso 1 — give up / give back (desistir e devolver)
+phrasal"><summary>PHRASAL GIVE COME MAKE PHRASAL GIVE COME MAKE BREAK SET</summary><div class="dbody">QUESTION WORD: GIVE UP · GIVE BACK · COME UP WITH · COME ACROSS · MAKE UP · BREAK UP · SET UP · PICK UP | Inglês para Brasileiros (A1–A2)
+GIVE UP · GIVE BACK · COME UP WITH · COME ACROSS
+· MAKE UP · BREAK UP · SET UP · PICK UP = PHRASAL
+PV
+VERBS ESSENCIAIS VARIADOS
+Os phrasal verbs mais usados de diferentes verbos — essenciais para fluência
+USO 1 — GIVE UP / GIVE BACK (desistir e devolver)
+Phrasal verb Inglês Português
+give up Don't give up! Não desista!
+give up She gave up smoking. Ela parou de fumar.
+give back Give back my book! Devolva meu livro!
+give away She gave away her old clothes. Ela doou suas roupas velhas.
+💡 GIVE UP = desistir / parar de | GIVE BACK = devolver | GIVE AWAY = dar de graça / revelar (segredo).
+USO 2 — COME UP WITH / COME ACROSS / COME BACK
+Phrasal verb Inglês Português
+come up with She came up with a great idea. Ela teve / veio com uma ótima ideia.
+come up with Can you come up with a solution? Você consegue encontrar uma solução?
+come across I came across an old photo. Encontrei/topei com uma foto antiga.
+come back Come back soon! Volte logo!
+💡 COME UP WITH = ter uma ideia / encontrar solução | COME ACROSS = encontrar por acaso.
+USO 3 — MAKE UP / BREAK UP / SET UP
+Phrasal verb Inglês Português
+make up They made up after the fight. Eles se reconciliaram após a briga.
+make up She's making up a story. Ela está inventando uma história.
+break up They broke up last month. Eles terminaram mês passado.
+set up He set up a new company. Ele fundou / montou uma nova empresa.
+set up Can you set up the meeting? Você pode organizar a reunião?
+💡 MAKE UP = se reconciliar / inventar | BREAK UP = terminar (relacionamento) | SET UP = montar/organizar.
+USO 4 — PICK UP / BRING UP / CALL OFF
+Phrasal verb Inglês Português
+pick up Can you pick me up at 5pm? Pode me buscar às 17h?
+pick up She picked up English fast. Ela aprendeu inglês rápido.
+bring up He was brought up in São Paulo. Ele foi criado em São Paulo.
+call off They called off the meeting. Eles cancelaram a reunião.
+show up She didn't show up. Ela não apareceu.
+💡 PICK UP = buscar (de carro) / aprender (rapidamente) | BRING UP = criar / mencionar | CALL OFF = cancelar | SHOW UP = aparecer.
+🔴 PHRASAL VERBS não são literais! 'Give up' ≠ dar para cima. 'Come up with' ≠ vir para cima com. Aprenda cada um como expressão completa com seu
+significado.
+💡 RESUMO: give up=desistir | give back=devolver | come up with=ter ideia | come across=encontrar por acaso | make up=reconciliar/inventar | break
+up=terminar | set up=montar | pick up=buscar/aprender | call off=cancelar | show up=aparecer.</div></details></div></section>
+</div>
+<footer>Sistema 03 · Motor de Verbos — 12 tempos, 1 lógica</footer>
+<script id="dist-js">
+document.querySelectorAll('.dist').forEach(sec=>{
+  const inp=sec.querySelector('.dsearch');
+  const items=[...sec.querySelectorAll('.ditem')];
+  const nr=sec.querySelector('.dnr');
+  if(!inp) return;
+  inp.addEventListener('input',()=>{
+    const q=inp.value.trim().toLowerCase();let shown=0;
+    items.forEach(it=>{const hit=!q||it.dataset.search.includes(q);it.style.display=hit?'':'none';if(hit){shown++;it.open=!!q;}});
+    if(nr) nr.style.display=shown?'none':'block';
+  });
+});
+</script>
+</body>
+</html>

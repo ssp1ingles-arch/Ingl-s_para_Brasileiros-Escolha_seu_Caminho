@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colocações Verbais — Sistema 03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#6366F1;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+/* markdown article */
+.md h1,.md h2,.md h3,.md h4{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+.md h1{font-size:1.5rem;margin:30px 0 10px;color:var(--text);}
+.md h2{font-size:1.28rem;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.md h3{font-size:1.08rem;margin:22px 0 8px;color:var(--accent);}
+.md h4{font-size:.98rem;margin:16px 0 6px;color:var(--text);}
+.md p{margin:10px 0;color:#cfcfcf;}
+.md strong{color:var(--text);}
+.md em{color:var(--accent);font-style:normal;}
+.md ul,.md ol{margin:10px 0 10px 22px;color:#cfcfcf;}
+.md li{margin:4px 0;}
+.md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.md code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--accent);font-family:'Space Grotesk',monospace;}
+.md pre.code{background:#0f0f0f;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:12px 0;}
+.md pre.code code{background:none;border:none;color:#d7d7d7;padding:0;font-family:'Space Grotesk',ui-monospace,monospace;font-size:.9rem;line-height:1.7;white-space:pre;}
+.md .tablewrap{overflow-x:auto;margin:14px 0;}
+.md table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.md th{background:var(--surface2);text-align:left;padding:10px 13px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+.md td{padding:10px 13px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+.md tr:nth-child(even){background:rgba(255,255,255,.015);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:20px 0 0;font-family:'Space Grotesk',sans-serif;font-size:.8rem;}
+.legend span{display:inline-flex;align-items:center;gap:6px;color:var(--muted);}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+.sec-h{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;margin:46px 0 4px;display:flex;align-items:center;gap:10px;}
+.sec-h::before{content:'';width:22px;height:3px;background:var(--accent);border-radius:2px;}
+.sub{color:var(--muted);font-size:.92rem;margin-bottom:18px;}
+.colhead{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.9rem;text-align:center;padding:6px;letter-spacing:.05em;text-transform:uppercase;}
+.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:720px){.matrix{grid-template-columns:1fr;}}
+.tense{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:15px;border-top:3px solid var(--tc);cursor:pointer;transition:.2s;}
+.tense:hover{transform:translateY(-3px);border-color:var(--tc);}
+.tense .nm{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;}
+.tense .formula{font-family:'Space Grotesk',sans-serif;font-size:.76rem;color:var(--tc);margin:5px 0;}
+.tense .ex{font-size:.86rem;color:var(--text);font-style:italic;margin-top:6px;}
+.tense .detail{max-height:0;overflow:hidden;transition:max-height .3s;}
+.tense.open .detail{max-height:220px;}
+.tense .detail-in{padding-top:10px;margin-top:10px;border-top:1px solid var(--border);font-size:.82rem;color:var(--muted);}
+.tense .detail-in .err{color:#fca5a5;}
+.irr{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.vcard{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;}
+.vchain{display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.95rem;flex-wrap:wrap;}
+.vchain .v1{color:#22C55E;}.vchain .v2{color:#EF4444;}.vchain .v3{color:#3B82F6;}.vchain .ar{color:var(--dim);}
+.vcard .pt{font-size:.78rem;color:var(--dim);margin:6px 0 8px;}
+.vcard .s{font-size:.82rem;color:var(--muted);font-style:italic;}
+details.full{margin-top:30px;border:1px solid var(--border);border-radius:14px;background:var(--surface);overflow:hidden;}
+details.full > summary{cursor:pointer;list-style:none;padding:18px 22px;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.1rem;display:flex;align-items:center;gap:10px;}
+details.full > summary::-webkit-details-marker{display:none;}
+details.full > summary::before{content:'▸';color:var(--accent);transition:.2s;}
+details.full[open] > summary::before{transform:rotate(90deg);}
+details.full .md{padding:0 22px 24px;}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+<a href="index.html" class="back">← Voltar ao Sistema 03</a>
+<div class="eyebrow">Sistema 03 · colocações</div>
+<h1 class="title">Colocações <em>Verbais</em></h1>
+<style id="dist-css">
+.dist{margin-top:46px;}
+.dist-h{display:flex;align-items:center;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:8px;}
+.dist-flag{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.12em;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);background:color-mix(in srgb,var(--accent) 8%,transparent);padding:3px 9px;border-radius:20px;}
+.dist-h h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;flex:1;}
+.dist-count{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700;color:var(--accent);}
+.dsearch{width:100%;margin:10px 0 14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 15px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;}
+.dsearch:focus{outline:none;border-color:var(--accent);}
+.dsearch::placeholder{color:var(--dim);}
+.ditems{display:grid;gap:8px;}
+.ditem{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.ditem > summary{cursor:pointer;list-style:none;padding:12px 16px;display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;}
+.ditem > summary::-webkit-details-marker{display:none;}
+.ditem > summary::before{content:'▸';color:var(--accent);transition:.2s;flex:none;}
+.ditem[open] > summary::before{transform:rotate(90deg);}
+.ditem[open] > summary{border-bottom:1px solid var(--border);background:var(--surface2);}
+.dbody{padding:14px 18px;white-space:pre-wrap;color:#cfcfcf;font-size:.9rem;line-height:1.6;max-height:65vh;overflow-y:auto;}
+.dnr{color:var(--dim);font-style:italic;padding:14px;display:none;}
+</style>
+<section class="dist"><div class="dist-h"><span class="dist-flag">Verbos · garimpado do S03</span><h2>Colocações Verbais · make · do · have · get · take</h2><span class="dist-count">100 colocações</span></div><div class="ditems"><details class="ditem" data-search="colocação o que é colocações naturais"><summary>O que é uma colocação (introdução)</summary><div class="dbody dmd"><h1>SISTEMA 7 — COLOCAÇÕES NATURAIS</h1>
+<h1>O segredo entre o inglês correto e o inglês natural</h1>
+<h1>Baseado em: "Stop Choosing the Wrong Verbs | 100 Natural English Collocations"</h1>
+<hr>
+<h2>O QUE É UMA COLOCAÇÃO — A EXPLICAÇÃO QUE MUDA TUDO</h2>
+<p>Uma colocação são duas palavras que naturalmente pertencem juntas.<br>Não por causa de gramática. Não por lógica.<br>Simplesmente porque é assim que nativos dizem.</p>
+<p><strong>A diferença fundamental:</strong></p>
+<ul><li>Gramática diz se uma frase está CORRETA.</li><li>Colocações dizem se uma frase soa NATURAL.</li><li>São coisas muito diferentes.</li></ul>
+<p><strong>Exemplos imediatos:</strong></p>
+<ul><li>✅ make a decision (correto + natural)</li><li>❌ do a decision (correto gramaticalmente, soa estranho)</li><li>❌ take a decision (errado em inglês americano)</li></ul>
+<ul><li>✅ do research (correto + natural)</li><li>❌ make research (soa como tradução literal)</li></ul>
+<ul><li>✅ pay attention (correto + natural)</li><li>❌ give attention / make attention (nativo nunca diria isso)</li></ul>
+<p><strong>Por que isso importa:</strong><br>Um aprendiz que sabe gramática mas não sabe colocações produz frases<br>tecnicamente corretas que imediatamente soam como tradução de outro idioma.<br>Um aprendiz que conhece as colocações fala do jeito que um nativo falaria.<br>Essa diferença é sentida imediatamente por quem ouve.</p>
+<hr>
+<h2>AS 100 COLOCAÇÕES — 4 CATEGORIAS</h2>
+<hr></div></details><details class="ditem" data-search="categoria 1 — make (25 colocações)"><summary>CATEGORIA 1 — MAKE (25 colocações)</summary><div class="dbody dmd"><h2>CATEGORIA 1 — MAKE (25 colocações)</h2>
+<h3>MAKE = criar, produzir, trazer algo à existência</h3>
+<p><strong>REGRA GERAL:</strong> MAKE é usado quando há um resultado ou algo criado.<br>Mas como toda regra em inglês, há exceções — por isso aprenda as colocações individualmente.</p>
+<hr>
+<h3>COLOCAÇÃO 01 — MAKE A DECISION</h3>
+<p><strong>Tradução:</strong> tomar uma decisão<br><strong>Erro clássico:</strong> ❌ do a decision / ❌ take a decision<br><strong>Uso:</strong> quando você escolhe entre opções após pensar cuidadosamente</p>
+<p><strong>Exemplo:</strong><br>"I have been thinking about it for a week now and I really need to make a decision before the opportunity disappears."<br>→ Já faz uma semana que penso nisso e realmente preciso tomar uma decisão antes que a oportunidade desapareça.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I need to make a decision by Friday."</li><li>"Let's make a decision together."</li><li>"She finally made a decision after months of hesitation."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 02 — MAKE A MISTAKE</h3>
+<p><strong>Tradução:</strong> cometer um erro<br><strong>Erro clássico:</strong> ❌ do a mistake / ❌ have a mistake<br><strong>Uso:</strong> quando você faz algo incorretamente, seja um pequeno deslize ou erro significativo</p>
+<p><strong>Exemplo:</strong><br>"Everyone makes mistakes at some point. What really matters is what you learn from them and what you do next."<br>→ Todo mundo comete erros em algum momento. O que realmente importa é o que você aprende com eles e o que faz em seguida.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I made a terrible mistake."</li><li>"Don't be afraid to make mistakes."</li><li>"We all make mistakes when learning something new."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 03 — MAKE PROGRESS</h3>
+<p><strong>Tradução:</strong> fazer progresso / avançar<br><strong>Erro clássico:</strong> ❌ do progress / ❌ have progress<br><strong>Uso:</strong> quando você está avançando em direção a um objetivo ou melhorando</p>
+<p><strong>Exemplo:</strong><br>"We are making real and significant progress on the project and I am confident we will finish well ahead of schedule."<br>→ Estamos fazendo progresso real e significativo no projeto e estou confiante de que terminaremos bem antes do prazo.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"You're making great progress!"</li><li>"We need to make faster progress."</li><li>"She's been making steady progress in English."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 04 — MAKE AN EFFORT</h3>
+<p><strong>Tradução:</strong> fazer um esforço<br><strong>Erro clássico:</strong> ❌ do an effort / ❌ give an effort<br><strong>Uso:</strong> quando você tenta com determinação atingir um resultado específico</p>
+<p><strong>Exemplo:</strong><br>"She made a genuine effort to make every single guest feel welcome and comfortable at the event."<br>→ Ela fez um esforço genuíno para que cada convidado se sentisse bem-vindo e confortável no evento.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Please make an effort to arrive on time."</li><li>"He made no effort to help."</li><li>"You need to make more of an effort."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 05 — MAKE A SUGGESTION</h3>
+<p><strong>Tradução:</strong> fazer uma sugestão<br><strong>Erro clássico:</strong> ❌ give a suggestion / ❌ do a suggestion<br><strong>Uso:</strong> quando você propõe uma ideia para outros considerarem (mais suave que dar conselho)</p>
+<p><strong>Exemplo:</strong><br>"Can I make a suggestion before we finalize the plan? I think we should approach this from a completely different angle."<br>→ Posso fazer uma sugestão antes de finalizarmos o plano? Acho que deveríamos abordar isso de um ângulo completamente diferente.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"May I make a suggestion?"</li><li>"He made a helpful suggestion."</li><li>"She made several suggestions for improvement."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 06 — MAKE A DIFFERENCE</h3>
+<p><strong>Tradução:</strong> fazer diferença<br><strong>Erro clássico:</strong> ❌ do a difference / ❌ create a difference<br><strong>Uso:</strong> quando algo tem um impacto positivo real em uma situação ou na vida de alguém</p>
+<p><strong>Exemplo:</strong><br>"Even the smallest acts of kindness can make a real and lasting difference to someone's day."<br>→ Até os menores atos de gentileza podem fazer uma diferença real e duradoura no dia de alguém.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"You really made a difference."</li><li>"Small things can make a big difference."</li><li>"Does it make any difference to you?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 07 — MAKE AN APPOINTMENT</h3>
+<p><strong>Tradução:</strong> marcar uma consulta / agendar<br><strong>Erro clássico:</strong> ❌ do an appointment / ❌ take an appointment<br><strong>Uso:</strong> quando você marca formalmente um horário com médico, dentista ou profissional</p>
+<p><strong>Exemplo:</strong><br>"I really need to make an appointment with my doctor before the end of the month. I have been putting it off too long."<br>→ Realmente preciso marcar uma consulta com meu médico antes do fim do mês. Já faz tempo que estou adiando.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I made an appointment for Tuesday."</li><li>"Can I make an appointment for next week?"</li><li>"She forgot to make the appointment."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 08 — MAKE A COMPLAINT</h3>
+<p><strong>Tradução:</strong> fazer uma reclamação<br><strong>Erro clássico:</strong> ❌ do a complaint / ❌ give a complaint<br><strong>Uso:</strong> quando você expressa formalmente insatisfação à pessoa ou organização responsável</p>
+<p><strong>Exemplo:</strong><br>"After waiting 3 weeks with no response, he finally decided to make an official complaint to the company."<br>→ Depois de esperar 3 semanas sem resposta, ele finalmente decidiu fazer uma reclamação oficial à empresa.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I need to make a complaint."</li><li>"He made a formal complaint."</li><li>"You have every right to make a complaint."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 09 — MAKE A PHONE CALL</h3>
+<p><strong>Tradução:</strong> fazer uma ligação<br><strong>Erro clássico:</strong> ❌ do a phone call / ❌ have a phone call (em alguns contextos)<br><strong>Uso:</strong> quando você contata alguém por telefone</p>
+<p><strong>Exemplo:</strong><br>"I just need to make one quick phone call and then I am completely free for the rest of the afternoon."<br>→ Só preciso fazer uma ligação rápida e depois estou completamente livre pelo resto da tarde.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I need to make an important call."</li><li>"She made several phone calls this morning."</li><li>"Can I make a quick call?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 10 — MAKE A PLAN</h3>
+<p><strong>Tradução:</strong> fazer um plano<br><strong>Erro clássico:</strong> ❌ do a plan / ❌ create a plan (menos natural)<br><strong>Uso:</strong> quando você decide com antecedência como vai fazer algo</p>
+<p><strong>Exemplo:</strong><br>"Before we start spending any money, we need to sit down and make a proper detailed plan together."<br>→ Antes de começarmos a gastar dinheiro, precisamos sentar e fazer um plano detalhado juntos.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Let's make a plan for the weekend."</li><li>"We need to make a plan B."</li><li>"Have you made any plans yet?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 11 — MAKE AN EXCEPTION</h3>
+<p><strong>Tradução:</strong> fazer uma exceção<br><strong>Erro clássico:</strong> ❌ do an exception / ❌ give an exception<br><strong>Uso:</strong> quando você permite algo que normalmente não seria permitido pelas regras</p>
+<p><strong>Exemplo:</strong><br>"The rules are there for a reason, but I am willing to make an exception in your particular case."<br>→ As regras existem por um motivo, mas estou disposto a fazer uma exceção no seu caso específico.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Could you make an exception this time?"</li><li>"We don't usually do this, but we'll make an exception."</li><li>"She made an exception for him."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 12 — MAKE A PROMISE</h3>
+<p><strong>Tradução:</strong> fazer uma promessa<br><strong>Erro clássico:</strong> ❌ do a promise / ❌ give a promise<br><strong>Uso:</strong> quando você dá sua palavra de que definitivamente fará algo</p>
+<p><strong>Exemplo:</strong><br>"I made a promise to her a long time ago and I fully intend to keep it no matter what happens."<br>→ Fiz uma promessa a ela há muito tempo e tenho total intenção de cumpri-la não importa o que aconteça.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I made a promise and I'll keep it."</li><li>"Don't make promises you can't keep."</li><li>"She made a promise to call every week."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 13 — MAKE AN IMPRESSION</h3>
+<p><strong>Tradução:</strong> causar uma impressão<br><strong>Erro clássico:</strong> ❌ do an impression / ❌ give an impression<br><strong>Uso:</strong> quando você cria um efeito memorável em alguém (geralmente positivo)</p>
+<p><strong>Exemplo:</strong><br>"She made an absolutely outstanding impression at the interview and was offered the job the very same day."<br>→ Ela causou uma impressão absolutamente excepcional na entrevista e recebeu a oferta de emprego no mesmo dia.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"He made a great first impression."</li><li>"I want to make a good impression."</li><li>"She made a lasting impression on everyone."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 14 — MAKE A NOISE</h3>
+<p><strong>Tradução:</strong> fazer barulho<br><strong>Erro clássico:</strong> ❌ do noise / ❌ produce noise<br><strong>Uso:</strong> quando algo ou alguém produz um som (frequentemente indesejado)</p>
+<p><strong>Exemplo:</strong><br>"Could you please try not to make too much noise this evening? The baby has just gone to sleep."<br>→ Você poderia tentar não fazer muito barulho esta noite? O bebê acabou de dormir.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Please don't make noise."</li><li>"The machine is making a strange noise."</li><li>"They were making too much noise."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 15 — MAKE A PROFIT</h3>
+<p><strong>Tradução:</strong> ter lucro / dar lucro<br><strong>Erro clássico:</strong> ❌ do a profit / ❌ win a profit<br><strong>Uso:</strong> quando um negócio ganha mais do que gasta</p>
+<p><strong>Exemplo:</strong><br>"After two difficult years, the company finally started to make a consistent profit last quarter."<br>→ Após dois anos difíceis, a empresa finalmente começou a ter lucro consistente no último trimestre.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"The business is finally making a profit."</li><li>"We need to make a profit by year end."</li><li>"She made a small profit on the sale."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 16 — MAKE A LOSS</h3>
+<p><strong>Tradução:</strong> ter prejuízo<br><strong>Erro clássico:</strong> ❌ do a loss / ❌ have a loss<br><strong>Uso:</strong> quando um negócio gasta mais do que ganha (oposto de make a profit)</p>
+<p><strong>Exemplo:</strong><br>"The restaurant made a significant loss for the first 18 months before things finally started to improve."<br>→ O restaurante teve um prejuízo significativo nos primeiros 18 meses antes de as coisas finalmente começarem a melhorar.</p>
+<hr>
+<h3>COLOCAÇÃO 17 — MAKE A SPEECH</h3>
+<p><strong>Tradução:</strong> fazer um discurso<br><strong>Erro clássico:</strong> ❌ do a speech / ❌ give a speech (give também é usado!)<br><strong>Nota:</strong> tanto "make" quanto "give a speech" são usados — ambos estão corretos</p>
+<p><strong>Exemplo:</strong><br>"He made an incredibly moving and heartfelt speech at his daughter's wedding that brought everyone to tears."<br>→ Ele fez um discurso incrivelmente emocionante e sincero no casamento da filha que fez todos chorarem.</p>
+<hr>
+<h3>COLOCAÇÃO 18 — MAKE A MESS</h3>
+<p><strong>Tradução:</strong> fazer bagunça<br><strong>Erro clássico:</strong> ❌ do a mess / ❌ create a mess<br><strong>Uso:</strong> quando você deixa um lugar em estado de desordem ou sujeira</p>
+<p><strong>Exemplo:</strong><br>"The children made an absolute mess of the entire kitchen while trying to make their mother's birthday cake."<br>→ As crianças fizeram uma bagunça absoluta em toda a cozinha enquanto tentavam fazer o bolo de aniversário da mãe.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Don't make a mess!"</li><li>"He made a mess of the whole project."</li><li>"Sorry, I made a mess."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 19 — MAKE A CHOICE</h3>
+<p><strong>Tradução:</strong> fazer uma escolha<br><strong>Erro clássico:</strong> ❌ do a choice / ❌ take a choice<br><strong>Uso:</strong> quando você seleciona uma opção entre várias disponíveis</p>
+<p><strong>Exemplo:</strong><br>"You have all the information you need in front of you now. It is finally time to make a choice."<br>→ Você tem todas as informações de que precisa agora. Finalmente é hora de fazer uma escolha.</p>
+<hr>
+<h3>COLOCAÇÃO 20 — MAKE FRIENDS</h3>
+<p><strong>Tradução:</strong> fazer amigos<br><strong>Erro clássico:</strong> ❌ do friends / ❌ create friends<br><strong>Uso:</strong> quando você forma novas amizades com pessoas que não conhecia antes</p>
+<p><strong>Exemplo:</strong><br>"She has always found it remarkably easy to make friends wherever she goes because of her warm and open personality."<br>→ Ela sempre achou notavelmente fácil fazer amigos onde quer que vá por causa de sua personalidade calorosa e aberta.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"It's easy to make friends here."</li><li>"He made friends quickly at his new school."</li><li>"Have you made any friends yet?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 21 — MAKE MONEY</h3>
+<p><strong>Tradução:</strong> ganhar dinheiro<br><strong>Erro clássico:</strong> ❌ win money (ganhar = earn/make, não win — win é para prêmios)<br><strong>Uso:</strong> quando você ganha renda ou gera ganho financeiro</p>
+<p><strong>Exemplo:</strong><br>"He started the business primarily to make money, but it quickly became something far more meaningful to him."<br>→ Ele começou o negócio principalmente para ganhar dinheiro, mas rapidamente se tornou algo muito mais significativo.</p>
+<p><strong>MACETE IMPORTANTE:</strong></p>
+<ul><li>make money = ganhar dinheiro (trabalhando)</li><li>win money = ganhar dinheiro (prêmio, sorte)</li><li>earn money = ganhar dinheiro (salário)</li></ul>
+<hr>
+<h3>COLOCAÇÃO 22 — MAKE SENSE</h3>
+<p><strong>Tradução:</strong> fazer sentido<br><strong>Erro clássico:</strong> ❌ do sense / ❌ have sense<br><strong>Uso:</strong> quando algo é lógico, claro e fácil de entender</p>
+<p><strong>Exemplo:</strong><br>"Your explanation makes complete and perfect sense to me now. I understand the whole situation much better."<br>→ Sua explicação faz todo sentido para mim agora. Entendo muito melhor toda a situação.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"That makes sense."</li><li>"Does this make sense?"</li><li>"It doesn't make sense to me."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 23 — MAKE SURE</h3>
+<p><strong>Tradução:</strong> certificar-se de / garantir que<br><strong>Erro clássico:</strong> ❌ do sure / ❌ be sure (be sure também existe mas tem uso diferente)<br><strong>Uso:</strong> quando você verifica ou garante que algo está correto ou acontecerá</p>
+<p><strong>Exemplo:</strong><br>"Please make absolutely sure that all the doors and windows are securely locked before you leave for the night."<br>→ Por favor, certifique-se de que todas as portas e janelas estão bem fechadas antes de sair à noite.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Make sure you call me."</li><li>"I'll make sure it's done."</li><li>"Make sure to bring your ID."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 24 — MAKE AN ANNOUNCEMENT</h3>
+<p><strong>Tradução:</strong> fazer um anúncio<br><strong>Erro clássico:</strong> ❌ do an announcement / ❌ give an announcement<br><strong>Uso:</strong> quando você informa oficialmente um grupo de pessoas sobre algo importante</p>
+<p><strong>Exemplo:</strong><br>"The company made a formal announcement about the planned merger at 9:00 this morning."<br>→ A empresa fez um anúncio formal sobre a fusão planejada às 9h desta manhã.</p>
+<hr>
+<h3>COLOCAÇÃO 25 — MAKE AN ATTEMPT</h3>
+<p><strong>Tradução:</strong> fazer uma tentativa<br><strong>Erro clássico:</strong> ❌ do an attempt / ❌ have an attempt<br><strong>Uso:</strong> quando você tenta fazer algo, especialmente algo difícil</p>
+<p><strong>Exemplo:</strong><br>"She made a genuine and determined attempt to resolve the situation peacefully before it escalated any further."<br>→ Ela fez uma tentativa genuína e determinada de resolver a situação pacificamente antes que escalasse ainda mais.</p>
+<hr></div></details><details class="ditem" data-search="categoria 2 — do (25 colocações)"><summary>CATEGORIA 2 — DO (25 colocações)</summary><div class="dbody dmd"><h2>CATEGORIA 2 — DO (25 colocações)</h2>
+<h3>DO = atividades, tarefas, ações — especialmente que envolvem trabalho ou esforço</h3>
+<p><strong>REGRA GERAL:</strong> DO é usado para atividades e tarefas.<br>Mas não é sempre assim — por isso as colocações individuais são essenciais.</p>
+<hr>
+<h3>COLOCAÇÃO 26 — DO YOUR BEST</h3>
+<p><strong>Tradução:</strong> fazer o seu melhor<br><strong>Erro clássico:</strong> ❌ make your best / ❌ give your best<br><strong>Uso:</strong> quando você tenta com tudo que tem</p>
+<p><strong>Exemplo:</strong><br>"All I ever ask of you is that you do your absolute best. The result will take care of itself if you do."<br>→ Tudo que peço é que você faça o seu melhor absoluto. O resultado cuidará de si mesmo se você fizer.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Just do your best."</li><li>"She always does her best."</li><li>"I did my best but it wasn't enough."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 27 — DO SOMEONE A FAVOR</h3>
+<p><strong>Tradução:</strong> fazer um favor para alguém<br><strong>Erro clássico:</strong> ❌ make someone a favor / ❌ give someone a favor<br><strong>Uso:</strong> quando você faz algo útil ou gentil para outra pessoa</p>
+<p><strong>Exemplo:</strong><br>"Could you possibly do me a huge favor and keep an eye on my bag while I go to get some water?"<br>→ Você poderia me fazer um enorme favor e cuidar da minha bolsa enquanto vou pegar água?</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Can you do me a favor?"</li><li>"I'll do you a favor."</li><li>"Could you do me a small favor?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 28 — DO RESEARCH</h3>
+<p><strong>Tradução:</strong> fazer pesquisa<br><strong>Erro clássico:</strong> ❌ make research / ❌ have research<br><strong>Uso:</strong> quando você estuda ou investiga um assunto cuidadosa e sistematicamente</p>
+<p><strong>Exemplo:</strong><br>"She spent nearly 3 months doing extensive research before she wrote a single word of the report."<br>→ Ela passou quase 3 meses fazendo pesquisa extensiva antes de escrever uma única palavra do relatório.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I need to do more research."</li><li>"He spent years doing research."</li><li>"Have you done any research on this?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 29 — DO AN EXERCISE</h3>
+<p><strong>Tradução:</strong> fazer um exercício<br><strong>Erro clássico:</strong> ❌ make an exercise / ❌ practice an exercise<br><strong>Uso:</strong> quando você completa um exercício físico ou tarefa acadêmica</p>
+<p><strong>Exemplo:</strong><br>"The physiotherapist told me to do this specific exercise three times every day to help with the pain in my back."<br>→ O fisioterapeuta me disse para fazer este exercício específico três vezes por dia para ajudar com a dor nas costas.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Do the exercises on page 10."</li><li>"I do exercises every morning."</li><li>"Did you do all the exercises?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 30 — DO BUSINESS</h3>
+<p><strong>Tradução:</strong> fazer negócios<br><strong>Erro clássico:</strong> ❌ make business / ❌ have business<br><strong>Uso:</strong> quando empresas ou pessoas negociam ou trabalham juntas comercialmente</p>
+<p><strong>Exemplo:</strong><br>"It has been an absolute pleasure doing business with your company over the past 5 years."<br>→ Foi um prazer absoluto fazer negócios com sua empresa nos últimos 5 anos.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"We do business in 30 countries."</li><li>"It's a pleasure doing business with you."</li><li>"They do a lot of business online."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 31 — DO DAMAGE</h3>
+<p><strong>Tradução:</strong> causar dano / estragar<br><strong>Erro clássico:</strong> ❌ make damage / ❌ create damage<br><strong>Uso:</strong> quando algo causa dano, lesão ou destruição</p>
+<p><strong>Exemplo:</strong><br>"The storm did enormous damage to several buildings along the coastline during the night."<br>→ A tempestade causou enorme dano a vários edifícios ao longo da costa durante a noite.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"The accident did a lot of damage."</li><li>"Don't do any damage."</li><li>"The fire did serious damage."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 32 — DO YOUR HOMEWORK</h3>
+<p><strong>Tradução:</strong> fazer o dever de casa / se preparar bem<br><strong>Erro clássico:</strong> ❌ make your homework / ❌ prepare your homework<br><strong>Uso:</strong> literalmente (tarefa escolar) ou figurativamente (se preparar para algo)</p>
+<p><strong>Exemplo:</strong><br>"He had clearly done his homework thoroughly before the meeting. He knew every single detail and statistic."<br>→ Ele claramente tinha feito sua lição de casa antes da reunião. Sabia cada detalhe e estatística.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Did you do your homework?"</li><li>"I always do my homework before investing."</li><li>"She did her homework before the interview."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 33 — DO A COURSE</h3>
+<p><strong>Tradução:</strong> fazer um curso<br><strong>Erro clássico:</strong> ❌ make a course / ❌ take a course (take também é usado!)<br><strong>Nota:</strong> tanto "do" quanto "take a course" são usados — ambos corretos</p>
+<p><strong>Exemplo:</strong><br>"She decided to do a course in project management to significantly improve her career prospects."<br>→ Ela decidiu fazer um curso de gerenciamento de projetos para melhorar significativamente suas perspectivas de carreira.</p>
+<hr>
+<h3>COLOCAÇÃO 34 — DO HARM</h3>
+<p><strong>Tradução:</strong> causar dano / fazer mal<br><strong>Erro clássico:</strong> ❌ make harm / ❌ create harm<br><strong>Uso:</strong> quando algo causa efeito negativo em pessoa ou situação</p>
+<p><strong>Exemplo:</strong><br>"If the new policy is not implemented very carefully, it will do far more harm than good."<br>→ Se a nova política não for implementada com muito cuidado, causará muito mais mal do que bem.</p>
+<p><strong>EXPRESSÃO COMPLETA:</strong> "do more harm than good" = fazer mais mal do que bem</p>
+<hr>
+<h3>COLOCAÇÃO 35 — DO GOOD</h3>
+<p><strong>Tradução:</strong> fazer bem / ajudar<br><strong>Erro clássico:</strong> ❌ make good (diferente sentido) / ❌ create good<br><strong>Uso:</strong> quando algo tem efeito positivo e benéfico</p>
+<p><strong>Exemplo:</strong><br>"Volunteering regularly can do a great deal of good both for the people you help and for your own well-being."<br>→ Voluntariar-se regularmente pode fazer muito bem tanto para as pessoas que você ajuda quanto para seu próprio bem-estar.</p>
+<hr>
+<h3>COLOCAÇÃO 36 — DO THE SHOPPING</h3>
+<p><strong>Tradução:</strong> fazer compras (de supermercado)<br><strong>Erro clássico:</strong> ❌ make the shopping / ❌ go shopping (go shopping = sair para comprar, diferente)<br><strong>Uso:</strong> quando você sai para comprar comida e itens domésticos</p>
+<p><strong>Exemplo:</strong><br>"I always try to do the shopping on Saturday morning before the supermarket becomes too crowded to navigate."<br>→ Sempre tento fazer as compras sábado de manhã antes de o supermercado ficar lotado demais.</p>
+<p><strong>MACETE:</strong></p>
+<ul><li>do the shopping = fazer as compras (tarefa doméstica)</li><li>go shopping = ir às compras (atividade de lazer)</li></ul>
+<hr>
+<h3>COLOCAÇÃO 37 — DO THE COOKING</h3>
+<p><strong>Tradução:</strong> fazer a comida / cozinhar<br><strong>Erro clássico:</strong> ❌ make the cooking / ❌ prepare the cooking<br><strong>Uso:</strong> quando você prepara e cozinha refeições</p>
+<p><strong>Exemplo:</strong><br>"In their house, he does all the cooking during the week and she takes complete charge at the weekends."<br>→ Na casa deles, ele faz toda a comida durante a semana e ela assume total responsabilidade nos fins de semana.</p>
+<hr>
+<h3>COLOCAÇÃO 38 — DO THE WASHING UP</h3>
+<p><strong>Tradução:</strong> lavar a louça<br><strong>Erro clássico:</strong> ❌ make the washing up / ❌ wash the dishes (wash the dishes também é correto!)<br><strong>Uso:</strong> quando você lava pratos, panelas e utensílios após uma refeição (expressão britânica)</p>
+<p><strong>Exemplo:</strong><br>"I will do the washing up this evening if you promise to clear the table and put everything away."<br>→ Vou lavar a louça esta noite se você prometer arrumar a mesa e guardar tudo.</p>
+<hr>
+<h3>COLOCAÇÃO 39 — DO YOUR HAIR</h3>
+<p><strong>Tradução:</strong> arrumar o cabelo / fazer o cabelo<br><strong>Erro clássico:</strong> ❌ make your hair / ❌ fix your hair (fix também é usado em inglês americano)<br><strong>Uso:</strong> quando você estiliza ou prepara seu cabelo</p>
+<p><strong>Exemplo:</strong><br>"She spent nearly 20 minutes carefully doing her hair before the interview to make sure she looked her best."<br>→ Ela passou quase 20 minutos arrumando cuidadosamente o cabelo antes da entrevista para garantir que estava ótima.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I need to do my hair."</li><li>"She's doing her hair."</li><li>"Have you done your hair yet?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 40 — DO A TEST</h3>
+<p><strong>Tradução:</strong> fazer um teste / realizar uma prova<br><strong>Erro clássico:</strong> ❌ make a test / ❌ have a test (have a test = ter um teste agendado)<br><strong>Uso:</strong> quando você completa um exame ou avaliação formal</p>
+<p><strong>Exemplo:</strong><br>"All new employees are required to do a comprehensive skills test during their first week of training."<br>→ Todos os novos funcionários devem fazer um teste abrangente de habilidades na primeira semana de treinamento.</p>
+<hr>
+<h3>COLOCAÇÃO 41 — DO WELL</h3>
+<p><strong>Tradução:</strong> ir bem / se sair bem<br><strong>Erro clássico:</strong> ❌ make well / ❌ be good (nesse contexto)<br><strong>Uso:</strong> quando você tem um bom desempenho ou atinge um bom resultado</p>
+<p><strong>Exemplo:</strong><br>"She did exceptionally well in the exam given how little time she had to prepare for it."<br>→ Ela foi excepcionalmente bem na prova dado o pouco tempo que teve para se preparar.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"You did well!"</li><li>"How did you do?"</li><li>"She always does well under pressure."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 42 — DO BADLY</h3>
+<p><strong>Tradução:</strong> ir mal / se sair mal<br><strong>Erro clássico:</strong> ❌ make badly / ❌ do poorly (poorly é mais formal)<br><strong>Uso:</strong> quando você tem desempenho ruim em algo</p>
+<p><strong>Exemplo:</strong><br>"He did quite badly in his first few presentations but improved dramatically and consistently with practice."<br>→ Ele foi bastante mal em suas primeiras apresentações, mas melhorou dramática e consistentemente com a prática.</p>
+<hr>
+<h3>COLOCAÇÃO 43 — DO JUSTICE TO</h3>
+<p><strong>Tradução:</strong> fazer jus a / representar adequadamente<br><strong>Erro clássico:</strong> ❌ make justice to / ❌ give justice to<br><strong>Uso:</strong> quando você representa algo de forma que reflita plenamente sua qualidade real</p>
+<p><strong>Exemplo:</strong><br>"No photograph or description could ever truly do justice to just how beautiful that landscape actually was in person."<br>→ Nenhuma fotografia ou descrição poderia jamais fazer jus à beleza daquela paisagem pessoalmente.</p>
+<hr>
+<h3>COLOCAÇÃO 44 — DO WITHOUT</h3>
+<p><strong>Tradução:</strong> se virar sem / dispensar<br><strong>Erro clássico:</strong> ❌ make without / ❌ be without (diferente significado)<br><strong>Uso:</strong> quando você consegue continuar sem algo que normalmente precisaria</p>
+<p><strong>Exemplo:</strong><br>"We are going to have to do without the extra budget this quarter. It simply is not available to us."<br>→ Vamos ter que nos virar sem o orçamento extra neste trimestre. Simplesmente não está disponível.</p>
+<hr>
+<h3>COLOCAÇÃO 45 — DO WONDERS</h3>
+<p><strong>Tradução:</strong> fazer maravilhas / funcionar muito bem<br><strong>Erro clássico:</strong> ❌ make wonders / ❌ create wonders<br><strong>Uso:</strong> quando algo tem efeito extremamente impressionante e positivo</p>
+<p><strong>Exemplo:</strong><br>"A good full night of proper sleep really does wonders for your mood and your ability to think clearly."<br>→ Uma boa noite completa de sono realmente faz maravilhas para seu humor e sua capacidade de pensar claramente.</p>
+<hr>
+<h3>COLOCAÇÃO 46 — DO A DEAL</h3>
+<p><strong>Tradução:</strong> fechar um acordo / fazer um negócio<br><strong>Erro clássico:</strong> ❌ make a deal (make a deal também é usado — ambos corretos!)<br><strong>Nota:</strong> tanto "do a deal" quanto "make a deal" são usados</p>
+<p><strong>Exemplo:</strong><br>"After three long weeks of careful negotiation, they finally managed to do a deal that satisfied both sides."<br>→ Após três longas semanas de negociação cuidadosa, eles finalmente conseguiram fechar um acordo que satisfez ambos os lados.</p>
+<hr>
+<h3>COLOCAÇÃO 47 — DO TIME</h3>
+<p><strong>Tradução:</strong> cumprir pena / ficar preso<br><strong>Uso:</strong> informalmente, significa passar tempo na prisão como punição</p>
+<p><strong>Exemplo:</strong><br>"He did time for a crime he committed when he was very young, but his life looks completely different now."<br>→ Ele cumpriu pena por um crime que cometeu quando era muito jovem, mas sua vida parece completamente diferente agora.</p>
+<hr>
+<h3>COLOCAÇÃO 48 — DO THE RIGHT THING</h3>
+<p><strong>Tradução:</strong> fazer a coisa certa<br><strong>Erro clássico:</strong> ❌ make the right thing / ❌ give the right thing<br><strong>Uso:</strong> quando você age de forma moral, responsável e honesta mesmo quando é difícil</p>
+<p><strong>Exemplo:</strong><br>"He knew it would not be easy, but he did the right thing and told everyone the full truth."<br>→ Ele sabia que não seria fácil, mas fez a coisa certa e disse a todos a verdade completa.</p>
+<hr>
+<h3>COLOCAÇÃO 49 — DO YOUR DUTY</h3>
+<p><strong>Tradução:</strong> cumprir seu dever<br><strong>Erro clássico:</strong> ❌ make your duty / ❌ have your duty<br><strong>Uso:</strong> quando você cumpre suas responsabilidades e obrigações como esperado</p>
+<p><strong>Exemplo:</strong><br>"She felt very strongly that it was important to do her civic duty and vote in every single election."<br>→ Ela sentia fortemente que era importante cumprir seu dever cívico e votar em todas as eleições.</p>
+<hr>
+<h3>COLOCAÇÃO 50 — DO A GOOD JOB</h3>
+<p><strong>Tradução:</strong> fazer um bom trabalho<br><strong>Erro clássico:</strong> ❌ make a good job / ❌ have a good job (diferente sentido)<br><strong>Uso:</strong> quando você completa uma tarefa com alta qualidade</p>
+<p><strong>Exemplo:</strong><br>"The entire team did a truly fantastic job under some extremely difficult and challenging circumstances."<br>→ Toda a equipe fez um trabalho verdadeiramente fantástico em circunstâncias extremamente difíceis e desafiadoras.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"You did a great job!"</li><li>"She did an excellent job."</li><li>"Well done — you did a good job."</li></ul>
+<hr></div></details><details class="ditem" data-search="categoria 3 — have (25 colocações)"><summary>CATEGORIA 3 — HAVE (25 colocações)</summary><div class="dbody dmd"><h2>CATEGORIA 3 — HAVE (25 colocações)</h2>
+<h3>HAVE = experiências, atividades, estados — especialmente no inglês britânico</h3>
+<p><strong>REGRA GERAL:</strong> HAVE é usado para experiências e atividades (muito comum no inglês britânico)<br>Surpresa para muitos: "have a bath" não é "take a bath" em inglês britânico.</p>
+<hr>
+<h3>COLOCAÇÃO 51 — HAVE A CONVERSATION</h3>
+<p><strong>Tradução:</strong> ter uma conversa<br><strong>Erro clássico:</strong> ❌ make a conversation / ❌ do a conversation<br><strong>Uso:</strong> quando duas ou mais pessoas falam, especialmente de forma significativa</p>
+<p><strong>Exemplo:</strong><br>"We really do need to have a proper and honest conversation about all of this before things get any more complicated."<br>→ Realmente precisamos ter uma conversa adequada e honesta sobre tudo isso antes que as coisas fiquem mais complicadas.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Let's have a conversation about this."</li><li>"We had a long conversation."</li><li>"I need to have a conversation with my boss."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 52 — HAVE A BATH</h3>
+<p><strong>Tradução:</strong> tomar banho (de banheira)<br><strong>Uso:</strong> quando você se lava sentado em uma banheira<br><strong>BRITÂNICO vs AMERICANO:</strong></p>
+<ul><li>🇬🇧 Britânico: "have a bath"</li><li>🇺🇸 Americano: "take a bath"</li></ul>
+<p><strong>Exemplo:</strong><br>"After such an exhausting and stressful day, all I want in the world is to have a long hot bath and go straight to bed."<br>→ Depois de um dia tão exaustivo e estressante, tudo que quero é tomar um banho de banheira longo e quente e ir direto para a cama.</p>
+<hr>
+<h3>COLOCAÇÃO 53 — HAVE A SHOWER</h3>
+<p><strong>Tradução:</strong> tomar banho (de chuveiro)<br><strong>BRITÂNICO vs AMERICANO:</strong></p>
+<ul><li>🇬🇧 Britânico: "have a shower"</li><li>🇺🇸 Americano: "take a shower"</li></ul>
+<p><strong>Exemplo:</strong><br>"I always have a cold shower first thing in the morning. It wakes me up far better than any cup of coffee."<br>→ Sempre tomo um banho frio logo de manhã. Me acorda muito melhor do que qualquer xícara de café.</p>
+<hr>
+<h3>COLOCAÇÃO 54 — HAVE A MEAL</h3>
+<p><strong>Tradução:</strong> fazer uma refeição / comer<br><strong>Erro clássico:</strong> ❌ make a meal (make a meal = cozinhar uma refeição — diferente!)<br><strong>Uso:</strong> quando você se senta para comer, com outros ou sozinho</p>
+<p><strong>Exemplo:</strong><br>"We really should have a proper meal together soon. It has been far too long since we last caught up in person."<br>→ Realmente deveríamos fazer uma refeição adequada juntos em breve. Já faz tempo demais desde que nos vimos pessoalmente.</p>
+<p><strong>MACETE:</strong></p>
+<ul><li>have a meal = comer uma refeição</li><li>make a meal = cozinhar uma refeição</li></ul>
+<hr>
+<h3>COLOCAÇÃO 55 — HAVE A BREAK</h3>
+<p><strong>Tradução:</strong> fazer uma pausa / descansar<br><strong>Erro clássico:</strong> ❌ make a break / ❌ do a break<br><strong>Uso:</strong> quando você para temporariamente de trabalhar para descansar</p>
+<p><strong>Exemplo:</strong><br>"You have been working solidly for over 3 hours now. You really should have a proper break."<br>→ Você trabalha solidamente há mais de 3 horas. Realmente deveria fazer uma pausa adequada.</p>
+<hr>
+<h3>COLOCAÇÃO 56 — HAVE A REST</h3>
+<p><strong>Tradução:</strong> descansar<br><strong>Erro clássico:</strong> ❌ make a rest / ❌ do a rest<br><strong>Uso:</strong> quando você relaxa ou dorme por um período para recuperar energia</p>
+<p><strong>Exemplo:</strong><br>"The doctor strongly advised her to have a proper rest for at least two full days before returning to work."<br>→ O médico aconselhou fortemente que ela descansasse adequadamente por pelo menos dois dias completos antes de voltar ao trabalho.</p>
+<hr>
+<h3>COLOCAÇÃO 57 — HAVE A LOOK</h3>
+<p><strong>Tradução:</strong> dar uma olhada<br><strong>Erro clássico:</strong> ❌ make a look / ❌ do a look<br><strong>Uso:</strong> quando você examina ou olha algo cuidadosamente</p>
+<p><strong>Exemplo:</strong><br>"Could you please have a look at this document before I send it? I really value your opinion on it."<br>→ Você poderia dar uma olhada neste documento antes de eu enviá-lo? Realmente valorizo sua opinião sobre ele.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Have a look at this."</li><li>"Let me have a look."</li><li>"Can you have a look at my work?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 58 — HAVE A THINK</h3>
+<p><strong>Tradução:</strong> pensar / refletir<br><strong>Erro clássico:</strong> ❌ make a think / ❌ do a think<br><strong>Uso:</strong> quando você toma tempo para considerar algo antes de decidir (expressão britânica)</p>
+<p><strong>Exemplo:</strong><br>"I need to have a proper think about it before I am in a position to give you a final answer."<br>→ Preciso pensar adequadamente sobre isso antes de estar em posição de dar uma resposta final.</p>
+<hr>
+<h3>COLOCAÇÃO 59 — HAVE A GO</h3>
+<p><strong>Tradução:</strong> tentar / dar uma chance<br><strong>Erro clássico:</strong> ❌ make a go / ❌ do a go<br><strong>Uso:</strong> quando você tenta algo, especialmente algo novo ou desafiador</p>
+<p><strong>Exemplo:</strong><br>"I have never tried anything like this before, but I am absolutely willing to have a go and see what happens."<br>→ Nunca tentei nada assim antes, mas estou absolutamente disposto a tentar e ver o que acontece.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Why don't you have a go?"</li><li>"Let me have a go."</li><li>"She had a go at painting."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 60 — HAVE A PARTY</h3>
+<p><strong>Tradução:</strong> dar uma festa / fazer uma festa<br><strong>Uso:</strong> quando você organiza e hospeda um evento social ou celebração</p>
+<p><strong>Exemplo:</strong><br>"They are having a wonderful party next Saturday evening to celebrate their 10th wedding anniversary."<br>→ Eles vão dar uma festa maravilhosa no próximo sábado à noite para celebrar seu 10º aniversário de casamento.</p>
+<hr>
+<h3>COLOCAÇÃO 61 — HAVE A MEETING</h3>
+<p><strong>Tradução:</strong> ter uma reunião<br><strong>Uso:</strong> quando um grupo se reúne formalmente para discutir um tópico ou tomar decisões</p>
+<p><strong>Exemplo:</strong><br>"We are having an important team meeting on Thursday morning to review the overall progress of the project."<br>→ Teremos uma importante reunião de equipe quinta de manhã para revisar o progresso geral do projeto.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I have a meeting at 3pm."</li><li>"We're having a meeting tomorrow."</li><li>"She's in a meeting right now."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 62 — HAVE A DREAM</h3>
+<p><strong>Tradução:</strong> ter um sonho / sonhar<br><strong>Uso:</strong> quando você experimenta algo no sono OU quando tem uma forte aspiração pessoal</p>
+<p><strong>Exemplo:</strong><br>"She has had a dream of opening her very own restaurant ever since she was a teenager."<br>→ Ela tem o sonho de abrir seu próprio restaurante desde que era adolescente.</p>
+<hr>
+<h3>COLOCAÇÃO 63 — HAVE A FEELING</h3>
+<p><strong>Tradução:</strong> ter uma sensação / intuir<br><strong>Erro clássico:</strong> ❌ make a feeling / ❌ sense a feeling<br><strong>Uso:</strong> quando você sente ou intui algo, frequentemente sem conseguir explicar por quê</p>
+<p><strong>Exemplo:</strong><br>"I have a very strong feeling that tomorrow is going to turn out to be an extremely important day."<br>→ Tenho uma sensação muito forte de que amanhã vai ser um dia extremamente importante.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I have a feeling something's wrong."</li><li>"I have a feeling we'll be late."</li><li>"She had a funny feeling about it."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 64 — HAVE A WORD</h3>
+<p><strong>Tradução:</strong> ter uma palavra / conversar brevemente<br><strong>Uso:</strong> quando você quer falar brevemente e de forma privada com alguém sobre um assunto específico</p>
+<p><strong>Exemplo:</strong><br>"Could I possibly have a quick word with you after the meeting? There is something important I need to discuss."<br>→ Poderia ter uma palavra rápida com você após a reunião? Há algo importante que preciso discutir.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Can I have a word?"</li><li>"The boss wants to have a word with you."</li><li>"Could we have a word privately?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 65 — HAVE AN ARGUMENT</h3>
+<p><strong>Tradução:</strong> ter uma discussão / brigar<br><strong>Erro clássico:</strong> ❌ make an argument / ❌ do an argument<br><strong>Uso:</strong> quando duas ou mais pessoas discordam de forma acalorada</p>
+<p><strong>Exemplo:</strong><br>"They had a terrible argument last night over something that seems quite trivial looking back at it now."<br>→ Eles tiveram uma discussão terrível ontem à noite por algo que parece bastante trivial agora.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"We had an argument."</li><li>"They had a big argument."</li><li>"I don't want to have another argument."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 66 — HAVE AN OPINION</h3>
+<p><strong>Tradução:</strong> ter uma opinião<br><strong>Uso:</strong> quando você tem um ponto de vista ou crença sobre um assunto</p>
+<p><strong>Exemplo:</strong><br>"Absolutely everyone in the room had a very strong opinion about the best way to move the project forward."<br>→ Absolutamente todos na sala tinham uma opinião muito forte sobre a melhor forma de avançar o projeto.</p>
+<hr>
+<h3>COLOCAÇÃO 67 — HAVE AN IDEA</h3>
+<p><strong>Tradução:</strong> ter uma ideia<br><strong>Uso:</strong> quando um pensamento ou plano vem a você, frequentemente de repente</p>
+<p><strong>Exemplo:</strong><br>"I have an idea that I think might actually solve the problem we have been stuck on. Can I share it?"<br>→ Tenho uma ideia que acho que pode realmente resolver o problema em que estamos travados. Posso compartilhar?</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I have an idea!"</li><li>"She had a brilliant idea."</li><li>"Do you have any ideas?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 68 — HAVE AN EFFECT</h3>
+<p><strong>Tradução:</strong> ter um efeito / causar impacto<br><strong>Erro clássico:</strong> ❌ make an effect / ❌ do an effect<br><strong>Uso:</strong> quando algo produz um resultado ou impacto em algo ou alguém</p>
+<p><strong>Exemplo:</strong><br>"The unexpected changes had a significant and lasting effect on staff morale throughout the entire organization."<br>→ As mudanças inesperadas tiveram um efeito significativo e duradouro no moral da equipe em toda a organização.</p>
+<hr>
+<h3>COLOCAÇÃO 69 — HAVE AN OPERATION</h3>
+<p><strong>Tradução:</strong> fazer uma operação / ser operado<br><strong>Erro clássico:</strong> ❌ do an operation / ❌ make an operation<br><strong>Uso:</strong> quando você passa por um procedimento cirúrgico</p>
+<p><strong>Exemplo:</strong><br>"He had to have a serious operation on his knee after the injury he sustained during training."<br>→ Ele teve que fazer uma operação séria no joelho após a lesão que sofreu durante o treinamento.</p>
+<hr>
+<h3>COLOCAÇÃO 70 — HAVE EXPERIENCE</h3>
+<p><strong>Tradução:</strong> ter experiência<br><strong>Uso:</strong> quando você já fez algo antes e desenvolveu conhecimento e habilidades a partir disso</p>
+<p><strong>Exemplo:</strong><br>"She has extensive and varied experience working in high pressure international environments."<br>→ Ela tem experiência extensa e variada trabalhando em ambientes internacionais de alta pressão.</p>
+<hr>
+<h3>COLOCAÇÃO 71 — HAVE FUN</h3>
+<p><strong>Tradução:</strong> se divertir<br><strong>Erro clássico:</strong> ❌ make fun (make fun = zombar de alguém — completamente diferente!)<br><strong>Uso:</strong> quando você se diverte e tem um bom tempo</p>
+<p><strong>Exemplo:</strong><br>"The most important thing today is that the children have lots of fun and feel completely safe and happy."<br>→ O mais importante hoje é que as crianças se divirtam muito e se sintam completamente seguras e felizes.</p>
+<p><strong>MACETE CRUCIAL:</strong></p>
+<ul><li>have fun = se divertir ✅</li><li>make fun of someone = zombar de alguém ❌ (cuidado!)</li></ul>
+<hr>
+<h3>COLOCAÇÃO 72 — HAVE TROUBLE</h3>
+<p><strong>Tradução:</strong> ter dificuldade<br><strong>Erro clássico:</strong> ❌ do trouble / ❌ make trouble (make trouble = causar problemas — diferente!)<br><strong>Uso:</strong> quando você experimenta dificuldade em fazer algo</p>
+<p><strong>Exemplo:</strong><br>"I am having real trouble understanding exactly what went wrong at the very beginning of the whole process."<br>→ Estou tendo dificuldade real em entender exatamente o que deu errado no começo de todo o processo.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I'm having trouble sleeping."</li><li>"She's having trouble with the homework."</li><li>"Are you having any trouble?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 73 — HAVE A CHANCE</h3>
+<p><strong>Tradução:</strong> ter uma chance / oportunidade<br><strong>Uso:</strong> quando uma oportunidade de fazer algo se apresenta</p>
+<p><strong>Exemplo:</strong><br>"I finally had a chance to read the book you recommended last month and you were absolutely right about it."<br>→ Finalmente tive a chance de ler o livro que você recomendou no mês passado e você estava absolutamente certo sobre ele.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Did you have a chance to review it?"</li><li>"I finally had a chance to visit."</li><li>"Have you had a chance to think about it?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 74 — HAVE A GOOD TIME</h3>
+<p><strong>Tradução:</strong> se divertir / aproveitar bem<br><strong>Uso:</strong> quando você aproveita uma experiência, evento ou período de tempo</p>
+<p><strong>Exemplo:</strong><br>"I genuinely hope you all have a really wonderful and enjoyable time at the conference this week."<br>→ Genuinamente espero que todos vocês tenham um tempo realmente maravilhoso e agradável na conferência esta semana.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Did you have a good time?"</li><li>"Have a great time!"</li><li>"We had a wonderful time."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 75 — HAVE SECOND THOUGHTS</h3>
+<p><strong>Tradução:</strong> ter segundas intenções / se arrepender / reconsiderar<br><strong>Uso:</strong> quando você começa a sentir dúvida sobre uma decisão já tomada</p>
+<p><strong>Exemplo:</strong><br>"I signed the contract last week, but I have been having serious second thoughts about whether it was truly the right decision."<br>→ Assinei o contrato na semana passada, mas tenho tido sérias segundas intenções sobre se foi realmente a decisão certa.</p>
+<hr></div></details><details class="ditem" data-search="categoria 4 — get e take (25 colocações)"><summary>CATEGORIA 4 — GET E TAKE (25 colocações)</summary><div class="dbody dmd"><h2>CATEGORIA 4 — GET E TAKE (25 colocações)</h2>
+<h3>GET = movimento, mudança, receber / TAKE = ação, esforço, responsabilidade</h3>
+<hr>
+<h3>COLOCAÇÃO 76 — GET PERMISSION</h3>
+<p><strong>Tradução:</strong> conseguir permissão<br><strong>Uso:</strong> quando você recebe aprovação oficial para fazer algo</p>
+<p><strong>Exemplo:</strong><br>"You will need to get formal permission from the manager before making any significant changes to the system."<br>→ Você precisará conseguir permissão formal do gerente antes de fazer mudanças significativas no sistema.</p>
+<hr>
+<h3>COLOCAÇÃO 77 — GET A JOB</h3>
+<p><strong>Tradução:</strong> conseguir um emprego<br><strong>Erro clássico:</strong> ❌ find a job (find a job = procurar um emprego; get a job = conseguir)<br><strong>Uso:</strong> quando você é bem-sucedido em obter emprego remunerado</p>
+<p><strong>Exemplo:</strong><br>"She worked incredibly hard for months and finally got the job she had been aiming for throughout her career."<br>→ Ela trabalhou incrivelmente duro por meses e finalmente conseguiu o emprego que almejava em toda sua carreira.</p>
+<hr>
+<h3>COLOCAÇÃO 78 — GET THE IMPRESSION</h3>
+<p><strong>Tradução:</strong> ter a impressão / sentir que<br><strong>Uso:</strong> quando você forma uma sensação ou crença sobre algo com base na observação</p>
+<p><strong>Exemplo:</strong><br>"I got the distinct impression from the way he spoke that he was not entirely happy with the final decision."<br>→ Tive a nítida impressão pela forma como ele falava que não estava totalmente feliz com a decisão final.</p>
+<hr>
+<h3>COLOCAÇÃO 79 — GET RID OF</h3>
+<p><strong>Tradução:</strong> se livrar de / descartar<br><strong>Uso:</strong> quando você remove ou descarta algo ou alguém que não quer mais</p>
+<p><strong>Exemplo:</strong><br>"It is long past time to get rid of the old system and replace it with something that actually works properly."<br>→ Já passou da hora de se livrar do sistema antigo e substituí-lo por algo que realmente funcione.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I need to get rid of this."</li><li>"How can I get rid of this habit?"</li><li>"She got rid of all her old clothes."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 80 — GET IN TOUCH</h3>
+<p><strong>Tradução:</strong> entrar em contato<br><strong>Erro clássico:</strong> ❌ make contact (make contact existe mas é mais formal)<br><strong>Uso:</strong> quando você contata alguém por qualquer meio de comunicação</p>
+<p><strong>Exemplo:</strong><br>"Please do not hesitate to get in touch if you have any questions or concerns about the proposal."<br>→ Por favor, não hesite em entrar em contato se tiver dúvidas ou preocupações sobre a proposta.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Let's get in touch soon."</li><li>"How can I get in touch with you?"</li><li>"I'll get in touch next week."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 81 — GET BETTER</h3>
+<p><strong>Tradução:</strong> melhorar / se recuperar<br><strong>Uso:</strong> quando alguém se recupera de doença ou uma situação melhora</p>
+<p><strong>Exemplo:</strong><br>"I sincerely hope you get better very soon. The whole team genuinely misses having you around the office."<br>→ Sinceramente espero que você melhore muito em breve. Toda a equipe genuinamente sente sua falta no escritório.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Get better soon!"</li><li>"She's getting better every day."</li><li>"Things will get better."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 82 — GET WORSE</h3>
+<p><strong>Tradução:</strong> piorar<br><strong>Uso:</strong> quando uma situação ou condição deteriora e se torna mais séria</p>
+<p><strong>Exemplo:</strong><br>"The situation is getting significantly worse by the day and we need to act decisively before it becomes a full crisis."<br>→ A situação está piorando significativamente dia a dia e precisamos agir decisivamente antes que se torne uma crise total.</p>
+<hr>
+<h3>COLOCAÇÃO 83 — GET READY</h3>
+<p><strong>Tradução:</strong> se preparar / se arrumar<br><strong>Uso:</strong> quando você se prepara para um evento ou atividade</p>
+<p><strong>Exemplo:</strong><br>"We all need to get completely ready for the presentation at least 30 minutes before it is scheduled to begin."<br>→ Todos precisamos nos preparar completamente para a apresentação pelo menos 30 minutos antes do horário previsto.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Are you ready? Let's go!"</li><li>"Get ready, we're leaving."</li><li>"I need 10 minutes to get ready."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 84 — GET DRESSED</h3>
+<p><strong>Tradução:</strong> se vestir / se arrumar<br><strong>Uso:</strong> quando você coloca suas roupas de manhã ou antes de sair</p>
+<p><strong>Exemplo:</strong><br>"The children were incredibly slow getting dressed this morning and we very nearly missed the school bus."<br>→ As crianças foram incrivelmente lentas se vestindo esta manhã e quase perdemos o ônibus escolar.</p>
+<hr>
+<h3>COLOCAÇÃO 85 — GET LOST</h3>
+<p><strong>Tradução:</strong> se perder<br><strong>Uso:</strong> quando você não consegue mais encontrar o caminho ou termina em lugar inesperado</p>
+<p><strong>Exemplo:</strong><br>"We got completely and utterly lost in the old part of the city, but it turned out to be a beautiful and memorable experience."<br>→ Nos perdemos completamente na parte antiga da cidade, mas acabou sendo uma experiência bela e memorável.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I got lost on the way."</li><li>"Don't get lost!"</li><li>"We kept getting lost."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 86 — TAKE RESPONSIBILITY</h3>
+<p><strong>Tradução:</strong> assumir responsabilidade<br><strong>Erro clássico:</strong> ❌ make responsibility / ❌ have responsibility (diferente sentido)<br><strong>Uso:</strong> quando você aceita que algo é seu dever ou reconhece que um erro foi seu</p>
+<p><strong>Exemplo:</strong><br>"A truly good leader takes full responsibility for both the successes and the failures of the entire team."<br>→ Um verdadeiro bom líder assume total responsabilidade tanto pelos sucessos quanto pelos fracassos de toda a equipe.</p>
+<hr>
+<h3>COLOCAÇÃO 87 — TAKE A BREAK</h3>
+<p><strong>Tradução:</strong> fazer uma pausa / descansar<br><strong>BRITÂNICO vs AMERICANO:</strong></p>
+<ul><li>🇬🇧 Britânico: "have a break"</li><li>🇺🇸 Americano: "take a break"</li></ul>
+<p>Ambos são usados e entendidos!</p>
+<p><strong>Exemplo:</strong><br>"Let us all take a short break for 15 minutes and come back to the discussion with fresh eyes and energy."<br>→ Vamos todos fazer uma pequena pausa de 15 minutos e voltar à discussão com olhos frescos e energia.</p>
+<hr>
+<h3>COLOCAÇÃO 88 — TAKE A CHANCE</h3>
+<p><strong>Tradução:</strong> arriscar / se arriscar<br><strong>Uso:</strong> quando você faz algo arriscado na esperança de um resultado positivo</p>
+<p><strong>Exemplo:</strong><br>"She decided to take a chance on the new business idea and it paid off more successfully than she had ever imagined."<br>→ Ela decidiu se arriscar na nova ideia de negócio e deu certo mais do que ela jamais imaginou.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Take a chance on it!"</li><li>"I decided to take a chance."</li><li>"Sometimes you have to take a chance."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 89 — TAKE AN EXAM</h3>
+<p><strong>Tradução:</strong> fazer uma prova / exame<br><strong>BRITÂNICO vs AMERICANO:</strong></p>
+<ul><li>🇬🇧 Britânico: "take an exam" / "sit an exam"</li><li>🇺🇸 Americano: "take a test"</li></ul>
+<p><strong>Exemplo:</strong><br>"He took the professional exam three separate times before finally passing it with an excellent and well-deserved score."<br>→ Ele fez o exame profissional três vezes separadas antes de finalmente passá-lo com uma pontuação excelente e merecida.</p>
+<hr>
+<h3>COLOCAÇÃO 90 — TAKE A DECISION</h3>
+<p><strong>Tradução:</strong> tomar uma decisão<br><strong>Nota:</strong> mais formal, especialmente em inglês britânico. "Make a decision" é mais comum<br><strong>Uso:</strong> alternativa mais formal para "make a decision"</p>
+<p><strong>Exemplo:</strong><br>"The full board will meet and take a final decision on this important matter at next week's scheduled meeting."<br>→ O conselho pleno se reunirá e tomará uma decisão final sobre este assunto importante na reunião programada da próxima semana.</p>
+<hr>
+<h3>COLOCAÇÃO 91 — TAKE ACTION</h3>
+<p><strong>Tradução:</strong> tomar uma atitude / agir<br><strong>Erro clássico:</strong> ❌ make action / ❌ do action<br><strong>Uso:</strong> quando você faz algo prático e decisivo para lidar com um problema</p>
+<p><strong>Exemplo:</strong><br>"We have identified the problem clearly. We have analyzed it thoroughly and now it is absolutely time to take action."<br>→ Identificamos o problema claramente. Analisamos completamente e agora é absolutamente hora de tomar uma atitude.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"We need to take action now."</li><li>"It's time to take action."</li><li>"They finally took action."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 92 — TAKE CARE OF</h3>
+<p><strong>Tradução:</strong> cuidar de / se responsabilizar por<br><strong>Uso:</strong> quando você cuida de alguém que precisa de ajuda ou lida com uma tarefa</p>
+<p><strong>Exemplo:</strong><br>"I will personally take care of all the travel arrangements so that you can focus entirely on the presentation."<br>→ Cuidarei pessoalmente de todos os arranjos de viagem para que você possa se concentrar inteiramente na apresentação.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I'll take care of it."</li><li>"Take care of yourself."</li><li>"She takes care of her parents."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 93 — TAKE PART IN</h3>
+<p><strong>Tradução:</strong> participar de<br><strong>Erro clássico:</strong> ❌ make part in / ❌ do part in<br><strong>Uso:</strong> quando você participa ou se envolve em uma atividade, evento ou discussão</p>
+<p><strong>Exemplo:</strong><br>"Everyone present was warmly encouraged to take part in the open discussion regardless of their level or experience."<br>→ Todos os presentes foram calorosamente encorajados a participar da discussão aberta independentemente do nível ou experiência.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I'd like to take part in the competition."</li><li>"Will you take part?"</li><li>"She took part in the project."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 94 — TAKE PLACE</h3>
+<p><strong>Tradução:</strong> acontecer / ocorrer<br><strong>Erro clássico:</strong> ❌ make place / ❌ do place / ❌ have place<br><strong>Uso:</strong> quando um evento acontece ou ocorre em particular tempo ou lugar</p>
+<p><strong>Exemplo:</strong><br>"The beautiful outdoor ceremony took place in a stunning historic building right in the center of the old city."<br>→ A bela cerimônia ao ar livre aconteceu em um impressionante edifício histórico bem no centro da cidade antiga.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"When does the meeting take place?"</li><li>"The event took place last Saturday."</li><li>"Where will it take place?"</li></ul>
+<hr>
+<h3>COLOCAÇÃO 95 — TAKE TURNS</h3>
+<p><strong>Tradução:</strong> se revezar<br><strong>Uso:</strong> quando as pessoas fazem algo alternadamente, um após o outro</p>
+<p><strong>Exemplo:</strong><br>"The children were asked to take turns speaking so that absolutely everyone had a fair chance to contribute."<br>→ As crianças foram solicitadas a se revezar na fala para que absolutamente todos tivessem uma chance justa de contribuir.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Let's take turns."</li><li>"They take turns cooking."</li><li>"We took turns driving."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 96 — TAKE NOTICE</h3>
+<p><strong>Tradução:</strong> prestar atenção / dar importância<br><strong>Uso:</strong> quando você presta atenção em algo ou dá o reconhecimento que merece</p>
+<p><strong>Exemplo:</strong><br>"Nobody took any notice of the early warning signs until it was far too late to prevent the problem from occurring."<br>→ Ninguém prestou atenção nos primeiros sinais de alerta até que fosse tarde demais para evitar o problema.</p>
+<hr>
+<h3>COLOCAÇÃO 97 — TAKE ADVANTAGE OF</h3>
+<p><strong>Tradução:</strong> aproveitar / tirar vantagem de<br><strong>Uso:</strong> quando você aproveita ao máximo uma oportunidade disponível<br><strong>Nota:</strong> pode ser positivo (aproveitar oportunidades) ou negativo (explorar alguém)</p>
+<p><strong>Exemplo:</strong><br>"You should take full advantage of every single opportunity to practice your English in real life situations."<br>→ Você deve aproveitar ao máximo cada oportunidade de praticar seu inglês em situações da vida real.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Take advantage of the offer."</li><li>"Don't let them take advantage of you."</li><li>"She took advantage of the situation."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 98 — TAKE PRIDE IN</h3>
+<p><strong>Tradução:</strong> ter orgulho de<br><strong>Uso:</strong> quando você sente satisfação genuína e investimento pessoal na qualidade de algo</p>
+<p><strong>Exemplo:</strong><br>"She takes enormous and well-deserved pride in her work and it shows clearly in absolutely everything she produces."<br>→ Ela tem enorme e merecido orgulho em seu trabalho e isso aparece claramente em absolutamente tudo que ela produz.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"I take pride in my work."</li><li>"He takes great pride in his appearance."</li><li>"They take pride in their community."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 99 — TAKE IT EASY</h3>
+<p><strong>Tradução:</strong> relaxar / não se exigir demais<br><strong>Uso:</strong> quando você diz a si mesmo ou a alguém para relaxar e não se pressionar</p>
+<p><strong>Exemplo:</strong><br>"The doctor specifically told him to take it easy for at least a full week before even thinking about returning to the office."<br>→ O médico especificamente disse a ele para relaxar por pelo menos uma semana inteira antes mesmo de pensar em voltar ao escritório.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Take it easy!"</li><li>"Just take it easy today."</li><li>"She needs to take it easy."</li></ul>
+<hr>
+<h3>COLOCAÇÃO 100 — TAKE YOUR TIME</h3>
+<p><strong>Tradução:</strong> não ter pressa / levar o tempo que precisar<br><strong>Uso:</strong> quando você diz a alguém que não há necessidade de se apressar</p>
+<p><strong>Exemplo:</strong><br>"There is absolutely no deadline on this at all. Please take your time and make sure you are completely happy with the result."<br>→ Não há absolutamente nenhum prazo para isso. Por favor, leve o tempo que precisar e certifique-se de estar completamente feliz com o resultado.</p>
+<p><strong>Frases para praticar:</strong></p>
+<ul><li>"Take your time."</li><li>"There's no rush, take your time."</li><li>"He always takes his time."</li></ul>
+<hr>
+<h2>RESUMO VISUAL — OS 5 VERBOS</h2>
+<pre class="code"><code>MAKE (fazer/criar)          DO (fazer/realizar)
+━━━━━━━━━━━━━━━━━━━━━━━━   ━━━━━━━━━━━━━━━━━━━━━━━━
+make a decision             do your best
+make a mistake              do research
+make progress               do homework
+make an effort              do the shopping
+make a difference           do damage / harm / good
+make a plan                 do a course / test / deal
+make money / sense          do well / badly
+make sure / friends         do the right thing
+
+HAVE (ter/experimentar)     GET + TAKE
+━━━━━━━━━━━━━━━━━━━━━━━━   ━━━━━━━━━━━━━━━━━━━━━━━━
+have a conversation         get better / worse
+have a look / think / go    get ready / dressed / lost
+have a break / rest         get rid of / in touch
+have fun / trouble          take action / responsibility
+have a meeting / party      take part / place / turns
+have an argument / idea     take a break / chance
+have second thoughts        take pride / advantage of</code></pre>
+<hr>
+<h2>OS 10 ERROS MAIS COMUNS DE BRASILEIROS</h2>
+<pre class="code"><code>❌ ERRADO           ✅ CORRETO          📝 DICA
+do a decision      make a decision     Decisão = MAKE
+make research      do research         Pesquisa = DO
+do a mistake       make a mistake      Erro = MAKE
+make homework      do homework         Tarefa = DO
+give attention     pay attention       Atenção = PAY
+lose opportunity   miss opportunity    Perder chance = MISS
+do a crime         commit a crime      Crime = COMMIT
+make a bath        have a bath (UK)    Banho = HAVE/TAKE
+take a shower      have a shower (UK)  Ducha = HAVE/TAKE
+win money          make/earn money     Ganhar(trabalho) = MAKE</code></pre>
+<hr>
+<h1>PROMPT PARA O CLAUDE CODE</h1>
+<p>PROJETO: Sistema 7 — Colocações Naturais<br>PASTA RAIZ: C:\Users\Samukka\Documents\Claude Projetos\Americano_01</p>
+<p>═══════════════════════════════════════════════════<br>CONTEXTO<br>═══════════════════════════════════════════════════</p>
+<p>Sistemas 1-6 e a Jornada estão completos.<br>Agora criar o Sistema 7 — Colocações Naturais.</p>
+<p>Todo o conteúdo está em:<br>C:\Users\Samukka\Documents\Claude Projetos\Americano_01\sistema7_conteudo.md</p>
+<p>Leia esse arquivo completamente antes de começar.</p>
+<p>═══════════════════════════════════════════════════<br>IDENTIDADE VISUAL<br>═══════════════════════════════════════════════════</p>
+<p>Nome: Colocações Naturais<br>Cor de acento: #D946EF (magenta/fúcsia)<br>Ícone: 🔗</p>
+<p>Mesma paleta base de todos os sistemas.</p>
+<p>═══════════════════════════════════════════════════<br>O QUE É ÚNICO NO SISTEMA 7<br>═══════════════════════════════════════════════════</p>
+<p>Sistema 7 é sobre COLOCAÇÕES — combinações naturais de verbos.<br>Não é sobre gramática. É sobre soar natural.</p>
+<p>A grande revelação: gramática = correto / colocações = natural.<br>São coisas diferentes. Você pode estar correto e soar estranho.</p>
+<p>4 categorias: MAKE (25) · DO (25) · HAVE (25) · GET+TAKE (25)<br>Total: 100 colocações com exemplos completos e erros clássicos.</p>
+<p>═══════════════════════════════════════════════════<br>ESTRUTURA DE PASTAS<br>═══════════════════════════════════════════════════</p>
+<p>output/<br>└── sistema7/<br>    ├── index.html              ← Hub do Sistema 7<br>    └── colocacoes/<br>        └── index.html          ← Página principal</p>
+<p>═══════════════════════════════════════════════════<br>LAYOUT DA PÁGINA COLOCACOES<br>output/sistema7/colocacoes/index.html<br>═══════════════════════════════════════════════════</p>
+<p>SEÇÃO 1 — HERO EXPLICATIVO:<br>┌──────────────────────────────────────────────────┐<br>│ 🔗 COLOCAÇÕES NATURAIS                          │<br>│                                                  │<br>│ Gramática diz se você está CORRETO.             │<br>│ Colocações dizem se você soa NATURAL.           │<br>│ São coisas diferentes.                          │<br>│                                                  │<br>│ [make] [do] [have] [get] [take]                 │<br>│                                                  │<br>│ ❌ do a decision → ✅ make a decision           │<br>│ ❌ make research → ✅ do research               │<br>└──────────────────────────────────────────────────┘</p>
+<p>SEÇÃO 2 — SELETOR DE CATEGORIA:<br>4 tabs grandes:<br>[🔵 MAKE · 25] [🟢 DO · 25] [🟡 HAVE · 25] [🔴 GET+TAKE · 25]</p>
+<p>SEÇÃO 3 — CARD DE COLOCAÇÃO:<br>┌──────────────────────────────────────────────────┐<br>│ 🔗 COLOCAÇÃO 01 · MAKE              [1/25]      │<br>│                                                  │<br>│ ┌─────────────────────────────────────────────┐ │<br>│ │                                             │ │<br>│ │     MAKE A DECISION                         │ │<br>│ │     tomar uma decisão                       │ │<br>│ │                                             │ │<br>│ └─────────────────────────────────────────────┘ │<br>│                                                  │<br>│ ❌ ERROS COMUNS:                                │<br>│ do a decision · take a decision                 │<br>│                                                  │<br>│ 📖 EXEMPLO:                                     │<br>│ "I have been thinking about it for a week now  │<br>│ and I really need to make a decision before    │<br>│ the opportunity disappears."                   │<br>│                                                  │<br>│ 🇧🇷 TRADUÇÃO:                                   │<br>│ "Já faz uma semana que penso nisso e           │<br>│ realmente preciso tomar uma decisão antes      │<br>│ que a oportunidade desapareça."                │<br>│                                                  │<br>│ 💡 PRATIQUE:                                    │<br>│ • "I need to make a decision by Friday."       │<br>│ • "Let's make a decision together."            │<br>│                                                  │<br>│ [← Anterior] [✓ Aprendi] [Próxima →]          │<br>└──────────────────────────────────────────────────┘</p>
+<p>MODOS DE ESTUDO (4 botões no topo):</p>
+<p>MODO 1 — ESTUDO COMPLETO:<br>Mostra tudo: colocação + erros + exemplo + tradução + práticas</p>
+<p>MODO 2 — QUAL VERBO?<br>Mostra o substantivo, usuário escolhe o verbo:<br>"___ a decision" → [make] [do] [have] [get] [take]<br>Feedback imediato ✓ ou ✗</p>
+<p>MODO 3 — ERRADO vs CERTO:<br>Mostra uma frase com erro, usuário identifica e corrige:<br>"She did a mistake." → corrigir para "made a mistake"</p>
+<p>MODO 4 — FLASH CARDS:<br>EN em cima, PT embaixo (clique para revelar)<br>Ritmo rápido para revisão</p>
+<p>═══════════════════════════════════════════════════<br>PAINEL LATERAL — OS 10 ERROS MAIS COMUNS<br>═══════════════════════════════════════════════════</p>
+<p>Sidebar fixa (desktop) mostrando os 10 erros clássicos:<br>❌ do a decision → ✅ make a decision<br>❌ make research → ✅ do research<br>(etc — todos do arquivo md)</p>
+<p>Clique em cada erro → vai para a colocação correspondente</p>
+<p>═══════════════════════════════════════════════════<br>QUIZ FINAL — DESAFIO MAKE/DO/HAVE/GET/TAKE<br>═══════════════════════════════════════════════════</p>
+<p>Após estudar as 100 colocações, quiz de 20 questões:</p>
+<ul><li>Frase com lacuna: "She _____ an appointment with the doctor."</li><li>5 opções: make / do / have / get / take</li><li>Timer opcional: 15 segundos por questão</li><li>Pontuação: X/20 com explicação das erradas</li></ul>
+<p>═══════════════════════════════════════════════════<br>HUB DO SISTEMA 7<br>output/sistema7/index.html<br>═══════════════════════════════════════════════════</p>
+<p>HEADER:</p>
+<ul><li>Badge: "🔗 SISTEMA 7 — COLOCAÇÕES NATURAIS"</li><li>Título: "O segredo entre o inglês correto e o inglês natural"</li><li>Stats: 100 colocações · 4 verbos · 4 modos · 1 quiz</li></ul>
+<p>Cards:<br>[🔵 MAKE · 25]  [🟢 DO · 25]<br>[🟡 HAVE · 25]  [🔴 GET+TAKE · 25]<br>[🎯 QUIZ FINAL]</p>
+<p>═══════════════════════════════════════════════════<br>ATUALIZAR MENU PRINCIPAL<br>═══════════════════════════════════════════════════</p>
+<ol><li>output/index.html → adicionar card Sistema 7</li><li>Barra de nav: adicionar "Sistema 7" ao dropdown "Sistemas ▼"</li></ol>
+<p>Cor: #D946EF<br>Link: caminho relativo correto</p>
+<p>═══════════════════════════════════════════════════<br>ORDEM DE CONSTRUÇÃO<br>═══════════════════════════════════════════════════</p>
+<p>PASSO 1: Ler sistema7_conteudo.md completamente<br>PASSO 2: Criar output/sistema7/colocacoes/index.html → OK<br>PASSO 3: Criar output/sistema7/index.html (hub) → OK<br>PASSO 4: Atualizar output/index.html → OK<br>PASSO 5: Atualizar barra de nav → OK</p>
+<p>Comece pelo PASSO 1 agora.</p></div></details></div></section>
+</div>
+<footer>Sistema 03 · Motor de Verbos — 12 tempos, 1 lógica</footer>
+<script id="dist-js">
+document.querySelectorAll('.dist').forEach(sec=>{
+  const inp=sec.querySelector('.dsearch');
+  const items=[...sec.querySelectorAll('.ditem')];
+  const nr=sec.querySelector('.dnr');
+  if(!inp) return;
+  inp.addEventListener('input',()=>{
+    const q=inp.value.trim().toLowerCase();let shown=0;
+    items.forEach(it=>{const hit=!q||it.dataset.search.includes(q);it.style.display=hit?'':'none';if(hit){shown++;it.open=!!q;}});
+    if(nr) nr.style.display=shown?'none':'block';
+  });
+});
+</script>
+</body>
+</html>
