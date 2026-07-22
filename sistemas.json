@@ -79,5 +79,14 @@
     "icone": "🎯",
     "tags": ["DID, WENT e mais", "A1", "Referência"],
     "pasta": "Sistema 09 — Dúvidas Pontuais"
+  },
+  {
+    "numero": "10",
+    "titulo": "Prática Completa · 4 Pilares",
+    "descricao": "O treino que vira fala: frases que crescem camada a camada, 1.000 frases do inglês real, os padrões que desbloqueiam tudo e 150 textos com contexto visual.",
+    "cor": "#14B8A6",
+    "icone": "🏛️",
+    "tags": ["4 pilares", "B1–B2", "Produção real"],
+    "pasta": "Sistema 10 — Prática Completa · 4 Pilares"
   }
 ]
