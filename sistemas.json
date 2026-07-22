@@ -63,13 +63,58 @@
     "pasta": "Sistema 07 — Transcrições e Canais"
   },
   {
-    "numero": "08",
-    "titulo": "Baseado em Livros",
-    "descricao": "Guias e livros de inglês transformados em painéis: métodos, dicas e ferramentas para aprender mais rápido — do primeiro passo às habilidades avançadas.",
+    "numero": "08 · V01",
+    "titulo": "Livros — Conversação & Frases",
+    "descricao": "Seis livros virando painel de inglês real: 1.006 dicas, conversação para viagem, expressões idiomáticas, música (Queen), palavras/números/datas e os erros clássicos do brasileiro. 3.513 itens.",
     "cor": "#0EA5E9",
     "icone": "📖",
-    "tags": ["14 livros", "Todos os níveis", "Métodos"],
-    "pasta": "Sistema 08 — Baseado em Livros"
+    "tags": ["6 livros", "3.513 itens", "Conversação"],
+    "pasta": "Sistema 08 — Baseado em Livros V01"
+  },
+  {
+    "numero": "08 · V02",
+    "titulo": "Livros — Gramática em Uso",
+    "descricao": "Cinco livros de gramática (English Grammar in Use, Oxford Guide, Essential Grammar, Objective Proficiency) em painéis de exemplos reais. English Grammar in Use já disponível: 145 unidades, 5.355 exemplos.",
+    "cor": "#4A9EFF",
+    "icone": "📐",
+    "tags": ["5 livros", "Gramática", "Intermediário+"],
+    "pasta": "Sistema 08 — Baseado em Livros V02"
+  },
+  {
+    "numero": "08 · V03",
+    "titulo": "Livros — American English File",
+    "descricao": "O curso American English File (Oxford), nível 1 a 4 — do básico ao avançado. Painéis de frases, diálogos e vocabulário reais em preparação a partir dos quatro Student Books.",
+    "cor": "#22D3EE",
+    "icone": "🇺🇸",
+    "tags": ["4 níveis", "Curso completo", "Em breve"],
+    "pasta": "Sistema 08 — Baseado em Livros V03"
+  },
+  {
+    "numero": "08 · V04",
+    "titulo": "Livros — English for Everyone",
+    "descricao": "A coleção visual English for Everyone (DK): guia de gramática, vocabulário, curso Junior e practice books iniciantes. Fundamentos do inglês. Em preparação.",
+    "cor": "#818CF8",
+    "icone": "🧩",
+    "tags": ["5 livros", "Fundamentos", "Em breve"],
+    "pasta": "Sistema 08 — Baseado em Livros V04"
+  },
+  {
+    "numero": "08 · V05",
+    "titulo": "Livros — Business & Avançado",
+    "descricao": "English for Everyone (DK): Business English 1 e 2, curso intermediário nível 3 e practice avançado nível 4. Inglês profissional e de nível alto. Em preparação.",
+    "cor": "#34D399",
+    "icone": "💼",
+    "tags": ["4 livros", "Business + C1", "Em breve"],
+    "pasta": "Sistema 08 — Baseado em Livros V05"
+  },
+  {
+    "numero": "08 · V06",
+    "titulo": "Livros — Kids",
+    "descricao": "Kid's Box (Cambridge), níveis 3 e 4 — inglês para crianças. Vocabulário e frases simples do jeito que a criança aprende. Em preparação.",
+    "cor": "#FB7185",
+    "icone": "🧸",
+    "tags": ["2 livros", "Kids", "Em breve"],
+    "pasta": "Sistema 08 — Baseado em Livros V06 — Kids"
   },
   {
     "numero": "09",

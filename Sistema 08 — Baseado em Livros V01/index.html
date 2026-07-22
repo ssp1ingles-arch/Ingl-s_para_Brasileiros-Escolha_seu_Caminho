@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 08 — Baseado em Livros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#0EA5E9;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+/* markdown article */
+.md h1,.md h2,.md h3,.md h4{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+.md h1{font-size:1.5rem;margin:30px 0 10px;color:var(--text);}
+.md h2{font-size:1.28rem;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.md h3{font-size:1.08rem;margin:22px 0 8px;color:var(--accent);}
+.md h4{font-size:.98rem;margin:16px 0 6px;color:var(--text);}
+.md p{margin:10px 0;color:#cfcfcf;}
+.md strong{color:var(--text);}
+.md em{color:var(--accent);font-style:normal;}
+.md ul,.md ol{margin:10px 0 10px 22px;color:#cfcfcf;}
+.md li{margin:4px 0;}
+.md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.md code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--accent);font-family:'Space Grotesk',monospace;}
+.md pre.code{background:#0f0f0f;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:12px 0;}
+.md pre.code code{background:none;border:none;color:#d7d7d7;padding:0;font-family:'Space Grotesk',ui-monospace,monospace;font-size:.9rem;line-height:1.7;white-space:pre;}
+.md .tablewrap{overflow-x:auto;margin:14px 0;}
+.md table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.md th{background:var(--surface2);text-align:left;padding:10px 13px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+.md td{padding:10px 13px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+.md tr:nth-child(even){background:rgba(255,255,255,.015);}
+.md blockquote{border-left:3px solid var(--accent);background:var(--surface);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;color:var(--muted);font-style:italic;}
+.md blockquote strong{color:var(--text);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+
+.search{width:100%;margin:26px 0 8px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;}
+.search:focus{outline:none;border-color:var(--accent);}
+.search::placeholder{color:var(--dim);}
+.hint{color:var(--dim);font-size:.82rem;margin-bottom:16px;}
+.group{margin-bottom:10px;border:1px solid var(--border);border-radius:12px;background:var(--surface);overflow:hidden;}
+.group > summary{cursor:pointer;list-style:none;padding:14px 18px;display:flex;align-items:center;gap:12px;font-family:'Space Grotesk',sans-serif;font-weight:700;}
+.group > summary::-webkit-details-marker{display:none;}
+.group > summary::before{content:'▸';color:var(--accent);transition:.2s;}
+.group[open] > summary::before{transform:rotate(90deg);}
+.g-t{flex:1;}.g-c{font-size:.7rem;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);padding:3px 10px;border-radius:20px;}
+.dgrid{padding:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;}
+.dica{background:#101010;border:1px solid var(--border);border-radius:11px;padding:15px;display:flex;flex-direction:column;}
+.d-top{display:flex;align-items:baseline;gap:8px;margin-bottom:9px;}
+.d-n{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.72rem;color:var(--accent);letter-spacing:.05em;}
+.d-w{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;line-height:1.2;}
+.d-en{font-family:'Space Grotesk',sans-serif;color:var(--text);font-size:.95rem;line-height:1.5;background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:9px 12px;}
+.d-tr{color:var(--muted);font-size:.86rem;margin-top:7px;line-height:1.45;}
+.d-note{margin-top:10px;font-size:.8rem;color:#9fd3ec;background:color-mix(in srgb,var(--accent) 8%,transparent);border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:8px;padding:8px 11px;line-height:1.45;}
+.noresult{color:var(--dim);text-align:center;padding:30px;font-style:italic;display:none;}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:28px 0 10px;}
+.hub-card{display:flex;flex-direction:column;gap:10px;padding:26px;background:var(--surface);border:1px solid var(--border);border-radius:16px;text-decoration:none;color:var(--text);position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;min-height:180px;}
+.hub-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:.75;}
+.hub-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.45);}
+.hc-top{display:flex;align-items:center;justify-content:space-between;}
+.hc-num{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
+.hc-icon{font-size:1.8rem;line-height:1;}
+.hc-title{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:800;margin:2px 0 0;line-height:1.15;}
+.hc-desc{color:var(--muted);font-size:.92rem;line-height:1.55;flex:1;}
+.hc-meta{display:flex;gap:8px;flex-wrap:wrap;}
+.hc-meta span{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:4px 10px;border-radius:6px;}
+.hc-cta{font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:700;color:var(--accent);margin-top:4px;}
+.hub-soon{opacity:.55;border-style:dashed;}
+.hub-soon::before{opacity:.3;}
+@media(max-width:560px){.hub-card{min-height:0;padding:22px;}}
+</style>
+<style>/*MOBILE-OPT*/
+@media (max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .hub-grid{grid-template-columns:1fr!important;}
+  .metrics{gap:14px 18px;}
+  img{max-width:100%;height:auto;}
+  .tablewrap,.ditems,.dbody,.dgrid,.grid,.vgrid{max-width:100%;}
+  table,.md table{font-size:.86rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+<a href="../index.html" class="back">← Voltar ao início</a>
+<div class="eyebrow">Sistema 08 · inglês tirado direto do livro</div>
+<h1 class="title">Baseado em <em>Livros</em></h1>
+<p class="lead">Livros de inglês transformados em painéis de inglês real em uso. Escolha um livro para explorar suas frases, vocabulário e estruturas.</p>
+<div class="metrics"><div class="metric"><b>6</b><span>livros</span></div><div class="metric"><b>3.513</b><span>itens de inglês</span></div></div>
+<div class="hub-grid">
+  <a class="hub-card" href="livro01.html">
+    <div class="hc-top"><span class="hc-num">Livro 01</span><span class="hc-icon">📘</span></div>
+    <h2 class="hc-title">1.006 Frases de Inglês</h2>
+    <p class="hc-desc">Do guia "1000 melhores dicas para aprender inglês" — vocabulário, estruturas e frases em contexto, dica por dica.</p>
+    <div class="hc-meta"><span>1.006 dicas</span><span>Vocab · Gramática</span></div>
+    <span class="hc-cta">Abrir livro →</span>
+  </a>
+  <a class="hub-card" href="livro02.html">
+    <div class="hc-top"><span class="hc-num">Livro 02</span><span class="hc-icon">🧳</span></div>
+    <h2 class="hc-title">Conversação para Viagem</h2>
+    <p class="hc-desc">Do guia "Inglês — Conversação para Viagem" (Michaelis Tour): as frases que o viajante fala e ouve, por situação.</p>
+    <div class="hc-meta"><span>261 frases</span><span>9 contextos</span></div>
+    <span class="hc-cta">Abrir livro →</span>
+  </a>
+  <a class="hub-card" href="livro03.html">
+    <div class="hc-top"><span class="hc-num">Livro 03</span><span class="hc-icon">💬</span></div>
+    <h2 class="hc-title">120 Frases para Conversa</h2>
+    <p class="hc-desc">Do livro "120 frases para uma conversa em inglês": 60 expressões idiomáticas do inglês real, cada uma com duas frases de exemplo.</p>
+    <div class="hc-meta"><span>120 frases</span><span>60 expressões</span></div>
+    <span class="hc-cta">Abrir livro →</span>
+  </a>
+  <a class="hub-card" href="livro04.html">
+    <div class="hc-top"><span class="hc-num">Livro 04</span><span class="hc-icon">🎵</span></div>
+    <h2 class="hc-title">Frases &amp; Música</h2>
+    <p class="hc-desc">Do livro "Segredo da Fluência — aprender Inglês com Música": a música <b>We Are The Champions</b> (Queen) com tradução e vocabulário, centenas de padrões de conversação do dia a dia e 90 frases célebres em inglês.</p>
+    <div class="hc-meta"><span>1.286 frases</span><span>90 célebres</span><span>1 música</span></div>
+    <span class="hc-cta">Abrir livro →</span>
+  </a>
+  <a class="hub-card" href="livro05.html">
+    <div class="hc-top"><span class="hc-num">Livro 05</span><span class="hc-icon">🔤</span></div>
+    <h2 class="hc-title">Palavras, Números &amp; Datas</h2>
+    <p class="hc-desc">Do livro "Memorização para aprender idiomas": as ~300 palavras mais comuns do inglês com tradução, números (cardinais e ordinais), dias, meses e datas. Só o inglês — o método ficou de fora.</p>
+    <div class="hc-meta"><span>298 palavras</span><span>Números · Datas</span></div>
+    <span class="hc-cta">Abrir livro →</span>
+  </a>
+  <a class="hub-card" href="livro06.html">
+    <div class="hc-top"><span class="hc-num">Livro 06</span><span class="hc-icon">🎯</span></div>
+    <h2 class="hc-title">Erros que os Brasileiros Cometem</h2>
+    <p class="hc-desc">Do clássico "Como não aprender inglês" (Michael Jacobs): falsos cognatos e pares que confundem (remember/remind, lose/miss), preposições, gramática e cultura — com frases reais em inglês e tradução.</p>
+    <div class="hc-meta"><span>436 frases</span><span>128 tópicos</span><span>8 capítulos</span></div>
+    <span class="hc-cta">Abrir livro →</span>
+  </a>
+  <div class="hub-card hub-soon">
+    <div class="hc-top"><span class="hc-num">Em breve</span><span class="hc-icon">➕</span></div>
+    <h2 class="hc-title">Mais livros</h2>
+    <p class="hc-desc">Espaço reservado para os próximos livros-fonte transformados em painel.</p>
+  </div>
+</div>
+</div>
+<footer>Sistema 08 · Baseado em Livros — inglês real, tirado da fonte</footer>
+</body>
+</html>
