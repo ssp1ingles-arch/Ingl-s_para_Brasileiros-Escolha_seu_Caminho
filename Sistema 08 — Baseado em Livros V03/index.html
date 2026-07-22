@@ -34,6 +34,8 @@ h1.title em{font-style:normal;color:var(--accent);}
 .hc-desc{color:var(--muted);font-size:.92rem;line-height:1.55;flex:1;}
 .hc-meta{display:flex;gap:8px;flex-wrap:wrap;}
 .hc-meta span{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:4px 10px;border-radius:6px;}
+.hc-cta{font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:700;color:var(--accent);margin-top:4px;}
+.hub-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.45);}
 .hub-soon{opacity:.6;border-style:dashed;pointer-events:none;}
 .hub-soon::before{opacity:.3;}
 .note{margin:24px 0 0;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;color:var(--muted);font-size:.9rem;}
@@ -51,15 +53,17 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
 <p class="lead">O curso <b>American English File</b> (Oxford) — do básico ao avançado, nível 1 a 4. Cada Student Book vira um painel de frases, diálogos e vocabulário reais em uso. Volume em preparação.</p>
 <div class="metrics">
   <div class="metric"><b>4</b><span>níveis</span></div>
-  <div class="metric"><b>—</b><span>em preparação</span></div>
+  <div class="metric"><b>1</b><span>disponível</span></div>
+  <div class="metric"><b>174</b><span>frases de inglês</span></div>
 </div>
 <div class="hub-grid">
-  <div class="hub-card hub-soon">
+  <a class="hub-card" href="livro01.html">
     <div class="hc-top"><span class="hc-num">Livro 01</span><span class="hc-icon">&#128216;</span></div>
     <h2 class="hc-title">American English File 1</h2>
-    <p class="hc-desc">Oxford · 3ª edição · Student Book. Nível iniciante (A1–A2) — primeiras conversas, presente simples e vocabulário do dia a dia.</p>
-    <div class="hc-meta"><span>Em breve</span></div>
-  </div>
+    <p class="hc-desc">Oxford · 3ª edição · Student Book. Nível iniciante (A1–A2) — diálogos do dia a dia (hotel, restaurante, direções), frases-modelo de gramática e expressões do cotidiano americano.</p>
+    <div class="hc-meta"><span>16 seções</span><span>174 frases</span><span>+ tradução</span></div>
+    <span class="hc-cta">Abrir livro &#8594;</span>
+  </a>
   <div class="hub-card hub-soon">
     <div class="hc-top"><span class="hc-num">Livro 02</span><span class="hc-icon">&#128217;</span></div>
     <h2 class="hc-title">American English File 2</h2>
