@@ -2,7 +2,28 @@
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
 
+## 0b. Atualização 2026-07-22 (T3/T4) — pasta S08 renumerada + LIVRO_04 (Música) implementado
+
+> **Atenção:** a pasta `Sistema 08` foi **renumerada** e hoje tem só **6 PDFs**. A numeração NÃO bate mais com o item 0 abaixo (scan antigo). Estado real da pasta:
+>
+> | Arquivo atual | O que é | Status |
+> |---|---|---|
+> | `LIVRO_01_1000 melhores dicas…` | 1.006 dicas/frases | ✅ Implementado (`livro01.html`) |
+> | `LIVRO_02_…Conversação para viagem (Michaelis)` | 261 frases de viagem | ✅ Implementado (`livro02.html`) |
+> | `LIVRO_03_120 frases para uma conversa…` | 60 expressões + 120 exemplos | ✅ Implementado (`livro03.html`) |
+> | `LIVRO_04_Segredo da Fluência — aprender Inglês com Música (Leonardo de Mello, 2016)` | Compilação: música Queen + phrasebook conversacional | ✅ **Implementado** (`livro04.html`) |
+> | `LIVRO_05_…Memorização para aprender idiomas (Marcos da Costa Gois)` | Livro de método/memorização | ⏳ Pendente de leitura |
+> | `LIVRO_06_Como não aprender Inglês (PDFDrive)` | Livro de método | ⏳ Pendente de leitura |
+>
+> **LIVRO_04 (Música) — 201 pág., lido integralmente (T4):** apesar do título "aprender com música", o miolo é uma **compilação-phrasebook conversacional** riquíssima. Extraído para `livro04.html` só o inglês real:
+> - **We Are The Champions (Queen)** — letra completa + tradução + 16 cards de vocabulário/phrasal verbs (kicked in, come through, keep on, goes with, bed of roses, ain't, gonna…).
+> - **210 frases por palavra-chave** (42 palavras: YOU, HE, WHAT, MAKE, KNOW, THINK…).
+> - **~986 padrões de conversação** (Básico/Interm/Avançado): I'm gonna, I used to, I'd rather, would you mind, rumor has it that… → 172 categorias, **1.196 frases** no total.
+> - **Descartado (REGRAS §4):** todo o método em português (input/output, subconsciente, SRS/Anki, "divirta-se") **e as 90 "citações motivacionais"** (motivação não entra no painel).
+
 ## 0. Atualização 2026-07-22 — leitura dos PDFs do S08 (LIVRO_03, 04, 13)
+
+> ⚠️ Este bloco reflete a numeração ANTIGA da pasta (o "LIVRO_04 Mairo Vergara" e o "LIVRO_13 Wyld" abaixo já não estão mais na pasta com esses números). Ver bloco 0b acima para o estado atual.
 
 - ✅ **LIVRO_03** — lido (61 pág.). É inglês real (60 expressões + 120 frases de exemplo + tradução). **Implementado** em `Sistema 08/livro03.html` + card no hub.
 - ⚠️ **LIVRO_13 "Short Stories in English for Beginners"** — **arquivo mal rotulado.** O PDF (312 pág.) é na verdade *"A Short History of English"*, de **Henry Cecil Wyld (1927)** — tratado acadêmico de filologia (mudanças fonéticas do inglês antigo/médio, dialetos, flexões). **Não são short stories, não é para iniciantes, não é conversação.** Falha as REGRAS do S08 → **não implementado.** Se quiser contos de verdade, é preciso o arquivo correto.
