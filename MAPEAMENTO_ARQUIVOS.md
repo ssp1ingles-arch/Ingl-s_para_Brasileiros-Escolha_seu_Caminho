@@ -13,7 +13,7 @@
 > | `LIVRO_03_120 frases para uma conversa…` | 60 expressões + 120 exemplos | ✅ Implementado (`livro03.html`) |
 > | `LIVRO_04_Segredo da Fluência — aprender Inglês com Música (Leonardo de Mello, 2016)` | Compilação: música Queen + phrasebook conversacional | ✅ **Implementado** (`livro04.html`) |
 > | `LIVRO_05_…Memorização para aprender idiomas (Marcos da Costa Gois)` | Método de memorização + núcleo de inglês real | ✅ **Implementado** (`livro05.html`) |
-> | `LIVRO_06_Como não aprender Inglês (PDFDrive)` | Livro de método | ⏳ Pendente de leitura |
+> | `LIVRO_06_Como não aprender Inglês (Michael Jacobs)` | Livro de usos/erros — cheio de inglês real | ✅ **Implementado** (`livro06.html`) |
 >
 > **LIVRO_04 (Música) — 201 pág., lido integralmente (T4):** apesar do título "aprender com música", o miolo é uma **compilação-phrasebook conversacional** riquíssima. Extraído para `livro04.html` só o inglês real:
 > - **We Are The Champions (Queen)** — letra completa + tradução + 16 cards de vocabulário/phrasal verbs (kicked in, come through, keep on, goes with, bed of roses, ain't, gonna…).
@@ -26,6 +26,11 @@
 > - **Números** cardinais (0–1 bilhão) e ordinais (1st–1000th), + **7 expressões com números** com frase de exemplo (Cap. 11).
 > - **Dias da semana, meses e formas de escrever/ler datas**, com frases de exemplo (Cap. 13).
 > - Total: **404 itens** de inglês. **Descartado:** todo o miolo de método/técnica de memorização.
+>
+> **LIVRO_06 (Como não aprender inglês, Michael A. Jacobs) — 285 pág., lido integralmente (T3):** ao contrário dos outros, **NÃO é livro de método** — é um livro de **usos e erros** do brasileiro no inglês, riquíssimo em inglês real (falsos cognatos, pares que confundem, preposições, gramática, cultura). Estimativa: **~80% inglês real** (embutido em explicações em pt) vs. **~20% ensaios "Attitude"/método/anedotas**. Extraído para `livro06.html`:
+> - **128 tópicos** em 8 capítulos (Vocabulário, Gramática, Português em Inglês, Curiosidades, Linguagem de rua, Ortografia e Pronúncia, Cultura) com **436 frases de exemplo** reais em inglês + tradução, garimpadas por seção.
+> - Falsos cognatos/pares: remember×remind, lose×miss, lend×borrow, sensitive×sensible, travel×trip, win×beat, history×story, say/speak/talk/tell, etc.
+> - **Descartado (§4):** as ~29 seções "Attitude" (ensaios/motivação) e os textos de método. Fonte é PDF digitalizado (OCR) — pode haver pequenos ruídos residuais.
 
 ## 0. Atualização 2026-07-22 — leitura dos PDFs do S08 (LIVRO_03, 04, 13)
 
