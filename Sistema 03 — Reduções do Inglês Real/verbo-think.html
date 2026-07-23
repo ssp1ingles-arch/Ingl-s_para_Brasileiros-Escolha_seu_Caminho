@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 03 · Um Verbo em Todos os Tempos — Think</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+/* markdown article */
+.md h1,.md h2,.md h3,.md h4{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+.md h1{font-size:1.5rem;margin:30px 0 10px;color:var(--text);}
+.md h2{font-size:1.28rem;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.md h3{font-size:1.08rem;margin:22px 0 8px;color:var(--accent);}
+.md h4{font-size:.98rem;margin:16px 0 6px;color:var(--text);}
+.md p{margin:10px 0;color:#cfcfcf;}
+.md strong{color:var(--text);}
+.md em{color:var(--accent);font-style:normal;}
+.md ul,.md ol{margin:10px 0 10px 22px;color:#cfcfcf;}
+.md li{margin:4px 0;}
+.md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.md code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--accent);font-family:'Space Grotesk',monospace;}
+.md .tablewrap{overflow-x:auto;margin:14px 0;}
+.md table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.md th{background:var(--surface2);text-align:left;padding:10px 13px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+.md td{padding:10px 13px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+.md tr:nth-child(even){background:rgba(255,255,255,.015);}
+.md .say{font-family:'Space Grotesk',sans-serif;color:var(--accent);white-space:nowrap;}
+.md blockquote{border-left:3px solid var(--accent);background:var(--surface);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;color:var(--muted);font-style:italic;}
+.md blockquote strong{color:var(--text);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+.article{min-width:0;}
+.article > section{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+.article > section:last-child{border-bottom:none;}
+.sec-flag{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+</style>
+<style>/*MOBILE-OPT*/
+@media (max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  img{max-width:100%;height:auto;}
+  .tablewrap{max-width:100%;}
+  table,.md table{font-size:.86rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+<a href="index.html" class="back">← Voltar ao Sistema 03</a>
+<div class="eyebrow">Sistema 03 · um verbo, todos os tempos</div>
+<h1 class="title">Um Verbo em Todos<br>os Tempos — <em>Think</em></h1>
+<p class="lead">O mesmo verbo (<em>pensar</em>) atravessando todos os tempos e modos do português — e como cada frase realmente soa na boca do nativo. A coluna falada é o que o ouvido brasileiro precisa reconhecer.</p>
+<div class="metrics">
+  <div class="metric"><b>9</b><span>tempos / modos</span></div>
+  <div class="metric"><b>3</b><span>colunas — escrito → falado</span></div>
+  <div class="metric"><b>1</b><span>verbo: think</span></div>
+</div>
+<div class="article md">
+<section id="s1"><div class="sec-flag">O verbo THINK · do presente ao mais-que-perfeito</div>
+<h1>Pensar em todos os tempos</h1>
+<p>Leia a linha inteira: primeiro o português, depois o inglês <strong>escrito</strong>, e por último como aquilo <strong>soa na fala real</strong> — com a redução ou a forma fraca já aplicada. O contraste entre a coluna escrita e a falada é o coração do Sistema 03.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Tempo / modo</th><th>🇧🇷 Português</th><th>🇺🇸 Inglês (escrito)</th><th>🗣️ Como soa</th></tr></thead>
+<tbody>
+<tr><td>Presente</td><td>Eu penso.</td><td>I think.</td><td><span class="say">/ai fínk/</span></td></tr>
+<tr><td>Passado simples</td><td>Eu pensei.</td><td>I thought.</td><td><span class="say">/ai thót/</span></td></tr>
+<tr><td>Passado contínuo</td><td>Eu estava pensando.</td><td>I was thinking.</td><td><span class="say">/ai uâz fínkin/</span></td></tr>
+<tr><td>Futuro (going to)</td><td>Eu vou pensar.</td><td>I'm going to think.</td><td><span class="say">/aim gôna fínk/</span></td></tr>
+<tr><td>Futuro (will)</td><td>Eu pensarei.</td><td>I will think.</td><td><span class="say">/ai uíl fínk/</span></td></tr>
+<tr><td>Condicional</td><td>Eu pensaria.</td><td>I would think.</td><td><span class="say">/ai ud fínk/</span></td></tr>
+<tr><td>Modal (poder)</td><td>Eu poderia pensar.</td><td>I could think.</td><td><span class="say">/ai cud fínk/</span></td></tr>
+<tr><td>Obrigação (falado)</td><td>Eu tenho que pensar.</td><td>I gotta think.</td><td><span class="say">/ai góra fínk/</span></td></tr>
+<tr><td>Mais-que-perfeito</td><td>Eu tinha pensado.</td><td>I had thought.</td><td><span class="say">/ai réd thót/</span></td></tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="s1-reducoes">As reduções escondidas em cada linha</h2>
+<p>Cada frase acima carrega uma redução ou forma fraca. Isoladas, são os mesmos padrões dos 5 tipos — aqui você vê onde eles aparecem dentro da conjugação.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Forma plena</th><th>Como soa</th><th>Tipo de redução</th></tr></thead>
+<tbody>
+<tr><td>going to</td><td><em>gôna</em> (gonna)</td><td>redução coloquial</td></tr>
+<tr><td>got to / gotta</td><td><em>góra</em></td><td>redução coloquial (t→r batido)</td></tr>
+<tr><td>would</td><td><em>ud</em></td><td>forma fraca</td></tr>
+<tr><td>will</td><td><em>uíl</em></td><td>forma fraca</td></tr>
+<tr><td>was</td><td><em>uâz</em></td><td>forma fraca</td></tr>
+<tr><td>could</td><td><em>cud</em></td><td>forma fraca</td></tr>
+<tr><td>had</td><td><em>réd</em> (I had → I'd)</td><td>forma fraca / contração</td></tr>
+<tr><td>-ing final</td><td>think<strong>ing</strong> → <em>fínkin</em></td><td>elisão do -g</td></tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="s1-th">O som do <em>th</em> — think / thought</h2>
+<p>Repare que <strong>think</strong> vira <em>fínk</em> e <strong>thought</strong> vira <em>thót</em> na aproximação. O <code>th</code> do inglês (/θ/) não existe em português; a grafia falada acima é só uma muleta para o ouvido — o som real é a língua entre os dentes, não um <em>f</em> nem um <em>t</em> puro. O que importa aqui é reconhecer a <strong>palavra inteira</strong> na velocidade da fala.</p>
+<blockquote><strong>Por que ver o verbo assim ajuda:</strong> o brasileiro aprende "I think", "I thought", "I would think" como itens soltos de gramática. Ouvindo, porém, tudo vem colado e reduzido — <em>ai gôna fínk</em>, <em>ai góra fínk</em>. Ver a mesma ideia nos dois lados (escrito ↔ falado) fecha essa distância.</blockquote>
+</section>
+</div>
+</div>
+<footer>Sistema 03 · Reduções do Inglês Real — o verbo <em>think</em> em todos os tempos · fonte: material @teachersophi (Sophia Luna Bittencourt)</footer>
+</body>
+</html>
