@@ -88,5 +88,21 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
 <p class="note">Os cinco livros (PDF) já estão nesta pasta, aguardando extração do inglês real para painel — só exemplos, vocabulário e frases em uso, conforme as REGRAS do Sistema 08.</p>
 </div>
 <footer>Sistema 08 V04 · Baseado em Livros (English for Everyone — Fundamentos) — inglês real, tirado da fonte</footer>
+<script>
+// ── Manter a posição do scroll ao voltar de um sub-painel ──
+(function(){
+  const KEY = 'scrollPos_s08v04';
+  // Ao clicar em qualquer link (sub-painel ou voltar), guarda a posição atual.
+  window.addEventListener('click', e => {
+    if (e.target.closest('a')) sessionStorage.setItem(KEY, window.scrollY);
+  });
+  // Ao carregar a página, restaura para onde o usuário estava.
+  function restoreScroll(){
+    const pos = sessionStorage.getItem(KEY);
+    if (pos !== null) { window.scrollTo(0, parseInt(pos, 10)); sessionStorage.removeItem(KEY); }
+  }
+  window.addEventListener('load', restoreScroll);
+})();
+</script>
 </body>
 </html>
