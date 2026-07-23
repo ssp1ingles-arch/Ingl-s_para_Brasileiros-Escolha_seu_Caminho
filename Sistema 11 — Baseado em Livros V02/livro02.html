@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grammar Practice for Intermediate — Sistema 11 V02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#4a9eff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+body{padding-top:58px;}
+.outer{position:relative;z-index:1;display:flex;max-width:1280px;margin:0 auto;padding:0 18px;gap:0;}
+.toc-wrap{width:270px;flex-shrink:0;position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;padding:24px 0 40px;border-right:1px solid var(--border);}
+.toc-wrap::-webkit-scrollbar{width:4px;}
+.toc-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.toc-label{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);padding:0 16px 10px;}
+.toc-wrap ul{list-style:none;}
+.toc-wrap > ul{padding-right:8px;}
+li.toc-sec{margin-top:10px;}
+li.toc-sec > span{display:block;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding:4px 16px;margin-bottom:2px;}
+li.toc-sec > ul{padding-left:16px;}
+.toc-wrap a{display:block;font-size:.82rem;color:var(--muted);text-decoration:none;padding:3px 8px;border-radius:6px;transition:color .15s,background .15s;line-height:1.3;}
+.toc-wrap a:hover,.toc-wrap a.active{color:var(--text);background:var(--surface);}
+.toc-wrap a.active{color:var(--accent);}
+.main{flex:1;min-width:0;padding:28px 0 60px 32px;}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:10px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.1;margin-bottom:10px;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:16px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:18px 0 32px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;display:block;color:var(--text);}
+.metric span{font-size:.74rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+hr.divider{border:none;border-top:1px solid var(--border);margin:0 0 32px;}
+section{margin-bottom:48px;}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);text-transform:uppercase;letter-spacing:.06em;padding:6px 14px;background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;margin-bottom:20px;}
+.unit-block{margin-bottom:24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;}
+.unit-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+.unit-num{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);padding:3px 9px;border-radius:20px;flex-shrink:0;}
+.example-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.example-list li{font-size:.93rem;color:#cfcfcf;padding:7px 12px;background:#0f0f0f;border-radius:7px;line-height:1.5;}
+.example-list li.dialogue{border-left:3px solid var(--accent);padding-left:10px;color:var(--text);}
+.no-ex{color:var(--dim);font-style:italic;font-size:.85rem;}
+.note-line{font-size:.86rem;color:var(--muted);margin:8px 2px 0;}
+.search-wrap{margin-bottom:28px;}
+.search{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;}
+.search:focus{outline:none;border-color:var(--accent);}
+.search::placeholder{color:var(--dim);}
+.search-count{font-size:.8rem;color:var(--dim);margin-top:6px;}
+.tablewrap{overflow-x:auto;margin:12px 0;}
+table{width:100%;border-collapse:collapse;font-size:.88rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+th{background:var(--surface2);text-align:left;padding:9px 12px;font-family:'Space Grotesk',sans-serif;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+td{padding:9px 12px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+tr:nth-child(even){background:rgba(255,255,255,.015);}
+td b{color:var(--text);}
+footer{text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+@media(max-width:820px){.toc-wrap{display:none;}.main{padding-left:0;}.outer{display:block;}}
+@media(max-width:600px){html,body{overflow-x:hidden;max-width:100vw;}body{font-size:16px;}.outer{padding:0 14px;}.unit-block{padding:14px;}.metrics{gap:14px 18px;}table{font-size:.82rem;}}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 11</a>
+<div class="outer">
+<nav class="toc-wrap" id="toc"><div class="toc-label">Conteúdo</div><ul>
+<li class="toc-sec"><span>Nouns and adjectives</span><ul>
+<li><a href="#unit-1">1. The articles a and the</a></li>
+<li><a href="#unit-2">2. Words using a, the, or no article</a></li>
+<li><a href="#unit-4">4. Possessives with 's, s' and of</a></li>
+<li><a href="#unit-5">5. Singular and plural</a></li>
+<li><a href="#unit-6">6. Comparatives and superlatives</a></li>
+<li><a href="#unit-7">7. Qualification of comparatives and superlatives</a></li>
+<li><a href="#unit-8">8. so and such</a></li>
+</ul></li>
+<li class="toc-sec"><span>Verbs — the present tense</span><ul>
+<li><a href="#unit-9">9. Present Simple and Present Continuous</a></li>
+<li><a href="#unit-10">10. Verbs using Present Simple rather than Present Continuous</a></li>
+<li><a href="#unit-11">11. Permanent and temporary</a></li>
+</ul></li>
+<li class="toc-sec"><span>Verbs — the past</span><ul>
+<li><a href="#unit-12">12. Past Simple and Past Continuous</a></li>
+<li><a href="#unit-13">13. Past continuous as narrative</a></li>
+<li><a href="#unit-14">14. Present Perfect</a></li>
+<li><a href="#unit-16">16. Present Perfect Continuous</a></li>
+<li><a href="#unit-17">17. Past Perfect</a></li>
+<li><a href="#unit-18">18. Past Perfect Continuous</a></li>
+</ul></li>
+<li class="toc-sec"><span>Verbs — the future</span><ul>
+<li><a href="#unit-20">20. Present Continuous, going to, and Future Simple</a></li>
+<li><a href="#unit-21">21. Present simple as future (timetables)</a></li>
+<li><a href="#unit-22">22. Future Continuous</a></li>
+<li><a href="#unit-23">23. Future Perfect</a></li>
+<li><a href="#unit-25">25. Future in the past</a></li>
+</ul></li>
+<li class="toc-sec"><span>Simple, continuous and perfect aspects</span><ul>
+<li><a href="#unit-27">27. Simple and continuous aspects</a></li>
+<li><a href="#unit-28">28. Perfect aspect</a></li>
+</ul></li>
+<li class="toc-sec"><span>Verb formations</span><ul>
+<li><a href="#unit-30">30. Verbs taking gerund, infinitive, or indirect speech</a></li>
+</ul></li>
+<li class="toc-sec"><span>The passive</span><ul>
+<li><a href="#unit-31">31. The passive: Present / Past / Present Perfect</a></li>
+<li><a href="#unit-32">32. The passive: all tenses, simple and continuous</a></li>
+<li><a href="#unit-33">33. to have something done</a></li>
+</ul></li>
+<li class="toc-sec"><span>Miscellaneous — wish</span><ul>
+<li><a href="#unit-34">34. wish (+ past simple / past perfect / would)</a></li>
+</ul></li>
+<li class="toc-sec"><span>Conditionals</span><ul>
+<li><a href="#unit-36">36. First, second and zero conditionals</a></li>
+<li><a href="#unit-37">37. The third conditional</a></li>
+<li><a href="#unit-38">38. Words other than if (unless, provided that, suppose)</a></li>
+<li><a href="#unit-39">39. Sentences containing hidden conditions</a></li>
+<li><a href="#unit-40">40. Mixed tense conditionals</a></li>
+</ul></li>
+<li class="toc-sec"><span>Modals</span><ul>
+<li><a href="#unit-42">42. Modals — introduction</a></li>
+<li><a href="#unit-43">43. can, could, be able to</a></li>
+<li><a href="#unit-44">44. must, have to: positive and negative</a></li>
+<li><a href="#unit-45">45. must, have to: tense changes</a></li>
+<li><a href="#unit-46">46. should, ought to</a></li>
+<li><a href="#unit-47">47. should, ought to, must, have to</a></li>
+<li><a href="#unit-48">48. need + infinitive</a></li>
+<li><a href="#unit-49">49. need as a main verb and need + gerund</a></li>
+<li><a href="#unit-50">50. need in the past</a></li>
+<li><a href="#unit-52">52. Modals in the past tense</a></li>
+<li><a href="#unit-53">53. Modals in the past: deduction</a></li>
+<li><a href="#unit-54">54. could, would, might</a></li>
+</ul></li>
+<li class="toc-sec"><span>Gerunds and infinitives</span><ul>
+<li><a href="#unit-55">55. Gerund or infinitive?</a></li>
+<li><a href="#unit-56">56. Person + gerund</a></li>
+<li><a href="#unit-57">57. to + infinitive after nouns and adjectives</a></li>
+<li><a href="#unit-58">58. it + to + infinitive</a></li>
+<li><a href="#unit-59">59. Use of the infinitive without to</a></li>
+<li><a href="#unit-60">60. The perfect infinitive</a></li>
+<li><a href="#unit-61">61. Gerund or infinitive? (contrast)</a></li>
+</ul></li>
+<li class="toc-sec"><span>Reported speech</span><ul>
+<li><a href="#unit-62">62. Reported statements: tense changes</a></li>
+<li><a href="#unit-63">63. Reported statements: other changes</a></li>
+<li><a href="#unit-64">64. Reported questions: wh questions</a></li>
+<li><a href="#unit-65">65. Reported questions: if / whether</a></li>
+<li><a href="#unit-66">66. Reported questions (check)</a></li>
+<li><a href="#unit-67">67. Reported commands</a></li>
+<li><a href="#unit-68">68. Reported requests</a></li>
+<li><a href="#unit-70">70. Verbs used in reporting</a></li>
+<li><a href="#unit-71">71. Reporting conversations: summarising</a></li>
+</ul></li>
+<li class="toc-sec"><span>Sentence structure — word order</span><ul>
+<li><a href="#unit-72">72. Direct object and indirect object</a></li>
+<li><a href="#unit-73">73. Order of adverbs (manner – place – time)</a></li>
+<li><a href="#unit-74">74. Frequency adverbs</a></li>
+<li><a href="#unit-75">75. Order of adjectives</a></li>
+<li><a href="#unit-76">76. Link words: although, however, though, in spite of, whereas</a></li>
+</ul></li>
+<li class="toc-sec"><span>Questions and answers</span><ul>
+<li><a href="#unit-77">77. who questions</a></li>
+<li><a href="#unit-78">78. Tag questions</a></li>
+<li><a href="#unit-79">79. Agreeing with tag questions</a></li>
+<li><a href="#unit-80">80. Short answers</a></li>
+<li><a href="#unit-81">81. Embedded questions</a></li>
+<li><a href="#unit-82">82. think, hope, expect, suppose</a></li>
+</ul></li>
+<li class="toc-sec"><span>Relative clauses</span><ul>
+<li><a href="#unit-83">83. Subject and object defining relative clauses</a></li>
+<li><a href="#unit-84">84. Contact clauses (without who/that/which)</a></li>
+<li><a href="#unit-85">85. whose</a></li>
+<li><a href="#unit-86">86. Defining and non-defining relative clauses</a></li>
+<li><a href="#unit-87">87. Relative pronouns in defining and non-defining clauses</a></li>
+<li><a href="#unit-88">88. which referring to whole sentences</a></li>
+<li><a href="#unit-89">89. where, when, and why in relative clauses</a></li>
+</ul></li>
+<li class="toc-sec"><span>Prepositions and phrasal verbs</span><ul>
+<li><a href="#unit-91">91. Prepositions used in idioms</a></li>
+<li><a href="#unit-92">92. Phrasal verbs — common verbs and use</a></li>
+<li><a href="#unit-93">93. Phrasal verbs that do not take an object</a></li>
+<li><a href="#unit-94">94. Separable phrasal verbs that take an object</a></li>
+<li><a href="#unit-95">95. Phrasal verbs that take an object but do not separate</a></li>
+<li><a href="#unit-96">96. Phrasal verbs with two particles</a></li>
+<li><a href="#unit-97">97. Summary of phrasal verbs</a></li>
+<li><a href="#unit-98">98. Deducing phrasal verbs from context</a></li>
+</ul></li>
+</ul></nav>
+<main class="main">
+<div class="eyebrow">Sistema 11 &middot; V02 &middot; Gramática</div>
+<h1 class="title"><em>Grammar Practice</em> for Intermediate</h1>
+<p class="lead">Elaine Walker &amp; Steve Elsworth &middot; Longman. 98 pontos de gramática intermediária transformados em frases-modelo reais em inglês — exemplos, diálogos e tabelas de estrutura, do artigo aos phrasal verbs.</p>
+<div class="metrics">
+<div class="metric"><b>87</b><span>pontos de gramática</span></div>
+<div class="metric"><b>400+</b><span>frases-modelo</span></div>
+<div class="metric"><b>16</b><span>seções</span></div>
+</div>
+<div class="search-wrap">
+<input type="search" class="search" id="search" placeholder="Buscar frase, estrutura ou ponto (EN/PT)&hellip;" autocomplete="off">
+<div class="search-count" id="search-count"></div>
+</div>
+<hr class="divider">
+<div id="content-root">
+<section id="nouns">
+<h2 class="sec-title">Nouns and adjectives</h2>
+<article id="unit-1" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 1</span>The articles a and the</h3>
+<ul class="example-list">
+<li>I've got a cat.</li>
+<li>fifty pence a kilo · four times a day · two hundred kilometres an hour</li>
+<li>a hundred · a thousand · a couple · a dozen</li>
+<li>I've just washed the car. (= our car / this car)</li>
+<li>Where's the dog? · We've made the beds.</li>
+<li>Can you play the guitar? · I like listening to the piano. · I've just bought a guitar and a piano.</li>
+<li>Life isn't always easy. · Latin is a difficult language to learn.</li>
+<li>Gold is very expensive at the moment. · They were looking for gold. · They found the gold.</li>
+<li>They live in Manchester. · We went to church. · She's at home.</li>
+</ul>
+</article>
+<article id="unit-2" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 2</span>Words using a, the, or no article</h3>
+<ul class="example-list">
+<li>I put the glass on the table. (definido)</li>
+<li>I picked up a glass. (indefinido)</li>
+<li>It's made of glass. (incontável)</li>
+</ul>
+</article>
+<article id="unit-4" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 4</span>Possessives with 's, s' and of</h3>
+<ul class="example-list">
+<li>Monica's dress · the dog's nose · the children's school</li>
+<li>dolphins' brains · the sailors' hats</li>
+<li>the end of the road · the smell of cooking · the leader of the party</li>
+<li>car keys · the kitchen door · a bus driver</li>
+<li>a fortnight's holiday · two weeks' rest</li>
+</ul>
+</article>
+<article id="unit-5" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 5</span>Singular and plural</h3>
+<div class="tablewrap"><table><thead><tr><th>Regra</th><th>Exemplos</th></tr></thead><tbody>
+<tr><td>+ s (regra geral)</td><td>cat → cats · book → books</td></tr>
+<tr><td>+ es (após -s, -ch, -sh, -x, -o)</td><td>glass → glasses · match → matches · box → boxes · tomato → tomatoes</td></tr>
+<tr><td>-o que fazem só + s</td><td>piano → pianos · stereo → stereos · disco → discos · video → videos</td></tr>
+<tr><td>-f / -fe → -ves</td><td>half → halves · wolf → wolves</td></tr>
+<tr><td>-f que fazem só + s</td><td>roof → roofs</td></tr>
+<tr><td>consoante + y → -ies</td><td>baby → babies · lady → ladies</td></tr>
+<tr><td>singular = plural</td><td>deer · sheep · fish (ou fishes)</td></tr>
+<tr><td>irregulares</td><td>man → men · woman → women · child → children · person → people · tooth → teeth · foot → feet · mouse → mice</td></tr>
+</tbody></table></div>
+</article>
+<article id="unit-6" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 6</span>Comparatives and superlatives</h3>
+<ul class="example-list">
+<li>Cats are cleverer than dogs, but dogs are friendlier.</li>
+<li>John is the youngest child in the class.</li>
+</ul>
+<div class="tablewrap"><table><thead><tr><th>Tipo de adjetivo</th><th>Comparativo</th><th>Superlativo</th></tr></thead><tbody>
+<tr><td>1 sílaba (old, fast)</td><td>older, faster</td><td>oldest, fastest</td></tr>
+<tr><td>1 sílaba terminada em -e (wide, nice)</td><td>wider, nicer</td><td>widest, nicest</td></tr>
+<tr><td>1 vogal + 1 consoante (big, hot)</td><td>bigger, hotter</td><td>biggest, hottest</td></tr>
+<tr><td>2 sílabas em -y/-er/-ow (happy, clever, narrow)</td><td>happier, cleverer, narrower</td><td>happiest, cleverest, narrowest</td></tr>
+<tr><td>mais sílabas (careful, interesting)</td><td>more careful, more interesting</td><td>most careful, most interesting</td></tr>
+<tr><td>irregulares (good, bad, little)</td><td>better, worse, less</td><td>best, worst, least</td></tr>
+</tbody></table></div>
+</article>
+<article id="unit-7" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 7</span>Qualification of comparatives and superlatives</h3>
+<ul class="example-list">
+<li>The chair is a bit / a little / much / a lot cheaper than that one.</li>
+<li>This chair is as / nearly as / not as / twice as cheap as that one.</li>
+<li>It's by far the most expensive car in the world.</li>
+<li>It's easily the most expensive of all the cars I've seen.</li>
+</ul>
+</article>
+<article id="unit-8" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 8</span>so and such</h3>
+<ul class="example-list">
+<li>She was such a good actress. · It's such a cold day, isn't it?</li>
+<li>He shouldn't buy such expensive clothes.</li>
+<li>You look so lovely! · He dresses so badly.</li>
+<li>It's such a stupid idea that I don't think we should consider it.</li>
+<li>I was so tired that I fell asleep in the lecture.</li>
+</ul>
+</article>
+</section>
+<section id="present">
+<h2 class="sec-title">Verbs — the present tense</h2>
+<article id="unit-9" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 9</span>Present Simple and Present Continuous</h3>
+<ul class="example-list">
+<li>She comes from Argentina. · I don't speak Chinese.</li>
+<li>How often do you go to the gym? · He usually leaves work at 6 o'clock.</li>
+<li>Are you waiting for the bus? · I'm writing a letter to Julie.</li>
+</ul>
+</article>
+<article id="unit-10" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 10</span>Verbs using Present Simple rather than Present Continuous</h3>
+<ul class="example-list">
+<li>I believe you. · I don't understand. · What do you think?</li>
+<li>I don't like him. · How do you feel? · I want to go.</li>
+<li>Be quiet, please: I'm thinking. (atividade)</li>
+<li>I'm seeing the president tomorrow. (see = encontrar-se)</li>
+<li>I'm listening to the radio. (listen/watch/look = deliberado; hear/see = não)</li>
+</ul>
+</article>
+<article id="unit-11" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 11</span>Permanent and temporary</h3>
+<ul class="example-list">
+<li>I live in Mexico, though I'm staying in Texas at the moment.</li>
+<li>I'm living in Paris just now, but I come from Belgium.</li>
+</ul>
+</article>
+</section>
+<section id="past">
+<h2 class="sec-title">Verbs — the past</h2>
+<article id="unit-12" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 12</span>Past Simple and Past Continuous</h3>
+<ul class="example-list">
+<li>She played. · Did she play? · She didn't play.</li>
+<li>I saw a great film last night. · We lived in Sydney for two years.</li>
+<li>At 8 o'clock last night we were having dinner.</li>
+<li>He was walking down the road when he heard a loud noise.</li>
+</ul>
+</article>
+<article id="unit-13" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 13</span>Past continuous as narrative</h3>
+<ul class="example-list">
+<li>It was a typical summer afternoon: the sun was beating down, the cars were creeping slowly round the corner of the park.</li>
+<li>Five or six children were playing in the stream by the fountain.</li>
+<li>Walter Harrison, sitting on a park bench in his overcoat, was feeling cold and lonely.</li>
+</ul>
+</article>
+<article id="unit-14" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 14</span>Present Perfect</h3>
+<ul class="example-list">
+<li>He's been here for 10 minutes. · We've lived here since 1996.</li>
+<li>I've written three letters today. · She's travelled to six countries since she started the job.</li>
+<li>I've broken a glass. · John has lost his job. · I've just heard the news.</li>
+<li>Have you finished that report yet? · Have you ever been to China?</li>
+<li>She's never flown in a plane. · She's the best teacher I've ever had.</li>
+<li>I'm afraid I can't. Isabel's borrowed my bike for the weekend.</li>
+<li>I'm sorry. He's just left the office.</li>
+<li>He's hurt his back so he's gone to see the doctor.</li>
+<li>It's the most beautiful country I've ever been to.</li>
+<li>That's because we've walked 30 kilometres today.</li>
+<li>Don't worry. I've already done it.</li>
+<li>This is the first time I've driven this car.</li>
+<li>I don't know. I haven't read it yet.</li>
+<li>They've lived here for ten years. · I've cut my finger.</li>
+</ul>
+</article>
+<article id="unit-16" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 16</span>Present Perfect Continuous</h3>
+<ul class="example-list">
+<li>I've run six kilometres. (simples — o resultado importa)</li>
+<li>I've been running. (contínuo — a atividade importa)</li>
+</ul>
+</article>
+<article id="unit-17" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 17</span>Past Perfect</h3>
+<ul class="example-list">
+<li>I had spoken to Mr Johnson before the meeting began.</li>
+<li>By 1984, we had waited seven years for an answer.</li>
+<li>I got to the stadium at 7.15, and the game started at 7.30. (o jogo começou DEPOIS que cheguei)</li>
+<li>I got to the stadium at 7.45, and the game had started at 7.30. (o jogo começou ANTES)</li>
+<li>When the police arrived, the car had gone.</li>
+</ul>
+</article>
+<article id="unit-18" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 18</span>Past Perfect Continuous</h3>
+<ul class="example-list">
+<li>When I got there, she had been working all night.</li>
+<li>They didn't like the house, even though they had been living there for years.</li>
+<li>There were books everywhere: she had been reading for hours.</li>
+</ul>
+</article>
+</section>
+<section id="future">
+<h2 class="sec-title">Verbs — the future</h2>
+<article id="unit-20" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 20</span>Present Continuous, going to, and Future Simple</h3>
+<ul class="example-list">
+<li>I'm seeing Jessica tonight. (present continuous = futuro planejado)</li>
+<li>They're going to open the new offices on 1st March.</li>
+<li>Look at the snow. It's going to be difficult to get into work tomorrow.</li>
+<li>Richard's going to be the new director.</li>
+<li>The job will be finished by the weekend.</li>
+<li>There's Eleanor. I'll go and talk to her. · I'll help you.</li>
+</ul>
+</article>
+<article id="unit-21" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 21</span>Present simple as future (timetables)</h3>
+<ul class="example-list">
+<li>'What time does our train leave?' 'The train leaves at eight, we arrive at Dover at twelve, and get on the ferry an hour later.'</li>
+<li>Your plane leaves London at 8.30 and arrives in Cairo at 12.00.</li>
+<li>The hovercraft leaves Felixstowe at 12.00. It takes an hour.</li>
+</ul>
+</article>
+<article id="unit-22" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 22</span>Future Continuous</h3>
+<ul class="example-list">
+<li>I'll be waiting at the station when you arrive. · I'll be watching football at six.</li>
+<li>I'll be living in London for the next few weeks.</li>
+<li>I'll be seeing him tomorrow – I'll give him your note.</li>
+<li>I'll be working at home tomorrow – you can call me there.</li>
+<li>I'm going to see her tomorrow – we arranged it last week.</li>
+<li>Peter and Tom will be lying on the beach in Corfu at the moment.</li>
+<li>I bet they'll be having a good time now that it's hot.</li>
+<li>They'll probably be staying at an expensive hotel somewhere.</li>
+</ul>
+</article>
+<article id="unit-23" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 23</span>Future Perfect</h3>
+<ul class="example-list">
+<li>I'll have gone by 4 o'clock. · I'll have finished work by five o'clock tonight.</li>
+<li>I'll have been here for a year in January.</li>
+<li>We'll have been living here for two years in July.</li>
+<li>I'll be dirty because I'll have been playing football.</li>
+</ul>
+</article>
+<article id="unit-25" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 25</span>Future in the past</h3>
+<ul class="example-list">
+<li>I was going to leave early, but I didn't.</li>
+<li>I was going to visit my parents yesterday, but my car broke down.</li>
+<li>He was going to say something, but changed his mind.</li>
+<li>They were going to stay in the Grand Hotel, but it was full – so they stayed with us instead.</li>
+<li>I was going to go to university, but I failed my exams, so I left school at sixteen.</li>
+</ul>
+</article>
+</section>
+<section id="aspects">
+<h2 class="sec-title">Simple, continuous and perfect aspects</h2>
+<article id="unit-27" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 27</span>Simple and continuous aspects</h3>
+<ul class="example-list">
+<li>I'll have a bath tonight. · I worked from eight o'clock to ten o'clock.</li>
+<li>I go to the office by car. · Big cars use a lot of petrol.</li>
+<li>Classes start at nine o'clock. · We went to Spain for our holiday.</li>
+<li>I understood the lecture quite well.</li>
+<li>They're working at the moment. · I was reading when you phoned.</li>
+<li>At this time tomorrow we'll be saying goodbye.</li>
+<li>I'm cycling to work this week because my car's in the garage.</li>
+<li>I'm living in London at the moment.</li>
+</ul>
+</article>
+<article id="unit-28" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 28</span>Perfect aspect</h3>
+<ul class="example-list">
+<li>I have been to France twice.</li>
+<li>It was 1946. The war had finished and Jack had left the army.</li>
+<li>Come tomorrow at 7.30. I'll have had dinner by then.</li>
+</ul>
+</article>
+</section>
+<section id="formations">
+<h2 class="sec-title">Verb formations</h2>
+<article id="unit-30" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 30</span>Verbs taking gerund, infinitive, or indirect speech</h3>
+<ul class="example-list">
+<li>She advised me to go. (verbo + infinitivo)</li>
+<li>I like driving. (verbo + gerúndio)</li>
+<li>They complained that they had been waiting for hours. (discurso indireto)</li>
+<li>They accused me of taking the money. · I apologized for being late.</li>
+<li>We all helped to move the car. · I intend to stay here for some time.</li>
+<li>We invited them to come to the party. · Why didn't they let him go?</li>
+<li>They made him stay. · We finally managed to open the car door.</li>
+<li>Do you mind my smoking? · Do you mind if I smoke?</li>
+<li>They offered to pay for the damage. · They refused to leave.</li>
+<li>They promised to visit her. · They promised that they would visit her.</li>
+<li>I remembered to pick up my keys. · They told me to leave early.</li>
+<li>She suggested going to a different school. · She suggested that we should go.</li>
+<li>Please try to speak more quietly. · I warned him to be careful.</li>
+<li>It seems that they aren't coming.</li>
+</ul>
+</article>
+</section>
+<section id="passive">
+<h2 class="sec-title">The passive</h2>
+<article id="unit-31" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 31</span>The passive: Present / Past / Present Perfect</h3>
+<ul class="example-list">
+<li>Active: Simon has painted the house. → Passive: The house has been painted.</li>
+<li>The cars are taken abroad. · The cars were taken abroad. · The cars have been taken abroad.</li>
+<li>The garages are cleaned every day.</li>
+<li>He has been given a lot of money. · Two hundred people were arrested.</li>
+</ul>
+</article>
+<article id="unit-32" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 32</span>The passive: all tenses, simple and continuous</h3>
+<ul class="example-list">
+<li>The letters are delivered here. (present simple)</li>
+<li>He's being interviewed at the moment. (present continuous)</li>
+<li>They were sent by train. (past simple)</li>
+<li>My suit was being cleaned at the time. (past continuous)</li>
+<li>All the tickets have been sold. (present perfect)</li>
+<li>I was too late: the papers had been removed. (past perfect)</li>
+<li>You will be met at the station. (futuro)</li>
+<li>I don't want to be arrested. · We shouldn't be arrested. (infinitivo)</li>
+<li>He doesn't like being told what to do. (gerúndio)</li>
+<li>The cars are washed, cleaned, checked, and then driven to the ports.</li>
+</ul>
+</article>
+<article id="unit-33" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 33</span>to have something done</h3>
+<ul class="example-list">
+<li>James has his car cleaned every week.</li>
+<li>I had my suit cleaned last week.</li>
+<li>She's going to have her house repaired by the Council.</li>
+<li>I'm having my house painted at the moment.</li>
+<li>I've had the car fixed. · I'll have your coat cleaned for you.</li>
+<li>He had his car cleaned. (≠ He had cleaned his car — a ordem muda o sentido)</li>
+<li>I had my bag stolen last week. (uso coloquial)</li>
+<li>We have the newspapers delivered.</li>
+</ul>
+</article>
+</section>
+<section id="misc">
+<h2 class="sec-title">Miscellaneous — wish</h2>
+<article id="unit-34" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 34</span>wish (+ past simple / past perfect / would)</h3>
+<ul class="example-list">
+<li>I wish things were different now.</li>
+<li>I wish I was rich. / I wish I were rich.</li>
+<li>I wish I lived in America. · Do you wish we lived nearer the school?</li>
+<li>I wish I didn't have to go to school on Saturdays.</li>
+<li>I wish things had been different in the past.</li>
+<li>I wish I hadn't stolen that money. · I wish she had come to my party.</li>
+<li>I wish we'd gone to Alan's party.</li>
+<li>I wish things would change soon. · I wish he would give up smoking.</li>
+<li>I wish it would stop raining. · I wish she would be more careful.</li>
+<li>I wish John would come home before twelve o'clock.</li>
+<li>If only I was rich. · If only I hadn't stolen that money. · If only it would stop raining.</li>
+</ul>
+</article>
+</section>
+<section id="conditionals">
+<h2 class="sec-title">Conditionals</h2>
+<article id="unit-36" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 36</span>First, second and zero conditionals</h3>
+<ul class="example-list">
+<li>If it's hot tomorrow, we'll go to the beach. · We'll go to the beach if it's hot. (1st)</li>
+<li>If I was rich, I could buy a yacht. · I could buy a yacht if I was rich. (2nd — não sou rico)</li>
+<li>If Peter got that job, we'd move to Edinburgh. (2nd)</li>
+<li>If I go to bed late, I always feel tired the next day. (zero)</li>
+<li>If you cook vegetables for too long, they taste awful. (zero)</li>
+</ul>
+</article>
+<article id="unit-37" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 37</span>The third conditional</h3>
+<ul class="example-list">
+<li>If I had met you earlier, I wouldn't have married Joe.</li>
+<li>If I'd worked harder, I would have passed the exam.</li>
+<li>I'd have warned you if I'd seen you last week. (mas não te vi)</li>
+<li>If I'd passed my exams, I would have gone to Art College.</li>
+<li>What would you have done if I hadn't lent you the money?</li>
+<li>If you had asked me for tickets, I could have got you some.</li>
+</ul>
+</article>
+<article id="unit-38" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 38</span>Words other than if (unless, provided that, suppose)</h3>
+<ul class="example-list">
+<li>I'll go home soon if the film doesn't start. = I'll go home soon unless the film starts.</li>
+<li>Provided that everybody agrees, we'll have the meeting on Tuesday.</li>
+<li>Just suppose it didn't rain for four months: would we have enough water?</li>
+</ul>
+</article>
+<article id="unit-39" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 39</span>Sentences containing hidden conditions</h3>
+<ul class="example-list">
+<li>'James didn't come to the party.' 'What a pity. I'm sure he would have enjoyed it.' (se tivesse vindo)</li>
+<li>Be careful, Tom. I wouldn't hurry this decision. (se eu fosse você)</li>
+<li>You should have come. You would have loved it. (se você tivesse vindo)</li>
+</ul>
+</article>
+<article id="unit-40" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 40</span>Mixed tense conditionals</h3>
+<ul class="example-list">
+<li>If I'd stayed at school, I would be in university now. (passado → consequência presente)</li>
+<li>If you hear the alarm, get out as fast as you can. (condição + imperativo)</li>
+<li>I'll take your plate if you've finished.</li>
+<li>If he saw us, he always said hello. (zero conditional no passado)</li>
+</ul>
+</article>
+</section>
+<section id="modals">
+<h2 class="sec-title">Modals</h2>
+<article id="unit-42" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 42</span>Modals — introduction</h3>
+<ul class="example-list">
+<li>12 modais: can, could, shall, should, must, ought to, may, might, will, would, need (to), dare.</li>
+<li>We should stay. · We shouldn't stay. · Should we stay? · Shouldn't we stay?</li>
+</ul>
+</article>
+<article id="unit-43" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 43</span>can, could, be able to</h3>
+<ul class="example-list">
+<li>I could drive when I was eighteen. (= sabia dirigir)</li>
+<li>I was able to drive to college because my uncle lent me a car for the year. (sabia E fiz)</li>
+<li>I'll be able to see you tomorrow. / I can see you tomorrow.</li>
+<li>It was too expensive – I couldn't buy it. / I wasn't able to buy it.</li>
+</ul>
+</article>
+<article id="unit-44" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 44</span>must, have to: positive and negative</h3>
+<ul class="example-list">
+<li>You must leave. (= you can't stay) · You have to leave.</li>
+<li>You mustn't leave. (proibição)</li>
+<li>You don't have to leave. (sem obrigação — pode ficar ou ir)</li>
+<li>I've got to go. = I have to go.</li>
+</ul>
+</article>
+<article id="unit-45" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 45</span>must, have to: tense changes</h3>
+<ul class="example-list">
+<li>I must do this tomorrow morning. (must + tempo = futuro)</li>
+<li>You mustn't leave. · You don't have to leave. · Must you leave? · Do you have to leave?</li>
+<li>I had to leave the party early last night – I wasn't very well.</li>
+</ul>
+<div class="tablewrap"><table><thead><tr><th>Tempo</th><th>must / have to</th></tr></thead><tbody>
+<tr><td>Presente</td><td>must / have to</td></tr>
+<tr><td>Passado</td><td>had to</td></tr>
+<tr><td>Present Perfect</td><td>have had to</td></tr>
+<tr><td>Futuro</td><td>will have to</td></tr>
+</tbody></table></div>
+</article>
+<article id="unit-46" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 46</span>should, ought to</h3>
+<ul class="example-list">
+<li>We ought to stay here. / We should stay here.</li>
+<li>Ought we to go? / Should we go?</li>
+<li>You shouldn't make a noise in here. / You oughtn't to make a noise in here.</li>
+<li>You must go now! (sem escolha) / You should go now. (sua decisão)</li>
+<li>Oughtn't you to go home now?</li>
+<li>They should be in bed. / They ought to be in bed.</li>
+</ul>
+</article>
+<article id="unit-47" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 47</span>should, ought to, must, have to</h3>
+<ul class="example-list">
+<li>You should tell your father about this problem. / You ought to tell your father about this problem.</li>
+<li>They should be here soon. / They ought to be here soon.</li>
+<li>I asked if I should open the door. (discurso indireto)</li>
+<li>Parent to child: 'You must be back by seven o'clock.' (autoridade do falante)</li>
+<li>One friend to another: 'You'll have to get up early to catch the morning train.' (obrigação da situação)</li>
+</ul>
+</article>
+<article id="unit-48" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 48</span>need + infinitive</h3>
+<ul class="example-list">
+<li>I need to practise my English.</li>
+<li>You don't need to have a visa to go to France from Britain.</li>
+<li>Teacher to students: 'You needn't do any homework tonight.'</li>
+<li>Do I need to apply for a visa? · Need I do any homework this weekend?</li>
+</ul>
+</article>
+<article id="unit-49" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 49</span>need as a main verb and need + gerund</h3>
+<ul class="example-list">
+<li>I need some petrol. · Do you need anything else?</li>
+<li>My car needs cleaning. (= My car needs to be cleaned.)</li>
+<li>Your hair needs washing. · Your house needs painting.</li>
+</ul>
+</article>
+<article id="unit-50" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 50</span>need in the past</h3>
+<ul class="example-list">
+<li>I needed something to eat. · The house needed painting.</li>
+<li>I didn't need to get up early yesterday. (não era necessário, então não fiz)</li>
+<li>I needn't have got up early yesterday. (não era necessário, mas fiz)</li>
+<li>I didn't need to catch the bus this morning, because Vic gave me a lift.</li>
+<li>I needn't have lent him that money.</li>
+</ul>
+</article>
+<article id="unit-52" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 52</span>Modals in the past tense</h3>
+<ul class="example-list">
+<li>I should have known. · He might have arrived. · They ought to have gone.</li>
+<li>Should I have known? · Ought they to have gone? · Could he have arrived?</li>
+<li>I shouldn't have gone. · He couldn't have known. · They oughtn't to have gone.</li>
+<li>You shouldn't have said that. · They might not have gone.</li>
+<li>I needn't have fixed my bike yesterday – I could have used my father's.</li>
+</ul>
+</article>
+<article id="unit-53" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 53</span>Modals in the past: deduction</h3>
+<ul class="example-list">
+<li>You shouldn't have done that. · You ought to have warned me about him.</li>
+<li>John might have told Mrs Jones what happened. · Sheila may have left two or three days ago.</li>
+<li>Mike could have stayed in this hotel. (= é possível)</li>
+<li>Mike must have stayed in this hotel. (= quase certo que sim)</li>
+<li>Mike can't have stayed in this hotel. (= quase certo que não)</li>
+<li>I could have left at ten o'clock, but I didn't.</li>
+<li>He's late – something must be wrong! (dedução no presente)</li>
+<li>How did you know about the wedding? Someone must have told you!</li>
+</ul>
+</article>
+<article id="unit-54" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 54</span>could, would, might</h3>
+<ul class="example-list">
+<li>I could do it if you wanted me to. (possibilidade)</li>
+<li>I would do it if I were able to. (intenção condicional)</li>
+<li>I might do it. (possibilidade)</li>
+<li>He could have gone early, but he didn't. · He would have gone early if they had let him.</li>
+<li>He might have gone early – I don't know.</li>
+<li>We knew that he could / would / might be annoying. (discurso indireto)</li>
+<li>Could / Would you open the door for me, please? (pedidos)</li>
+<li>Could I do it for you? (ofertas)</li>
+</ul>
+</article>
+</section>
+<section id="gerinf">
+<h2 class="sec-title">Gerunds and infinitives</h2>
+<article id="unit-55" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 55</span>Gerund or infinitive?</h3>
+<ul class="example-list">
+<li>Swimming is very good for you. (gerúndio como sujeito)</li>
+<li>Have you finished working? (gerúndio como objeto)</li>
+<li>Before leaving the house, she checked all the windows. (após preposição)</li>
+<li>I hope to be there before dark. (infinitivo após verbo)</li>
+<li>I got up early to do my homework. (finalidade)</li>
+</ul>
+</article>
+<article id="unit-56" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 56</span>Person + gerund</h3>
+<ul class="example-list">
+<li>I have no objection to your arriving late. (formal: possessivo + gerúndio)</li>
+<li>We are concerned about the company's trading in oil.</li>
+<li>I don't mind him coming late. (conversacional: objeto + gerúndio)</li>
+<li>We are worried about Jane working so hard.</li>
+</ul>
+</article>
+<article id="unit-57" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 57</span>to + infinitive after nouns and adjectives</h3>
+<ul class="example-list">
+<li>I was pleased to see them again. · I'm surprised to hear you say that.</li>
+<li>It was too hot to go out.</li>
+<li>I've got some homework to do. · Is there anyone else to see?</li>
+<li>Have we got enough money to go to the cinema?</li>
+<li>She has a plane to catch. · There is a lot of housework to do.</li>
+</ul>
+</article>
+<article id="unit-58" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 58</span>it + to + infinitive</h3>
+<ul class="example-list">
+<li>That was a stupid thing to do. · It was a strange thing to say.</li>
+<li>It was nice of you to come. · It was kind of them to send me money.</li>
+<li>It was good to see them again. · It was difficult to drive the car with one hand.</li>
+<li>It was very kind of you to visit Janice in hospital.</li>
+</ul>
+</article>
+<article id="unit-59" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 59</span>Use of the infinitive without to</h3>
+<ul class="example-list">
+<li>He made me do it. · We let them go home.</li>
+<li>I saw him arrive. · We watched them go. · I felt him move.</li>
+<li>I saw him arrive. / I saw him arriving. (também com present participle)</li>
+<li>They made me stay at home.</li>
+</ul>
+</article>
+<article id="unit-60" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 60</span>The perfect infinitive</h3>
+<ul class="example-list">
+<li>If he'd phoned, I would have met him at the airport. (3ª condicional)</li>
+<li>Who could have told him the news? (modais no passado)</li>
+<li>I hope to have finished this by Christmas. (após want/expect/hope)</li>
+<li>I was disappointed to have missed him. (após adjetivo)</li>
+</ul>
+</article>
+<article id="unit-61" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 61</span>Gerund or infinitive? (contrast)</h3>
+<ul class="example-list">
+<li>We talked about cooking. (após preposição)</li>
+<li>Swimming is excellent exercise. · I can't stand going to the dentist.</li>
+<li>I came here to study. (finalidade)</li>
+<li>I love to visit old houses. / I love visiting old houses. (mesmo sentido)</li>
+<li>I remembered to give him the money. (lembrei ANTES de dar) / I remembered giving him the money. (lembrei DEPOIS)</li>
+<li>I stopped to watch the carnival. (parei PARA assistir) / I stopped watching the carnival. (parei DE assistir)</li>
+<li>I tried to open the door, but it was locked. (não consegui) / I tried opening the door to let in some fresh air. (abri de fato)</li>
+</ul>
+</article>
+</section>
+<section id="reported">
+<h2 class="sec-title">Reported speech</h2>
+<article id="unit-62" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 62</span>Reported statements: tense changes</h3>
+<ul class="example-list">
+<li>'I'll talk to Mr Jones.' → He said he'd talk to Mr Jones.</li>
+<li>'I haven't seen anybody.' → She said she hadn't seen anybody.</li>
+<li>'I must go.' → He said he had to go.</li>
+<li>He said (that) he wasn't going. (that é opcional)</li>
+<li>'I'm very tired,' she said. → She said she was very tired.</li>
+<li>'I'll see them soon,' he said. → He said he would see them soon.</li>
+</ul>
+<div class="tablewrap"><table><thead><tr><th>Fala direta</th><th>Discurso indireto</th></tr></thead><tbody>
+<tr><td>will</td><td>would</td></tr>
+<tr><td>shall</td><td>should</td></tr>
+<tr><td>is going to</td><td>was going to</td></tr>
+<tr><td>present simple</td><td>past simple</td></tr>
+<tr><td>present continuous</td><td>past continuous</td></tr>
+<tr><td>past continuous</td><td>past perfect continuous</td></tr>
+<tr><td>present perfect / past simple</td><td>past perfect</td></tr>
+<tr><td>must</td><td>had to</td></tr>
+<tr><td>can</td><td>could</td></tr>
+</tbody></table></div>
+</article>
+<article id="unit-63" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 63</span>Reported statements: other changes</h3>
+<ul class="example-list">
+<li>'I'll see you tomorrow,' she said. → She said she'd see me the next day.</li>
+<li>'I saw her today,' he said. → He said he'd seen her that day.</li>
+</ul>
+<div class="tablewrap"><table><thead><tr><th>Fala direta</th><th>Discurso indireto</th></tr></thead><tbody>
+<tr><td>tomorrow</td><td>the next day / the following day</td></tr>
+<tr><td>yesterday</td><td>the day before</td></tr>
+<tr><td>here</td><td>there</td></tr>
+<tr><td>this / that</td><td>the</td></tr>
+<tr><td>this morning</td><td>that morning</td></tr>
+<tr><td>today</td><td>that day</td></tr>
+<tr><td>tonight</td><td>that night</td></tr>
+<tr><td>next Tuesday</td><td>the following Tuesday</td></tr>
+<tr><td>last Tuesday</td><td>the previous Tuesday</td></tr>
+<tr><td>ago</td><td>before / previously</td></tr>
+</tbody></table></div>
+<p class="note-line">would, could, might, should e ought to <b>não</b> mudam.</p>
+</article>
+<article id="unit-64" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 64</span>Reported questions: wh questions</h3>
+<ul class="example-list">
+<li>'What's the time?' → She asked what time it was.</li>
+<li>'How's your mother?' → He asked me how my mother was.</li>
+<li>She asked me how I was. / She asked how I was.</li>
+<li>'What's your name?' he asked. → He wanted to know what my name was.</li>
+<li>'How old are you?' she said. → She asked how old I was.</li>
+</ul>
+</article>
+<article id="unit-65" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 65</span>Reported questions: if / whether</h3>
+<ul class="example-list">
+<li>'Are you angry?' → He asked if I was angry.</li>
+<li>'Did you see the film?' → She asked whether I had seen the film.</li>
+<li>'Do you like Marlon Brando?' she asked. → She asked if I liked Marlon Brando.</li>
+<li>'Are you enjoying yourself?' he asked. → He asked whether I was enjoying myself.</li>
+</ul>
+</article>
+<article id="unit-66" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 66</span>Reported questions (check)</h3>
+<ul class="example-list">
+<li>'Which book did you take?' → He wanted to know which book I had taken.</li>
+<li>'Are you wearing your overcoat?' → She wanted to know if/whether I was wearing my overcoat.</li>
+</ul>
+</article>
+<article id="unit-67" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 67</span>Reported commands</h3>
+<ul class="example-list">
+<li>He told the children to stop. / He told them to stop.</li>
+<li>'Don't stop!' → He told them not to stop.</li>
+<li>'Don't go!' → He told me not to go.</li>
+<li>'Sit down Mary.' → He told Mary to sit down.</li>
+<li>'Don't go near the sea, children.' → The children's mother warned them not to go near the sea.</li>
+</ul>
+</article>
+<article id="unit-68" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 68</span>Reported requests</h3>
+<ul class="example-list">
+<li>'Would you open the door, please?' → She asked me to open the door.</li>
+<li>'Could you lend me some money, please?' → He asked me to lend him some money.</li>
+<li>He told me to give him some money. (ordem) vs He asked me to give him some money. (pedido)</li>
+<li>'Would you like a cigarette?' → He asked if I would like a cigarette. (oferta)</li>
+<li>'Would you pass me a cigarette?' → He asked me to pass him a cigarette. (pedido)</li>
+<li>'Would you like some coffee?' → She asked if I would like some coffee.</li>
+</ul>
+</article>
+<article id="unit-70" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 70</span>Verbs used in reporting</h3>
+<ul class="example-list">
+<li>'Oh, dear,' she said, 'I'm terribly sorry I'm late.' → She apologized for being late.</li>
+<li>'Yes, you're right. I was very foolish,' he said. → He agreed that he had been very foolish.</li>
+<li>'We're going to get married in June,' she said. → She announced that they were going to get married in June.</li>
+<li>infinitivo: advise, invite, offer, promise, refuse, remind, warn.</li>
+<li>gerúndio: apologise for, insist on, suggest.</li>
+<li>discurso indireto: agree, announce, boast, claim, concede.</li>
+</ul>
+</article>
+<article id="unit-71" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 71</span>Reporting conversations: summarising</h3>
+<ul class="example-list">
+<li class="dialogue">ANNE: Are you doing anything at the weekend?</li>
+<li class="dialogue">SUE: No, we're not.</li>
+<li class="dialogue">ANNE: Well, would you like to come and stay with us for the weekend? I know you're all in need of a rest.</li>
+<li class="dialogue">SUE: Oh, that would be lovely! Thank you very much.</li>
+<li class="dialogue">ANNE: Not at all, it will be nice to see you again.</li>
+<li>Resumo reportado: 'Anne has invited us to stay with her for the weekend. She thought we needed a rest! I explained that we'd bought a dog and said that we could leave him with your parents, but she insisted that we should bring him.'</li>
+</ul>
+</article>
+</section>
+<section id="structure">
+<h2 class="sec-title">Sentence structure — word order</h2>
+<article id="unit-72" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 72</span>Direct object and indirect object</h3>
+<ul class="example-list">
+<li>I've lent my book to Michael. (verbo + OD + to/for + OI)</li>
+<li>I've lent Michael my book. (verbo + OI + OD)</li>
+</ul>
+</article>
+<article id="unit-73" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 73</span>Order of adverbs (manner – place – time)</h3>
+<ul class="example-list">
+<li>She hit him gently. · She hit him with all her strength.</li>
+<li>They work here. · I saw them at the end of the street. (lugar)</li>
+<li>He left yesterday. · I saw him at four o'clock. (tempo)</li>
+<li>I worked hard at the office today. (modo – lugar – tempo)</li>
+<li>They ran quickly into the house. · They played noisily all afternoon.</li>
+<li>Yesterday we had a really good time. · In Paris, we stayed in hotels all the time.</li>
+</ul>
+</article>
+<article id="unit-74" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 74</span>Frequency adverbs</h3>
+<ul class="example-list">
+<li>Escala: never · seldom/rarely · sometimes · often · very often/frequently · always (generally/usually/normally).</li>
+<li>He always left the office at five o'clock. · We sometimes saw them in the morning.</li>
+<li>I often have an egg for breakfast.</li>
+<li>I'll never forget him. · I've frequently seen him in here. · I don't always agree with him.</li>
+<li>Do you often come here? · Frequently, I've seen him in here.</li>
+</ul>
+</article>
+<article id="unit-75" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 75</span>Order of adjectives</h3>
+<div class="tablewrap"><table><thead><tr>
+<th>número</th><th>opinião</th><th>tamanho</th><th>forma</th><th>idade</th><th>cor</th><th>padrão</th><th>material</th><th>nacion.</th><th>subst.-adj.</th><th>substantivo</th></tr></thead><tbody>
+<tr><td>A / An / Some / The / Four</td><td>nice</td><td>large</td><td>square</td><td>old</td><td>green</td><td>striped</td><td>wooden / metal</td><td>English / French</td><td>kitchen / garden</td><td>towel(s) / table(s) / chair(s)</td></tr>
+</tbody></table></div>
+<ul class="example-list"><li>A large old wooden table.</li><li>Four green metal garden chairs.</li><li>We bought some lovely old German glasses.</li></ul>
+</article>
+<article id="unit-76" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 76</span>Link words: although, however, though, in spite of, whereas</h3>
+<ul class="example-list">
+<li>Although he seemed a friendly person, I didn't like him.</li>
+<li>My car wouldn't start, whereas Jenny's started immediately.</li>
+</ul>
+</article>
+</section>
+<section id="questions">
+<h2 class="sec-title">Questions and answers</h2>
+<article id="unit-77" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 77</span>who questions</h3>
+<ul class="example-list">
+<li>Who saw you? (who = sujeito) — Someone saw you.</li>
+<li>Who did you see? (who = objeto) — You saw someone.</li>
+<li>Whom did you see? (whom como objeto, hoje raro)</li>
+<li>What happened? · What fell off the roof? (what como sujeito)</li>
+</ul>
+</article>
+<article id="unit-78" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 78</span>Tag questions</h3>
+<ul class="example-list">
+<li>They went home, didn't they? · It's hot, isn't it? (afirmativa → tag negativa)</li>
+<li>He's not waiting for us, is he? · They didn't go home, did they? (negativa → tag positiva)</li>
+<li>I'm going with you, aren't I? (forma irregular)</li>
+<li>Jane's your friend, isn't she?</li>
+<li>It's a lovely day, isn't it? · It's not very warm here, is it?</li>
+<li>You're coming too, aren't you? Yes, we are.</li>
+<li>They're not staying much longer, are they? No, they aren't.</li>
+</ul>
+</article>
+<article id="unit-79" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 79</span>Agreeing with tag questions</h3>
+<ul class="example-list">
+<li>He's leaving soon, isn't he? → Yes, he is. (concorda) / No, he isn't. (discorda)</li>
+<li>He isn't leaving today, is he? → No, he isn't. (concorda) / Yes, he is. (discorda)</li>
+<li>'You're not angry, are you?' 'No, I'm not.'</li>
+<li>'They're staying in a hotel, aren't they?' 'Yes, they are.'</li>
+</ul>
+</article>
+<article id="unit-80" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 80</span>Short answers</h3>
+<ul class="example-list">
+<li>Did he say that? → Yes, he did.</li>
+<li>Will you be late? → Yes, I will.</li>
+<li>Has he been waiting long? → Yes, he has.</li>
+<li>Do you agree? → Yes, I do.</li>
+<li>Is there anything wrong? → No, there isn't.</li>
+<li>Are your parents coming? → No, they aren't.</li>
+<li>Isn't he coming? → No, he isn't.</li>
+</ul>
+</article>
+<article id="unit-81" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 81</span>Embedded questions</h3>
+<ul class="example-list">
+<li>Where's the bank? → Could you tell me where the bank is?</li>
+<li>Could you tell me what time it is, please? · Do you think this train is going to be late?</li>
+<li>Where has she gone? → Could you tell me where she has gone? (NÃO: …where has she gone)</li>
+<li>Could you tell me when the train leaves?</li>
+<li>Do you think that it's going to rain today?</li>
+</ul>
+</article>
+<article id="unit-82" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 82</span>think, hope, expect, suppose</h3>
+<ul class="example-list">
+<li>'Do you think the train will arrive soon?' 'Yes, I think so.' / 'I hope so.' / 'I expect so.'</li>
+<li>Positivo: I think/hope/expect/suppose so. · Negativo: I don't think/expect/suppose so. / I hope not.</li>
+<li>She hopes so. · They don't think so. · Do you think so?</li>
+<li>'Will there be something to eat when we get there?' 'No, I don't suppose so.'</li>
+</ul>
+</article>
+</section>
+<section id="relative">
+<h2 class="sec-title">Relative clauses</h2>
+<article id="unit-83" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 83</span>Subject and object defining relative clauses</h3>
+<ul class="example-list">
+<li>The woman who got the job has never worked in advertising before.</li>
+<li>The letter that arrived this morning was wrongly addressed.</li>
+<li>The man who normally works here is ill. (oração de sujeito)</li>
+<li>The man who you saw yesterday is ill. (oração de objeto)</li>
+</ul>
+</article>
+<article id="unit-84" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 84</span>Contact clauses (without who/that/which)</h3>
+<ul class="example-list">
+<li>She's the person who I met at the conference. → She's the person I met at the conference.</li>
+<li>Have you seen the dress that I've just bought? → Have you seen the dress I've just bought?</li>
+<li>The man who was feeling ill left early. (não se omite em oração de sujeito)</li>
+<li>The man I shouted at didn't come back again.</li>
+<li>The television I dropped never worked again.</li>
+</ul>
+</article>
+<article id="unit-85" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 85</span>whose</h3>
+<ul class="example-list">
+<li>There's the man. His wallet was stolen. → There's the man whose wallet was stolen.</li>
+<li>There's the lady whose dog was killed.</li>
+<li>That's the man who's going to buy the company. (who's = who is)</li>
+</ul>
+</article>
+<article id="unit-86" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 86</span>Defining and non-defining relative clauses</h3>
+<ul class="example-list">
+<li>'I saw that man again.' 'Which man?' 'The man who wants to buy my house.'</li>
+<li>The man who wants to buy my house is coming to see me.</li>
+<li>A man, who said he knew my father, asked me for money. (não-definidora, com vírgulas)</li>
+<li>I'm going to see Sheila, who I told you about yesterday.</li>
+<li>I have two sisters who are living in New York at the moment. (D — pode ter mais irmãs)</li>
+<li>I have two sisters, who are living in New York at the moment. (ND — só duas irmãs)</li>
+</ul>
+</article>
+<article id="unit-87" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 87</span>Relative pronouns in defining and non-defining clauses</h3>
+<div class="tablewrap"><table><thead><tr><th>Definidora</th><th>Pessoa</th><th>Coisa</th></tr></thead><tbody>
+<tr><td>Sujeito</td><td>who (ou that)</td><td>that (ou which)</td></tr>
+<tr><td>Objeto</td><td>— (ou that)</td><td>— (ou that)</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th>Não-definidora</th><th>Pessoa</th><th>Coisa</th></tr></thead><tbody>
+<tr><td>Sujeito</td><td>, who … ,</td><td>, which … ,</td></tr>
+<tr><td>Objeto</td><td>, who (whom) … ,</td><td>, which … ,</td></tr>
+</tbody></table></div>
+</article>
+<article id="unit-88" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 88</span>which referring to whole sentences</h3>
+<ul class="example-list">
+<li>He turned on the television, which looked new and expensive. (which = a TV)</li>
+<li>He turned on the television, which I thought was rather surprising. (which = a ação)</li>
+<li>I love the countryside, which is why I want to go and live there.</li>
+<li>They stayed for hours, which I was very annoyed about.</li>
+</ul>
+</article>
+<article id="unit-89" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 89</span>where, when, and why in relative clauses</h3>
+<ul class="example-list">
+<li>We visited the town where I was born. (definidora)</li>
+<li>I bought them at the supermarket, where I met Mrs Butler. (não-definidora)</li>
+<li>I saw the film last year, when I was in Paris.</li>
+<li>I think that was the time when I lost all my money.</li>
+<li>There must be a reason why you said that.</li>
+</ul>
+</article>
+</section>
+<section id="prepphrasal">
+<h2 class="sec-title">Prepositions and phrasal verbs</h2>
+<article id="unit-91" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 91</span>Prepositions used in idioms</h3>
+<ul class="example-list">
+<li>I got the job through my uncle.</li>
+<li>She's been promoted. She's got two hundred people working under her now.</li>
+</ul>
+</article>
+<article id="unit-92" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 92</span>Phrasal verbs — common verbs and use</h3>
+<ul class="example-list">
+<li>We need to set off early tomorrow. · Did you find out the times of the trains?</li>
+<li>I requested a pay rise but they turned me down.</li>
+<li>I get up at eight o'clock. · We'll pick you up outside the station. · The plane took off very quickly.</li>
+<li>The car slowed down and then stopped. (= slow) · I'm going to give up smoking. (≠ give)</li>
+<li>The car burned for a few minutes, then the petrol tank blew up with a loud bang.</li>
+</ul>
+</article>
+<article id="unit-93" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 93</span>Phrasal verbs that do not take an object</h3>
+<ul class="example-list">
+<li>The plan fell through: we had to cancel the project.</li>
+<li>She had a terrible shock when her father passed away.</li>
+<li>Sem objeto: get by · pass away · sleep in · grow up · set off · take off.</li>
+</ul>
+</article>
+<article id="unit-94" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 94</span>Separable phrasal verbs that take an object</h3>
+<ul class="example-list">
+<li>We picked up the children at three. / We picked the children up at three.</li>
+<li>We decided to cut the tree down. / We decided to cut down the tree.</li>
+<li>We decided to cut it down. (pronome ANTES da partícula; NÃO: cut down it)</li>
+<li>How do you slow down the machine? / How do you slow the machine down?</li>
+</ul>
+</article>
+<article id="unit-95" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 95</span>Phrasal verbs that take an object but do not separate</h3>
+<ul class="example-list">
+<li>How are we going to get round this problem? (NÃO: get this problem round)</li>
+<li>She looks like her mother: don't you think she takes after her?</li>
+</ul>
+</article>
+<article id="unit-96" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 96</span>Phrasal verbs with two particles</h3>
+<ul class="example-list">
+<li>'I'm not going to put up with this,' he said.</li>
+<li>ran out of · keep on at · look down on · come up with · go back on.</li>
+</ul>
+</article>
+<article id="unit-97" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 97</span>Summary of phrasal verbs</h3>
+<ul class="example-list">
+<li>'Goodbye!' she said, and hung up. (tipo 1) / I hung my coat up behind the door. (tipo 2)</li>
+<li>Verbo + preposição (não é phrasal): What do you think about the idea? · Look at these clothes!</li>
+</ul>
+<div class="tablewrap"><table><thead><tr><th>Tipo</th><th>Regra</th><th>Exemplo</th></tr></thead><tbody>
+<tr><td>1</td><td>sem objeto</td><td>The plane <b>takes off</b> at ten.</td></tr>
+<tr><td>2</td><td>com objeto — separável</td><td>I <b>looked up</b> the word. / I <b>looked</b> the word <b>up</b>. / I <b>looked</b> it <b>up</b>.</td></tr>
+<tr><td>3</td><td>com objeto — não separa</td><td>I saw John today: he <b>asked after</b> you.</td></tr>
+<tr><td>4</td><td>duas partículas — não separa</td><td>We've <b>run out of</b> bread.</td></tr>
+</tbody></table></div>
+</article>
+<article id="unit-98" class="unit-block">
+<h3 class="unit-title"><span class="unit-num">Ponto 98</span>Deducing phrasal verbs from context</h3>
+<ul class="example-list">
+<li>It will hurt at first, but the pain will soon wear off. (= diminuir até desaparecer)</li>
+</ul>
+<div class="tablewrap"><table><thead><tr><th>Phrasal verb</th><th>Significado</th></tr></thead><tbody>
+<tr><td>get at</td><td>irritar continuamente (continually annoy)</td></tr>
+<tr><td>come up with</td><td>sugerir (suggest)</td></tr>
+<tr><td>work out</td><td>desenvolver-se com o tempo (eventually develop)</td></tr>
+<tr><td>get hold of</td><td>obter (obtain)</td></tr>
+<tr><td>storm out</td><td>sair furioso (leave angrily)</td></tr>
+<tr><td>pick on</td><td>implicar com (choose for unpleasant treatment)</td></tr>
+<tr><td>hand in</td><td>entregar (resignação/formulário) numa repartição</td></tr>
+<tr><td>put up with</td><td>tolerar (tolerate)</td></tr>
+<tr><td>pick up</td><td>melhorar (improve)</td></tr>
+<tr><td>go off</td><td>deixar de gostar (not like any more)</td></tr>
+<tr><td>take up</td><td>começar (start)</td></tr>
+<tr><td>turn up</td><td>chegar (arrive)</td></tr>
+<tr><td>drift in</td><td>(coloq.) chegar preguiçosamente (arrive lazily)</td></tr>
+</tbody></table></div>
+</article>
+</section>
+</div>
+</main>
+</div>
+<footer>Sistema 11 V02 &middot; Grammar Practice for Intermediate (Walker &amp; Elsworth) &mdash; inglês real, tirado da fonte</footer>
+<script>
+// TOC active highlight
+const tocLinks = document.querySelectorAll('.toc-wrap a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector('.toc-wrap a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, {threshold: 0.3, rootMargin: '-60px 0px -60% 0px'});
+document.querySelectorAll('.unit-block[id]').forEach(el => observer.observe(el));
+// Search (EN/PT — busca no texto completo de cada ponto)
+const searchEl = document.getElementById('search');
+const countEl = document.getElementById('search-count');
+const allUnits = document.querySelectorAll('.unit-block');
+const allSections = document.querySelectorAll('section');
+searchEl.addEventListener('input', () => {
+  const q = searchEl.value.toLowerCase().trim();
+  if (!q) {
+    allUnits.forEach(u => u.style.display = '');
+    allSections.forEach(s => s.style.display = '');
+    countEl.textContent = '';
+    return;
+  }
+  let found = 0;
+  allSections.forEach(sec => {
+    let secHasMatch = false;
+    sec.querySelectorAll('.unit-block').forEach(unit => {
+      if (unit.textContent.toLowerCase().includes(q)) {
+        unit.style.display = ''; secHasMatch = true; found++;
+      } else { unit.style.display = 'none'; }
+    });
+    sec.style.display = secHasMatch ? '' : 'none';
+  });
+  countEl.textContent = found + ' ponto(s) encontrado(s)';
+});
+</script>
+</body>
+</html>
