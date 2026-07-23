@@ -196,6 +196,19 @@
   },
   {
     "numero": "16",
+    "titulo": "Livros — In Use: Vocabulário & Pronúncia",
+    "descricao": "A série 'in Use' da Cambridge — English Vocabulary in Use, Pronunciation in Use e Grammar in Use, do elementar ao avançado. Vocabulary in Use Elementary já disponível: 58 unidades, 431 itens de vocabulário em contexto com tradução. Demais em preparação.",
+    "cor": "#A3E635",
+    "icone": "🔤",
+    "tags": [
+      "6 livros",
+      "Vocab + Pronúncia",
+      "1 disponível"
+    ],
+    "pasta": "Sistema 16 — Baseado em Livros V07"
+  },
+  {
+    "numero": "17",
     "titulo": "Livros — Kids",
     "descricao": "Kid's Box (Cambridge), níveis 3 e 4 — inglês infantil garimpado para o adulto estudar. Level 3 já disponível: 11 seções, 242 frases com tradução. Level 4 em preparação.",
     "cor": "#FB7185",
@@ -205,6 +218,6 @@
       "Kids",
       "1 disponível"
     ],
-    "pasta": "Sistema 16 — Baseado em Livros — Kids"
+    "pasta": "Sistema 17 — Baseado em Livros — Kids"
   }
 ]
