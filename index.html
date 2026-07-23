@@ -155,19 +155,24 @@ function showError(err){
 }
 
 // ── Restaurar posição do scroll ao voltar ao painel principal ──
-// Ao clicar em qualquer link (ex.: "Entrar →"), guarda a posição atual.
+// Ao clicar em qualquer link (ex.: "Entrar →"), guarda a posição atual do painel.
 window.addEventListener('click', e => {
-  if (e.target.closest('a')) sessionStorage.setItem('scrollPos', window.scrollY);
+  if (e.target.closest('a')) sessionStorage.setItem('scrollPos_root', window.scrollY);
 });
-// Volta para onde o usuário estava. Como os cards são renderizados de
-// forma assíncrona (fetch), a restauração roda tanto no 'load' quanto
-// logo após os cards existirem — o que acontecer por último com valor
-// salvo é que realmente reposiciona.
+// Volta para onde o usuário estava. Os cards são renderizados de forma
+// ASSÍNCRONA (fetch), então só é possível rolar até a posição salva DEPOIS
+// que eles existem e a página ganha altura. Por isso a restauração roda
+// apenas após o render, dentro de requestAnimationFrame (layout já calculado).
+// Antes o restore rodava no 'load' — quando a página ainda estava curta — e
+// o scrollTo era "cortado" para perto do topo, causando o bug de voltar ao topo.
 function restoreScroll(){
-  const pos = sessionStorage.getItem('scrollPos');
-  if (pos) { window.scrollTo(0, parseInt(pos)); sessionStorage.removeItem('scrollPos'); }
+  const pos = sessionStorage.getItem('scrollPos_root');
+  if (pos === null) return;
+  requestAnimationFrame(() => {
+    window.scrollTo(0, parseInt(pos, 10));
+    sessionStorage.removeItem('scrollPos_root');
+  });
 }
-window.addEventListener('load', restoreScroll);
 
 fetch('sistemas.json', { cache: 'no-store' })
   .then(r => { if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
