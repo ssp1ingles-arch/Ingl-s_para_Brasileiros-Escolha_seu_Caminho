@@ -5,142 +5,206 @@
     "descricao": "Do inglês de escola ao inglês que nativos falam. 25 sistemas do A1 ao C1 e uma jornada guiada de 120 passos — do zero à fluência.",
     "cor": "#64DFDF",
     "icone": "📚",
-    "tags": ["25 sistemas", "A1 → C1", "Completo"],
+    "tags": [
+      "25 sistemas",
+      "A1 → C1",
+      "Completo"
+    ],
     "pasta": "Sistema 01 — Base. Fluência. Gramática"
   },
   {
     "numero": "02",
-    "titulo": "Reduções do Inglês Real",
-    "descricao": "O inglês que nativos falam — não o que ensinam. Wanna, gonna, gotta e mais 47 reduções do dia a dia, com músicas, filmes e treino de ouvido.",
-    "cor": "#F59E0B",
-    "icone": "🎙️",
-    "tags": ["4 pilares", "B1–B2", "50 reduções"],
-    "pasta": "Sistema 02 — Reduções do Inglês Real"
-  },
-  {
-    "numero": "03",
-    "titulo": "Motor de Verbos por Sentido",
-    "descricao": "100 verbos, 142 sentidos. Cada verbo no tempo certo — afirmativo, negativo e pergunta, do jeito que o brasileiro precisa ver.",
-    "cor": "#6366F1",
-    "icone": "⚡",
-    "tags": ["5 grupos", "A2–B1", "142 sentidos"],
-    "pasta": "Sistema 03 — Motor de Verbos"
-  },
-  {
-    "numero": "04",
-    "titulo": "Conectar Frases",
-    "descricao": "Question words, conectivos e discourse markers — o que liga ideias e faz o inglês soar natural. Com construtor de frases.",
-    "cor": "#10B981",
-    "icone": "🔗",
-    "tags": ["3 módulos", "A2–B1", "41 conectores"],
-    "pasta": "Sistema 04 — Conectar Frases"
-  },
-  {
-    "numero": "05",
-    "titulo": "Situar a Frase",
-    "descricao": "Preposições, quantificadores e estruturas fixas — onde, quando, quanto e como. Com modo autoteste.",
-    "cor": "#EC4899",
-    "icone": "📍",
-    "tags": ["3 módulos", "A2–B1", "23 estruturas"],
-    "pasta": "Sistema 05 — Situar a Frase"
-  },
-  {
-    "numero": "06",
-    "titulo": "Baseado em Desenho Infantil",
-    "descricao": "Aprenda como uma criança aprende: cenas de desenho animado, das primeiras palavras às conversas reais. 7 níveis progressivos, do básico ao avançado.",
-    "cor": "#A855F7",
-    "icone": "📺",
-    "tags": ["7 níveis", "A1 → B2", "Vídeo"],
-    "pasta": "Sistema 06 — Baseado em Desenho Infântil"
-  },
-  {
-    "numero": "07",
-    "titulo": "Transcrições e Canais",
-    "descricao": "Transcrições de canais e podcasts reais — All Ears English, Luke's English Podcast e mais. Treine o ouvido com o inglês do dia a dia.",
-    "cor": "#EF4444",
-    "icone": "🎬",
-    "tags": ["16 canais", "B1 → C1", "Áudio real"],
-    "pasta": "Sistema 07 — Transcrições e Canais"
-  },
-  {
-    "numero": "08 · V01",
-    "titulo": "Livros — Conversação & Frases",
-    "descricao": "Seis livros virando painel de inglês real: 1.006 dicas, conversação para viagem, expressões idiomáticas, música (Queen), palavras/números/datas e os erros clássicos do brasileiro. 3.513 itens.",
-    "cor": "#0EA5E9",
-    "icone": "📖",
-    "tags": ["6 livros", "3.513 itens", "Conversação"],
-    "pasta": "Sistema 08 — Baseado em Livros V01"
-  },
-  {
-    "numero": "08 · V02",
-    "titulo": "Livros — Gramática em Uso",
-    "descricao": "Cinco livros de gramática (English Grammar in Use, Oxford Guide, Essential Grammar, Objective Proficiency) em painéis de exemplos reais. English Grammar in Use já disponível: 145 unidades, 2.800 exemplos.",
-    "cor": "#4A9EFF",
-    "icone": "📐",
-    "tags": ["5 livros", "Gramática", "Intermediário+"],
-    "pasta": "Sistema 08 — Baseado em Livros V02"
-  },
-  {
-    "numero": "08 · V03",
-    "titulo": "Livros — American English File",
-    "descricao": "O curso American English File (Oxford), nível 1 a 4 — do básico ao avançado. AEF 1 já disponível: 16 seções, 174 frases (diálogos, gramática e cotidiano) com tradução. Níveis 2–4 em preparação.",
-    "cor": "#22D3EE",
-    "icone": "🇺🇸",
-    "tags": ["4 níveis", "Curso completo", "1 disponível"],
-    "pasta": "Sistema 08 — Baseado em Livros V03"
-  },
-  {
-    "numero": "08 · V04",
-    "titulo": "Livros — English for Everyone",
-    "descricao": "A coleção visual English for Everyone (DK): guia de gramática, vocabulário, curso Junior e practice books iniciantes. Fundamentos do inglês. Em preparação.",
-    "cor": "#818CF8",
-    "icone": "🧩",
-    "tags": ["5 livros", "Fundamentos", "Em breve"],
-    "pasta": "Sistema 08 — Baseado em Livros V04"
-  },
-  {
-    "numero": "08 · V05",
-    "titulo": "Livros — Business & Avançado",
-    "descricao": "English for Everyone (DK): Business English 1 e 2, curso intermediário nível 3 e practice avançado nível 4. Inglês profissional e de nível alto. Em preparação.",
-    "cor": "#34D399",
-    "icone": "💼",
-    "tags": ["4 livros", "Business + C1", "Em breve"],
-    "pasta": "Sistema 08 — Baseado em Livros V05"
-  },
-  {
-    "numero": "08 · V06",
-    "titulo": "Livros — Exercícios & Vocabulário",
-    "descricao": "Prática de gramática e vocabulário: English Grammar in Use Supplementary Exercises, Basic Grammar in Use, English Collocations in Use, Phrasal Verbs in Use e short stories. Supplementary já disponível: 16 estruturas, 123 frases com tradução.",
-    "cor": "#FBBF24",
-    "icone": "✍️",
-    "tags": ["6 livros", "Gramática + Vocab", "1 disponível"],
-    "pasta": "Sistema 08 — Baseado em Livros V06"
-  },
-  {
-    "numero": "08 · Kids",
-    "titulo": "Livros — Kids",
-    "descricao": "Kid's Box (Cambridge), níveis 3 e 4 — inglês infantil garimpado para o adulto estudar. Level 3 já disponível: 11 seções, 242 frases com tradução. Level 4 em preparação.",
-    "cor": "#FB7185",
-    "icone": "🧸",
-    "tags": ["2 livros", "Kids", "1 disponível"],
-    "pasta": "Sistema 08 — Baseado em Livros — Kids"
-  },
-  {
-    "numero": "09",
     "titulo": "Dúvidas Pontuais",
     "descricao": "Gramática sob medida — os pontos específicos que você quis dominar. DID, WENT e mais, cada um num card de referência rápida.",
     "cor": "#F97316",
     "icone": "🎯",
-    "tags": ["DID, WENT e mais", "A1", "Referência"],
-    "pasta": "Sistema 09 — Dúvidas Pontuais"
+    "tags": [
+      "DID, WENT e mais",
+      "A1",
+      "Referência"
+    ],
+    "pasta": "Sistema 02 — Dúvidas Pontuais"
   },
   {
-    "numero": "10",
+    "numero": "03",
+    "titulo": "Reduções do Inglês Real",
+    "descricao": "O inglês que nativos falam — não o que ensinam. Wanna, gonna, gotta e mais 47 reduções do dia a dia, com músicas, filmes e treino de ouvido.",
+    "cor": "#F59E0B",
+    "icone": "🎙️",
+    "tags": [
+      "4 pilares",
+      "B1–B2",
+      "50 reduções"
+    ],
+    "pasta": "Sistema 03 — Reduções do Inglês Real"
+  },
+  {
+    "numero": "04",
+    "titulo": "Motor de Verbos por Sentido",
+    "descricao": "100 verbos, 142 sentidos. Cada verbo no tempo certo — afirmativo, negativo e pergunta, do jeito que o brasileiro precisa ver.",
+    "cor": "#6366F1",
+    "icone": "⚡",
+    "tags": [
+      "5 grupos",
+      "A2–B1",
+      "142 sentidos"
+    ],
+    "pasta": "Sistema 04 — Motor de Verbos"
+  },
+  {
+    "numero": "05",
+    "titulo": "Conectar Frases",
+    "descricao": "Question words, conectivos e discourse markers — o que liga ideias e faz o inglês soar natural. Com construtor de frases.",
+    "cor": "#10B981",
+    "icone": "🔗",
+    "tags": [
+      "3 módulos",
+      "A2–B1",
+      "41 conectores"
+    ],
+    "pasta": "Sistema 05 — Conectar Frases"
+  },
+  {
+    "numero": "06",
+    "titulo": "Situar a Frase",
+    "descricao": "Preposições, quantificadores e estruturas fixas — onde, quando, quanto e como. Com modo autoteste.",
+    "cor": "#EC4899",
+    "icone": "📍",
+    "tags": [
+      "3 módulos",
+      "A2–B1",
+      "23 estruturas"
+    ],
+    "pasta": "Sistema 06 — Situar a Frase"
+  },
+  {
+    "numero": "07",
+    "titulo": "Baseado em Desenho Infantil",
+    "descricao": "Aprenda como uma criança aprende: cenas de desenho animado, das primeiras palavras às conversas reais. 7 níveis progressivos, do básico ao avançado.",
+    "cor": "#A855F7",
+    "icone": "📺",
+    "tags": [
+      "7 níveis",
+      "A1 → B2",
+      "Vídeo"
+    ],
+    "pasta": "Sistema 07 — Baseado em Desenho Infântil"
+  },
+  {
+    "numero": "08",
+    "titulo": "Transcrições e Canais",
+    "descricao": "Transcrições de canais e podcasts reais — All Ears English, Luke's English Podcast e mais. Treine o ouvido com o inglês do dia a dia.",
+    "cor": "#EF4444",
+    "icone": "🎬",
+    "tags": [
+      "16 canais",
+      "B1 → C1",
+      "Áudio real"
+    ],
+    "pasta": "Sistema 08 — Transcrições e Canais"
+  },
+  {
+    "numero": "09",
     "titulo": "Prática Completa · 4 Pilares",
     "descricao": "O treino que vira fala: frases que crescem camada a camada, 1.000 frases do inglês real, os padrões que desbloqueiam tudo e 150 textos com contexto visual.",
     "cor": "#14B8A6",
     "icone": "🏛️",
-    "tags": ["4 pilares", "B1–B2", "Produção real"],
-    "pasta": "Sistema 10 — Prática Completa · 4 Pilares"
+    "tags": [
+      "4 pilares",
+      "B1–B2",
+      "Produção real"
+    ],
+    "pasta": "Sistema 09 — Prática Completa · 4 Pilares"
+  },
+  {
+    "numero": "10",
+    "titulo": "Livros — Conversação & Frases",
+    "descricao": "Seis livros virando painel de inglês real: 1.006 dicas, conversação para viagem, expressões idiomáticas, música (Queen), palavras/números/datas e os erros clássicos do brasileiro. 3.513 itens.",
+    "cor": "#0EA5E9",
+    "icone": "📖",
+    "tags": [
+      "6 livros",
+      "3.513 itens",
+      "Conversação"
+    ],
+    "pasta": "Sistema 10 — Baseado em Livros V01"
+  },
+  {
+    "numero": "11",
+    "titulo": "Livros — Gramática em Uso",
+    "descricao": "Cinco livros de gramática (English Grammar in Use, Oxford Guide, Essential Grammar, Objective Proficiency) em painéis de exemplos reais. English Grammar in Use já disponível: 145 unidades, 2.800 exemplos.",
+    "cor": "#4A9EFF",
+    "icone": "📐",
+    "tags": [
+      "5 livros",
+      "Gramática",
+      "Intermediário+"
+    ],
+    "pasta": "Sistema 11 — Baseado em Livros V02"
+  },
+  {
+    "numero": "12",
+    "titulo": "Livros — American English File",
+    "descricao": "O curso American English File (Oxford), nível 1 a 4 — do básico ao avançado. AEF 1 já disponível: 16 seções, 174 frases (diálogos, gramática e cotidiano) com tradução. Níveis 2–4 em preparação.",
+    "cor": "#22D3EE",
+    "icone": "🇺🇸",
+    "tags": [
+      "4 níveis",
+      "Curso completo",
+      "1 disponível"
+    ],
+    "pasta": "Sistema 12 — Baseado em Livros V03"
+  },
+  {
+    "numero": "13",
+    "titulo": "Livros — English for Everyone",
+    "descricao": "A coleção visual English for Everyone (DK): guia de gramática, vocabulário, curso Junior e practice books iniciantes. Fundamentos do inglês. Em preparação.",
+    "cor": "#818CF8",
+    "icone": "🧩",
+    "tags": [
+      "5 livros",
+      "Fundamentos",
+      "Em breve"
+    ],
+    "pasta": "Sistema 13 — Baseado em Livros V04"
+  },
+  {
+    "numero": "14",
+    "titulo": "Livros — Business & Avançado",
+    "descricao": "English for Everyone (DK): Business English 1 e 2, curso intermediário nível 3 e practice avançado nível 4. Inglês profissional e de nível alto. Em preparação.",
+    "cor": "#34D399",
+    "icone": "💼",
+    "tags": [
+      "4 livros",
+      "Business + C1",
+      "Em breve"
+    ],
+    "pasta": "Sistema 14 — Baseado em Livros V05"
+  },
+  {
+    "numero": "15",
+    "titulo": "Livros — Exercícios & Vocabulário",
+    "descricao": "Prática de gramática e vocabulário: English Grammar in Use Supplementary Exercises, Basic Grammar in Use, English Collocations in Use, Phrasal Verbs in Use e short stories. Supplementary já disponível: 16 estruturas, 123 frases com tradução.",
+    "cor": "#FBBF24",
+    "icone": "✍️",
+    "tags": [
+      "6 livros",
+      "Gramática + Vocab",
+      "1 disponível"
+    ],
+    "pasta": "Sistema 15 — Baseado em Livros V06"
+  },
+  {
+    "numero": "16",
+    "titulo": "Livros — Kids",
+    "descricao": "Kid's Box (Cambridge), níveis 3 e 4 — inglês infantil garimpado para o adulto estudar. Level 3 já disponível: 11 seções, 242 frases com tradução. Level 4 em preparação.",
+    "cor": "#FB7185",
+    "icone": "🧸",
+    "tags": [
+      "2 livros",
+      "Kids",
+      "1 disponível"
+    ],
+    "pasta": "Sistema 16 — Baseado em Livros — Kids"
   }
 ]

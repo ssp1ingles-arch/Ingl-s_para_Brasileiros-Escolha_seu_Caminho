@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 07 — Inglês através de Cenas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#A855F7;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:660px;line-height:1.6;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+.watch{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:26px 0 8px;flex-wrap:wrap;}
+.watch p{font-size:.9rem;color:var(--muted);flex:1;min-width:200px;}
+.watch a{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.86rem;text-decoration:none;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);padding:9px 18px;border-radius:30px;transition:.2s;white-space:nowrap;}
+.watch a:hover{background:color-mix(in srgb,var(--accent) 12%,transparent);}
+
+.howto{border-left:3px solid var(--accent);background:var(--surface);border-radius:0 12px 12px 0;padding:16px 20px;margin:24px 0 10px;}
+.howto h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;margin-bottom:8px;}
+.howto ol{margin-left:18px;color:var(--muted);font-size:.9rem;}
+.howto li{margin:4px 0;}
+
+.levelnav{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 10px;}
+.levelnav button{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.8rem;cursor:pointer;background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:8px 14px;border-radius:30px;transition:.15s;}
+.levelnav button.active,.levelnav button:hover{color:var(--accent);border-color:var(--accent);}
+
+.level{margin-top:36px;}
+.level-head{display:flex;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:18px;}
+.level-head .num{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:.8rem;color:var(--accent);letter-spacing:.1em;}
+.level-head h2{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:800;}
+.level-head small{display:block;color:var(--dim);font-weight:400;font-size:.8rem;margin-top:2px;letter-spacing:.02em;}
+.lessons{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+.lesson{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;transition:.2s;}
+.lesson:hover{border-color:color-mix(in srgb,var(--accent) 45%,transparent);}
+.lesson h4{font-family:'Space Grotesk',sans-serif;font-size:1.02rem;font-weight:700;}
+.lesson .scene{font-size:.78rem;color:var(--dim);margin:2px 0 12px;font-style:italic;}
+.phrases{display:grid;gap:8px;}
+.ph{background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:9px 12px;}
+.ph .en{display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--text);font-size:.92rem;}
+.ph .pt{display:block;color:var(--muted);font-size:.83rem;margin-top:2px;}
+.tip{margin-top:12px;font-size:.82rem;color:#cdb8ea;background:color-mix(in srgb,var(--accent) 9%,transparent);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:8px;padding:8px 11px;}
+.tip b{color:var(--accent);font-family:'Space Grotesk',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+</style>
+<style>/*MOBILE-OPT*/
+@media (max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .hub-grid{grid-template-columns:1fr!important;}
+  .metrics{gap:14px 18px;}
+  img{max-width:100%;height:auto;}
+  .tablewrap,.ditems,.dbody,.dgrid,.grid,.vgrid{max-width:100%;}
+  table,.md table{font-size:.86rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+  <a href="../index.html" class="back">← Voltar ao início</a>
+  <div class="eyebrow">Sistema 07 · aprenda como numa série</div>
+  <h1 class="title">Inglês através de <em>Cenas</em></h1>
+  <p class="lead">Foi assim que você aprendeu português: ouvindo diálogos simples, cena após cena, até tudo fazer sentido. Aqui o método é o mesmo — uma série em inglês americano, com linguagem clara e progressão real, das primeiras palavras às conversas de verdade.</p>
+  <div class="metrics">
+    <div class="metric"><b>7</b><span>níveis</span></div>
+    <div class="metric"><b>37</b><span>cenas</span></div>
+    <div class="metric"><b>A1 → B2</b><span>progressão</span></div>
+  </div>
+
+  <div class="watch">
+    <p>A série completa em vídeo — inglês americano, do básico ao avançado. Assista uma cena e depois revise as falas aqui.</p>
+    <a href="https://www.youtube.com/watch?v=PZg_cAGn9uw&t=1345s" target="_blank" rel="noopener">Assistir no YouTube ↗</a>
+  </div>
+
+  <div class="howto">
+    <h3>Como estudar</h3>
+    <ol>
+      <li>Assista a cena e ouça as falas sem pressa.</li>
+      <li>Leia cada frase em inglês em voz alta, imitando o ritmo.</li>
+      <li>Confira a tradução, depois tente reproduzir sozinho.</li>
+      <li>Avance um nível por vez — só siga quando o atual ficar natural.</li>
+    </ol>
+  </div>
+
+  <div class="levelnav" id="levelnav"></div>
+  <div id="levels"></div>
+</div>
+<footer>Sistema 07 · Inglês através de Cenas — do primeiro "hello" à conversa real</footer>
+
+<script>
+const LEVELS = [
+  {
+    title:"Primeiras Palavras", sub:"Iniciante · oi, nomes, cores e números",
+    lessons:[
+      {t:"Oi e nomes", scene:"Cena: as crianças se conhecem",
+       ph:[["Hello, I'm Scott.","Olá, eu sou o Scott."],["What's your name?","Qual é o seu nome?"],["My name is Kate.","Meu nome é Kate."]]},
+      {t:"Como vai você?", scene:"Cena: cumprimentos entre amigos",
+       ph:[["How are you?","Como você está?"],["I'm fine, thank you.","Estou bem, obrigado."],["I'm great! How are you?","Estou ótimo! E você?"]]},
+      {t:"Prazer em conhecer", scene:"Cena: apresentando um amigo novo",
+       ph:[["This is my friend Sarah.","Esta é minha amiga Sarah."],["It's nice to meet you.","É um prazer te conhecer."],["Nice to meet you too.","O prazer é meu também."]]},
+      {t:"Cores favoritas", scene:"Cena: olhando os peixinhos coloridos",
+       ph:[["Red, yellow, blue and orange.","Vermelho, amarelo, azul e laranja."],["What's your favorite color?","Qual é a sua cor favorita?"],["I like blue.","Eu gosto de azul."]],
+       tip:"Cores: green (verde), purple (roxo), white (branco)."},
+      {t:"Contando 1 a 12", scene:"Cena: pulando corda e contando",
+       ph:[["One, two, three, four, five.","Um, dois, três, quatro, cinco."],["Six, seven, eight, nine, ten.","Seis, sete, oito, nove, dez."],["Eleven, twelve!","Onze, doze!"]]},
+      {t:"Peço desculpas", scene:"Cena: um esbarrão sem querer",
+       ph:[["Oops, I'm sorry!","Ops, me desculpe!"],["That's okay.","Tudo bem."],["Let's play, okay?","Vamos brincar, tá?"]]},
+    ]
+  },
+  {
+    title:"O Dia a Dia", sub:"Básico · aniversário, clima, comida e escola",
+    lessons:[
+      {t:"Aniversário e idade", scene:"Cena: festa de aniversário da Jenny",
+       ph:[["Happy birthday, Jenny!","Feliz aniversário, Jenny!"],["How old are you?","Quantos anos você tem?"],["I'm seven years old today.","Eu faço sete anos hoje."]]},
+      {t:"Como está o tempo?", scene:"Cena: olhando pela janela",
+       ph:[["How's the weather?","Como está o tempo?"],["It's sunny.","Está ensolarado."],["Oh no, it's rainy now!","Ah não, agora está chovendo!"]]},
+      {t:"Fome e sede", scene:"Cena: hora do lanche",
+       ph:[["I'm hungry. I want an apple.","Estou com fome. Quero uma maçã."],["I'm thirsty. I want juice.","Estou com sede. Quero suco."],["Here you are. — Thank you!","Aqui está. — Obrigado!"]],
+       tip:"Respondeu \"thank you\"? Diga \"you're welcome\" (de nada)."},
+      {t:"Na escola", scene:"Cena: chegando e saindo da aula",
+       ph:[["Hello, boys and girls!","Olá, meninos e meninas!"],["Goodbye, Miss Jones.","Tchau, Senhora Jones."],["See you later!","Até mais tarde!"]]},
+      {t:"Posso entrar?", scene:"Cena: visitando a casa de um amigo",
+       ph:[["May I come in?","Posso entrar?"],["Sure, please come in.","Claro, entre por favor."],["How are you today?","Como você está hoje?"]]},
+      {t:"Vamos brincar", scene:"Cena: brincadeiras no quintal",
+       ph:[["Let's play ball!","Vamos jogar bola!"],["You're it! Let's play tag.","Você pegou! Vamos brincar de pega-pega."],["Let's jump rope now.","Agora vamos pular corda."]]},
+      {t:"Comida no almoço", scene:"Cena: almoço em família",
+       ph:[["What's for lunch, Mom?","O que tem pro almoço, mãe?"],["Do you want spaghetti?","Você quer espaguete?"],["Yes, please. / No, thank you.","Sim, por favor. / Não, obrigado."]]},
+    ]
+  },
+  {
+    title:"Objetos, Lugares e Horas", sub:"Básico → Intermediário · de quem é, onde está, que horas",
+    lessons:[
+      {t:"De quem é? (possessivos)", scene:"Cena: procurando o dono da mochila",
+       ph:[["Whose bag is that?","De quem é aquela mochila?"],["It's your bag. / It's his bag.","É a sua mochila. / É a mochila dele."],["Is it her bag? Yes, it's hers.","É a mochila dela? Sim, é dela."]]},
+      {t:"Onde está? (preposições)", scene:"Cena: procurando o livro perdido",
+       ph:[["Where is my book?","Onde está o meu livro?"],["It isn't on my bed.","Não está na minha cama."],["It's under my chair!","Está embaixo da minha cadeira!"]],
+       tip:"Lugares: on (em cima), in (dentro), under (embaixo)."},
+      {t:"Que horas são?", scene:"Cena: rotina antes de dormir",
+       ph:[["What time is it?","Que horas são?"],["It's six o'clock.","São seis horas."],["It's time for dinner / bed.","É hora do jantar / de dormir."]]},
+      {t:"Onde você mora?", scene:"Cena: fazendo o dever de casa",
+       ph:[["Where do you live?","Onde você mora?"],["What's your address?","Qual é o seu endereço?"],["What's your phone number?","Qual é o seu telefone?"]]},
+      {t:"Pedindo direções", scene:"Cena: perdido nos corredores da escola",
+       ph:[["Where's the office?","Onde fica a secretaria?"],["It's next to the gym.","Fica ao lado do ginásio."],["It's across from the office.","Fica em frente à secretaria."]],
+       tip:"Direções: turn left (vire à esquerda), follow me (me siga)."},
+      {t:"Estou doente", scene:"Cena: indo à enfermaria",
+       ph:[["What's wrong? I'm sick.","O que houve? Estou doente."],["I have a stomach ache.","Estou com dor de barriga."],["I hope you feel better soon.","Espero que melhore logo."]]},
+    ]
+  },
+  {
+    title:"Ações e Rotina", sub:"Intermediário · o que você está fazendo, dias, comparações",
+    lessons:[
+      {t:"O que está fazendo?", scene:"Cena: jogo de adivinhação",
+       ph:[["What are you doing?","O que você está fazendo?"],["I'm riding a bicycle.","Estou andando de bicicleta."],["We're swimming.","Nós estamos nadando."]],
+       tip:"Ação acontecendo agora = verbo + -ing (riding, swimming)."},
+      {t:"Você quer? (ofertas)", scene:"Cena: dividindo o lanche",
+       ph:[["Do you want some grapes?","Você quer umas uvas?"],["Yes, please. Here, have some.","Sim, por favor. Toma, pega um pouco."],["Sure, help yourself.","Claro, sirva-se."]]},
+      {t:"Qual você gosta?", scene:"Cena: escolhendo chapéus na loja",
+       ph:[["Which hat do you like?","De qual chapéu você gosta?"],["I like the red one.","Eu gosto do vermelho."],["We want these hats, please.","Nós queremos estes chapéus, por favor."]]},
+      {t:"Profissões", scene:"Cena: falando sobre os pais",
+       ph:[["What does your father do?","O que seu pai faz?"],["He's a pilot.","Ele é piloto."],["He's an astronomer — he studies stars.","Ele é astrônomo — estuda estrelas."]]},
+      {t:"Dias da semana", scene:"Cena: combinando de brincar",
+       ph:[["Can you play tomorrow?","Você pode brincar amanhã?"],["Sorry, I'm busy on Saturday.","Desculpa, estou ocupado no sábado."],["I'm free on Sunday. Great!","Estou livre no domingo. Ótimo!"]]},
+      {t:"Comparações", scene:"Cena: no zoológico, comparando animais",
+       ph:[["A zebra is slower than a gazelle.","A zebra é mais lenta que a gazela."],["Which animal is faster?","Qual animal é mais rápido?"],["A cat is as fast as a polar bear.","O gato é tão rápido quanto o urso polar."]],
+       tip:"Comparar: faster than (mais rápido que), as fast as (tão rápido quanto)."},
+    ]
+  },
+  {
+    title:"Contando o Passado", sub:"Intermediário → Avançado · onde você estava, o que você fez",
+    lessons:[
+      {t:"Onde você estava?", scene:"Cena: contando sobre o fim de semana",
+       ph:[["Where were you yesterday?","Onde você estava ontem?"],["I was at the beach.","Eu estava na praia."],["It was fun! It was sunny and warm.","Foi divertido! Estava ensolarado e quente."]],
+       tip:"Passado de \"to be\": was (eu/ele estava), were (você/nós estávamos)."},
+      {t:"O que você fez?", scene:"Cena: relembrando o passeio de bike",
+       ph:[["What did you do last weekend?","O que você fez no fim de semana passado?"],["I went shopping and bought a bike.","Fui às compras e comprei uma bicicleta."],["I rode my bike to the beach.","Andei de bike até a praia."]]},
+      {t:"Eu esqueci de...", scene:"Cena: preparando para sair",
+       ph:[["I forgot to do something.","Esqueci de fazer uma coisa."],["Did you put on sunscreen? Yes, I did.","Passou protetor solar? Sim, passei."],["Did you turn off the radio?","Você desligou o rádio?"]]},
+    ]
+  },
+  {
+    title:"Planos e Futuro", sub:"Avançado · vou fazer, o que quer ser, o que acha que vai ser",
+    lessons:[
+      {t:"Vou fazer (going to)", scene:"Cena: planejando o acampamento",
+       ph:[["What are you going to do this weekend?","O que você vai fazer neste fim de semana?"],["I'm going to stay home.","Eu vou ficar em casa."],["I'm going to plant some flowers.","Vou plantar umas flores."]],
+       tip:"Plano futuro = am/is/are + going to + verbo."},
+      {t:"Como vai estar o tempo?", scene:"Cena: vendo a previsão",
+       ph:[["How's the weather going to be?","Como vai estar o tempo?"],["It's going to be cold.","Vai estar frio."],["Is it going to rain? I hope not.","Vai chover? Espero que não."]]},
+      {t:"O que você quer ser?", scene:"Cena: sonhando com o futuro",
+       ph:[["What do you want to be?","O que você quer ser?"],["I want to be a singer.","Eu quero ser cantor."],["I love to dance — a dancer!","Eu adoro dançar — dançarina!"]]},
+      {t:"Acho que vou ser (will)", scene:"Cena: imaginando quando crescer",
+       ph:[["What will you be when you grow up?","O que você vai ser quando crescer?"],["I think I'll be a tennis player.","Acho que vou ser jogador de tênis."],["Maybe I'll be a designer.","Talvez eu seja designer."]]},
+    ]
+  },
+  {
+    title:"Conversas de Verdade", sub:"Avançado · descrever pessoas, present perfect, condicional",
+    lessons:[
+      {t:"Descrevendo pessoas", scene:"Cena: procurando a tia no meio da multidão",
+       ph:[["What does she look like?","Como ela é (aparência)?"],["She has short red hair.","Ela tem cabelo curto e ruivo."],["She's wearing a green shirt.","Ela está de camisa verde."]]},
+      {t:"Você já...? (present perfect)", scene:"Cena: esperando na fila do cinema",
+       ph:[["Have you been there before?","Você já esteve lá antes?"],["I've been there twice.","Eu já estive lá duas vezes."],["How long have you been waiting?","Há quanto tempo você está esperando?"]],
+       tip:"Experiência de vida = have/has + verbo no particípio (been, bought)."},
+      {t:"Conhecendo alguém novo", scene:"Cena: conhecendo a estudante de intercâmbio",
+       ph:[["Have you met On?","Você já conheceu a On?"],["Where is she from? She's from Vietnam.","De onde ela é? Ela é do Vietnã."],["She speaks two languages!","Ela fala dois idiomas!"]]},
+      {t:"Se você pudesse... (condicional)", scene:"Cena: sonhando com viagens",
+       ph:[["If you could go anywhere, where would you go?","Se pudesse ir a qualquer lugar, aonde iria?"],["I would go to Egypt.","Eu iria para o Egito."],["I'd like to see the pyramids.","Eu gostaria de ver as pirâmides."]],
+       tip:"Sonho/hipótese: would (iria/gostaria), I'd = I would."},
+      {t:"Como é a sua personalidade?", scene:"Cena: vendo fotos antigas",
+       ph:[["Are you usually shy or outgoing?","Você costuma ser tímido ou extrovertido?"],["I'm shy when I meet new people.","Sou tímido quando conheço gente nova."],["You're so outgoing!","Você é tão extrovertido!"]]},
+    ]
+  }
+];
+
+const nav = document.getElementById('levelnav');
+const container = document.getElementById('levels');
+
+LEVELS.forEach((lv, idx)=>{
+  const btn = document.createElement('button');
+  btn.textContent = `${idx+1}. ${lv.title}`;
+  btn.dataset.target = 'lvl'+idx;
+  nav.appendChild(btn);
+
+  const block = document.createElement('section');
+  block.className='level'; block.id='lvl'+idx;
+  block.innerHTML = `
+    <div class="level-head">
+      <div class="num">NÍVEL ${String(idx+1).padStart(2,'0')}</div>
+      <div><h2>${lv.title}<small>${lv.sub}</small></h2></div>
+    </div>
+    <div class="lessons"></div>`;
+  const grid = block.querySelector('.lessons');
+
+  lv.lessons.forEach(ls=>{
+    const card = document.createElement('div');
+    card.className='lesson';
+    const phrases = ls.ph.map(p=>`<div class="ph"><span class="en">${p[0]}</span><span class="pt">${p[1]}</span></div>`).join('');
+    card.innerHTML = `
+      <h4>${ls.t}</h4>
+      <div class="scene">${ls.scene}</div>
+      <div class="phrases">${phrases}</div>
+      ${ls.tip?`<div class="tip"><b>Nota</b>${ls.tip}</div>`:''}`;
+    grid.appendChild(card);
+  });
+  container.appendChild(block);
+});
+
+const buttons = [...nav.children];
+buttons.forEach(b=>b.addEventListener('click',()=>{
+  buttons.forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById(b.dataset.target).scrollIntoView({behavior:'smooth',block:'start'});
+}));
+buttons[0].classList.add('active');
+</script>
+<script>
+// ── Manter a posição do scroll ao voltar de um sub-painel ──
+(function(){
+  const KEY = 'scrollPos_s07';
+  // Ao clicar em qualquer link (sub-painel ou voltar), guarda a posição atual.
+  window.addEventListener('click', e => {
+    if (e.target.closest('a')) sessionStorage.setItem(KEY, window.scrollY);
+  });
+  // Ao carregar a página, restaura para onde o usuário estava.
+  function restoreScroll(){
+    const pos = sessionStorage.getItem(KEY);
+    if (pos !== null) { window.scrollTo(0, parseInt(pos, 10)); sessionStorage.removeItem(KEY); }
+  }
+  window.addEventListener('load', restoreScroll);
+})();
+</script>
+</body>
+</html>

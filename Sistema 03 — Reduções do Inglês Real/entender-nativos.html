@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 03 · Como Entender Nativos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+body{padding-top:58px;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+/* markdown article */
+.md h1,.md h2,.md h3,.md h4{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+.md h1{font-size:1.5rem;margin:30px 0 10px;color:var(--text);}
+.md h2{font-size:1.28rem;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.md h3{font-size:1.08rem;margin:22px 0 8px;color:var(--accent);}
+.md h4{font-size:.98rem;margin:16px 0 6px;color:var(--text);}
+.md p{margin:10px 0;color:#cfcfcf;}
+.md strong{color:var(--text);}
+.md em{color:var(--accent);font-style:normal;}
+.md ul,.md ol{margin:10px 0 10px 22px;color:#cfcfcf;}
+.md li{margin:4px 0;}
+.md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.md code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.9em;color:var(--accent);font-family:'Space Grotesk',monospace;}
+.md pre.code{background:#0f0f0f;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:12px 0;}
+.md pre.code code{background:none;border:none;color:#d7d7d7;padding:0;font-family:'Space Grotesk',ui-monospace,monospace;font-size:.9rem;line-height:1.7;white-space:pre;}
+.md .tablewrap{overflow-x:auto;margin:14px 0;}
+.md table{width:100%;border-collapse:collapse;font-size:.9rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.md th{background:var(--surface2);text-align:left;padding:10px 13px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+.md td{padding:10px 13px;border-top:1px solid var(--border);color:#cfcfcf;vertical-align:top;}
+.md tr:nth-child(even){background:rgba(255,255,255,.015);}
+.md blockquote{border-left:3px solid var(--accent);background:var(--surface);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;color:var(--muted);font-style:italic;}
+.md blockquote strong{color:var(--text);}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:50px 20px 44px;letter-spacing:.04em;}
+
+.layout{display:grid;grid-template-columns:230px 1fr;gap:34px;margin-top:30px;align-items:start;}
+@media(max-width:820px){.layout{grid-template-columns:1fr;}.toc{position:static!important;max-height:none!important;}}
+.toc{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;border-right:1px solid var(--border);padding-right:14px;}
+.toc .tt{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.84rem;padding:5px 0;border-left:2px solid transparent;padding-left:10px;margin-left:-2px;transition:.15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.article{min-width:0;}
+.article > section{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+.article > section:last-child{border-bottom:none;}
+.sec-flag{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+</style>
+<style>/*MOBILE-OPT*/
+@media (max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .hub-grid{grid-template-columns:1fr!important;}
+  .metrics{gap:14px 18px;}
+  img{max-width:100%;height:auto;}
+  .tablewrap,.ditems,.dbody,.dgrid,.grid,.vgrid{max-width:100%;}
+  table,.md table{font-size:.86rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="wrap">
+<a href="index.html" class="back">← Voltar ao Sistema 03</a>
+<div class="eyebrow">Sistema 03 · material distribuído</div>
+<h1 class="title">Como Entender <em>Nativos</em></h1>
+<style id="dist-css">
+.dist{margin-top:46px;}
+.dist-h{display:flex;align-items:center;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:8px;}
+.dist-flag{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.12em;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);background:color-mix(in srgb,var(--accent) 8%,transparent);padding:3px 9px;border-radius:20px;}
+.dist-h h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;flex:1;}
+.dist-count{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700;color:var(--accent);}
+.dsearch{width:100%;margin:10px 0 14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 15px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;}
+.dsearch:focus{outline:none;border-color:var(--accent);}
+.dsearch::placeholder{color:var(--dim);}
+.ditems{display:grid;gap:8px;}
+.ditem{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.ditem > summary{cursor:pointer;list-style:none;padding:12px 16px;display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;}
+.ditem > summary::-webkit-details-marker{display:none;}
+.ditem > summary::before{content:'▸';color:var(--accent);transition:.2s;flex:none;}
+.ditem[open] > summary::before{transform:rotate(90deg);}
+.ditem[open] > summary{border-bottom:1px solid var(--border);background:var(--surface2);}
+.dbody{padding:14px 18px;white-space:pre-wrap;color:#cfcfcf;font-size:.9rem;line-height:1.6;max-height:65vh;overflow-y:auto;}
+.dnr{color:var(--dim);font-style:italic;padding:14px;display:none;}
+</style>
+<section class="dist"><div class="dist-h"><span class="dist-flag">Material distribuído</span><h2>Como Entender Nativos · connected speech e reduções</h2><span class="dist-count">4 itens</span></div><input class="dsearch" placeholder="Buscar em Como Entender Nativos · connected speech e reduções…"><div class="dnr">Nada encontrado.</div><div class="ditems"><details class="ditem" data-search="connected speech connected speech flap t question word: connected speech — flap t | inglês para brasileiros (a1–a2)
+connected speech — flap t = por que o nativo
+t
+fala rapido e voce nao entende
+nativos não falam palavras separadas — eles conectam os sons. o flap t é o exemplo mais comum dessa conexão.
+o que é connected speech (fala conectada)
+conceito explicação exemplo
+o que é nativos conectam as palavras ao falar — não é rapidez, é con"><summary>CONNECTED SPEECH CONNECTED SPEECH FLAP T</summary><div class="dbody">QUESTION WORD: CONNECTED SPEECH — FLAP T | Inglês para Brasileiros (A1–A2)
+CONNECTED SPEECH — FLAP T = POR QUE O NATIVO
+T
+FALA RAPIDO E VOCE NAO ENTENDE
+Nativos não falam palavras separadas — eles conectam os sons. O Flap T é o exemplo mais comum dessa conexão.
+O QUE É CONNECTED SPEECH (fala conectada)
+Conceito Explicação Exemplo
+O que é Nativos conectam as palavras ao falar — não é rapidez, é CONEXÃO de sons. Soa rápido, mas é um padrão previsível.
+Por que? Na fala natural, o final de uma palavra se conecta ao início da próxima. 'What are' → 'Whadder'
+Consequência Você ouve sons que não reconhece porque não existem no texto escrito. O som muda, a palavra não.
+Solução Aprenda os PADRÕES de conexão — não tente ouvir cada palavra separada. São 3 padrões principais.
+⚠️ A dificuldade de entender nativos NÃO é falta de vocabulário na maioria dos casos — é falta de conhecimento dos padrões de fala conectada.
+O QUE É O FLAP T
+Regra Onde ocorre Escrito Pronunciado
+T entre vogais No meio de palavras butter bu-**r**er (R suave)
+T entre vogais No meio de palavras water wa-**r**er (R suave)
+T entre vogais No meio de palavras potato pota-**r**o (R suave)
+T entre vogais Entre palavras na frase what are wha-**r** are
+T entre vogais Entre palavras na frase get out ge-**r** out
+T entre vogais Entre palavras na frase not at all no-**r** a-**r** all
+💡 O Flap T acontece quando o T fica entre dois sons de vogal — o T vira um R suave (como o R brasileiro em 'caro'). É automático na fala
+americana.
+EXEMPLOS DO FLAP T EM FRASES DO DIA A DIA
+Frase escrita Como soa Tradução
+What are you doing? 'Whad-**r**-ya doing?' O que você está fazendo?
+I got it. 'I go**r** it.' Eu entendi. / Eu peguei.
+Get out of here! 'Ge**r** out of here!' Sai daqui!
+I'll meet you at the… 'I'll mee**r** you at the…' Te encontro no/na…
+A little bit. 'A li**r**le bi**r**.' Um pouquinho.
+Put it on the table. 'Pu**r** it on the table.' Coloca na mesa.
+What a beautiful day! 'Wha**r**a beautiful day!' Que dia lindo!
+💡 Todos esses T em negrito viram um R suave na fala americana natural. Ouça nativos e identifique esse padrão.
+OUTROS PADRÕES DE CONNECTED SPEECH (além do Flap T)
+Padrão O que acontece Exemplo escrito Como soa
+Linking (ligação) Final consoante + vogal inicial se ligam turn it on 'tur-ni-ton'
+Elision (queda) Um som desaparece completamente next day 'nex day' (o T some)
+Assimilation Um som muda por influência do próximo ten people 'tem people' (N → M)
+Intrusion Um som aparece entre duas vogais she is 'she-w-is' (W surge)
+💡 O Flap T é o padrão mais frequente e mais fácil de identificar. Os outros vêm naturalmente com a exposição ao inglês falado.
+COMO TREINAR O CONNECTED SPEECH
+Passo Ação Exemplo prático
+1 — Ouça Assista séries/filmes SEM legendas por 2 min Tente identificar as conexões
+2 — Compare Releia o mesmo trecho COM legenda Veja onde os sons se fundem
+3 — Repita Imite o ritmo, não as palavras separadas 'Whadda you doing?' — repita
+4 — Grave Grave sua fala e compare com o nativo Você naturalmente vai ajustar
+⚠️ NÃO tente pronunciar cada palavra separada ao falar — soa robótico. Aprenda os blocos conectados: 'whadda', 'gonna', 'kinda'. Seu cérebro vai
+absorver os padrões com exposição.
+🔴 MITO: 'Os americanos falam errado / descuidado.' — NÃO! Connected speech é parte da gramática fonética do inglês. É a fala CORRETA e natural. Falar
+separado é que soa estranho.
+💡 RESUMO DA SALA 04 — PDF 1: Connected speech = conexão de sons (não rapidez) | Flap T = T entre vogais vira R suave | Ocorre em palavras
+(potato, water) e entre palavras (what are, get out) | Treine ouvindo nativos e imitando o ritmo.</div></details><details class="ditem" data-search="content function content words function words stress question word: content words vs function words | inglês para brasileiros (a1–a2)
+content words vs function words = palavras
+s
+de conteudo vs palavras de funcao
+nativos enfatizam as palavras importantes e 'engolem' as palavras gramaticais — por isso você não as ouve.
+o que são content words (palavras de conteúdo)
+tipo exemplos por quê são enfatizadas
+substantivos mall, house, coffee, people carrega"><summary>CONTENT FUNCTION CONTENT WORDS FUNCTION WORDS STRESS</summary><div class="dbody">QUESTION WORD: CONTENT WORDS VS FUNCTION WORDS | Inglês para Brasileiros (A1–A2)
+CONTENT WORDS VS FUNCTION WORDS = PALAVRAS
+S
+DE CONTEUDO vs PALAVRAS DE FUNCAO
+Nativos enfatizam as palavras importantes e 'engolem' as palavras gramaticais — por isso você não as ouve.
+O QUE SÃO CONTENT WORDS (palavras de conteúdo)
+Tipo Exemplos Por quê são enfatizadas
+Substantivos mall, house, coffee, people Carregam o significado principal
+Verbos principais go, eat, love, buy, work Indicam a ação da frase
+Adjetivos good, tired, happy, expensive Descrevem e qualificam
+Advérbios quickly, never, always, really Modificam a ação
+Números/nomes three, Monday, Maria, Brazil Informação específica
+💡 CONTENT WORDS = as palavras que carregam a MENSAGEM. Se você retirar as outras e ficar só com elas, ainda entende a ideia. Ex: 'I went
+mall' → entendeu!
+O QUE SÃO FUNCTION WORDS (palavras de função)
+Tipo Exemplos Como são pronunciadas
+Artigos the, a, an Muito reduzidos: 'thuh', 'uh'
+Preposições to, of, at, in, for, from Quase inaudíveis na fala rápida
+Pronomes I, you, he, she, it, we, they Reduzidos: 'ya', 'im', 'er'
+Auxiliares do, does, did, have, has, will Contraídos ou reduzidos
+Conjunções and, but, or, so, because 'n', 'bt', 'cz' — quase some
+⚠️ FUNCTION WORDS existem para dar estrutura gramatical à frase — não carregam significado novo. Por isso o nativo não gasta energia
+pronunciando-as.
+EXEMPLOS PRÁTICOS — como a frase soa vs como é escrita
+Frase escrita Como o nativo fala O que desaparece
+I went to the mall. 'I went t'the mall.' 'to' e 'the' quase somem
+Can you come at six? 'Canya come at six?' 'can you' → 'canya'
+I want to go home. 'I wanna go home.' 'want to' → 'wanna'
+He is at the store. 'He's at the store.' 'is' contraído, 'the' reduzido
+Do you want some water? 'D'ya want some water?' 'do you' → 'd'ya'
+Give it to me. 'Give it t'me.' 'to' quase some
+I'll meet you at noon. 'I'll meetcha at noon.' 'you' → 'cha' após T
+💡 Perceba: as CONTENT WORDS (mall, come, six, home, store, water, meet, noon) estão sempre CLARAS. As function words somem.
+COMO IDENTIFICAR O STRESS (ênfase) NA FRASE
+Tipo de frase Palavras enfatizadas Palavras reduzidas
+'I LOVE coffee.' LOVE, coffee I (fraco)
+'She WENT to the STORE.' WENT, STORE She, to, the (fracos)
+'DO you WANT some WATER?' WANT, WATER do, you, some (fracos)
+'I'm GOING to the GYM.' GOING, GYM I'm, to, the (fracos)
+'It's COLD today.' COLD, today It's (fraco)
+💡 Regra prática: se você OUVIU bem a palavra, provavelmente é CONTENT WORD. Se você quase não ouviu, é FUNCTION WORD — mas ainda
+está lá!
+COMO USAR ESSE CONHECIMENTO PARA OUVIR E FALAR MELHOR
+Situação O que fazer Resultado
+Ouvindo nativo Foque nas palavras que você consegue ouvir claramente São as content words — reconstituem o significado
+Não entendeu a frase Identifique os sons fortes = content words Deduza a estrutura pelas palavras chave
+Ao falar Enfatize as content words, relaxe nas function words Sua fala vai soar muito mais natural
+Ao estudar Aprenda as reduções das function words mais comuns to='t', the='thuh/theh', and='n', of='uh'
+💡 Resumo prático: ao ouvir inglês, CACE as content words — elas constroem o significado. As function words são o esqueleto gramatical que você já
+pode deduzir.
+🔴 ERRO COMUM: Tentar ouvir TODAS as palavras igualmente. O nativo não fala assim e você vai se perder. Treine o ouvido para captar as palavras
+FORTES (content) e deduzir as fracas (function).
+💡 RESUMO DA SALA 04 — PDF 2: CONTENT WORDS (substantivos, verbos, adjetivos) = enfatizadas, claras | FUNCTION WORDS (artigos, preposições,
+auxiliares) = reduzidas, quase inaudíveis | Foque nas content words para entender | Reduza as function words para soar natural.</div></details><details class="ditem" data-search="contractions contracoes essenciais fala natural question word: contractions — contrações essenciais | inglês para brasileiros (a1–a2)
+contractions — contrações essenciais =
+nativos sempre contraem — aprenda as mais
+'
+usadas
+contrações não são gíria nem erro — são a forma normal de falar inglês. nativo sem contração parece robô.
+contrações com to be (as mais básicas)
+forma completa contração exemplo completo exemplo contraído
+i am i'm i am tired"><summary>CONTRACTIONS CONTRACOES ESSENCIAIS FALA NATURAL</summary><div class="dbody">QUESTION WORD: CONTRACTIONS — CONTRAÇÕES ESSENCIAIS | Inglês para Brasileiros (A1–A2)
+CONTRACTIONS — CONTRAÇÕES ESSENCIAIS =
+NATIVOS SEMPRE CONTRAEM — APRENDA AS MAIS
+'
+USADAS
+Contrações não são gíria nem erro — são a forma NORMAL de falar inglês. Nativo sem contração parece robô.
+CONTRAÇÕES COM TO BE (as mais básicas)
+Forma completa Contração Exemplo completo Exemplo contraído
+I am I'm I am tired. I'm tired.
+You are You're You are right. You're right.
+He is He's He is at work. He's at work.
+She is She's She is my friend. She's my friend.
+It is It's It is cold today. It's cold today.
+We are We're We are ready. We're ready.
+They are They're They are here. They're here.
+⚠️ IT'S (it is) ≠ ITS (possessivo). 'It's cold.' = Está frio. / 'Its color is red.' = A cor dele é vermelha.
+CONTRAÇÕES NEGATIVAS — NOT (as mais usadas na fala)
+Forma completa Contração Exemplo completo Exemplo contraído
+do not don't I do not know. I don't know.
+does not doesn't She does not like it. She doesn't like it.
+did not didn't He did not come. He didn't come.
+will not won't I will not go. I won't go.
+cannot / can not can't I cannot do this. I can't do this.
+is not isn't It is not ready. It isn't ready.
+are not aren't They are not here. They aren't here.
+💡 WON'T é a contração mais irregular — não é 'willn't'. CANNOT é uma palavra só, CAN'T é a contração.
+CONTRAÇÕES COM WILL E HAVE (futuro e perfeito)
+Forma completa Contração Exemplo completo Exemplo contraído
+I will I'll I will be there. I'll be there.
+You will You'll You will love it. You'll love it.
+He will He'll He will call you. He'll call you.
+She will She'll She will come. She'll come.
+I have I've I have seen it. I've seen it.
+You have You've You have been there. You've been there.
+They have They've They have arrived. They've arrived.
+💡 I'LL, YOU'LL, HE'LL = futuro com WILL | I'VE, YOU'VE, THEY'VE = present perfect com HAVE. Ambos se contraem sempre na fala.
+CONTRAÇÕES COM WOULD E HAD
+Forma completa Contração Exemplo Tradução
+I would I'd I'd like a coffee. Eu gostaria de um café.
+I had I'd I'd already eaten. Eu já tinha comido.
+You would You'd You'd love this place. Você adoraria esse lugar.
+She would She'd She'd rather stay. Ela preferiria ficar.
+He had He'd He'd never been there. Ele nunca tinha ido.
+⚠️ I'D pode ser I WOULD ou I HAD — o contexto define. 'I'd like' = I would like. 'I'd finished' = I had finished.
+CONTRAÇÕES MAIS USADAS EM PERGUNTAS
+Pergunta completa Pergunta contraída Tradução
+What is your name? What's your name? Qual é o seu nome?
+Where is he? Where's he? Onde ele está?
+How is it going? How's it going? Como vai?
+What are you doing? What're you doing? O que você está fazendo?
+Who is there? Who's there? Quem está aí?
+Is it not true? Isn't it true? Não é verdade?
+Are you not coming? Aren't you coming? Você não está vindo?
+💡 Em perguntas, as contrações ficam no início: What's / Where's / How's / Who's. Aprenda essas estruturas como blocos fixos.
+🔴 MITO: 'Contração é informal / errado.' — NÃO! Falar 'I am going to the store' sem contração alguma soa artificial e robótico. Nativos SEMPRE contraem
+na fala. Até em inglês formal falado as contrações básicas são usadas.
+💡 RESUMO DA SALA 04 — PDF 3: Comece com I'm / You're / He's / She's / It's / We're / They're | Depois: don't / doesn't / didn't / won't / can't | Depois: I'll /
+I've / I'd | Cada contração que você usar torna seu inglês mais natural.</div></details><details class="ditem" data-search="gonna wanna gonna wanna gotta kinda reducoes informais question word: gonna / wanna / gotta / kinda / dunno / lemme / gimme | inglês para brasileiros (a1–a2)
+gonna / wanna / gotta / kinda / dunno / lemme /
+gimme = reducoes informais — o proximo nivel
+g
+das contracoes
+reduções que nativos usam constantemente na fala — você vai ouvir sempre em séries, filmes e conversas reais.
+gonna = going to (futuro informal)
+forma completa redução exemplo completo ex"><summary>GONNA WANNA GONNA WANNA GOTTA KINDA REDUCOES INFORMAIS</summary><div class="dbody">QUESTION WORD: GONNA / WANNA / GOTTA / KINDA / DUNNO / LEMME / GIMME | Inglês para Brasileiros (A1–A2)
+GONNA / WANNA / GOTTA / KINDA / DUNNO / LEMME /
+GIMME = REDUCOES INFORMAIS — O PROXIMO NIVEL
+G
+DAS CONTRACOES
+Reduções que nativos usam constantemente na fala — você vai ouvir SEMPRE em séries, filmes e conversas reais.
+GONNA = GOING TO (futuro informal)
+Forma completa Redução Exemplo completo Exemplo reduzido
+I am going to I'm gonna I am going to cry. I'm gonna cry.
+You are going to You're gonna You are going to love. You're gonna love it.
+He is going to He's gonna He is going to call. He's gonna call.
+She is going to She's gonna She is going to leave. She's gonna leave.
+We are going to We're gonna We are going to eat. We're gonna eat.
+They are going to They're gonna They are going to win. They're gonna win.
+⚠️ GONNA é redução de GOING TO — só é usado antes de VERBO. 'I'm gonna eat.' ✅ / 'I'm gonna the store.' ❌ (aí usa: I'm going to the store).
+WANNA / GOTTA / HAFTA (want to, have got to, have to)
+Forma completa Redução Exemplo completo Exemplo reduzido
+want to wanna I want to sleep. I wanna sleep.
+want a wanna I want a coffee. I wanna coffee.
+have got to gotta I have got to go. I gotta go.
+have to hafta I have to work. I hafta work.
+ought to oughta You ought to try it. You oughta try it.
+supposed to s'posed to I am supposed to go. I'm s'posed to go.
+💡 GOTTA é especialmente importante: 'I gotta go' = preciso ir / tenho que ir. Uma das frases mais ouvidas em inglês americano.
+KINDA / SORTA / LOTTA / BUNCHA (kind of, sort of, lot of, bunch of)
+Forma completa Redução Exemplo completo Exemplo reduzido
+kind of kinda It's kind of difficult. It's kinda difficult.
+sort of sorta It's sort of weird. It's sorta weird.
+a lot of lotta There's a lot of people. There's lotta people.
+a bunch of buncha I have a bunch of things. I have a buncha things.
+out of outta I'm out of time. I'm outta time.
+because 'cause/'cuz I left because I was tired. I left 'cause I was tired.
+💡 KINDA e SORTA = meio / tipo (suavizam o que você vai dizer). 'It's kinda weird.' = É meio estranho.
+DUNNO / LEMME / GIMME / GOTCHA / WHATCHA
+Redução Vem de Exemplo reduzido Tradução
+dunno don't know I dunno. Não sei.
+lemme let me Lemme think. Deixa eu pensar.
+gimme give me Gimme a sec. Me dá um segundo.
+gotcha got you Gotcha! Entendi! / Peguei você!
+whatcha what are you Whatcha doing? O que você está fazendo?
+ya you How are ya? Como você está?
+'em them Tell 'em I said hi. Diz pra eles que mando oi.
+💡 Essas reduções aparecem o tempo todo em séries americanas. Você não precisa usá-las para falar — mas PRECISA reconhecê-las para entender.
+COMO USAR ESSE CONHECIMENTO NA PRÁTICA
+Nível O que fazer Exemplo
+Ouvir Reconheça GONNA/WANNA/GOTTA quando ouvir 'I'm gonna go' = I am going to go
+Entender Não trave ao ouvir 'kinda' ou 'dunno' 'I dunno' = I don't know
+Falar Comece usando I'm gonna / I wanna / I gotta Soa muito mais natural
+Avançar Adicione 'kinda', 'lemme', 'gimme' aos poucos Use quando se sentir confortável
+Cuidado Evite em e-mails formais e entrevistas Gonna/wanna são informais
+⚠️ Essas reduções são da FALA INFORMAL. Não escreva 'gonna' num e-mail profissional. Na fala e em conversas casuais: use à vontade!
+🔴 GONNA ≠ GOING TO em todo contexto: 'I'm gonna eat' ✅ (vou comer) | 'I'm gonna the store' ❌ (não pode — going to + lugar precisa da forma
+completa: 'I'm going to the store') ✅
+💡 RESUMO DA SALA 04 — PDF 4: GONNA = going to (futuro) | WANNA = want to | GOTTA = have got to (preciso) | KINDA/SORTA = kind of/sort of (meio,
+tipo) | DUNNO = don't know | LEMME = let me | GIMME = give me. Reconheça ao ouvir, use aos poucos ao falar.</div></details></div></section>
+</div>
+<footer>Sistema 03 · Reduções do Inglês Real — fale como nativo, não como livro</footer>
+<script id="dist-js">
+document.querySelectorAll('.dist').forEach(sec=>{
+  const inp=sec.querySelector('.dsearch');
+  const items=[...sec.querySelectorAll('.ditem')];
+  const nr=sec.querySelector('.dnr');
+  if(!inp) return;
+  inp.addEventListener('input',()=>{
+    const q=inp.value.trim().toLowerCase();let shown=0;
+    items.forEach(it=>{const hit=!q||it.dataset.search.includes(q);it.style.display=hit?'':'none';if(hit){shown++;it.open=!!q;}});
+    if(nr) nr.style.display=shown?'none':'block';
+  });
+});
+</script>
+</body>
+</html>
