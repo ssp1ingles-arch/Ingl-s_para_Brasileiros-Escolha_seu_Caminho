@@ -1,7 +1,45 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-07-24 — ver bloco 0d (leitura dos 3 PDFs do S03).**
+> **Atualização mais recente: 2026-07-24 — ver bloco 0e (S03 fechado: 2 exclusões + livro02).**
+
+## 0e. Atualização 2026-07-24 — Sistema 03 fechado
+
+> **Decisão sobre os PDFs-fonte do S03 e o segundo painel do Rachel's English.**
+>
+> ### Exclusões registradas (não geram painel)
+>
+> | Arquivo | Decisão | Motivo |
+> |---|---|---|
+> | `01_Forms of Reduced English.pdf` | ❌ **EXCLUÍDO** | Ensaio acadêmico de linguística sobre inglês *simplificado* (Basic English/Globish), não sobre redução da fala. Sem uso para o S03. Detalhe completo no bloco 0d. |
+> | `02_Contractions.pdf` | ❌ **EXCLUÍDO** | Handout de 3 páginas (SJSU). Todo o seu conteúdo — a lista de contrações com a forma plena — já está coberto, e com muito mais profundidade, pelas seções 4–8 do `livro01.html` (contrações N'T, TO BE/TO HAVE, 'LL, 'D, modais). Redundante. |
+>
+> ### `03_American English Pronunciation` — agora com DOIS painéis (mesmo PDF, metades complementares)
+>
+> O livro tem 290 páginas em duas metades bem distintas. Cada uma virou um painel:
+>
+> | Painel | Metade do livro | Foco |
+> |---|---|---|
+> | `livro01.html` (feito antes) | cap. 5-T/D, 8–13 | **Fala ligada:** reduções, contrações, gonna/wanna/gotta, os 4 T, linking, diálogos |
+> | `livro02.html` (**novo, 2026-07-24**) | cap. 3, 4, 5, 6, 7 | **Sistema de sons:** vogais, ditongos, consoantes, encontros, regras de plural/-ed, tônica em palavras longas |
+>
+> **Zero duplicação:** livro01 é *como as palavras se ligam e encolhem*; livro02 é *o inventário de sons e a tônica da palavra*. O único ponto de contato — as 4 pronúncias do T/D — fica no livro01; o livro02 só cita T/D como consoantes-plosivas e remete ao livro01. Ver bloco 0f.
+
+## 0f. Atualização 2026-07-24 — `livro02.html` do S03 (Sistema de Sons)
+
+> **`03_American English Pronunciation` (Rachel's English) — 2ª metade, capítulos 3–7.** Implementado em `livro02.html`: **6 seções, 183 itens de inglês**, mesma moldura visual do livro01 (dark, âmbar, busca própria, TOC, IPA do livro já normalizada).
+>
+> | Seção | Conteúdo | Itens |
+> |---|---|---|
+> | As 11 vogais | símbolo, nome, articulação, exemplos tônico/átono, grafias + 6 blocos de pares mínimos | 17 |
+> | Os 6 ditongos | idem + 3 blocos de pares mínimos | 9 |
+> | As 24 consoantes | por par voz/sem-voz, articulação, exemplos início/meio/fim, grafias + 4 notas ("derrubam o brasileiro") + 4 pares mínimos | 24 |
+> | Encontros consonantais | 25 iniciais (2 sons) + 5 iniciais (3 sons) + 26 de meio/fim | 56 |
+> | Plural -s/-es e passado -ed | regras [s]/[z]/[ɪz] e [t]/[d]/[ɪd] com exemplos | 6 |
+> | Tônica das palavras longas | 3-sílabas (3 padrões), subst.×verbo, 7 heterônimos, regras de sufixo (3 grupos, 31 sufixos), compostos, siglas | 71 |
+>
+> **O que é NOVO (vs livro01):** todo o inventário de sons — vogais, ditongos, o quadro completo de consoantes, os encontros consonantais, as regras de plural/-ed e de tônica de palavra. Nada disso estava no livro01.
+> **O que já estava coberto (e por isso ficou de fora daqui):** as 4 pronúncias do T, o Flap T no linking, e a diferença tônica/átona da *frase* — tudo no livro01, apenas referenciado por link. O destaque para o falante de português (encontros com S no início; o R que precisa ser segurado) foi mantido porque é a dor específica do público.
 
 ## 0d. Atualização 2026-07-24 — os 3 PDFs do S03 lidos · `01_Forms of Reduced English` DESCARTADO
 
