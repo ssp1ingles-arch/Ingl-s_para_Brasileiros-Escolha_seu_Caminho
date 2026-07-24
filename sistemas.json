@@ -118,64 +118,64 @@
   },
   {
     "numero": "10",
-    "titulo": "Livros — Conversação & Frases",
+    "titulo": "Livros V01 — Conversação & Frases",
     "descricao": "Seis livros virando painel de inglês real: 1.006 dicas, conversação para viagem, expressões idiomáticas, música (Queen), palavras/números/datas e os erros clássicos do brasileiro. 3.513 itens.",
     "cor": "#0EA5E9",
     "icone": "📖",
     "tags": [
       "6 livros",
-      "3.513 itens",
+      "6 disponíveis",
       "Conversação"
     ],
     "pasta": "Sistema 10 — Baseado em Livros V01"
   },
   {
     "numero": "11",
-    "titulo": "Livros — Gramática em Uso",
-    "descricao": "Cinco livros de gramática (English Grammar in Use, Oxford Guide, Essential Grammar, Objective Proficiency) em painéis de exemplos reais. English Grammar in Use já disponível: 145 unidades, 2.800 exemplos.",
+    "titulo": "Livros V02 — Gramática em Uso",
+    "descricao": "Seis livros de gramática e pronúncia (English Grammar in Use, Grammar Practice, Oxford Guide, Essential Grammar, Pronunciation Made Simple, Reactivate C1/C2) em painéis de exemplos reais. Dois já disponíveis: 3.200+ exemplos.",
     "cor": "#4A9EFF",
     "icone": "📐",
     "tags": [
-      "5 livros",
-      "Gramática",
+      "6 livros",
+      "2 disponíveis",
       "Intermediário+"
     ],
     "pasta": "Sistema 11 — Baseado em Livros V02"
   },
   {
     "numero": "12",
-    "titulo": "Livros — American English File",
-    "descricao": "O curso American English File (Oxford), nível 1 a 4 — do básico ao avançado. AEF 1 já disponível: 16 seções, 174 frases (diálogos, gramática e cotidiano) com tradução. Níveis 2–4 em preparação.",
+    "titulo": "Livros V03 — American English File",
+    "descricao": "O curso American English File (Oxford), nível 1 a 4, mais os Close-up Workbooks C1 e C2. AEF 1 já disponível: 16 seções, 174 frases com tradução. Os demais em preparação.",
     "cor": "#22D3EE",
     "icone": "🇺🇸",
     "tags": [
-      "4 níveis",
-      "Curso completo",
-      "1 disponível"
+      "6 livros",
+      "1 disponível",
+      "Curso completo"
     ],
     "pasta": "Sistema 12 — Baseado em Livros V03"
   },
   {
     "numero": "13",
-    "titulo": "Livros — English for Everyone",
-    "descricao": "A coleção visual English for Everyone (DK): guia de gramática, vocabulário, curso Junior e practice books iniciantes. Grammar Guide já disponível: 36 temas gramaticais, 191 frases de exemplo com tradução. Demais em preparação.",
+    "titulo": "Livros V04 — English for Everyone",
+    "descricao": "A coleção visual English for Everyone (DK): guia de gramática, vocabulário, curso Junior e practice books iniciantes, mais o Pronouncing American English. Grammar Guide já disponível: 36 temas, 191 frases com tradução.",
     "cor": "#818CF8",
     "icone": "🧩",
     "tags": [
-      "5 livros",
-      "Gramática visual",
-      "1 disponível"
+      "6 livros",
+      "1 disponível",
+      "Gramática visual"
     ],
     "pasta": "Sistema 13 — Baseado em Livros V04"
   },
   {
     "numero": "14",
-    "titulo": "Livros — Business & Avançado",
-    "descricao": "English for Everyone (DK): Business English 1 e 2, curso intermediário nível 3 e practice avançado nível 4. Inglês profissional e de nível alto. Em preparação.",
+    "titulo": "Livros V05 — Business & Vocabulário",
+    "descricao": "English for Everyone (DK): Business English 1 e 2, curso intermediário nível 3 e practice avançado nível 4, mais pronúncia (Susan Cameron) e 4000 Essential English Words Book 6. Em preparação.",
     "cor": "#34D399",
     "icone": "💼",
     "tags": [
-      "4 livros",
+      "6 livros",
       "Business + C1",
       "Em breve"
     ],
@@ -183,41 +183,106 @@
   },
   {
     "numero": "15",
-    "titulo": "Livros — Exercícios & Vocabulário",
-    "descricao": "Prática de gramática e vocabulário: English Grammar in Use Supplementary Exercises, Basic Grammar in Use, English Collocations in Use, Phrasal Verbs in Use e short stories. Supplementary já disponível: 16 estruturas, 123 frases com tradução.",
+    "titulo": "Livros V06 — Exercícios & Vocabulário",
+    "descricao": "Prática de gramática e vocabulário: Grammar in Use Supplementary, Basic Grammar in Use, Collocations in Use, Phrasal Verbs in Use e Practice Makes Perfect English Conversation. Supplementary já disponível: 16 estruturas, 123 frases com tradução.",
     "cor": "#FBBF24",
     "icone": "✍️",
     "tags": [
       "6 livros",
-      "Gramática + Vocab",
-      "1 disponível"
+      "1 disponível",
+      "Gramática + Vocab"
     ],
     "pasta": "Sistema 15 — Baseado em Livros V06"
   },
   {
     "numero": "16",
-    "titulo": "Livros — In Use: Vocabulário & Pronúncia",
-    "descricao": "A série 'in Use' da Cambridge — English Vocabulary in Use, Pronunciation in Use e Grammar in Use, do elementar ao avançado. Vocabulary in Use Elementary já disponível: 58 unidades, 431 itens de vocabulário em contexto com tradução. Demais em preparação.",
+    "titulo": "Livros V07 — In Use & Practice Makes Perfect",
+    "descricao": "A série 'in Use' da Cambridge (vocabulário, pronúncia e gramática) ao lado da série Practice Makes Perfect (McGraw-Hill). Vocabulary in Use Elementary já disponível: 58 unidades, 431 itens em contexto com tradução.",
     "cor": "#A3E635",
     "icone": "🔤",
     "tags": [
       "6 livros",
-      "Vocab + Pronúncia",
-      "1 disponível"
+      "1 disponível",
+      "Vocab + Pronúncia"
     ],
     "pasta": "Sistema 16 — Baseado em Livros V07"
   },
   {
     "numero": "17",
+    "titulo": "Livros V08 — Sotaque & Vocabulário",
+    "descricao": "Os dois clássicos de sotaque americano (American Accent Training e Mastering the American Accent) mais o English Vocabulary in Use Upper-Intermediate. Ritmo, entonação e vocabulário de nível médio-alto. Em preparação.",
+    "cor": "#F472B6",
+    "icone": "🗣️",
+    "tags": [
+      "3 livros",
+      "Sotaque + Vocab",
+      "Em breve"
+    ],
+    "pasta": "Sistema 17 — Baseado em Livros V08"
+  },
+  {
+    "numero": "18",
+    "titulo": "Livros V09 — Cambridge B2 First",
+    "descricao": "A série completa de B2 First (Cambridge English), cinco volumes com respostas. Aproveitamos o inglês real: textos, e-mails, resenhas e transcrições de áudio — nunca o enunciado nem o gabarito. Em preparação.",
+    "cor": "#60A5FA",
+    "icone": "🎓",
+    "tags": [
+      "5 livros",
+      "B2",
+      "Em breve"
+    ],
+    "pasta": "Sistema 18 — Baseado em Livros V09"
+  },
+  {
+    "numero": "19",
+    "titulo": "Livros V10 — Gramática Avançada",
+    "descricao": "Nível avançado, para quem já tem base sólida. Objective Proficiency, Advanced Grammar in Use, Grammar and Vocabulary for Advanced, Michael Vince, Complete Advanced, EVU Advanced e Pronunciation in Use Advanced. Aqui a gramática vira nuance de uso. Em preparação.",
+    "cor": "#F59E0B",
+    "icone": "🏆",
+    "tags": [
+      "7 livros",
+      "C1–C2",
+      "Avançado"
+    ],
+    "pasta": "Sistema 19 — Baseado em Livros V10 Gramática Avançada"
+  },
+  {
+    "numero": "20",
+    "titulo": "Livros V11 — Gramática Avançada",
+    "descricao": "Nível avançado, para quem já tem base sólida. Oxford English Grammar Course Advanced, English Vocabulary in Use (Advanced e Upper-intermediate), Grammar and Vocabulary for CAE/CPE e New English File Advanced. Em preparação.",
+    "cor": "#F59E0B",
+    "icone": "🎖️",
+    "tags": [
+      "5 livros",
+      "C1–C2",
+      "Avançado"
+    ],
+    "pasta": "Sistema 20 — Baseado em Livros V11 Gramática Avançada"
+  },
+  {
+    "numero": "21",
+    "titulo": "Livros V12 — Gramática Avançada",
+    "descricao": "Nível avançado, para quem já tem base sólida. Advancing Vocabulary Skills (Nist), English Advancing — A Bridge to Success e New Cambridge Advanced English. Vocabulário de nível alto em contexto estendido. Em preparação.",
+    "cor": "#F59E0B",
+    "icone": "📜",
+    "tags": [
+      "3 livros",
+      "C1–C2",
+      "Avançado"
+    ],
+    "pasta": "Sistema 21 — Baseado em Livros V12 Gramática Avançada"
+  },
+  {
+    "numero": "22",
     "titulo": "Livros — Kids",
     "descricao": "Kid's Box (Cambridge), níveis 3 e 4 — inglês infantil garimpado para o adulto estudar. Level 3 já disponível: 11 seções, 242 frases com tradução. Level 4 em preparação.",
     "cor": "#FB7185",
     "icone": "🧸",
     "tags": [
       "2 livros",
-      "Kids",
-      "1 disponível"
+      "1 disponível",
+      "Kids"
     ],
-    "pasta": "Sistema 17 — Baseado em Livros — Kids"
+    "pasta": "Sistema 22 — Baseado em Livros — Kids"
   }
 ]

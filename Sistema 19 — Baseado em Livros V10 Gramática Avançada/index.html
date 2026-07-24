@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sistema 13 — Baseado em Livros V04</title>
+<title>Sistema 19 — Baseado em Livros V10 · Gramática Avançada</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#818CF8;}
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
@@ -20,13 +20,14 @@ body{padding-top:58px;}
 .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
 h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
 h1.title em{font-style:normal;color:var(--accent);}
-.lead{color:var(--muted);max-width:680px;line-height:1.6;margin-bottom:8px;}
+.lead{color:var(--muted);max-width:700px;line-height:1.6;margin-bottom:8px;}
 .metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
 .metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
 .metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
 .hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:28px 0 10px;}
 .hub-card{display:flex;flex-direction:column;gap:10px;padding:26px;background:var(--surface);border:1px solid var(--border);border-radius:16px;text-decoration:none;color:var(--text);position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;min-height:170px;}
 .hub-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:.75;}
+.hub-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.45);}
 .hc-top{display:flex;align-items:center;justify-content:space-between;}
 .hc-num{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
 .hc-icon{font-size:1.8rem;line-height:1;}
@@ -47,65 +48,68 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
 <div class="bg-glow"></div>
 <div class="wrap">
 <a href="../index.html" class="back">&#8592; Voltar ao início</a>
-<div class="eyebrow">Sistema 13 · V04 · inglês tirado direto do livro</div>
-<h1 class="title">Baseado em <em>Livros</em> &#8212; English for Everyone</h1>
-<p class="lead">A coleção visual <b>English for Everyone</b> (DK) — fundamentos do inglês: gramática ilustrada, construção de vocabulário, curso Junior e practice books iniciantes — mais o <b>Pronouncing American English</b>. <b>Grammar Guide</b> já disponível.</p>
+<div class="eyebrow">Sistema 19 · V10 · gramática avançada · C1–C2</div>
+<h1 class="title">Gramática <em>Avançada</em> &#8212; V10</h1>
+<p class="lead"><b>Nível avançado &mdash; para quem já tem base sólida.</b> Aqui a gramática deixa de ser regra decorada e vira <b>nuance</b>: por que uma estrutura soa formal e a outra não, o que muda entre <i>would</i>, <i>could</i> e <i>might</i>, o que o nativo escreve mas não fala. Explicação completa, comparação entre estruturas parecidas e exemplos em contexto estendido. Se você ainda está montando a base, comece pelos Sistemas 01, 04 e 11.</p>
 <div class="metrics">
-  <div class="metric"><b>6</b><span>livros</span></div>
-  <div class="metric"><b>1</b><span>disponível</span></div>
-  <div class="metric"><b>191</b><span>frases de exemplo</span></div>
+  <div class="metric"><b>7</b><span>livros</span></div>
+  <div class="metric"><b>C1–C2</b><span>nível</span></div>
+  <div class="metric"><b>&mdash;</b><span>em preparação</span></div>
 </div>
 <div class="hub-grid">
-  <a class="hub-card" href="livro01.html">
-    <div class="hc-top"><span class="hc-num">Livro 01</span><span class="hc-icon">&#128216;</span></div>
-    <h2 class="hc-title">English Grammar Guide</h2>
-    <p class="hc-desc">DK · A Comprehensive Visual Reference. A gramática inglesa em frases reais de exemplo — do presente simples às preposições, cada estrutura em uso com tradução.</p>
-    <div class="hc-meta"><span>36 temas</span><span>191 frases</span><span>+ tradução</span></div>
-    <span class="hc-cta">Abrir livro &#8594;</span>
-  </a>
   <div class="hub-card hub-soon">
-    <div class="hc-top"><span class="hc-num">Livro 02</span><span class="hc-icon">&#128217;</span></div>
-    <h2 class="hc-title">English Vocabulary Builder</h2>
-    <p class="hc-desc">DK · English for Everyone. Vocabulário ilustrado por tema — palavras e frases do inglês do dia a dia.</p>
-    <div class="hc-meta"><span>Em breve</span></div>
+    <div class="hc-top"><span class="hc-num">Livro 01</span><span class="hc-icon">&#127942;</span></div>
+    <h2 class="hc-title">Objective Proficiency</h2>
+    <p class="hc-desc">Cambridge · Student's Book with Answers. Preparação C2: estruturas sofisticadas, registro formal x informal e vocabulário de precisão, sempre em contexto.</p>
+    <div class="hc-meta"><span>Em breve</span><span>C2</span></div>
   </div>
   <div class="hub-card hub-soon">
-    <div class="hc-top"><span class="hc-num">Livro 03</span><span class="hc-icon">&#129504;</span></div>
-    <h2 class="hc-title">Junior — Beginner's Course</h2>
-    <p class="hc-desc">DK · English for Everyone Junior. Curso iniciante para os primeiros contatos com o inglês, palavra a palavra.</p>
-    <div class="hc-meta"><span>Em breve</span></div>
+    <div class="hc-top"><span class="hc-num">Livro 02</span><span class="hc-icon">&#128220;</span></div>
+    <h2 class="hc-title">Advanced Grammar in Use</h2>
+    <p class="hc-desc">Hewings · Cambridge. A referência de gramática avançada: cada unidade compara estruturas próximas e mostra a diferença de sentido e de registro.</p>
+    <div class="hc-meta"><span>Em breve</span><span>C1</span></div>
   </div>
   <div class="hub-card hub-soon">
-    <div class="hc-top"><span class="hc-num">Livro 04</span><span class="hc-icon">&#128212;</span></div>
-    <h2 class="hc-title">Practice Book · Nível 1</h2>
-    <p class="hc-desc">DK · Beginner. Programa de auto-estudo nível 1 — frases e exercícios de inglês real para iniciantes.</p>
-    <div class="hc-meta"><span>Em breve</span></div>
+    <div class="hc-top"><span class="hc-num">Livro 03</span><span class="hc-icon">&#128209;</span></div>
+    <h2 class="hc-title">Grammar and Vocabulary for Advanced</h2>
+    <p class="hc-desc">Cambridge · with Answers. Gramática e vocabulário C1 lado a lado &mdash; colocações, padrões de complemento e erros comuns explicados.</p>
+    <div class="hc-meta"><span>Em breve</span><span>C1</span></div>
   </div>
   <div class="hub-card hub-soon">
-    <div class="hc-top"><span class="hc-num">Livro 05</span><span class="hc-icon">&#128209;</span></div>
-    <h2 class="hc-title">Practice Book · Nível 2</h2>
-    <p class="hc-desc">DK · Beginner. Programa de auto-estudo nível 2 — continuação com estruturas e vocabulário em uso.</p>
-    <div class="hc-meta"><span>Em breve</span></div>
+    <div class="hc-top"><span class="hc-num">Livro 04</span><span class="hc-icon">&#128214;</span></div>
+    <h2 class="hc-title">Advanced Language Practice</h2>
+    <p class="hc-desc">Michael Vince · with Key. Prática avançada tema a tema, com notas de uso e os contrastes que costumam derrubar o aluno de nível alto.</p>
+    <div class="hc-meta"><span>Em breve</span><span>C1</span></div>
   </div>
   <div class="hub-card hub-soon">
-    <div class="hc-top"><span class="hc-num">Livro 06</span><span class="hc-icon">&#128264;</span></div>
-    <h2 class="hc-title">Pronouncing American English</h2>
-    <p class="hc-desc">Gertrude Orion · Heinle. Sons, sons e mais sons do inglês americano — pares mínimos, sílaba tônica e ritmo, cada ponto com palavra e frase-modelo.</p>
-    <div class="hc-meta"><span>Em breve</span></div>
+    <div class="hc-top"><span class="hc-num">Livro 05</span><span class="hc-icon">&#128218;</span></div>
+    <h2 class="hc-title">Complete Advanced</h2>
+    <p class="hc-desc">Cambridge · Student's Book with Answers. Curso C1 completo: textos longos, gramática em contexto e linguagem de produção escrita e falada.</p>
+    <div class="hc-meta"><span>Em breve</span><span>C1</span></div>
+  </div>
+  <div class="hub-card hub-soon">
+    <div class="hc-top"><span class="hc-num">Livro 06</span><span class="hc-icon">&#128213;</span></div>
+    <h2 class="hc-title">English Vocabulary in Use — Advanced</h2>
+    <p class="hc-desc">McCarthy &amp; O'Dell · Cambridge · 3ª ed. Vocabulário avançado em contexto: colocações, metáforas, linguagem acadêmica e idiomática.</p>
+    <div class="hc-meta"><span>Em breve</span><span>C1–C2</span></div>
+  </div>
+  <div class="hub-card hub-soon">
+    <div class="hc-top"><span class="hc-num">Livro 07</span><span class="hc-icon">&#127911;</span></div>
+    <h2 class="hc-title">English Pronunciation in Use — Advanced</h2>
+    <p class="hc-desc">Hewings · Cambridge. Pronúncia avançada: ritmo, ênfase contrastiva, formas fracas e entonação que muda o sentido da frase.</p>
+    <div class="hc-meta"><span>Em breve</span><span>C1–C2</span></div>
   </div>
 </div>
-<p class="note">Os seis livros (PDF) já estão nesta pasta, aguardando extração do inglês real para painel — só exemplos, vocabulário e frases em uso, conforme as REGRAS do Sistema 13.</p>
+<p class="note">Este Sistema segue o <b>REGRAS_AVANCADO.md</b> (raiz), diferente dos demais sistemas de livros: aqui <b>é permitido</b> explicação gramatical completa, comparação entre estruturas, nota de registro (formal/informal, escrito/falado) e erro comum com o porquê. Continua valendo: sempre inglês real com exemplo completo, nunca gabarito isolado.</p>
 </div>
-<footer>Sistema 13 V04 · Baseado em Livros (English for Everyone — Fundamentos) — inglês real, tirado da fonte</footer>
+<footer>Sistema 19 V10 · Gramática Avançada — inglês real, tirado da fonte</footer>
 <script>
 // ── Manter a posição do scroll ao voltar de um sub-painel ──
 (function(){
-  const KEY = 'scrollPos_s13';
-  // Ao clicar em qualquer link (sub-painel ou voltar), guarda a posição atual.
+  const KEY = 'scrollPos_s19';
   window.addEventListener('click', e => {
     if (e.target.closest('a')) sessionStorage.setItem(KEY, window.scrollY);
   });
-  // Ao carregar a página, restaura para onde o usuário estava.
   function restoreScroll(){
     const pos = sessionStorage.getItem(KEY);
     if (pos !== null) { window.scrollTo(0, parseInt(pos, 10)); sessionStorage.removeItem(KEY); }

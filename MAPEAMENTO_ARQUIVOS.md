@@ -1,6 +1,162 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
+> **Atualização mais recente: 2026-07-24 — ver bloco 0c (estrutura de 22 Sistemas).**
+
+## 0c. Atualização 2026-07-24 — estrutura completa: 22 Sistemas
+
+> Varredura de toda a raiz. `sistemas.json` reescrito com **22 entradas**; criados os `index.html` que faltavam (S17, S18, S19, S20, S21); hubs de S11–S16 corrigidos para bater com os PDFs reais; pasta `Sistema 17 — Kids` renumerada para `Sistema 22 — Kids`.
+>
+> **Legenda de status:** ✅ implementado · ⏳ aguardando (PDF na pasta, painel não feito) · ❌ descartado.
+
+### Estrutura oficial dos 22 Sistemas
+
+| # | Sistema | PDFs | Painéis prontos | Status |
+|---|---|---|---|---|
+| 01 | Base. Fluência. Gramática | — (centenas de PDFs de referência) | `index.html` + jornada | ✅ |
+| 02 | Dúvidas Pontuais | — | `index.html` + 2 sub-painéis | ✅ |
+| 03 | Reduções do Inglês Real | 3 | `index.html` + 3 sub-painéis | ✅ painel · ⏳ 3 PDFs |
+| 04 | Motor de Verbos | — | `index.html` + 4 sub-painéis | ✅ |
+| 05 | Conectar Frases | — | `index.html` + 4 sub-painéis | ✅ |
+| 06 | Situar a Frase | — | `index.html` + 5 sub-painéis | ✅ |
+| 07 | Baseado em Desenho Infantil | — | `index.html` | ✅ |
+| 08 | Transcrições e Canais | — | `index.html` + 16 canais | ✅ |
+| 09 | Prática Completa · 4 Pilares | — | `index.html` + 4 pilares | ✅ |
+| 10 | Livros V01 — Conversação | 6 | `index.html` + `livro01–06` | ✅ 6/6 |
+| 11 | Livros V02 — Gramática em Uso | 6 | `index.html` + `livro01–02` | ✅ 2/6 · ⏳ 4 |
+| 12 | Livros V03 — American English File | 6 | `index.html` + `livro01` | ✅ 1/6 · ⏳ 5 |
+| 13 | Livros V04 — English for Everyone | 6 | `index.html` + `livro01` | ✅ 1/6 · ⏳ 5 |
+| 14 | Livros V05 — Business & Vocabulário | 6 | `index.html` | ⏳ 6 |
+| 15 | Livros V06 — Exercícios & Vocabulário | 6 | `index.html` + `livro01` | ✅ 1/6 · ⏳ 5 |
+| 16 | Livros V07 — In Use & PMP | 6 | `index.html` + `livro01` | ✅ 1/6 · ⏳ 5 |
+| 17 | Livros V08 — Sotaque & Vocabulário | 3 | `index.html` **(criado 07-24)** | ⏳ 3 |
+| 18 | Livros V09 — Cambridge B2 First | 5 | `index.html` **(criado 07-24)** | ⏳ 5 |
+| 19 | Livros V10 — Gramática Avançada | 7 | `index.html` **(criado 07-24)** | ⏳ 7 |
+| 20 | Livros V11 — Gramática Avançada | 5 | `index.html` **(criado 07-24)** | ⏳ 5 |
+| 21 | Livros V12 — Gramática Avançada | 3 | `index.html` **(criado 07-24)** | ⏳ 3 |
+| 22 | Livros — Kids | 2 | `index.html` + `livro01` | ✅ 1/2 · ⏳ 1 |
+
+### Livros novos / movidos — registro por Sistema
+
+**S03 · Reduções do Inglês Real** — três PDFs novos na pasta (o painel do S03 já existe e foi feito antes deles):
+
+| Arquivo | Status |
+|---|---|
+| `01_Forms of Reduced English.pdf` | ⏳ aguardando — é a fonte direta do tema do Sistema, prioridade alta |
+| `02_Contractions.pdf` | ⏳ aguardando |
+| `03_American English Pronunciation Rachels.pdf` | ⏳ aguardando |
+
+**S11 · V02** — hub tinha 5 cards e listava *Objective Proficiency*, que já não está aqui:
+
+| Arquivo | Status |
+|---|---|
+| `01_English Grammar in Use…` | ✅ `livro01.html` — 145 unidades, 2.800 exemplos |
+| `02_Grammar Practice for Intermediate Students` | ✅ `livro02.html` — 87 pontos, 400 frases |
+| `03_Oxford-Guide-to-English-Grammar` | ⏳ aguardando |
+| `04_Essential Grammar in Use…` | ⏳ aguardando |
+| `05_English Pronunciation Made Simple` | ⏳ aguardando — **card do hub estava errado** (dizia "Objective Proficiency"), corrigido |
+| `06_Reactivate Your Grammar And Vocabulary C1C2 - Exams` | ⏳ **novo** — card adicionado ao hub |
+| ~~Objective Proficiency~~ | ➡️ **movido para o S19** |
+
+**S12 · V03** — dois workbooks novos:
+
+| Arquivo | Status |
+|---|---|
+| `01_American English File 1` | ✅ `livro01.html` — 16 seções, 174 frases |
+| `02–04_American English File 2, 3, 4` | ⏳ aguardando |
+| `05_Close-up - 2nd - C1 Workbook` | ⏳ **novo** — card adicionado |
+| `06_Close-up - 1st - C2 Workbook` | ⏳ **novo** — card adicionado |
+
+**S13 · V04**:
+
+| Arquivo | Status |
+|---|---|
+| `01_English for Everyone Grammar Guide` | ✅ `livro01.html` — 36 temas, 191 frases |
+| `02–05_EfE Vocabulary Builder, Junior, Practice 1 e 2` | ⏳ aguardando |
+| `06_Pronouncing American English` | ⏳ **novo** — card adicionado |
+
+**S14 · V05** — dois livros novos, nenhum painel ainda:
+
+| Arquivo | Status |
+|---|---|
+| `01–04_EfE Business 1, Business 2, Course 3, Practice 4` | ⏳ aguardando |
+| `05_Perfecting your english pronunciation (Susan Cameron)` | ⏳ **novo** — card adicionado |
+| `06_4000 Essential English Words Book 6` | ⏳ **novo** — card adicionado |
+
+**S15 · V06** — o card 06 apontava para um livro que não está na pasta:
+
+| Arquivo | Status |
+|---|---|
+| `01_English Grammar in Use Supplementary Exercises` | ✅ `livro01.html` — 16 estruturas, 123 frases |
+| `02–05_Basic Grammar in Use (×2), Collocations in Use, Phrasal Verbs in Use` | ⏳ aguardando |
+| `06_Practice Makes Perfect English Conversation` | ⏳ aguardando — **card do hub estava errado** (dizia "Short Stories for Beginners"), corrigido |
+| ~~Short Stories in English for Beginners~~ | ❌ **descartado** — nunca esteve nesta pasta; o arquivo com esse nome (no S10 antigo) era o tratado de Wyld, ver bloco 0 |
+
+**S16 · V07** — três cards apontavam para livros que foram para o S19:
+
+| Arquivo | Status |
+|---|---|
+| `01_PMP Complete English All-in-One for ESL Learners` | ⏳ **novo** — card adicionado |
+| `02_English Vocabulary in Use Elementary 3rd` | ✅ `livro01.html` — 58 unidades, 431 itens *(o arquivo do painel continua `livro01.html`; no hub ele é o card "Livro 02", que é a posição real do PDF)* |
+| `03_English Pronunciation in Use Elementary` | ⏳ aguardando |
+| `04_Grammar in Use Intermediate` | ⏳ aguardando |
+| `05_PMP English Vocabulary for Beginning ESL Learners` | ⏳ **novo** — card adicionado |
+| `06_PMP English Verbs 3rd Edition` | ⏳ **novo** — card adicionado |
+| ~~Pronunciation in Use Advanced · Advanced Grammar in Use · EVU Advanced~~ | ➡️ **movidos para o S19** |
+
+**S17 · V08** — Sistema novo no JSON, hub criado:
+
+| Arquivo | Status |
+|---|---|
+| `01_American Accent Training` | ⏳ aguardando |
+| `02_Mastering the American Accent (Lisa Mojsin)` | ⏳ aguardando |
+| `03_English Vocabulary in Use Upper-Intermediate` | ⏳ aguardando |
+
+**S18 · V09** — Sistema novo no JSON, hub criado. `01`–`05` = B2 First 1 a 5 (o 04 é a versão *for Schools*): todos **⏳ aguardando**.
+
+**S19 · V10 — Gramática Avançada** — destino dos livros C1/C2 que estavam espalhados. Regras próprias em `REGRAS_AVANCADO.md`:
+
+| Arquivo | Origem | Status |
+|---|---|---|
+| `01_Objective Proficiency` | ➡️ veio do **S11** | ⏳ aguardando |
+| `02_Advanced Grammar in Use` | ➡️ veio do **S16** | ⏳ aguardando |
+| `03_Grammar and Vocabulary for Advanced` | — | ⏳ aguardando |
+| `04_Advanced Language Practice (Michael Vince)` | — | ⏳ aguardando |
+| `05_Complete Advanced Student's Book` | — | ⏳ aguardando |
+| `06_English Vocabulary in Use Advanced 3rd` | ➡️ veio do **S16** | ⏳ aguardando |
+| `07_English Pronunciation in Use Advanced` | ➡️ veio do **S16** | ⏳ aguardando |
+
+**S20 · V11 — Gramática Avançada** — hub criado; todos **⏳ aguardando**. ⚠️ Só o primeiro PDF tem prefixo numérico:
+
+| Arquivo | Status |
+|---|---|
+| `01_Oxford English Grammar Course Advanced with Key` | ⏳ aguardando |
+| `English Vocabulary in Use Advanced 100 units…` | ⏳ aguardando — **sem prefixo `02_`** |
+| `English Vocabulary in Use Upper-intermediate With answers` | ⏳ aguardando — **sem prefixo `03_`** |
+| `Grammar and Vocabulary for Cambridge Advanced and Proficiency` | ⏳ aguardando — **sem prefixo `04_`** |
+| `New English File - Advanced Level. Student's Book` | ⏳ aguardando — **sem prefixo `05_`** |
+
+**S21 · V12 — Gramática Avançada** — hub criado; todos **⏳ aguardando**. ⚠️ Nenhum PDF tem prefixo numérico:
+
+| Arquivo | Status |
+|---|---|
+| `Advancing Vocabulary Skills - Sherrie L. Nist` | ⏳ aguardando — **sem prefixo `01_`** |
+| `English Advancing A Bridge to Success` | ⏳ aguardando — **sem prefixo `02_`** |
+| `New Cambridge Advanced English Student's book` | ⏳ aguardando — **sem prefixo `03_`** |
+
+**S22 · Kids** — era `Sistema 17 — Baseado em Livros — Kids`; pasta renumerada para 22 e as referências internas (`<title>`, eyebrow, footer, chave de scroll) corrigidas de "Sistema 17" para "Sistema 22":
+
+| Arquivo | Status |
+|---|---|
+| `01_Kid's Box New Generation Level 3` | ✅ `livro01.html` — 11 seções, 242 frases |
+| `02_Kid's Box American English 4` | ⏳ aguardando |
+
+### Pendências abertas depois desta varredura
+
+- **Renomear com prefixo numérico** os 4 PDFs do S20 e os 3 do S21 (ordem oficial = ordem dos cards no hub).
+- **S14** é o único Sistema de livros sem nenhum painel implementado (6 PDFs parados).
+- Os PDFs do **S03** (`Forms of Reduced English`, `Contractions`, `Rachel's`) são a fonte direta do tema do próprio Sistema — candidatos naturais ao próximo lote.
+
 
 ## 0b. Atualização 2026-07-22 (T3/T4) — pasta S08 renumerada + LIVRO_04 (Música) implementado
 
