@@ -1,7 +1,40 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-07-24 — ver bloco 0c (estrutura de 22 Sistemas).**
+> **Atualização mais recente: 2026-07-24 — ver bloco 0d (leitura dos 3 PDFs do S03).**
+
+## 0d. Atualização 2026-07-24 — os 3 PDFs do S03 lidos · `01_Forms of Reduced English` DESCARTADO
+
+> ### ❌ `01_Forms of Reduced English.pdf` — **arquivo mal rotulado para o S03. Não implementar.**
+>
+> **166 páginas, texto extraído integralmente e varrido.** Apesar do título, **não** é um livro sobre reduções do inglês falado. É um **ensaio acadêmico de linguística** — Massimo Laganà, *Forms of Reduced English*, Cambridge Scholars Publishing, 2023 — sobre **línguas construídas de inglês simplificado**: Basic English (Ogden), Globish (Nerrière), Basic Global English (Grzega), Plain English, Nuclear English, Special English.
+>
+> "Reduced" aqui significa **léxico e gramática reduzidos** (inglês controlado para comunicação internacional), **não** redução fonética da fala. Conteúdo: teoria semiótica, história da glotopolítica, o triângulo semiótico de Ogden, listas de vocabulário controlado, com longas citações em francês de Nerrière.
+>
+> **Contagem de termos no texto completo — a prova objetiva:**
+>
+> | Termo | Ocorrências |
+> |---|---|
+> | `gonna`, `wanna`, `gotta`, `kinda` | **0** |
+> | `elision` | **0** |
+> | contrações reais (`don't`, `isn't`…) | **0** |
+> | `weak form` | 1 |
+> | `connected speech` | 1 |
+> | `contraction` | 3 |
+>
+> As duas únicas ocorrências que importariam **dizem o contrário do que o S03 ensina.** Na p. 137–138, ao descrever a fonologia do Basic Global English, o livro lista como *desejáveis*: "*the **absence of weak forms** (strong forms rather support intelligibility)*" e "*the **absence of assimilations in connected speech**.*" Ou seja: o livro defende **eliminar** exatamente aquilo que o Sistema 03 existe para ensinar a reconhecer.
+>
+> As 3 ocorrências de "contraction" são etimológicas/semânticas ("*till is a contraction of 'to the time that'*"; "de-contraction" como teoria do significado em Ogden) — nenhuma é contração da fala.
+>
+> **Veredito:** falha as REGRAS do S03 (§2 — os 5 tipos de redução) e o `REGRAS_GERAIS.md` §4 (é metateoria, não inglês em uso). Não gera painel. Mesmo caso do ~~*Short Stories in English for Beginners*~~ que era o tratado de Wyld (ver bloco 0).
+>
+> ### ✅ `03_American English Pronunciation (Rachel's English).pdf` — **esta é a fonte primária real do S03**
+>
+> **290 páginas.** É o livro que o `01_` prometia ser. Contagem no texto completo: `stress` 695 · `contraction` 150 · `gonna` 73 · `flap` 72 · `linking` 71 · `gotta` 71 · `schwa` 67 · `wanna` 56 · `whatcha` 1. Índice: Getting Started · Stress, Rhythm and Intonation · Vowels · Diphthongs · Consonants · Consonant Clusters · Rhythm… Traz transcrição fonética, forma escrita × forma falada e exemplos em frase — exatamente o que as REGRAS do S03 pedem. **Candidato nº 1 a virar `livro01.html`.**
+>
+> ### ⚠️ `02_Contractions.pdf` — genuíno, mas mínimo
+>
+> **3 páginas.** Handout do Writing Center da San José State University (Andrew Tucker, 2011/rev. 2014). É conteúdo S03 legítimo — lista de contrações (`aren't`, `can't`, `they'd`, `we're`…) com a forma plena ao lado — mas é uma folha de referência, não um livro. O painel `reducoes.html` do S03 já cobre esse terreno. Serve como **complemento/conferência**, não como livro próprio.
 
 ## 0c. Atualização 2026-07-24 — estrutura completa: 22 Sistemas
 
@@ -42,9 +75,9 @@
 
 | Arquivo | Status |
 |---|---|
-| `01_Forms of Reduced English.pdf` | ⏳ aguardando — é a fonte direta do tema do Sistema, prioridade alta |
-| `02_Contractions.pdf` | ⏳ aguardando |
-| `03_American English Pronunciation Rachels.pdf` | ⏳ aguardando |
+| `01_Forms of Reduced English.pdf` | ❌ **descartado** — lido em 2026-07-24, é ensaio acadêmico sobre inglês simplificado (Basic English/Globish), não sobre reduções da fala. Ver bloco 0d |
+| `02_Contractions.pdf` | ⏳ aguardando — 3 páginas, handout de contrações; complemento, não livro |
+| `03_American English Pronunciation Rachels.pdf` | ⏳ aguardando — **a fonte primária real do S03**, 290 páginas. Ver bloco 0d |
 
 **S11 · V02** — hub tinha 5 cards e listava *Objective Proficiency*, que já não está aqui:
 
@@ -155,7 +188,7 @@
 
 - **Renomear com prefixo numérico** os 4 PDFs do S20 e os 3 do S21 (ordem oficial = ordem dos cards no hub).
 - **S14** é o único Sistema de livros sem nenhum painel implementado (6 PDFs parados).
-- Os PDFs do **S03** (`Forms of Reduced English`, `Contractions`, `Rachel's`) são a fonte direta do tema do próprio Sistema — candidatos naturais ao próximo lote.
+- **S03:** o próximo livro a implementar é o **`03_American English Pronunciation` (Rachel's English)** — 290 páginas, a fonte primária real do tema do Sistema. O `01_Forms of Reduced English` está descartado (bloco 0d).
 
 
 ## 0b. Atualização 2026-07-22 (T3/T4) — pasta S08 renumerada + LIVRO_04 (Música) implementado
