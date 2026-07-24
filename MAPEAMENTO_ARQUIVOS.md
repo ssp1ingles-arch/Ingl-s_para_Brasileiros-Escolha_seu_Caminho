@@ -28,9 +28,31 @@
 >
 > **Veredito:** falha as REGRAS do S03 (§2 — os 5 tipos de redução) e o `REGRAS_GERAIS.md` §4 (é metateoria, não inglês em uso). Não gera painel. Mesmo caso do ~~*Short Stories in English for Beginners*~~ que era o tratado de Wyld (ver bloco 0).
 >
-> ### ✅ `03_American English Pronunciation (Rachel's English).pdf` — **esta é a fonte primária real do S03**
+> ### ✅ `03_American English Pronunciation (Rachel's English).pdf` — **IMPLEMENTADO** como `livro01.html`
 >
-> **290 páginas.** É o livro que o `01_` prometia ser. Contagem no texto completo: `stress` 695 · `contraction` 150 · `gonna` 73 · `flap` 72 · `linking` 71 · `gotta` 71 · `schwa` 67 · `wanna` 56 · `whatcha` 1. Índice: Getting Started · Stress, Rhythm and Intonation · Vowels · Diphthongs · Consonants · Consonant Clusters · Rhythm… Traz transcrição fonética, forma escrita × forma falada e exemplos em frase — exatamente o que as REGRAS do S03 pedem. **Candidato nº 1 a virar `livro01.html`.**
+> **290 páginas, lido integralmente.** É o livro que o `01_` prometia ser: Rachel Smith (Rachel's English, 2015). Contagem no texto completo: `stress` 695 · `contraction` 150 · `gonna` 73 · `flap` 72 · `linking` 71 · `gotta` 71 · `schwa` 67 · `wanna` 56.
+>
+> **Implementado em `livro01.html` (2026-07-24): 15 seções, 208 itens de inglês**, com a fonética (IPA) do próprio livro e busca própria (forma escrita + forma falada + fonética + exemplo). Extraído dos capítulos 5 (T e D), 8 (Linking), 9 (Stressed Words), 10 (Unstressed Words and Words that Reduce), 11 (Contractions), 12 (Gonna/Wanna/Gotta) e 13 (Putting it all Together):
+>
+> | Seção | Itens |
+> |---|---|
+> | Formas fracas (are, or, for, your, at, that, can, to, you, do, does, a, an, and, the, as, was, because, should, would, could) | 21 |
+> | Sons que caem — H, THEM, OF | 9 |
+> | Contrações N'T (+ can × can't) | 15 |
+> | Contrações TO BE / TO HAVE | 34 |
+> | Contrações 'LL (will) | 16 |
+> | Contrações 'D (would/had/did) | 17 |
+> | Modais + LET'S | 6 |
+> | Gonna · Wanna · Gotta | 23 |
+> | As 4 pronúncias do T (regras + pares Stop T + exceções) | 18 |
+> | Linking (vogal→vogal, consoante→vogal, consoante→consoante) | 26 |
+> | Reduções empilhadas | 7 |
+> | Frases destrinchadas (Ben Franklin Exercises) | 11 |
+> | Diálogos completos | 5 |
+>
+> **Exceção de regra aplicada:** neste Sistema as explicações de **como e quando** a redução ocorre são conteúdo, não bastidor — são o núcleo do aprendizado do S03. Fora ficaram os exercícios de áudio/vídeo (`engl.io/...`), os gabaritos e o método de estudo do capítulo 14.
+>
+> **Nota técnica:** o PDF tem um artefato de fonte que duplica o schwa (U+0259 seguido de U+04D9 cirílico) em todas as 747 ocorrências, além de usar epsilon/alfa gregos no lugar dos símbolos IPA. A extração normaliza os três casos — a fonética no painel está limpa.
 >
 > ### ⚠️ `02_Contractions.pdf` — genuíno, mas mínimo
 >
@@ -48,7 +70,7 @@
 |---|---|---|---|---|
 | 01 | Base. Fluência. Gramática | — (centenas de PDFs de referência) | `index.html` + jornada | ✅ |
 | 02 | Dúvidas Pontuais | — | `index.html` + 2 sub-painéis | ✅ |
-| 03 | Reduções do Inglês Real | 3 | `index.html` + 3 sub-painéis | ✅ painel · ⏳ 3 PDFs |
+| 03 | Reduções do Inglês Real | 3 | `index.html` + 3 sub-painéis + `livro01` | ✅ 1/3 · ⏳ 1 · ❌ 1 |
 | 04 | Motor de Verbos | — | `index.html` + 4 sub-painéis | ✅ |
 | 05 | Conectar Frases | — | `index.html` + 4 sub-painéis | ✅ |
 | 06 | Situar a Frase | — | `index.html` + 5 sub-painéis | ✅ |
@@ -77,7 +99,7 @@
 |---|---|
 | `01_Forms of Reduced English.pdf` | ❌ **descartado** — lido em 2026-07-24, é ensaio acadêmico sobre inglês simplificado (Basic English/Globish), não sobre reduções da fala. Ver bloco 0d |
 | `02_Contractions.pdf` | ⏳ aguardando — 3 páginas, handout de contrações; complemento, não livro |
-| `03_American English Pronunciation Rachels.pdf` | ⏳ aguardando — **a fonte primária real do S03**, 290 páginas. Ver bloco 0d |
+| `03_American English Pronunciation Rachels.pdf` | ✅ **implementado** (`livro01.html`) — 15 seções, 208 itens com fonética. Ver bloco 0d |
 
 **S11 · V02** — hub tinha 5 cards e listava *Objective Proficiency*, que já não está aqui:
 
@@ -188,7 +210,7 @@
 
 - **Renomear com prefixo numérico** os 4 PDFs do S20 e os 3 do S21 (ordem oficial = ordem dos cards no hub).
 - **S14** é o único Sistema de livros sem nenhum painel implementado (6 PDFs parados).
-- **S03:** o próximo livro a implementar é o **`03_American English Pronunciation` (Rachel's English)** — 290 páginas, a fonte primária real do tema do Sistema. O `01_Forms of Reduced English` está descartado (bloco 0d).
+- **S03:** o Rachel's English já está implementado (`livro01.html`). Sobra o `02_Contractions` (3 páginas) — pequeno e em boa parte já coberto pelo `livro01` e pelo `reducoes.html`.
 
 
 ## 0b. Atualização 2026-07-22 (T3/T4) — pasta S08 renumerada + LIVRO_04 (Música) implementado
