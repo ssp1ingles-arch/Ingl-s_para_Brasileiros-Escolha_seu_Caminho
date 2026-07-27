@@ -1,6 +1,6 @@
-# REGRAS_AVANCADO — Sistemas 19, 20 e 21 · Gramática Avançada
+# REGRAS_AVANCADO — Sistemas 20, 21 e 22 · Gramática Avançada
 
-> Leia também o `REGRAS_GERAIS.md` na raiz. **Este arquivo substitui as regras de livro dos demais Sistemas** para S19, S20 e S21 — e só para eles.
+> Leia também o `REGRAS_GERAIS.md` na raiz. **Este arquivo substitui as regras de livro dos demais Sistemas** para S20, S21 e S22 — e só para eles.
 
 ---
 
@@ -8,11 +8,13 @@
 
 | Sistema | Pasta | Livros |
 |---|---|---|
-| **S19** | `Sistema 19 — Baseado em Livros V10 Gramática Avançada` | 7 |
-| **S20** | `Sistema 20 — Baseado em Livros V11 Gramática Avançada` | 5 |
-| **S21** | `Sistema 21 — Baseado em Livros V12 Gramática Avançada` | 3 |
+| **S20** | `Sistema 20 — Baseado em Livros V11 Gramática Avançada` | 7 |
+| **S21** | `Sistema 21 — Baseado em Livros V12 Gramática Avançada` | 5 |
+| **S22** | `Sistema 22 — Baseado em Livros V13 Gramática Avançada` | 3 |
 
-Nenhum outro Sistema segue estas regras. Um livro que sair de S19/S20/S21 volta a seguir as regras do Sistema de destino.
+Nenhum outro Sistema segue estas regras. Um livro que sair de S20/S21/S22 volta a seguir as regras do Sistema de destino.
+
+> **Atenção:** o **S19 (`Sistema 19 — Baseado em Livros V10`) NÃO é avançado.** É gramática básica A1–A2 (For Dummies e afins) e segue as regras normais de livro — `REGRAS_GERAIS.md` + o `REGRAS.md` da própria pasta.
 
 ## 1. Por que estas regras são diferentes
 
@@ -56,8 +58,8 @@ Nem todo ponto precisa dos seis blocos. Precisam sempre: **explicação + exempl
 
 ## 5. Numeração dos arquivos-fonte
 
-Os PDFs seguem o prefixo `01_`, `02_`… na ordem oficial do Sistema. **Pendência conhecida:** quatro PDFs do S20 e os três do S21 ainda estão sem prefixo — a ordem oficial é a dos cards no `index.html` de cada Sistema, e os arquivos devem ser renomeados quando forem implementados.
+Os PDFs seguem o prefixo `01_`, `02_`… na ordem oficial do Sistema. Os três Sistemas já estão com todos os PDFs prefixados; a ordem oficial é a dos cards no `index.html` de cada Sistema.
 
 ## 6. Commits
 
-Um commit por livro implementado, no padrão do projeto: `feat(S19): <nome do livro> — livroNN`.
+Um commit por livro implementado, no padrão do projeto: `feat(S20): <nome do livro> — livroNN`.

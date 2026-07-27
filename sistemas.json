@@ -235,7 +235,20 @@
   },
   {
     "numero": "19",
-    "titulo": "Livros V10 — Gramática Avançada",
+    "titulo": "Livros V10 — Gramática Básica",
+    "descricao": "A base em linguagem acessível. Basic English Grammar Workbook e English Grammar For Dummies, Big Fat Notebook, A Resource Book for Students, Grammar For Young Learners, Grammar And Usage For Better Writing e The Infographic Guide to Grammar. Só a frase-modelo de cada estrutura, em contexto. Em preparação.",
+    "cor": "#22C55E",
+    "icone": "🧱",
+    "tags": [
+      "7 livros",
+      "A1–A2",
+      "Base"
+    ],
+    "pasta": "Sistema 19 — Baseado em Livros V10"
+  },
+  {
+    "numero": "20",
+    "titulo": "Livros V11 — Gramática Avançada",
     "descricao": "Nível avançado, para quem já tem base sólida. Objective Proficiency, Advanced Grammar in Use, Grammar and Vocabulary for Advanced, Michael Vince, Complete Advanced, EVU Advanced e Pronunciation in Use Advanced. Aqui a gramática vira nuance de uso. Em preparação.",
     "cor": "#F59E0B",
     "icone": "🏆",
@@ -244,11 +257,11 @@
       "C1–C2",
       "Avançado"
     ],
-    "pasta": "Sistema 19 — Baseado em Livros V10 Gramática Avançada"
+    "pasta": "Sistema 20 — Baseado em Livros V11 Gramática Avançada"
   },
   {
-    "numero": "20",
-    "titulo": "Livros V11 — Gramática Avançada",
+    "numero": "21",
+    "titulo": "Livros V12 — Gramática Avançada",
     "descricao": "Nível avançado, para quem já tem base sólida. Oxford English Grammar Course Advanced, English Vocabulary in Use (Advanced e Upper-intermediate), Grammar and Vocabulary for CAE/CPE e New English File Advanced. Em preparação.",
     "cor": "#F59E0B",
     "icone": "🎖️",
@@ -257,11 +270,11 @@
       "C1–C2",
       "Avançado"
     ],
-    "pasta": "Sistema 20 — Baseado em Livros V11 Gramática Avançada"
+    "pasta": "Sistema 21 — Baseado em Livros V12 Gramática Avançada"
   },
   {
-    "numero": "21",
-    "titulo": "Livros V12 — Gramática Avançada",
+    "numero": "22",
+    "titulo": "Livros V13 — Gramática Avançada",
     "descricao": "Nível avançado, para quem já tem base sólida. Advancing Vocabulary Skills (Nist), English Advancing — A Bridge to Success e New Cambridge Advanced English. Vocabulário de nível alto em contexto estendido. Em preparação.",
     "cor": "#F59E0B",
     "icone": "📜",
@@ -270,10 +283,10 @@
       "C1–C2",
       "Avançado"
     ],
-    "pasta": "Sistema 21 — Baseado em Livros V12 Gramática Avançada"
+    "pasta": "Sistema 22 — Baseado em Livros V13 Gramática Avançada"
   },
   {
-    "numero": "22",
+    "numero": "23",
     "titulo": "Livros — Kids",
     "descricao": "Kid's Box (Cambridge), níveis 3 e 4 — inglês infantil garimpado para o adulto estudar. Level 3 já disponível: 11 seções, 242 frases com tradução. Level 4 em preparação.",
     "cor": "#FB7185",
@@ -283,6 +296,6 @@
       "1 disponível",
       "Kids"
     ],
-    "pasta": "Sistema 22 — Baseado em Livros — Kids"
+    "pasta": "Sistema 23 — Baseado em Livros — Kids"
   }
 ]
