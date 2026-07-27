@@ -329,4 +329,12 @@ Não pertencem a painel (metodologia, handoff, prompts, configs). Candidatos a l
 
 ## 5. `#Para distribuição`
 
-Vazia — nada pendente de triagem no momento.
+**Fila vazia — nada pendente de triagem.**
+
+Um lote já processado fica arquivado em `_processado_2026-07-26/` (188 capturas de
+Instagram, `IMG_6520`–`IMG_6714`). Todo o conteúdo dele virou **6 painéis novos,
+938 itens** — `gramatica-em-tabelas` (S01, 192), `falar-melhor` (S02, 168),
+`livro-x-rua` (S03, 118), `familias-de-verbos` (S04, 211), `even-so-conectores`
+(S05, 76) e `preposicoes-mapas` (S06, 173). Ver o `README.md` da pasta do lote,
+inclusive o motivo de o lote ter sido arquivado inteiro em vez de dividido pelos
+`_fontes/` de cada Sistema.
