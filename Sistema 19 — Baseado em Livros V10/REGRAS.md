@@ -33,7 +33,7 @@ Busca própria EN/PT em cada painel de livro.
 ## 6. Livros deste Sistema
 | # | Livro | Status |
 |---|---|---|
-| 01 | Basic English Grammar Workbook For Dummies | ⏳ aguardando |
+| 01 | Basic English Grammar Workbook For Dummies | ✅ `livro01.html` — 43 estruturas, 1.130 itens, 41 tabelas |
 | 02 | Everything You Need to Ace English Language Arts (Big Fat Notebook) | ⏳ aguardando |
 | 03 | English Grammar For Dummies | ⏳ aguardando |
 | 04 | English Grammar — A Resource Book for Students | ⏳ aguardando |
