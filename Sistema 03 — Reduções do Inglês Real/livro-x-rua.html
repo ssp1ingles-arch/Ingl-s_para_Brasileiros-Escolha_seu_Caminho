@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro x Rua — Sistema 03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:780px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:780px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.pt b{color:var(--text);font-weight:600;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 03</a>
+<div class="wrap">
+<div class="eyebrow">Sistema 03 · Reduções do Inglês Real · livro x rua</div>
+<h1 class="title">Livro x <em>Rua</em></h1>
+<p class="lead">A frase correta do livro ao lado da frase que o nativo realmente usa. Seis pares diretos de <b>escola x rua</b>, vinte expressões que só aparecem na conversa real, o contraste entre o inglês engessado e o natural, as respostas curtas automáticas do dia a dia, o inglês do cotidiano com tradução e as siglas que dominam a internet.</p>
+<div class="metrics">
+  <div class="metric"><b>6</b><span>seções</span></div>
+  <div class="metric"><b id="m-total">—</b><span>itens</span></div>
+  <div class="metric"><b>5</b><span>tabelas</span></div>
+  <div class="metric"><b>A2–B2</b><span>nível</span></div>
+</div>
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: broke, hold on, moleza…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+<div class="layout">
+  <nav class="toc"><h3>Índice</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+<section id="livro-x-rua">
+<div class="snum">Seção 01</div>
+<h2>O que o livro ensina x o que o nativo fala</h2>
+<p class="sdesc">A frase da esquerda está correta e é o que se aprende na escola. A da direita é o que sai da boca de um nativo na rua. Saber as duas é o que separa quem entende de quem só traduz.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>O livro ensina</th><th>O nativo fala</th><th>Em português</th></tr></thead><tbody>
+<tr><td>Be careful.</td><td><b>Watch out.</b></td><td>Cuidado!</td></tr>
+<tr><td>I am joking.</td><td><b>I'm kidding.</b> / <b>I'm just messing with you.</b></td><td>Tô zoando. / Tô tirando.</td></tr>
+<tr><td>That is very easy.</td><td><b>Piece of cake.</b> / <b>Easy peasy.</b></td><td>Moleza. / Mamão com açúcar.</td></tr>
+<tr><td>Wait a moment, please.</td><td><b>Hold on.</b> / <b>Hang on a sec.</b></td><td>Peraí. / Segura aí.</td></tr>
+<tr><td>Let us go.</td><td><b>Let's bounce.</b> / <b>Let's roll.</b></td><td>Bora. / Partiu.</td></tr>
+<tr><td>I do not have money.</td><td><b>I'm broke.</b></td><td>Tô liso. / Tô duro.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="expressoes-nativas">
+<div class="snum">Seção 02</div>
+<h2>Expressões que só nativo usa</h2>
+<p class="sdesc">Vinte expressões que aparecem o tempo todo na conversa real e quase nunca no material didático. Do lado direito, o que elas realmente querem dizer.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Expressão</th><th>O que significa de verdade</th></tr></thead><tbody>
+<tr><td><b>I'm all ears.</b></td><td>I'm listening very carefully.</td></tr>
+<tr><td><b>Hang tight.</b></td><td>Please wait a moment.</td></tr>
+<tr><td><b>It's worth it.</b></td><td>It's absolutely worthwhile.</td></tr>
+<tr><td><b>You can count on me.</b></td><td>I'll always help you.</td></tr>
+<tr><td><b>I'm good with that.</b></td><td>I completely agree.</td></tr>
+<tr><td><b>Let's get moving.</b></td><td>It's time to leave.</td></tr>
+<tr><td><b>Don't sweat it.</b></td><td>Don't worry about it.</td></tr>
+<tr><td><b>I'm running late.</b></td><td>I'll arrive a little late.</td></tr>
+<tr><td><b>That works for me.</b></td><td>I'm happy with that.</td></tr>
+<tr><td><b>Keep it up.</b></td><td>Continue doing well.</td></tr>
+<tr><td><b>I'm not buying it.</b></td><td>I don't believe it.</td></tr>
+<tr><td><b>That's my bad.</b></td><td>It was my mistake.</td></tr>
+<tr><td><b>Let's head out.</b></td><td>Let's leave now.</td></tr>
+<tr><td><b>I'm all in.</b></td><td>I'm fully committed.</td></tr>
+<tr><td><b>It couldn't be better.</b></td><td>Everything is perfect.</td></tr>
+<tr><td><b>I'll take care of it.</b></td><td>I'll handle everything.</td></tr>
+<tr><td><b>You nailed it.</b></td><td>You did it perfectly.</td></tr>
+<tr><td><b>Time will tell.</b></td><td>We'll know eventually.</td></tr>
+<tr><td><b>That's a good point.</b></td><td>I completely agree.</td></tr>
+<tr><td><b>I'm looking forward to it.</b></td><td>I'm excited about it.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="escola-x-natural">
+<div class="snum">Seção 03</div>
+<h2>Inglês de escola x inglês natural</h2>
+<p class="sdesc">A frase da esquerda não está errada — está engessada. A da direita é como a conversa realmente acontece.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Inglês de escola</th><th>Inglês natural</th></tr></thead><tbody>
+<tr><td>Good morning.</td><td>Morning!</td></tr>
+<tr><td>Good night.</td><td>Sleep well.</td></tr>
+<tr><td>How are you?</td><td>How's it going?</td></tr>
+<tr><td>What's up?</td><td>How have you been?</td></tr>
+<tr><td>I like it.</td><td>I'm really fond of it.</td></tr>
+<tr><td>I love it.</td><td>I'm absolutely loving it.</td></tr>
+<tr><td>I don't like it.</td><td>It's not really my thing.</td></tr>
+<tr><td>I forgot.</td><td>It slipped my mind.</td></tr>
+<tr><td>I remember.</td><td>I can recall that.</td></tr>
+<tr><td>I'm ready.</td><td>I'm all set.</td></tr>
+<tr><td>Let's go.</td><td>Shall we get going?</td></tr>
+<tr><td>Stop.</td><td>Hold on a moment.</td></tr>
+<tr><td>Wait for me.</td><td>Could you wait for me?</td></tr>
+<tr><td>That's true.</td><td>That's absolutely right.</td></tr>
+<tr><td>Really?</td><td>Is that so?</td></tr>
+<tr><td>Of course.</td><td>Absolutely.</td></tr>
+<tr><td>No way!</td><td>You've got to be kidding!</td></tr>
+<tr><td>That's great!</td><td>That's fantastic!</td></tr>
+<tr><td>Don't worry.</td><td>Everything will be fine.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="respostas-curtas">
+<div class="snum">Seção 04</div>
+<h2>As respostas curtas do dia a dia</h2>
+<p class="sdesc">O que o nativo realmente responde. Note que quase nenhuma delas é a resposta &ldquo;de livro&rdquo; — são fórmulas prontas, curtas e automáticas.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Você ouve</th><th>Você responde</th></tr></thead><tbody>
+<tr><td>Thanks!</td><td>No problem!</td></tr>
+<tr><td>How are you?</td><td>Doing great, thanks!</td></tr>
+<tr><td>What's up?</td><td>Not much.</td></tr>
+<tr><td>Are you busy?</td><td>A little.</td></tr>
+<tr><td>Can you help me?</td><td>Sure thing!</td></tr>
+<tr><td>Sorry I'm late.</td><td>No worries.</td></tr>
+<tr><td>Are you ready?</td><td>Good to go!</td></tr>
+<tr><td>Did you finish?</td><td>Yep, all done.</td></tr>
+<tr><td>Do you understand?</td><td>Got it.</td></tr>
+<tr><td>Can we meet later?</td><td>Sounds good.</td></tr>
+<tr><td>Are you coming?</td><td>I'll be there.</td></tr>
+<tr><td>What do you think?</td><td>Sounds great!</td></tr>
+<tr><td>Can I call you?</td><td>Go ahead.</td></tr>
+<tr><td>Did you like it?</td><td>I loved it!</td></tr>
+<tr><td>Are you sure?</td><td>Absolutely.</td></tr>
+<tr><td>See you tomorrow.</td><td>See you then!</td></tr>
+<tr><td>Have a nice day!</td><td>You too!</td></tr>
+<tr><td>Good luck!</td><td>Thanks, I appreciate it.</td></tr>
+<tr><td>I'll text you later.</td><td>Sounds good.</td></tr>
+<tr><td>Take care!</td><td>You too. Stay safe!</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="cotidiano">
+<div class="snum">Seção 05</div>
+<h2>O inglês do cotidiano, com tradução</h2>
+<p class="sdesc">Frases prontas para as situações que se repetem todo dia — no trabalho, na rua, no café. São blocos inteiros: não se traduz palavra por palavra, se usa como está.</p>
+<div class="items">
+<div class="i">
+<div class="en">How's it going?</div>
+<div class="pt">E aí, tudo bem?</div>
+</div>
+<div class="i">
+<div class="en">What's up?</div>
+<div class="pt">E aí?</div>
+</div>
+<div class="i">
+<div class="en">Excuse me.</div>
+<div class="pt">Com licença.</div>
+</div>
+<div class="i">
+<div class="en">Sorry about that.</div>
+<div class="pt">Desculpa por isso.</div>
+</div>
+<div class="i">
+<div class="en">My bad.</div>
+<div class="pt">Foi mal.</div>
+</div>
+<div class="i">
+<div class="en">That's amazing!</div>
+<div class="pt">Que incrível!</div>
+</div>
+<div class="i">
+<div class="en">That's funny!</div>
+<div class="pt">Que engraçado!</div>
+</div>
+<div class="i">
+<div class="en">I'm not sure.</div>
+<div class="pt">Não tenho certeza.</div>
+</div>
+<div class="i">
+<div class="en">I don't think so.</div>
+<div class="pt">Acho que não.</div>
+</div>
+<div class="i">
+<div class="en">Let me check.</div>
+<div class="pt">Deixa eu ver.</div>
+</div>
+<div class="i">
+<div class="en">I'm on my way.</div>
+<div class="pt">Estou a caminho.</div>
+</div>
+<div class="i">
+<div class="en">I'm running late.</div>
+<div class="pt">Estou atrasado.</div>
+</div>
+<div class="i">
+<div class="en">I'm on it.</div>
+<div class="pt">Vou cuidar disso.</div>
+</div>
+<div class="i">
+<div class="en">Give me a second.</div>
+<div class="pt">Me dá um segundo.</div>
+</div>
+<div class="i">
+<div class="en">Hold on a sec.</div>
+<div class="pt">Espera um segundo.</div>
+</div>
+<div class="i">
+<div class="en">Let's go.</div>
+<div class="pt">Vamos.</div>
+</div>
+<div class="i">
+<div class="en">I'm down.</div>
+<div class="pt">Eu topo! / Tô dentro.</div>
+</div>
+<div class="i">
+<div class="en">That works for me.</div>
+<div class="pt">Por mim, tudo bem.</div>
+</div>
+<div class="i">
+<div class="en">I'm good.</div>
+<div class="pt">Estou bem.</div>
+</div>
+<div class="i">
+<div class="en">I agree with that.</div>
+<div class="pt">Concordo com isso.</div>
+</div>
+<div class="i">
+<div class="en">Does that make sense?</div>
+<div class="pt">Isso faz sentido?</div>
+</div>
+<div class="i">
+<div class="en">Could you help me?</div>
+<div class="pt">Você poderia me ajudar?</div>
+</div>
+<div class="i">
+<div class="en">Where are you from?</div>
+<div class="pt">De onde você é?</div>
+</div>
+<div class="i">
+<div class="en">How long have you been here?</div>
+<div class="pt">Há quanto tempo você está aqui?</div>
+</div>
+<div class="i">
+<div class="en">Let's get started.</div>
+<div class="pt">Vamos começar.</div>
+</div>
+<div class="i">
+<div class="en">I'll send it to you.</div>
+<div class="pt">Eu envio para você.</div>
+</div>
+<div class="i">
+<div class="en">I'll let you know.</div>
+<div class="pt">Eu te aviso.</div>
+</div>
+<div class="i">
+<div class="en">Let's go over it.</div>
+<div class="pt">Vamos revisar isso.</div>
+</div>
+<div class="i">
+<div class="en">Can we schedule a meeting?</div>
+<div class="pt">Podemos marcar uma reunião?</div>
+</div>
+<div class="i">
+<div class="en">I appreciate your time.</div>
+<div class="pt">Obrigado pelo seu tempo.</div>
+</div>
+<div class="i">
+<div class="en">How much is this?</div>
+<div class="pt">Quanto custa isso?</div>
+</div>
+<div class="i">
+<div class="en">I'd like this, please.</div>
+<div class="pt">Eu queria este, por favor.</div>
+</div>
+<div class="i">
+<div class="en">Can I get a coffee, please?</div>
+<div class="pt">Me vê um café, por favor?</div>
+</div>
+</div>
+</section>
+
+<section id="siglas">
+<div class="snum">Seção 06</div>
+<h2>As siglas da internet</h2>
+<p class="sdesc">O inglês escrito que só existe em tela: mensagem, comentário, legenda. Não entram em texto formal — mas sem elas metade da internet fica ilegível.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Sigla</th><th>Forma completa</th><th>Sentido</th></tr></thead><tbody>
+<tr><td><b>GOAT</b></td><td>Greatest Of All Time</td><td>o melhor de todos os tempos</td></tr>
+<tr><td><b>FOMO</b></td><td>Fear Of Missing Out</td><td>medo de estar perdendo algo</td></tr>
+<tr><td><b>YOLO</b></td><td>You Only Live Once</td><td>só se vive uma vez</td></tr>
+<tr><td><b>IYKYK</b></td><td>If You Know You Know</td><td>quem é do babado entende</td></tr>
+<tr><td><b>TL;DR</b></td><td>Too Long; Didn't Read</td><td>resumo para quem não vai ler tudo</td></tr>
+<tr><td><b>POV</b></td><td>Point Of View</td><td>ponto de vista</td></tr>
+<tr><td><b>NGL</b></td><td>Not Gonna Lie</td><td>não vou mentir</td></tr>
+<tr><td><b>TBH</b></td><td>To Be Honest</td><td>para ser sincero</td></tr>
+<tr><td><b>SMH</b></td><td>Shaking My Head</td><td>balançando a cabeça (decepção)</td></tr>
+<tr><td><b>IMO</b></td><td>In My Opinion</td><td>na minha opinião</td></tr>
+<tr><td><b>ICYMI</b></td><td>In Case You Missed It</td><td>caso você tenha perdido</td></tr>
+<tr><td><b>OOTD</b></td><td>Outfit Of The Day</td><td>look do dia</td></tr>
+<tr><td><b>GRWM</b></td><td>Get Ready With Me</td><td>se arrume comigo</td></tr>
+<tr><td><b>AFK</b></td><td>Away From Keyboard</td><td>longe do teclado</td></tr>
+<tr><td><b>FR</b></td><td>For Real</td><td>sério mesmo</td></tr>
+<tr><td><b>NO CAP</b></td><td>No Lie</td><td>sem mentira</td></tr>
+<tr><td><b>CAP</b></td><td>A Lie</td><td>mentira</td></tr>
+<tr><td><b>FLEX</b></td><td>Show Off</td><td>se exibir</td></tr>
+<tr><td><b>STAN</b></td><td>Super Fan</td><td>fã obsessivo</td></tr>
+<tr><td><b>VIRAL</b></td><td>Spreading Rapidly</td><td>que se espalha rápido</td></tr>
+</tbody></table></div>
+</section>
+  </main>
+</div>
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+<footer>Sistema 03 · Reduções do Inglês Real — Livro x Rua · inglês real, tirado da fonte</footer>
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>units.push({el, sec:s, txt:el.textContent}));
+  });
+  document.getElementById('m-total').textContent=units.length;
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({el:w, rows:[...w.querySelectorAll('tbody tr')]}));
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' seções.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0; const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';});
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    const esc=raw.replace(/[<>&]/g,'');
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'seção':'seções')+' para &ldquo;'+esc+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+esc+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id)); } });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preposições em Mapa — Sistema 06</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#EC4899;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:780px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:780px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.pt b{color:var(--text);font-weight:600;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 06</a>
+<div class="wrap">
+<div class="eyebrow">Sistema 06 · Situar a Frase · preposições e quantificadores</div>
+<h1 class="title">Preposições em <em>Mapa</em></h1>
+<p class="lead">Onde, quando e quanto — em tabelas de contraste. As trincas <b>IN / ON / AT</b> de lugar e de tempo, as posições no espaço (<i>under, behind, above, over, out</i>), o par <b>TO x FOR</b>, as preposições fixas que se decoram inteiras, os quantificadores contáveis e incontáveis e a família <b>SOME</b>. Cada item com frase real e tradução.</p>
+<div class="metrics">
+  <div class="metric"><b>9</b><span>seções</span></div>
+  <div class="metric"><b id="m-total">—</b><span>itens</span></div>
+  <div class="metric"><b>17</b><span>tabelas</span></div>
+  <div class="metric"><b>A1–B1</b><span>nível</span></div>
+</div>
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: under, since, a few, embaixo…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+<div class="layout">
+  <nav class="toc"><h3>Índice</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+<section id="in-on-at-lugar">
+<div class="snum">Seção 01</div>
+<h2>IN, ON, AT — lugar</h2>
+<p class="sdesc">A trinca que mais derruba brasileiro. A lógica é de <b>tamanho</b>: <code>IN</code> é dentro de um espaço, <code>ON</code> é sobre uma superfície, <code>AT</code> é um ponto exato.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Preposição</th><th>Ideia</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>IN</b></td><td>dentro de / espaço grande</td><td>I live <b>in</b> Brazil. &middot; She's <b>in</b> the car.</td></tr>
+<tr><td><b>ON</b></td><td>superfície / contato</td><td>The book is <b>on</b> the table.</td></tr>
+<tr><td><b>AT</b></td><td>ponto exato</td><td>I'm <b>at</b> home. &middot; She is <b>at</b> the bus stop.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">in</span>
+<div class="en">I live <i>in</i> Brazil.</div>
+<div class="pt">Eu moro no Brasil.</div>
+</div>
+<div class="i">
+<span class="tag">in</span>
+<div class="en">She's <i>in</i> the car.</div>
+<div class="pt">Ela está no carro.</div>
+</div>
+<div class="i">
+<span class="tag">in</span>
+<div class="en">I live <i>in</i> Florida.</div>
+<div class="pt">Eu moro na Flórida.</div>
+</div>
+<div class="i">
+<span class="tag">in</span>
+<div class="en">We moved here <i>in</i> 2024.</div>
+<div class="pt">Nós nos mudamos para cá em 2024.</div>
+</div>
+<div class="i">
+<span class="tag">on</span>
+<div class="en">The book is <i>on</i> the table.</div>
+<div class="pt">O livro está na mesa.</div>
+</div>
+<div class="i">
+<span class="tag">on</span>
+<div class="en">The keys are <i>on</i> the table.</div>
+<div class="pt">As chaves estão na mesa.</div>
+</div>
+<div class="i">
+<span class="tag">on</span>
+<div class="en">We live <i>on</i> Main Street.</div>
+<div class="pt">Nós moramos na Main Street.</div>
+</div>
+<div class="i">
+<span class="tag">at</span>
+<div class="en">I'm <i>at</i> home.</div>
+<div class="pt">Estou em casa.</div>
+</div>
+<div class="i">
+<span class="tag">at</span>
+<div class="en">She is <i>at</i> the bus stop.</div>
+<div class="pt">Ela está no ponto de ônibus.</div>
+</div>
+<div class="i">
+<span class="tag">at</span>
+<div class="en">He is <i>at</i> the hospital.</div>
+<div class="pt">Ele está no hospital.</div>
+</div>
+<div class="i">
+<span class="tag">at</span>
+<div class="en">We have class <i>at</i> 9 a.m.</div>
+<div class="pt">Nós temos aula às 9 da manhã.</div>
+</div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>AT</th><th>IN</th><th>ON</th></tr></thead><tbody>
+<tr><td>at home</td><td>in the car</td><td>on the floor</td></tr>
+<tr><td>at school</td><td>in the morning</td><td>on Sunday</td></tr>
+<tr><td>at work</td><td>in the bag</td><td>on the phone</td></tr>
+<tr><td>at the door</td><td>in love</td><td>on TV</td></tr>
+<tr><td>at night</td><td>in the summer</td><td>on time</td></tr>
+<tr><td>at 7 o'clock</td><td>in the room</td><td>on the bus</td></tr>
+<tr><td>at the station</td><td>in the city</td><td>on the table</td></tr>
+<tr><td>at the party</td><td>in the future</td><td>on the wall</td></tr>
+<tr><td>at the entrance</td><td>in a hurry</td><td>on holiday</td></tr>
+<tr><td>at the airport</td><td>in the drawer</td><td>on the way</td></tr>
+<tr><td>at the corner</td><td>in the fridge</td><td>on the roof</td></tr>
+<tr><td>at the mall</td><td>in the wallet</td><td>on the list</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="in-on-at-tempo">
+<div class="snum">Seção 02</div>
+<h2>IN, ON, AT — tempo</h2>
+<p class="sdesc">A mesma lógica de tamanho vale para o tempo: <code>IN</code> para períodos longos, <code>ON</code> para dias e datas, <code>AT</code> para a hora exata.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Preposição</th><th>Usa-se com</th><th>Exemplos</th></tr></thead><tbody>
+<tr><td><b>IN</b></td><td>estações, décadas, séculos, anos, meses, partes do dia</td><td>in the spring &middot; in the 60s &middot; in 2011 &middot; in January &middot; in the morning &middot; in the afternoon</td></tr>
+<tr><td><b>ON</b></td><td>dias da semana e datas</td><td>on Saturday &middot; on Wednesday &middot; on September 8th &middot; on my birthday</td></tr>
+<tr><td><b>AT</b></td><td>horário, festas, refeições, fim de semana, noite</td><td>at 12 o'clock &middot; at Christmas &middot; at New Year &middot; at lunchtime &middot; at the weekend &middot; at night</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Regra</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td>7 dias da semana + <b>on</b></td><td>See you <b>on</b> Monday.</td></tr>
+<tr><td>12 meses + <b>in</b></td><td>I was born <b>in</b> July.</td></tr>
+<tr><td>mês com data + <b>on</b></td><td>My birthday is <b>on</b> 19th March.</td></tr>
+<tr><td>ano + <b>in</b></td><td>I was born <b>in</b> 2001.</td></tr>
+<tr><td>hora + <b>at</b></td><td>I wake up <b>at</b> 6 a.m.</td></tr>
+<tr><td>manhã + <b>in</b></td><td>I study <b>in</b> the morning.</td></tr>
+<tr><td>meio-dia + <b>at</b></td><td>I play <b>at</b> noon.</td></tr>
+<tr><td>noite + <b>at</b></td><td>I sleep <b>at</b> night.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">on</span>
+<div class="en">I'll call you <i>on</i> Monday.</div>
+<div class="pt">Te ligo na segunda.</div>
+</div>
+<div class="i">
+<span class="tag">at</span>
+<div class="en">The meeting is <i>at</i> 3 p.m.</div>
+<div class="pt">A reunião é às 3 da tarde.</div>
+</div>
+<div class="i">
+<span class="tag">on</span>
+<div class="en">The party is <i>on</i> May 12th.</div>
+<div class="pt">A festa é no dia 12 de maio.</div>
+</div>
+<div class="i">
+<span class="tag">on</span>
+<div class="en">I work <i>on</i> Monday.</div>
+<div class="pt">Eu trabalho na segunda-feira.</div>
+</div>
+<div class="i">
+<span class="tag">modelo completo</span>
+<div class="en"><i>On</i> Monday, I'll meet you <i>at</i> the caf&eacute; <i>at</i> 3 p.m.</div>
+<div class="pt">Na segunda eu te encontro no caf&eacute; às 3 da tarde.</div>
+</div>
+</div>
+</section>
+
+<section id="lugar-espaco">
+<div class="snum">Seção 03</div>
+<h2>Preposições de posição no espaço</h2>
+<p class="sdesc">Onde a coisa está em relação à outra: dentro, em cima, embaixo, atrás, acima, cobrindo ou fora.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Preposição</th><th>Ideia</th><th>Usos principais</th></tr></thead><tbody>
+<tr><td><b>UNDER</b></td><td>embaixo de</td><td>debaixo de objetos, de estruturas, posições mais baixas, contextos figurados</td></tr>
+<tr><td><b>BEHIND</b></td><td>atrás de / fora da vista</td><td>posição atrás, escondido, causa por trás de algo</td></tr>
+<tr><td><b>ABOVE</b></td><td>acima de, sem contato</td><td>posição mais elevada, acima do nível, superioridade</td></tr>
+<tr><td><b>OVER</b></td><td>sobre / através de, cobrindo</td><td>posição sobre algo, cobertura, movimento por cima, período de tempo</td></tr>
+<tr><td><b>OUT</b></td><td>fora de, saindo de dentro</td><td>saída, fora de espaço fechado, remoção, ao ar livre</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">under</span>
+<div class="en">The book is <i>under</i> the table.</div>
+<div class="pt">O livro está embaixo da mesa.</div>
+</div>
+<div class="i">
+<span class="tag">under</span>
+<div class="en">We sat <i>under</i> the tree.</div>
+<div class="pt">Nós sentamos embaixo da árvore.</div>
+</div>
+<div class="i">
+<span class="tag">under</span>
+<div class="en">The cat is <i>under</i> the bed.</div>
+<div class="pt">O gato está embaixo da cama.</div>
+</div>
+<div class="i">
+<span class="tag">under — figurado</span>
+<div class="en">The city is <i>under</i> construction.</div>
+<div class="pt">A cidade está em construção.</div>
+</div>
+<div class="i">
+<span class="tag">behind</span>
+<div class="en">The car is <i>behind</i> the truck.</div>
+<div class="pt">O carro está atrás do caminhão.</div>
+</div>
+<div class="i">
+<span class="tag">behind</span>
+<div class="en">He is hiding <i>behind</i> the door.</div>
+<div class="pt">Ele está se escondendo atrás da porta.</div>
+</div>
+<div class="i">
+<span class="tag">behind — figurado</span>
+<div class="en">Hard work is <i>behind</i> his success.</div>
+<div class="pt">Muito trabalho está por trás do sucesso dele.</div>
+</div>
+<div class="i">
+<span class="tag">behind</span>
+<div class="en">The old building is <i>behind</i> the park.</div>
+<div class="pt">O prédio antigo fica atrás do parque.</div>
+</div>
+<div class="i">
+<span class="tag">above</span>
+<div class="en">The painting is <i>above</i> the sofa.</div>
+<div class="pt">O quadro está acima do sofá.</div>
+</div>
+<div class="i">
+<span class="tag">above</span>
+<div class="en">The plane is flying <i>above</i> the clouds.</div>
+<div class="pt">O avião está voando acima das nuvens.</div>
+</div>
+<div class="i">
+<span class="tag">above — figurado</span>
+<div class="en">Honesty is <i>above</i> all else.</div>
+<div class="pt">A honestidade está acima de tudo.</div>
+</div>
+<div class="i">
+<span class="tag">above — superioridade</span>
+<div class="en">She is <i>above</i> average in her class.</div>
+<div class="pt">Ela está acima da média na turma.</div>
+</div>
+<div class="i">
+<span class="tag">over</span>
+<div class="en">The book is <i>over</i> the table.</div>
+<div class="pt">O livro está sobre a mesa.</div>
+</div>
+<div class="i">
+<span class="tag">over — cobrindo</span>
+<div class="en">He put a blanket <i>over</i> the bed.</div>
+<div class="pt">Ele colocou uma manta sobre a cama.</div>
+</div>
+<div class="i">
+<span class="tag">over — atravessando</span>
+<div class="en">The bird flew <i>over</i> the house.</div>
+<div class="pt">O pássaro voou por cima da casa.</div>
+</div>
+<div class="i">
+<span class="tag">over — período</span>
+<div class="en">We talked <i>over</i> the weekend.</div>
+<div class="pt">Nós conversamos durante o fim de semana.</div>
+</div>
+<div class="i">
+<span class="tag">out</span>
+<div class="en">He went <i>out</i> of the house.</div>
+<div class="pt">Ele saiu de dentro da casa.</div>
+</div>
+<div class="i">
+<span class="tag">out</span>
+<div class="en">The keys are <i>out</i> of the bag.</div>
+<div class="pt">As chaves estão fora da bolsa.</div>
+</div>
+<div class="i">
+<span class="tag">out — remoção</span>
+<div class="en">Please take <i>out</i> the trash.</div>
+<div class="pt">Por favor, tire o lixo.</div>
+</div>
+<div class="i">
+<span class="tag">out — ao ar livre</span>
+<div class="en">Let's go <i>out</i> for a walk.</div>
+<div class="pt">Vamos sair para dar uma caminhada.</div>
+</div>
+</div>
+</section>
+
+<section id="to-for">
+<div class="snum">Seção 04</div>
+<h2>TO x FOR — o par que ninguém acerta de primeira</h2>
+<p class="sdesc"><b>TO</b> aponta uma direção ou um destino. <b>FOR</b> aponta um beneficiário, uma finalidade ou uma duração. Em português os dois viram &ldquo;para&rdquo; — por isso a confusão.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>TO — direção e destino</th><th>FOR — benefício e finalidade</th></tr></thead><tbody>
+<tr><td><b>direção:</b> I go <b>to</b> school.</td><td><b>benefício:</b> I bought this <b>for</b> you.</td></tr>
+<tr><td><b>direção:</b> She's walking <b>to</b> the park.</td><td><b>benefício:</b> This cake is <b>for</b> my mom.</td></tr>
+<tr><td><b>entregar:</b> Give it <b>to</b> me!</td><td><b>finalidade:</b> I'm studying <b>for</b> the test.</td></tr>
+<tr><td><b>entregar:</b> I sent a message <b>to</b> my friend.</td><td><b>finalidade:</b> These shoes are <b>for</b> running.</td></tr>
+<tr><td><b>intervalo:</b> We work from 9 <b>to</b> 5.</td><td><b>motivo:</b> Thanks <b>for</b> your help.</td></tr>
+<tr><td><b>intervalo:</b> Count from 1 <b>to</b> 10.</td><td><b>motivo:</b> Sorry <b>for</b> being late.</td></tr>
+<tr><td><b>infinitivo:</b> I want <b>to</b> learn English.</td><td><b>duração:</b> I've lived here <b>for</b> three years.</td></tr>
+<tr><td><b>infinitivo:</b> She needs <b>to</b> sleep.</td><td><b>duração:</b> We waited <b>for</b> an hour.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="preposicoes-fixas">
+<div class="snum">Seção 05</div>
+<h2>Preposições fixas — adjetivo + preposição</h2>
+<p class="sdesc">Não há lógica: são combinações que se decoram inteiras. Trocar a preposição aqui é o erro que mais marca o falante não nativo.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Combinação</th><th>Frase-modelo</th><th>Português</th></tr></thead><tbody>
+<tr><td><b>good at</b></td><td>She is <b>good at</b> English.</td><td>Ela é boa em inglês.</td></tr>
+<tr><td><b>interested in</b></td><td>I am <b>interested in</b> music.</td><td>Eu me interesso por música.</td></tr>
+<tr><td><b>afraid of</b></td><td>He is <b>afraid of</b> dogs.</td><td>Ele tem medo de cachorro.</td></tr>
+<tr><td><b>proud of</b></td><td>We are <b>proud of</b> our team.</td><td>Temos orgulho do nosso time.</td></tr>
+<tr><td><b>famous for</b></td><td>Agra is <b>famous for</b> the Taj Mahal.</td><td>Agra é famosa pelo Taj Mahal.</td></tr>
+<tr><td><b>worried about</b></td><td>She is <b>worried about</b> exams.</td><td>Ela está preocupada com as provas.</td></tr>
+<tr><td><b>dependent on</b></td><td>Children depend <b>on</b> parents.</td><td>Crianças dependem dos pais.</td></tr>
+<tr><td><b>different from</b></td><td>This book is <b>different from</b> that one.</td><td>Este livro é diferente daquele.</td></tr>
+<tr><td><b>similar to</b></td><td>Your idea is <b>similar to</b> mine.</td><td>Sua ideia é parecida com a minha.</td></tr>
+<tr><td><b>responsible for</b></td><td>He is <b>responsible for</b> the work.</td><td>Ele é responsável pelo trabalho.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Depois de substantivo</th><th>Depois de verbo</th></tr></thead><tbody>
+<tr><td>fear <b>of</b></td><td>depend <b>on</b></td></tr>
+<tr><td>pride <b>in</b></td><td>believe <b>in</b></td></tr>
+<tr><td>fond <b>of</b></td><td>laugh <b>at</b></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="preposicoes-gerais">
+<div class="snum">Seção 06</div>
+<h2>As preposições em bloco</h2>
+<p class="sdesc">Cada preposição com dez usos reais — a forma mais rápida de fixar a combinação certa.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Preposição</th><th>Combinações mais frequentes</th></tr></thead><tbody>
+<tr><td><b>WITH</b></td><td>with my mom &middot; with a knife &middot; coffee with milk &middot; agree with &middot; cope with &middot; with confidence &middot; with friends &middot; with love &middot; with care &middot; with respect</td></tr>
+<tr><td><b>FOR</b></td><td>for you &middot; for lunch &middot; for a month &middot; for instance &middot; for sale &middot; for now &middot; for a reason &middot; for a while &middot; for free &middot; for fun</td></tr>
+<tr><td><b>BY</b></td><td>by bus &middot; by chance &middot; by tomorrow &middot; by hand &middot; by the way &middot; by noon &middot; by car &middot; by mistake &middot; by yourself &middot; by law</td></tr>
+<tr><td><b>TO</b></td><td>go to school &middot; to study &middot; easy to understand &middot; give it to me &middot; to learn English &middot; come to me &middot; to the market &middot; to the office &middot; to sleep &middot; to travel</td></tr>
+<tr><td><b>FROM</b></td><td>from school &middot; from 9 a.m. &middot; from my friend &middot; from now on &middot; from here &middot; from the beginning &middot; from time to time &middot; from experience</td></tr>
+<tr><td><b>OF</b></td><td>a piece of cake &middot; a lot of people &middot; a cup of coffee &middot; afraid of &middot; made of &middot; full of water &middot; a pair of shoes &middot; in spite of &middot; proud of</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Regra geral</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>in</b> — dentro / lugar</td><td>The pen is <b>in</b> the box.</td></tr>
+<tr><td><b>on</b> — superfície / dia</td><td>The phone is <b>on</b> the table.</td></tr>
+<tr><td><b>at</b> — ponto exato / hora</td><td>Meet me <b>at</b> 5 p.m.</td></tr>
+<tr><td><b>between</b> — duas coisas</td><td>Sit <b>between</b> Riya and Neha.</td></tr>
+<tr><td><b>among</b> — mais de duas</td><td>He stood <b>among</b> friends.</td></tr>
+<tr><td><b>to</b> — direção</td><td>She went <b>to</b> school.</td></tr>
+<tr><td><b>from</b> — ponto de partida</td><td>He came <b>from</b> Delhi.</td></tr>
+<tr><td><b>by</b> — prazo / autor</td><td>Finish it <b>by</b> Monday.</td></tr>
+<tr><td><b>with</b> — ferramenta / companhia</td><td>Cut it <b>with</b> a knife.</td></tr>
+<tr><td><b>for</b> — duração / motivo</td><td>I waited <b>for</b> an hour.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">erro comum</span>
+<div class="en"><span class="x">Discuss about the matter</span> &rarr; <span class="ok">Discuss the matter</span></div>
+<div class="pt">O verbo <i>discuss</i> não leva preposição.</div>
+</div>
+<div class="i">
+<span class="tag">erro comum</span>
+<div class="en"><span class="x">Enter into the room</span> &rarr; <span class="ok">Enter the room</span></div>
+<div class="pt">O verbo <i>enter</i> também não leva preposição.</div>
+</div>
+<div class="i">
+<span class="tag">a preposição muda o sentido</span>
+<div class="en">Billy shouted <i>at</i> me when I broke his computer.</div>
+<div class="pt">Gritou <b>com</b> raiva de mim.</div>
+</div>
+<div class="i">
+<span class="tag">a preposição muda o sentido</span>
+<div class="en">He shouted <i>to</i> me from the other side.</div>
+<div class="pt">Gritou <b>para</b> eu ouvir de longe.</div>
+</div>
+<div class="i">
+<span class="tag">a preposição muda o sentido</span>
+<div class="en">He shouted <i>for</i> me at the race.</div>
+<div class="pt">Gritou <b>torcendo</b> por mim.</div>
+</div>
+<div class="i">
+<span class="tag">movimento para dentro</span>
+<div class="en">Go <i>into</i> the store and buy more kibble.</div>
+<div class="pt">Entre na loja e compre mais ração.</div>
+</div>
+<div class="i">
+<span class="tag">meio de transporte</span>
+<div class="en">There's no public transportation <i>to</i> the mall, so everyone goes <i>by</i> car.</div>
+<div class="pt">Não há transporte público até o shopping, então todo mundo vai de carro.</div>
+</div>
+<div class="i">
+<span class="tag">falar a respeito</span>
+<div class="en">At the store, teachers talked <i>about</i> their new students.</div>
+<div class="pt">Na loja, os professores falavam sobre os novos alunos.</div>
+</div>
+</div>
+</section>
+
+<section id="quantificadores">
+<div class="snum">Seção 07</div>
+<h2>Quantificadores — some, any, much, many, few, little</h2>
+<p class="sdesc">A pergunta que decide tudo: dá para <b>contar</b>? Se dá, use <i>many, few, a few</i>. Se não dá (é medido), use <i>much, little, a little</i>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Contável (plural)</th><th>Incontável (singular)</th></tr></thead><tbody>
+<tr><td>I have <b>many</b> friends.</td><td>I drink <b>much</b> water.</td></tr>
+<tr><td>I have <b>many</b> pens.</td><td>Don't add <b>much</b> sugar.</td></tr>
+<tr><td>I read <b>many</b> books.</td><td>I don't have <b>much</b> time.</td></tr>
+<tr><td>There are <b>many</b> chairs.</td><td></td></tr>
+<tr><td>There are <b>many</b> students.</td><td></td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>FEW — quase nenhum (negativo)</th><th>A FEW — alguns (positivo)</th></tr></thead><tbody>
+<tr><td><b>Few</b> people came.</td><td><b>A few</b> people came.</td></tr>
+<tr><td><b>Few</b> cars passed.</td><td><b>A few</b> cars passed.</td></tr>
+<tr><td><b>Few</b> students understood.</td><td><b>A few</b> students understood.</td></tr>
+<tr><td><b>Few</b> birds survived.</td><td><b>A few</b> birds landed.</td></tr>
+<tr><td><b>Few</b> answers were correct.</td><td><b>A few</b> answers were correct.</td></tr>
+<tr><td><b>Few</b> workers arrived.</td><td><b>A few</b> workers stayed.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>LITTLE — quase nada (negativo)</th><th>A LITTLE — um pouco (positivo)</th></tr></thead><tbody>
+<tr><td><b>Little</b> money remained.</td><td><b>A little</b> money remained.</td></tr>
+<tr><td><b>Little</b> hope was left.</td><td><b>A little</b> hope remained.</td></tr>
+<tr><td><b>Little</b> water was available.</td><td><b>A little</b> water is enough.</td></tr>
+<tr><td><b>Little</b> progress was made.</td><td><b>A little</b> progress was made.</td></tr>
+<tr><td><b>Little</b> food remained.</td><td><b>A little</b> food is left.</td></tr>
+<tr><td><b>Little</b> time was left.</td><td><b>A little</b> practice helps.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="some">
+<div class="snum">Seção 08</div>
+<h2>A família SOME — someone, somewhere, sometime, somehow</h2>
+<p class="sdesc"><b>SOME</b> sozinho é &ldquo;algum&rdquo;. Colado a outra palavra, vira uma família inteira de indefinidos. Cuidado com <code>sometime</code> (um só) e <code>some time</code> (dois) — significam coisas diferentes.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Palavra</th><th>Sentido</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>some</b></td><td>algum, um pouco de</td><td>I need <b>some</b> help.</td></tr>
+<tr><td><b>someone</b> / <b>somebody</b></td><td>alguém</td><td><b>Someone</b> is knocking at the door.</td></tr>
+<tr><td><b>somewhere</b></td><td>em algum lugar</td><td>I left my keys <b>somewhere</b>.</td></tr>
+<tr><td><b>sometime</b></td><td>em algum momento</td><td>I'll call you <b>sometime</b>.</td></tr>
+<tr><td><b>some time</b></td><td>algum tempo (duração)</td><td>I need <b>some time</b> to think.</td></tr>
+<tr><td><b>somehow</b></td><td>de alguma forma</td><td>We'll figure it out <b>somehow</b>.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">some</span>
+<div class="en">I need <i>some</i> help.</div>
+<div class="pt">Eu preciso de ajuda.</div>
+</div>
+<div class="i">
+<span class="tag">some</span>
+<div class="en">There is <i>some</i> food in the kitchen.</div>
+<div class="pt">Tem comida na cozinha.</div>
+</div>
+<div class="i">
+<span class="tag">some</span>
+<div class="en">Can I have <i>some</i> water?</div>
+<div class="pt">Posso tomar um pouco de água?</div>
+</div>
+<div class="i">
+<span class="tag">somewhere</span>
+<div class="en">I left my keys <i>somewhere</i>.</div>
+<div class="pt">Deixei minhas chaves em algum lugar.</div>
+</div>
+<div class="i">
+<span class="tag">somewhere</span>
+<div class="en">Let's go <i>somewhere</i> quiet.</div>
+<div class="pt">Vamos a algum lugar tranquilo.</div>
+</div>
+<div class="i">
+<span class="tag">somewhere</span>
+<div class="en">She lives <i>somewhere</i> near here.</div>
+<div class="pt">Ela mora em algum lugar perto daqui.</div>
+</div>
+<div class="i">
+<span class="tag">somewhere</span>
+<div class="en">There must be a coffee shop <i>somewhere</i>.</div>
+<div class="pt">Deve ter uma cafeteria em algum lugar.</div>
+</div>
+<div class="i">
+<span class="tag">someone</span>
+<div class="en"><i>Someone</i> left their bag in the classroom.</div>
+<div class="pt">Alguém deixou sua bolsa na sala de aula.</div>
+</div>
+<div class="i">
+<span class="tag">someone</span>
+<div class="en"><i>Someone</i> is knocking at the door.</div>
+<div class="pt">Alguém está batendo na porta.</div>
+</div>
+<div class="i">
+<span class="tag">somebody</span>
+<div class="en"><i>Somebody</i> left their bag here.</div>
+<div class="pt">Alguém deixou a bolsa aqui.</div>
+</div>
+<div class="i">
+<span class="tag">anybody</span>
+<div class="en">Is there <i>anybody</i> who can help me?</div>
+<div class="pt">Tem alguém que pode me ajudar?</div>
+</div>
+<div class="i">
+<span class="tag">sometime</span>
+<div class="en">I'll call you <i>sometime</i>.</div>
+<div class="pt">Eu vou te ligar em algum momento.</div>
+</div>
+<div class="i">
+<span class="tag">sometime</span>
+<div class="en">Let's get together <i>sometime</i>.</div>
+<div class="pt">Vamos nos encontrar em algum momento.</div>
+</div>
+<div class="i">
+<span class="tag">sometime</span>
+<div class="en">Let's talk <i>sometime</i> tomorrow.</div>
+<div class="pt">Vamos conversar em algum momento amanhã.</div>
+</div>
+<div class="i">
+<span class="tag">some time</span>
+<div class="en">I need <i>some time</i> to think.</div>
+<div class="pt">Preciso de algum tempo para pensar.</div>
+</div>
+<div class="i">
+<span class="tag">some time</span>
+<div class="en">It may take <i>some time</i>.</div>
+<div class="pt">Isso pode levar algum tempo.</div>
+</div>
+<div class="i">
+<span class="tag">somehow</span>
+<div class="en">We'll figure it out <i>somehow</i>.</div>
+<div class="pt">Vamos dar um jeito de resolver.</div>
+</div>
+<div class="i">
+<span class="tag">somehow</span>
+<div class="en"><i>Somehow</i>, she knew the answer.</div>
+<div class="pt">De alguma forma, ela sabia a resposta.</div>
+</div>
+<div class="i">
+<span class="tag">somehow</span>
+<div class="en">I <i>somehow</i> finished the project on time.</div>
+<div class="pt">Eu, de alguma forma, terminei o projeto a tempo.</div>
+</div>
+<div class="i">
+<span class="tag">somehow</span>
+<div class="en">She found her lost luggage <i>somehow</i>.</div>
+<div class="pt">Ela encontrou sua bagagem perdida de alguma forma.</div>
+</div>
+</div>
+</section>
+
+<section id="pares">
+<div class="snum">Seção 09</div>
+<h2>Os pares que se confundem</h2>
+<p class="sdesc">Preposições e quantificadores que parecem intercambiáveis mas não são. A diferença está sempre em <b>quantos</b> ou <b>quando</b>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>AT — ponto específico</th><th>IN — espaço fechado / área maior</th></tr></thead><tbody>
+<tr><td>at home</td><td>in the room</td></tr>
+<tr><td>at the station</td><td>in India</td></tr>
+<tr><td>at the door</td><td>in the box</td></tr>
+<tr><td>at school</td><td>in the kitchen</td></tr>
+<tr><td>at the airport</td><td>in the car</td></tr>
+<tr><td>at work</td><td>in the garden</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>SINCE — ponto de partida</th><th>FOR — duração</th></tr></thead><tbody>
+<tr><td>since Monday</td><td>for two days</td></tr>
+<tr><td>since 2020</td><td>for an hour</td></tr>
+<tr><td>since morning</td><td>for five years</td></tr>
+<tr><td>since last week</td><td>for ten minutes</td></tr>
+<tr><td>since childhood</td><td>for a month</td></tr>
+<tr><td>since yesterday</td><td>for three weeks</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>BETWEEN — dois</th><th>AMONG — três ou mais</th></tr></thead><tbody>
+<tr><td>between two chairs</td><td>among friends</td></tr>
+<tr><td>between you and me</td><td>among the students</td></tr>
+<tr><td>between Delhi and Agra</td><td>among many options</td></tr>
+<tr><td>between the twins</td><td>among the crowd</td></tr>
+<tr><td>between Monday and Friday</td><td>among the players</td></tr>
+<tr><td>between us</td><td>among family members</td></tr>
+</tbody></table></div>
+</section>
+  </main>
+</div>
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+<footer>Sistema 06 · Situar a Frase — Preposições em Mapa · inglês real, tirado da fonte</footer>
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>units.push({el, sec:s, txt:el.textContent}));
+  });
+  document.getElementById('m-total').textContent=units.length;
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({el:w, rows:[...w.querySelectorAll('tbody tr')]}));
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' seções.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0; const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';});
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    const esc=raw.replace(/[<>&]/g,'');
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'seção':'seções')+' para &ldquo;'+esc+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+esc+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id)); } });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

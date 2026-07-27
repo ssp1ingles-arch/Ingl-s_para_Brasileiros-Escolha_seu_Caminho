@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Famílias de Verbos — Sistema 04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#6366F1;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:780px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:780px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.pt b{color:var(--text);font-weight:600;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 04</a>
+<div class="wrap">
+<div class="eyebrow">Sistema 04 · Motor de Verbos · famílias de verbos</div>
+<h1 class="title">Famílias de <em>Verbos</em></h1>
+<p class="lead">Cada verbo-chave do inglês com <b>todas as suas formas lado a lado</b> — presente, terceira pessoa, passado, futuro, plano e particípio — e o sentido que cada forma carrega. Mais os quatro verbos de comunicação que o brasileiro confunde (<i>say, tell, speak, talk</i>), a família do <i>would</i> e a grade completa dos modais. Todos os exemplos em inglês real com tradução.</p>
+<div class="metrics">
+  <div class="metric"><b>12</b><span>seções</span></div>
+  <div class="metric"><b id="m-total">—</b><span>itens</span></div>
+  <div class="metric"><b>10</b><span>tabelas</span></div>
+  <div class="metric"><b>A1–B1</b><span>nível</span></div>
+</div>
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: went, gone, would rather, preferiria…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+<div class="layout">
+  <nav class="toc"><h3>Índice</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+<section id="go">
+<div class="snum">Seção 01</div>
+<h2>GO — a família inteira</h2>
+<p class="sdesc">Um verbo, seis formas, seis sentidos. <b>GO</b> não funciona para tudo: cada forma marca um tempo e uma intenção diferente.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Forma</th><th>Quando usar</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>go</b></td><td>todo dia / rotina</td><td>I <b>go</b> to the gym every day.</td></tr>
+<tr><td><b>goes</b></td><td>só para he, she, it</td><td>She <b>goes</b> to work by bus.</td></tr>
+<tr><td><b>went</b></td><td>ontem / passado</td><td>I <b>went</b> to the beach yesterday.</td></tr>
+<tr><td><b>going</b></td><td>agora em movimento ou plano certo</td><td>I'm <b>going</b> to the store now.</td></tr>
+<tr><td><b>will go</b></td><td>decisão na hora / futuro espontâneo</td><td>I <b>will go</b> with you.</td></tr>
+<tr><td><b>gone</b></td><td>have/has + gone → já foi embora</td><td>He has <b>gone</b> home.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">hábito e rotina</span>
+<div class="en">I <i>go</i> to the gym every day.</div>
+<div class="pt">Eu vou à academia todo dia.</div>
+</div>
+<div class="i">
+<span class="tag">hábito e rotina</span>
+<div class="en">They <i>go</i> to school together.</div>
+<div class="pt">Eles vão para a escola juntos.</div>
+</div>
+<div class="i">
+<span class="tag">hábito e rotina</span>
+<div class="en">I <i>go</i> to work at 8.</div>
+<div class="pt">Eu vou para o trabalho às 8.</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it</span>
+<div class="en">She <i>goes</i> to work by bus.</div>
+<div class="pt">Ela vai para o trabalho de ônibus.</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it</span>
+<div class="en">He <i>goes</i> to bed early.</div>
+<div class="pt">Ele vai dormir cedo.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">I <i>went</i> to the beach yesterday.</div>
+<div class="pt">Eu fui à praia ontem.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">We <i>went</i> to a great restaurant.</div>
+<div class="pt">Nós fomos a um ótimo restaurante.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">I <i>went</i> to the movies yesterday.</div>
+<div class="pt">Eu fui ao cinema ontem.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">She <i>went</i> to Paris last year.</div>
+<div class="pt">Ela foi para Paris no ano passado.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">They <i>went</i> to the beach on Saturday.</div>
+<div class="pt">Eles foram à praia no sábado.</div>
+</div>
+<div class="i">
+<span class="tag">agora em movimento</span>
+<div class="en">I am <i>going</i> to the store now.</div>
+<div class="pt">Estou indo à loja agora.</div>
+</div>
+<div class="i">
+<span class="tag">agora em movimento</span>
+<div class="en">I'm <i>going</i> home right now.</div>
+<div class="pt">Eu estou indo para casa agora.</div>
+</div>
+<div class="i">
+<span class="tag">agora em movimento</span>
+<div class="en">She's <i>going</i> to the store.</div>
+<div class="pt">Ela está indo para a loja.</div>
+</div>
+<div class="i">
+<span class="tag">plano futuro</span>
+<div class="en">I am <i>going to</i> study tonight.</div>
+<div class="pt">Vou estudar hoje à noite.</div>
+</div>
+<div class="i">
+<span class="tag">plano futuro</span>
+<div class="en">They're <i>going</i> out tonight.</div>
+<div class="pt">Eles vão sair esta noite.</div>
+</div>
+<div class="i">
+<span class="tag">decisão na hora</span>
+<div class="en">I <i>will go</i> with you.</div>
+<div class="pt">Eu vou com você.</div>
+</div>
+<div class="i">
+<span class="tag">decisão na hora</span>
+<div class="en">She <i>will go</i> to the party.</div>
+<div class="pt">Ela vai à festa.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">I <i>will go</i> to the gym tomorrow.</div>
+<div class="pt">Eu vou à academia amanhã.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">She <i>will go</i> to the conference next week.</div>
+<div class="pt">Ela vai à conferência na próxima semana.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">They <i>will go</i> on vacation in July.</div>
+<div class="pt">Eles vão fazer férias em julho.</div>
+</div>
+<div class="i">
+<span class="tag">já foi embora</span>
+<div class="en">He has <i>gone</i> home.</div>
+<div class="pt">Ele foi para casa.</div>
+</div>
+<div class="i">
+<span class="tag">já foi embora</span>
+<div class="en">They have <i>gone</i> on vacation.</div>
+<div class="pt">Eles saíram de férias.</div>
+</div>
+</div>
+</section>
+
+<section id="be">
+<div class="snum">Seção 02</div>
+<h2>BE — am, is, are, was, were, will be</h2>
+<p class="sdesc">O verbo mais irregular do inglês. Muda conforme <b>o tempo</b> e conforme <b>a pessoa</b>. A forma que anda com auxiliar é sempre <code>been</code>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Forma</th><th>Com quem</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>am</b></td><td>só com I</td><td>I <b>am</b> a student.</td></tr>
+<tr><td><b>is</b></td><td>he, she, it</td><td>He <b>is</b> a doctor.</td></tr>
+<tr><td><b>are</b></td><td>you, we, they</td><td>You <b>are</b> my best friend.</td></tr>
+<tr><td><b>was</b></td><td>I, he, she, it — passado</td><td>He <b>was</b> tired yesterday.</td></tr>
+<tr><td><b>were</b></td><td>you, we, they — passado</td><td>We <b>were</b> very excited.</td></tr>
+<tr><td><b>will be</b></td><td>futuro, todas as pessoas</td><td>I <b>will be</b> a teacher.</td></tr>
+<tr><td><b>going to be</b></td><td>planos e intenções</td><td>I am <b>going to be</b> a pilot.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">am</span>
+<div class="en">I <i>am</i> a student.</div>
+<div class="pt">Eu sou um estudante.</div>
+</div>
+<div class="i">
+<span class="tag">am</span>
+<div class="en">I <i>am</i> from Brazil.</div>
+<div class="pt">Eu sou do Brasil.</div>
+</div>
+<div class="i">
+<span class="tag">am</span>
+<div class="en">I <i>am</i> happy.</div>
+<div class="pt">Eu estou feliz.</div>
+</div>
+<div class="i">
+<span class="tag">is</span>
+<div class="en">He <i>is</i> a doctor.</div>
+<div class="pt">Ele é um médico.</div>
+</div>
+<div class="i">
+<span class="tag">is</span>
+<div class="en">She <i>is</i> very smart.</div>
+<div class="pt">Ela é muito inteligente.</div>
+</div>
+<div class="i">
+<span class="tag">is</span>
+<div class="en">It <i>is</i> a beautiful day.</div>
+<div class="pt">É um dia lindo.</div>
+</div>
+<div class="i">
+<span class="tag">are</span>
+<div class="en">You <i>are</i> my best friend.</div>
+<div class="pt">Você é meu melhor amigo.</div>
+</div>
+<div class="i">
+<span class="tag">are</span>
+<div class="en">We <i>are</i> ready for the trip.</div>
+<div class="pt">Nós estamos prontos para a viagem.</div>
+</div>
+<div class="i">
+<span class="tag">are</span>
+<div class="en">They <i>are</i> here now.</div>
+<div class="pt">Eles estão aqui agora.</div>
+</div>
+<div class="i">
+<span class="tag">was</span>
+<div class="en">He <i>was</i> tired yesterday.</div>
+<div class="pt">Ele estava cansado ontem.</div>
+</div>
+<div class="i">
+<span class="tag">was</span>
+<div class="en">She <i>was</i> at home.</div>
+<div class="pt">Ela estava em casa.</div>
+</div>
+<div class="i">
+<span class="tag">was</span>
+<div class="en">It <i>was</i> a great movie.</div>
+<div class="pt">Foi um filme ótimo.</div>
+</div>
+<div class="i">
+<span class="tag">were</span>
+<div class="en">You <i>were</i> at the party.</div>
+<div class="pt">Você estava na festa.</div>
+</div>
+<div class="i">
+<span class="tag">were</span>
+<div class="en">We <i>were</i> very excited.</div>
+<div class="pt">Nós estávamos muito animados.</div>
+</div>
+<div class="i">
+<span class="tag">were</span>
+<div class="en">They <i>were</i> late yesterday.</div>
+<div class="pt">Eles estavam atrasados ontem.</div>
+</div>
+<div class="i">
+<span class="tag">will be</span>
+<div class="en">I <i>will be</i> a teacher.</div>
+<div class="pt">Eu serei um professor.</div>
+</div>
+<div class="i">
+<span class="tag">will be</span>
+<div class="en">She <i>will be</i> here soon.</div>
+<div class="pt">Ela estará aqui em breve.</div>
+</div>
+<div class="i">
+<span class="tag">will be</span>
+<div class="en">It <i>will be</i> a great day.</div>
+<div class="pt">Será um ótimo dia.</div>
+</div>
+<div class="i">
+<span class="tag">going to be</span>
+<div class="en">I am <i>going to be</i> a pilot.</div>
+<div class="pt">Eu vou ser um piloto.</div>
+</div>
+<div class="i">
+<span class="tag">going to be</span>
+<div class="en">She is <i>going to be</i> a doctor.</div>
+<div class="pt">Ela vai ser médica.</div>
+</div>
+<div class="i">
+<span class="tag">going to be</span>
+<div class="en">They are <i>going to be</i> on vacation next month.</div>
+<div class="pt">Eles vão estar de férias no próximo mês.</div>
+</div>
+</div>
+</section>
+
+<section id="do">
+<div class="snum">Seção 03</div>
+<h2>DO — do, does, did, will do</h2>
+<p class="sdesc">Serve como verbo principal (<i>fazer</i>) e como auxiliar de pergunta e negativa. A forma muda com a pessoa no presente e some no passado.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Forma</th><th>Quando usar</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>do</b></td><td>presente — I, you, we, they</td><td>I <b>do</b> my homework every day.</td></tr>
+<tr><td><b>does</b></td><td>presente — he, she, it</td><td>He <b>does</b> his homework every day.</td></tr>
+<tr><td><b>did</b></td><td>passado — todas as pessoas</td><td>I <b>did</b> my homework yesterday.</td></tr>
+<tr><td><b>will do</b></td><td>futuro, promessa, decisão</td><td>I <b>will do</b> my best in the test.</td></tr>
+<tr><td><b>going to do</b></td><td>plano já decidido</td><td>I am <b>going to do</b> my project this weekend.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">presente</span>
+<div class="en">I <i>do</i> my homework every day.</div>
+<div class="pt">Eu faço minha lição de casa todos os dias.</div>
+</div>
+<div class="i">
+<span class="tag">presente</span>
+<div class="en">We <i>do</i> exercise in the morning.</div>
+<div class="pt">Nós fazemos exercício pela manhã.</div>
+</div>
+<div class="i">
+<span class="tag">presente — pergunta</span>
+<div class="en"><i>Do</i> you do your chores?</div>
+<div class="pt">Você faz suas tarefas?</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it</span>
+<div class="en">He <i>does</i> his homework every day.</div>
+<div class="pt">Ele faz a lição de casa todos os dias.</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it</span>
+<div class="en">She <i>does</i> yoga in the morning.</div>
+<div class="pt">Ela pratica ioga pela manhã.</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it — pergunta</span>
+<div class="en"><i>Does</i> it rain a lot here?</div>
+<div class="pt">Chove muito aqui?</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">I <i>did</i> my homework yesterday.</div>
+<div class="pt">Eu fiz minha lição de casa ontem.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">We <i>did</i> a great job!</div>
+<div class="pt">Nós fizemos um ótimo trabalho!</div>
+</div>
+<div class="i">
+<span class="tag">passado — pergunta</span>
+<div class="en"><i>Did</i> you see the movie?</div>
+<div class="pt">Você viu o filme?</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">I <i>will do</i> my best in the test.</div>
+<div class="pt">Eu farei meu melhor na prova.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">I <i>will do</i> it right now.</div>
+<div class="pt">Eu farei isso agora mesmo.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">They <i>will do</i> a great job.</div>
+<div class="pt">Eles farão um ótimo trabalho.</div>
+</div>
+<div class="i">
+<span class="tag">plano</span>
+<div class="en">I am <i>going to do</i> my project this weekend.</div>
+<div class="pt">Eu vou fazer meu projeto neste fim de semana.</div>
+</div>
+<div class="i">
+<span class="tag">plano</span>
+<div class="en">She is <i>going to do</i> a course next month.</div>
+<div class="pt">Ela vai fazer um curso no próximo mês.</div>
+</div>
+<div class="i">
+<span class="tag">plano — pergunta</span>
+<div class="en">Are you <i>going to do</i> anything special?</div>
+<div class="pt">Você vai fazer algo especial?</div>
+</div>
+</div>
+</section>
+
+<section id="get">
+<div class="snum">Seção 04</div>
+<h2>GET — os quatro sentidos</h2>
+<p class="sdesc"><b>GET</b> é o verbo que mais muda de significado em inglês. O sentido não está no verbo: está no que vem depois dele.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Sentido</th><th>Equivale a</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>GET = receive</b></td><td>receber, ganhar, obter</td><td>I <b>got</b> a new phone yesterday.</td></tr>
+<tr><td><b>GET = arrive</b></td><td>chegar, alcançar</td><td>I <b>got</b> home late last night.</td></tr>
+<tr><td><b>GET = become</b></td><td>ficar, tornar-se</td><td>She <b>got</b> tired after work.</td></tr>
+<tr><td><b>GET + partícula</b></td><td>muda tudo (phrasal verb)</td><td>I <b>got up</b> early today.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">receber</span>
+<div class="en">I <i>got</i> a new phone yesterday.</div>
+<div class="pt">Eu recebi um celular novo ontem.</div>
+</div>
+<div class="i">
+<span class="tag">receber</span>
+<div class="en">She <i>got</i> a gift from her mother.</div>
+<div class="pt">Ela ganhou um presente da mãe dela.</div>
+</div>
+<div class="i">
+<span class="tag">receber</span>
+<div class="en">They <i>got</i> the email this morning.</div>
+<div class="pt">Eles receberam o e-mail esta manhã.</div>
+</div>
+<div class="i">
+<span class="tag">chegar</span>
+<div class="en">I <i>got</i> home late last night.</div>
+<div class="pt">Eu cheguei em casa tarde ontem à noite.</div>
+</div>
+<div class="i">
+<span class="tag">chegar</span>
+<div class="en">We <i>got</i> to the airport at 7 a.m.</div>
+<div class="pt">Nós chegamos ao aeroporto às 7 da manhã.</div>
+</div>
+<div class="i">
+<span class="tag">chegar</span>
+<div class="en">She <i>got</i> to her destination safely.</div>
+<div class="pt">Ela chegou ao seu destino com segurança.</div>
+</div>
+<div class="i">
+<span class="tag">ficar / tornar-se</span>
+<div class="en">She <i>got</i> tired after work.</div>
+<div class="pt">Ela ficou cansada depois do trabalho.</div>
+</div>
+<div class="i">
+<span class="tag">ficar / tornar-se</span>
+<div class="en">He <i>got</i> angry during the meeting.</div>
+<div class="pt">Ele ficou bravo durante a reunião.</div>
+</div>
+<div class="i">
+<span class="tag">ficar / tornar-se</span>
+<div class="en">The weather <i>got</i> cold last night.</div>
+<div class="pt">O clima ficou frio ontem à noite.</div>
+</div>
+<div class="i">
+<span class="tag">phrasal verb</span>
+<div class="en">I <i>got up</i> early today.</div>
+<div class="pt">Eu acordei cedo hoje.</div>
+</div>
+<div class="i">
+<span class="tag">phrasal verb</span>
+<div class="en">We <i>got on</i> the bus together.</div>
+<div class="pt">Nós entramos no ônibus juntos.</div>
+</div>
+<div class="i">
+<span class="tag">phrasal verb</span>
+<div class="en">He <i>got over</i> the breakup.</div>
+<div class="pt">Ele superou o término.</div>
+</div>
+</div>
+</section>
+
+<section id="make">
+<div class="snum">Seção 05</div>
+<h2>MAKE — make, makes, made, will make</h2>
+<p class="sdesc">O verbo de <b>criar e produzir</b>. Também aparece em construções fixas onde não significa exatamente &ldquo;fazer&rdquo;: <i>make money</i>, <i>make a decision</i>, <i>make me happy</i>.</p>
+<div class="items">
+<div class="i">
+<span class="tag">presente</span>
+<div class="en">I <i>make</i> coffee every morning.</div>
+<div class="pt">Eu faço café todas as manhãs.</div>
+</div>
+<div class="i">
+<span class="tag">presente</span>
+<div class="en">She <i>makes</i> dinner for her family.</div>
+<div class="pt">Ela faz jantar para sua família.</div>
+</div>
+<div class="i">
+<span class="tag">presente</span>
+<div class="en">We <i>make</i> good decisions every day.</div>
+<div class="pt">Nós tomamos boas decisões todos os dias.</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it</span>
+<div class="en">He <i>makes</i> a lot of money.</div>
+<div class="pt">Ele ganha muito dinheiro.</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it</span>
+<div class="en">She <i>makes</i> amazing cakes.</div>
+<div class="pt">Ela faz bolos incríveis.</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it</span>
+<div class="en">It <i>makes</i> me happy.</div>
+<div class="pt">Isso me deixa feliz.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">I <i>made</i> a cake yesterday.</div>
+<div class="pt">Eu fiz um bolo ontem.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">She <i>made</i> a mistake.</div>
+<div class="pt">Ela cometeu um erro.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">They <i>made</i> a plan for the trip.</div>
+<div class="pt">Eles fizeram um plano para a viagem.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">I <i>will make</i> dinner tonight.</div>
+<div class="pt">Eu vou fazer jantar esta noite.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">She <i>will make</i> a decision tomorrow.</div>
+<div class="pt">Ela vai tomar uma decisão amanhã.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">We <i>will make</i> our dreams come true.</div>
+<div class="pt">Vamos realizar nossos sonhos.</div>
+</div>
+<div class="i">
+<span class="tag">plano</span>
+<div class="en">I'm <i>going to make</i> a cake for your birthday.</div>
+<div class="pt">Vou fazer um bolo para seu aniversário.</div>
+</div>
+<div class="i">
+<span class="tag">plano</span>
+<div class="en">She's <i>going to make</i> a decision soon.</div>
+<div class="pt">Ela vai tomar uma decisão em breve.</div>
+</div>
+<div class="i">
+<span class="tag">plano</span>
+<div class="en">We're <i>going to make</i> a trip next month.</div>
+<div class="pt">Vamos fazer uma viagem no próximo mês.</div>
+</div>
+</div>
+</section>
+
+<section id="do-make">
+<div class="snum">Seção 06</div>
+<h2>DO x MAKE — o par que derruba brasileiro</h2>
+<p class="sdesc">Regra prática: <b>DO</b> é para tarefa e trabalho (algo que já existe); <b>MAKE</b> é para criar e produzir (algo que passa a existir).</p>
+<div class="tablewrap"><table>
+<thead><tr><th>DO — tarefas e trabalho</th><th>MAKE — criar e produzir</th></tr></thead><tbody>
+<tr><td>I <b>do</b> my homework.</td><td>I <b>make</b> breakfast.</td></tr>
+<tr><td>She <b>does</b> the laundry.</td><td>She <b>makes</b> a cake.</td></tr>
+<tr><td>They <b>do</b> the dishes.</td><td>They <b>make</b> a plan.</td></tr>
+<tr><td>We <b>do</b> our best.</td><td>We <b>make</b> friends easily.</td></tr>
+<tr><td>He <b>does</b> exercise daily.</td><td>He <b>makes</b> coffee every morning.</td></tr>
+<tr><td><b>Do</b> your job well.</td><td><b>Make</b> your bed.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="love">
+<div class="snum">Seção 07</div>
+<h2>LOVE — love, loves, loved, will love</h2>
+<p class="sdesc">Verbo regular, mas com uma pegadinha: <b>loves</b> só existe para he/she/it, e o passado é <b>loved</b> (não &ldquo;lovd&rdquo;).</p>
+<div class="items">
+<div class="i">
+<span class="tag">presente</span>
+<div class="en">I <i>love</i> coffee.</div>
+<div class="pt">Eu amo café.</div>
+</div>
+<div class="i">
+<span class="tag">presente</span>
+<div class="en">We <i>love</i> traveling.</div>
+<div class="pt">Nós amamos viajar.</div>
+</div>
+<div class="i">
+<span class="tag">presente</span>
+<div class="en">I <i>love</i> this song.</div>
+<div class="pt">Eu amo esta música.</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it</span>
+<div class="en">She <i>loves</i> pizza.</div>
+<div class="pt">Ela ama pizza.</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it</span>
+<div class="en">He <i>loves</i> football.</div>
+<div class="pt">Ele ama futebol.</div>
+</div>
+<div class="i">
+<span class="tag">he / she / it</span>
+<div class="en">My mom <i>loves</i> flowers.</div>
+<div class="pt">Minha mãe ama flores.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">I <i>loved</i> that movie.</div>
+<div class="pt">Eu amei aquele filme.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">She <i>loved</i> living in Brazil.</div>
+<div class="pt">Ela amou morar no Brasil.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">They <i>loved</i> the trip.</div>
+<div class="pt">Eles amaram a viagem.</div>
+</div>
+<div class="i">
+<span class="tag">previsão</span>
+<div class="en">You <i>will love</i> this restaurant.</div>
+<div class="pt">Você vai amar este restaurante.</div>
+</div>
+<div class="i">
+<span class="tag">previsão</span>
+<div class="en">She <i>will love</i> the gift.</div>
+<div class="pt">Ela vai amar o presente.</div>
+</div>
+<div class="i">
+<span class="tag">previsão</span>
+<div class="en">They <i>will love</i> the surprise.</div>
+<div class="pt">Eles vão amar a surpresa.</div>
+</div>
+<div class="i">
+<span class="tag">previsão forte</span>
+<div class="en">You're <i>going to love</i> this place.</div>
+<div class="pt">Você vai amar este lugar.</div>
+</div>
+<div class="i">
+<span class="tag">previsão forte</span>
+<div class="en">He's <i>going to love</i> the food.</div>
+<div class="pt">Ele vai amar a comida.</div>
+</div>
+<div class="i">
+<span class="tag">previsão forte</span>
+<div class="en">She's <i>going to love</i> the class.</div>
+<div class="pt">Ela vai amar a aula.</div>
+</div>
+</div>
+</section>
+
+<section id="stop">
+<div class="snum">Seção 08</div>
+<h2>STOP — o que muda com o que vem depois</h2>
+<p class="sdesc">Depois de <b>STOP</b>, um substantivo significa <i>interromper aquilo</i>; um verbo em <b>-ing</b> significa <i>deixar de fazer</i>. E <b>stop by</b> não tem nada a ver com parar.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Estrutura</th><th>Sentido</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>stop</b> + substantivo</td><td>interromper algo</td><td><b>Stop</b> the car.</td></tr>
+<tr><td><b>stop</b> + verbo-ing</td><td>deixar de fazer algo</td><td><b>Stop</b> smoking.</td></tr>
+<tr><td><b>stopped</b></td><td>passado</td><td>The rain <b>stopped</b>.</td></tr>
+<tr><td><b>will stop</b></td><td>futuro / decisão</td><td>I <b>will stop</b> tomorrow.</td></tr>
+<tr><td><b>stop by</b></td><td>passar rapidamente em um lugar</td><td><b>Stop by</b> my house tomorrow.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">+ substantivo</span>
+<div class="en"><i>Stop</i> the car.</div>
+<div class="pt">Pare o carro.</div>
+</div>
+<div class="i">
+<span class="tag">+ substantivo</span>
+<div class="en"><i>Stop</i> the music.</div>
+<div class="pt">Pare a música.</div>
+</div>
+<div class="i">
+<span class="tag">+ substantivo</span>
+<div class="en"><i>Stop</i> the machine.</div>
+<div class="pt">Pare a máquina.</div>
+</div>
+<div class="i">
+<span class="tag">+ verbo-ing</span>
+<div class="en"><i>Stop</i> smoking.</div>
+<div class="pt">Pare de fumar.</div>
+</div>
+<div class="i">
+<span class="tag">+ verbo-ing</span>
+<div class="en"><i>Stop</i> talking.</div>
+<div class="pt">Pare de falar.</div>
+</div>
+<div class="i">
+<span class="tag">+ verbo-ing</span>
+<div class="en"><i>Stop</i> eating late.</div>
+<div class="pt">Pare de comer tarde.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">The rain <i>stopped</i>.</div>
+<div class="pt">Parou de chover.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">I <i>stopped</i> the video.</div>
+<div class="pt">Eu parei o vídeo.</div>
+</div>
+<div class="i">
+<span class="tag">passado</span>
+<div class="en">They <i>stopped</i> the meeting.</div>
+<div class="pt">Eles interromperam a reunião.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">I <i>will stop</i> tomorrow.</div>
+<div class="pt">Eu vou parar amanhã.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">We <i>will stop</i> the meeting.</div>
+<div class="pt">Nós vamos encerrar a reunião.</div>
+</div>
+<div class="i">
+<span class="tag">futuro</span>
+<div class="en">She <i>will stop</i> calling me.</div>
+<div class="pt">Ela vai parar de me ligar.</div>
+</div>
+<div class="i">
+<span class="tag">stop by</span>
+<div class="en"><i>Stop by</i> my house tomorrow.</div>
+<div class="pt">Passe na minha casa amanhã.</div>
+</div>
+<div class="i">
+<span class="tag">stop by</span>
+<div class="en"><i>Stop by</i> the office if you have time.</div>
+<div class="pt">Passe no escritório se tiver tempo.</div>
+</div>
+<div class="i">
+<span class="tag">stop by</span>
+<div class="en">I'll <i>stop by</i> later to say hello.</div>
+<div class="pt">Eu vou passar mais tarde para dar um oi.</div>
+</div>
+</div>
+</section>
+
+<section id="comunicacao">
+<div class="snum">Seção 09</div>
+<h2>SAY, TELL, SPEAK, TALK — os quatro verbos de comunicação</h2>
+<p class="sdesc">Todos viram &ldquo;falar&rdquo; ou &ldquo;dizer&rdquo; em português — e é por isso que o brasileiro erra. O que separa os quatro é <b>o que vem depois</b>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Verbo</th><th>Sentido</th><th>Regra de complemento</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>SAY</b></td><td>dizer algo</td><td>não precisa de objeto; vem uma frase depois</td><td>She <b>said</b> she was tired.</td></tr>
+<tr><td><b>TELL</b></td><td>contar para alguém</td><td>sempre seguido de <b>pessoa</b> + o que se diz</td><td>She <b>told me</b> the truth.</td></tr>
+<tr><td><b>SPEAK</b></td><td>falar (mais formal), falar uma língua</td><td>não precisa de complemento</td><td>I <b>speak</b> English.</td></tr>
+<tr><td><b>TALK</b></td><td>conversar (informal)</td><td>é sempre mútuo — duas ou mais pessoas</td><td>Let's <b>talk</b> about your plans.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">say</span>
+<div class="en">She <i>said</i> she was tired.</div>
+<div class="pt">Ela disse que estava cansada.</div>
+</div>
+<div class="i">
+<span class="tag">say</span>
+<div class="en">He <i>said</i> he would call me later.</div>
+<div class="pt">Ele disse que me ligaria mais tarde.</div>
+</div>
+<div class="i">
+<span class="tag">say</span>
+<div class="en">What did you <i>say</i>?</div>
+<div class="pt">O que você disse?</div>
+</div>
+<div class="i">
+<span class="tag">tell</span>
+<div class="en">She <i>told</i> me the truth.</div>
+<div class="pt">Ela me contou a verdade.</div>
+</div>
+<div class="i">
+<span class="tag">tell</span>
+<div class="en">He <i>told</i> his parents about the trip.</div>
+<div class="pt">Ele contou aos pais sobre a viagem.</div>
+</div>
+<div class="i">
+<span class="tag">tell</span>
+<div class="en"><i>Tell</i> me more about it.</div>
+<div class="pt">Me conte mais sobre isso.</div>
+</div>
+<div class="i">
+<span class="tag">speak</span>
+<div class="en">I <i>speak</i> English.</div>
+<div class="pt">Eu falo inglês.</div>
+</div>
+<div class="i">
+<span class="tag">speak</span>
+<div class="en">Do you <i>speak</i> Spanish?</div>
+<div class="pt">Você fala espanhol?</div>
+</div>
+<div class="i">
+<span class="tag">speak</span>
+<div class="en">She <i>speaks</i> softly.</div>
+<div class="pt">Ela fala em tom baixo.</div>
+</div>
+<div class="i">
+<span class="tag">talk</span>
+<div class="en">Let's <i>talk</i> about your plans.</div>
+<div class="pt">Vamos conversar sobre seus planos.</div>
+</div>
+<div class="i">
+<span class="tag">talk</span>
+<div class="en">We <i>talked</i> for hours about everything.</div>
+<div class="pt">Conversamos por horas sobre tudo.</div>
+</div>
+<div class="i">
+<span class="tag">talk</span>
+<div class="en">I need to <i>talk</i> to you about something.</div>
+<div class="pt">Preciso conversar com você sobre algo.</div>
+</div>
+</div>
+</section>
+
+<section id="take">
+<div class="snum">Seção 10</div>
+<h2>TAKE — os phrasal verbs que mudam tudo</h2>
+<p class="sdesc">Sozinho, <b>take</b> é pegar ou levar. Com uma partícula, vira outro verbo inteiramente.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Phrasal verb</th><th>Sentido em português</th></tr></thead><tbody>
+<tr><td><b>take off</b></td><td>tirar (roupa), decolar (avião) ou fazer sucesso</td></tr>
+<tr><td><b>take out</b></td><td>tirar de dentro ou levar alguém para sair</td></tr>
+<tr><td><b>take over</b></td><td>assumir controle ou responsabilidade</td></tr>
+<tr><td><b>take back</b></td><td>devolver ou retirar o que disse</td></tr>
+<tr><td><b>take after</b></td><td>puxar alguém da família (genética)</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="would">
+<div class="snum">Seção 11</div>
+<h2>WOULD — a família do condicional</h2>
+<p class="sdesc">O <b>WOULD</b> é o &ldquo;-ria&rdquo; do inglês: <i>faria</i>, <i>iria</i>, <i>gostaria</i>, <i>preferiria</i>, <i>teria</i>. O que muda é a palavra que vem colada nele.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Forma</th><th>Sentido</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>would</b></td><td>condicional — faria, iria</td><td>I <b>would</b> travel more if I had time.</td></tr>
+<tr><td><b>would like</b></td><td>desejo e pedido educado — gostaria</td><td>I <b>would like</b> a coffee, please.</td></tr>
+<tr><td><b>wouldn't</b></td><td>negativa — não faria</td><td>I <b>wouldn't</b> do that.</td></tr>
+<tr><td><b>would rather</b></td><td>preferência — preferiria (+ verbo sem <i>to</i>)</td><td>I <b>would rather</b> stay home tonight.</td></tr>
+<tr><td><b>would have</b></td><td>hipótese no passado — teria (+ particípio)</td><td>I <b>would have</b> called you.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">condicional</span>
+<div class="en">I <i>would</i> travel more if I had time.</div>
+<div class="pt">Eu viajaria mais se eu tivesse tempo.</div>
+</div>
+<div class="i">
+<span class="tag">condicional</span>
+<div class="en">She <i>would</i> help you.</div>
+<div class="pt">Ela ajudaria você.</div>
+</div>
+<div class="i">
+<span class="tag">condicional</span>
+<div class="en"><i>Would</i> you do that for me?</div>
+<div class="pt">Você faria isso por mim?</div>
+</div>
+<div class="i">
+<span class="tag">would like</span>
+<div class="en">I <i>would like</i> a coffee, please.</div>
+<div class="pt">Eu gostaria de um café, por favor.</div>
+</div>
+<div class="i">
+<span class="tag">would like</span>
+<div class="en">She <i>would like</i> to learn English.</div>
+<div class="pt">Ela gostaria de aprender inglês.</div>
+</div>
+<div class="i">
+<span class="tag">would like</span>
+<div class="en"><i>Would</i> you <i>like</i> to come with us?</div>
+<div class="pt">Você gostaria de vir com a gente?</div>
+</div>
+<div class="i">
+<span class="tag">negativa</span>
+<div class="en">I <i>wouldn't</i> do that.</div>
+<div class="pt">Eu não faria isso.</div>
+</div>
+<div class="i">
+<span class="tag">negativa</span>
+<div class="en">She <i>wouldn't</i> travel alone.</div>
+<div class="pt">Ela não viajaria sozinha.</div>
+</div>
+<div class="i">
+<span class="tag">negativa</span>
+<div class="en">I said I <i>wouldn't</i> be late.</div>
+<div class="pt">Eu disse que não me atrasaria.</div>
+</div>
+<div class="i">
+<span class="tag">preferência</span>
+<div class="en">I <i>would rather</i> stay home tonight.</div>
+<div class="pt">Eu preferiria ficar em casa hoje à noite.</div>
+</div>
+<div class="i">
+<span class="tag">preferência</span>
+<div class="en">She <i>would rather</i> take the bus.</div>
+<div class="pt">Ela preferiria pegar o ônibus.</div>
+</div>
+<div class="i">
+<span class="tag">preferência</span>
+<div class="en"><i>Would</i> you <i>rather</i> go now or later?</div>
+<div class="pt">Você preferiria ir agora ou mais tarde?</div>
+</div>
+<div class="i">
+<span class="tag">hipótese no passado</span>
+<div class="en">I <i>would have</i> called you, but I lost your number.</div>
+<div class="pt">Eu teria te ligado, mas perdi seu número.</div>
+</div>
+<div class="i">
+<span class="tag">hipótese no passado</span>
+<div class="en">She <i>would have</i> gone if she had time.</div>
+<div class="pt">Ela teria ido se tivesse tempo.</div>
+</div>
+<div class="i">
+<span class="tag">hipótese no passado</span>
+<div class="en"><i>Would</i> you <i>have</i> done the same?</div>
+<div class="pt">Você teria feito o mesmo?</div>
+</div>
+</div>
+</section>
+
+<section id="modais">
+<div class="snum">Seção 12</div>
+<h2>Os verbos modais em uso</h2>
+<p class="sdesc">Cada modal acrescenta uma camada de sentido ao verbo principal — dever, capacidade, possibilidade, conselho. O verbo depois deles fica sempre na <b>forma básica</b>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Modal</th><th>O que acrescenta</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>can</b></td><td>capacidade / permissão</td><td>I <b>can</b> speak English.</td></tr>
+<tr><td><b>could</b></td><td>capacidade no passado / pedido educado</td><td><b>Could</b> you help me?</td></tr>
+<tr><td><b>may</b></td><td>permissão formal</td><td><b>May</b> I come in?</td></tr>
+<tr><td><b>might</b></td><td>possibilidade fraca</td><td>It <b>might</b> rain today.</td></tr>
+<tr><td><b>must</b></td><td>obrigação forte</td><td>You <b>must</b> wear a seatbelt.</td></tr>
+<tr><td><b>have to</b></td><td>obrigação necessária</td><td>I <b>have to</b> finish my work.</td></tr>
+<tr><td><b>should</b></td><td>conselho</td><td>You <b>should</b> eat healthy food.</td></tr>
+<tr><td><b>ought to</b></td><td>conselho formal</td><td>You <b>ought to</b> respect elders.</td></tr>
+<tr><td><b>had better</b></td><td>conselho forte, quase aviso</td><td>You <b>had better</b> sleep early.</td></tr>
+<tr><td><b>would</b></td><td>pedido educado / hábito passado</td><td><b>Would</b> you help me, please?</td></tr>
+<tr><td><b>will</b></td><td>futuro / promessa</td><td>I <b>will</b> call you later.</td></tr>
+<tr><td><b>shall</b></td><td>sugestão</td><td><b>Shall</b> we start now?</td></tr>
+<tr><td><b>need to</b></td><td>necessidade</td><td>You <b>need to</b> work hard.</td></tr>
+<tr><td><b>used to</b></td><td>hábito que acabou</td><td>I <b>used to</b> play football.</td></tr>
+<tr><td><b>dare</b></td><td>coragem</td><td>He didn't <b>dare</b> to speak.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">dever</span>
+<div class="en">David <i>should</i> put the ice cream away before he eats the whole thing.</div>
+<div class="pt">O David deveria guardar o sorvete antes de comer o pote inteiro.</div>
+</div>
+<div class="i">
+<span class="tag">dever</span>
+<div class="en">David <i>must</i> reduce his cholesterol, according to his doctor.</div>
+<div class="pt">O David precisa reduzir o colesterol, segundo o médico dele.</div>
+</div>
+<div class="i">
+<span class="tag">capacidade</span>
+<div class="en">If Hanna <i>can</i> help, she will.</div>
+<div class="pt">Se a Hanna puder ajudar, ela vai ajudar.</div>
+</div>
+<div class="i">
+<span class="tag">capacidade no passado</span>
+<div class="en">I <i>could</i> ride a bike at 5.</div>
+<div class="pt">Eu sabia andar de bicicleta aos 5 anos.</div>
+</div>
+<div class="i">
+<span class="tag">possibilidade</span>
+<div class="en">I <i>may</i> go to the picnic if I can find a bottle of ant-killer.</div>
+<div class="pt">Talvez eu vá ao piquenique, se eu achar um vidro de mata-formiga.</div>
+</div>
+<div class="i">
+<span class="tag">possibilidade</span>
+<div class="en">I told Courtney that she <i>might</i> want to bring some insect repellent.</div>
+<div class="pt">Eu disse à Courtney que talvez ela queira levar repelente.</div>
+</div>
+<div class="i">
+<span class="tag">hábito repetido no passado</span>
+<div class="en">Every Saturday he <i>would</i> go to the pet store for more mouse food.</div>
+<div class="pt">Todo sábado ele ia à loja de animais comprar mais ração de rato.</div>
+</div>
+</div>
+</section>
+  </main>
+</div>
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+<footer>Sistema 04 · Motor de Verbos — Famílias de Verbos · inglês real, tirado da fonte</footer>
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>units.push({el, sec:s, txt:el.textContent}));
+  });
+  document.getElementById('m-total').textContent=units.length;
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({el:w, rows:[...w.querySelectorAll('tbody tr')]}));
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' seções.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0; const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';});
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    const esc=raw.replace(/[<>&]/g,'');
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'seção':'seções')+' para &ldquo;'+esc+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+esc+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id)); } });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVEN, SO e os Conectores — Sistema 05</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#10B981;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:780px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:780px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.pt b{color:var(--text);font-weight:600;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 05</a>
+<div class="wrap">
+<div class="eyebrow">Sistema 05 · Conectar Frases · ênfase, intensidade e conectores</div>
+<h1 class="title">EVEN, SO e os <em>Conectores</em></h1>
+<p class="lead">O que liga e o que enfatiza. A família <b>EVEN</b> (até, mesmo se, embora, nem), os quatro intensificadores <b>SO / SUCH / TOO / ENOUGH</b> que todo brasileiro troca, a grade completa das conjunções com a relação que cada uma cria, e os conectores de texto do básico ao formal. Cada item com frase real e tradução.</p>
+<div class="metrics">
+  <div class="metric"><b>4</b><span>seções</span></div>
+  <div class="metric"><b id="m-total">—</b><span>itens</span></div>
+  <div class="metric"><b>5</b><span>tabelas</span></div>
+  <div class="metric"><b>A2–B2</b><span>nível</span></div>
+</div>
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: even though, enough, embora…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+<div class="layout">
+  <nav class="toc"><h3>Índice</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+<section id="even">
+<div class="snum">Seção 01</div>
+<h2>A família EVEN — até, mesmo se, embora, nem</h2>
+<p class="sdesc">Uma palavrinha de quatro letras que muda de função conforme o que vem colada nela. <b>EVEN</b> dá ênfase; <b>EVEN IF</b> abre uma hipótese; <b>EVEN THOUGH</b> contrasta com um fato real; <b>NOT EVEN</b> reforça a negativa.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Forma</th><th>Sentido</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>even</b></td><td>até / até mesmo (ênfase)</td><td>She called me <b>even</b> at night.</td></tr>
+<tr><td><b>even if</b></td><td>mesmo se (hipótese, não é fato)</td><td>I'll help you <b>even if</b> it takes all night.</td></tr>
+<tr><td><b>even though</b></td><td>embora / apesar de (fato real)</td><td><b>Even though</b> it was raining, we went out.</td></tr>
+<tr><td><b>not even</b></td><td>nem / nem sequer (ênfase na negativa)</td><td>I didn't <b>even</b> call her.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">even — ênfase</span>
+<div class="en">She <i>even</i> called me at night.</div>
+<div class="pt">Ela até me ligou à noite.</div>
+</div>
+<div class="i">
+<span class="tag">even — ênfase</span>
+<div class="en">She called me <i>even</i> at night.</div>
+<div class="pt">Ela me ligou até mesmo à noite.</div>
+</div>
+<div class="i">
+<span class="tag">even — ênfase</span>
+<div class="en"><i>Even</i> my brother liked it.</div>
+<div class="pt">Até meu irmão gostou.</div>
+</div>
+<div class="i">
+<span class="tag">even — posição</span>
+<div class="en">EVEN geralmente vem <b>antes</b> da palavra que recebe a ênfase.</div>
+<div class="pt">É a posição que define o que está sendo destacado.</div>
+</div>
+<div class="i">
+<span class="tag">even if — hipótese</span>
+<div class="en">I'll help you <i>even if</i> it takes all night.</div>
+<div class="pt">Vou te ajudar mesmo se isso levar a noite toda.</div>
+</div>
+<div class="i">
+<span class="tag">even if — hipótese</span>
+<div class="en">I wouldn't do that, <i>even if</i> you paid me.</div>
+<div class="pt">Eu não faria isso, mesmo que me pagassem.</div>
+</div>
+<div class="i">
+<span class="tag">even if — hipótese</span>
+<div class="en"><i>Even if</i> it rains, we'll go.</div>
+<div class="pt">Mesmo se chover, nós iremos.</div>
+</div>
+<div class="i">
+<span class="tag">even though — fato</span>
+<div class="en"><i>Even though</i> it was raining, we went out.</div>
+<div class="pt">Embora estivesse chovendo, nós saímos.</div>
+</div>
+<div class="i">
+<span class="tag">even though — fato</span>
+<div class="en"><i>Even though</i> she's busy, she always helps.</div>
+<div class="pt">Embora ela esteja ocupada, ela sempre ajuda.</div>
+</div>
+<div class="i">
+<span class="tag">even though — fato</span>
+<div class="en"><i>Even though</i> I was tired, I kept studying.</div>
+<div class="pt">Embora eu estivesse cansado, continuei estudando.</div>
+</div>
+<div class="i">
+<span class="tag">not even</span>
+<div class="en">I didn't <i>even</i> call her.</div>
+<div class="pt">Eu nem liguei para ela.</div>
+</div>
+<div class="i">
+<span class="tag">not even</span>
+<div class="en">He didn't <i>even</i> try.</div>
+<div class="pt">Ele nem tentou.</div>
+</div>
+<div class="i">
+<span class="tag">not even</span>
+<div class="en">She didn't <i>even</i> look at me.</div>
+<div class="pt">Ela nem olhou para mim.</div>
+</div>
+<div class="i">
+<span class="tag">not even</span>
+<div class="en">I didn't <i>even</i> speak a word.</div>
+<div class="pt">Eu nem falei uma palavra.</div>
+</div>
+</div>
+</section>
+
+<section id="so-such-too-enough">
+<div class="snum">Seção 02</div>
+<h2>SO, SUCH, TOO, ENOUGH — os quatro intensificadores</h2>
+<p class="sdesc">Todos viram &ldquo;muito&rdquo; ou &ldquo;tão&rdquo; em português, e é aí que o brasileiro tropeça. O que separa os quatro é <b>o que vem depois</b> e se a ideia é positiva ou de excesso.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Palavra</th><th>Sentido</th><th>Vem antes de</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>SO</b></td><td>muito / tão (intensidade)</td><td>adjetivo ou advérbio &mdash; <b>nunca</b> substantivo</td><td>She is <b>so</b> tired.</td></tr>
+<tr><td><b>SUCH</b></td><td>tão / tanto</td><td>substantivo (com ou sem adjetivo)</td><td>She is <b>such</b> a good teacher.</td></tr>
+<tr><td><b>TOO</b></td><td>demais (excesso negativo)</td><td>adjetivo &mdash; indica problema</td><td>This coffee is <b>too</b> hot.</td></tr>
+<tr><td><b>ENOUGH</b></td><td>suficiente</td><td>vem <b>depois</b> do adjetivo</td><td>She is old <b>enough</b>.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">so</span>
+<div class="en">She is <i>so</i> tired.</div>
+<div class="pt">Ela está muito cansada.</div>
+</div>
+<div class="i">
+<span class="tag">so</span>
+<div class="en">He runs <i>so</i> fast.</div>
+<div class="pt">Ele corre muito rápido.</div>
+</div>
+<div class="i">
+<span class="tag">such</span>
+<div class="en">She is <i>such</i> a good teacher.</div>
+<div class="pt">Ela é uma professora tão boa.</div>
+</div>
+<div class="i">
+<span class="tag">such</span>
+<div class="en">It was <i>such</i> a long day.</div>
+<div class="pt">Foi um dia tão longo.</div>
+</div>
+<div class="i">
+<span class="tag">too</span>
+<div class="en">This coffee is <i>too</i> hot.</div>
+<div class="pt">Esse café está quente demais.</div>
+</div>
+<div class="i">
+<span class="tag">too</span>
+<div class="en">It's <i>too</i> expensive.</div>
+<div class="pt">É caro demais.</div>
+</div>
+<div class="i">
+<span class="tag">enough</span>
+<div class="en">She is old <i>enough</i>.</div>
+<div class="pt">Ela é velha o suficiente.</div>
+</div>
+<div class="i">
+<span class="tag">enough</span>
+<div class="en">We have <i>enough</i> time.</div>
+<div class="pt">Temos tempo suficiente.</div>
+</div>
+<div class="i">
+<span class="tag">a diferença</span>
+<div class="en"><span class="x">She is so a good teacher.</span> &rarr; <span class="ok">She is <b>such</b> a good teacher.</span></div>
+<div class="pt">Tem substantivo (<i>teacher</i>) na frase &rarr; usa-se <b>such</b>, não <i>so</i>.</div>
+</div>
+<div class="i">
+<span class="tag">a diferença</span>
+<div class="en"><span class="x">She is enough old.</span> &rarr; <span class="ok">She is old <b>enough</b>.</span></div>
+<div class="pt"><b>ENOUGH</b> é a única que vem depois do adjetivo.</div>
+</div>
+</div>
+</section>
+
+<section id="conjuncoes">
+<div class="snum">Seção 03</div>
+<h2>As conjunções em uso</h2>
+<p class="sdesc">As palavras que amarram duas ideias numa frase só. Cada uma marca uma relação diferente: adição, contraste, motivo, resultado, condição, tempo.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Conjunção</th><th>Relação que cria</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>and</b></td><td>adição — junta ideias parecidas</td><td>He is honest <b>and</b> hardworking.</td></tr>
+<tr><td><b>but</b></td><td>contraste</td><td>He is poor <b>but</b> honest.</td></tr>
+<tr><td><b>or</b></td><td>escolha</td><td>Tea <b>or</b> coffee?</td></tr>
+<tr><td><b>because</b></td><td>motivo</td><td>I stayed home <b>because</b> it was raining.</td></tr>
+<tr><td><b>so</b></td><td>resultado</td><td>He was ill, <b>so</b> he did not come.</td></tr>
+<tr><td><b>if</b></td><td>condição</td><td><b>If</b> you work hard, you will succeed.</td></tr>
+<tr><td><b>although</b> / <b>though</b></td><td>contraste</td><td><b>Although</b> he is rich, he is unhappy.</td></tr>
+<tr><td><b>until</b></td><td>tempo — até quando</td><td>Wait here <b>until</b> I return.</td></tr>
+<tr><td><b>while</b></td><td>duas ações ao mesmo tempo</td><td>He was reading <b>while</b> I was writing.</td></tr>
+<tr><td><b>neither&hellip;nor</b></td><td>junta duas ideias negativas</td><td>He is <b>neither</b> honest <b>nor</b> hardworking.</td></tr>
+<tr><td><b>either&hellip;or</b></td><td>escolha entre duas</td><td><b>Either</b> Ram <b>or</b> Shyam will go.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Tipo</th><th>Quais são</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>Coordenativas</b></td><td>and, but, or, so, yet</td><td>He is poor <b>but</b> honest.</td></tr>
+<tr><td><b>Subordinativas</b></td><td>because, although, if, when</td><td>I stayed at home <b>because</b> it was raining.</td></tr>
+<tr><td><b>Correlativas</b> (em par)</td><td>either&hellip;or, neither&hellip;nor, both&hellip;and</td><td><b>Either</b> you study <b>or</b> you fail.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">erro comum</span>
+<div class="en"><span class="x">Although he is rich but he is unhappy.</span> &rarr; <span class="ok">Although he is rich, he is unhappy.</span></div>
+<div class="pt">Em inglês, <i>although</i> e <i>but</i> não convivem na mesma frase — escolha um.</div>
+</div>
+<div class="i">
+<span class="tag">erro comum</span>
+<div class="en"><span class="x">Because he was ill so he did not come.</span> &rarr; <span class="ok">Because he was ill, he did not come.</span></div>
+<div class="pt">Mesma lógica: <i>because</i> e <i>so</i> não se acumulam.</div>
+</div>
+</div>
+</section>
+
+<section id="conectores-redacao">
+<div class="snum">Seção 04</div>
+<h2>Conectores de texto — do básico ao formal</h2>
+<p class="sdesc">Os mesmos elos, em duas alturas de registro. A coluna da direita é a que se espera numa redação de exame, num relatório ou num e-mail formal.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Básico</th><th>Formal</th></tr></thead><tbody>
+<tr><td>First of all</td><td>To begin with</td></tr>
+<tr><td>Secondly</td><td>Subsequently</td></tr>
+<tr><td>For example</td><td>To illustrate</td></tr>
+<tr><td>On the other hand</td><td>Conversely</td></tr>
+<tr><td>It is important to note</td><td>It is worth highlighting</td></tr>
+<tr><td>Some people think</td><td>A prevalent viewpoint is</td></tr>
+<tr><td>In my opinion</td><td>From my perspective</td></tr>
+<tr><td>This means that</td><td>This signifies that</td></tr>
+<tr><td>This leads to</td><td>This culminates in</td></tr>
+<tr><td>This is why</td><td>This underscores why</td></tr>
+<tr><td>Lastly</td><td>Last but not least</td></tr>
+<tr><td>Because of this</td><td>Owing to this</td></tr>
+<tr><td>It can be said</td><td>One could argue that</td></tr>
+<tr><td>This shows that</td><td>This exemplifies that</td></tr>
+<tr><td>In other words</td><td>To put it differently</td></tr>
+<tr><td>One reason is</td><td>A key justification is</td></tr>
+<tr><td>also</td><td>Furthermore</td></tr>
+<tr><td>but</td><td>Nevertheless</td></tr>
+<tr><td>because</td><td>Due to the fact that</td></tr>
+<tr><td>in conclusion</td><td>Taking everything into account</td></tr>
+<tr><td>nowadays</td><td>In contemporary society</td></tr>
+<tr><td>very important</td><td>Of paramount importance</td></tr>
+<tr><td>many people</td><td>A significant proportion</td></tr>
+<tr><td>I think</td><td>From my perspective</td></tr>
+<tr><td>I believe</td><td>It is my contention that</td></tr>
+<tr><td>I agree</td><td>I wholeheartedly concur</td></tr>
+<tr><td>I disagree</td><td>I would respectfully argue</td></tr>
+<tr><td>I don't know</td><td>That is quite complex</td></tr>
+</tbody></table></div>
+</section>
+  </main>
+</div>
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+<footer>Sistema 05 · Conectar Frases — EVEN, SO e os Conectores · inglês real, tirado da fonte</footer>
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>units.push({el, sec:s, txt:el.textContent}));
+  });
+  document.getElementById('m-total').textContent=units.length;
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({el:w, rows:[...w.querySelectorAll('tbody tr')]}));
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' seções.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0; const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';});
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    const esc=raw.replace(/[<>&]/g,'');
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'seção':'seções')+' para &ldquo;'+esc+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+esc+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id)); } });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
