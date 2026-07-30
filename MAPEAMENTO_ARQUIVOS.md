@@ -1,7 +1,53 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-07-24 — ver bloco 0e (S03 fechado: 2 exclusões + livro02).**
+> **Atualização mais recente: 2026-07-29 — ver bloco 0g (Sistema 17 · livro01).**
+
+## 0g. Atualização 2026-07-29 — Sistema 17 (Baseado em Livros V08)
+
+> **Regra fixada para todo o projeto a partir desta data:** a extração de livros usa
+> **exclusivamente o arquivo `.md`** como fonte. Os PDFs ficam na pasta apenas para
+> arquivamento e **nunca** são abertos. Os `.md` **são** commitados no GitHub (são leves
+> e servem como fonte oficial).
+
+| Livro | Arquivo | Painel | Status | Data |
+|---|---|---|---|---|
+| S17 · Livro 01 | `01_American Accent Training.md` | `livro01.html` | ✅ **implementado** | 2026-07-29 |
+| S17 · Livro 02 | `02_Mastering the American Accent (Lisa Mojsin) (z-lib.org).md` | `livro02.html` | 🔄 em andamento | — |
+| S17 · Livro 03 | `03_English Vocabulary in Use Upper-Intermediate.md` | `livro03.html` | 🔄 em andamento | — |
+
+### `livro01.html` — American Accent Training (Ann Cook, Barron's 2ª ed.)
+
+**16 seções, ~1.400 itens de inglês real, 243 KB.** Fonte: MD de 208 páginas (dump OCR).
+
+| Seção | Conteúdo |
+|---|---|
+| 1 · Entonação | substantivo × pronome (49 frases), 4 razões de tônica, inflexão (7 sentidos), "pretty", siglas, sílabas engolidas, parágrafo-modelo em 3 versões |
+| 2 · Sílabas | padrões 1a–4f completos (~230 itens), teste de contagem |
+| 3 · Duas palavras | descritiva × frase fixa (37 pares), quadro-resumo da tônica, nacionalidades, 90 compostos, 52 frases de teste, 5 histórias |
+| 4 · Tempos verbais | *Dogs eat bones* × 25 tempos + *They eat them* × 25 + *floods erode* × 25, can/can't, subst.×verbo (33 pares), ~ate (17 pares) |
+| 5 · Sons reduzidos | to, at, it, for, from, in, an, and, or, are, your, one, the, a, of, can, had, would, was, what, some — ~200 frases com a forma falada; "that"; tag endings (38 + 23 pronúncias) |
+| 6 · Ligações | as 4 regras, TH composto, glides, T/D/S/Z+Y (~45), reduções coloquiais (36) |
+| 7 · Cat/Caught/Cut | grade æ/ä/ə/ou/ei/ɛ (29×6), 6 leituras |
+| 8 · T americano | as 5 regras com ~90 frases, combinações de Karina (18×3), vogal simples×dobrada |
+| 9 · O L | L×T/D/N, L final com schwa, L mudo, grade de L final (11×8), Little Lola, Thirty Little Turtles |
+| 10 · O R | os 7 R problemáticos, lista épsilon (42), grade de combinações (21×6), Mirror Store, método em 7 passos |
+| 11 · TH | Throng of Thermometers, quadro sonora/surda, 3 trava-línguas |
+| 12 · Vogais tensas/laxas | u×ʊ (20 pares), bit/bid/beat/bead, 26 frases de contraste, grades tensa (29×8) e laxa (31×5), lista do "I do meio" (~145), 5 leituras |
+| 13 · V, S/Z, nasais, guturais | P/B/F/V/W, Vile VIP, S→Z, 2 leituras, "used to", nasais, letra X, 4 leituras |
+| 14 · Emoção | 8 emoções, Really?/Maybe!, Who did it?, entonação não-verbal (14) |
+| 15 · 3 e 4 palavras | descritiva/fixa modificada, 3-palavras, Three Little Pigs, Ignorance on Parade em 3 camadas |
+| 16 · Textos longos | Caterpillar/UAW (3 versões), Russian Rebellion, US/Japan, debate presidencial, Texas millionaires (25), guia por idioma + seção Spanish adaptada ao falante de português |
+
+**Descartado:** rodapés correntes (`American Accent Training` / `Chapter N`), números de página, marcadores `CD N Track NN` (~200), telefone e URL de tutoria comercial (800-457-4255, americanaccent.com — repetido 5×), instruções de manuseio do CD ("Pause the CD", "Back up the CD"), exercícios de linha em branco para o aluno preencher (1-12, 1-14, 1-40, 1-45, 11-8, 11-9), método/motivação ("Overdo It", "We All Do It", "A Child Can Learn Any Language"), desenhos de escada e diagramas de boca (só imagem), lixo tipográfico do OCR.
+
+**⚠️ Ressalva de qualidade da fonte:** o MD do livro 01 é **OCR**, não extração de camada de texto.
+A notação fonética própria da autora (colchetes com `ā`, `ä`, `ə`, `ĭ`) foi **corrompida** em vários
+pontos (`[1e.1em]`, `[eq3.1]`, `[epeuem]`, `Z00` por *zoo*, `186` por *get*, `peda!` por *pedal*).
+**Decisão:** a coluna "como soa" foi incluída **apenas** onde a transcrição sobreviveu legível;
+onde virou lixo, foi **omitida** em vez de reconstruída por adivinhação — reconstruir daria
+orientação de pronúncia errada num livro de sotaque. Cerca de 15% das transcrições fonéticas
+do original ficaram de fora por esse motivo. O **inglês real** (frases, listas, histórias) está íntegro.
 
 ## 0e. Atualização 2026-07-24 — Sistema 03 fechado
 
