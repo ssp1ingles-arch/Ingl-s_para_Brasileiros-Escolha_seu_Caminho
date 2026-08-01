@@ -34,12 +34,23 @@ Busca própria EN/PT em cada painel de livro.
 | # | Livro | Status |
 |---|---|---|
 | 01 | Basic English Grammar Workbook For Dummies | ✅ `livro01.html` — 43 estruturas, 1.130 itens, 41 tabelas |
-| 02 | Everything You Need to Ace English Language Arts (Big Fat Notebook) | ⏳ aguardando |
-| 03 | English Grammar For Dummies | ⏳ aguardando |
-| 04 | English Grammar — A Resource Book for Students | ⏳ aguardando |
-| 05 | Grammar For Young Learners | ⏳ aguardando |
-| 06 | Grammar And Usage For Better Writing | ⏳ aguardando |
-| 07 | The Infographic Guide to Grammar | ⏳ aguardando |
+| 02 | Everything You Need to Ace English Language Arts (Big Fat Notebook) | ✅ `livro02.html` — 18 estruturas, 18 tabelas |
+| 03 | English Grammar For Dummies | ✅ `livro03.html` — 19 estruturas, 23 tabelas |
+| 04 | English Grammar — A Resource Book for Students | ✅ `livro04.html` — 19 estruturas, 26 tabelas |
+| 05 | Grammar For Young Learners | ✅ `livro05.html` — 19 estruturas, 17 tabelas |
+| 06 | Grammar And Usage For Better Writing | ✅ `livro06.html` — 21 estruturas, 31 tabelas |
+| 07 | The Infographic Guide to Grammar | ✅ `livro07.html` — 19 estruturas, 29 tabelas |
+
+**Sistema completo:** 7 de 7 livros implementados, 158 estruturas gramaticais.
+
+### Recortes de fonte adotados
+
+Cada livro traz coisas que não são inglês real. Estes foram os cortes:
+
+- **02 (Big Fat Notebook):** só as Unidades 1 e 2 (gramática e vocabulário). As Unidades 3–5 são análise literária e redação — bastidor, não conteúdo.
+- **04 (Resource Book):** só a Parte A. As Partes B–D são discussão teórica e leituras acadêmicas.
+- **05 (Young Learners):** é livro de atividades para professor. Entraram as frases-modelo, canções, chants, moldes de pergunta e os três anexos (verbos no passado, advérbios/adjetivos, Classroom language chart). Ficaram fora procedimento de atividade e dica pedagógica.
+- **07 (Infographic Guide):** o capítulo 4 (Writing Style) é sobre método de escrita, não sobre inglês — entrou só a parte de voz ativa/passiva.
 
 ## 7. Commits
 Um commit por livro: `feat(S19): <nome do livro> — livroNN`.

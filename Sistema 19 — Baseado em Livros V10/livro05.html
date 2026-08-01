@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 05 · Grammar For Young Learners — Sistema 19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 19</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 19 · V10 · Livro 05 · gramática inicial A1</div>
+<h1 class="title">Grammar For <em>Young Learners</em></h1>
+<p class="lead">Gordon Lewis e Hans Mol · Oxford University Press · série <i>Resource Books for Teachers</i>. Gramática pensada para criança &mdash; e por isso mesmo perfeita para o adulto que está começando: <b>frases curtas, claras e imediatamente utilizáveis</b>. Daqui saiu só o inglês real: a frase-modelo de cada estrutura, as canções e chants, os moldes de pergunta, as listas de verbos irregulares e regulares no passado, e o <b>Classroom language chart</b> inteiro. Ficaram de fora procedimento de atividade, dica pedagógica e material de recorte.</p>
+
+<div class="metrics">
+  <div class="metric"><b>19</b><span>estruturas</span></div>
+  <div class="metric"><b id="m-total">&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>17</b><span>tabelas</span></div>
+  <div class="metric"><b>A1</b><span>nível</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: didn't, plural, vírgula, passado…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Estruturas</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Estrutura 01</div>
+<h2>Falar de si e dos outros — o verbo <i>be</i></h2>
+<p class="sdesc">A primeira estrutura do livro: o verbo <b>be</b> em todas as formas, com as frases de apresentação que abrem qualquer conversa.</p>
+<div class="items">
+<div class="i"><div class="en">I am Rick.</div><div class="pt">Eu sou o Rick.</div></div>
+<div class="i"><div class="en">My name is Rick.</div><div class="pt">Meu nome é Rick.</div></div>
+<div class="i"><div class="en">What's your name?</div><div class="pt">Qual é o seu nome?</div></div>
+<div class="i"><div class="en">How old are you?</div><div class="pt">Quantos anos você tem?</div></div>
+<div class="i"><div class="en">Where are you from?</div><div class="pt">De onde você é?</div></div>
+<div class="i"><div class="en">Is your name Sasha?</div><div class="pt">O seu nome é Sasha?</div></div>
+<div class="i"><div class="en">Are you Peter?</div><div class="pt">Você é o Peter?</div></div>
+<div class="i"><div class="en">This is my mother.</div><div class="pt">Esta é a minha mãe.</div></div>
+<div class="i"><div class="en">Is this your book?</div><div class="pt">Este é o seu livro?</div></div>
+<div class="i"><div class="en">He's a boy, too.</div><div class="pt">Ele também é menino.</div></div>
+<div class="i"><div class="en">She's a girl, too.</div><div class="pt">Ela também é menina.</div></div>
+<div class="i"><div class="en">She's American, too.</div><div class="pt">Ela também é americana.</div></div>
+<div class="i"><div class="en">He's from England, too.</div><div class="pt">Ele também é da Inglaterra.</div></div>
+</div>
+<div class='sdesc' style='margin-top:16px'><b>How do you do</b> &mdash; a canção de apresentação do livro:</div>
+<div class="items">
+<div class="i"><div class="en">How do you do. How do you do.</div><div class="pt">Como vai. Como vai.</div></div>
+<div class="i"><div class="en">I don't think I know you.</div><div class="pt">Acho que eu não conheço você.</div></div>
+<div class="i"><div class="en">How are you? How are you doing?</div><div class="pt">Como você está? Como vai você?</div></div>
+<div class="i"><div class="en">Where are you from?</div><div class="pt">De onde você é?</div></div>
+<div class="i"><div class="en">You look like my best friend.</div><div class="pt">Você parece com o meu melhor amigo.</div></div>
+<div class="i"><div class="en">Are you from England or are you from Spain?</div><div class="pt">Você é da Inglaterra ou da Espanha?</div></div>
+<div class="i"><div class="en">Do you like me too?</div><div class="pt">Você também gosta de mim?</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Estrutura 02</div>
+<h2>Falar do que você tem — <i>have (got)</i> e possessivos</h2>
+<p class="sdesc">A segunda estrutura: dizer o que é seu, o que é dos outros, e perguntar de quem é.</p>
+<div class="items">
+<div class="i"><div class="en">I've got a bike.</div><div class="pt">Eu tenho uma bicicleta.</div></div>
+<div class="i"><div class="en">I haven't got a cat.</div><div class="pt">Eu não tenho gato.</div></div>
+<div class="i"><div class="en">Have you got a brother?</div><div class="pt">Você tem irmão?</div></div>
+<div class="i"><div class="en">What's yours?</div><div class="pt">Qual é o seu?</div></div>
+<div class="i"><div class="en">He is your brother.</div><div class="pt">Ele é seu irmão.</div></div>
+<div class="i"><div class="en">Your cat doesn't like fish.</div><div class="pt">O seu gato não gosta de peixe.</div></div>
+<div class="i"><div class="en">You haven't got a dog.</div><div class="pt">Você não tem cachorro.</div></div>
+<div class="i"><div class="en">Your older sister is at school.</div><div class="pt">A sua irmã mais velha está na escola.</div></div>
+<div class="i"><div class="en">Your favourite colour is blue.</div><div class="pt">A sua cor favorita é azul.</div></div>
+<div class="i"><div class="en">My friend is waiting on the other side.</div><div class="pt">Meu amigo está esperando do outro lado.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Determinante possessivo</th><th>Pronome possessivo</th></tr></thead>
+<tbody>
+<tr><td>my book</td><td>mine</td></tr>
+<tr><td>your book</td><td>yours</td></tr>
+<tr><td>his book</td><td>his</td></tr>
+<tr><td>her book</td><td>hers</td></tr>
+<tr><td>our book</td><td>ours</td></tr>
+<tr><td>their book</td><td>theirs</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s03">
+<div class="snum">Estrutura 03</div>
+<h2>Falar do que você faz sempre — present simple</h2>
+<p class="sdesc">O presente simples serve para rotina, hábito e verdade geral. É a estrutura das frases de todo dia.</p>
+<div class="items">
+<div class="i"><span class="tag">verdades gerais</span><div class="en">Dogs bark.</div><div class="pt">Cachorros latem.</div></div>
+<div class="i"><div class="en">Cats miaow.</div><div class="pt">Gatos miam.</div></div>
+<div class="i"><div class="en">The sun comes up every morning.</div><div class="pt">O sol nasce toda manhã.</div></div>
+<div class="i"><div class="en">Ducks swim.</div><div class="pt">Patos nadam.</div></div>
+<div class="i"><span class="tag">rotina</span><div class="en">He's late for work every day.</div><div class="pt">Ele se atrasa para o trabalho todo dia.</div></div>
+<div class="i"><div class="en">He gets up last of all.</div><div class="pt">Ele é o último de todos a levantar.</div></div>
+<div class="i"><div class="en">He puts his clothes on inside out.</div><div class="pt">Ele veste a roupa do avesso.</div></div>
+<div class="i"><div class="en">She gives my cornflakes to the fish.</div><div class="pt">Ela dá o meu sucrilhos para os peixes.</div></div>
+<div class="i"><div class="en">I play computer. I play my songs.</div><div class="pt">Eu jogo no computador. Eu toco as minhas músicas.</div></div>
+<div class="i"><div class="en">It is raining in central London now.</div><div class="pt">Está chovendo no centro de Londres agora.</div></div>
+</div>
+<div class='sdesc' style='margin-top:16px'><b>In the morning</b> &mdash; a canção de rotina do livro:</div>
+<div class="items">
+<div class="i"><div class="en">In the morning, in the morning, I don't know what to do.</div><div class="pt">De manhã, de manhã, eu não sei o que fazer.</div></div>
+<div class="i"><div class="en">We are always tired in the morning.</div><div class="pt">A gente está sempre cansado de manhã.</div></div>
+<div class="i"><div class="en">We all want to stay in bed.</div><div class="pt">Todo mundo quer ficar na cama.</div></div>
+<div class="i"><div class="en">We always want to stay asleep.</div><div class="pt">A gente sempre quer continuar dormindo.</div></div>
+<div class="i"><div class="en">My mother's always half-asleep when she tries to make the tea.</div><div class="pt">Minha mãe está sempre meio dormindo quando tenta fazer o chá.</div></div>
+<div class="i"><div class="en">My brother is still fast asleep.</div><div class="pt">Meu irmão ainda está dormindo pesado.</div></div>
+<div class="i"><div class="en">I must find some clothes to wear.</div><div class="pt">Eu preciso achar alguma roupa para vestir.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Estrutura 04</div>
+<h2>Falar do que aconteceu — past simple</h2>
+<p class="sdesc">O passado simples, com as duas listas que o livro traz nos anexos: os <b>irregulares</b> (que não seguem regra) e os <b>regulares</b> (que só ganham -ed).</p>
+<div class="items">
+<div class="i"><div class="en">I got my first boy/girlfriend.</div><div class="pt">Eu arrumei meu primeiro namorado / minha primeira namorada.</div></div>
+<div class="i"><div class="en">My grandfather died.</div><div class="pt">Meu avô morreu.</div></div>
+<div class="i"><div class="en">I walked into the room. There were lots of people. I couldn't find my friend.</div><div class="pt">Eu entrei na sala. Tinha um monte de gente. Eu não conseguia achar meu amigo.</div></div>
+<div class="i"><div class="en">What happened?</div><div class="pt">O que aconteceu?</div></div>
+<div class="i"><div class="en">Where did the story take place?</div><div class="pt">Onde a história se passou?</div></div>
+<div class="i"><div class="en">What was the weather like?</div><div class="pt">Como estava o tempo?</div></div>
+<div class="i"><div class="en">What was the colour of the girl's dress?</div><div class="pt">Qual era a cor do vestido da menina?</div></div>
+<div class="i"><div class="en">What did the boy look like?</div><div class="pt">Com o que o menino se parecia?</div></div>
+<div class="i"><div class="en">Was it a big lake?</div><div class="pt">Era um lago grande?</div></div>
+<div class="i"><div class="en">Why did you wear these clothes?</div><div class="pt">Por que você usou essas roupas?</div></div>
+<div class="i"><div class="en">You were at home. Your cat didn't eat. She wasn't there.</div><div class="pt">Você estava em casa. O seu gato não comeu. Ela não estava lá.</div></div>
+<div class="i"><div class="en">You could walk. You didn't like it. You cooked. That wasn't the answer.</div><div class="pt">Você conseguia andar. Você não gostou. Você cozinhou. Aquela não era a resposta.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Nível</th><th>Verbos irregulares no passado</th></tr></thead>
+<tbody>
+<tr><td><b>Starters</b></td><td>ate · could · flew · held · went · came · did · found · hit · were · carried · drank · gave · knew · caught · drew · got · learnt · chose · drove · had · was</td></tr>
+<tr><td><b>Movers</b></td><td>brought · lost · took · bought · hurt · woke up · got · put on · went shopping · hid · meant · got dressed · thought</td></tr>
+<tr><td><b>Flyers</b></td><td>began · lay down · said · spent · took · broke · left · sang · spoke · took a photo · cut · let · sat (down) · stole · fell · made · saw · stood up · tried · felt · met · sent · swung · understood · forgot · put · slept · swam · went out · found out · ran · smelt · taught · grew · read · sold · threw · wore · heard · rode · spelt · told · wrote</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Nível</th><th>Verbos regulares no passado</th></tr></thead>
+<tbody>
+<tr><td><b>Starters</b></td><td>added · completed · listened (to) · picked up · talked · answered · crossed · lived · played (with) · tested · asked · enjoyed · looked · pointed · ticked · bounced · jumped · loved · showed · walked · cleaned · kicked · opened · smiled · wanted · closed · learned · painted · started · watched · coloured · liked · phoned · stopped · waved</td></tr>
+<tr><td><b>Movers</b></td><td>called · dropped · invited · rained · snowed · climbed · emailed · laughed · sailed · texted · cooked · filmed · looked for · shopped · waited · cried · fished · moved · shouted · washed · danced · helped · needed · skated · worked · dreamed · hopped · planted · skipped</td></tr>
+<tr><td><b>Flyers</b></td><td>agreed · ended · looked after · scored · turned · arrived · explained · minded · skied · used · asked · fetched · mixed · sledged · visited · believed · finished · posted · sounded · whispered · brushed · followed · preferred · stayed · whistled · burned · glued · pulled · studied · wished · camped · guessed · pushed · tasted · combed · happened · raced · thanked · decided · hated · remembered · tidied</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s05">
+<div class="snum">Estrutura 05</div>
+<h2>Perguntar sobre as coisas — <i>wh-</i>, <i>did</i> e <i>be</i></h2>
+<p class="sdesc">Os moldes de pergunta que o livro usa em todas as atividades — os mesmos que servem no dia a dia.</p>
+<div class="items">
+<div class="i"><div class="en">What is your favourite colour?</div><div class="pt">Qual é a sua cor favorita?</div></div>
+<div class="i"><div class="en">Where do you live?</div><div class="pt">Onde você mora?</div></div>
+<div class="i"><div class="en">When do you get up?</div><div class="pt">Quando você levanta?</div></div>
+<div class="i"><div class="en">What do you do at the weekend?</div><div class="pt">O que você faz no fim de semana?</div></div>
+<div class="i"><div class="en">Who is your best friend?</div><div class="pt">Quem é o seu melhor amigo?</div></div>
+<div class="i"><div class="en">Are you from Spain?</div><div class="pt">Você é da Espanha?</div></div>
+<div class="i"><div class="en">Are you a journalist?</div><div class="pt">Você é jornalista?</div></div>
+<div class="i"><div class="en">Is your hobby football?</div><div class="pt">O seu hobby é futebol?</div></div>
+<div class="i"><span class="tag">descrevendo por pistas</span><div class="en">He lives in the sea. He likes crab burgers. His best friend is a starfish.</div><div class="pt">Ele mora no mar. Ele gosta de hambúrguer de caranguejo. O melhor amigo dele é uma estrela-do-mar.</div></div>
+<div class="i"><span class="tag">perguntas de quiz</span><div class="en">What is the capital city of Australia?</div><div class="pt">Qual é a capital da Austrália?</div></div>
+<div class="i"><div class="en">Who painted the Mona Lisa?</div><div class="pt">Quem pintou a Mona Lisa?</div></div>
+<div class="i"><div class="en">When is Valentine's Day?</div><div class="pt">Quando é o Dia dos Namorados?</div></div>
+<div class="i"><div class="en">Where is Sydney?</div><div class="pt">Onde fica Sydney?</div></div>
+<div class="i"><div class="en">What is the Outback?</div><div class="pt">O que é o Outback?</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Estrutura 06</div>
+<h2>Question tags — a perguntinha no fim da frase</h2>
+<p class="sdesc">A <b>question tag</b> é a frase curta acrescentada no fim: se a principal é afirmativa, a tag é negativa, e vice-versa.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Frase</th><th>Tag</th></tr></thead>
+<tbody>
+<tr><td>It's your job,</td><td>isn't it?</td></tr>
+<tr><td>You're a teacher,</td><td>aren't you?</td></tr>
+<tr><td>She lives here,</td><td>doesn't she?</td></tr>
+<tr><td>He didn't come,</td><td>did he?</td></tr>
+<tr><td>You can swim,</td><td>can't you?</td></tr>
+<tr><td>They haven't arrived,</td><td>have they?</td></tr>
+<tr><td>We were late,</td><td>weren't we?</td></tr>
+<tr><td>It won't rain,</td><td>will it?</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s07">
+<div class="snum">Estrutura 07</div>
+<h2>Falar do que você gosta — <i>like / love / hate</i> + substantivo ou -ing</h2>
+<p class="sdesc">Depois de <b>like, love</b> e <b>hate</b> vem substantivo ou a forma em <b>-ing</b>. Essa é a estrutura do chant do livro.</p>
+<div class="items">
+<div class="i"><div class="en">I like apples.</div><div class="pt">Eu gosto de maçã.</div></div>
+<div class="i"><div class="en">You like apples, you like apples.</div><div class="pt">Você gosta de maçã, você gosta de maçã.</div></div>
+<div class="i"><div class="en">He likes apples, he likes apples.</div><div class="pt">Ele gosta de maçã, ele gosta de maçã.</div></div>
+<div class="i"><div class="en">She likes apples, she likes apples.</div><div class="pt">Ela gosta de maçã, ela gosta de maçã.</div></div>
+<div class="i"><div class="en">I love chocolate.</div><div class="pt">Eu amo chocolate.</div></div>
+<div class="i"><div class="en">I hate spinach.</div><div class="pt">Eu odeio espinafre.</div></div>
+<div class="i"><div class="en">You like doing what?</div><div class="pt">Você gosta de fazer o quê?</div></div>
+<div class="i"><div class="en">I like swimming.</div><div class="pt">Eu gosto de nadar.</div></div>
+<div class="i"><div class="en">I love reading.</div><div class="pt">Eu adoro ler.</div></div>
+<div class="i"><div class="en">I hate waiting.</div><div class="pt">Eu odeio esperar.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Estrutura 08</div>
+<h2>Descrever coisas e pessoas — adjetivos</h2>
+<p class="sdesc">A lista de adjetivos que o livro traz no anexo, dividida pelos três níveis de Cambridge Young Learners.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Nível</th><th>Adjetivos</th></tr></thead>
+<tbody>
+<tr><td><b>Starters</b></td><td>angry · dirty · happy · purple · ugly · beautiful · English · long · red · white · big · favourite · new · right · yellow · black · funny · nice · sad · young · blue · good · old · short · brown · great · open · small · clean · green · orange · sorry · correct · grey (US gray) · pink</td></tr>
+<tr><td><b>Movers</b></td><td>afraid · clever · fat · round · thirsty · alright · cloudy · fine · slow · tired · awake · cold · hot · square · weak · bad · curly · hungry · straight</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><div class="en">This is a bird.</div><div class="pt">Isto é um pássaro.</div></div>
+<div class="i"><div class="en">That's a lion.</div><div class="pt">Aquilo é um leão.</div></div>
+<div class="i"><div class="en">These are elephants.</div><div class="pt">Estes são elefantes.</div></div>
+<div class="i"><div class="en">Those are tigers.</div><div class="pt">Aqueles são tigres.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Estrutura 09</div>
+<h2>Descrever como as coisas são feitas — advérbios</h2>
+<p class="sdesc">Os advérbios do livro se dividem em dois grupos: <b>frequência</b> (com que frequência) e <b>modo</b> (de que jeito).</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Nível</th><th>Frequência</th><th>Modo</th></tr></thead>
+<tbody>
+<tr><td><b>Movers</b></td><td>always · often · sometimes · rarely · never</td><td>badly · best · better · carefully · loudly · near · quickly · quietly · slowly · well</td></tr>
+<tr><td><b>Flyers</b></td><td>suddenly · usually</td><td>angrily · beautifully · happily · nicely · sadly · busily · cleverly · easily · weakly · cheaply · dangerously · excitedly · funnily · lightly · noisily</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><div class="en">I always cry.</div><div class="pt">Eu sempre choro.</div></div>
+<div class="i"><div class="en">I never get angry.</div><div class="pt">Eu nunca fico bravo.</div></div>
+<div class="i"><div class="en">What do you do when you're sad?</div><div class="pt">O que você faz quando está triste?</div></div>
+<div class="i"><div class="en">She sings beautifully.</div><div class="pt">Ela canta lindamente.</div></div>
+<div class="i"><div class="en">He walks slowly.</div><div class="pt">Ele anda devagar.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Estrutura 10</div>
+<h2>Quantidade — contáveis, incontáveis, <i>how much</i> e <i>how many</i></h2>
+<p class="sdesc">A regra: <b>How many</b> para o que se conta; <b>How much</b> para o que não se conta. E, para contar o incontável, entra o recipiente.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>How many? <span class='w'>(contáveis)</span></th><th>How much? <span class='w'>(incontáveis)</span></th></tr></thead>
+<tbody>
+<tr><td>How many chocolate bars did you buy?</td><td>How much ice cream did you eat?</td></tr>
+<tr><td>I'll buy one bar for me and one for you.</td><td>I ate three scoops.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Recipiente / medida</th><th>O que ele mede</th></tr></thead>
+<tbody>
+<tr><td>a bowl of</td><td>sugar</td></tr>
+<tr><td>a glass of</td><td>milk</td></tr>
+<tr><td>a block of</td><td>cheese</td></tr>
+<tr><td>a bottle of</td><td>juice</td></tr>
+<tr><td>a cup of</td><td>milk — <i>Pour ¼ cup of milk in each cup.</i></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s11">
+<div class="snum">Estrutura 11</div>
+<h2>O que você consegue fazer — <i>can / can't</i>, <i>should</i>, <i>could</i></h2>
+<p class="sdesc">Os modais de habilidade, permissão e conselho — e as placas de trânsito que o livro usa para praticá-los.</p>
+<div class="items">
+<div class="i"><div class="en">What can you do?</div><div class="pt">O que você sabe fazer?</div></div>
+<div class="i"><div class="en">I can swim.</div><div class="pt">Eu sei nadar.</div></div>
+<div class="i"><div class="en">I can't drive.</div><div class="pt">Eu não sei dirigir.</div></div>
+<div class="i"><div class="en">You can't stay here!</div><div class="pt">Você não pode ficar aqui!</div></div>
+<div class="i"><div class="en">Don't stop here!</div><div class="pt">Não pare aqui!</div></div>
+<div class="i"><div class="en">You can start now.</div><div class="pt">Você pode começar agora.</div></div>
+<div class="i"><div class="en">Can you help me?</div><div class="pt">Você pode me ajudar?</div></div>
+<div class="i"><div class="en">Can you say that again?</div><div class="pt">Você pode repetir?</div></div>
+<div class="i"><div class="en">Can you tell me what to do?</div><div class="pt">Você pode me dizer o que fazer?</div></div>
+<div class="i"><div class="en">How can I draw a bird?</div><div class="pt">Como eu desenho um pássaro?</div></div>
+<div class="i"><div class="en">You could walk.</div><div class="pt">Você podia andar.</div></div>
+<div class="i"><div class="en">What are my options?</div><div class="pt">Quais são as minhas opções?</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Estrutura 12</div>
+<h2>Dar instruções — o imperativo</h2>
+<p class="sdesc">O imperativo é o verbo puro, sem sujeito. É a estrutura de receita, de jogo e de direção na rua.</p>
+<div class="items">
+<div class="i"><span class="tag">no jogo</span><div class="en">Put your foot on number 12.</div><div class="pt">Ponha o pé no número 12.</div></div>
+<div class="i"><div class="en">Put your hands on your back.</div><div class="pt">Ponha as mãos nas costas.</div></div>
+<div class="i"><div class="en">Stand on one leg.</div><div class="pt">Fique em pé numa perna só.</div></div>
+<div class="i"><div class="en">Turn around.</div><div class="pt">Dê a volta.</div></div>
+<div class="i"><div class="en">Sit down.</div><div class="pt">Sente-se.</div></div>
+<div class="i"><div class="en">Don't talk, please.</div><div class="pt">Não conversem, por favor.</div></div>
+<div class="i"><span class="tag">na receita</span><div class="en">Put everything on the table in front of you.</div><div class="pt">Ponha tudo na mesa à sua frente.</div></div>
+<div class="i"><div class="en">Toast the bread.</div><div class="pt">Torre o pão.</div></div>
+<div class="i"><div class="en">Paint a picture on the bread.</div><div class="pt">Pinte um desenho no pão.</div></div>
+<div class="i"><div class="en">Pour ¼ cup of milk in each cup.</div><div class="pt">Despeje ¼ de xícara de leite em cada copo.</div></div>
+<div class="i"><div class="en">Eat your painting!</div><div class="pt">Coma o seu desenho!</div></div>
+<div class="i"><span class="tag">na rua</span><div class="en">Go left at the end.</div><div class="pt">Vire à esquerda no fim.</div></div>
+<div class="i"><div class="en">Turn right.</div><div class="pt">Vire à direita.</div></div>
+<div class="i"><div class="en">Go straight on.</div><div class="pt">Siga em frente.</div></div>
+<div class="i"><div class="en">Go around the corner.</div><div class="pt">Dobre a esquina.</div></div>
+<div class="i"><div class="en">Go back.</div><div class="pt">Volte.</div></div>
+<div class="i"><div class="en">Go forward to 6.</div><div class="pt">Avance até o 6.</div></div>
+<div class="i"><div class="en">Look left, please.</div><div class="pt">Olhe para a esquerda, por favor.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Estrutura 13</div>
+<h2>Falar do que está acontecendo — verbos em -ing</h2>
+<p class="sdesc">O presente contínuo: o que está em andamento agora, na frente de quem fala.</p>
+<div class="items">
+<div class="i"><div class="en">It is raining in central London now.</div><div class="pt">Está chovendo no centro de Londres agora.</div></div>
+<div class="i"><div class="en">My friend is waiting on the other side.</div><div class="pt">Meu amigo está esperando do outro lado.</div></div>
+<div class="i"><div class="en">She is reading a book.</div><div class="pt">Ela está lendo um livro.</div></div>
+<div class="i"><div class="en">They are playing football.</div><div class="pt">Eles estão jogando futebol.</div></div>
+<div class="i"><div class="en">What are you doing?</div><div class="pt">O que você está fazendo?</div></div>
+<div class="i"><div class="en">I'm not doing anything.</div><div class="pt">Eu não estou fazendo nada.</div></div>
+<div class="i"><div class="en">What was happening?</div><div class="pt">O que estava acontecendo?</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Estrutura 14</div>
+<h2>Falar do futuro — <i>going to</i> e <i>will</i></h2>
+<p class="sdesc"><b>Going to</b> para plano e intenção; <b>will</b> para previsão e decisão na hora.</p>
+<div class="items">
+<div class="i"><div class="en">Are you going to travel this summer?</div><div class="pt">Você vai viajar neste verão?</div></div>
+<div class="i"><div class="en">Where are you going to go?</div><div class="pt">Aonde você vai?</div></div>
+<div class="i"><div class="en">What are you going to see?</div><div class="pt">O que você vai ver?</div></div>
+<div class="i"><div class="en">What are you going to do?</div><div class="pt">O que você vai fazer?</div></div>
+<div class="i"><div class="en">You are going to play a game of Twister.</div><div class="pt">Vocês vão jogar uma partida de Twister.</div></div>
+<div class="i"><div class="en">They will play in pairs or small groups.</div><div class="pt">Eles vão jogar em duplas ou em grupinhos.</div></div>
+<div class="i"><div class="en">I guess so.</div><div class="pt">Acho que sim.</div></div>
+<div class="i"><div class="en">Whatcha gonna do?</div><div class="pt">O que você vai fazer? <b>(forma reduzida da fala: <i>What are you going to do?</i>)</b></div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Estrutura 15</div>
+<h2>Comparar coisas e pessoas — comparativo e superlativo</h2>
+<p class="sdesc">Adjetivos de uma sílaba ganham <b>-er / -est</b>; os de mais de uma sílaba vão com <b>more / most</b>. E há os irregulares.</p>
+<div class="items">
+<div class="i"><div class="en">Is it better than the old one?</div><div class="pt">É melhor que o antigo?</div></div>
+<div class="i"><div class="en">Does your friend have nicer games than you do?</div><div class="pt">O seu amigo tem jogos mais legais que os seus?</div></div>
+<div class="i"><div class="en">Are you faster at it than your friend?</div><div class="pt">Você é mais rápido nisso que o seu amigo?</div></div>
+<div class="i"><div class="en">Are you allowed to play on the computer longer than your brother?</div><div class="pt">Você pode ficar mais tempo no computador que o seu irmão?</div></div>
+<div class="i"><div class="en">What is your favourite game?</div><div class="pt">Qual é o seu jogo favorito?</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Tipo</th><th>Adjetivo</th><th>Comparativo</th><th>Superlativo</th></tr></thead>
+<tbody>
+<tr><td>uma sílaba</td><td>fast</td><td>faster</td><td>the fastest</td></tr>
+<tr><td></td><td>long</td><td>longer</td><td>the longest</td></tr>
+<tr><td></td><td>nice</td><td>nicer</td><td>the nicest</td></tr>
+<tr><td>mais de uma sílaba</td><td>beautiful</td><td>more beautiful</td><td>the most beautiful</td></tr>
+<tr><td></td><td>dangerous</td><td>more dangerous</td><td>the most dangerous</td></tr>
+<tr><td>irregular</td><td>good</td><td>better</td><td>the best</td></tr>
+<tr><td></td><td>bad</td><td>worse</td><td>the worst</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s16">
+<div class="snum">Estrutura 16</div>
+<h2>Onde as coisas estão — <i>there is / there are</i> e preposições de lugar</h2>
+<p class="sdesc"><b>There is</b> para singular, <b>there are</b> para plural — a estrutura para dizer o que existe em um lugar.</p>
+<div class="items">
+<div class="i"><div class="en">There is a park near my house.</div><div class="pt">Tem um parque perto da minha casa.</div></div>
+<div class="i"><div class="en">There are lots of people.</div><div class="pt">Tem um monte de gente.</div></div>
+<div class="i"><div class="en">What can you see in the picture?</div><div class="pt">O que você consegue ver na figura?</div></div>
+<div class="i"><div class="en">I can see a tree.</div><div class="pt">Eu consigo ver uma árvore.</div></div>
+<div class="i"><div class="en">Where is the ball?</div><div class="pt">Onde está a bola?</div></div>
+<div class="i"><div class="en">This is the park.</div><div class="pt">Este é o parque.</div></div>
+<div class="i"><div class="en">Go to number 27.</div><div class="pt">Vá para o número 27.</div></div>
+<div class="i"><div class="en">Go ahead. Go back.</div><div class="pt">Avance. Volte.</div></div>
+</div>
+</section>
+
+<section id="s17">
+<div class="snum">Estrutura 17</div>
+<h2><i>This, that, these, those</i> — o que está perto e o que está longe</h2>
+<p class="sdesc"><b>This / these</b> para o que está perto; <b>that / those</b> para o que está longe. Singular e plural.</p>
+<div class="tablewrap"><table>
+<thead><tr><th></th><th>Perto</th><th>Longe</th></tr></thead>
+<tbody>
+<tr><td>Singular</td><td><b>this</b> — This is a bird.</td><td><b>that</b> — That's a lion.</td></tr>
+<tr><td>Plural</td><td><b>these</b> — These are elephants.</td><td><b>those</b> — Those are tigers.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><div class="en">This is your Personal English Notebook.</div><div class="pt">Este é o seu Caderno Pessoal de Inglês.</div></div>
+<div class="i"><div class="en">What's this?</div><div class="pt">O que é isto?</div></div>
+<div class="i"><div class="en">That's not it!</div><div class="pt">Não é isso!</div></div>
+<div class="i"><div class="en">That's right.</div><div class="pt">Isso mesmo.</div></div>
+</div>
+</section>
+
+<section id="s18">
+<div class="snum">Estrutura 18</div>
+<h2>Explicar e instruir — <i>How to…</i></h2>
+<p class="sdesc">A estrutura para explicar como uma coisa funciona ou como se faz alguma coisa.</p>
+<div class="items">
+<div class="i"><div class="en">How to make this book</div><div class="pt">Como fazer este livro</div></div>
+<div class="i"><div class="en">Do you know how it works?</div><div class="pt">Você sabe como funciona?</div></div>
+<div class="i"><div class="en">Can you tell me what to do?</div><div class="pt">Você pode me dizer o que fazer?</div></div>
+<div class="i"><div class="en">How can I draw a bird?</div><div class="pt">Como eu desenho um pássaro?</div></div>
+<div class="i"><div class="en">You push down and forward with two legs.</div><div class="pt">Você empurra para baixo e para a frente com as duas pernas.</div></div>
+<div class="i"><div class="en">In this book, you can write your own words.</div><div class="pt">Neste caderno, você pode escrever as suas próprias palavras.</div></div>
+</div>
+</section>
+
+<section id="s19">
+<div class="snum">Estrutura 19</div>
+<h2>O inglês da sala de aula — o que se diz o tempo todo</h2>
+<p class="sdesc">O <b>Classroom language chart</b> do livro: as frases prontas de cumprimento, elogio, instrução e encerramento. São frases feitas — servem inteiras.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Cumprimentos</th><th>Elogio</th></tr></thead>
+<tbody>
+<tr><td>Hello.<br>How are you?<br>Are you OK?<br>I'm very well.<br>I'm not well.<br>What's wrong?</td><td>That's right.<br>Very good!<br>Well done!<br>Perfect.<br>That was a good job.<br>Yes, that's it.<br>I'm very happy about that.<br>Give [name] a clap!</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Incentivo</th><th>Participação</th></tr></thead>
+<tbody>
+<tr><td>Can you say that again?<br>Much better!<br>That's a good guess.<br>That's really nice. Now let's…<br>Try again.<br>You could do better.</td><td>Who can give me the answer?<br>Who wants to answer?<br>Who wants to ask a question?<br>Who wants to come to the board?<br>It's your go.<br>Hurry up.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Instruções gerais</th></tr></thead>
+<tbody>
+<tr><td>Clean the board, please. · Close the door, please. · Come here, please. · Come up to the board, please. · Do you understand? · Did you understand? · Do this in pairs. · Do this in pencil. · Do this on your own. · Get up, please. · Give me an example of… · Go to the top of the page. · Hand in your worksheets. · Listen carefully. · Open the window, please. · Open your book. · Pass your worksheets to the front, please. · Put your books away, please. · Take the books from the shelf. · Take your exercise book. · Turn the page. · Turn to page twelve.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Instruções de exercício</th></tr></thead>
+<tbody>
+<tr><td>Colour this in. · Draw a box. · Fill in the gaps. · Go to exercise 3. · Let's sing a song. · Listen and repeat. · Look at the pictures. · Put a tick or a cross. · Say true or false. · Talk with a classmate. · Tick the correct answer. · Underline these words. · Work in twos / threes / pairs / groups. · You read first, please.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Disciplina</th><th>Encerrando</th></tr></thead>
+<tbody>
+<tr><td>Are you listening?<br>Can you stop that, please?<br>Don't pack away yet.<br>I don't want any noise.<br>One at a time, please.<br>Pay attention, please.<br>Please get on with your work.<br>Put your pencils down, please.<br>Sit straight, please.<br>Quiet, please.<br>Stop talking.<br>Don't do that again.</td><td>Have a good day.<br>Have a good weekend.<br>Off you go.<br>See you next time.<br>See you tomorrow.<br>Thanks, everybody.<br>That's it. You can go now.<br>Well done, everybody.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Avaliação — do melhor ao pior</th></tr></thead>
+<tbody>
+<tr><td>Brilliant · Excellent · Fantastic · Great · Very good · Well done! · Good · Fine · OK · Average · Not (too) bad · It's not clear · Poor · Sorry. That's wrong. · That's not very good.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Operando aparelhos</th></tr></thead>
+<tbody>
+<tr><td>I'll pause it for you. · Open the file. · Press eject. · Press fast forward. · Press play. · Press rewind. · Press that button. · Save the file. · Scroll the window. · Switch it on. · Tap that box.</td></tr>
+</tbody></table></div>
+</section>
+
+</main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 19 V10 · Livro 05 · Grammar For Young Learners — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  // ── TOC gerado a partir das seções ──
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  // ── Unidades de busca: cada .i e cada <tr> do corpo das tabelas ──
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  // Tabelas inteiras somem quando nenhuma das suas linhas casa com a busca,
+  // senão sobra um cabeçalho de tabela flutuando sem conteúdo.
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' estruturas gramaticais.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'estrutura':'estruturas')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  // ── Marca a seção visível no TOC ──
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
