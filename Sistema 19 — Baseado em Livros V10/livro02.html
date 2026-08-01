@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 02 · Everything You Need to Ace English Language Arts — Sistema 19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 19</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 19 · V10 · Livro 02 · gramática básica A1–A2</div>
+<h1 class="title">Big Fat Notebook &#8212; <em>English Language Arts</em></h1>
+<p class="lead">Workman Publishing · 2ª edição · o caderno visual que resume o essencial do ensino fundamental americano. Deste livro saíram as <b>Unidades 1 e 2</b> &mdash; gramática e vocabulário &mdash; que são a parte de <b>inglês real</b>: a frase-modelo de cada estrutura, a tabela de formas e o exemplo em contexto. Ficaram de fora enunciado de exercício, gabarito e as unidades de análise literária. As estruturas estão ordenadas <b>da mais simples para a mais avançada</b>.</p>
+
+<div class="metrics">
+  <div class="metric"><b>18</b><span>estruturas</span></div>
+  <div class="metric"><b id="m-total">&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>18</b><span>tabelas</span></div>
+  <div class="metric"><b>A1–A2</b><span>nível</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: didn't, plural, vírgula, passado…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Estruturas</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Estrutura 01</div>
+<h2>Sujeito e verbo — o que faz uma frase simples</h2>
+<p class="sdesc">Uma <b>simple sentence</b> tem sujeito, verbo e uma ideia completa. O sujeito é a coisa que <b>faz</b> algo ou que <b>é</b> algo. Para achar o verbo, pergunte <code>What's happening?</code></p>
+<div class="items">
+<div class="i"><div class="en">She walked.</div><div class="pt">Ela caminhou. <b>(sujeito + verbo = frase simples)</b></div></div>
+<div class="i"><div class="en">She walked in the door.</div><div class="pt">Ela entrou pela porta. <b>(frase simples + uma locução)</b></div></div>
+<div class="i"><div class="en">Terry rides his bike.</div><div class="pt">O Terry anda de bicicleta. <b>(o sujeito FAZ algo)</b></div></div>
+<div class="i"><div class="en">The tree is the tallest in the forest.</div><div class="pt">A árvore é a mais alta da floresta. <b>(o sujeito É algo)</b></div></div>
+<div class="i"><div class="en">Sasha hit the ball.</div><div class="pt">A Sasha bateu na bola. <b>(ball = objeto)</b></div></div>
+<div class="i"><div class="en">Jeremy carried the bouquet of flowers.</div><div class="pt">O Jeremy carregou o buquê de flores.</div></div>
+<div class="i"><div class="en">Jessica hit the ball out of the park.</div><div class="pt">A Jessica mandou a bola para fora do estádio.</div></div>
+<div class="i"><div class="en">Jose sang a song.</div><div class="pt">O José cantou uma música.</div></div>
+<div class="i"><div class="en">Jiang performed the new dance.</div><div class="pt">A Jiang executou a dança nova.</div></div>
+<div class="i"><div class="en">Jim jumped out of the plane.</div><div class="pt">O Jim pulou do avião.</div></div>
+<div class="i"><div class="en">Kate walked.</div><div class="pt">A Kate caminhou. <b>(passado)</b></div></div>
+<div class="i"><div class="en">Kate walks.</div><div class="pt">A Kate caminha. <b>(presente)</b></div></div>
+<div class="i"><div class="en">Kate will walk.</div><div class="pt">A Kate vai caminhar. <b>(futuro)</b></div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Estrutura 02</div>
+<h2>Locução (phrase) — um grupo de palavras que age como uma classe só</h2>
+<p class="sdesc">Uma <b>phrase</b> é um grupo de palavras que funciona como uma única classe gramatical. Ela <b>nunca</b> tem sujeito agindo através de um verbo. Pode agir como substantivo, adjetivo, advérbio ou preposição.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Tipo de locução</th><th>Frase de exemplo</th><th>Tradução</th></tr></thead>
+<tbody>
+<tr><td>Age como <b>substantivo</b></td><td>Martinique's favorite sweater was hanging from the line.</td><td>O suéter favorito da Martinique estava pendurado no varal.</td></tr>
+<tr><td>Age como <b>adjetivo</b></td><td>Saskia found the sunset to be heart-stoppingly beautiful.</td><td>A Saskia achou o pôr do sol de tirar o fôlego.</td></tr>
+<tr><td>Age como <b>advérbio</b></td><td>Before class, I crammed for the test.</td><td>Antes da aula, eu estudei que nem louco para a prova.</td></tr>
+<tr><td>Age como <b>preposição</b></td><td>Percy took his pet lizard into the house.</td><td>O Percy levou o lagarto de estimação para dentro de casa.</td></tr>
+<tr><td><b>Noun phrase</b></td><td>The royal chef baked approximately 24 pies.</td><td>O chef real assou aproximadamente 24 tortas.</td></tr>
+<tr><td><b>Verb phrase</b></td><td>These strange rocks may be worth a fortune.</td><td>Essas pedras estranhas podem valer uma fortuna.</td></tr>
+<tr><td><b>Adverb phrase</b></td><td>She moved through the library like a spy through an enemy's headquarters.</td><td>Ela atravessou a biblioteca como um espião atravessa o quartel-general inimigo.</td></tr>
+<tr><td><b>Adjective phrase</b></td><td>The crowd was far more excited now than during the first half of the game.</td><td>A torcida estava bem mais empolgada agora do que no primeiro tempo do jogo.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s03">
+<div class="snum">Estrutura 03</div>
+<h2>Oração (clause) — tem sujeito agindo através de um verbo</h2>
+<p class="sdesc">Uma <b>clause</b> tem, no mínimo, sujeito e verbo. É essa a diferença para a locução: a locução não tem sujeito agindo. Orações se dividem em <b>independentes</b> (ficam de pé sozinhas) e <b>dependentes</b> (não ficam).</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Trecho</th><th>É o quê?</th><th>Por quê?</th></tr></thead>
+<tbody>
+<tr><td>In the nick of time</td><td><b class='x'>phrase</b></td><td>não tem verbo</td></tr>
+<tr><td>Tripping merrily along</td><td><b class='x'>phrase</b></td><td>não tem sujeito</td></tr>
+<tr><td>Before the summer ended</td><td><b class='ok'>clause</b></td><td>o <i>summer</i> está fazendo algo — está terminando</td></tr>
+<tr><td>Because the wolf hid out in the forest</td><td><b class='ok'>clause</b></td><td>há um sujeito fazendo algo — o lobo está se escondendo</td></tr>
+<tr><td>I went to the bonfire after the game.</td><td><b class='ok'>independente</b></td><td>"I went to the bonfire" seria uma frase completa sozinha</td></tr>
+<tr><td>When the circus gets to town, we'll go to see the elephants.</td><td><b class='ok'>dependente + independente</b></td><td>"When the circus gets to town" não seria frase completa</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><span class="tag">noun clause</span><div class="en">I don't know why he did that.</div><div class="pt">Eu não sei por que ele fez isso. <b>(a oração age como substantivo)</b></div></div>
+<div class="i"><span class="tag">adjective clause</span><div class="en">He really loved the jacket that she sold him.</div><div class="pt">Ele adorou a jaqueta que ela vendeu para ele. <b>(modifica o substantivo)</b></div></div>
+<div class="i"><span class="tag">adverb clause</span><div class="en">All the kids tried to eat their Popsicles before they melted in the hot sun.</div><div class="pt">Todas as crianças tentaram comer os picolés antes que derretessem no sol quente. <b>(modifica o verbo)</b></div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Estrutura 04</div>
+<h2>Frase composta e frase complexa — e as conjunções</h2>
+<p class="sdesc">Uma <b>compound sentence</b> tem duas ou mais orações independentes. Uma <b>complex sentence</b> tem uma independente e uma (ou mais) dependentes. As independentes se ligam por <b>conjunção coordenativa</b>; as dependentes, por <b>conjunção subordinativa</b>.</p>
+<p class='sdesc'><b>FANBOYS</b> — o macete para as sete conjunções coordenativas: <b>F</b>or, <b>A</b>nd, <b>N</b>or, <b>B</b>ut, <b>O</b>r, <b>Y</b>et, <b>S</b>o.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Conjunções subordinativas mais comuns</th></tr></thead>
+<tbody>
+<tr><td>after · although · as · because · before · even though · every time · if · in case · now that · once · since · though · unless · until · when · whenever · whether or not · while</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><span class="tag">compound — IC + CC + IC</span><div class="en">The girl walked in the door, and her mother gave her a huge hug.</div><div class="pt">A menina entrou pela porta, e a mãe dela deu um abraço apertado nela.</div></div>
+<div class="i"><span class="tag">complex — causa</span><div class="en">Her mother gave her a huge smile, because she had gotten there just in time.</div><div class="pt">A mãe dela abriu um sorrisão, porque ela tinha chegado bem na hora.</div></div>
+<div class="i"><span class="tag">complex — tempo</span><div class="en">Once I cleaned my room, I was allowed to go to the movies.</div><div class="pt">Assim que eu arrumei o quarto, me deixaram ir ao cinema.</div></div>
+<div class="i"><span class="tag">compound complex</span><div class="en">Because she had gotten there just in time, she was able to help her mother finish cooking dinner, so they were also able to play a quick game together.</div><div class="pt">Como ela tinha chegado bem na hora, conseguiu ajudar a mãe a terminar o jantar, então elas também conseguiram jogar uma partidinha juntas.</div></div>
+<div class="i"><span class="tag">compound complex</span><div class="en">It didn't take me long to get to school when I borrowed my brother's flying horse, and I soared over the traffic.</div><div class="pt">Não demorei nada para chegar à escola quando peguei emprestado o cavalo voador do meu irmão, e passei planando por cima do trânsito.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Estrutura 05</div>
+<h2>Modificador mal colocado e modificador solto</h2>
+<p class="sdesc"><b>Misplaced modifier</b>: a locução está no lugar errado e ninguém sabe o que ela modifica. <b>Dangling modifier</b>: a locução modifica algo que <b>nem está</b> na frase. A correção é a mesma ideia — deixe o modificador perto do que ele modifica, e garanta que esse alvo existe na frase.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Errado</th><th>Certo</th><th>Por quê</th></tr></thead>
+<tbody>
+<tr><td>Greta smelled the meat loaf <b class='x'>coming into the house for dinner</b>.</td><td><b class='ok'>Coming into the house for dinner</b>, Greta smelled the meat loaf.</td><td>Quem estava entrando em casa era a Greta, não o bolo de carne.</td></tr>
+<tr><td>Excited about the first game of the season, <b class='x'>Javi's hockey skates</b> sat in the front hall.</td><td>Excited about the first game of the season, <b class='ok'>Javi</b> kept his hockey skates in the front hall.</td><td>Patins não ficam animados — o Javi fica.</td></tr>
+<tr><td><b class='x'>Before they melted</b> the kids decorated the snowmen.</td><td>The kids decorated the snowmen <b class='ok'>before they melted</b>.</td><td>O modificador tem de ficar perto dos bonecos de neve.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s06">
+<div class="snum">Estrutura 06</div>
+<h2>Pronomes: subjetivos, objetivos e possessivos</h2>
+<p class="sdesc">Um <b>pronoun</b> toma o lugar de um substantivo. O <b>subjetivo</b> substitui o sujeito; o <b>objetivo</b>, o objeto; o <b>possessivo</b> mostra que algo pertence a alguém.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Subjetivos</th><th>Objetivos</th><th>Possessivos</th></tr></thead>
+<tbody>
+<tr><td>I · you · he · she · it · we · they · what · who</td><td>me · you · him · her · it · us · them · whom · that</td><td>mine · yours · his · hers · ours · theirs</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><span class="tag">substituição básica</span><div class="en">Mindy ran for class president. / She ran for class president.</div><div class="pt">A Mindy se candidatou a presidente da turma. / Ela se candidatou a presidente da turma.</div></div>
+<div class="i"><div class="en">The soccer players celebrated. / They celebrated.</div><div class="pt">Os jogadores de futebol comemoraram. / Eles comemoraram.</div></div>
+<div class="i"><div class="en">The Eiffel Tower lit up the night sky. / It lit up the night sky.</div><div class="pt">A Torre Eiffel iluminou o céu noturno. / Ela iluminou o céu noturno.</div></div>
+<div class="i"><span class="tag">subjetivo</span><div class="en">I climbed a mountain.</div><div class="pt">Eu escalei uma montanha.</div></div>
+<div class="i"><div class="en">You gave me an apple.</div><div class="pt">Você me deu uma maçã.</div></div>
+<div class="i"><div class="en">He went to the store.</div><div class="pt">Ele foi à loja.</div></div>
+<div class="i"><div class="en">She won the swimming competition.</div><div class="pt">Ela ganhou a competição de natação.</div></div>
+<div class="i"><div class="en">It was raining.</div><div class="pt">Estava chovendo.</div></div>
+<div class="i"><div class="en">We danced all night.</div><div class="pt">Nós dançamos a noite toda.</div></div>
+<div class="i"><div class="en">They came from the city.</div><div class="pt">Eles vieram da cidade.</div></div>
+<div class="i"><div class="en">What happened?</div><div class="pt">O que aconteceu?</div></div>
+<div class="i"><div class="en">Who did this?</div><div class="pt">Quem fez isso?</div></div>
+<div class="i"><span class="tag">objetivo</span><div class="en">The pile of blankets fell on me.</div><div class="pt">A pilha de cobertores caiu em cima de mim.</div></div>
+<div class="i"><div class="en">I waved to you.</div><div class="pt">Eu acenei para você.</div></div>
+<div class="i"><div class="en">Please tell Jack I want to see him.</div><div class="pt">Por favor, diz para o Jack que eu quero ver ele.</div></div>
+<div class="i"><div class="en">We went over to help her.</div><div class="pt">Nós fomos lá ajudar ela.</div></div>
+<div class="i"><div class="en">No one could believe it.</div><div class="pt">Ninguém conseguia acreditar nisso.</div></div>
+<div class="i"><div class="en">He took us to the park.</div><div class="pt">Ele levou a gente ao parque.</div></div>
+<div class="i"><div class="en">She explained the history to them.</div><div class="pt">Ela explicou a história para eles.</div></div>
+<div class="i"><div class="en">He was a friend whom she met in Kenya.</div><div class="pt">Ele era um amigo que ela conheceu no Quênia.</div></div>
+<div class="i"><div class="en">I need to move that.</div><div class="pt">Eu preciso mover aquilo.</div></div>
+<div class="i"><span class="tag">possessivo</span><div class="en">The last piece of pizza is mine.</div><div class="pt">O último pedaço de pizza é meu.</div></div>
+<div class="i"><div class="en">I think this dirty sock is yours.</div><div class="pt">Acho que essa meia suja é sua. <b>(yours serve para singular e plural)</b></div></div>
+<div class="i"><div class="en">David wanted everyone to know the new puppy was his.</div><div class="pt">O David queria que todo mundo soubesse que o filhote novo era dele.</div></div>
+<div class="i"><div class="en">Maria's mother told her that one day the ring would be hers.</div><div class="pt">A mãe da Maria disse a ela que um dia o anel seria dela.</div></div>
+<div class="i"><div class="en">Are these seats ours?</div><div class="pt">Esses lugares são nossos?</div></div>
+<div class="i"><div class="en">I'm sorry, this cake is theirs.</div><div class="pt">Desculpa, esse bolo é deles.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Estrutura 07</div>
+<h2>Erros de pronome — número, caso, pronome vago e pronome composto</h2>
+<p class="sdesc">Um <b>inappropriate shift</b> é usar o pronome errado. Erro de <b>número</b>: plural substituindo singular (ou o contrário). Erro de <b>caso</b>: pronome objetivo onde a frase pede subjetivo. <b>Pronome vago</b>: não dá para saber o que ele substitui.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Errado</th><th>Certo</th><th>Tipo de erro</th></tr></thead>
+<tbody>
+<tr><td><b class='x'>Every time I go</b> to the beach, we get a hot dog.</td><td><b class='ok'>Every time we go</b> to the beach, we get hot dogs.</td><td>número</td></tr>
+<tr><td>If anyone wants to come to the party, <b class='x'>they need</b> to reply to the invitation.</td><td>If anyone wants to come to the party, <b class='ok'>he or she needs</b> to reply to the invitation.</td><td>número</td></tr>
+<tr><td><b class='x'>Me want</b> an ice cream cone.</td><td><b class='ok'>I want</b> an ice cream cone.</td><td>caso</td></tr>
+<tr><td>I'm going over to see <b class='x'>he</b>.</td><td>I'm going over to see <b class='ok'>him</b>.</td><td>caso</td></tr>
+<tr><td><b class='x'>Me and Hannah</b> went to the store.</td><td><b class='ok'>Hannah and I</b> went to the store.</td><td>pronome composto</td></tr>
+<tr><td>That flag belongs to us, so it's <b class='x'>mine</b>.</td><td>That flag belongs to us, so it's <b class='ok'>ours</b>.</td><td>número + posse</td></tr>
+<tr><td>Each person must hang up <b class='x'>their</b> coat.</td><td>Each person must hang up <b class='ok'>his or her</b> coat.</td><td>número</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><span class="tag">pronome vago</span><div class="en">Jared's brother wondered if he was fast enough to win the race.</div><div class="pt">O irmão do Jared se perguntou se <b>ele</b> era rápido o bastante para ganhar a corrida. <b>(quem? o Jared ou o irmão?)</b></div></div>
+<div class="i"><span class="tag">resolvido</span><div class="en">Jared's brother wondered if Jared was fast enough to win the race.</div><div class="pt">O irmão do Jared se perguntou se o Jared era rápido o bastante para ganhar a corrida.</div></div>
+<div class="i"><span class="tag">resolvido</span><div class="en">Jared's brother wondered if he himself was fast enough to win the race.</div><div class="pt">O irmão do Jared se perguntou se ele mesmo era rápido o bastante para ganhar a corrida.</div></div>
+<div class="i"><span class="tag">pronome vago</span><div class="en">Abby wanted to get a new scooter because it was cool.</div><div class="pt">A Abby queria uma patinete nova porque <b>isso</b> era legal. <b>(ter a patinete, ou a patinete em si?)</b></div></div>
+<div class="i"><span class="tag">resolvido</span><div class="en">Abby wanted to get a new scooter because the scooter was cool.</div><div class="pt">A Abby queria uma patinete nova porque a patinete era legal.</div></div>
+<div class="i"><span class="tag">ordem dos compostos</span><div class="en">He and Sheryl read the same book.</div><div class="pt">Ele e a Sheryl leram o mesmo livro. <b>(o pronome vem antes do nome)</b></div></div>
+<div class="i"><span class="tag">ordem dos compostos</span><div class="en">Sheryl and I read the same book.</div><div class="pt">A Sheryl e eu lemos o mesmo livro. <b>("I" é a exceção: sempre por último)</b></div></div>
+<div class="i"><div class="en">I made enough bracelets for you and your friends.</div><div class="pt">Eu fiz pulseiras suficientes para você e para os seus amigos.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Estrutura 08</div>
+<h2>Pronomes intensivos e reflexivos — os terminados em -self / -selves</h2>
+<p class="sdesc">O <b>intensive pronoun</b> enfatiza o antecedente: se você tirá-lo da frase, o sentido <b>não muda</b>. O <b>reflexive pronoun</b> aponta de volta para o sujeito: se você tirá-lo, o sentido <b>muda</b>. São as mesmas palavras — a diferença está na função.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Intensivos e reflexivos</th></tr></thead>
+<tbody>
+<tr><td>myself · yourself · himself · herself · itself · ourselves · yourselves · themselves</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><span class="tag">intensivo</span><div class="en">My brother tied his shoes himself.</div><div class="pt">Meu irmão amarrou os sapatos sozinho.</div></div>
+<div class="i"><div class="en">I saw the aliens myself.</div><div class="pt">Eu mesmo vi os alienígenas.</div></div>
+<div class="i"><div class="en">He pulled her out of the river himself.</div><div class="pt">Ele mesmo a tirou do rio.</div></div>
+<div class="i"><div class="en">Grandma will drive the car herself.</div><div class="pt">A vovó vai dirigir o carro ela mesma.</div></div>
+<div class="i"><div class="en">You need to clean your room yourself.</div><div class="pt">Você precisa limpar o quarto você mesmo.</div></div>
+<div class="i"><div class="en">The band itself is amazing, even without the fancy costumes.</div><div class="pt">A banda em si é incrível, mesmo sem as fantasias chiques.</div></div>
+<div class="i"><div class="en">The cats turned the faucet on themselves.</div><div class="pt">Os gatos abriram a torneira eles mesmos.</div></div>
+<div class="i"><div class="en">We can carry our groceries ourselves.</div><div class="pt">A gente consegue carregar as compras sozinhos.</div></div>
+<div class="i"><div class="en">You yourselves know what it's like to win a game.</div><div class="pt">Vocês mesmos sabem como é ganhar um jogo.</div></div>
+<div class="i"><div class="en">She herself made a green dress.</div><div class="pt">Ela mesma fez um vestido verde. <b>(tire "herself" e o sentido continua igual)</b></div></div>
+<div class="i"><span class="tag">reflexivo</span><div class="en">She made herself a green dress.</div><div class="pt">Ela fez um vestido verde para si mesma. <b>(tire "herself" e o sentido muda: não sabemos mais para quem)</b></div></div>
+<div class="i"><span class="tag">reflexivo</span><div class="en">Terence and I bought ourselves gliders at the fair.</div><div class="pt">O Terence e eu compramos planadores para nós mesmos na feira.</div></div>
+<div class="i"><span class="tag">uso errado</span><div class="en">Dan and myself will be leading the class.</div><div class="pt"><b class='x'>Errado.</b> Tire "Dan": "Myself will be leading the class" não existe.</div></div>
+<div class="i"><span class="tag">corrigido</span><div class="en">Dan and I will be leading the class.</div><div class="pt">O Dan e eu vamos conduzir a aula.</div></div>
+<div class="i"><span class="tag">uso errado</span><div class="en">Only your sister and yourself will take the bus.</div><div class="pt"><b class='x'>Errado.</b> Tire "your sister": "Yourself will take the bus" não existe.</div></div>
+<div class="i"><span class="tag">corrigido</span><div class="en">Only your sister and you will take the bus.</div><div class="pt">Só a sua irmã e você vão pegar o ônibus.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Estrutura 09</div>
+<h2>Gerúndio — o verbo que vira substantivo</h2>
+<p class="sdesc">Um <b>gerund</b> é um verbo que virou substantivo, sempre com <b>-ing</b>. Ele ocupa o lugar de sujeito ou de objeto da frase. Uma <b>gerund phrase</b> começa com gerúndio e continua funcionando como substantivo.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Infinitivo</th><th>Gerúndio</th></tr></thead>
+<tbody>
+<tr><td>to run</td><td>running</td></tr>
+<tr><td>to think</td><td>thinking</td></tr>
+<tr><td>to play</td><td>playing</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><span class="tag">gerúndio como sujeito</span><div class="en">Running made her feel better.</div><div class="pt">Correr fazia ela se sentir melhor.</div></div>
+<div class="i"><span class="tag">gerúndio como objeto</span><div class="en">She thought about running.</div><div class="pt">Ela pensou em correr.</div></div>
+<div class="i"><span class="tag">gerund phrase</span><div class="en">Running around the park</div><div class="pt">Correr em volta do parque</div></div>
+<div class="i"><span class="tag">gerund phrase</span><div class="en">Thinking of his friends</div><div class="pt">Pensar nos amigos dele</div></div>
+<div class="i"><span class="tag">gerund phrase</span><div class="en">Playing basketball after dark</div><div class="pt">Jogar basquete depois de escurecer</div></div>
+<div class="i"><span class="tag">gerund phrase como sujeito</span><div class="en">Running to the store gave her some time outside.</div><div class="pt">Ir correndo até a loja deu a ela um tempo ao ar livre.</div></div>
+<div class="i"><span class="tag">gerund phrase como sujeito</span><div class="en">Singing in the shower was his favorite way to start the day.</div><div class="pt">Cantar no banho era o jeito favorito dele de começar o dia.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Estrutura 10</div>
+<h2>Particípio — o verbo que vira adjetivo</h2>
+<p class="sdesc">Um <b>participle</b> é um verbo que virou adjetivo. O <b>past participle</b> termina em -n, -en, -t, -ed, -d. O <b>present participle</b> termina em -ing e vem com outro verbo. Os dois modificam substantivo.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Past participle</th><th>Present participle</th></tr></thead>
+<tbody>
+<tr><td>half-<b>eaten</b> apple <span class='w'>(modifica "apple")</span></td><td>She was <b>eating</b> an apple. <span class='w'>(modifica "she")</span></td></tr>
+<tr><td><b>ruined</b> castle</td><td>They were <b>ruining</b> a castle.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Verbo</th><th>Particípio regular</th><th>Verbo</th><th>Particípio irregular</th></tr></thead>
+<tbody>
+<tr><td>walk</td><td>walked</td><td>begin</td><td>begun</td></tr>
+<tr><td>smile</td><td>smiled</td><td>forgive</td><td>forgiven</td></tr>
+<tr><td>dance</td><td>danced</td><td>sing</td><td>sung</td></tr>
+<tr><td></td><td></td><td>write</td><td>written</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><span class="tag">participle phrase</span><div class="en">Listening to the rain</div><div class="pt">Ouvindo a chuva</div></div>
+<div class="i"><span class="tag">participle phrase</span><div class="en">Forgotten for years</div><div class="pt">Esquecido por anos</div></div>
+<div class="i"><span class="tag">participle phrase</span><div class="en">Dancing as if there were no tomorrow</div><div class="pt">Dançando como se não houvesse amanhã</div></div>
+<div class="i"><span class="tag">na frase</span><div class="en">Dancing as if there were no tomorrow, Preston accidentally fell off the end of the dock.</div><div class="pt">Dançando como se não houvesse amanhã, o Preston caiu sem querer da ponta do píer.</div></div>
+<div class="i"><span class="tag">na frase</span><div class="en">Singing her heart out, Kamilah danced across the stage.</div><div class="pt">Cantando com toda a alma, a Kamilah dançou pelo palco.</div></div>
+<div class="i"><span class="tag">gerúndio × particípio</span><div class="en">Running to the store gave Abby time to think things through.</div><div class="pt">Ir correndo até a loja deu tempo à Abby para pensar nas coisas. <b>(é sujeito → gerund phrase)</b></div></div>
+<div class="i"><span class="tag">gerúndio × particípio</span><div class="en">Running to the store, Abby got caught in the rain.</div><div class="pt">Indo correndo até a loja, a Abby foi pega pela chuva. <b>(modifica "Abby" → participle phrase)</b></div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Estrutura 11</div>
+<h2>Infinitivo — <i>to</i> + verbo, e as três funções que ele assume</h2>
+<p class="sdesc">Um <b>infinitive</b> quase sempre começa com <code>to</code> e termina com um verbo. Ele pode agir como substantivo, adjetivo ou advérbio — e a <b>infinitive phrase</b> faz o mesmo.</p>
+<div class="items">
+<div class="i"><span class="tag">como substantivo</span><div class="en">To walk was her greatest desire.</div><div class="pt">Caminhar era o maior desejo dela. <b>(é o sujeito da frase)</b></div></div>
+<div class="i"><span class="tag">como adjetivo</span><div class="en">The way to go is through the woods.</div><div class="pt">O caminho a seguir é pela mata. <b>(modifica "way")</b></div></div>
+<div class="i"><span class="tag">como advérbio</span><div class="en">He hoped to understand.</div><div class="pt">Ele esperava entender. <b>(explica por que ele espera)</b></div></div>
+<div class="i"><span class="tag">infinitive phrase</span><div class="en">To hope for a better tomorrow</div><div class="pt">Esperar por um amanhã melhor</div></div>
+<div class="i"><span class="tag">infinitive phrase</span><div class="en">To forget all your fears</div><div class="pt">Esquecer todos os seus medos</div></div>
+<div class="i"><span class="tag">infinitive phrase</span><div class="en">To walk into the sunset</div><div class="pt">Caminhar rumo ao pôr do sol</div></div>
+<div class="i"><span class="tag">como substantivo</span><div class="en">To walk across the state was her greatest desire.</div><div class="pt">Atravessar o estado a pé era o maior desejo dela.</div></div>
+<div class="i"><span class="tag">como adjetivo</span><div class="en">It was the fastest way to get from here to there.</div><div class="pt">Era o jeito mais rápido de ir daqui até lá.</div></div>
+<div class="i"><span class="tag">como advérbio</span><div class="en">He hoped to understand what really happened all those years ago.</div><div class="pt">Ele esperava entender o que de fato aconteceu todos aqueles anos atrás.</div></div>
+<div class="i"><span class="tag">como substantivo</span><div class="en">She had always wished to have a place of her own.</div><div class="pt">Ela sempre desejou ter um lugar só dela.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Estrutura 12</div>
+<h2>Voz ativa e voz passiva</h2>
+<p class="sdesc">Na <b>voz ativa</b>, o sujeito faz alguma coisa. Na <b>voz passiva</b>, alguma coisa acontece ao sujeito. Para formar a passiva, acrescenta-se uma forma de <code>to be</code> ao verbo. Regra de ouro: <b>não misture as duas na mesma frase</b>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Ativa</th><th>Passiva</th></tr></thead>
+<tbody>
+<tr><td>Jessica hit the ball out of the park.</td><td>The ball was hit out of the park by Jessica.</td></tr>
+<tr><td>Jose sang a song.</td><td>The song was sung by Jose.</td></tr>
+<tr><td>Jiang performed the new dance.</td><td>The new dance was performed by Jiang.</td></tr>
+<tr><td>Dara cleaned her room.</td><td>The room was cleaned by Dara.</td></tr>
+<tr><td>Janet ran the mile in under five minutes.</td><td>The mile was run by Janet in under five minutes.</td></tr>
+<tr><td>Mr. Turner closed the mill after the price of cotton fell.</td><td>The mill was closed by Mr. Turner after the price of cotton fell.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Tempo</th><th>Ativa</th><th>Passiva</th></tr></thead>
+<tbody>
+<tr><td>Past</td><td>Kate walked.</td><td>The dog was walked.</td></tr>
+<tr><td>Present</td><td>Kate walks.</td><td>The dog is walked.</td></tr>
+<tr><td>Future</td><td>Kate will walk.</td><td>The dog will be walked.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><span class="tag">mistura errada</span><div class="en">When Alice pulled the fire alarm, a loud ringing was heard.</div><div class="pt"><b class='x'>Ativa + passiva na mesma frase.</b></div></div>
+<div class="i"><span class="tag">tudo ativo</span><div class="en">When Alice pulled the fire alarm, the students heard a loud ringing.</div><div class="pt">Quando a Alice puxou o alarme de incêndio, os alunos ouviram um toque alto.</div></div>
+<div class="i"><span class="tag">tudo passivo</span><div class="en">When the fire alarm was pulled, a loud ringing was heard.</div><div class="pt">Quando o alarme de incêndio foi puxado, ouviu-se um toque alto.</div></div>
+<div class="i"><span class="tag">mistura errada</span><div class="en">After the men felled the tree, it was carried to town.</div><div class="pt"><b class='x'>Ativa + passiva.</b></div></div>
+<div class="i"><span class="tag">corrigido</span><div class="en">After the men felled the tree, they carried it to town.</div><div class="pt">Depois que os homens derrubaram a árvore, eles a levaram para a cidade.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Estrutura 13</div>
+<h2>Os cinco modos do verbo</h2>
+<p class="sdesc">O <b>mood</b> do verbo diz como se posiciona quem fala: constatando um fato, mandando, perguntando, condicionando ou imaginando. Como nos outros casos, <b>não troque de modo no meio da frase</b>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Modo</th><th>Para quê</th><th>Exemplos</th></tr></thead>
+<tbody>
+<tr><td><b>Indicative</b></td><td>constatar um fato</td><td>I biked. · I bike. · I will bike.</td></tr>
+<tr><td><b>Imperative</b></td><td>mandar alguém fazer algo</td><td>Get out of bed! · Open the door! · Let the dog in.</td></tr>
+<tr><td><b>Interrogative</b></td><td>fazer uma pergunta</td><td>Will we see a shooting star tonight? · Will you help me carry this puppy home?</td></tr>
+<tr><td><b>Conditional</b></td><td>algo só acontece se outra coisa acontecer</td><td>If you leave that cat alone with the tuna casserole, he might eat it. · He would look nice if he got a new hat.</td></tr>
+<tr><td><b>Subjunctive</b></td><td>desejo ou hipótese que talvez nunca se realize</td><td>I wish I were ten feet tall. · I suggest you clean that up before your sister sees it.</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><span class="tag">condicional</span><div class="en">If Maurice threw the birdseed to the pigeons, the birds would eat it.</div><div class="pt">Se o Maurice jogasse a alpiste para os pombos, os pássaros comeriam. <b>(depende de o Maurice jogar)</b></div></div>
+<div class="i"><span class="tag">subjuntivo</span><div class="en">If you were a bird, you would eat Maurice's birdseed.</div><div class="pt">Se você fosse um pássaro, comeria a alpiste do Maurice. <b>(hipótese que não vai se realizar)</b></div></div>
+<div class="i"><span class="tag">subjuntivo</span><div class="en">Maurice wished that a giant pigeon would fly him to the moon and back.</div><div class="pt">O Maurice desejou que um pombo gigante o levasse voando até a lua e de volta.</div></div>
+<div class="i"><span class="tag">subjuntivo</span><div class="en">If I had elastic arms, I could pick the pears from the tree in my neighbor's yard.</div><div class="pt">Se eu tivesse braços elásticos, poderia colher as peras da árvore do quintal do vizinho.</div></div>
+<div class="i"><span class="tag">troca errada</span><div class="en">Don't forget your hat, and you should wear shoes.</div><div class="pt"><b class='x'>Imperativo + indicativo.</b></div></div>
+<div class="i"><span class="tag">tudo imperativo</span><div class="en">Don't forget your hat, and wear shoes.</div><div class="pt">Não esqueça o chapéu, e use sapatos.</div></div>
+<div class="i"><span class="tag">tudo indicativo</span><div class="en">You should remember your hat, and you should wear shoes.</div><div class="pt">Você deveria lembrar do chapéu, e deveria usar sapatos.</div></div>
+<div class="i"><span class="tag">troca errada</span><div class="en">If this rocket could fly into the past, it will have a hard time finding rocket fuel.</div><div class="pt"><b class='x'>Subjuntivo + indicativo.</b></div></div>
+<div class="i"><span class="tag">corrigido</span><div class="en">If this rocket could fly into the past, it would have a hard time finding rocket fuel before rockets were invented.</div><div class="pt">Se esse foguete pudesse voar para o passado, teria dificuldade em achar combustível antes de os foguetes serem inventados.</div></div>
+<div class="i"><span class="tag">corrigido</span><div class="en">If I get a watermelon at the farm stand, I will eat the whole thing.</div><div class="pt">Se eu comprar uma melancia na banca da fazenda, vou comer inteira.</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Estrutura 14</div>
+<h2>Descobrir o sentido pelo contexto</h2>
+<p class="sdesc"><b>Context</b> é o que está em volta de uma palavra e ajuda a entendê-la. Mesmo sem conhecer a palavra, dá para deduzir muita coisa a partir da frase — vale para ficção e não-ficção.</p>
+<div class="items">
+<div class="i"><span class="tag">palavra inventada</span><div class="en">Some people like lions, and others like tigers, but I prefer bandersnatches.</div><div class="pt">Umas pessoas gostam de leões, outras de tigres, mas eu prefiro <i>bandersnatches</i>. <b>(pela comparação, deve ser um bicho como leão ou tigre)</b></div></div>
+<div class="i"><span class="tag">cor pelo contexto</span><div class="en">The bandersnatch was the same color as the cloudless sky.</div><div class="pt">O <i>bandersnatch</i> tinha a mesma cor do céu sem nuvens. <b>(então é azul, não vermelho)</b></div></div>
+<div class="i"><span class="tag">perigo pelo contexto</span><div class="en">They were harmless as lambs, but Mrs. Withers still had an unreasonable fear of bandersnatches.</div><div class="pt">Eram inofensivos como cordeiros, mas a Sra. Withers ainda tinha um medo sem razão de <i>bandersnatches</i>.</div></div>
+<div class="i"><span class="tag">característica</span><div class="en">I thought this bandersnatch was going to be different, but it's got four wings and a love of chewing gum like all the rest of them.</div><div class="pt">Achei que esse <i>bandersnatch</i> fosse diferente, mas tem quatro asas e adora chiclete como todos os outros.</div></div>
+<div class="i"><span class="tag">característica</span><div class="en">Some prefer newspapers and some like novels, but I've never met a bandersnatch who didn't have something to read with them.</div><div class="pt">Uns preferem jornais e outros gostam de romances, mas nunca conheci um <i>bandersnatch</i> sem algo para ler.</div></div>
+<div class="i"><span class="tag">cheiro pelo contexto</span><div class="en">The bandersnatch was so frumious that the whole place smelled like pickles.</div><div class="pt">O <i>bandersnatch</i> era tão <i>frumious</i> que o lugar todo cheirava a picles. <b>(descreve cheiro, não sabor)</b></div></div>
+</div>
+<div class='sdesc' style='margin-top:16px'><b>Um texto real para praticar</b> — trecho da <i>Autobiography of Benjamin Franklin</i>. As palavras difíceis (<i>quagmire</i>, <i>emmets</i>) se deixam adivinhar pelo que está em volta.</div>
+<div class="items">
+<div class="i"><div class="en">There was a salt-marsh that bounded part of the mill-pond, on the edge of which, at high water, we used to stand to fish for minnows.</div><div class="pt">Havia um brejo salgado que fazia divisa com parte do açude do moinho; na beira dele, na maré alta, a gente ficava pescando peixinhos.</div></div>
+<div class="i"><div class="en">By much trampling, we had made it a mere quagmire.</div><div class="pt">De tanto pisotear, tínhamos transformado aquilo num puro atoleiro. <b>(quagmire = terreno encharcado e sem firmeza)</b></div></div>
+<div class="i"><div class="en">My proposal was to build a wharff there fit for us to stand upon.</div><div class="pt">Minha proposta era construir ali um cais em que a gente pudesse ficar de pé.</div></div>
+<div class="i"><div class="en">Accordingly, in the evening, when the workmen were gone, I assembled a number of my play-fellows, and working with them diligently like so many emmets, sometimes two or three to a stone, we brought them all away and built our little wharff.</div><div class="pt">Assim, à noite, quando os operários já tinham ido, reuni vários companheiros de brincadeira e, trabalhando com eles com afinco como formigas, às vezes dois ou três para cada pedra, carregamos tudo e construímos nosso cais. <b>(emmets = palavra antiga para formigas)</b></div></div>
+<div class="i"><div class="en">Inquiry was made after the removers; we were discovered and complained of; several of us were corrected by our fathers.</div><div class="pt">Investigaram quem tinha levado as pedras; fomos descobertos e denunciados; vários de nós apanharam dos pais.</div></div>
+<div class="i"><div class="en">Though I pleaded the usefulness of the work, mine convinced me that nothing was useful which was not honest.</div><div class="pt">Embora eu alegasse a utilidade da obra, o meu pai me convenceu de que nada é útil se não for honesto.</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Estrutura 15</div>
+<h2>Raízes e afixos do latim e do grego</h2>
+<p class="sdesc">Muitas palavras do inglês são feitas de pedaços que se repetem. A <b>root</b> é o núcleo do sentido; o <b>affix</b> é o pedaço que se acrescenta — <b>prefix</b> no começo, <b>suffix</b> no fim. Conhecendo os mais comuns, dá para deduzir milhares de palavras.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Afixo</th><th>Sentido</th><th>Palavras</th></tr></thead>
+<tbody>
+<tr><td><b>AB</b></td><td>longe de, o oposto de</td><td><b>ab</b>surd · <b>ab</b>normal · <b>ab</b>solutely</td></tr>
+<tr><td><b>MIL</b></td><td>mil</td><td><b>mil</b>e · <b>mil</b>lennium · <b>mil</b>lion</td></tr>
+<tr><td><b>COM</b></td><td>com</td><td><b>com</b>promise · <b>com</b>panion</td></tr>
+<tr><td><b>INTER</b></td><td>entre</td><td><b>inter</b>national · <b>inter</b>state</td></tr>
+<tr><td><b>ABLE / IBLE</b></td><td>capaz de ser</td><td>ed<b>ible</b> · present<b>able</b></td></tr>
+<tr><td><b>LESS</b></td><td>sem</td><td>blame<b>less</b> · end<b>less</b></td></tr>
+<tr><td><b>USE</b> <span class='w'>(raiz)</span></td><td>empregar algo para obter um resultado</td><td><b>use</b>ful · mis<b>use</b></td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Raiz / afixo</th><th>Língua</th><th>Tradução</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>ANTI</td><td>grego</td><td>contra</td><td>antifreeze</td></tr>
+<tr><td>ASTRO</td><td>grego</td><td>estrela</td><td>astronaut</td></tr>
+<tr><td>BENE</td><td>latim</td><td>bom</td><td>benefit</td></tr>
+<tr><td>BI</td><td>grego</td><td>dois</td><td>bisect</td></tr>
+<tr><td>CHRON</td><td>grego</td><td>tempo</td><td>chronology</td></tr>
+<tr><td>COSM</td><td>grego</td><td>mundo</td><td>cosmos</td></tr>
+<tr><td>CRACY</td><td>grego</td><td>governo</td><td>democracy</td></tr>
+<tr><td>CYCL</td><td>grego</td><td>círculo, roda</td><td>bicycle</td></tr>
+<tr><td>DEM</td><td>grego</td><td>povo</td><td>democracy</td></tr>
+<tr><td>DICT</td><td>latim</td><td>dizer</td><td>dictate</td></tr>
+<tr><td>GEO</td><td>grego</td><td>terra</td><td>geology</td></tr>
+<tr><td>GEN</td><td>latim</td><td>nascimento</td><td>genesis</td></tr>
+<tr><td>MECH</td><td>grego</td><td>máquina</td><td>mechanic</td></tr>
+<tr><td>MIS</td><td>latim</td><td>enviar</td><td>missile</td></tr>
+<tr><td>OLOGY</td><td>grego</td><td>estudo</td><td>geology</td></tr>
+<tr><td>PHON</td><td>grego</td><td>som</td><td>telephone</td></tr>
+<tr><td>PORT</td><td>latim</td><td>carregar</td><td>portable</td></tr>
+<tr><td>PYRO</td><td>grego</td><td>fogo</td><td>pyrotechnics</td></tr>
+<tr><td>SCOPE</td><td>grego</td><td>ver</td><td>telescope</td></tr>
+<tr><td>TERR</td><td>latim</td><td>terra</td><td>terrestrial</td></tr>
+<tr><td>VIS</td><td>latim</td><td>ver</td><td>visible</td></tr>
+<tr><td>AUD</td><td>latim</td><td>ouvir</td><td>audible · auditorium · audience</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s16">
+<div class="snum">Estrutura 16</div>
+<h2>Linguagem figurada — personificação, alusão, ironia e trocadilho</h2>
+<p class="sdesc">Uma <b>figure of speech</b> é linguagem que não é literal. Ela dá <b>rhetorical force</b>: torna o que você diz mais claro, mais interessante e mais fácil de lembrar.</p>
+<div class="items">
+<div class="i"><span class="tag">literal × figurado</span><div class="en">It's raining hard out there. / It's raining cats and dogs.</div><div class="pt">Está chovendo forte lá fora. / Está chovendo canivete.</div></div>
+<div class="i"><span class="tag">personification</span><div class="en">The sky was weeping.</div><div class="pt">O céu estava chorando.</div></div>
+<div class="i"><span class="tag">personification</span><div class="en">When the sun came up, the roses lifted their faces.</div><div class="pt">Quando o sol nasceu, as rosas ergueram o rosto.</div></div>
+<div class="i"><span class="tag">personification</span><div class="en">Luc's belly growled.</div><div class="pt">A barriga do Luc roncou.</div></div>
+<div class="i"><span class="tag">personification</span><div class="en">Our old house groaned and whined during the hurricane.</div><div class="pt">Nossa casa velha gemeu e choramingou durante o furacão.</div></div>
+<div class="i"><span class="tag">alusão bíblica</span><div class="en">I'm going into the lion's den.</div><div class="pt">Vou entrar na cova dos leões. <b>(vou enfrentar uma situação difícil — a história de Daniel)</b></div></div>
+<div class="i"><span class="tag">alusão literária</span><div class="en">He's an old Scrooge.</div><div class="pt">Ele é um velho Scrooge. <b>(é sovina — o personagem de <i>A Christmas Carol</i>)</b></div></div>
+<div class="i"><span class="tag">alusão mitológica</span><div class="en">While Kate is a talented player, her quick temper is her Achilles' heel.</div><div class="pt">Embora a Kate seja uma jogadora talentosa, o pavio curto é o calcanhar de Aquiles dela.</div></div>
+<div class="i"><span class="tag">alusão mitológica</span><div class="en">I think the god of thunder lives in the apartment above us.</div><div class="pt">Acho que o deus do trovão mora no apartamento de cima.</div></div>
+<div class="i"><span class="tag">verbal irony</span><div class="en">Of course I would! There's nothing I'd like more than getting soaked in the rain.</div><div class="pt">Claro que eu quero! Não há nada de que eu goste mais do que ficar ensopado na chuva. <b>(diz o oposto do que quer dizer)</b></div></div>
+<div class="i"><span class="tag">pun — Romeu e Julieta</span><div class="en">MERCUTIO: Nay, gentle Romeo, we must have you dance. — ROMEO: Not I, believe me. You have dancing shoes with nimble soles; I have a soul of lead.</div><div class="pt">Trocadilho entre <i>soles</i> (solas) e <i>soul</i> (alma), que soam igual: o Mercúcio quer dançar, o Romeu está de coração pesado.</div></div>
+</div>
+</section>
+
+<section id="s17">
+<div class="snum">Estrutura 17</div>
+<h2>Relações entre palavras — causa e efeito, sinônimo, antônimo, analogia</h2>
+<p class="sdesc">Muitas vezes só se entende uma palavra pelas que estão em volta. As relações mais comuns: <b>causa/efeito</b>, <b>item/categoria</b>, <b>sinônimo/antônimo</b> e <b>analogia</b> (A está para B como X está para Y).</p>
+<div class="items">
+<div class="i"><span class="tag">causa e efeito — so</span><div class="en">We ran out of sugar before we finished baking, so we had to go to the store.</div><div class="pt">O açúcar acabou antes de terminarmos de assar, então tivemos que ir à loja.</div></div>
+<div class="i"><span class="tag">causa e efeito — because</span><div class="en">I wanted a new bike, because I saw the one that Carlos had.</div><div class="pt">Eu queria uma bicicleta nova, porque vi a que o Carlos tinha.</div></div>
+<div class="i"><span class="tag">causa e efeito — since</span><div class="en">Since I learned scales, I can hear a song's key more easily.</div><div class="pt">Desde que aprendi as escalas, consigo ouvir o tom de uma música com mais facilidade.</div></div>
+<div class="i"><span class="tag">causa e efeito</span><div class="en">I went running because I needed some exercise.</div><div class="pt">Eu fui correr porque precisava de exercício.</div></div>
+<div class="i"><span class="tag">item e categoria</span><div class="en">There are 18 students in the class.</div><div class="pt">Há 18 alunos na turma. <b>(students = item; class = categoria)</b></div></div>
+<div class="i"><span class="tag">os dois sentidos de love</span><div class="en">I love strawberries! / I love my mom!</div><div class="pt">Eu amo morangos! / Eu amo minha mãe! <b>(mesma palavra, sentimentos diferentes)</b></div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Palavra</th><th>Sinônimo</th><th>Antônimo</th></tr></thead>
+<tbody>
+<tr><td>love</td><td>like · care</td><td>hate · dislike</td></tr>
+<tr><td>good</td><td>fine</td><td>bad</td></tr>
+<tr><td>safe</td><td>secure</td><td>dangerous</td></tr>
+<tr><td>give</td><td>share</td><td>take</td></tr>
+<tr><td>healthy</td><td>well</td><td>sick</td></tr>
+<tr><td>new</td><td>recent</td><td>old</td></tr>
+<tr><td>soft</td><td>gentle</td><td>hard</td></tr>
+<tr><td>victory</td><td>triumph</td><td>defeat</td></tr>
+<tr><td>happy</td><td>glad</td><td>sad</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i"><span class="tag">analogia</span><div class="en">A student is to a new topic like a detective is to a case.</div><div class="pt">Um estudante está para um assunto novo como um detetive está para um caso.</div></div>
+<div class="i"><span class="tag">analogia</span><div class="en">My brother is to me like my uncle is to my mom.</div><div class="pt">Meu irmão está para mim como meu tio está para minha mãe.</div></div>
+<div class="i"><span class="tag">A:B::X:Y</span><div class="en">Medicine : sickness :: water : thirst</div><div class="pt">Remédio : doença :: água : sede</div></div>
+<div class="i"><span class="tag">A:B::X:Y</span><div class="en">Wing : bird :: fin : whale</div><div class="pt">Asa : pássaro :: nadadeira : baleia</div></div>
+<div class="i"><span class="tag">A:B::X:Y</span><div class="en">Albany : New York :: Springfield : Illinois</div><div class="pt">Albany : Nova York :: Springfield : Illinois <b>(capital para estado)</b></div></div>
+<div class="i"><span class="tag">A:B::X:Y</span><div class="en">Paltry : trivial :: considerable : important</div><div class="pt">Irrisório : trivial :: considerável : importante <b>(sinônimos)</b></div></div>
+<div class="i"><span class="tag">A:B::X:Y</span><div class="en">Petal : flower :: feather : bird</div><div class="pt">Pétala : flor :: pena : pássaro <b>(parte para o todo)</b></div></div>
+<div class="i"><span class="tag">parte e todo</span><div class="en">A piece is to pie like a slice is to pizza.</div><div class="pt">Um pedaço está para a torta como uma fatia está para a pizza.</div></div>
+<div class="i"><span class="tag">parte e todo</span><div class="en">A runner is to a relay race team like a musician is to a band.</div><div class="pt">Um corredor está para uma equipe de revezamento como um músico está para uma banda.</div></div>
+<div class="i"><span class="tag">analogia que não funciona</span><div class="en">A tree is to a forest like a boat is to an ocean.</div><div class="pt"><b class='x'>Não funciona:</b> a floresta é feita de árvores, mas o oceano não é feito de barcos.</div></div>
+<div class="i"><span class="tag">corrigida</span><div class="en">A tree is to a forest like a drop of water is to an ocean.</div><div class="pt">Uma árvore está para a floresta como uma gota d'água está para o oceano.</div></div>
+<div class="i"><span class="tag">analogia estendida — Shakespeare</span><div class="en">All the world's a stage, and all the men and women merely players; they have their exits and their entrances, and one man in his time plays many parts, his acts being seven ages.</div><div class="pt">O mundo inteiro é um palco, e todos os homens e mulheres, meros atores; eles têm suas saídas e suas entradas, e um homem, em seu tempo, representa muitos papéis, sendo seus atos sete idades.</div></div>
+</div>
+</section>
+
+<section id="s18">
+<div class="snum">Estrutura 18</div>
+<h2>Nuance — denotação, conotação e as escolhas de palavra</h2>
+<p class="sdesc"><b>Nuance</b> é uma diferença sutil de sentido. A <b>denotation</b> é a definição de dicionário; a <b>connotation</b> é a ideia ou o sentimento que a palavra carrega. Palavras com a mesma denotação podem comunicar coisas muito diferentes.</p>
+<div class="items">
+<div class="i"><span class="tag">mesma coisa, tom diferente</span><div class="en">Sweetie, come here . . . / Alex Christopher Johnson, get over here!</div><div class="pt">Querido, vem cá... / Alex Christopher Johnson, vem aqui agora! <b>(mesmo sentido básico, intenção oposta)</b></div></div>
+<div class="i"><span class="tag">escala de intensidade</span><div class="en">not good → bad → terrible → disastrous</div><div class="pt">não muito bom → ruim → terrível → desastroso <b>(há um abismo entre "Not good" e "Disastrous!" como resposta a "How was your day?")</b></div></div>
+</div>
+<div class='sdesc' style='margin-top:16px'><b>O teste de nuance</b> — trecho de <i>The Count of Monte Cristo</i>, de Alexandre Dumas, descrevendo Danglars, o inimigo de Edmond Dantès:</div>
+<div class="items">
+<div class="i"><span class="tag">original</span><div class="en">He was a man of twenty-five or twenty-six years of age, of unprepossessing countenance, obsequious to his superiors, insolent to his subordinates; and this, in addition to his position as responsible agent on board, which is always obnoxious to the sailors, made him as much disliked by the crew as Edmond Dantes was beloved by them.</div><div class="pt">Era um homem de vinte e cinco ou vinte e seis anos, de aparência desagradável, servil com os superiores, insolente com os subordinados; e isso, somado ao cargo de agente responsável a bordo, sempre odioso aos marinheiros, o tornava tão detestado pela tripulação quanto Edmond Dantès era amado por ela.</div></div>
+<div class="i"><span class="tag">trocando por sinônimos sem pensar na nuance</span><div class="en">He was a man of twenty-five or twenty-six years of age, of grotesque countenance, respectful to his superiors, breezy to his subordinates…</div><div class="pt">…de aparência grotesca, respeitoso com os superiores, descontraído com os subordinados… <b class='x'>Mesma denotação, conotação totalmente diferente — agora ele nem parece vilão.</b></div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Palavra</th><th>Sinônimos de dicionário</th><th>Onde a conotação muda</th></tr></thead>
+<tbody>
+<tr><td><b>unprepossessing</b></td><td>unattractive · awful · disfigured · grotesque</td><td>"unattractive" (pouco atraente) não é nem de longe "disfigured" (desfigurado)</td></tr>
+<tr><td><b>obsequious</b></td><td>respectful · servile · obedient · fawning · slavish</td><td>"fawning" é bajular até virar motivo de riso; "respectful" mantém a própria dignidade</td></tr>
+<tr><td><b>insolent</b></td><td>arrogant · breezy · discourteous · insulting</td><td>"arrogant" é achar-se muito; "breezy" é levar na esportiva; "discourteous" é ser grosseiro</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Mesma denotação?</th><th>Par de palavras</th><th>Resposta</th></tr></thead>
+<tbody>
+<tr><td>ruler</td><td>czar · king · raja</td><td><b class='ok'>Sim</b> — "ruler" é categoria ampla o bastante para os três.</td></tr>
+<tr><td>pequena área de grama</td><td>yard · lawn</td><td><b class='ok'>Sim</b> — ao contrário de field, pasture e meadow, que denotam área maior.</td></tr>
+<tr><td>sentir inveja</td><td>jealous · doubting</td><td><b class='x'>Não</b> — "doubting" denota sentir incerteza.</td></tr>
+<tr><td>casa</td><td>house · mansion</td><td><b class='x'>Não</b> — o tamanho faz parte da denotação.</td></tr>
+<tr><td>governante</td><td>president · king</td><td><b class='x'>Conotação diferente</b> — presidente é escolhido; rei costuma herdar.</td></tr>
+</tbody></table></div>
+</section>
+
+</main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 19 V10 · Livro 02 · Everything You Need to Ace English Language Arts — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  // ── TOC gerado a partir das seções ──
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  // ── Unidades de busca: cada .i e cada <tr> do corpo das tabelas ──
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  // Tabelas inteiras somem quando nenhuma das suas linhas casa com a busca,
+  // senão sobra um cabeçalho de tabela flutuando sem conteúdo.
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' estruturas gramaticais.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'estrutura':'estruturas')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  // ── Marca a seção visível no TOC ──
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
