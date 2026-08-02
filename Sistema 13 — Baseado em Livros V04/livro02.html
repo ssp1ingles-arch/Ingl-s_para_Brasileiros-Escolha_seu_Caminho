@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 02 · English Vocabulary Builder — Sistema 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead a{color:var(--accent);}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 13</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 13 · Livro 02 · A2 → B2</div>
+<h1 class="title">English <em>Vocabulary Builder</em></h1>
+<p class="lead">DK · série <i>English for Everyone</i>. Um dicionário visual de 3.000 palavras — mas o que interessa aqui não são as listas ilustradas e sim os blocos de <b>Useful Expressions</b>, que o livro traz em 14 unidades. Cada um deles dá a expressão, <b>uma frase de exemplo em uso</b> e a definição em inglês simples. Foi exatamente isso que foi extraído: 140 expressões idiomáticas e colocações organizadas por tema — casa, família, estudos, crime, trabalho, reunião, currículo, viagem, meio ambiente, mídia, comida, compras, cidade e tecnologia — cada uma com a frase do livro, a tradução e o sentido. Ficaram de fora as listas de vocabulário sem frase (nomes de animais, roupas, cores), os exercícios de marcar figura e os marcadores de áudio.</p>
+
+<div class="metrics">
+  <div class="metric"><b>14</b><span>temas</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>140</b><span>expressões</span></div>
+  <div class="metric"><b>A2–B2</b><span>nível</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: deadline, take after, pechincha…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Temas</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Unidade 13</div>
+<h2>Morar e alugar</h2>
+<p class="sdesc">O vocabulário de quem aluga, divide apartamento ou se muda — com a frase de exemplo do livro e o que cada expressão significa.</p>
+<div class="items">
+<div class="i"><div class="en">I had to pay my landlord the equivalent of one month's rent as <i>a deposit</i>.</div><div class="pt">Eu tive que pagar ao meu senhorio o equivalente a um mês de aluguel como caução.</div><div class="def">a deposit — dinheiro que o inquilino paga ao dono antes de entrar no imóvel</div></div>
+<div class="i"><div class="en">My new landlord wants <i>a reference</i> from my previous landlord.</div><div class="pt">Meu novo senhorio quer uma referência do senhorio anterior.</div><div class="def">a reference — carta que descreve seu caráter e sua capacidade de pagar o aluguel</div></div>
+<div class="i"><div class="en">We had <i>a house-warming party</i> to celebrate buying our new apartment.</div><div class="pt">A gente deu uma festa de inauguração para comemorar a compra do apartamento novo.</div><div class="def">a house-warming party — festa informal que se dá depois de se mudar</div></div>
+<div class="i"><div class="en">The rent for my new apartment is $500, <i>including utilities</i>.</div><div class="pt">O aluguel do meu apartamento novo é 500 dólares, com as contas incluídas.</div><div class="def">including utilities — o aluguel cobre luz, água e gás</div></div>
+<div class="i"><div class="en"><i>Real estate</i> is in high demand, so prices are increasing.</div><div class="pt">Os imóveis estão em alta demanda, então os preços estão subindo.</div><div class="def">real estate (EUA) / property (Reino Unido) — casas e apartamentos à venda ou para alugar</div></div>
+<div class="i"><div class="en">We live in an attractive <i>residential area</i> with lots of parks.</div><div class="pt">A gente mora numa área residencial agradável, com vários parques.</div><div class="def">a residential area — parte da cidade onde a maioria dos prédios é de moradia</div></div>
+<div class="i"><div class="en">My <i>roommate</i> never does the dishes.</div><div class="pt">Meu colega de apartamento nunca lava a louça.</div><div class="def">a roommate (EUA) / housemate (Reino Unido) — pessoa com quem você divide a casa</div></div>
+<div class="i"><div class="en">The <i>local</i> stores sell a wide selection of food and drinks.</div><div class="pt">As lojas do bairro vendem uma grande variedade de comida e bebida.</div><div class="def">local — que pertence à região onde você mora</div></div>
+<div class="i"><div class="en">We <i>gave notice</i> to our landlord two months before moving out.</div><div class="pt">A gente avisou o senhorio dois meses antes de sair.</div><div class="def">to give notice — comunicar ao senhorio que você vai desocupar o imóvel</div></div>
+<div class="i"><div class="en">We have <i>a roomer</i> who lives in our spare bedroom.</div><div class="pt">A gente tem um inquilino que mora no quarto extra.</div><div class="def">a roomer (EUA) / a lodger (Reino Unido) — pessoa que paga para morar na sua casa</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Unidade 21</div>
+<h2>Família e relacionamentos</h2>
+<p class="sdesc">Os phrasal verbs de conviver: parecer com alguém, admirar, criar um filho, brigar, se apaixonar e se afastar.</p>
+<div class="items">
+<div class="i"><div class="en">Sadie <i>takes after</i> her mother. They are both very kind.</div><div class="pt">A Sadie puxou à mãe. As duas são muito gentis.</div><div class="def">to take after someone — ter características de um pai, mãe ou parente</div></div>
+<div class="i"><div class="en">Caroline <i>looks up to</i> her eldest brother.</div><div class="pt">A Caroline admira o irmão mais velho.</div><div class="def">to look up to someone — ter respeito e admiração por alguém</div></div>
+<div class="i"><div class="en">We're <i>bringing up</i> our children to work hard at school.</div><div class="pt">A gente está criando nossos filhos para se dedicarem na escola.</div><div class="def">to bring up someone — cuidar de uma criança e ensiná-la a se comportar</div></div>
+<div class="i"><div class="en">I hope my grandson will <i>grow up</i> to enjoy books.</div><div class="pt">Espero que meu neto cresça gostando de livros.</div><div class="def">to grow up — passar de criança a adulto</div></div>
+<div class="i"><div class="en">Jo <i>gets along with</i> her boss.</div><div class="pt">A Jo se dá bem com a chefe dela.</div><div class="def">to get along with someone — ter um bom relacionamento com alguém</div></div>
+<div class="i"><div class="en">My siblings are always <i>falling out with</i> each other.</div><div class="pt">Meus irmãos vivem brigando entre si.</div><div class="def">to fall out with someone — deixar de ser amigo de alguém, muitas vezes após uma briga</div></div>
+<div class="i"><div class="en">I <i>fell in love with</i> him while we were backpacking in India.</div><div class="pt">Eu me apaixonei por ele enquanto a gente mochilava pela Índia.</div><div class="def">to fall in love with someone — começar a amar alguém</div></div>
+<div class="i"><div class="en">We <i>broke up</i> because I didn't love him any more.</div><div class="pt">A gente terminou porque eu não o amava mais.</div><div class="def">to break up with someone — pôr fim a um relacionamento amoroso</div></div>
+<div class="i"><div class="en">They stopped working together last year, so they have <i>drifted apart</i>.</div><div class="pt">Eles pararam de trabalhar juntos ano passado, então se afastaram.</div><div class="def">to drift apart — ir ficando menos próximo de alguém aos poucos</div></div>
+<div class="i"><div class="en">I <i>made friends with</i> Miguel after he moved to my town.</div><div class="pt">Eu fiz amizade com o Miguel depois que ele se mudou para a minha cidade.</div><div class="def">to make friends with someone — ficar amigo de uma pessoa</div></div>
+<div class="i"><div class="en">We've been <i>close friends</i> since we shared an apartment.</div><div class="pt">A gente é amigo próximo desde que dividimos apartamento.</div><div class="def">a close friend — amigo que você conhece muito bem</div></div>
+<div class="i"><div class="en">Everyone says how much my wife and I <i>have in common</i>.</div><div class="pt">Todo mundo comenta o quanto eu e minha esposa temos em comum.</div><div class="def">to have something in common — compartilhar um interesse ou uma opinião</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Unidade 24</div>
+<h2>Estudar — escola, faculdade e provas</h2>
+<p class="sdesc">O vocabulário acadêmico com a diferença EUA / Reino Unido que o livro faz questão de marcar.</p>
+<div class="items">
+<div class="i"><div class="en">Rowena is <i>taking a year off</i> before she starts college.</div><div class="pt">A Rowena vai tirar um ano sabático antes de começar a faculdade.</div><div class="def">to take a year off (EUA) / take a year out (RU) — passar um ano afastado dos estudos ou do trabalho</div></div>
+<div class="i"><div class="en">Matt <i>enrolled in</i> a computer science course last month.</div><div class="pt">O Matt se matriculou num curso de ciência da computação mês passado.</div><div class="def">to enroll in (EUA) / enrol on (RU) — se inscrever para começar algo</div></div>
+<div class="i"><div class="en">Many <i>undergraduates</i> live in a dormitory in their first year of college.</div><div class="pt">Muitos calouros moram em alojamento no primeiro ano de faculdade.</div><div class="def">an undergraduate — quem cursa a primeira graduação</div></div>
+<div class="i"><div class="en">Amira is studying for a <i>graduate</i> degree in chemistry.</div><div class="pt">A Amira está fazendo uma pós em química.</div><div class="def">graduate (EUA) / postgraduate (RU) — estudo feito depois da primeira graduação</div></div>
+<div class="i"><div class="en">When Gavin was <i>a freshman</i>, he was very nervous about starting college.</div><div class="pt">Quando o Gavin era calouro, ele estava nervosíssimo para começar a faculdade.</div><div class="def">a freshman (EUA) / fresher (RU) — estudante no primeiro ano da faculdade</div></div>
+<div class="i"><div class="en">I have to write five essays this <i>semester</i>, so I'm doing lots of research.</div><div class="pt">Eu tenho que escrever cinco trabalhos neste semestre, então estou pesquisando muito.</div><div class="def">a semester (EUA) / term (RU) — período do calendário acadêmico em que há aulas</div></div>
+<div class="i"><div class="en">Millie's parents were really proud when she <i>got a degree</i>.</div><div class="pt">Os pais da Millie ficaram orgulhosíssimos quando ela se formou.</div><div class="def">to get a degree — receber o diploma ao concluir a faculdade</div></div>
+<div class="i"><div class="en">I expect my students to <i>attend classes</i> every week.</div><div class="pt">Eu espero que meus alunos assistam às aulas toda semana.</div><div class="def">to attend classes — ir às aulas ou palestras</div></div>
+<div class="i"><div class="en">Emma <i>took her driving test</i> last week, and she passed.</div><div class="pt">A Emma fez o exame de direção semana passada e passou.</div><div class="def">to take a test / take an exam — responder perguntas ou executar ações para mostrar o quanto se sabe</div></div>
+<div class="i"><div class="en">It's important to <i>give students feedback</i> on their work.</div><div class="pt">É importante dar retorno aos alunos sobre o trabalho deles.</div><div class="def">to give someone feedback — dar comentários e orientações sobre como a pessoa está indo</div></div>
+<div class="i"><div class="en">Tyson is working all day to <i>meet the deadline</i> for his essay.</div><div class="pt">O Tyson está trabalhando o dia todo para cumprir o prazo do trabalho dele.</div><div class="def">to meet a deadline — entregar dentro do prazo</div></div>
+<div class="i"><div class="en">Boris almost <i>missed the deadline</i> for his research project.</div><div class="pt">O Boris quase perdeu o prazo do projeto de pesquisa dele.</div><div class="def">to miss a deadline — perder o prazo</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Unidade 27</div>
+<h2>Crime e justiça</h2>
+<p class="sdesc">Do delito ao veredito. É o vocabulário de qualquer noticiário ou série policial.</p>
+<div class="items">
+<div class="i"><div class="en">The burglar wouldn't admit he had <i>committed a crime</i>.</div><div class="pt">O assaltante não admitia ter cometido um crime.</div><div class="def">to commit a crime — infringir a lei</div></div>
+<div class="i"><div class="en">Austin <i>served a sentence</i> of two years before he was released from prison.</div><div class="pt">O Austin cumpriu pena de dois anos antes de ser solto.</div><div class="def">to serve a sentence — passar um tempo na prisão</div></div>
+<div class="i"><div class="en">The police officer <i>arrested</i> Tina for shoplifting.</div><div class="pt">O policial prendeu a Tina por furto em loja.</div><div class="def">to arrest somebody — usar o poder da lei para deter e interrogar alguém</div></div>
+<div class="i"><div class="en">It's a police officer's job to <i>enforce the law</i>.</div><div class="pt">É função do policial fazer cumprir a lei.</div><div class="def">to enforce the law — fazer as pessoas obedecerem a uma regra ou lei</div></div>
+<div class="i"><div class="en">After discussing all the evidence, the jury <i>reached a verdict</i>.</div><div class="pt">Depois de discutir todas as provas, o júri chegou a um veredito.</div><div class="def">to reach a verdict — chegar a uma decisão sobre a culpa ou inocência de alguém</div></div>
+<div class="i"><div class="en">The recent <i>crime wave</i> in my home town is very worrying.</div><div class="pt">A recente onda de crimes na minha cidade natal é muito preocupante.</div><div class="def">a crime wave — muitos crimes acontecendo de repente na mesma área</div></div>
+<div class="i"><div class="en">The jury <i>found</i> Colin <i>guilty</i> of car theft.</div><div class="pt">O júri considerou o Colin culpado de roubo de carro.</div><div class="def">to find somebody (not) guilty — decidir oficialmente que alguém (não) infringiu a lei</div></div>
+<div class="i"><div class="en"><i>Street crime</i>, such as mugging, can be a problem in our cities.</div><div class="pt">O crime de rua, como assalto, pode ser um problema nas nossas cidades.</div><div class="def">street crime — crime cometido em local público</div></div>
+<div class="i"><div class="en">Paula was <i>sentenced to</i> 100 hours of community service.</div><div class="pt">A Paula foi condenada a 100 horas de serviço comunitário.</div><div class="def">to sentence somebody to something — decidir uma punição de acordo com a lei</div></div>
+<div class="i"><div class="en">Andrei is trained to deal with <i>white-collar crime</i>, such as fraud.</div><div class="pt">O Andrei é treinado para lidar com crime de colarinho branco, como fraude.</div><div class="def">white-collar crime — crime financeiro, não violento</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Unidade 39</div>
+<h2>Trabalho e carreira</h2>
+<p class="sdesc">A linguagem de emprego: do primeiro degrau da carreira à demissão — incluindo a diferença entre ser demitido por corte e ser demitido por justa causa.</p>
+<div class="items">
+<div class="i"><div class="en">I don't work <i>a nine-to-five</i> job because I have two young children.</div><div class="pt">Eu não trabalho em horário comercial porque tenho dois filhos pequenos.</div><div class="def">a nine-to-five — emprego com horário fixo</div></div>
+<div class="i"><div class="en">It's very important to create a positive <i>working environment</i>.</div><div class="pt">É muito importante criar um ambiente de trabalho positivo.</div><div class="def">a working environment — as condições em que você trabalha</div></div>
+<div class="i"><div class="en">All our employees are fully trained and have <i>hands-on experience</i>.</div><div class="pt">Todos os nossos funcionários são plenamente treinados e têm experiência prática.</div><div class="def">hands-on experience — conhecimento e habilidade adquiridos fazendo você mesmo</div></div>
+<div class="i"><div class="en">Elena's chosen <i>career path</i> involves a lot of travel.</div><div class="pt">A trajetória profissional escolhida pela Elena envolve muita viagem.</div><div class="def">a career path — progressão dentro de uma profissão ou de uma série de empregos</div></div>
+<div class="i"><div class="en">Bruno's career <i>took off</i> after he won an important new client.</div><div class="pt">A carreira do Bruno deslanchou depois que ele conquistou um cliente importante.</div><div class="def">to take off — de repente ficar muito mais bem-sucedido</div></div>
+<div class="i"><div class="en">I have <i>held a position</i> in management for five years.</div><div class="pt">Eu ocupo um cargo de gestão há cinco anos.</div><div class="def">to hold a position — ter um cargo</div></div>
+<div class="i"><div class="en">My boss started working here at <i>the bottom of the career ladder</i>.</div><div class="pt">Meu chefe começou a trabalhar aqui na base da carreira.</div><div class="def">the bottom of the career ladder — posição com o menor nível de responsabilidade ou salário</div></div>
+<div class="i"><div class="en">Lucas has been stuck in <i>a dead-end job</i> for two years.</div><div class="pt">O Lucas está preso num emprego sem futuro há dois anos.</div><div class="def">a dead-end job — cargo sem muitas perspectivas de promoção</div></div>
+<div class="i"><div class="en">Some of the factory workers were <i>laid off</i> after our profits fell.</div><div class="pt">Parte dos operários da fábrica foi dispensada depois que nossos lucros caíram.</div><div class="def">to be laid off / made redundant (RU) — perder o emprego porque a empresa não tem mais trabalho para você</div></div>
+<div class="i"><div class="en">Gavin was <i>fired</i> because he was caught stealing from the warehouse.</div><div class="pt">O Gavin foi demitido porque foi pego roubando do depósito.</div><div class="def">to be fired — ser obrigado a sair do emprego por ter feito algo errado</div></div>
+<div class="i"><div class="en">I'm <i>stepping down</i> from this job because I need more training.</div><div class="pt">Eu vou deixar este cargo porque preciso de mais treinamento.</div><div class="def">to step down — sair de um cargo por vontade própria</div></div>
+<div class="i"><div class="en">I need to <i>tackle this problem head-on</i> or it will get worse.</div><div class="pt">Eu preciso enfrentar este problema de frente ou ele vai piorar.</div><div class="def">to tackle something head-on — encarar um problema diretamente</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Unidade 40</div>
+<h2>Reuniões e escritório</h2>
+<p class="sdesc">Tudo o que se diz numa reunião em inglês — da pauta à ata, da votação por mãos levantadas à decisão unânime.</p>
+<div class="items">
+<div class="i"><div class="en">Emir is <i>giving a presentation</i> on his team's latest research.</div><div class="pt">O Emir está fazendo uma apresentação sobre a pesquisa mais recente da equipe dele.</div><div class="def">to give a presentation — fazer uma exposição formal para uma plateia</div></div>
+<div class="i"><div class="en">Carla will <i>attend the team meeting</i> tomorrow afternoon.</div><div class="pt">A Carla vai participar da reunião de equipe amanhã à tarde.</div><div class="def">to attend a meeting — comparecer a uma reunião</div></div>
+<div class="i"><div class="en">Our poor sales figures will be <i>on the agenda</i> today.</div><div class="pt">Nossos números fracos de vendas vão estar na pauta hoje.</div><div class="def">on the agenda — incluído na lista de assuntos a discutir</div></div>
+<div class="i"><div class="en">Stefan is on vacation and will be <i>absent</i> from this meeting.</div><div class="pt">O Stefan está de férias e vai faltar a esta reunião.</div><div class="def">absent — ausente</div></div>
+<div class="i"><div class="en">We're having <i>a conference call</i> with our clients in Japan this morning.</div><div class="pt">A gente tem uma teleconferência com os clientes do Japão hoje de manhã.</div><div class="def">a conference call — ligação telefônica com várias pessoas ao mesmo tempo</div></div>
+<div class="i"><div class="en">Deepak has been promoted, so now he's on <i>the board of directors</i>.</div><div class="pt">O Deepak foi promovido, então agora ele está no conselho de administração.</div><div class="def">the board of directors — grupo de pessoas que dirige uma empresa ou organização</div></div>
+<div class="i"><div class="en">Let me see <i>a show of hands</i>. How many of you agree with my proposal?</div><div class="pt">Vamos votar levantando a mão. Quantos de vocês concordam com a minha proposta?</div><div class="def">a show of hands — votação feita levantando a mão para mostrar concordância</div></div>
+<div class="i"><div class="en">We reached <i>a unanimous agreement</i> on the budget.</div><div class="pt">A gente chegou a um acordo unânime sobre o orçamento.</div><div class="def">a unanimous agreement — quando todo mundo concorda</div></div>
+<div class="i"><div class="en">Cameron is going to <i>take minutes</i> during our finance meeting.</div><div class="pt">O Cameron vai fazer a ata durante a nossa reunião de finanças.</div><div class="def">to take minutes — registrar por escrito o que se diz numa reunião</div></div>
+<div class="i"><div class="en">I'll talk through the report and then I'll <i>take questions</i>.</div><div class="pt">Eu vou passar pelo relatório e depois respondo às perguntas.</div><div class="def">to take questions — responder a perguntas</div></div>
+<div class="i"><div class="en">We easily <i>reached a consensus</i> on the best poster design.</div><div class="pt">A gente chegou facilmente a um consenso sobre o melhor design do cartaz.</div><div class="def">to reach a consensus — chegar a um acordo</div></div>
+<div class="i"><div class="en"><i>To sum up</i>, sales of our older products have fallen this year.</div><div class="pt">Resumindo, as vendas dos nossos produtos mais antigos caíram este ano.</div><div class="def">to sum up — resumir o que foi dito</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Unidade 42</div>
+<h2>Currículo e entrevista de emprego</h2>
+<p class="sdesc">As expressões que se escrevem num CV em inglês — e que soam profissionais numa entrevista.</p>
+<div class="items">
+<div class="i"><div class="en">I have <i>a proven track record</i> in the catering industry.</div><div class="pt">Eu tenho um histórico comprovado no setor de alimentação.</div><div class="def">a proven track record — uma longa lista de realizações</div></div>
+<div class="i"><div class="en">I am <i>proficient in</i> all major types of accounting software.</div><div class="pt">Eu domino todos os principais tipos de software contábil.</div><div class="def">proficient in — altamente habilidoso em algo</div></div>
+<div class="i"><div class="en">As an ex-car salesman, I have a <i>service-oriented</i> background.</div><div class="pt">Como ex-vendedor de carros, eu tenho formação voltada ao atendimento.</div><div class="def">service-oriented — com muito contato com clientes</div></div>
+<div class="i"><div class="en">All our staff are fully <i>trained in</i> first aid.</div><div class="pt">Toda a nossa equipe é plenamente treinada em primeiros socorros.</div><div class="def">trained in — ensinado a fazer algo</div></div>
+<div class="i"><div class="en">I have <i>an in-depth knowledge</i> of hair-coloring techniques.</div><div class="pt">Eu tenho conhecimento aprofundado de técnicas de coloração de cabelo.</div><div class="def">an in-depth knowledge — entendimento de especialista sobre algo</div></div>
+<div class="i"><div class="en">I am <i>responsible for</i> six other staff members.</div><div class="pt">Eu sou responsável por outros seis funcionários.</div><div class="def">responsible for — ter controle sobre alguém ou algo</div></div>
+<div class="i"><div class="en">A highly motivated individual, with a proven track record in hotel reception and front-of-house work.</div><div class="pt">Profissional altamente motivada, com histórico comprovado em recepção de hotel e atendimento ao público.</div><div class="def">exemplo de <i>personal statement</i> — o parágrafo de abertura do currículo</div></div>
+<div class="i"><div class="en">Won an award for the Best Hotel Receptionist in the Midwestern Region.</div><div class="pt">Ganhou o prêmio de Melhor Recepcionista de Hotel da Região Centro-Oeste.</div><div class="def">exemplo de <i>professional achievement</i> — conquista profissional no currículo</div></div>
+<div class="i"><div class="en">Gained in-depth knowledge of the hospitality industry, and hands-on experience in customer service.</div><div class="pt">Adquiriu conhecimento aprofundado do setor de hotelaria e experiência prática em atendimento ao cliente.</div><div class="def">exemplo de descrição de cargo no currículo</div></div>
+<div class="i"><div class="en">Fluent in Portuguese, Spanish, and English. Proficient in IT use, including most types of reservation systems.</div><div class="pt">Fluente em português, espanhol e inglês. Domínio de TI, incluindo a maioria dos sistemas de reserva.</div><div class="def">exemplo de <i>key skills</i> — as competências-chave do currículo</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Unidade 48</div>
+<h2>Viagem e turismo</h2>
+<p class="sdesc">As expressões que descrevem a experiência de viajar — e não só o roteiro: choque cultural, saudade de casa, coceira nos pés.</p>
+<div class="items">
+<div class="i"><div class="en">The palace is such <i>a tourist trap</i> in the summer.</div><div class="pt">O palácio vira uma armadilha para turista no verão.</div><div class="def">a tourist trap — lugar que atrai turistas demais</div></div>
+<div class="i"><div class="en">I love to <i>get away from it all</i> when I'm on vacation.</div><div class="pt">Eu adoro fugir de tudo quando estou de férias.</div><div class="def">to get away from it all — ir para algum lugar relaxante para dar um tempo</div></div>
+<div class="i"><div class="en">I don't like going abroad because I <i>feel homesick</i>.</div><div class="pt">Eu não gosto de viajar para fora porque fico com saudade de casa.</div><div class="def">to feel homesick — ficar triste por sentir falta de casa e da família</div></div>
+<div class="i"><div class="en">I've won a <i>once-in-a-lifetime</i> trip around the world.</div><div class="pt">Eu ganhei uma viagem única na vida ao redor do mundo.</div><div class="def">once-in-a-lifetime — único e irrepetível</div></div>
+<div class="i"><div class="en">This place is so different from home. It's such <i>a culture shock</i>.</div><div class="pt">Este lugar é tão diferente de casa. É um baita choque cultural.</div><div class="def">a culture shock — sensação de confusão ao visitar um lugar ou cultura diferente</div></div>
+<div class="i"><div class="en">We like to stay in places that are <i>off the beaten path</i>.</div><div class="pt">A gente gosta de ficar em lugares fora do circuito comum.</div><div class="def">off the beaten path (EUA) / track (RU) — longe de gente, prédios e estradas</div></div>
+<div class="i"><div class="en">This hotel looks very <i>run-down</i>. Let's stay somewhere else.</div><div class="pt">Este hotel parece muito caindo aos pedaços. Vamos ficar em outro lugar.</div><div class="def">run-down — em mau estado por falta de cuidado ou reparo</div></div>
+<div class="i"><div class="en">I love going birdwatching in this <i>unspoiled</i> countryside.</div><div class="pt">Eu adoro observar pássaros neste campo intocado.</div><div class="def">unspoiled — não alterado, danificado nem construído pelo homem</div></div>
+<div class="i"><div class="en">Tim has gone abroad again. He's always getting <i>itchy feet</i>.</div><div class="pt">O Tim viajou para fora de novo. Ele vive com o pé na estrada.</div><div class="def">itchy feet — vontade de viajar ou de mudar de lugar</div></div>
+<div class="i"><div class="en">Brendan loves sports and has a real <i>thirst for adventure</i>.</div><div class="pt">O Brendan adora esportes e tem uma sede real de aventura.</div><div class="def">a thirst for adventure — desejo por experiências emocionantes</div></div>
+<div class="i"><div class="en">I'm taking Clara to <i>look around</i> the park today.</div><div class="pt">Eu vou levar a Clara para conhecer o parque hoje.</div><div class="def">to look around — visitar e explorar um lugar</div></div>
+<div class="i"><div class="en">We got <i>hopelessly lost</i> when we tried to drive into Tokyo.</div><div class="pt">A gente se perdeu completamente quando tentou entrar de carro em Tóquio.</div><div class="def">hopelessly lost — totalmente perdido</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Unidade 53</div>
+<h2>Meio ambiente e clima</h2>
+<p class="sdesc">O vocabulário do debate ambiental — o mesmo que aparece em prova, em notícia e em relatório de empresa.</p>
+<div class="items">
+<div class="i"><div class="en">Factory emissions are a cause of <i>global warming</i>.</div><div class="pt">As emissões industriais são uma das causas do aquecimento global.</div><div class="def">global warming — o aumento da temperatura da Terra</div></div>
+<div class="i"><div class="en"><i>Climate change</i> is a huge threat to many animals.</div><div class="pt">A mudança climática é uma enorme ameaça a muitos animais.</div><div class="def">climate change — mudanças nos padrões climáticos da Terra</div></div>
+<div class="i"><div class="en">Carbon dioxide is one of the best-known <i>greenhouse gases</i>.</div><div class="pt">O dióxido de carbono é um dos gases de efeito estufa mais conhecidos.</div><div class="def">greenhouse gases — gases que causam o efeito estufa, aquecendo a Terra</div></div>
+<div class="i"><div class="en"><i>Fossil fuels</i> such as coal and oil produce carbon dioxide.</div><div class="pt">Combustíveis fósseis como carvão e petróleo produzem dióxido de carbono.</div><div class="def">fossil fuels — combustíveis à base de petróleo, carvão e gás</div></div>
+<div class="i"><div class="en">This space rocket <i>consumes</i> a lot of fuel.</div><div class="pt">Este foguete espacial consome muito combustível.</div><div class="def">to consume — usar um estoque de algo, como combustível ou energia</div></div>
+<div class="i"><div class="en">You can <i>reduce your carbon footprint</i> by flying less.</div><div class="pt">Você pode reduzir sua pegada de carbono voando menos.</div><div class="def">to reduce your carbon footprint — baixar o nível de CO₂ produzido pelas suas ações</div></div>
+<div class="i"><div class="en">We need to <i>tackle pollution</i> in our rivers.</div><div class="pt">A gente precisa enfrentar a poluição dos nossos rios.</div><div class="def">to tackle pollution — lidar com o problema da poluição</div></div>
+<div class="i"><div class="en">We can reduce pollution by using more types of <i>alternative energy</i>.</div><div class="pt">Dá para reduzir a poluição usando mais tipos de energia alternativa.</div><div class="def">alternative energy — energia que não usa combustíveis fósseis</div></div>
+<div class="i"><div class="en">We must use more <i>green energy sources</i>, like wind and solar.</div><div class="pt">A gente tem que usar mais fontes de energia limpa, como eólica e solar.</div><div class="def">green energy sources — tipos de energia que não prejudicam o meio ambiente</div></div>
+<div class="i"><div class="en">It can be much cheaper to use <i>renewable energy</i>.</div><div class="pt">Pode ser muito mais barato usar energia renovável.</div><div class="def">renewable energy — energia de fontes que não se esgotam</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Unidade 67</div>
+<h2>Mídia, fama e imprensa</h2>
+<p class="sdesc">Como se fala de celebridade e de jornalismo em inglês — inclusive das partes feias: sensacionalismo e exploração.</p>
+<div class="items">
+<div class="i"><div class="en">I think the newspaper has <i>sensationalized</i> this story.</div><div class="pt">Eu acho que o jornal sensacionalizou esta história.</div><div class="def">to sensationalize — tornar algo mais dramático ou empolgante do que é</div></div>
+<div class="i"><div class="en">The politician's lies were <i>exposed</i> in the interview.</div><div class="pt">As mentiras do político foram expostas na entrevista.</div><div class="def">to expose — revelar algo que estava escondido</div></div>
+<div class="i"><div class="en">Politicians can easily be <i>exploited</i> by the media.</div><div class="pt">Políticos podem ser facilmente explorados pela imprensa.</div><div class="def">to exploit — usar algo ou alguém em proveito próprio</div></div>
+<div class="i"><div class="en">You don't always need to be talented to <i>become a celebrity</i>.</div><div class="pt">Nem sempre é preciso ter talento para virar celebridade.</div><div class="def">to become a celebrity — se tornar uma pessoa famosa</div></div>
+<div class="i"><div class="en">This chef has been <i>a household name</i> for years.</div><div class="pt">Este chef é figura conhecida de todos há anos.</div><div class="def">a household name — alguém que quase todo mundo conhece</div></div>
+<div class="i"><div class="en">John would really love to <i>have his name in lights</i>.</div><div class="pt">O John adoraria ver o nome dele em letreiro luminoso.</div><div class="def">to have your name in lights — ser muito famoso</div></div>
+<div class="i"><div class="en">The success of her latest movie has <i>gone to her head</i>.</div><div class="pt">O sucesso do último filme dela subiu à cabeça.</div><div class="def">to go to somebody's head — fazer alguém se sentir mais importante do que é</div></div>
+<div class="i"><div class="en">Lucinda is used to being <i>in the public eye</i>.</div><div class="pt">A Lucinda está acostumada a estar sob os holofotes.</div><div class="def">in the public eye — visto e reconhecido pelo público</div></div>
+<div class="i"><div class="en">This morning's <i>newspaper headline</i> is shocking!</div><div class="pt">A manchete do jornal de hoje de manhã é chocante!</div><div class="def">a newspaper headline — o texto grande no topo da página do jornal</div></div>
+<div class="i"><div class="en">This singer's wedding was <i>headline news</i> last week.</div><div class="pt">O casamento desse cantor foi notícia de capa semana passada.</div><div class="def">headline news — notícia amplamente divulgada</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Unidade 70</div>
+<h2>Alimentação e saúde</h2>
+<p class="sdesc">A linguagem de quem cuida do que come: cortar, reduzir, moderar, ficar de olho no peso.</p>
+<div class="items">
+<div class="i"><div class="en">You should eat smaller <i>portions</i> if you want to lose weight.</div><div class="pt">Você deveria comer porções menores se quiser emagrecer.</div><div class="def">a portion — a quantidade de comida que você come numa refeição</div></div>
+<div class="i"><div class="en">Fish is very good for you because it's <i>high in</i> protein.</div><div class="pt">Peixe faz muito bem porque é rico em proteína.</div><div class="def">high in something — que contém muita quantidade de algo</div></div>
+<div class="i"><div class="en">I'm trying to <i>cut down on</i> sugary drinks because I know they're bad for me.</div><div class="pt">Estou tentando reduzir as bebidas açucaradas porque sei que fazem mal.</div><div class="def">to cut down on something — comer ou beber menos de algo</div></div>
+<div class="i"><div class="en">I'm trying to eat more vegetables because they're <i>low in</i> fat.</div><div class="pt">Estou tentando comer mais legumes porque têm pouca gordura.</div><div class="def">low in something — que contém pouca quantidade de algo</div></div>
+<div class="i"><div class="en">Pedro has <i>given up</i> chocolate this month.</div><div class="pt">O Pedro largou o chocolate este mês.</div><div class="def">to give up something — parar de comer ou beber algo</div></div>
+<div class="i"><div class="en">Brown bread is a <i>good source of</i> fiber.</div><div class="pt">Pão integral é uma boa fonte de fibra.</div><div class="def">a good source of something — que contém bastante de algo saudável</div></div>
+<div class="i"><div class="en">No dessert for me, thank you. I'm <i>watching my weight</i>.</div><div class="pt">Sobremesa não, obrigada. Estou de olho no peso.</div><div class="def">to watch your weight — tentar não engordar</div></div>
+<div class="i"><div class="en">It's okay to eat treats like cake <i>in moderation</i>.</div><div class="pt">Tudo bem comer guloseimas como bolo com moderação.</div><div class="def">to eat something in moderation — evitar comer demais de algo</div></div>
+<div class="i"><div class="en">Mia must not eat nuts because she's <i>allergic to</i> them.</div><div class="pt">A Mia não pode comer castanhas porque é alérgica a elas.</div><div class="def">allergic to something — incapaz de comer ou beber algo sem ter uma reação ruim</div></div>
+<div class="i"><div class="en"><i>Convenience food</i> saves people time, but isn't always good for them.</div><div class="pt">Comida pronta economiza tempo, mas nem sempre faz bem.</div><div class="def">convenience food — comida rápida e fácil de preparar</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Unidade 73</div>
+<h2>Compras, preços e pechincha</h2>
+<p class="sdesc">Do garimpo de promoção ao arrependimento da compra cara demais.</p>
+<div class="items">
+<div class="i"><div class="en">I love going <i>bargain-hunting</i> at my local market.</div><div class="pt">Eu adoro caçar pechincha na feira do meu bairro.</div><div class="def">bargain-hunting — procurar produtos mais baratos que o normal</div></div>
+<div class="i"><div class="en">It's always worth <i>shopping around</i> when buying a new car.</div><div class="pt">Sempre vale a pena pesquisar preços quando se compra um carro novo.</div><div class="def">to shop around — comparar preços em várias lojas</div></div>
+<div class="i"><div class="en">You can buy almost anything you want at the <i>flea market</i> in town.</div><div class="pt">Dá para comprar quase tudo que você quiser na feira de usados da cidade.</div><div class="def">a flea market — feira ao ar livre que vende itens usados</div></div>
+<div class="i"><div class="en">My new phone was a real <i>rip-off</i>. It broke after only a couple of weeks.</div><div class="pt">Meu celular novo foi uma baita roubada. Quebrou em duas semanas.</div><div class="def">a rip-off — produto de baixa qualidade que custa mais do que deveria</div></div>
+<div class="i"><div class="en">I spent Saturday morning <i>window shopping</i> with my friends.</div><div class="pt">Eu passei a manhã de sábado olhando vitrine com meus amigos.</div><div class="def">window shopping — olhar produtos na vitrine sem comprar</div></div>
+<div class="i"><div class="en">There's <i>50 percent off</i> all winter coats at this department store.</div><div class="pt">Tem 50% de desconto em todos os casacos de inverno nesta loja de departamento.</div><div class="def">50 percent off — redução de 50 por cento</div></div>
+<div class="i"><div class="en">I'm <i>on a tight budget</i>. I can't afford to buy many Christmas presents.</div><div class="pt">Estou com o orçamento apertado. Não posso comprar muitos presentes de Natal.</div><div class="def">on a tight budget — com pouco dinheiro para gastar</div></div>
+<div class="i"><div class="en">I got <i>a good deal</i> on my new pair of shoes. They were reduced by $20.</div><div class="pt">Eu fiz um bom negócio com meu par de sapatos novo. Estava 20 dólares mais barato.</div><div class="def">a good deal — um bom preço</div></div>
+<div class="i"><div class="en">The local hardware store has <i>slashed its prices</i>. You can find some real bargains.</div><div class="pt">A loja de ferragens do bairro derrubou os preços. Dá para achar pechinchas de verdade.</div><div class="def">to slash prices — reduzir preços drasticamente</div></div>
+<div class="i"><div class="en">I thought the restaurant was <i>overpriced</i>. The food was very disappointing.</div><div class="pt">Eu achei o restaurante caro demais pelo que oferece. A comida foi bem decepcionante.</div><div class="def">overpriced — custando mais do que vale</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Unidade 75</div>
+<h2>A cidade e a vida urbana</h2>
+<p class="sdesc">O vocabulário para descrever onde você mora — o bom e o ruim: horário de pico, área verde, prédio abandonado, índice de criminalidade.</p>
+<div class="items">
+<div class="i"><div class="en">It's sometimes impossible to get on the bus during <i>rush hour</i>.</div><div class="pt">Às vezes é impossível entrar no ônibus no horário de pico.</div><div class="def">rush hour — período do dia em que a maioria vai ou volta do trabalho</div></div>
+<div class="i"><div class="en">The <i>vandalism</i> in my area makes the buildings look very ugly.</div><div class="pt">O vandalismo na minha região deixa os prédios com um aspecto horrível.</div><div class="def">vandalism — dano ou destruição ilegal de propriedade</div></div>
+<div class="i"><div class="en">There's <i>a greater choice</i> of cafes and restaurants in large cities.</div><div class="pt">Há uma variedade maior de cafés e restaurantes nas cidades grandes.</div><div class="def">a greater choice — número maior de lojas, restaurantes e serviços</div></div>
+<div class="i"><div class="en">There are lots of <i>green spaces</i> in the city for people to relax in the summer.</div><div class="pt">Há muitas áreas verdes na cidade para as pessoas relaxarem no verão.</div><div class="def">green spaces — áreas ao ar livre com grama ou vegetação</div></div>
+<div class="i"><div class="en">The <i>crime rate</i> in most cities has been dropping in recent years.</div><div class="pt">O índice de criminalidade na maioria das cidades vem caindo nos últimos anos.</div><div class="def">the crime rate — a frequência de crimes numa área</div></div>
+<div class="i"><div class="en">I offer guided tours of the city's <i>historic buildings</i>.</div><div class="pt">Eu ofereço visitas guiadas aos prédios históricos da cidade.</div><div class="def">historic buildings — prédios que foram importantes na história</div></div>
+<div class="i"><div class="en">A good way to avoid <i>traffic jams</i> is to travel by train.</div><div class="pt">Uma boa forma de evitar engarrafamento é ir de trem.</div><div class="def">a traffic jam — fila de carros que não consegue andar</div></div>
+<div class="i"><div class="en">I live in a poor part of town with many <i>derelict buildings</i>.</div><div class="pt">Eu moro numa parte pobre da cidade, com muitos prédios abandonados.</div><div class="def">derelict buildings — prédios que não recebem reparo há muitos anos</div></div>
+<div class="i"><div class="en">I live in <i>a suburb</i>, but I can walk downtown.</div><div class="pt">Eu moro num bairro afastado, mas dá para ir a pé ao centro.</div><div class="def">a suburb — área urbana fora do centro da cidade</div></div>
+<div class="i"><div class="en">New York is one of the world's most <i>cosmopolitan</i> cities.</div><div class="pt">Nova York é uma das cidades mais cosmopolitas do mundo.</div><div class="def">cosmopolitan — que reúne pessoas ou culturas do mundo todo</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Unidade 77</div>
+<h2>Tecnologia e o futuro</h2>
+<p class="sdesc">A linguagem de quem fala de inovação e do que vem por aí — útil em redação, apresentação e entrevista.</p>
+<div class="items">
+<div class="i"><div class="en">The internet has <i>had an impact on</i> how we communicate at work.</div><div class="pt">A internet teve um impacto em como a gente se comunica no trabalho.</div><div class="def">to have an impact on something — afetar algo de forma marcante</div></div>
+<div class="i"><div class="en">Ruth's new product won an award for technical <i>innovation</i>.</div><div class="pt">O produto novo da Ruth ganhou um prêmio de inovação técnica.</div><div class="def">innovation — inventividade ou criação de ideias novas</div></div>
+<div class="i"><div class="en">Laila is <i>making predictions</i> about what will happen in the new year.</div><div class="pt">A Laila está fazendo previsões sobre o que vai acontecer no ano novo.</div><div class="def">to make predictions — dizer o que você acha que pode acontecer no futuro</div></div>
+<div class="i"><div class="en">The internet has caused <i>a revolution</i> in the way we learn.</div><div class="pt">A internet provocou uma revolução na forma como a gente aprende.</div><div class="def">a revolution — uma mudança enorme em ideias ou métodos</div></div>
+<div class="i"><div class="en">None of us can know exactly <i>what the future holds</i>.</div><div class="pt">Nenhum de nós pode saber exatamente o que o futuro reserva.</div><div class="def">what the future holds — o que vai acontecer no futuro</div></div>
+<div class="i"><div class="en">His <i>cutting-edge</i> designs have made millions of dollars.</div><div class="pt">Os projetos de ponta dele renderam milhões de dólares.</div><div class="def">cutting-edge — extremamente moderno e inovador</div></div>
+<div class="i"><div class="en">The car was expensive, but it will save us money <i>in the long run</i>.</div><div class="pt">O carro foi caro, mas vai economizar dinheiro no longo prazo.</div><div class="def">in the long run — no fim das contas, depois de muito tempo</div></div>
+<div class="i"><div class="en">Higher prices could be <i>the shape of things to come</i>.</div><div class="pt">Preços mais altos podem ser o sinal do que vem por aí.</div><div class="def">the shape of things to come — a forma como as coisas provavelmente vão evoluir</div></div>
+<div class="i"><div class="en">In this <i>digital age</i>, many people have a laptop and smartphone.</div><div class="pt">Nesta era digital, muita gente tem notebook e smartphone.</div><div class="def">a digital age — era baseada em informação digital, em que a tecnologia domina</div></div>
+<div class="i"><div class="en">I really want to buy <i>the latest model</i> of their smartphone.</div><div class="pt">Eu quero muito comprar o modelo mais recente do smartphone deles.</div><div class="def">the latest model — a versão mais nova de um produto</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 13 V04 · Livro 02 · English Vocabulary Builder — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' se\u00e7\u00f5es.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'se\u00e7\u00e3o':'se\u00e7\u00f5es')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
