@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 04 · Practice Book Nível 1 — Sistema 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead a{color:var(--accent);}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 13</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 13 · Livro 04 · A1</div>
+<h1 class="title">Practice Book — <em>Nível 1 · Beginner</em></h1>
+<p class="lead">DK · série <i>English for Everyone</i>. É um livro de exercícios — e num livro de exercícios o inglês real não está no enunciado, está nas <b>frases completas</b>: os exemplos resolvidos de cada atividade e o gabarito, que traz a sentença inteira, correta e pronta para copiar. Foi de lá que veio tudo o que está aqui: as negativas com <i>to be</i> e com os outros verbos, as perguntas abertas com cada palavra interrogativa, <i>there is / there are</i> nas três formas de negar, <i>because</i>, <i>have</i>, os advérbios de frequência, a escala <i>love / like / hate</i> e o molde de <i>favorite</i>. Ficaram de fora os enunciados sem conteúdo (<i>Fill in the gaps</i>, <i>Number the pictures</i>), as respostas de marcar caixinha (<i>True / False</i>) e as listas de vocabulário isoladas.</p>
+
+<div class="metrics">
+  <div class="metric"><b>12</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>48</b><span>unidades cobertas</span></div>
+  <div class="metric"><b>A1</b><span>nível</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: there isn't, because, favorite…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Unidades 15 – 16</div>
+<h2>Negativas — a diferença entre <i>to be</i> e os outros verbos</h2>
+<p class="sdesc">O livro separa as duas negativas de propósito, porque elas seguem regras diferentes: com <code>to be</code> você só acrescenta <code>not</code>; com os outros verbos entra <code>don't</code> / <code>doesn't</code>.</p>
+<div class="items">
+<div class="i"><div class="en">It is not 5 o'clock.</div><div class="pt">Não são 5 horas.</div></div>
+<div class="i"><div class="en">Frank is not my father.</div><div class="pt">O Frank não é meu pai.</div></div>
+<div class="i"><div class="en">This is not my purse.</div><div class="pt">Esta não é a minha bolsa.</div></div>
+<div class="i"><div class="en">We are not from England.</div><div class="pt">A gente não é da Inglaterra.</div></div>
+<div class="i"><div class="en">They are not engineers.</div><div class="pt">Eles não são engenheiros.</div></div>
+<div class="i"><div class="en">Kirsty is not 18 years old.</div><div class="pt">A Kirsty não tem 18 anos.</div></div>
+<div class="i"><div class="en">They are not hairdressers.</div><div class="pt">Eles não são cabeleireiros.</div></div>
+<div class="i"><div class="en">She's not a nurse. / She is not a nurse. / She isn't a nurse.</div><div class="pt">Ela não é enfermeira. <i>(as três formas dizem o mesmo)</i></div></div>
+<div class="i"><div class="en">Fredo's not a chef.</div><div class="pt">O Fredo não é chef.</div></div>
+<div class="i"><div class="en">Susie is not my cat.</div><div class="pt">A Susie não é a minha gata.</div></div>
+<div class="i"><div class="en">My dad isn't at work.</div><div class="pt">Meu pai não está no trabalho.</div></div>
+<div class="i"><div class="en">They're not at the theater.</div><div class="pt">Eles não estão no teatro.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Unidades 17 – 18</div>
+<h2>Perguntas simples e respostas curtas</h2>
+<p class="sdesc">A pergunta de sim ou não — e a resposta curta que soa natural em inglês, com o auxiliar repetido.</p>
+<div class="items">
+<div class="i"><div class="en">Is this my burger?</div><div class="pt">Este hambúrguer é meu?</div></div>
+<div class="i"><div class="en">Is there a church in this town?</div><div class="pt">Tem uma igreja nesta cidade?</div></div>
+<div class="i"><div class="en">Are those Brooke's shirts?</div><div class="pt">Aquelas camisas são da Brooke?</div></div>
+<div class="i"><div class="en">Does she get up at 7am on the weekend?</div><div class="pt">Ela acorda às 7 da manhã no fim de semana?</div></div>
+<div class="i"><div class="en">Do they play tennis in the evening?</div><div class="pt">Eles jogam tênis à noite?</div></div>
+<div class="i"><div class="en">Why does the dog keep barking?</div><div class="pt">Por que o cachorro fica latindo?</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Unidade 19</div>
+<h2>Perguntas abertas — as palavras interrogativas</h2>
+<p class="sdesc">A parte mais útil do livro para quem já entende mas ainda não pergunta. Todas as perguntas aqui são frases inteiras, prontas para usar.</p>
+<div class="items">
+<div class="i"><div class="en">What is your name?</div><div class="pt">Qual é o seu nome?</div></div>
+<div class="i"><div class="en">Where are your parents now?</div><div class="pt">Onde estão os seus pais agora?</div></div>
+<div class="i"><div class="en">When is Carla's birthday?</div><div class="pt">Quando é o aniversário da Carla?</div></div>
+<div class="i"><div class="en">Where is your sister's house?</div><div class="pt">Onde fica a casa da sua irmã?</div></div>
+<div class="i"><div class="en">Which car is yours?</div><div class="pt">Qual carro é o seu?</div></div>
+<div class="i"><div class="en">Who is your brother?</div><div class="pt">Quem é o seu irmão?</div></div>
+<div class="i"><div class="en">When are your exams?</div><div class="pt">Quando são as suas provas?</div></div>
+<div class="i"><div class="en">Where did you park the car?</div><div class="pt">Onde você estacionou o carro?</div></div>
+<div class="i"><div class="en">Why are you sad?</div><div class="pt">Por que você está triste?</div></div>
+<div class="i"><div class="en">When can I go home?</div><div class="pt">Quando eu posso ir para casa?</div></div>
+<div class="i"><div class="en">Where does your brother live?</div><div class="pt">Onde o seu irmão mora?</div></div>
+<div class="i"><div class="en">What is your first memory?</div><div class="pt">Qual é a sua primeira lembrança?</div></div>
+<div class="i"><div class="en">Which shirt do you prefer?</div><div class="pt">Qual camisa você prefere?</div></div>
+<div class="i"><div class="en">Where does your son go to college?</div><div class="pt">Onde o seu filho faz faculdade?</div></div>
+<div class="i"><div class="en">How do you get to work?</div><div class="pt">Como você vai para o trabalho?</div></div>
+<div class="i"><div class="en">Where do you go swimming?</div><div class="pt">Onde você vai nadar?</div></div>
+<div class="i"><div class="en">What time do you go to bed?</div><div class="pt">Que horas você vai dormir?</div></div>
+<div class="i"><div class="en">What do you eat for breakfast?</div><div class="pt">O que você come no café da manhã?</div></div>
+<div class="i"><div class="en">What do you study?</div><div class="pt">O que você estuda?</div></div>
+<div class="i"><div class="en">How many shirts do you own?</div><div class="pt">Quantas camisas você tem?</div></div>
+<div class="i"><div class="en">What do you want for lunch?</div><div class="pt">O que você quer para o almoço?</div></div>
+<div class="i"><div class="en">When does the course finish?</div><div class="pt">Quando o curso termina?</div></div>
+<div class="i"><div class="en">What do you do in the evening?</div><div class="pt">O que você faz à noite?</div></div>
+<div class="i"><div class="en">What time is the meeting?</div><div class="pt">Que horas é a reunião?</div></div>
+<div class="i"><div class="en">When do you finish work tonight?</div><div class="pt">Quando você termina o trabalho hoje à noite?</div></div>
+<div class="i"><div class="en">What does your brother do?</div><div class="pt">O que o seu irmão faz? <i>(profissão)</i></div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Unidade 21</div>
+<h2><i>There is</i> e <i>there are</i> — o que existe no lugar</h2>
+<p class="sdesc">Afirmativa, negativa com <code>isn't/aren't any</code> e a alternativa com <code>no</code>. Três formas de dizer que algo não existe.</p>
+<div class="items">
+<div class="i"><div class="en">There is a station.</div><div class="pt">Tem uma estação.</div></div>
+<div class="i"><div class="en">There is a swimming pool.</div><div class="pt">Tem uma piscina.</div></div>
+<div class="i"><div class="en">There are two theaters.</div><div class="pt">Tem dois teatros.</div></div>
+<div class="i"><div class="en">There are three cafes.</div><div class="pt">Tem três cafés.</div></div>
+<div class="i"><div class="en">There isn't a restaurant.</div><div class="pt">Não tem restaurante.</div></div>
+<div class="i"><div class="en">There aren't any schools.</div><div class="pt">Não tem escola nenhuma.</div></div>
+<div class="i"><div class="en">There isn't a post office.</div><div class="pt">Não tem correio.</div></div>
+<div class="i"><div class="en">There aren't any cafes.</div><div class="pt">Não tem café nenhum.</div></div>
+<div class="i"><div class="en">There isn't a train station.</div><div class="pt">Não tem estação de trem.</div></div>
+<div class="i"><div class="en">There is a hotel. / There is no hotel.</div><div class="pt">Tem um hotel. / Não tem hotel.</div></div>
+<div class="i"><div class="en">There are three parks. / There are no parks. / There aren't any parks.</div><div class="pt">Tem três parques. / Não tem parque. / Não tem parque nenhum.</div></div>
+<div class="i"><div class="en">There's a park, a cafe, and a theater in Pella.</div><div class="pt">Tem um parque, um café e um teatro em Pella.</div></div>
+<div class="i"><div class="en">Three chefs and four waiters work in my hotel.</div><div class="pt">Três chefs e quatro garçons trabalham no meu hotel.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Unidades 24 – 25</div>
+<h2>Juntar e descrever — <i>and</i>, <i>but</i> e adjetivos</h2>
+<p class="sdesc">Duas frases viram uma. E o adjetivo, que em inglês vem <b>antes</b> do substantivo — o contrário do português.</p>
+<div class="items">
+<div class="i"><div class="en">The sea is blue and the sun is hot.</div><div class="pt">O mar é azul e o sol é quente.</div></div>
+<div class="i"><div class="en">The beach is busy and the hotels are ugly.</div><div class="pt">A praia está cheia e os hotéis são feios.</div></div>
+<div class="i"><div class="en">The city is old and the buildings are beautiful.</div><div class="pt">A cidade é antiga e os prédios são bonitos.</div></div>
+<div class="i"><div class="en">The restaurant is good and the waiter is friendly.</div><div class="pt">O restaurante é bom e o garçom é simpático.</div></div>
+<div class="i"><div class="en">The countryside is beautiful and the mountains are large.</div><div class="pt">O campo é bonito e as montanhas são grandes.</div></div>
+<div class="i"><div class="en">The town is small and the shops are quiet.</div><div class="pt">A cidade é pequena e as lojas são calmas.</div></div>
+<div class="i"><div class="en">Pedro works in a school but he isn't a teacher.</div><div class="pt">O Pedro trabalha numa escola mas não é professor.</div></div>
+<div class="i"><div class="en">My sister goes to the gym on Mondays and Thursdays.</div><div class="pt">Minha irmã vai à academia às segundas e quintas.</div></div>
+<div class="i"><div class="en">I have a pen, a notebook, and a calendar in my bag.</div><div class="pt">Eu tenho uma caneta, um caderno e uma agenda na minha bolsa.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Unidade 26</div>
+<h2>Dar o motivo com <i>because</i></h2>
+<p class="sdesc">A conjunção que transforma duas frases soltas numa explicação. O livro repete o molde dezenas de vezes — de propósito.</p>
+<div class="items">
+<div class="i"><div class="en">Fred works outside because he's a farmer.</div><div class="pt">O Fred trabalha ao ar livre porque é agricultor.</div></div>
+<div class="i"><div class="en">Clara works in a theater because she is an actor.</div><div class="pt">A Clara trabalha num teatro porque é atriz.</div></div>
+<div class="i"><div class="en">Clara lives on a farm because she is a farmer.</div><div class="pt">A Clara mora numa fazenda porque é agricultora.</div></div>
+<div class="i"><div class="en">Mike works in a hotel because he is a receptionist.</div><div class="pt">O Mike trabalha num hotel porque é recepcionista.</div></div>
+<div class="i"><div class="en">Mick travels to Switzerland because he goes skiing there.</div><div class="pt">O Mick viaja para a Suíça porque esquia lá.</div></div>
+<div class="i"><div class="en">Saul goes to bed late because he works in a restaurant.</div><div class="pt">O Saul vai dormir tarde porque trabalha num restaurante.</div></div>
+<div class="i"><div class="en">I get up at 5am because I'm a mailman.</div><div class="pt">Eu levanto às 5 da manhã porque sou carteiro.</div></div>
+<div class="i"><div class="en">Marion goes to the library because she's a student.</div><div class="pt">A Marion vai à biblioteca porque é estudante.</div></div>
+<div class="i"><div class="en">Colin works with children because he's a teacher.</div><div class="pt">O Colin trabalha com crianças porque é professor.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Unidades 28 – 29</div>
+<h2>O que você tem — <i>have</i> e <i>has</i></h2>
+<p class="sdesc">Posse na afirmativa, com a terceira pessoa marcada. Note que em inglês a casa também "tem" coisas.</p>
+<div class="items">
+<div class="i"><div class="en">They have a lot of parks in their town.</div><div class="pt">Eles têm muitos parques na cidade deles.</div></div>
+<div class="i"><div class="en">I have a beautiful necklace.</div><div class="pt">Eu tenho um colar lindo.</div></div>
+<div class="i"><div class="en">Alex has a new camera.</div><div class="pt">O Alex tem uma câmera nova.</div></div>
+<div class="i"><div class="en">Our house has a lovely yard.</div><div class="pt">Nossa casa tem um quintal adorável.</div></div>
+<div class="i"><div class="en">Phil and Sue have four daughters.</div><div class="pt">O Phil e a Sue têm quatro filhas.</div></div>
+<div class="i"><div class="en">Pete has a new cell phone.</div><div class="pt">O Pete tem um celular novo.</div></div>
+<div class="i"><div class="en">Your town has a big hotel.</div><div class="pt">A sua cidade tem um hotel grande.</div></div>
+<div class="i"><div class="en">I have a lot of friends.</div><div class="pt">Eu tenho muitos amigos.</div></div>
+<div class="i"><div class="en">Bob and Shirley have a big dog.</div><div class="pt">O Bob e a Shirley têm um cachorro grande.</div></div>
+<div class="i"><div class="en">She has some new friends.</div><div class="pt">Ela tem uns amigos novos.</div></div>
+<div class="i"><div class="en">We have two sons at home.</div><div class="pt">A gente tem dois filhos em casa.</div></div>
+<div class="i"><div class="en">His house has three bedrooms.</div><div class="pt">A casa dele tem três quartos.</div></div>
+<div class="i"><div class="en">Sally's house has a new kitchen.</div><div class="pt">A casa da Sally tem uma cozinha nova.</div></div>
+<div class="i"><div class="en">Our house has two bathrooms.</div><div class="pt">Nossa casa tem dois banheiros.</div></div>
+<div class="i"><div class="en">I have a couch in my room.</div><div class="pt">Eu tenho um sofá no meu quarto.</div></div>
+<div class="i"><div class="en">Washington has some lovely parks.</div><div class="pt">Washington tem uns parques adoráveis.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Unidade 39</div>
+<h2>Advérbios de frequência e <i>How often…?</i></h2>
+<p class="sdesc">Onde colocar <code>always</code>, <code>usually</code>, <code>sometimes</code> e <code>never</code> — e como perguntar com que frequência.</p>
+<div class="items">
+<div class="i"><div class="en">She always goes dancing on the weekend.</div><div class="pt">Ela sempre vai dançar no fim de semana.</div></div>
+<div class="i"><div class="en">I often go fishing.</div><div class="pt">Eu vou pescar bastante.</div></div>
+<div class="i"><div class="en">My mom never gets up early.</div><div class="pt">Minha mãe nunca levanta cedo.</div></div>
+<div class="i"><div class="en">Seb usually plays soccer on weekends.</div><div class="pt">O Seb normalmente joga futebol nos fins de semana.</div></div>
+<div class="i"><div class="en">Tracy never watches TV in the evening.</div><div class="pt">A Tracy nunca vê TV à noite.</div></div>
+<div class="i"><div class="en">We sometimes take the bus to work.</div><div class="pt">A gente às vezes pega o ônibus para o trabalho.</div></div>
+<div class="i"><div class="en">Doug often plays tennis on Fridays.</div><div class="pt">O Doug joga tênis bastante às sextas.</div></div>
+<div class="i"><div class="en">You sometimes go to the gym in the town.</div><div class="pt">Você às vezes vai à academia na cidade.</div></div>
+<div class="i"><div class="en">Shelley usually watches TV in the evening.</div><div class="pt">A Shelley normalmente vê TV à noite.</div></div>
+<div class="i"><div class="en">My dog always sleeps under the table.</div><div class="pt">Meu cachorro sempre dorme embaixo da mesa.</div></div>
+<div class="i"><div class="en">We sometimes play baseball in the summer.</div><div class="pt">A gente às vezes joga beisebol no verão.</div></div>
+<div class="i"><div class="en">Tim usually rides his horse on the weekend.</div><div class="pt">O Tim normalmente anda a cavalo no fim de semana.</div></div>
+<div class="i"><div class="en">How often does Steph watch TV?</div><div class="pt">Com que frequência a Steph vê TV?</div></div>
+<div class="i"><div class="en">How often do you visit your dad?</div><div class="pt">Com que frequência você visita seu pai?</div></div>
+<div class="i"><div class="en">How often does May go running?</div><div class="pt">Com que frequência a May vai correr?</div></div>
+<div class="i"><div class="en">How often do you read a book?</div><div class="pt">Com que frequência você lê um livro?</div></div>
+<div class="i"><div class="en">She visits her family four times a year.</div><div class="pt">Ela visita a família dela quatro vezes por ano.</div></div>
+<div class="i"><div class="en">She goes shopping twice a week.</div><div class="pt">Ela vai às compras duas vezes por semana.</div></div>
+<div class="i"><div class="en">I read a book every evening.</div><div class="pt">Eu leio um livro toda noite.</div></div>
+<div class="i"><div class="en">He plays baseball every afternoon.</div><div class="pt">Ele joga beisebol toda tarde.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Unidade 40</div>
+<h2><i>Love</i>, <i>like</i> e <i>hate</i></h2>
+<p class="sdesc">A escala do gosto, com o contraste que o livro mais explora: <code>likes … but hates …</code>.</p>
+<div class="items">
+<div class="i"><div class="en">I hate cities, but I love the country.</div><div class="pt">Eu odeio cidade, mas amo o campo.</div></div>
+<div class="i"><div class="en">Archie likes ice cream, and he loves pizza.</div><div class="pt">O Archie gosta de sorvete e ama pizza.</div></div>
+<div class="i"><div class="en">He loves meat, but he hates fish.</div><div class="pt">Ele ama carne, mas odeia peixe.</div></div>
+<div class="i"><div class="en">Francis doesn't like coffee, but he likes tea.</div><div class="pt">O Francis não gosta de café, mas gosta de chá.</div></div>
+<div class="i"><div class="en">We hate Mondays, but we love Fridays.</div><div class="pt">A gente odeia segunda, mas ama sexta.</div></div>
+<div class="i"><div class="en">My dad dislikes classical music, but he loves rock.</div><div class="pt">Meu pai não curte música clássica, mas ama rock.</div></div>
+<div class="i"><div class="en">Chris doesn't like spiders.</div><div class="pt">O Chris não gosta de aranha.</div></div>
+<div class="i"><div class="en">Mrs. McGregor doesn't like cats.</div><div class="pt">A sra. McGregor não gosta de gato.</div></div>
+<div class="i"><div class="en">She likes cooking. Her favorite is Italian food.</div><div class="pt">Ela gosta de cozinhar. O favorito dela é comida italiana.</div></div>
+<div class="i"><div class="en">She doesn't like cooking meat.</div><div class="pt">Ela não gosta de cozinhar carne.</div></div>
+<div class="i"><div class="en">She cooks for her friends and family.</div><div class="pt">Ela cozinha para os amigos e a família.</div></div>
+<div class="i"><div class="en">Sam likes watching soccer because it's exciting.</div><div class="pt">O Sam gosta de ver futebol porque é empolgante.</div></div>
+<div class="i"><div class="en">Marie loves pizza. She thinks it's delicious.</div><div class="pt">A Marie ama pizza. Ela acha deliciosa.</div></div>
+<div class="i"><div class="en">I love reading history books because they're really interesting.</div><div class="pt">Eu adoro ler livros de história porque são muito interessantes.</div></div>
+<div class="i"><div class="en">Sally doesn't like running because it is tiring.</div><div class="pt">A Sally não gosta de correr porque é cansativo.</div></div>
+<div class="i"><div class="en">Peggy does not like eating meat because she is a vegetarian.</div><div class="pt">A Peggy não gosta de comer carne porque é vegetariana.</div></div>
+<div class="i"><div class="en">Paolo does not eat chocolate because he doesn't have a sweet tooth.</div><div class="pt">O Paolo não come chocolate porque não é chegado a doce.</div></div>
+<div class="i"><div class="en">Jemma hates snakes. She thinks they are scary.</div><div class="pt">A Jemma odeia cobra. Ela acha assustadoras.</div></div>
+<div class="i"><div class="en">Craig doesn't like getting up in the morning.</div><div class="pt">O Craig não gosta de acordar de manhã.</div></div>
+<div class="i"><div class="en">Miguel loves going to the movie theater.</div><div class="pt">O Miguel adora ir ao cinema.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Unidades 41 – 42</div>
+<h2>Falar do favorito</h2>
+<p class="sdesc">Uma estrutura só, repetida com dez substantivos diferentes — o jeito mais rápido de automatizar um molde.</p>
+<div class="items">
+<div class="i"><div class="en">Arnie's favorite sport is tennis.</div><div class="pt">O esporte favorito do Arnie é tênis.</div></div>
+<div class="i"><div class="en">Joan's favorite animal is a dolphin.</div><div class="pt">O animal favorito da Joan é o golfinho.</div></div>
+<div class="i"><div class="en">Pam's favorite number is 21.</div><div class="pt">O número favorito da Pam é 21.</div></div>
+<div class="i"><div class="en">Jane's favorite sport is badminton.</div><div class="pt">O esporte favorito da Jane é badminton.</div></div>
+<div class="i"><div class="en">Dora's favorite ice cream is strawberry.</div><div class="pt">O sorvete favorito da Dora é morango.</div></div>
+<div class="i"><div class="en">Jim's favorite food is spaghetti.</div><div class="pt">A comida favorita do Jim é espaguete.</div></div>
+<div class="i"><div class="en">Jay's favorite instrument is the piano.</div><div class="pt">O instrumento favorito do Jay é piano.</div></div>
+<div class="i"><div class="en">Paul's favorite drink is orange juice.</div><div class="pt">A bebida favorita do Paul é suco de laranja.</div></div>
+<div class="i"><div class="en">Blake's favorite animal is the tiger.</div><div class="pt">O animal favorito do Blake é o tigre.</div></div>
+<div class="i"><div class="en">Sanjay's favorite season is winter.</div><div class="pt">A estação favorita do Sanjay é o inverno.</div></div>
+<div class="i"><div class="en">Max's favorite hobby is painting.</div><div class="pt">O hobby favorito do Max é pintar.</div></div>
+<div class="i"><div class="en">Seb's favorite type of music is hip-hop.</div><div class="pt">O tipo de música favorito do Seb é hip-hop.</div></div>
+<div class="i"><div class="en">Daniel's favorite animal is the lion.</div><div class="pt">O animal favorito do Daniel é o leão.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Unidade 44</div>
+<h2><i>Can</i> e <i>can't</i> — o que você sabe fazer</h2>
+<p class="sdesc">Habilidade na afirmativa e na negativa, incluindo a forma cheia <code>cannot</code>.</p>
+<div class="items">
+<div class="i"><div class="en">I can ride a horse.</div><div class="pt">Eu sei andar a cavalo.</div></div>
+<div class="i"><div class="en">I can't ride a horse.</div><div class="pt">Eu não sei andar a cavalo.</div></div>
+<div class="i"><div class="en">I cannot climb a tree.</div><div class="pt">Eu não consigo subir numa árvore.</div></div>
+<div class="i"><div class="en">I can speak French.</div><div class="pt">Eu falo francês.</div></div>
+<div class="i"><div class="en">She loves salsa dancing.</div><div class="pt">Ela adora dançar salsa.</div></div>
+<div class="i"><div class="en">She loves sailing.</div><div class="pt">Ela adora velejar.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Vocabulário do curso</div>
+<h2>Os campos temáticos do nível 1</h2>
+<p class="sdesc">O mapa do que o livro cobre — útil para saber onde procurar e o que ainda falta estudar.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Unidade</th><th>Estrutura nova</th><th>Vocabulário</th></tr></thead>
+<tbody>
+<tr><td>05 – 06</td><td class="w">adjetivos possessivos · <i>this</i> e <i>that</i> · apóstrofo de posse</td><td>animais, família e bichos de estimação</td></tr>
+<tr><td>08</td><td class="w"><i>these</i> e <i>those</i></td><td>pertences</td></tr>
+<tr><td>10</td><td class="w"><i>I am</i> para dizer sua profissão</td><td>profissões e locais de trabalho</td></tr>
+<tr><td>12</td><td class="w">horas do dia</td><td>palavras de tempo</td></tr>
+<tr><td>13 – 14</td><td class="w">presente simples · dias e preposições</td><td>atividades de rotina, dias da semana</td></tr>
+<tr><td>15 – 16</td><td class="w">negativa com <i>to be</i> · negativa do presente simples</td><td>profissões, atividades diárias</td></tr>
+<tr><td>17 – 19</td><td class="w">perguntas simples · respostas curtas · perguntas abertas</td><td>rotinas, palavras interrogativas</td></tr>
+<tr><td>21 – 22</td><td class="w"><i>there is / there are</i> · artigos definido e indefinido</td><td>cidade e construções</td></tr>
+<tr><td>23</td><td class="w">imperativos</td><td>direções</td></tr>
+<tr><td>24 – 26</td><td class="w"><i>and</i>, <i>but</i> · adjetivos · <i>because</i></td><td>cidade, profissões, família</td></tr>
+<tr><td>28 – 29</td><td class="w"><i>have</i> e perguntas com <i>have</i></td><td>objetos da casa e mobília</td></tr>
+<tr><td>31 – 32</td><td class="w">substantivos incontáveis · medidas</td><td>embalagens, ingredientes e quantidades</td></tr>
+<tr><td>33 – 35</td><td class="w"><i>too</i> e <i>fit</i> · adjetivos de opinião</td><td>roupas, compras e materiais</td></tr>
+<tr><td>36 – 38</td><td class="w"><i>can</i>, <i>can't</i>, <i>cannot</i> · <i>go</i> e <i>play</i> · advérbios modificadores</td><td>talentos, esportes, habilidades</td></tr>
+<tr><td>39 – 42</td><td class="w">advérbios de frequência · <i>love/like/hate</i> · <i>favorite</i></td><td>lazer, comida, esportes, música</td></tr>
+<tr><td>45 – 48</td><td class="w">advérbios regulares e irregulares · <i>would</i> e <i>want</i> · artigos</td><td>hobbies, ambições, matérias escolares</td></tr>
+</tbody>
+</table></div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 13 V04 · Livro 04 · Practice Book Nível 1 — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' se\u00e7\u00f5es.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'se\u00e7\u00e3o':'se\u00e7\u00f5es')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
