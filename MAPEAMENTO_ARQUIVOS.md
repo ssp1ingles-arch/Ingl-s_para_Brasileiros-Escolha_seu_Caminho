@@ -1,7 +1,51 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-07-29 — ver bloco 0g (Sistema 17 · livro01).**
+> **Atualização mais recente: 2026-08-02 — ver bloco 0h (Sistema 12 concluído).**
+
+## 0h. Atualização 2026-08-02 — Sistema 12 (Baseado em Livros V03) · CONCLUÍDO
+
+> Fonte: **exclusivamente os arquivos `.md`**, conforme a regra fixada em 2026-07-29.
+> Nenhum PDF foi aberto. Template visual do S17/S18/S19 (fundo `#0a0a0a`, Space Grotesk /
+> Inter, acento verde `#22C55E`, botão Voltar fixo, TOC lateral sticky, busca EN/PT com
+> contador de itens).
+
+| Livro | Arquivo `.md` | Painel | Seções | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S12 · Livro 01 | *(anterior)* | `livro01.html` | 16 | 174 | 51 KB | ✅ já existia |
+| S12 · Livro 02 | `02_American English File 2 …` | `livro02.html` | 29 | 402 | 80 KB | ✅ **2026-08-02** |
+| S12 · Livro 03 | `03_American English File 3 …` | `livro03.html` | 23 | 418 | 86 KB | ✅ **2026-08-02** |
+| S12 · Livro 04 | `04_American English File 4 …` | `livro04.html` | 19 | 374 | 79 KB | ✅ **2026-08-02** |
+| S12 · Livro 05 | `05_Close-up - 2nd - C1 Workbook.md` | `livro05.html` | 20 | 319 | 63 KB | ✅ **2026-08-02** |
+| S12 · Livro 06 | `06_Close-up - 1st - C2 Workbook.md` | `livro06.html` | 22 | 342 | 70 KB | ✅ **2026-08-02** |
+
+**O que foi extraído.** Nos três volumes do *American English File*, a fonte principal foi o
+**Grammar Bank** (páginas de referência ao fim do livro): a frase-modelo de cada estrutura,
+os pares que o próprio livro contrasta (`present perfect` × `simple past`, `used to` ×
+`be used to`, first × second conditional) e as tabelas de formas. Somaram-se os diálogos
+completos dos episódios de **Practical English** (hotel, restaurante, reagir a notícias,
+pedir permissão) e as **Social English phrases**. Nos dois *Close-up*, a fonte foi a
+**Grammar Reference** (estruturas C1/C2: inversão, cleft sentences, orações participiais,
+condicionais invertidos, modais perfeitos, passiva impessoal), os apêndices de
+**Collocations & Expressions** (90 no C1, 140 no C2) e de **Phrasal Verbs** (55 e 50, cada um
+com a definição do próprio livro), mais a linguagem funcional da **Speaking Reference** (C1)
+e da **Writing Reference** (C2).
+
+**O que foi descartado.** Enunciado de exercício sem conteúdo (`Complete the sentences…`,
+`Circle the correct form`), gabarito isolado, marcador de áudio (`1.30`, `Track 4.2`),
+rodapé de gráfica e a URL comercial que o dump repete em quase toda página
+(`www.avasshop.ir`), listas de vocabulário solto sem frase (nomes de peixes, legumes e
+cores do *Vocabulary Bank*), seções de método (`Go online to review the grammar`),
+e o lixo tipográfico do OCR — parênteses órfãos, colunas trocadas e caracteres quebrados
+(`ü`, `ä` no lugar de vogais simples, `TU` por `I'll`).
+
+**Sobreposição tratada.** O `livro01.html` (AEF 1) já cobria o básico A1–A2 com foco em
+diálogos de situação; por isso os livros 02 a 04 priorizaram **estrutura gramatical** e os
+diálogos de Practical English que o livro 01 não tem. Entre os dois *Close-up*, o C2 evitou
+repetir o que o C1 já traz (inversão simples, cleft, modais perfeitos genéricos) e ficou
+com o que só existe no C2: condicionais invertidos, `but for`, `would rather` com passado
+irreal, `it's time we paid`, adjetivos graduáveis × não graduáveis, os dois sentidos de
+`quite` e os adjetivos que mudam de significado conforme a posição.
 
 ## 0g. Atualização 2026-07-29 — Sistema 17 (Baseado em Livros V08)
 
