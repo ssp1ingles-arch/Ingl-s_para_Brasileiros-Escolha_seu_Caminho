@@ -1,7 +1,46 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-02 — ver bloco 0h (Sistema 12 concluído).**
+> **Atualização mais recente: 2026-08-02 — ver blocos 0i (Sistema 13) e 0h (Sistema 12), ambos concluídos.**
+
+## 0i. Atualização 2026-08-02 — Sistema 13 (Baseado em Livros V04) · CONCLUÍDO
+
+> Fonte: **exclusivamente os arquivos `.md`**. Mesmo template visual do S17/S18/S19.
+
+| Livro | Arquivo `.md` | Painel | Blocos | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S13 · Livro 01 | *(anterior)* | `livro01.html` | 36 | 191 | 72 KB | ✅ já existia |
+| S13 · Livro 02 | `02_English for Everyone English Vocabulary Builder …` | `livro02.html` | 14 | 150 | 58 KB | ✅ **2026-08-02** |
+| S13 · Livro 03 | `03_English for Everyone Junior Beginner's Course.md` | `livro03.html` | 18 | 160 | 39 KB | ✅ **2026-08-02** |
+| S13 · Livro 04 | `04_… Practice Book Level 1 Beginner …` | `livro04.html` | 12 | 166 | 38 KB | ✅ **2026-08-02** |
+| S13 · Livro 05 | `05_… Practice Book Level 2 Beginner …` | `livro05.html` | 12 | 147 | 37 KB | ✅ **2026-08-02** |
+| S13 · Livro 06 | `06_Pronouncing American English.md` | `livro06.html` | 7 | 90 | 33 KB | ✅ **2026-08-02** |
+
+**O que foi extraído, por livro.** O *Vocabulary Builder* é um dicionário visual, mas traz em
+14 unidades blocos de **Useful Expressions** com expressão + frase de exemplo + definição —
+foi isso, e só isso, que virou painel (140 expressões, de aluguel a tecnologia). O *Junior*
+rendeu as frases-modelo dos blocos `Listen and read`, as **12 canções** do curso e o
+**Grammar guide** inteiro (cinco tabelas de conjugação, nove palavras interrogativas com
+pergunta e resposta, plurais irregulares, pronomes, preposições). Nos dois *Practice Books*,
+que são livros de exercício, o inglês real estava no **gabarito** e nos exemplos resolvidos —
+frases completas e corretas; o nível 2 ainda traz tabelas `Review` em que os próprios autores
+escolhem a frase-modelo de cada estrutura, e essas viraram a espinha dorsal do painel.
+O *Pronouncing American English* rendeu os **pares mínimos em frase inteira**, as frases de
+treino com os dois sons contrastantes, os pares substantivo × verbo em que só a tônica muda
+o sentido, e 43 verbetes do apêndice de **100 homófonos**, cada um com a frase que o define.
+
+**O que foi descartado.** Enunciado sem conteúdo (`Fill in the gaps`, `Number the pictures`,
+`Mark the correct word`), respostas de marcar caixinha (`True / False`, letras soltas),
+listas de vocabulário ilustrado sem frase (animais, roupas, cores, mobília), guia de
+caligrafia, diagramas de boca e de escada de entonação (só imagem), instruções de manuseio
+de fita e CD, texto de "como o curso funciona" e o lixo tipográfico do OCR.
+
+**Sobreposição tratada.** O `livro01.html` (Grammar Guide) já cobria a gramática ilustrada
+A1–B2 em 191 frases; por isso o livro 02 ficou só com expressões idiomáticas e colocações,
+e os livros 04 e 05 priorizaram as estruturas que o Grammar Guide não detalha (negativas
+contrastadas, perguntas de sujeito × objeto, pronomes indefinidos, as três formas de futuro).
+O livro 03, por ser infantil, não repete nenhum: ele é o único do sistema que parte
+literalmente do zero. O livro 06 não tem sobreposição com nenhum — é o único de pronúncia.
 
 ## 0h. Atualização 2026-08-02 — Sistema 12 (Baseado em Livros V03) · CONCLUÍDO
 
