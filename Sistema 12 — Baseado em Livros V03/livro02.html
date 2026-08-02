@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 02 · American English File 2 — Sistema 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 12</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 12 · Livro 02 · A2 → B1</div>
+<h1 class="title">American English <em>File 2</em></h1>
+<p class="lead">Clive Oxenden, Christina Latham-Koenig e Jerry Lambert · Oxford University Press · 3ª edição. O segundo degrau da série: onde o <i>File 1</i> ensinou a montar a frase, o <b>File 2</b> ensina a ligar as frases e a falar do passado, do futuro e do hipotético. Daqui saiu só o inglês real — a frase-modelo de cada estrutura do <b>Grammar Bank</b> (Files 1 a 10), os diálogos completos dos episódios de <b>Practical English</b> (hotel, restaurante, loja, farmácia, transporte) e as <b>Social English phrases</b>. Ficaram de fora enunciado de exercício, gabarito e marcador de áudio.</p>
+
+<div class="metrics">
+  <div class="metric"><b>29</b><span>seções</span></div>
+  <div class="metric"><b id="m-total">&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>9</b><span>tabelas</span></div>
+  <div class="metric"><b>A2–B1</b><span>nível</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: going to, since, hotel, passado…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Estruturas</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">File 1A</div>
+<h2>A ordem das palavras na pergunta</h2>
+<p class="sdesc">A regra que resolve metade dos erros de quem já fala um pouco: <b>auxiliar, sujeito, verbo na forma base</b> — e, se houver palavra interrogativa, ela vem na frente de tudo.</p>
+<div class="items">
+<div class="i"><div class="en">Do you live with your parents?</div><div class="pt">Você mora com os seus pais?</div></div>
+<div class="i"><div class="en">Did you take a vacation last year?</div><div class="pt">Você tirou férias no ano passado?</div></div>
+<div class="i"><div class="en">Where does your sister work?</div><div class="pt">Onde a sua irmã trabalha?</div></div>
+<div class="i"><div class="en">When did you start studying English?</div><div class="pt">Quando você começou a estudar inglês?</div></div>
+<div class="i"><div class="en">What did you talk about?</div><div class="pt">Sobre o que vocês conversaram?</div></div>
+<div class="i"><div class="en">Did you go out last night?</div><div class="pt">Você saiu ontem à noite?</div></div>
+<div class="i"><div class="en">Where did you go?</div><div class="pt">Aonde você foi?</div></div>
+<div class="i"><div class="en">Are you hungry?</div><div class="pt">Você está com fome?</div></div>
+<div class="i"><div class="en">Is there a bank near here?</div><div class="pt">Tem um banco aqui perto?</div></div>
+<div class="i"><div class="en">Can I sit here?</div><div class="pt">Posso sentar aqui?</div></div>
+<div class="i"><div class="en">What was that noise?</div><div class="pt">Que barulho foi esse?</div></div>
+<div class="i"><div class="en">Where were you born?</div><div class="pt">Onde você nasceu?</div></div>
+<div class="i"><div class="en">She is a teacher. — Is she a teacher?</div><div class="pt">Ela é professora. — Ela é professora?</div></div>
+<div class="i"><div class="en">He can drive. — Can he drive?</div><div class="pt">Ele sabe dirigir. — Ele sabe dirigir?</div></div>
+<div class="i"><div class="en">How often does he call you?</div><div class="pt">Com que frequência ele liga para você?</div></div>
+<div class="i"><div class="en">Is your girlfriend from Brazil?</div><div class="pt">A sua namorada é do Brasil?</div></div>
+<div class="i"><div class="en">How many languages can you speak?</div><div class="pt">Quantas línguas você fala?</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Palavra interrogativa</th><th>Auxiliar</th><th>Sujeito</th><th>Verbo (base)</th></tr></thead>
+<tbody>
+<tr><td class="w">&mdash;</td><td><b>Do</b></td><td>you</td><td>live with your parents?</td></tr>
+<tr><td class="w">&mdash;</td><td><b>Did</b></td><td>you</td><td>take a vacation last year?</td></tr>
+<tr><td>Where</td><td><b>does</b></td><td>your sister</td><td>work?</td></tr>
+<tr><td>When</td><td><b>did</b></td><td>you</td><td>start studying English?</td></tr>
+<tr><td>What</td><td><b>did</b></td><td>they</td><td>talk about?</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s02">
+<div class="snum">File 1B</div>
+<h2>Simple present e os advérbios de frequência</h2>
+<p class="sdesc">O tempo da rotina e do que é sempre verdade. Os advérbios (<code>always</code>, <code>never</code>…) vêm <b>antes do verbo principal</b>, mas <b>depois do verbo be</b>.</p>
+<div class="items">
+<div class="i"><div class="en">I usually work at home.</div><div class="pt">Eu geralmente trabalho em casa.</div></div>
+<div class="i"><div class="en">My brother works in the city.</div><div class="pt">Meu irmão trabalha no centro.</div></div>
+<div class="i"><div class="en">My parents don't live near here.</div><div class="pt">Meus pais não moram perto daqui.</div></div>
+<div class="i"><div class="en">It doesn't often rain here.</div><div class="pt">Não chove muito aqui.</div></div>
+<div class="i"><div class="en">Do you speak French? — Yes, I do. / No, I don't.</div><div class="pt">Você fala francês? — Falo. / Não falo.</div></div>
+<div class="i"><div class="en">Does he like pop music? — Yes, he does. / No, he doesn't.</div><div class="pt">Ele gosta de música pop? — Gosta. / Não gosta.</div></div>
+<div class="i"><div class="en">We often go out on Friday night.</div><div class="pt">A gente costuma sair na sexta à noite.</div></div>
+<div class="i"><div class="en">She doesn't usually study on weekends.</div><div class="pt">Ela normalmente não estuda nos fins de semana.</div></div>
+<div class="i"><div class="en">I'm never sick.</div><div class="pt">Eu nunca fico doente.</div></div>
+<div class="i"><div class="en">He's always late for work.</div><div class="pt">Ele está sempre atrasado para o trabalho.</div></div>
+<div class="i"><div class="en">She's never sick.</div><div class="pt">Ela nunca fica doente.</div></div>
+<div class="i"><div class="en">It never rains.</div><div class="pt">Nunca chove.</div></div>
+<div class="i"><div class="en">She gets up early every day.</div><div class="pt">Ela levanta cedo todo dia.</div></div>
+<div class="i"><div class="en">We have English classes twice a week.</div><div class="pt">A gente tem aula de inglês duas vezes por semana.</div></div>
+<div class="i"><div class="en">Kate hardly ever sees her family.</div><div class="pt">A Kate quase nunca vê a família dela.</div></div>
+<div class="i"><div class="en">I go to the dentist twice a year.</div><div class="pt">Eu vou ao dentista duas vezes por ano.</div></div>
+<div class="i"><div class="en">Alan runs in the park every day.</div><div class="pt">O Alan corre no parque todo dia.</div></div>
+<div class="i"><div class="en">I visit my mom once a month.</div><div class="pt">Eu visito a minha mãe uma vez por mês.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Terminação</th><th>Regra na 3ª pessoa</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>geral</td><td class="w">+ -s</td><td>work → <b>works</b></td></tr>
+<tr><td>consoante + y</td><td class="w">y → -ies</td><td>study → <b>studies</b></td></tr>
+<tr><td>ch, sh, s, z, x</td><td class="w">+ -es</td><td>finish → <b>finishes</b></td></tr>
+<tr><td>go / do</td><td class="w">+ -es</td><td>go → <b>goes</b> · do → <b>does</b></td></tr>
+<tr><td>have</td><td class="w">irregular</td><td>have → <b>has</b></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s03">
+<div class="snum">File 1C</div>
+<h2>Present continuous — e quando <i>não</i> usar</h2>
+<p class="sdesc">O que está acontecendo agora, o que é temporário e o que a foto mostra. Verbos de estado (<code>like</code>, <code>need</code>, <code>want</code>) ficam no simple present.</p>
+<div class="items">
+<div class="i"><div class="en">What are you doing? — I'm sending a message to Sarah.</div><div class="pt">O que você está fazendo? — Estou mandando uma mensagem para a Sarah.</div></div>
+<div class="i"><div class="en">My brother is taking a two-month vacation in the US.</div><div class="pt">Meu irmão está tirando dois meses de férias nos Estados Unidos.</div></div>
+<div class="i"><div class="en">In this picture the woman is standing near a table.</div><div class="pt">Nesta foto a mulher está de pé perto de uma mesa.</div></div>
+<div class="i"><div class="en">The girl in the painting is playing the guitar.</div><div class="pt">A menina do quadro está tocando violão.</div></div>
+<div class="i"><div class="en">I'm working. / I'm not working.</div><div class="pt">Eu estou trabalhando. / Eu não estou trabalhando.</div></div>
+<div class="i"><div class="en">Are you working? — Yes, I am. / No, I'm not.</div><div class="pt">Você está trabalhando? — Estou. / Não estou.</div></div>
+<div class="i"><div class="en">What do you do? — I work for an IT company.</div><div class="pt">O que você faz? — Eu trabalho numa empresa de TI.</div></div>
+<div class="i"><div class="en">What are you doing? — I'm checking my messages.</div><div class="pt">O que você está fazendo? — Estou vendo minhas mensagens.</div></div>
+<div class="i"><div class="en">I like this painting. It's beautiful.</div><div class="pt">Eu gosto deste quadro. Ele é lindo.</div></div>
+<div class="i"><div class="en">I like Italian food.</div><div class="pt">Eu gosto de comida italiana. <i>(nunca <span class="x">I'm liking</span>)</i></div></div>
+<div class="i"><div class="en">It's hot. Why are you wearing a coat?</div><div class="pt">Está calor. Por que você está de casaco?</div></div>
+<div class="i"><div class="en">You can turn off the radio. I'm not listening to it.</div><div class="pt">Pode desligar o rádio. Eu não estou ouvindo.</div></div>
+<div class="i"><div class="en">Be careful! The baby is putting your pen in her mouth!</div><div class="pt">Cuidado! A bebê está colocando a sua caneta na boca!</div></div>
+<div class="i"><div class="en">I'm waiting for Emma. She's late, as usual.</div><div class="pt">Estou esperando a Emma. Ela está atrasada, como sempre.</div></div>
+<div class="i"><div class="en">I usually drink tea, but I want a coffee today.</div><div class="pt">Eu normalmente tomo chá, mas hoje eu quero um café.</div></div>
+<div class="i"><div class="en">Marc lives in New York, but he's working in Chicago right now.</div><div class="pt">O Marc mora em Nova York, mas está trabalhando em Chicago no momento.</div></div>
+<div class="i"><div class="en">They're getting along very well right now.</div><div class="pt">Eles estão se dando muito bem no momento.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">File 2A</div>
+<h2>Simple past — regulares e irregulares</h2>
+<p class="sdesc">Ação terminada no passado. A forma é <b>igual para todas as pessoas</b>, e o <code>did</code> / <code>didn't</code> pede o verbo na forma base.</p>
+<div class="items">
+<div class="i"><div class="en">We stayed at a hotel last summer.</div><div class="pt">A gente ficou num hotel no verão passado.</div></div>
+<div class="i"><div class="en">I went to Turkey twice last year.</div><div class="pt">Eu fui à Turquia duas vezes no ano passado.</div></div>
+<div class="i"><div class="en">He didn't stay with friends.</div><div class="pt">Ele não ficou na casa de amigos.</div></div>
+<div class="i"><div class="en">She didn't go to Thailand.</div><div class="pt">Ela não foi para a Tailândia.</div></div>
+<div class="i"><div class="en">Did you stay for the weekend? — Yes, I did.</div><div class="pt">Você ficou o fim de semana? — Fiquei.</div></div>
+<div class="i"><div class="en">Did you go to Montreal? — No, we didn't.</div><div class="pt">Vocês foram a Montreal? — Não fomos.</div></div>
+<div class="i"><div class="en">Where did you stay?</div><div class="pt">Onde vocês ficaram?</div></div>
+<div class="i"><div class="en">Why did you go?</div><div class="pt">Por que você foi?</div></div>
+<div class="i"><div class="en">We arrived at the airport at ten this morning.</div><div class="pt">A gente chegou ao aeroporto às dez desta manhã.</div></div>
+<div class="i"><div class="en">I didn't hate school, but I don't think I liked it very much.</div><div class="pt">Eu não odiava a escola, mas acho que não gostava muito dela.</div></div>
+<div class="i"><div class="en">I had a small group of friends, not many, but a close group.</div><div class="pt">Eu tinha um grupinho de amigos, não muitos, mas um grupo unido.</div></div>
+<div class="i"><div class="en">I really enjoyed school. Elementary school was all fun.</div><div class="pt">Eu gostava muito da escola. O fundamental era só diversão.</div></div>
+<div class="i"><div class="en">We used to have lots of exams and tests.</div><div class="pt">A gente costumava ter um monte de provas e testes.</div></div>
+<div class="i"><div class="en">I always looked forward to getting back to school.</div><div class="pt">Eu sempre ficava ansioso para voltar às aulas.</div></div>
+<div class="i"><div class="en">The PE teacher once caught me reading a book on the soccer field.</div><div class="pt">O professor de educação física me pegou uma vez lendo um livro no campo de futebol.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Forma base</th><th>Passado</th><th>Regra de escrita</th></tr></thead>
+<tbody>
+<tr><td>work</td><td><b>worked</b></td><td class="w">+ -ed</td></tr>
+<tr><td>stay</td><td><b>stayed</b></td><td class="w">+ -ed</td></tr>
+<tr><td>like</td><td><b>liked</b></td><td class="w">+ -d quando termina em -e</td></tr>
+<tr><td>study</td><td><b>studied</b></td><td class="w">y → -ied depois de consoante</td></tr>
+<tr><td>stop</td><td><b>stopped</b></td><td class="w">consoante-vogal-consoante: dobra a última</td></tr>
+<tr><td>go / see</td><td><b>went / saw</b></td><td class="w">irregular</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s05">
+<div class="snum">File 2B</div>
+<h2>Past continuous — o pano de fundo da história</h2>
+<p class="sdesc">A ação longa que já estava rolando quando a ação curta aconteceu. É com ele que se abre uma narrativa.</p>
+<div class="items">
+<div class="i"><div class="en">At 8:45 last Saturday I was walking in the park.</div><div class="pt">Às 8h45 do sábado passado eu estava caminhando no parque.</div></div>
+<div class="i"><div class="en">The birds were singing. It wasn't raining.</div><div class="pt">Os pássaros estavam cantando. Não estava chovendo.</div></div>
+<div class="i"><div class="en">Was it raining when you got up? — No, it wasn't.</div><div class="pt">Estava chovendo quando você levantou? — Não estava.</div></div>
+<div class="i"><div class="en">What were you doing at eleven o'clock last night? — I was watching TV.</div><div class="pt">O que você estava fazendo às onze da noite ontem? — Eu estava vendo TV.</div></div>
+<div class="i"><div class="en">We were walking in the gardens when he took a photo of us.</div><div class="pt">A gente estava andando pelos jardins quando ele tirou uma foto nossa.</div></div>
+<div class="i"><div class="en">My sister arrived when I was having lunch.</div><div class="pt">Minha irmã chegou quando eu estava almoçando.</div></div>
+<div class="i"><div class="en">In 1972, I was living in London.</div><div class="pt">Em 1972, eu estava morando em Londres.</div></div>
+<div class="i"><div class="en">I was driving on the road listening to the radio.</div><div class="pt">Eu estava dirigindo na estrada ouvindo rádio.</div></div>
+<div class="i"><div class="en">The accident happened when I was crossing the road.</div><div class="pt">O acidente aconteceu quando eu estava atravessando a rua.</div></div>
+<div class="i"><div class="en">When I came out of the club, he was waiting for me.</div><div class="pt">Quando eu saí da balada, ele estava me esperando.</div></div>
+<div class="i"><div class="en">I was watching TV when the phone rang.</div><div class="pt">Eu estava vendo TV quando o telefone tocou.</div></div>
+<div class="i"><div class="en">Were they working? — Yes, they were. / No, they weren't.</div><div class="pt">Eles estavam trabalhando? — Estavam. / Não estavam.</div></div>
+<div class="i"><div class="en">I wasn't really listening…</div><div class="pt">Eu não estava prestando muita atenção…</div></div>
+<div class="i"><div class="en">She was talking so loudly, and of course, the walls are very thin.</div><div class="pt">Ela estava falando tão alto, e claro, as paredes são bem finas.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">File 2C</div>
+<h2>Ligar as ideias: <i>because, so, but, although</i></h2>
+<p class="sdesc">Motivo, resultado e contraste — mais os sequenciadores de tempo que organizam qualquer relato.</p>
+<div class="items">
+<div class="i"><div class="en">She was driving fast because she was in a hurry.</div><div class="pt">Ela estava dirigindo rápido porque estava com pressa.</div></div>
+<div class="i"><div class="en">She was in a hurry, so she was driving fast.</div><div class="pt">Ela estava com pressa, então estava dirigindo rápido.</div></div>
+<div class="i"><div class="en">She tried to stop the car, but she hit the man.</div><div class="pt">Ela tentou parar o carro, mas atropelou o homem.</div></div>
+<div class="i"><div class="en">Although she tried to stop the car, she hit the man.</div><div class="pt">Embora ela tenha tentado parar o carro, ela atropelou o homem.</div></div>
+<div class="i"><div class="en">She was very tired, but she couldn't sleep.</div><div class="pt">Ela estava muito cansada, mas não conseguia dormir.</div></div>
+<div class="i"><div class="en">She couldn't sleep, although she was very tired.</div><div class="pt">Ela não conseguia dormir, embora estivesse muito cansada.</div></div>
+<div class="i"><div class="en">On their first date, they went to a restaurant.</div><div class="pt">No primeiro encontro deles, eles foram a um restaurante.</div></div>
+<div class="i"><div class="en">After that they started meeting every day.</div><div class="pt">Depois disso eles começaram a se ver todo dia.</div></div>
+<div class="i"><div class="en">On Thursday I had an argument with my boss.</div><div class="pt">Na quinta eu tive uma discussão com o meu chefe.</div></div>
+<div class="i"><div class="en">The next day I decided to look for a new job.</div><div class="pt">No dia seguinte eu decidi procurar um emprego novo.</div></div>
+<div class="i"><div class="en">We sat down to eat. Two minutes later my phone rang.</div><div class="pt">A gente sentou para comer. Dois minutos depois meu celular tocou.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">File 3A</div>
+<h2><i>be going to</i> — planos e previsões que dá para ver</h2>
+<p class="sdesc">Serve para o que você já decidiu fazer <b>e</b> para o que a evidência mostra que vai acontecer.</p>
+<div class="items">
+<div class="i"><div class="en">I'm going to give a talk at a conference.</div><div class="pt">Eu vou dar uma palestra numa conferência.</div></div>
+<div class="i"><div class="en">He's going to meet me at the airport.</div><div class="pt">Ele vai me buscar no aeroporto.</div></div>
+<div class="i"><div class="en">I'm sure our favorite tennis players are going to lose tomorrow.</div><div class="pt">Tenho certeza de que nossos tenistas favoritos vão perder amanhã.</div></div>
+<div class="i"><div class="en">It's going to rain tonight.</div><div class="pt">Vai chover hoje à noite.</div></div>
+<div class="i"><div class="en">It's winter there, so it's going to be cold.</div><div class="pt">Lá é inverno, então vai estar frio.</div></div>
+<div class="i"><div class="en">Look at that car! It's going to crash!</div><div class="pt">Olha aquele carro! Ele vai bater!</div></div>
+<div class="i"><div class="en">I'm not going to give a talk.</div><div class="pt">Eu não vou dar palestra nenhuma.</div></div>
+<div class="i"><div class="en">Are you going to give a talk? — Yes, I am. / No, I'm not.</div><div class="pt">Você vai dar uma palestra? — Vou. / Não vou.</div></div>
+<div class="i"><div class="en">Look at the clouds. It's going to rain.</div><div class="pt">Olha as nuvens. Vai chover.</div></div>
+<div class="i"><div class="en">They're playing very well. They're going to win.</div><div class="pt">Eles estão jogando muito bem. Vão ganhar.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">File 3B</div>
+<h2>Present continuous com sentido de futuro</h2>
+<p class="sdesc">Para compromisso já marcado — hora e lugar combinados. É o tempo natural de <code>tonight</code>, <code>tomorrow</code>, <code>this weekend</code> e dos verbos de viagem.</p>
+<div class="items">
+<div class="i"><div class="en">I'm seeing an old friend tonight.</div><div class="pt">Eu vou encontrar um amigo antigo hoje à noite.</div></div>
+<div class="i"><div class="en">She's arriving at lunchtime.</div><div class="pt">Ela chega na hora do almoço.</div></div>
+<div class="i"><div class="en">She isn't leaving until Friday.</div><div class="pt">Ela só vai embora na sexta.</div></div>
+<div class="i"><div class="en">They aren't coming to the party tomorrow.</div><div class="pt">Eles não vêm à festa amanhã.</div></div>
+<div class="i"><div class="en">What are you doing this evening?</div><div class="pt">O que você vai fazer hoje à noite?</div></div>
+<div class="i"><div class="en">Is he meeting us at the restaurant?</div><div class="pt">Ele vai nos encontrar no restaurante?</div></div>
+<div class="i"><div class="en">I'm leaving on Monday.</div><div class="pt">Eu viajo na segunda.</div></div>
+<div class="i"><div class="en">I'm seeing Anna on Tuesday.</div><div class="pt">Eu vou ver a Anna na terça.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">File 3C</div>
+<h2>Orações relativas: <i>who, that, where</i></h2>
+<p class="sdesc">Como explicar o que uma pessoa, uma coisa ou um lugar é — a estrutura que salva quando falta a palavra exata.</p>
+<div class="items">
+<div class="i"><div class="en">That's the woman who won the lottery last year.</div><div class="pt">Aquela é a mulher que ganhou na loteria no ano passado.</div></div>
+<div class="i"><div class="en">A chef is a person who cooks food in a restaurant.</div><div class="pt">Um chef é uma pessoa que cozinha num restaurante.</div></div>
+<div class="i"><div class="en">A clock is something that tells the time.</div><div class="pt">Um relógio é uma coisa que marca as horas.</div></div>
+<div class="i"><div class="en">Is that the book that won an important prize?</div><div class="pt">É aquele o livro que ganhou um prêmio importante?</div></div>
+<div class="i"><div class="en">A post office is a place where you can buy stamps.</div><div class="pt">O correio é um lugar onde dá para comprar selos.</div></div>
+<div class="i"><div class="en">That's the restaurant where I had dinner last week.</div><div class="pt">Aquele é o restaurante onde eu jantei semana passada.</div></div>
+<div class="i"><div class="en">A post office is a place that sells stamps.</div><div class="pt">O correio é um lugar que vende selos.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">File 4A</div>
+<h2>Present perfect — o passado que ainda importa agora</h2>
+<p class="sdesc">Ação recente cujo resultado se vê no presente. Não se diz <b>quando</b> — se disser quando, o tempo vira simple past.</p>
+<div class="items">
+<div class="i"><div class="en">I've cleaned the refrigerator. It looks new!</div><div class="pt">Eu limpei a geladeira. Ela está com cara de nova!</div></div>
+<div class="i"><div class="en">He hasn't done the dishes. Can you help me do them?</div><div class="pt">Ele não lavou a louça. Você pode me ajudar a lavar?</div></div>
+<div class="i"><div class="en">The concert starts soon. Have you turned off your phone? — Yes, I have.</div><div class="pt">O show começa já. Você desligou o celular? — Desliguei.</div></div>
+<div class="i"><div class="en">Mary's had her baby!</div><div class="pt">A Mary teve o bebê!</div></div>
+<div class="i"><div class="en">A package has arrived for you.</div><div class="pt">Chegou uma encomenda para você.</div></div>
+<div class="i"><div class="en">Have you finished your homework yet? — No, not yet. I haven't finished yet.</div><div class="pt">Você já terminou a lição? — Ainda não. Ainda não terminei.</div></div>
+<div class="i"><div class="en">Do you want to see this movie? — No, I've already seen it three times.</div><div class="pt">Quer ver esse filme? — Não, eu já vi três vezes.</div></div>
+<div class="i"><div class="en">Has he done the homework? — Yes, he has. / No, he hasn't.</div><div class="pt">Ele fez a lição? — Fez. / Não fez.</div></div>
+<div class="i"><div class="en">I've finished the book.</div><div class="pt">Eu terminei o livro.</div></div>
+<div class="i"><div class="en">She hasn't replied yet. I'm going to keep trying.</div><div class="pt">Ela ainda não respondeu. Eu vou continuar tentando.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Palavra</th><th>Onde entra</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td><b>yet</b></td><td class="w">no fim da frase — perguntas e negativas</td><td>Have you finished <b>yet</b>? · I haven't finished <b>yet</b>.</td></tr>
+<tr><td><b>already</b></td><td class="w">antes do verbo principal — afirmativas</td><td>I've <b>already</b> seen it three times.</td></tr>
+<tr><td><b>ever</b></td><td class="w">antes do particípio — perguntas</td><td>Have you <b>ever</b> been to Mexico?</td></tr>
+<tr><td><b>never</b></td><td class="w">antes do particípio — sentido negativo</td><td>I've <b>never</b> met Nina's husband.</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s11">
+<div class="snum">File 4B</div>
+<h2>Present perfect ou simple past? — experiências</h2>
+<p class="sdesc">A conversa começa no present perfect (a pergunta geral) e <b>muda para o simple past</b> assim que alguém pede detalhe.</p>
+<div class="items">
+<div class="i"><div class="en">Have you ever been to Mexico? — Yes, I have.</div><div class="pt">Você já foi ao México? — Já.</div></div>
+<div class="i"><div class="en">When did you go there? — I went last year.</div><div class="pt">Quando você foi? — Fui no ano passado.</div></div>
+<div class="i"><div class="en">Have you seen his new movie? — Yes, I have.</div><div class="pt">Você viu o filme novo dele? — Vi.</div></div>
+<div class="i"><div class="en">What did you think of it? — I loved it.</div><div class="pt">O que você achou? — Amei.</div></div>
+<div class="i"><div class="en">She's been to New York three times.</div><div class="pt">Ela já foi a Nova York três vezes.</div></div>
+<div class="i"><div class="en">I've never met Nina's husband.</div><div class="pt">Eu nunca conheci o marido da Nina.</div></div>
+<div class="i"><div class="en">He's seen that movie twice.</div><div class="pt">Ele já viu esse filme duas vezes.</div></div>
+<div class="i"><div class="en">Mike has been to Paris.</div><div class="pt">O Mike já foi a Paris. <i>(foi e voltou)</i></div></div>
+<div class="i"><div class="en">Mike has gone to Paris.</div><div class="pt">O Mike foi para Paris. <i>(está lá agora)</i></div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">File 4C</div>
+<h2><i>something, anything, nothing, anywhere…</i></h2>
+<p class="sdesc">Quando você não sabe (ou não quer dizer) exatamente quem, o quê ou onde. Regra de ouro: <b>nunca duas negativas</b>.</p>
+<div class="items">
+<div class="i"><div class="en">Somebody has taken my pen!</div><div class="pt">Alguém pegou a minha caneta!</div></div>
+<div class="i"><div class="en">I didn't speak to anybody all weekend.</div><div class="pt">Eu não falei com ninguém o fim de semana inteiro.</div></div>
+<div class="i"><div class="en">Did anyone call? — No, nobody. Nobody called.</div><div class="pt">Alguém ligou? — Ninguém. Ninguém ligou.</div></div>
+<div class="i"><div class="en">I bought something for dinner.</div><div class="pt">Eu comprei alguma coisa para o jantar.</div></div>
+<div class="i"><div class="en">I didn't do anything last night.</div><div class="pt">Eu não fiz nada ontem à noite.</div></div>
+<div class="i"><div class="en">Is there anything in the refrigerator? — No, nothing.</div><div class="pt">Tem alguma coisa na geladeira? — Nada.</div></div>
+<div class="i"><div class="en">Let's go somewhere this weekend.</div><div class="pt">Vamos a algum lugar neste fim de semana.</div></div>
+<div class="i"><div class="en">We didn't go anywhere this summer.</div><div class="pt">A gente não foi a lugar nenhum neste verão.</div></div>
+<div class="i"><div class="en">Is there anywhere to park?</div><div class="pt">Tem algum lugar para estacionar?</div></div>
+<div class="i"><div class="en">Can you buy something for me?</div><div class="pt">Você pode comprar uma coisa para mim?</div></div>
+<div class="i"><div class="en">Would you like something to drink?</div><div class="pt">Você quer alguma coisa para beber?</div></div>
+<div class="i"><div class="en">You can come any day. It doesn't matter which day you come.</div><div class="pt">Você pode vir qualquer dia. Não importa em que dia você venha.</div></div>
+<div class="i"><div class="en">I can sleep anywhere. It doesn't matter where I sleep.</div><div class="pt">Eu durmo em qualquer lugar. Não importa onde eu durma.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">File 5A</div>
+<h2>Comparativos — de adjetivo e de advérbio</h2>
+<p class="sdesc">Três formas de comparar: <code>-er/more</code>, <code>less</code> e <code>(not) as … as</code>.</p>
+<div class="items">
+<div class="i"><div class="en">I'm busier than I was five years ago.</div><div class="pt">Eu estou mais ocupado do que eu era há cinco anos.</div></div>
+<div class="i"><div class="en">People are more impatient today than in the past.</div><div class="pt">As pessoas são mais impacientes hoje do que antigamente.</div></div>
+<div class="i"><div class="en">I'm less relaxed this year than I was last year.</div><div class="pt">Eu estou menos relaxado este ano do que estava no ano passado.</div></div>
+<div class="i"><div class="en">The service in this restaurant isn't as good as it was.</div><div class="pt">O atendimento deste restaurante não é tão bom quanto era.</div></div>
+<div class="i"><div class="en">People walk more quickly than in the past.</div><div class="pt">As pessoas andam mais rápido do que antigamente.</div></div>
+<div class="i"><div class="en">My brother speaks French, but less fluently than me.</div><div class="pt">Meu irmão fala francês, mas com menos fluência do que eu.</div></div>
+<div class="i"><div class="en">She doesn't drive as fast as her brother.</div><div class="pt">Ela não dirige tão rápido quanto o irmão.</div></div>
+<div class="i"><div class="en">My brother's taller than me. / My brother's taller than I am.</div><div class="pt">Meu irmão é mais alto que eu.</div></div>
+<div class="i"><div class="en">He's not as intelligent as her. / He's not as intelligent as she is.</div><div class="pt">Ele não é tão inteligente quanto ela.</div></div>
+<div class="i"><div class="en">Buying jeans isn't as easy as it used to be.</div><div class="pt">Comprar jeans não é tão fácil quanto era antigamente.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Adjetivo</th><th>Comparativo</th><th>Superlativo</th></tr></thead>
+<tbody>
+<tr><td>short</td><td>shorter</td><td>the shortest</td></tr>
+<tr><td>hot</td><td>hotter</td><td>the hottest</td></tr>
+<tr><td>busy</td><td>busier</td><td>the busiest</td></tr>
+<tr><td>relaxed</td><td>more relaxed</td><td>the most relaxed</td></tr>
+<tr><td>beautiful</td><td>more beautiful</td><td>the most beautiful</td></tr>
+<tr><td class="ok">good</td><td class="ok">better</td><td class="ok">the best</td></tr>
+<tr><td class="ok">bad</td><td class="ok">worse</td><td class="ok">the worst</td></tr>
+<tr><td class="ok">far</td><td class="ok">farther / further</td><td class="ok">the farthest / the furthest</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s14">
+<div class="snum">File 5B</div>
+<h2>Superlativos — e o combo com <i>ever</i></h2>
+<p class="sdesc">O maior, o melhor, o mais barato. Depois do superlativo vem <code>in</code> (não <span class="x">of</span>) para lugares e grupos.</p>
+<div class="items">
+<div class="i"><div class="en">Tokyo is the cleanest city in the world.</div><div class="pt">Tóquio é a cidade mais limpa do mundo.</div></div>
+<div class="i"><div class="en">Mexico is one of the most popular vacation destinations.</div><div class="pt">O México é um dos destinos de férias mais populares.</div></div>
+<div class="i"><div class="en">Camping is the least expensive way to go on vacation.</div><div class="pt">Acampar é a forma menos cara de viajar de férias.</div></div>
+<div class="i"><div class="en">It's the most beautiful city I've ever been to.</div><div class="pt">É a cidade mais bonita que eu já visitei.</div></div>
+<div class="i"><div class="en">It's the best movie I've seen this year.</div><div class="pt">É o melhor filme que eu vi este ano.</div></div>
+<div class="i"><div class="en">It's the noisiest city in the world.</div><div class="pt">É a cidade mais barulhenta do mundo.</div></div>
+<div class="i"><div class="en">Ann's the oldest in the class.</div><div class="pt">A Ann é a mais velha da turma.</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">File 5C</div>
+<h2><i>too much, too many, too</i> e <i>enough</i></h2>
+<p class="sdesc">"Mais do que seria bom" e "o suficiente". A diferença de posição do <code>enough</code> (antes do substantivo, depois do adjetivo) é o detalhe que trai o falante.</p>
+<div class="items">
+<div class="i"><div class="en">I'm very stressed today. I have too much work.</div><div class="pt">Estou muito estressado hoje. Tenho trabalho demais.</div></div>
+<div class="i"><div class="en">My boss talks too much.</div><div class="pt">Meu chefe fala demais.</div></div>
+<div class="i"><div class="en">My diet is unhealthy. I eat too many cookies.</div><div class="pt">Minha alimentação é ruim. Eu como biscoitos demais.</div></div>
+<div class="i"><div class="en">I don't want to go out tonight. I'm too tired.</div><div class="pt">Não quero sair hoje. Estou cansado demais.</div></div>
+<div class="i"><div class="en">Do you eat enough vegetables?</div><div class="pt">Você come legumes suficientes?</div></div>
+<div class="i"><div class="en">I don't drink enough water.</div><div class="pt">Eu não bebo água suficiente.</div></div>
+<div class="i"><div class="en">Jane doesn't sleep enough. She's always tired.</div><div class="pt">A Jane não dorme o suficiente. Ela vive cansada.</div></div>
+<div class="i"><div class="en">Our refrigerator isn't big enough for a family of five.</div><div class="pt">Nossa geladeira não é grande o suficiente para uma família de cinco.</div></div>
+<div class="i"><div class="en">I don't go to bed early enough during the week.</div><div class="pt">Eu não vou dormir cedo o suficiente durante a semana.</div></div>
+<div class="i"><div class="en">There are so many options that you feel the perfect pair must be waiting for you somewhere.</div><div class="pt">Há tantas opções que você sente que o par perfeito deve estar esperando por você em algum lugar.</div></div>
+<div class="i"><div class="en">Too much choice is making us feel unhappy and dissatisfied.</div><div class="pt">Escolha demais está nos deixando infelizes e insatisfeitos.</div></div>
+</div>
+</section>
+
+<section id="s16">
+<div class="snum">File 6A · 6B</div>
+<h2><i>will</i> e <i>won't</i> — previsão, decisão, oferta e promessa</h2>
+<p class="sdesc">Quatro usos que cabem no mesmo verbo. Repare: decisão tomada <b>na hora</b> é <code>will</code>, nunca presente.</p>
+<div class="items">
+<div class="i"><div class="en">I'm seeing Jessica at six. — She'll be late.</div><div class="pt">Eu vou encontrar a Jessica às seis. — Ela vai se atrasar.</div></div>
+<div class="i"><div class="en">The movie's in French. We won't understand anything.</div><div class="pt">O filme é em francês. A gente não vai entender nada.</div></div>
+<div class="i"><div class="en">It's a great book. I'm sure you'll like it.</div><div class="pt">É um livro ótimo. Tenho certeza de que você vai gostar.</div></div>
+<div class="i"><div class="en">I don't think it'll rain tomorrow.</div><div class="pt">Eu acho que não vai chover amanhã.</div></div>
+<div class="i"><div class="en">I think he'll fail the exam. I don't think he'll pass the exam.</div><div class="pt">Acho que ele vai reprovar na prova. Não acho que ele vá passar.</div></div>
+<div class="i"><div class="en">Will he be late? — Yes, he will. / No, he won't.</div><div class="pt">Ele vai se atrasar? — Vai. / Não vai.</div></div>
+<div class="i"><div class="en">I won't stay for dinner. I think I'll go home early.</div><div class="pt">Não vou ficar para o jantar. Acho que vou para casa cedo.</div></div>
+<div class="i"><div class="en">I'll help you with those bags.</div><div class="pt">Eu te ajudo com essas sacolas.</div></div>
+<div class="i"><div class="en">I'll help you with your homework. I'll open the door for you.</div><div class="pt">Eu te ajudo com a lição. Eu abro a porta para você.</div></div>
+<div class="i"><div class="en">I'll always love you. I won't tell anybody.</div><div class="pt">Eu vou te amar sempre. Não vou contar para ninguém.</div></div>
+<div class="i"><div class="en">Shall we go for a walk?</div><div class="pt">Vamos dar uma volta?</div></div>
+<div class="i"><div class="en">You'll love New York.</div><div class="pt">Você vai amar Nova York.</div></div>
+<div class="i"><div class="en">I'll call her later.</div><div class="pt">Eu ligo para ela mais tarde.</div></div>
+<div class="i"><div class="en">I'll pay you back tomorrow.</div><div class="pt">Eu te pago de volta amanhã.</div></div>
+</div>
+</section>
+
+<section id="s17">
+<div class="snum">File 6C</div>
+<h2>Panorama dos tempos verbais</h2>
+<p class="sdesc">A tabela-resumo do livro: um exemplo para cada tempo estudado até aqui — o mapa que vale imprimir.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Tempo</th><th>Para quê</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td><b>simple present</b></td><td class="w">o que sempre ou normalmente acontece</td><td>I live downtown. · She doesn't smoke.</td></tr>
+<tr><td><b>present continuous</b></td><td class="w">o que acontece agora ou por estes dias</td><td>He's looking for a new job.</td></tr>
+<tr><td><b>present continuous</b></td><td class="w">compromisso marcado no futuro</td><td>I'm leaving tomorrow.</td></tr>
+<tr><td><b>simple past</b></td><td class="w">ação terminada no passado</td><td>We saw a good movie last night.</td></tr>
+<tr><td><b>past continuous</b></td><td class="w">ação em andamento num momento do passado</td><td>What were you doing at 7:00?</td></tr>
+<tr><td><b>be going to</b></td><td class="w">plano futuro</td><td>I'm going to see Tom tonight.</td></tr>
+<tr><td><b>be going to</b></td><td class="w">previsão que dá para ver acontecendo</td><td>Look! It's going to snow.</td></tr>
+<tr><td><b>will / won't</b></td><td class="w">previsão, decisão na hora, oferta, promessa</td><td>You'll love New York. · I'll help you.</td></tr>
+<tr><td><b>present perfect</b></td><td class="w">ação recém-terminada (sem dizer quando)</td><td>I've finished the book.</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s18">
+<div class="snum">File 7A · 7B</div>
+<h2>Infinitivo e gerúndio — qual vem depois de quê</h2>
+<p class="sdesc">Depois de verbo, de adjetivo, de palavra interrogativa, de preposição — e o infinitivo de finalidade, que substitui o <span class="x">for + verbo</span> que todo brasileiro tenta usar.</p>
+<div class="items">
+<div class="i"><div class="en">You need to be on time.</div><div class="pt">Você precisa ser pontual.</div></div>
+<div class="i"><div class="en">Try not to talk too much.</div><div class="pt">Tente não falar demais.</div></div>
+<div class="i"><div class="en">It'll be nice to meet new people.</div><div class="pt">Vai ser bom conhecer gente nova.</div></div>
+<div class="i"><div class="en">It's important not to be late.</div><div class="pt">É importante não se atrasar.</div></div>
+<div class="i"><div class="en">I don't know where to go or what to do.</div><div class="pt">Eu não sei aonde ir nem o que fazer.</div></div>
+<div class="i"><div class="en">Why did you wear a suit? — To make a good impression.</div><div class="pt">Por que você usou terno? — Para causar uma boa impressão.</div></div>
+<div class="i"><div class="en">I came to this school to learn English.</div><div class="pt">Eu vim para esta escola para aprender inglês.</div></div>
+<div class="i"><div class="en">Eating outside in the summer makes me feel good.</div><div class="pt">Comer ao ar livre no verão me faz bem.</div></div>
+<div class="i"><div class="en">Happiness is getting up late and not going to work.</div><div class="pt">Felicidade é acordar tarde e não ir trabalhar.</div></div>
+<div class="i"><div class="en">I love having breakfast in bed.</div><div class="pt">Eu adoro tomar café da manhã na cama.</div></div>
+<div class="i"><div class="en">I hate not getting to the airport early.</div><div class="pt">Eu odeio não chegar cedo ao aeroporto.</div></div>
+<div class="i"><div class="en">I'm thinking of buying a new car.</div><div class="pt">Estou pensando em comprar um carro novo.</div></div>
+<div class="i"><div class="en">Jim left without saying goodbye.</div><div class="pt">O Jim saiu sem se despedir.</div></div>
+<div class="i"><div class="en">He loves playing tennis.</div><div class="pt">Ele adora jogar tênis.</div></div>
+</div>
+</section>
+
+<section id="s19">
+<div class="snum">File 7C</div>
+<h2><i>have to, must, can't</i> — obrigação, regra e proibição</h2>
+<p class="sdesc">A diferença que muda tudo: <code>must not</code> é proibido; <code>don't have to</code> é opcional.</p>
+<div class="items">
+<div class="i"><div class="en">I have to speak English at work.</div><div class="pt">Eu tenho que falar inglês no trabalho.</div></div>
+<div class="i"><div class="en">She has to get up at seven every day.</div><div class="pt">Ela tem que levantar às sete todo dia.</div></div>
+<div class="i"><div class="en">We don't have to wear a uniform at this school.</div><div class="pt">A gente não precisa usar uniforme nesta escola.</div></div>
+<div class="i"><div class="en">He doesn't have to work on Saturdays.</div><div class="pt">Ele não precisa trabalhar aos sábados.</div></div>
+<div class="i"><div class="en">Do I have to buy a grammar book?</div><div class="pt">Eu preciso comprar um livro de gramática?</div></div>
+<div class="i"><div class="en">What time does she have to get up in the morning?</div><div class="pt">A que horas ela tem que levantar de manhã?</div></div>
+<div class="i"><div class="en">You must do your homework tonight.</div><div class="pt">Você tem que fazer a lição hoje à noite.</div></div>
+<div class="i"><div class="en">She must clean up her room before she goes out.</div><div class="pt">Ela tem que arrumar o quarto antes de sair.</div></div>
+<div class="i"><div class="en">You must not leave your bags here.</div><div class="pt">Você não pode deixar as suas malas aqui.</div></div>
+<div class="i"><div class="en">You can't bring food into the library.</div><div class="pt">Não é permitido levar comida para dentro da biblioteca.</div></div>
+<div class="i"><div class="en">You must not go. — It's prohibited.</div><div class="pt">Você não pode ir. — É proibido.</div></div>
+<div class="i"><div class="en">You don't have to go. — You can go if you want to.</div><div class="pt">Você não precisa ir. — Pode ir se quiser.</div></div>
+<div class="i"><div class="en">You have to wear a seatbelt in a car.</div><div class="pt">Tem que usar cinto de segurança no carro.</div></div>
+</div>
+</section>
+
+<section id="s20">
+<div class="snum">File 8A</div>
+<h2><i>should</i> e <i>shouldn't</i> — dar conselho</h2>
+<p class="sdesc">O verbo do conselho. Em português a gente nega o verbo; em inglês nega-se o <code>think</code>.</p>
+<div class="items">
+<div class="i"><div class="en">You should leave your boyfriend.</div><div class="pt">Você devia terminar com o seu namorado.</div></div>
+<div class="i"><div class="en">She's very stressed. She shouldn't work so hard.</div><div class="pt">Ela está muito estressada. Não devia trabalhar tanto.</div></div>
+<div class="i"><div class="en">You shouldn't drink coffee in the evening. It'll keep you awake.</div><div class="pt">Você não devia tomar café à noite. Vai te deixar acordado.</div></div>
+<div class="i"><div class="en">I think you should get a new job.</div><div class="pt">Eu acho que você devia arrumar um emprego novo.</div></div>
+<div class="i"><div class="en">I don't think you should speak to him.</div><div class="pt">Eu acho que você não devia falar com ele.</div></div>
+<div class="i"><div class="en">You ought to leave your boyfriend.</div><div class="pt">Você deveria terminar com o seu namorado.</div></div>
+<div class="i"><div class="en">She ought not to work so hard.</div><div class="pt">Ela não deveria trabalhar tanto.</div></div>
+</div>
+</section>
+
+<section id="s21">
+<div class="snum">File 8B · 9A</div>
+<h2>Os dois condicionais: o possível e o hipotético</h2>
+<p class="sdesc">O primeiro é para o que pode acontecer amanhã; o segundo, para o que só existe na imaginação. Compare as duas frases sobre o mesmo dia de trabalho.</p>
+<div class="items">
+<div class="i"><div class="en">If we get to the airport early, the flight will be delayed.</div><div class="pt">Se a gente chegar cedo ao aeroporto, o voo vai atrasar.</div></div>
+<div class="i"><div class="en">If you tell her the truth, she won't believe you.</div><div class="pt">Se você contar a verdade para ela, ela não vai acreditar.</div></div>
+<div class="i"><div class="en">What will you do if you don't find a job?</div><div class="pt">O que você vai fazer se não arrumar emprego?</div></div>
+<div class="i"><div class="en">If you don't go, she won't be very happy.</div><div class="pt">Se você não for, ela não vai gostar nada.</div></div>
+<div class="i"><div class="en">If you miss the last bus, get a taxi.</div><div class="pt">Se você perder o último ônibus, pegue um táxi.</div></div>
+<div class="i"><div class="en">If you miss the last bus, you can get a taxi.</div><div class="pt">Se você perder o último ônibus, pode pegar um táxi.</div></div>
+<div class="i"><div class="en">If a cow attacked me, I'd run away.</div><div class="pt">Se uma vaca me atacasse, eu sairia correndo.</div></div>
+<div class="i"><div class="en">If she didn't have a dog, she wouldn't exercise.</div><div class="pt">Se ela não tivesse cachorro, não se exercitaria.</div></div>
+<div class="i"><div class="en">Would you go for a swim if there were sharks in the ocean?</div><div class="pt">Você entraria para nadar se houvesse tubarões no mar?</div></div>
+<div class="i"><div class="en">If I had more time, I'd exercise more.</div><div class="pt">Se eu tivesse mais tempo, eu me exercitaria mais.</div></div>
+<div class="i"><div class="en">If we went by car, we could stop at places on the way.</div><div class="pt">Se a gente fosse de carro, poderia parar em lugares no caminho.</div></div>
+<div class="i"><div class="en">If Jack were here, he'd know what to do.</div><div class="pt">Se o Jack estivesse aqui, ele saberia o que fazer.</div></div>
+<div class="i"><div class="en">If I were you, I wouldn't take that job.</div><div class="pt">Se eu fosse você, eu não aceitaria esse emprego.</div></div>
+<div class="i"><div class="en">If I don't have to work tomorrow, I'll help you.</div><div class="pt">Se eu não precisar trabalhar amanhã, eu te ajudo. <i>(é possível)</i></div></div>
+<div class="i"><div class="en">If I didn't have to work tomorrow, I'd help you.</div><div class="pt">Se eu não precisasse trabalhar amanhã, eu te ajudaria. <i>(mas eu preciso)</i></div></div>
+<div class="i"><div class="en">I'd never have a cat as a pet.</div><div class="pt">Eu nunca teria um gato de estimação.</div></div>
+<div class="i"><div class="en">They'd be happier in a bigger house.</div><div class="pt">Eles seriam mais felizes numa casa maior.</div></div>
+</div>
+</section>
+
+<section id="s22">
+<div class="snum">File 8C</div>
+<h2>Possessivos: <i>mine, yours, hers…</i></h2>
+<p class="sdesc">O pronome possessivo substitui o substantivo — e por isso <b>nunca vem acompanhado dele</b>.</p>
+<div class="items">
+<div class="i"><div class="en">Whose coat is it? — It's my coat. It's mine.</div><div class="pt">De quem é este casaco? — É o meu casaco. É meu.</div></div>
+<div class="i"><div class="en">Whose jacket is it? — It's your jacket. It's yours.</div><div class="pt">De quem é esta jaqueta? — É a sua jaqueta. É sua.</div></div>
+<div class="i"><div class="en">Whose bag is it? — It's her bag. It's hers.</div><div class="pt">De quem é esta bolsa? — É a bolsa dela. É dela.</div></div>
+<div class="i"><div class="en">Whose dog is it? — It's our dog. It's ours.</div><div class="pt">De quem é este cachorro? — É o nosso cachorro. É nosso.</div></div>
+<div class="i"><div class="en">Whose house is it? — It's their house. It's theirs.</div><div class="pt">De quem é esta casa? — É a casa deles. É deles.</div></div>
+<div class="i"><div class="en">Is it yours? — Yes, it's mine.</div><div class="pt">É seu? — É, é meu.</div></div>
+<div class="i"><div class="en">Whose is that bag?</div><div class="pt">De quem é aquela bolsa?</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Sujeito</th><th>Objeto</th><th>Adjetivo possessivo</th><th>Pronome possessivo</th></tr></thead>
+<tbody>
+<tr><td>I</td><td>me</td><td>my</td><td><b>mine</b></td></tr>
+<tr><td>you</td><td>you</td><td>your</td><td><b>yours</b></td></tr>
+<tr><td>he</td><td>him</td><td>his</td><td><b>his</b></td></tr>
+<tr><td>she</td><td>her</td><td>her</td><td><b>hers</b></td></tr>
+<tr><td>it</td><td>it</td><td>its</td><td class="w">&mdash;</td></tr>
+<tr><td>we</td><td>us</td><td>our</td><td><b>ours</b></td></tr>
+<tr><td>they</td><td>them</td><td>their</td><td><b>theirs</b></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s23">
+<div class="snum">File 9B · 9C</div>
+<h2><i>for</i> e <i>since</i> — quanto tempo faz</h2>
+<p class="sdesc">Começou no passado e continua até agora: present perfect, nunca presente simples. <code>for</code> = período; <code>since</code> = ponto de partida.</p>
+<div class="items">
+<div class="i"><div class="en">Where do you live now? — In Tokyo.</div><div class="pt">Onde você mora agora? — Em Tóquio.</div></div>
+<div class="i"><div class="en">How long have you lived there? — I've lived there for 20 years.</div><div class="pt">Há quanto tempo você mora lá? — Moro lá há 20 anos.</div></div>
+<div class="i"><div class="en">How long have you worked there? — I've worked there since 2015.</div><div class="pt">Há quanto tempo você trabalha lá? — Trabalho lá desde 2015.</div></div>
+<div class="i"><div class="en">I've had this car for three months.</div><div class="pt">Eu tenho este carro há três meses.</div></div>
+<div class="i"><div class="en">I've been afraid of spiders since I was a child.</div><div class="pt">Eu tenho medo de aranha desde criança.</div></div>
+<div class="i"><div class="en">How long have you been married?</div><div class="pt">Há quanto tempo você é casado?</div></div>
+<div class="i"><div class="en">She's been married since 1984.</div><div class="pt">Ela é casada desde 1984.</div></div>
+<div class="i"><div class="en">How long was Janet Leigh married to Tony Curtis? — She was married to him for 11 years.</div><div class="pt">Por quanto tempo Janet Leigh foi casada com Tony Curtis? — Ela foi casada com ele por 11 anos.</div></div>
+<div class="i"><div class="en">How many books did she write? — She wrote four books.</div><div class="pt">Quantos livros ela escreveu? — Ela escreveu quatro livros.</div></div>
+<div class="i"><div class="en">What kind of books has she written? — She's written children's books.</div><div class="pt">Que tipo de livro ela escreve? — Ela escreve livros infantis.</div></div>
+<div class="i"><div class="en">Jack was married for ten years.</div><div class="pt">O Jack foi casado por dez anos. <i>(não é mais)</i></div></div>
+<div class="i"><div class="en">Jack has been married for ten years.</div><div class="pt">O Jack está casado há dez anos. <i>(ainda é)</i></div></div>
+</div>
+</section>
+
+<section id="s24">
+<div class="snum">File 10A</div>
+<h2>Expressar movimento</h2>
+<p class="sdesc">Verbo de movimento + preposição. <code>come</code> é vir na sua direção; <code>go</code> é ir para longe de você.</p>
+<div class="items">
+<div class="i"><div class="en">The ball went over the goalkeeper's head and into the goal.</div><div class="pt">A bola passou por cima da cabeça do goleiro e entrou no gol.</div></div>
+<div class="i"><div class="en">He drove out of the garage and along the street.</div><div class="pt">Ele saiu de carro da garagem e seguiu pela rua.</div></div>
+<div class="i"><div class="en">I ran over the bridge and across the park.</div><div class="pt">Eu corri por cima da ponte e atravessei o parque.</div></div>
+<div class="i"><div class="en">Come into the living room.</div><div class="pt">Entre na sala.</div></div>
+<div class="i"><div class="en">He went out of the house.</div><div class="pt">Ele saiu de casa.</div></div>
+<div class="i"><div class="en">Come in. / He went out.</div><div class="pt">Entre. / Ele saiu.</div></div>
+<div class="i"><div class="en">He swam across the river.</div><div class="pt">Ele atravessou o rio a nado.</div></div>
+<div class="i"><div class="en">We walked through the crowds and reached the empty streets on the other side.</div><div class="pt">A gente atravessou a multidão e chegou às ruas vazias do outro lado.</div></div>
+<div class="i"><div class="en">Go away! I don't want to speak to you.</div><div class="pt">Vá embora! Eu não quero falar com você.</div></div>
+<div class="i"><div class="en">The man ran away when he saw the police officer.</div><div class="pt">O homem saiu correndo quando viu o policial.</div></div>
+<div class="i"><div class="en">After dinner we went back to our hotel.</div><div class="pt">Depois do jantar a gente voltou para o hotel.</div></div>
+<div class="i"><div class="en">Their dog ran away and never came back.</div><div class="pt">O cachorro deles fugiu e nunca mais voltou.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Preposição</th><th>Sentido</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>along</td><td class="w">ao longo de</td><td>along the street</td></tr>
+<tr><td>across</td><td class="w">de um lado a outro (superfície)</td><td>across the road</td></tr>
+<tr><td>through</td><td class="w">de um lado a outro (por dentro)</td><td>through the tunnel</td></tr>
+<tr><td>over / under</td><td class="w">por cima / por baixo</td><td>over the bridge · under the bridge</td></tr>
+<tr><td>around</td><td class="w">em volta de</td><td>around the lake</td></tr>
+<tr><td>past</td><td class="w">passando por</td><td>past the church</td></tr>
+<tr><td>toward</td><td class="w">em direção a</td><td>toward the lake</td></tr>
+<tr><td>up / down</td><td class="w">para cima / para baixo</td><td>up the steps · down the steps</td></tr>
+<tr><td>into / out of</td><td class="w">para dentro / para fora</td><td>into the store · out of the store</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s25">
+<div class="snum">File 10B</div>
+<h2>Phrasal verbs — e onde colocar o objeto</h2>
+<p class="sdesc">Três tipos: sem objeto, separável e inseparável. Quando o objeto é pronome (<code>it</code>, <code>them</code>), ele fica <b>no meio</b>.</p>
+<div class="items">
+<div class="i"><div class="en">What time do you get up?</div><div class="pt">A que horas você acorda?</div></div>
+<div class="i"><div class="en">I don't usually go out during the week.</div><div class="pt">Eu normalmente não saio durante a semana.</div></div>
+<div class="i"><div class="en">Put on your coat. / Put your coat on. / Put it on!</div><div class="pt">Vista o casaco. / Vista ele!</div></div>
+<div class="i"><div class="en">Turn off the TV. / Turn the TV off. / Turn it off.</div><div class="pt">Desliga a TV. / Desliga ela.</div></div>
+<div class="i"><div class="en">I'm looking for my glasses.</div><div class="pt">Estou procurando meus óculos.</div></div>
+<div class="i"><div class="en">Have you found your glasses? — No, I'm still looking for them.</div><div class="pt">Você achou seus óculos? — Não, ainda estou procurando.</div></div>
+<div class="i"><div class="en">The match will be over at about 5:30.</div><div class="pt">O jogo vai acabar por volta das 5h30.</div></div>
+<div class="i"><div class="en">My alarm goes off at six o'clock every morning.</div><div class="pt">Meu despertador toca às seis toda manhã.</div></div>
+<div class="i"><div class="en">We set off for the airport at 6:30.</div><div class="pt">A gente saiu para o aeroporto às 6h30.</div></div>
+<div class="i"><div class="en">I want to give up chocolate.</div><div class="pt">Eu quero parar de comer chocolate.</div></div>
+<div class="i"><div class="en">Don't throw away that letter!</div><div class="pt">Não joga fora essa carta!</div></div>
+<div class="i"><div class="en">Turn down the music! It's very loud.</div><div class="pt">Abaixa a música! Está muito alta.</div></div>
+<div class="i"><div class="en">Turn up the TV! I can't hear.</div><div class="pt">Aumenta a TV! Não estou ouvindo.</div></div>
+<div class="i"><div class="en">He looked up the words in a dictionary.</div><div class="pt">Ele procurou as palavras no dicionário.</div></div>
+<div class="i"><div class="en">Could you fill out this form?</div><div class="pt">Você poderia preencher este formulário?</div></div>
+<div class="i"><div class="en">I want to find out about hotels in Madrid.</div><div class="pt">Eu quero me informar sobre hotéis em Madri.</div></div>
+<div class="i"><div class="en">It's bedtime — go and put on your pajamas.</div><div class="pt">Hora de dormir — vá vestir o pijama.</div></div>
+<div class="i"><div class="en">Could you take off your boots, please?</div><div class="pt">Você poderia tirar as botas, por favor?</div></div>
+<div class="i"><div class="en">My sister's looking after Jimmy for me today.</div><div class="pt">Minha irmã está cuidando do Jimmy para mim hoje.</div></div>
+<div class="i"><div class="en">I'm really looking forward to vacation!</div><div class="pt">Estou muito ansioso pelas férias!</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Tipo</th><th>Regra</th><th>Exemplos</th></tr></thead>
+<tbody>
+<tr><td><b>1 — sem objeto</b></td><td class="w">verbo e partícula nunca se separam</td><td>get up · go out · wake up · come on · sit down</td></tr>
+<tr><td><b>2 — separável</b></td><td class="w">objeto antes ou depois da partícula; pronome sempre no meio</td><td>turn on/off · put on · try on · write down · pick up · take out</td></tr>
+<tr><td><b>3 — inseparável</b></td><td class="w">verbo e partícula nunca se separam, mesmo com objeto</td><td>look for · look after · get on/off · get along with · run out of</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s26">
+<div class="snum">File 10C</div>
+<h2>A voz passiva</h2>
+<p class="sdesc">Quando quem fez não se sabe ou não importa. O foco muda de quem faz para o que foi feito.</p>
+<div class="items">
+<div class="i"><div class="en">Twenty billion pieces of Lego are produced every year.</div><div class="pt">Vinte bilhões de peças de Lego são produzidas todo ano.</div></div>
+<div class="i"><div class="en">CDs aren't used very much nowadays.</div><div class="pt">CDs não são muito usados hoje em dia.</div></div>
+<div class="i"><div class="en">Is Spanish spoken in New Mexico?</div><div class="pt">Fala-se espanhol no Novo México?</div></div>
+<div class="i"><div class="en">The hot-air balloon was invented by two Frenchmen.</div><div class="pt">O balão de ar quente foi inventado por dois franceses.</div></div>
+<div class="i"><div class="en">Stamps weren't invented until 1840.</div><div class="pt">Os selos só foram inventados em 1840.</div></div>
+<div class="i"><div class="en">When was the watch invented?</div><div class="pt">Quando o relógio de pulso foi inventado?</div></div>
+<div class="i"><div class="en">Alfred Nobel invented dynamite.</div><div class="pt">Alfred Nobel inventou a dinamite. <i>(ativa)</i></div></div>
+<div class="i"><div class="en">Dynamite was invented by Alfred Nobel.</div><div class="pt">A dinamite foi inventada por Alfred Nobel. <i>(passiva)</i></div></div>
+<div class="i"><div class="en">My car was stolen last week.</div><div class="pt">Meu carro foi roubado semana passada.</div></div>
+<div class="i"><div class="en">Volvo cars are made in Sweden.</div><div class="pt">Os carros Volvo são fabricados na Suécia.</div></div>
+<div class="i"><div class="en">The Lord of the Rings was written by Tolkien.</div><div class="pt">O Senhor dos Anéis foi escrito por Tolkien.</div></div>
+</div>
+</section>
+
+<section id="s27">
+<div class="snum">Practical English 1</div>
+<h2>No hotel — reclamar de um problema</h2>
+<p class="sdesc">O episódio inteiro: o hóspede liga para a recepção duas vezes. Repare no <code>I'll…</code> — é assim que se oferece ajuda em inglês.</p>
+<div class="items">
+<div class="i"><div class="en">Hello, reception. How can I help you?</div><div class="pt">Recepção, boa noite. Em que posso ajudar?</div></div>
+<div class="i"><div class="en">Hello. This is room 613.</div><div class="pt">Olá. Aqui é do quarto 613.</div></div>
+<div class="i"><div class="en">There's a problem with the air-conditioning. It isn't working, and it's very hot in my room.</div><div class="pt">Tem um problema com o ar-condicionado. Ele não está funcionando, e meu quarto está muito quente.</div></div>
+<div class="i"><div class="en">I'm sorry, sir. I'll send somebody up to look at it right now.</div><div class="pt">Desculpe, senhor. Vou mandar alguém subir para dar uma olhada agora mesmo.</div></div>
+<div class="i"><div class="en">I'm sorry to bother you again. This is room 613.</div><div class="pt">Desculpe incomodar de novo. Aqui é do quarto 613.</div></div>
+<div class="i"><div class="en">I have a problem with the wi-fi. I can't get a signal.</div><div class="pt">Estou com um problema no wi-fi. Não consigo pegar sinal.</div></div>
+<div class="i"><div class="en">I'm sorry, sir. I'll put you through to IT.</div><div class="pt">Desculpe, senhor. Vou transferir o senhor para a TI.</div></div>
+<div class="i"><div class="en">What's your room like? — Yes, I can see the mountains.</div><div class="pt">Como é o seu quarto? — Dá para ver as montanhas.</div></div>
+<div class="i"><div class="en">Do you have a good view?</div><div class="pt">Você tem uma vista boa?</div></div>
+<div class="i"><div class="en">You must be really tired. You had a very long flight.</div><div class="pt">Você deve estar exausto. Foi um voo bem longo.</div></div>
+<div class="i"><div class="en">So what was wrong with your hotel? — My room was tiny. Then the wi-fi didn't work.</div><div class="pt">E o que houve de errado com o seu hotel? — Meu quarto era minúsculo. E aí o wi-fi não funcionava.</div></div>
+</div>
+</section>
+
+<section id="s28">
+<div class="snum">Practical English 2</div>
+<h2>No restaurante — pedir e reclamar</h2>
+<p class="sdesc">Do "Are you ready to order?" até o erro na conta. É o vocabulário que resolve um almoço inteiro.</p>
+<div class="items">
+<div class="i"><div class="en">Are you ready to order? — Yes, please.</div><div class="pt">Já podem pedir? — Sim, por favor.</div></div>
+<div class="i"><div class="en">Can I get you something to drink? — No, thank you.</div><div class="pt">Posso trazer algo para beber? — Não, obrigado.</div></div>
+<div class="i"><div class="en">I'd like the tuna with a green salad.</div><div class="pt">Eu queria o atum com salada verde.</div></div>
+<div class="i"><div class="en">And for you, sir? — I'll have the steak, please.</div><div class="pt">E para o senhor? — Eu vou querer o bife, por favor.</div></div>
+<div class="i"><div class="en">Would you like that with fries or a baked potato? — Fries, please.</div><div class="pt">Vai querer com fritas ou batata assada? — Fritas, por favor.</div></div>
+<div class="i"><div class="en">How would you like your steak? Rare or well done? — Well done, please.</div><div class="pt">Como o senhor quer o bife? Malpassado ou bem passado? — Bem passado, por favor.</div></div>
+<div class="i"><div class="en">And to drink? Still or sparkling? — Sparkling.</div><div class="pt">E para beber? Sem gás ou com gás? — Com gás.</div></div>
+<div class="i"><div class="en">I'm sorry, but I asked for a green salad, not fries.</div><div class="pt">Desculpe, mas eu pedi salada verde, não fritas.</div></div>
+<div class="i"><div class="en">Sorry. I asked for my steak well done and this is rare.</div><div class="pt">Desculpe. Eu pedi meu bife bem passado e este está malpassado.</div></div>
+<div class="i"><div class="en">I'm really sorry. I'll take it back to the kitchen.</div><div class="pt">Sinto muito mesmo. Vou levar de volta para a cozinha.</div></div>
+<div class="i"><div class="en">I'm really sorry. I'll go and change it.</div><div class="pt">Sinto muito. Vou trocar agora.</div></div>
+<div class="i"><div class="en">Excuse me, I think there's a mistake. We had two cups of coffee, not three.</div><div class="pt">Com licença, acho que houve um engano. A gente tomou dois cafés, não três.</div></div>
+<div class="i"><div class="en">Could we have the check, please?</div><div class="pt">A conta, por favor? <i>(check nos EUA, bill no Reino Unido)</i></div></div>
+<div class="i"><div class="en">That was a great meal. — Yes, delicious.</div><div class="pt">A refeição estava ótima. — Estava deliciosa.</div></div>
+<div class="i"><div class="en">We want to go to a good pizzeria. — Mimmo's on Park Avenue is great.</div><div class="pt">A gente quer ir numa pizzaria boa. — A Mimmo's, na Park Avenue, é ótima.</div></div>
+</div>
+</section>
+
+<section id="s29">
+<div class="snum">Social English</div>
+<h2>As frases sociais que ligam a conversa</h2>
+<p class="sdesc">As expressões curtas que o livro isola em cada episódio — as que fazem a diferença entre falar certo e soar natural.</p>
+<div class="items">
+<div class="i"><div class="en">It's great to be here.</div><div class="pt">É ótimo estar aqui.</div></div>
+<div class="i"><div class="en">It's great to see you again.</div><div class="pt">Que bom te ver de novo.</div></div>
+<div class="i"><div class="en">It's so good to see you again.</div><div class="pt">Que bom demais te ver de novo.</div></div>
+<div class="i"><div class="en">You must be really tired.</div><div class="pt">Você deve estar exausto.</div></div>
+<div class="i"><div class="en">I guess you're right.</div><div class="pt">Acho que você tem razão.</div></div>
+<div class="i"><div class="en">By the way, what time's the meeting tomorrow?</div><div class="pt">Aliás, que horas é a reunião amanhã?</div></div>
+<div class="i"><div class="en">So tell me…</div><div class="pt">Então me conta…</div></div>
+<div class="i"><div class="en">Well, to begin with…</div><div class="pt">Bom, para começar…</div></div>
+<div class="i"><div class="en">Do you have any plans?</div><div class="pt">Você tem algum plano?</div></div>
+<div class="i"><div class="en">That would be great.</div><div class="pt">Isso seria ótimo.</div></div>
+<div class="i"><div class="en">OK, it's time to go. — Yes, it's getting late.</div><div class="pt">Bom, está na hora de ir. — É, está ficando tarde.</div></div>
+<div class="i"><div class="en">No problem.</div><div class="pt">Sem problema.</div></div>
+<div class="i"><div class="en">How awful. Poor thing.</div><div class="pt">Que horror. Coitada.</div></div>
+<div class="i"><div class="en">Don't worry about anything. We'll be absolutely fine.</div><div class="pt">Não se preocupe com nada. Vai ficar tudo bem.</div></div>
+<div class="i"><div class="en">Can I help you with anything?</div><div class="pt">Posso ajudar em alguma coisa?</div></div>
+<div class="i"><div class="en">Of course I can, honey.</div><div class="pt">Claro que posso, querida.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 12 V03 · Livro 02 · American English File 2 — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' seções.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'seção':'seções')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
