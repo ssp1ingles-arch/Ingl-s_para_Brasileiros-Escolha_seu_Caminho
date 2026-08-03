@@ -3,7 +3,7 @@
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
 > **Atualização mais recente: 2026-08-03 — ver blocos 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).**
 
-## 0n. Atualização 2026-08-03 — Sistema 11 (Baseado em Livros V02) · livro 03
+## 0n. Atualização 2026-08-03 — Sistema 11 (Baseado em Livros V02) · livros 03 e 05
 
 > Fonte: **exclusivamente o arquivo `.md`**. Template visual novo (o mesmo do S14/S15/S16/S18), não o antigo `example-list` dos livros 01, 02 e 04 deste Sistema.
 
@@ -38,8 +38,33 @@ Sistema; os quadros de resumo e os índices remissivos.
 ativo; métricas 3 → 4 disponíveis, 3.900+ → 4.270+ exemplos) e a entrada 11 do
 `sistemas.json`.
 
-**Continuam pendentes no S11:** `livro05.html` (*English Pronunciation Made
-Simple*) e `livro06.html` (*Reactivate Your Grammar And Vocabulary C1/C2*).
+### Livro 05 — English Pronunciation Made Simple · ✅ 2026-08-03
+
+| Livro | Arquivo `.md` | Painel | Blocos | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S11 · Livro 05 | `05_English Pronunciation Made Simple.md` | `livro05.html` | 22 | 239 | 77 KB | ✅ **2026-08-03** |
+
+**Critério de recorte.** Pronúncia já aparece em três outros pontos do projeto
+(S03 livro01 · Rachel's English; S14 livro05 · Susan Cameron; S16 livro03 ·
+*Pronunciation in Use Elementary*). O que o Dale & Poms tem de próprio é o
+**mapa das confusões**: em cada uma das 42 lições ele diz qual som o aluno vai
+pôr no lugar e **que palavra vai sair** (*sheep → ship*, *very → berry*,
+*thank → sank*, *state → estate*). O painel foi montado sobre isso: por bloco,
+o erro nomeado, o par mínimo, a frase de contraste em que o erro muda o
+sentido e a instrução física da boca. Inclui as três lições de Parte 2 —
+acento da palavra, acento da frase (*content* × *function words*), ritmo
+(contração, *blending*, redução: `ham'n cheese`, `pieceapie`, `Whatimeisit?`)
+e entonação.
+
+**OCR:** os símbolos fonéticos vieram corrompidos no `.md` (`[il`, `[erl`,
+`[0]`, `Ifl`…). Todos foram restaurados em IPA a partir do título de cada lição
+e dos exemplos.
+
+**Descartado:** enunciados de exercício, gabaritos do Apêndice II, instruções
+de faixa de CD e os poemas de leitura em voz alta.
+
+**Continua pendente no S11:** `livro06.html` (*Reactivate Your Grammar And
+Vocabulary C1/C2*).
 
 ## 0m. Atualização 2026-08-03 — Sistema 14 (Baseado em Livros V05) · CONCLUÍDO
 
