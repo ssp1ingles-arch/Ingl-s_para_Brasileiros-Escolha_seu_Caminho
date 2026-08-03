@@ -1,6 +1,6 @@
 # Progresso da conversão sequencial de PDFs
 
-Atualizado em: 2026-08-01
+Atualizado em: 2026-08-03
 
 ## Concluído e auditado
 
@@ -24,22 +24,29 @@ Atualizado em: 2026-08-01
   - Livro 04: 169 páginas textuais, 18.459 linhas e 595.838 bytes; página 168 quase vazia confirmada visualmente.
   - Livro 05: 193 páginas textuais, 10.948 linhas e 517.556 bytes.
   - Livro 06: 216 páginas textuais, 16.776 linhas e 588.102 bytes.
-- Sistema 11 — Baseado em Livros V02: 5 de 6 livros (o livro 06 foi excluído do escopo por orientação do usuário).
+- Sistema 11 — Baseado em Livros V02: 6 de 6 livros.
   - Livro 01: 392 páginas textuais, 22.688 linhas e 957.087 bytes; páginas 2 e 393 vazias confirmadas visualmente.
   - Livro 02: 174 páginas textuais, 8.806 linhas e 231.562 bytes.
   - Livro 03: 453 páginas textuais, 21.352 linhas e 900.055 bytes; página 1 (capa, OCR de baixa confiança) confirmada visualmente.
   - Livro 04: 299 páginas textuais, 14.065 linhas e 630.757 bytes; nenhuma página exigiu OCR.
   - Livro 05: 325 páginas analisadas, 320 com texto, 18.038 linhas e 407.707 bytes; PDF totalmente digitalizado (OCR nas 325 páginas). As 5 páginas sem texto (15, 93, 95, 125 e 127) foram confirmadas visualmente como folhas em branco do scan. A página 56 (menor confiança, 0,703) foi conferida visualmente: a prosa está íntegra; a confiança baixa vem dos marcadores fonéticos minúsculos (`[u]`, `[ʊ]`) sobrescritos às palavras, que o OCR isola em linhas curtas ao longo de todo o livro.
+  - Livro 06: 259 páginas textuais, 20.162 linhas e 574.638 bytes; PDF totalmente digitalizado (OCR nas 259 páginas).
+- Sistema 10 — Baseado em Livros V01: 6 de 6 livros.
+  - Livro 01: 367 páginas textuais, 13.460 linhas e 363.347 bytes.
+  - Livro 02: 164 páginas textuais, 8.422 linhas e 125.499 bytes; PDF totalmente digitalizado (OCR nas 164 páginas).
+  - Livro 03: 61 páginas textuais, 950 linhas e 18.103 bytes.
+  - Livro 04: 201 páginas textuais, 5.179 linhas e 183.990 bytes.
+  - Livro 05: 128 páginas analisadas, 121 com texto, 4.956 linhas e 193.585 bytes; sete páginas puramente visuais sem texto foram omitidas.
+  - Livro 06: 285 páginas textuais, 10.372 linhas e 535.472 bytes.
+- Sistema 23 — Baseado em Livros — Kids: 2 de 2 livros.
+  - Livro 01: 88 páginas textuais, 3.036 linhas e 50.770 bytes; PDF totalmente digitalizado (OCR nas 88 páginas).
+  - Livro 02: 104 páginas textuais, 3.841 linhas e 71.138 bytes; PDF totalmente digitalizado (OCR nas 104 páginas).
 
 Todos os livros acima foram validados sem resíduos `(cid:n)`, sem U+FFFD, sem linhas acima de 500 caracteres e sem páginas duplicadas. As páginas vazias e as páginas de menor confiança foram verificadas visualmente quando aplicável.
 
 ## Ponto exato de retomada
 
-Trabalho parado aguardando nova orientação do usuário.
-
-O Sistema 11 — Baseado em Livros V02 está encerrado dentro do escopo definido: os livros 01 a 05 foram convertidos e auditados; o livro `06_Reactivate Your Grammar And Vocabulary C1C2 - Exams.pdf` não deve ser convertido (orientação do usuário em 2026-08-02).
-
-A sequência prevista adiante era Sistemas 10, 09 e 08, um livro por vez com auditoria antes de avançar — mas só retomar após confirmação do usuário.
+Sistemas 10, 11 e 23 concluídos e auditados. A próxima retomada da sequência geral pode começar pelo Sistema 09, conforme nova orientação do usuário.
 
 ## Restrições mantidas
 
