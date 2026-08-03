@@ -1,7 +1,45 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-03 — ver blocos 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12), todos concluídos.**
+> **Atualização mais recente: 2026-08-03 — ver blocos 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).**
+
+## 0n. Atualização 2026-08-03 — Sistema 11 (Baseado em Livros V02) · livro 03
+
+> Fonte: **exclusivamente o arquivo `.md`**. Template visual novo (o mesmo do S14/S15/S16/S18), não o antigo `example-list` dos livros 01, 02 e 04 deste Sistema.
+
+| Livro | Arquivo `.md` | Painel | Blocos | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S11 · Livro 03 | `03_Oxford-Guide-to-English-Grammar.md` | `livro03.html` | 23 | 370 | 107 KB | ✅ **2026-08-03** |
+
+**Critério de recorte — este é o ponto importante.** O Oxford Guide tem 453
+páginas e 40 capítulos de gramática de referência; despejar tudo produziria um
+painel redundante, porque os livros 01 (*English Grammar in Use*), 02 (*Grammar
+Practice*) e 04 (*Essential Grammar in Use*) deste mesmo Sistema já cobrem
+tempos verbais, modais, condicionais, artigos, preposições e relativas **com
+exercício**. O painel foi montado só sobre o que o Eastwood tem e eles não têm:
+
+- **Cap. 5 — elipse e substituição** (parar no auxiliar, o `to` solto, `So do I`,
+  `do so/do it/do that`, `I think so / I'm afraid not`, one/ones, estilos que
+  cortam tudo: placa, manchete, instrução, cartão-postal, anotação).
+- **Cap. 6 — ordem da informação e ênfase** (velho antes / novo depois, front
+  position, inversão, `there + be`, `it` vazio, `do` enfático, clivadas com
+  *it* e com *what*).
+- **Cap. 7 — inglês falado × escrito** (transcrição de conversa real, *well*,
+  *you know*, *sort of*, *or something*, entonação que sobe e desce, formas
+  fracas e curtas, pontuação — incluindo o erro de ligar duas orações só com
+  vírgula, que é transferência direta do português).
+- **Cap. 40 — British × American English**, o apêndice inteiro: verbos,
+  substantivos, adjetivos, preposições, conjunções e grafia.
+
+**Descartado:** os capítulos 1–4 e 8–39, por sobreposição com os outros livros do
+Sistema; os quadros de resumo e os índices remissivos.
+
+**Também atualizados:** o hub do S11 (card do livro 03 saiu de "Em breve" para
+ativo; métricas 3 → 4 disponíveis, 3.900+ → 4.270+ exemplos) e a entrada 11 do
+`sistemas.json`.
+
+**Continuam pendentes no S11:** `livro05.html` (*English Pronunciation Made
+Simple*) e `livro06.html` (*Reactivate Your Grammar And Vocabulary C1/C2*).
 
 ## 0m. Atualização 2026-08-03 — Sistema 14 (Baseado em Livros V05) · CONCLUÍDO
 
