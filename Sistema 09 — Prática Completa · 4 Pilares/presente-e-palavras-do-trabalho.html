@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 09 · Presente e palavras do trabalho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#14B8A6;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;line-height:1.45;font-style:italic;}
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="index.html" class="back">&#8592; Voltar ao Sistema 09</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 09 · prática completa · produção real</div>
+<h1 class="title">Presente e as palavras do <em>trabalho</em></h1>
+<p class="lead">Material de produção: o par <b>present simple × present continuous</b> visto na mesma cena e depois na forma completa, a construção <i>on my way home</i> com a pegadinha do <code>to</code>, as seis palavras do trabalho (<i>work</i>, <i>job</i>, <i>career</i>, <i>occupation</i>, <i>profession</i>, <i>vocation</i>) e os adjetivos entre o novo e o antigo.</p>
+
+<div class="metrics">
+  <div class="metric"><b>10</b><span>blocos</span></div>
+  <div class="metric"><b id="m-total">&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>EN/PT</b><span>com tradução</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: on my way, neither, vintage, emprego…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">presente · o par</div>
+<h2>Present simple × present continuous na mesma cena</h2>
+<p class="sdesc">A forma mais rápida de fixar a diferença é ver as duas lado a lado, com a <b>mesma pessoa</b> e o <b>mesmo verbo</b>.</p>
+<div class="items">
+<div class="i"><div class="en">He works in a bank. · He is working at his desk right now.</div><div class="pt">Ele trabalha num banco. · Ele está trabalhando na mesa dele agora.</div></div>
+<div class="i"><div class="en">He usually takes the bus to work. · He is taking a taxi today.</div><div class="pt">Ele normalmente vai de ônibus para o trabalho. · Hoje ele está indo de táxi.</div></div>
+<div class="i"><div class="en">She wears glasses. · She is wearing a red jacket today.</div><div class="pt">Ela usa óculos. · Hoje ela está usando uma jaqueta vermelha.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">presente · a forma</div>
+<h2>As regras de forma, lado a lado</h2>
+<p class="sdesc">Afirmativa, pergunta e negativa dos dois tempos, na sequência em que você precisa delas para montar qualquer frase.</p>
+<div class="items">
+<div class="i"><div class="en">Present simple: I / you / we / they <b>work</b> · he / she / it <b>works</b></div><div class="pt">o <b>-s</b> só aparece na terceira pessoa</div></div>
+<div class="i"><div class="en">Do you work? · Does she work? · I don't work. · She doesn't work.</div><div class="pt">pergunta e negativa do presente simples: sempre com <i>do</i> / <i>does</i></div></div>
+<div class="i"><div class="en">Present continuous: I <b>am</b> working · he / she / it <b>is</b> working · you / we / they <b>are</b> working</div><div class="pt">o <i>be</i> é que se conjuga; o verbo fica em <b>-ing</b></div></div>
+<div class="i"><div class="en">Are they working? · Is she working? · Am I working? · I am not working.</div><div class="pt">pergunta e negativa do contínuo: o <i>be</i> abre a frase e leva o <i>not</i></div></div>
+<div class="i"><div class="en">Easy rule — present simple: subject + verb. Present continuous: subject + am/is/are + verb-ing.</div><div class="pt">Regra fácil: simples = sujeito + verbo; contínuo = sujeito + am/is/are + verbo -ing.</div></div>
+<div class="i"><div class="en">don't · doesn't · didn't · won't · wouldn't · haven't · hadn't</div><div class="pt">as contrações negativas que você vai ouvir o tempo todo</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">a caminho</div>
+<h2><i>On my way home</i> — e o <i>home</i> sem <i>to</i></h2>
+<p class="sdesc">Uma das construções mais faladas do inglês do dia a dia, com a pegadinha que quase todo brasileiro erra: com <code>home</code> não se usa <code>to</code>.</p>
+<div class="items">
+<div class="i"><div class="en">I'm on my way home. <span class="def">I'm = I am · on my way = a caminho · home = casa</span></div><div class="pt">Tô a caminho de casa.</div></div>
+<div class="i"><div class="en"><span class="def">✓</span> go home · <span class="def">✓</span> on my way home — <span class="def">✗</span> go to home · <span class="def">✗</span> on my way to home</div><div class="pt">com <i>home</i> a gente <b>não</b> usa <i>to</i></div></div>
+<div class="i"><div class="en">I'm on my way to work. · I'm on my way to the beach. <span class="def">aqui entra o "to", porque não é home</span></div><div class="pt">Tô a caminho do trabalho. · Tô a caminho da praia.</div></div>
+<div class="i"><div class="en">Before, I was at work; after, I'm on my way home.</div><div class="pt">Antes eu estava no trabalho; depois, estou a caminho de casa.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">both · either · neither</div>
+<h2>Os dois, um dos dois, nenhum dos dois</h2>
+<p class="sdesc">Três palavras para falar de <b>duas coisas</b> — e a única diferença entre elas é quantas você está incluindo.</p>
+<div class="items">
+<div class="i"><div class="en">Both — the two things together: Both cups are full.</div><div class="pt"><i>Both</i> = os dois: Os dois copos estão cheios.</div></div>
+<div class="i"><div class="en">Either — this one or that one is okay: You can choose either cup.</div><div class="pt"><i>Either</i> = tanto faz qual: Você pode escolher qualquer um dos dois copos.</div></div>
+<div class="i"><div class="en">Neither — not this one and not that one: Neither cup is allowed.</div><div class="pt"><i>Neither</i> = nenhum dos dois: Nenhum dos dois copos é permitido.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">intensidade</div>
+<h2><i>Pretty</i>, <i>quite</i>, <i>very</i> — quanto cada um pesa</h2>
+<p class="sdesc"><code>Pretty</code> aqui não é "bonito": é intensificador de conversa. Saber a escala evita exagerar ou soar frio demais.</p>
+<div class="items">
+<div class="i"><div class="en">Pretty — quite strong, but more conversational: The lesson was pretty easy. I understood it.</div><div class="pt"><i>Pretty</i> = bem, num tom de conversa: A aula foi bem fácil. Eu entendi.</div></div>
+<div class="i"><div class="en">Very — strong and more neutral; it works in most situations, spoken or written, casual or professional: The lesson was very easy. Everyone understood it.</div><div class="pt"><i>Very</i> = muito, neutro e serve em qualquer contexto: A aula foi muito fácil. Todo mundo entendeu.</div></div>
+<div class="i"><div class="en">Pretty — a little strong: The hotel was pretty cheap. It was okay.</div><div class="pt"><i>Pretty</i> mais fraco: O hotel era bem baratinho. Estava ok.</div></div>
+<div class="i"><div class="en">Quite — stronger than pretty: The hotel was quite cheap. It was a good deal.</div><div class="pt"><i>Quite</i> mais forte: O hotel era bem barato. Foi um bom negócio.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">novo e antigo</div>
+<h2>Oito adjetivos entre o novo e o antigo</h2>
+<p class="sdesc">"Novo" e "velho" não bastam: o inglês distingue o que é <b>recente</b>, o que é <b>atual</b>, o que é <b>respeitado</b> e o que é <b>fora de moda</b>.</p>
+<div class="items">
+<div class="i"><div class="en">New — recently made, bought or started: I bought a new car yesterday.</div><div class="pt">Novo, recém-adquirido: Comprei um carro novo ontem.</div></div>
+<div class="i"><div class="en">Modern — suitable for today's style, technology or way of thinking: This house has a modern kitchen.</div><div class="pt">Moderno, atual: Esta casa tem uma cozinha moderna.</div></div>
+<div class="i"><div class="en">Advanced — high-level, developed, more complex than normal.</div><div class="pt">Avançado, mais desenvolvido que o normal.</div></div>
+<div class="i"><div class="en">Classic — old but still respected or popular: This is a classic movie.</div><div class="pt">Clássico: Este é um filme clássico.</div></div>
+<div class="i"><div class="en">Traditional — based on old customs or habits: They wore traditional clothes.</div><div class="pt">Tradicional: Eles usavam roupas tradicionais.</div></div>
+<div class="i"><div class="en">Old-fashioned — no longer stylish or modern.</div><div class="pt">Antiquado, fora de moda.</div></div>
+<div class="i"><div class="en">Vintage — old, but stylish and attractive; used for clothes, design, cars, cameras, furniture: She bought a vintage camera.</div><div class="pt">Vintage — antigo e estiloso: Ela comprou uma câmera vintage.</div></div>
+<div class="i"><div class="en">Antique — very old and often valuable: They kept an antique mirror in the hallway.</div><div class="pt">Antiguidade, peça de valor: Eles tinham um espelho antigo no corredor.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">trabalho</div>
+<h2><i>Work</i>, <i>job</i> ou <i>career</i>? As seis palavras do trabalho</h2>
+<p class="sdesc">Seis palavras que o português resolve com duas. A diferença é entre o <b>esforço</b>, o <b>emprego</b>, o <b>caminho</b>, o <b>formulário</b>, a <b>formação</b> e o <b>chamado</b>.</p>
+<div class="items">
+<div class="i"><div class="en">Work — the physical or mental effort you do; the activity itself: It takes a lot of hard work to build a house.</div><div class="pt">Trabalho, o esforço em si: Dá muito trabalho construir uma casa.</div></div>
+<div class="i"><div class="en">Job — the regular work you do to earn money, for an employer or business: My sister just got a job as a bank teller.</div><div class="pt">Emprego: Minha irmã acabou de conseguir um emprego de caixa de banco.</div></div>
+<div class="i"><div class="en">Career — your long-term work path.</div><div class="pt">Carreira, o caminho a longo prazo.</div></div>
+<div class="i"><div class="en">Occupation — the formal word for your job, the one you write on forms.</div><div class="pt">Ocupação, a palavra de formulário.</div></div>
+<div class="i"><div class="en">Profession — a job needing special training or skill.</div><div class="pt">Profissão, exige formação específica.</div></div>
+<div class="i"><div class="en">Vocation — work you feel born to do.</div><div class="pt">Vocação, o trabalho que parece um chamado.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">esforço e conversa</div>
+<h2><i>Lock up</i>, <i>strive</i>, <i>discuss</i> — subindo o nível</h2>
+<p class="sdesc">Três pares em que a segunda palavra é mais <b>intensa</b> ou mais <b>formal</b> que a primeira.</p>
+<div class="items">
+<div class="i"><div class="en">Lock — fasten with a key: She locked the door. · Lock up — close everything securely: Don't forget to lock up the house.</div><div class="pt">trancar (uma coisa) · trancar tudo</div></div>
+<div class="i"><div class="en">Try — a simple attempt: I'll try to finish my homework tonight.</div><div class="pt"><i>Try</i> = tentar: Vou tentar terminar a lição hoje à noite.</div></div>
+<div class="i"><div class="en">Strive — work very hard with determination: He strives to be the best in his class.</div><div class="pt"><i>Strive</i> = se esforçar ao máximo: Ele se esforça para ser o melhor da turma.</div></div>
+<div class="i"><div class="en">Talk about — casual, everyday conversation: They talked about movies after dinner.</div><div class="pt"><i>Talk about</i> = conversar sobre: Conversaram sobre filmes depois do jantar.</div></div>
+<div class="i"><div class="en">Discuss — serious, detailed conversation: They discussed the project in the meeting.</div><div class="pt"><i>Discuss</i> = discutir a fundo: Discutiram o projeto na reunião.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">viagem e expressão</div>
+<h2><i>Trip</i> × <i>travel</i> e três tipos de sorriso</h2>
+<p class="sdesc">Um par que quase todo brasileiro troca — e o vocabulário para descrever o que o rosto de alguém está dizendo.</p>
+<div class="items">
+<div class="i"><div class="en">Travel <span class="def">verb / uncountable</span> — moving from one place to another, in general: I love to travel in summer.</div><div class="pt"><i>Travel</i> = viajar em geral: Adoro viajar no verão.</div></div>
+<div class="i"><div class="en">Trip <span class="def">countable noun</span> — one specific journey or visit: We took a trip to Rome.</div><div class="pt"><i>Trip</i> = uma viagem específica: Fizemos uma viagem a Roma.</div></div>
+<div class="i"><div class="en">Genuine — real and sincere; comes from true happiness: She gave me a genuine smile.</div><div class="pt">Sorriso sincero: Ela me deu um sorriso sincero.</div></div>
+<div class="i"><div class="en">Awkward — uncomfortable and uncertain: He gave an awkward smile during the interview.</div><div class="pt">Sorriso sem graça: Ele deu um sorriso sem graça durante a entrevista.</div></div>
+<div class="i"><div class="en">Forced — not natural; done for a reason, not from real feelings: She tried to hide her anger with a forced smile.</div><div class="pt">Sorriso forçado: Ela tentou esconder a raiva com um sorriso forçado.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">irregulares</div>
+<h2>A família <i>-ozen</i> / <i>-oken</i></h2>
+<p class="sdesc">Mais um grupo de irregulares que segue o mesmo molde — decorar em bloco é mais rápido do que um a um.</p>
+<div class="items">
+<div class="i"><div class="en">freeze — froze — frozen · choose — chose — chosen</div><div class="pt">congelar — congelou — congelado · escolher — escolheu — escolhido</div></div>
+<div class="i"><div class="en">give — gave — given · wake — woke — woken</div><div class="pt">dar — deu — dado · acordar — acordou — acordado</div></div>
+<div class="i"><div class="en">eat — ate — eaten</div><div class="pt">comer — comeu — comido</div></div>
+</div>
+</section>
+
+</main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens.</div>
+</div>
+
+<footer>Sistema 09 · Prática Completa · 4 Pilares — treine a produção real</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+  const units=[];
+  secs.forEach(s=>{s.querySelectorAll('.i').forEach(el=>{units.push({el, sec:s, txt:el.textContent.toLowerCase()});});});
+  document.getElementById('m-total').textContent=units.length;
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0; const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));}});
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 02 · Contrastes de vocabulário</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F97316;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;line-height:1.45;font-style:italic;}
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="index.html" class="back">&#8592; Voltar ao Sistema 02</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 02 · dúvidas pontuais · contrastes</div>
+<h1 class="title">Contrastes de <em>vocabulário</em></h1>
+<p class="lead">As duplas que travam a frase na hora de falar: <i>less</i> × <i>fewer</i>, <i>so</i> × <i>such</i>, <i>save</i> × <i>save up</i>, <i>career</i> × <i>profession</i>. Cada item traz a regra que decide, a frase de uso e a tradução. Fecham o bloco os adjetivos exatos para descrever comida e objetos — e uma família de verbos irregulares que segue o mesmo molde.</p>
+
+<div class="metrics">
+  <div class="metric"><b>6</b><span>blocos</span></div>
+  <div class="metric"><b id="m-total">&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>EN/PT</b><span>com tradução</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: fewer, such, mala, pão, carreira…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">contável × incontável</div>
+<h2><i>Less</i> × <i>fewer</i>, <i>suitcase</i> × <i>luggage</i></h2>
+<p class="sdesc">A pergunta que resolve as duas duplas é sempre a mesma: <b>dá para contar um por um?</b> Se dá, é <code>fewer</code> e <code>suitcase</code>; se não dá, é <code>less</code> e <code>luggage</code>.</p>
+<div class="items">
+<div class="i"><div class="en">Less — use with things you cannot count individually: I need less sugar.</div><div class="pt"><i>Less</i> vai com o que não se conta um a um: Preciso de menos açúcar.</div></div>
+<div class="i"><div class="en">Fewer — use with things you can count: There are fewer cars today.</div><div class="pt"><i>Fewer</i> vai com o que se conta: Tem menos carros hoje.</div></div>
+<div class="i"><div class="en">Suitcase <span class="def">countable noun</span> — one bag used for travelling: She packed her suitcase the night before.</div><div class="pt">Mala (contável) — uma bagagem só: Ela arrumou a mala na véspera.</div></div>
+<div class="i"><div class="en">Luggage <span class="def">uncountable noun</span> — all the bags you travel with: The airline lost his luggage.</div><div class="pt">Bagagem (incontável) — tudo o que você leva junto: A companhia aérea perdeu a bagagem dele.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">so × such</div>
+<h2>O intensificador certo antes de adjetivo e antes de substantivo</h2>
+<p class="sdesc">A diferença é puramente estrutural: <code>so</code> vem antes de <b>adjetivo sozinho</b>; <code>such</code> vem antes de um <b>grupo com substantivo</b>.</p>
+<div class="items">
+<div class="i"><div class="en">So — before an adjective: The girl is so happy. She can't stop smiling.</div><div class="pt"><i>So</i> vem antes do adjetivo: A menina está tão feliz. Não para de sorrir.</div></div>
+<div class="i"><div class="en">Such — before a noun phrase: She is such a happy girl. Everyone likes her energy.</div><div class="pt"><i>Such</i> vem antes do substantivo: Ela é uma menina tão feliz. Todo mundo gosta da energia dela.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">verbo × verbo + partícula</div>
+<h2><i>Save</i>, <i>run</i>, <i>walk</i> — e o que muda com a partícula</h2>
+<p class="sdesc">O mesmo verbo ganha outro sentido quando entra <code>up</code> ou <code>away</code>. Não é detalhe: muda o que a frase diz.</p>
+<div class="items">
+<div class="i"><div class="en">Save — rescue or avoid loss: He saved the child from drowning.</div><div class="pt"><i>Save</i> = salvar / evitar perda: Ele salvou a criança do afogamento.</div></div>
+<div class="i"><div class="en">Save up — collect money slowly: She is saving up for a car.</div><div class="pt"><i>Save up</i> = juntar dinheiro aos poucos: Ela está juntando dinheiro para comprar um carro.</div></div>
+<div class="i"><div class="en">Run — move quickly on your feet: He runs in the park every evening.</div><div class="pt"><i>Run</i> = correr: Ele corre no parque toda noite.</div></div>
+<div class="i"><div class="en">Run away — escape or leave quickly: The dog got scared and ran away.</div><div class="pt"><i>Run away</i> = fugir: O cachorro se assustou e fugiu.</div></div>
+<div class="i"><div class="en">Walk — move on foot: We walked home after dinner.</div><div class="pt"><i>Walk</i> = ir a pé: Voltamos a pé para casa depois do jantar.</div></div>
+<div class="i"><div class="en">Walk away — leave a situation instead of staying in it: He was angry, so he walked away without saying anything.</div><div class="pt"><i>Walk away</i> = sair da situação: Ele estava com raiva, então foi embora sem dizer nada.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">descrever com precisão</div>
+<h2>Fruta, pão, balão e vela — o adjetivo exato</h2>
+<p class="sdesc">Onde o português resolve com "velho" ou "estragado", o inglês tem uma palavra para <b>cada estado</b> de cada coisa. É o vocabulário que faz a frase soar nativa.</p>
+<div class="items">
+<div class="i"><div class="en">Unripe — not ready to eat yet; still hard or sour: The banana is unripe.</div><div class="pt">Verde, ainda não dá para comer: A banana está verde.</div></div>
+<div class="i"><div class="en">Ripe — ready to eat; fully grown and sweet: The banana is ripe.</div><div class="pt">Madura, no ponto: A banana está madura.</div></div>
+<div class="i"><div class="en">Rotten — spoiled and no longer good: The banana has gone rotten.</div><div class="pt">Podre: A banana apodreceu.</div></div>
+<div class="i"><div class="en">Fresh — soft and recently baked: The bread is fresh.</div><div class="pt">Fresco, feito há pouco: O pão está fresco.</div></div>
+<div class="i"><div class="en">Stale — hard and dry because it's old: The bread has gone stale.</div><div class="pt">Duro, velho: O pão ficou dormido.</div></div>
+<div class="i"><div class="en">Mouldy — covered in mould and unsafe to eat: The bread has gone mouldy.</div><div class="pt">Mofado: O pão mofou.</div></div>
+<div class="i"><div class="en">Inflated — filled with air or gas: The balloon is inflated.</div><div class="pt">Cheio de ar: O balão está cheio.</div></div>
+<div class="i"><div class="en">Deflated — no longer filled with air: The balloon is deflated.</div><div class="pt">Murcho: O balão está murcho.</div></div>
+<div class="i"><div class="en">Burst — broken because it had too much air inside: The balloon has burst.</div><div class="pt">Estourado: O balão estourou.</div></div>
+<div class="i"><div class="en">Lit — burning and giving light: The candle is lit.</div><div class="pt">Acesa: A vela está acesa.</div></div>
+<div class="i"><div class="en">Unlit — not burning: The candle is unlit.</div><div class="pt">Apagada: A vela está apagada.</div></div>
+<div class="i"><div class="en">Melted — changed into liquid because of heat: The candle has melted.</div><div class="pt">Derretida: A vela derreteu.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">trabalho</div>
+<h2><i>Career</i> × <i>profession</i> — a diferença real</h2>
+<p class="sdesc">As duas traduzem como "carreira" e "profissão", mas não são intercambiáveis: uma é o <b>caminho ao longo do tempo</b>, a outra é o <b>tipo de trabalho</b> que exige formação.</p>
+<div class="items">
+<div class="i"><div class="en">Career — your long-term work path and progress. It includes your jobs, growth and progress over time: He is planning a long career in science.</div><div class="pt">Carreira — o caminho profissional ao longo do tempo: Ele está planejando uma longa carreira na ciência.</div></div>
+<div class="i"><div class="en">You quit a job, but you build a career.</div><div class="pt">Você pede demissão de um emprego, mas constrói uma carreira.</div></div>
+<div class="i"><div class="en">Profession — a job needing special training or skill, like doctor, lawyer or engineer: She is proud to be part of the legal profession.</div><div class="pt">Profissão — trabalho que exige formação específica: Ela tem orgulho de fazer parte da advocacia.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">família -ake</div>
+<h2>Os irregulares que seguem o mesmo molde</h2>
+<p class="sdesc">Quando um verbo entra num padrão, os parentes dele seguem junto. Decorar <i>take → took → taken</i> entrega de brinde mais quatro verbos.</p>
+<div class="items">
+<div class="i"><div class="en">forget — forgot — forgotten</div><div class="pt">esquecer — esqueceu — esquecido</div></div>
+<div class="i"><div class="en">mistake — mistook — mistaken</div><div class="pt">confundir/errar — confundiu — confundido</div></div>
+<div class="i"><div class="en">forsake — forsook — forsaken</div><div class="pt">abandonar — abandonou — abandonado</div></div>
+<div class="i"><div class="en">overtake — overtook — overtaken</div><div class="pt">ultrapassar — ultrapassou — ultrapassado</div></div>
+<div class="i"><div class="en">partake — partook — partaken</div><div class="pt">participar — participou — participado</div></div>
+</div>
+</section>
+
+</main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens.</div>
+</div>
+
+<footer>Sistema 02 · Dúvidas Pontuais — a regra certa, na hora certa</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+  const units=[];
+  secs.forEach(s=>{s.querySelectorAll('.i').forEach(el=>{units.push({el, sec:s, txt:el.textContent.toLowerCase()});});});
+  document.getElementById('m-total').textContent=units.length;
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0; const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));}});
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

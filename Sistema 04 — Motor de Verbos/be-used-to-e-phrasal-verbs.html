@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 04 · Be used to e phrasal verbs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#6366F1;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;line-height:1.45;font-style:italic;}
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="index.html" class="back">&#8592; Voltar ao Sistema 04</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 04 · motor de verbos · estruturas</div>
+<h1 class="title"><em>Be used to</em> e os phrasal verbs</h1>
+<p class="lead">Duas engrenagens do motor do verbo. Primeiro a estrutura <b>be used to</b> completa — afirmativa, negativa, pergunta, passado, o erro clássico do infinitivo e a diferença para <i>used to</i> e <i>get used to</i>. Depois as dez famílias de <b>phrasal verbs</b> que mais aparecem em conversa, cada uma com sentido e frase real. No fim, bancos de frases prontas para treinar o presente simples até virar automático.</p>
+
+<div class="metrics">
+  <div class="metric"><b>10</b><span>blocos</span></div>
+  <div class="metric"><b id="m-total">&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>EN/PT</b><span>com tradução</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: used to, take off, look up, acostumado…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">be used to · o que é</div>
+<h2><i>Be used to</i> — estar acostumado</h2>
+<p class="sdesc">A estrutura fala de algo que <b>já virou normal</b> para você: aconteceu tantas vezes que não exige mais esforço. Estrutura: <code>sujeito + be + used to + substantivo ou verbo -ING</code>.</p>
+<div class="items">
+<div class="i"><div class="en">I am used to waking up early.</div><div class="pt">Estou acostumado a acordar cedo.</div></div>
+<div class="i"><div class="en">She is used to cold weather.</div><div class="pt">Ela está acostumada ao clima frio.</div></div>
+<div class="i"><div class="en">They are used to this kind of food.</div><div class="pt">Eles estão acostumados a esse tipo de comida.</div></div>
+<div class="i"><div class="en">I'm used to coffee. <span class="def">be used to + substantivo</span> · She's used to waking up early. <span class="def">be used to + verbo -ING</span></div><div class="pt">As duas formas estão certas: depois de <i>to</i> entra substantivo ou verbo com <b>-ING</b>.</div></div>
+<div class="i"><div class="en">I → am · he / she / it → is · we / you / they → are</div><div class="pt">o <i>be</i> muda conforme o sujeito; o resto da estrutura não muda</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">be used to · formas</div>
+<h2>Afirmativa, negativa, pergunta e passado</h2>
+<p class="sdesc">A mesma estrutura nas quatro formas que você vai precisar. Na negativa, o <code>not</code> vem depois do <i>be</i>; na pergunta, o <i>be</i> abre a frase.</p>
+<div class="items">
+<div class="i"><div class="en">We're used to speaking English.</div><div class="pt">Estamos acostumados a falar inglês.</div></div>
+<div class="i"><div class="en">I'm not used to driving at night.</div><div class="pt">Não estou acostumado a dirigir à noite.</div></div>
+<div class="i"><div class="en">He's not used to working from home.</div><div class="pt">Ele não está acostumado a trabalhar de casa.</div></div>
+<div class="i"><div class="en">They aren't used to spicy food.</div><div class="pt">Eles não estão acostumados a comida apimentada.</div></div>
+<div class="i"><div class="en">Are you used to living alone?</div><div class="pt">Você está acostumado a morar sozinho?</div></div>
+<div class="i"><div class="en">Is she used to speaking English?</div><div class="pt">Ela está acostumada a falar inglês?</div></div>
+<div class="i"><div class="en">Were they used to working together?</div><div class="pt">Eles estavam acostumados a trabalhar juntos?</div></div>
+<div class="i"><div class="en">I was used to working 12 hours a day. <span class="def">was: I / he / she / it — were: we / you / they</span></div><div class="pt">Eu estava acostumado a trabalhar 12 horas por dia.</div></div>
+<div class="i"><div class="en">We weren't used to this weather.</div><div class="pt">Não estávamos acostumados com esse clima.</div></div>
+<div class="i"><div class="en">Was he used to driving on the left?</div><div class="pt">Ele estava acostumado a dirigir na mão inglesa?</div></div>
+<div class="i"><div class="en">I'm used to drinking coffee every morning.</div><div class="pt">Estou acostumado a tomar café toda manhã.</div></div>
+<div class="i"><div class="en">We aren't used to this kind of food. · They weren't used to living in the city.</div><div class="pt">Não estamos acostumados a esse tipo de comida. · Eles não estavam acostumados a morar na cidade.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">be used to · o erro</div>
+<h2>As três estruturas quase iguais — e o erro mais comum</h2>
+<p class="sdesc">São três formas parecidas com significados <b>completamente diferentes</b>. E depois de <code>be used to</code> nunca entra verbo no infinitivo: entra <b>-ING</b>.</p>
+<div class="items">
+<div class="i"><div class="en">used to → eu costumava <span class="def">algo que acontecia antes e não acontece mais</span></div><div class="pt">I used to play football. — Eu costumava jogar futebol.</div></div>
+<div class="i"><div class="en">be used to → eu estou acostumado <span class="def">já é normal para você agora</span></div><div class="pt">I'm used to playing football. — Estou acostumado a jogar futebol.</div></div>
+<div class="i"><div class="en">get used to → eu estou me acostumando <span class="def">a fase de adaptação</span></div><div class="pt">I'm getting used to playing football. — Estou me acostumando a jogar futebol.</div></div>
+<div class="i"><div class="en"><span class="def">✗ errado</span> I'm used to wake up early. <span class="def">falta o -ING</span></div><div class="pt">Nunca use <i>be used to</i> + verbo no infinitivo.</div></div>
+<div class="i"><div class="en"><span class="def">✓ certo</span> I'm used to waking up early.</div><div class="pt">Sempre <i>be used to</i> + verbo com <b>-ING</b>.</div></div>
+<div class="i"><div class="en">be used to + noun: cold weather · be used to + verb-ING: waking up early</div><div class="pt">as duas continuações válidas — substantivo ou verbo -ING</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">was e were · A2</div>
+<h2>O passado do verbo <i>to be</i></h2>
+<p class="sdesc">A base de tudo: <code>was</code> para <b>I, he, she, it</b> e <code>were</code> para <b>you, we, they</b>. O erro clássico é <i>you was</i>.</p>
+<div class="items">
+<div class="i"><div class="en">I was late.</div><div class="pt">Eu estava atrasado.</div></div>
+<div class="i"><div class="en">They were happy.</div><div class="pt">Eles estavam felizes.</div></div>
+<div class="i"><div class="en">He wasn't home. · We weren't tired.</div><div class="pt">Ele não estava em casa. · Nós não estávamos cansados.</div></div>
+<div class="i"><div class="en">Was she at school? — Yes, I was. · Were you busy? — No, they weren't.</div><div class="pt">Ela estava na escola? — Sim, eu estava. · Você estava ocupado? — Não, eles não estavam.</div></div>
+<div class="i"><div class="en"><span class="def">✗</span> You was. <span class="def">✓</span> You were.</div><div class="pt">o erro mais comum do nível A2</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">phrasal verbs · take, get, give</div>
+<h2>As famílias mais usadas do dia a dia</h2>
+<p class="sdesc">O verbo é o mesmo; a partícula muda tudo. Cada item traz o sentido e uma frase real de uso.</p>
+<div class="items">
+<div class="i"><div class="en">take off — remove clothes; or leave the ground: Please take off your shoes. · The plane took off ten minutes ago.</div><div class="pt">tirar (roupa) · decolar</div></div>
+<div class="i"><div class="en">take on — accept work or responsibility: She took on too much work.</div><div class="pt">assumir (trabalho, responsabilidade)</div></div>
+<div class="i"><div class="en">take over — gain control: A large company took over the business.</div><div class="pt">assumir o controle</div></div>
+<div class="i"><div class="en">take back — return something: I took back the book yesterday. · Can I take back this shirt?</div><div class="pt">devolver</div></div>
+<div class="i"><div class="en">take out — remove something; or go out with someone: He took out his phone. · Take out the trash before you leave.</div><div class="pt">tirar de dentro · levar para fora</div></div>
+<div class="i"><div class="en">take in — understand; or deceive: It took me a while to take in the news.</div><div class="pt">absorver/entender · enganar</div></div>
+<div class="i"><div class="en">take apart — separate into pieces: They took apart the old bike.</div><div class="pt">desmontar</div></div>
+<div class="i"><div class="en">take up — start a new hobby or activity: I want to take up swimming.</div><div class="pt">começar a praticar</div></div>
+<div class="i"><div class="en">get up — wake and leave bed: I get up at 7 every day.</div><div class="pt">levantar da cama</div></div>
+<div class="i"><div class="en">get along (with) — have a good relationship: I get along with my coworkers. · They get along really well.</div><div class="pt">se dar bem com alguém</div></div>
+<div class="i"><div class="en">get over — recover from something: She got over her illness. · She got over her cold fast.</div><div class="pt">se recuperar de</div></div>
+<div class="i"><div class="en">get in — enter (car, building): He got in the car. · get out — leave: Please get out of the car.</div><div class="pt">entrar · sair</div></div>
+<div class="i"><div class="en">get on — enter a bus or train: She got on the bus quickly. · get off — leave it: He got off the train at the next stop.</div><div class="pt">embarcar · desembarcar</div></div>
+<div class="i"><div class="en">get back — return: We got back late last night.</div><div class="pt">voltar</div></div>
+<div class="i"><div class="en">give up — quit, stop trying: Don't give up on your goals.</div><div class="pt">desistir</div></div>
+<div class="i"><div class="en">give in — stop resisting, surrender: She finally gave in and said yes.</div><div class="pt">ceder</div></div>
+<div class="i"><div class="en">give away — donate; or reveal a secret: They gave away old clothes.</div><div class="pt">doar · entregar um segredo</div></div>
+<div class="i"><div class="en">give back — return something: Please give back my pen.</div><div class="pt">devolver</div></div>
+<div class="i"><div class="en">give out — distribute: The teacher gave out the worksheets.</div><div class="pt">distribuir</div></div>
+<div class="i"><div class="en">give off — emit, release: The flowers give off a sweet smell.</div><div class="pt">exalar, emitir</div></div>
+<div class="i"><div class="en">give way — move aside, let someone pass: Cars must give way to pedestrians.</div><div class="pt">dar passagem</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">phrasal verbs · go, come, put</div>
+<h2>Ir, vir e pôr — com partícula</h2>
+<p class="sdesc">Os três verbos mais básicos do inglês são também os que geram mais phrasal verbs de uso diário.</p>
+<div class="items">
+<div class="i"><div class="en">go on — continue; happen: The show must go on. · Please go on with your story.</div><div class="pt">continuar · acontecer</div></div>
+<div class="i"><div class="en">go out — leave home for a social activity: We went out last night. · We went out for dinner.</div><div class="pt">sair (socialmente)</div></div>
+<div class="i"><div class="en">go back — return: She went back to the office. · He went back to his hometown.</div><div class="pt">voltar</div></div>
+<div class="i"><div class="en">go through — experience something difficult; examine carefully: He went through a difficult time. · She went through a lot last year.</div><div class="pt">passar por · examinar</div></div>
+<div class="i"><div class="en">go over — review: Let's go over this again.</div><div class="pt">revisar</div></div>
+<div class="i"><div class="en">go off — explode or make a sudden noise: The alarm went off suddenly.</div><div class="pt">disparar (alarme), explodir</div></div>
+<div class="i"><div class="en">go up — increase: Prices are going up. · go down — decrease: Sales went down this month.</div><div class="pt">subir · cair</div></div>
+<div class="i"><div class="en">go away — leave: Please go away.</div><div class="pt">ir embora</div></div>
+<div class="i"><div class="en">come in — enter: Please come in and take a seat.</div><div class="pt">entrar</div></div>
+<div class="i"><div class="en">come back — return: She came back yesterday. · She will come back tomorrow.</div><div class="pt">voltar</div></div>
+<div class="i"><div class="en">come out — appear; be released; become known: The sun came out. · The truth finally came out.</div><div class="pt">aparecer · ser lançado · vir à tona</div></div>
+<div class="i"><div class="en">come across — find by chance: I came across an old photo. · I came across an old friend yesterday.</div><div class="pt">encontrar por acaso</div></div>
+<div class="i"><div class="en">come up — happen, appear: A problem came up at work.</div><div class="pt">surgir</div></div>
+<div class="i"><div class="en">come up with — think of or create an idea: He came up with a great solution.</div><div class="pt">bolar, inventar</div></div>
+<div class="i"><div class="en">come on — hurry; encourage someone: Come on, we're late!</div><div class="pt">vamos logo · vai lá</div></div>
+<div class="i"><div class="en">come from — originate from: This word comes from Latin.</div><div class="pt">vir de, ter origem em</div></div>
+<div class="i"><div class="en">come through — succeed, help in a difficult time: The team came through when it mattered most.</div><div class="pt">dar conta no momento decisivo</div></div>
+<div class="i"><div class="en">put on — wear: I put on my jacket before leaving. · She put on her jacket and left.</div><div class="pt">vestir, colocar</div></div>
+<div class="i"><div class="en">put off — delay: Let's put off the meeting until tomorrow.</div><div class="pt">adiar</div></div>
+<div class="i"><div class="en">put up with — tolerate something unpleasant: I can't put up with noisy people.</div><div class="pt">aturar</div></div>
+<div class="i"><div class="en">put out — extinguish (a fire, a light); or publish: The firefighters put out the fire quickly.</div><div class="pt">apagar · publicar</div></div>
+<div class="i"><div class="en">put away — return to its proper place: Please put away your books.</div><div class="pt">guardar</div></div>
+<div class="i"><div class="en">put in — insert; or apply effort: She put in a lot of effort. · I put in a lot of effort to get this job.</div><div class="pt">inserir · dedicar esforço</div></div>
+<div class="i"><div class="en">put together — assemble, organize: Let's put together a plan for the trip.</div><div class="pt">montar, organizar</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">phrasal verbs · make, look, turn, run, speak</div>
+<h2>As cinco famílias que fecham a lista</h2>
+<p class="sdesc">Com estas cinco, você cobre a maior parte dos phrasal verbs que aparecem em série, podcast e conversa.</p>
+<div class="items">
+<div class="i"><div class="en">make up — invent a story: He made up a funny story. · make up your mind — decide: Please make up your mind and tell me now.</div><div class="pt">inventar · se decidir</div></div>
+<div class="i"><div class="en">make out — understand or see with difficulty: I can't make out what she's saying.</div><div class="pt">distinguir, entender com dificuldade</div></div>
+<div class="i"><div class="en">make over — change or improve appearance: She made over her room last weekend.</div><div class="pt">reformar, dar uma repaginada</div></div>
+<div class="i"><div class="en">make up for — compensate, correct a mistake: I was late, so I baked a cake to make up for it.</div><div class="pt">compensar</div></div>
+<div class="i"><div class="en">make off — leave quickly, escape: The thief made off before the police arrived.</div><div class="pt">fugir</div></div>
+<div class="i"><div class="en">make for — head towards: We made for the exit when it started to rain.</div><div class="pt">seguir em direção a</div></div>
+<div class="i"><div class="en">look for — search for: I'm looking for my keys. Have you seen them?</div><div class="pt">procurar</div></div>
+<div class="i"><div class="en">look after — take care of: She looks after her little brother every day.</div><div class="pt">cuidar de</div></div>
+<div class="i"><div class="en">look forward to — feel happy and excited about something: I really look forward to the weekend.</div><div class="pt">estar ansioso por</div></div>
+<div class="i"><div class="en">look into — investigate: The police will look into the problem.</div><div class="pt">investigar</div></div>
+<div class="i"><div class="en">look out — be careful, watch for danger: Look out! There's a car coming.</div><div class="pt">cuidado!</div></div>
+<div class="i"><div class="en">look through — examine quickly: Let's look through these papers before the meeting.</div><div class="pt">dar uma olhada, folhear</div></div>
+<div class="i"><div class="en">look up — find information in a book or online: I need to look up this word in the dictionary.</div><div class="pt">consultar, pesquisar</div></div>
+<div class="i"><div class="en">turn on — switch on a device: Please turn on the lights. It's getting dark. · turn off — Don't forget to turn off the stove.</div><div class="pt">ligar · desligar</div></div>
+<div class="i"><div class="en">turn into — become, change into something else: He turned into a great musician.</div><div class="pt">virar, se transformar em</div></div>
+<div class="i"><div class="en">turn back — return, go back: We decided to turn back because of the rain.</div><div class="pt">voltar atrás</div></div>
+<div class="i"><div class="en">turn out — happen, be the result: The meeting turned out better than we expected.</div><div class="pt">acabar sendo</div></div>
+<div class="i"><div class="en">turn down — reject an offer or request: She turned down the job offer.</div><div class="pt">recusar</div></div>
+<div class="i"><div class="en">turn up — arrive, appear: They will turn up at 8 o'clock. · turn over — flip: Turn over the page and read the instructions.</div><div class="pt">aparecer · virar</div></div>
+<div class="i"><div class="en">run out of — have none left: I'm going to the store, but I might run out of milk.</div><div class="pt">ficar sem</div></div>
+<div class="i"><div class="en">run into — meet by chance; have a problem: I ran into my old teacher at the supermarket.</div><div class="pt">dar de cara com</div></div>
+<div class="i"><div class="en">run away — leave suddenly, escape: She ran away from home when she was young.</div><div class="pt">fugir</div></div>
+<div class="i"><div class="en">run through — rehearse, go over quickly: Let's run through the plan one more time.</div><div class="pt">repassar</div></div>
+<div class="i"><div class="en">run after — chase: The dog ran after the ball. · run over — hit with a vehicle: He accidentally ran over a traffic cone.</div><div class="pt">correr atrás · atropelar</div></div>
+<div class="i"><div class="en">run across — find by chance: I ran across some old photos while cleaning.</div><div class="pt">achar por acaso</div></div>
+<div class="i"><div class="en">speak up — talk louder or more clearly: Please speak up. I can't hear you.</div><div class="pt">falar mais alto</div></div>
+<div class="i"><div class="en">speak out — express your opinion openly: She decided to speak out against the injustice.</div><div class="pt">se manifestar</div></div>
+<div class="i"><div class="en">speak to — talk to someone: I need to speak to my manager about this issue.</div><div class="pt">falar com</div></div>
+<div class="i"><div class="en">speak of — talk about someone or something: We were speaking of you just a moment ago.</div><div class="pt">falar a respeito de</div></div>
+<div class="i"><div class="en">speak for — represent or express the opinion of someone: He speaks for the team during meetings.</div><div class="pt">falar em nome de</div></div>
+<div class="i"><div class="en">speak with — have a conversation with someone: I spoke with my friend for an hour last night.</div><div class="pt">conversar com</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">verbo × verbo + away</div>
+<h2>O que <i>away</i> faz com o verbo</h2>
+<p class="sdesc">A partícula <code>away</code> quase sempre adiciona a ideia de <b>afastamento</b> — de lugar, de posse ou de situação.</p>
+<div class="items">
+<div class="i"><div class="en">Go — move from one place to another: I go to the gym every morning. · Go away — leave this place: Please go away and leave me alone for a minute.</div><div class="pt">ir · ir embora / sumir daqui</div></div>
+<div class="i"><div class="en">Come — move toward a person or place: Come here for a second. · Come away — leave a situation with a feeling or result: I came away from the meeting feeling more confident.</div><div class="pt">vir · sair de uma situação com alguma impressão</div></div>
+<div class="i"><div class="en">Take — carry or move something with you: He took his favourite book from the bookshelf. · Take away — remove something: The waiter took away our drinks.</div><div class="pt">pegar/levar · retirar</div></div>
+<div class="i"><div class="en">Grow — increase in size: Plants grow quickly in summer. · Grow up — become an adult: He wants to be a doctor when he grows up.</div><div class="pt">crescer (de tamanho) · crescer (virar adulto)</div></div>
+<div class="i"><div class="en">Put on — to place something on a surface: He put the box on the table. · Take off — to remove something: He took the box off the table.</div><div class="pt">pôr em cima · tirar de cima</div></div>
+<div class="i"><div class="en">We also use put on and take off with clothes: put on means start wearing, take off means remove what you are wearing.</div><div class="pt">com roupa: <i>put on</i> = vestir, <i>take off</i> = tirar</div></div>
+<div class="i"><div class="en">Look for — casual, daily searching: She looked for her lost keys in the kitchen. · Seek — formal, long-term, purposeful: They sought shelter from the storm.</div><div class="pt">procurar (dia a dia) · buscar (formal)</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">bancos de frases</div>
+<h2>Uma pergunta, quinze respostas prontas</h2>
+<p class="sdesc">O treino mais direto do presente simples: a mesma estrutura repetida até virar automática. Escolha a pergunta e troque só o complemento.</p>
+<div class="items">
+<div class="i"><div class="en"><b>Where do you go?</b> — I go to school. · I go to work. · I go to the market. · I go to the park. · I go to my friend's house.</div><div class="pt">Aonde você vai? — Vou para a escola / o trabalho / o mercado / o parque / a casa do meu amigo.</div></div>
+<div class="i"><div class="en">I go to the hospital. · I go to the library. · I go to the gym. · I go to the shop. · I go to the restaurant. · I go to the cinema.</div><div class="pt">Vou ao hospital / à biblioteca / à academia / à loja / ao restaurante / ao cinema.</div></div>
+<div class="i"><div class="en"><b>How do you go?</b> — I go by bus. · I go by car. · I go by train. · I go by bike. · I go on foot.</div><div class="pt">Como você vai? — Vou de ônibus / de carro / de trem / de bicicleta / a pé.</div></div>
+<div class="i"><div class="en">I go by taxi. · I go by metro. · I go by motorcycle. · I go by boat. · I go by van. <span class="def">on foot é a única com "on"</span></div><div class="pt">Vou de táxi / de metrô / de moto / de barco / de van.</div></div>
+<div class="i"><div class="en"><b>What do you do?</b> — I am a student. · I am a teacher. · I am a doctor. · I am an engineer. · I am a driver.</div><div class="pt">O que você faz? — Sou estudante / professor / médico / engenheiro / motorista.</div></div>
+<div class="i"><div class="en">I am a farmer. · I am a police officer. · I am a shopkeeper. · I am a lawyer. · I am a chef. · I am a software developer.</div><div class="pt">Sou agricultor / policial / lojista / advogado / chef / desenvolvedor de software.</div></div>
+<div class="i"><div class="en"><b>What do you eat?</b> — I eat rice. · I eat bread. · I eat fish. · I eat chicken. · I eat vegetables. · I eat fruits.</div><div class="pt">O que você come? — Como arroz / pão / peixe / frango / verduras / frutas.</div></div>
+<div class="i"><div class="en">I eat eggs. · I eat noodles. · I eat pizza. · I eat salad. · I eat sweets. · I eat yogurt. · I eat soup.</div><div class="pt">Como ovos / macarrão / pizza / salada / doces / iogurte / sopa.</div></div>
+<div class="i"><div class="en"><b>What do you drink?</b> — I drink water. · I drink tea. · I drink milk. · I drink coffee. · I drink juice.</div><div class="pt">O que você bebe? — Bebo água / chá / leite / café / suco.</div></div>
+<div class="i"><div class="en">I drink coconut water. · I drink soft drinks. · I drink green tea. · I drink orange juice. · I drink hot chocolate.</div><div class="pt">Bebo água de coco / refrigerante / chá verde / suco de laranja / chocolate quente.</div></div>
+<div class="i"><div class="en"><b>What do you wear?</b> — I wear a shirt. · I wear pants. · I wear a t-shirt. · I wear jeans. · I wear shoes. · I wear socks.</div><div class="pt">O que você veste? — Uso camisa / calça / camiseta / jeans / sapatos / meias.</div></div>
+<div class="i"><div class="en">I wear a dress. · I wear shorts. · I wear a jacket. · I wear sandals. · I wear a cap. · I wear a hoodie.</div><div class="pt">Uso vestido / bermuda / jaqueta / sandália / boné / moletom.</div></div>
+<div class="i"><div class="en"><b>What do you buy?</b> — I buy food. · I buy clothes. · I buy vegetables. · I buy fruits. · I buy milk. · I buy books.</div><div class="pt">O que você compra? — Compro comida / roupa / verduras / frutas / leite / livros.</div></div>
+<div class="i"><div class="en">I buy shoes. · I buy medicine. · I buy groceries. · I buy snacks. · I buy a phone. · I buy gifts. · I buy soap.</div><div class="pt">Compro sapatos / remédio / mantimentos / lanches / um celular / presentes / sabonete.</div></div>
+<div class="i"><div class="en"><b>What do you read?</b> — I read books. · I read newspapers. · I read stories. · I read magazines. · I read comics.</div><div class="pt">O que você lê? — Leio livros / jornais / histórias / revistas / gibis.</div></div>
+<div class="i"><div class="en">I read textbooks. · I read poems. · I read messages. · I read emails. · I read articles. · I read novels.</div><div class="pt">Leio livros didáticos / poemas / mensagens / e-mails / artigos / romances.</div></div>
+<div class="i"><div class="en"><b>What do you watch?</b> — I watch TV. · I watch cartoons. · I watch movies. · I watch the news. · I watch YouTube.</div><div class="pt">O que você assiste? — Vejo TV / desenhos / filmes / o noticiário / YouTube.</div></div>
+<div class="i"><div class="en">I watch football. · I watch dramas. · I watch educational videos. · I watch documentaries. · I watch live matches.</div><div class="pt">Vejo futebol / dramas / vídeos educativos / documentários / jogos ao vivo.</div></div>
+<div class="i"><div class="en"><b>What do you listen to?</b> — I listen to music. · I listen to songs. · I listen to the radio. · I listen to the news.</div><div class="pt">O que você escuta? — Escuto música / canções / rádio / notícias.</div></div>
+<div class="i"><div class="en">I listen to podcasts. · I listen to English lessons. · I listen to stories. · I listen to lectures. · I listen to audiobooks.</div><div class="pt">Escuto podcasts / aulas de inglês / histórias / palestras / audiolivros.</div></div>
+<div class="i"><div class="en">I listen to my teacher. · I listen to my parents. · I listen to motivational speeches.</div><div class="pt">Escuto meu professor / meus pais / discursos motivacionais.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">presente e escolha</div>
+<h2>Present simple, <i>other</i> × <i>another</i> e a família <i>-ake</i></h2>
+<p class="sdesc">Fecham o painel os três usos do presente simples, a escolha entre <code>other</code> e <code>another</code>, e mais um bloco de irregulares que seguem o mesmo molde.</p>
+<div class="items">
+<div class="i"><div class="en">Habits — things you do regularly: I drink coffee every morning.</div><div class="pt">Hábitos — o que você faz sempre: Tomo café toda manhã.</div></div>
+<div class="i"><div class="en">Routines — things that are part of your usual day: She walks to school every day.</div><div class="pt">Rotinas — o que faz parte do seu dia: Ela vai a pé para a escola todo dia.</div></div>
+<div class="i"><div class="en">Facts — things that are generally true: The sun rises in the east.</div><div class="pt">Fatos — o que é verdade em geral: O sol nasce no leste.</div></div>
+<div class="i"><div class="en">Other — for more or different things: Do you have other colours?</div><div class="pt"><i>Other</i> = outros, diferentes: Você tem outras cores?</div></div>
+<div class="i"><div class="en">Another — for one more or a different one: Can I have another cookie?</div><div class="pt"><i>Another</i> = mais um: Posso pegar mais um biscoito?</div></div>
+<div class="i"><div class="en">take — took — taken · shake — shook — shaken</div><div class="pt">pegar — pegou — pego · agitar — agitou — agitado</div></div>
+<div class="i"><div class="en">break — broke — broken · drive — drove — driven</div><div class="pt">quebrar — quebrou — quebrado · dirigir — dirigiu — dirigido</div></div>
+</div>
+</section>
+
+</main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens.</div>
+</div>
+
+<footer>Sistema 04 · Motor de Verbos — a máquina que move a frase</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+  const units=[];
+  secs.forEach(s=>{s.querySelectorAll('.i').forEach(el=>{units.push({el, sec:s, txt:el.textContent.toLowerCase()});});});
+  document.getElementById('m-total').textContent=units.length;
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0; const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));}});
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

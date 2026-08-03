@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 06 · In, on, at e quantificadores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#EC4899;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;line-height:1.45;font-style:italic;}
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="index.html" class="back">&#8592; Voltar ao Sistema 06</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 06 · situar a frase · lugar, tempo e quantidade</div>
+<h1 class="title"><em>In</em>, <em>on</em>, <em>at</em> e os quantificadores</h1>
+<p class="lead">O bloco que situa a frase no espaço e no tempo. A pirâmide invertida das três preposições — do amplo (<code>in</code>) ao ponto exato (<code>at</code>) — aplicada a <b>lugar</b>, <b>tempo</b> e <b>transporte</b>. Depois vêm os quantificadores (<i>some</i>, <i>many</i>, <i>few</i>, <i>little</i>, <i>each</i>), a escala de intensidade (<i>very</i>, <i>too</i>, <i>enough</i>), os verbos de deslocamento e o vocabulário de viagem.</p>
+
+<div class="metrics">
+  <div class="metric"><b>13</b><span>blocos</span></div>
+  <div class="metric"><b id="m-total">&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>EN/PT</b><span>com tradução</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: on Monday, too many, get off, hostel…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">in · on · at · lugar</div>
+<h2>Onde a coisa está</h2>
+<p class="sdesc">A lógica é de tamanho: <code>in</code> = dentro de algo grande, <code>on</code> = sobre uma superfície ou linha, <code>at</code> = um ponto exato.</p>
+<div class="items">
+<div class="i"><div class="en">IN — dentro de uma área grande ou de um espaço fechado: I'm in Brazil.</div><div class="pt">Estou no Brasil.</div></div>
+<div class="i"><div class="en">She lives in Portugal. · They are in Europe. · He's in the kitchen. · The keys are in my bag.</div><div class="pt">Ela mora em Portugal. · Eles estão na Europa. · Ele está na cozinha. · As chaves estão na minha bolsa.</div></div>
+<div class="i"><div class="en">ON — sobre uma superfície, uma rua ou uma linha: The book is on the table.</div><div class="pt">O livro está sobre a mesa.</div></div>
+<div class="i"><div class="en">The picture is on the wall. · The restaurant is on Main Street. · There's a stain on your shirt.</div><div class="pt">O quadro está na parede. · O restaurante fica na Main Street. · Tem uma mancha na sua camisa.</div></div>
+<div class="i"><div class="en">AT — um ponto exato: I'm at home. · She's at work.</div><div class="pt">Estou em casa. · Ela está no trabalho.</div></div>
+<div class="i"><div class="en">Meet me at the bus stop. · He's waiting at the door.</div><div class="pt">Me encontre no ponto de ônibus. · Ele está esperando na porta.</div></div>
+<div class="i"><div class="en">Resumo do lugar: IN = países, cidades, bairros, cômodos · ON = superfícies, ruas, linhas · AT = pontos exatos</div><div class="pt">in Brazil / in the kitchen · on the table / on Main Street · at home / at the door</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">in · on · at · tempo</div>
+<h2>Quando a coisa acontece</h2>
+<p class="sdesc">A mesma lógica se repete no tempo: <code>in</code> = período grande, <code>on</code> = dia ou data, <code>at</code> = hora exata.</p>
+<div class="items">
+<div class="i"><div class="en">IN — períodos grandes: I was born in 1991. · We got married in July.</div><div class="pt">Nasci em 1991. · Nos casamos em julho.</div></div>
+<div class="i"><div class="en">Flowers bloom in spring. · I study in the morning.</div><div class="pt">As flores desabrocham na primavera. · Estudo de manhã.</div></div>
+<div class="i"><div class="en">ON — dias específicos e datas: See you on Monday. · The test is on Friday.</div><div class="pt">Te vejo na segunda. · A prova é na sexta.</div></div>
+<div class="i"><div class="en">My birthday is on March 17th. · We met on Christmas Day.</div><div class="pt">Meu aniversário é em 17 de março. · Nos conhecemos no Natal.</div></div>
+<div class="i"><div class="en">AT — horários e momentos exatos: The class starts at 8. · I'll call you at noon.</div><div class="pt">A aula começa às oito. · Te ligo ao meio-dia.</div></div>
+<div class="i"><div class="en">We arrived at midnight. · Let's meet at sunset.</div><div class="pt">Chegamos à meia-noite. · Vamos nos encontrar no pôr do sol.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">in · on · transporte</div>
+<h2>Dentro do carro, em cima do ônibus</h2>
+<p class="sdesc">Aqui a lógica muda um pouco: se você <b>entra e fica sentado num espaço pequeno</b>, é <code>in</code>; se você <b>pode andar pelo veículo</b>, é <code>on</code>.</p>
+<div class="items">
+<div class="i"><div class="en">IN — dentro de carros e espaços pequenos: I'm in the car. · She was in a taxi.</div><div class="pt">Estou no carro. · Ela estava num táxi.</div></div>
+<div class="i"><div class="en">ON — transportes públicos ou grandes: I'm on the bus. · He's on the train.</div><div class="pt">Estou no ônibus. · Ele está no trem.</div></div>
+<div class="i"><div class="en">They're on the plane. · We met on the ferry. · She's on the subway.</div><div class="pt">Eles estão no avião. · Nos conhecemos na balsa. · Ela está no metrô.</div></div>
+<div class="i"><div class="en">ON também para o que se monta: on a bike · on a motorcycle · on a horse</div><div class="pt">de bicicleta · de moto · a cavalo</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">a regra de ouro</div>
+<h2>A pirâmide invertida: do amplo ao exato</h2>
+<p class="sdesc">Uma só imagem resolve os três usos: quanto <b>maior e mais vago</b>, <code>in</code>; quanto <b>mais específico e preciso</b>, <code>at</code>.</p>
+<div class="items">
+<div class="i"><div class="en">IN = dentro de algo grande ou de um período grande.</div><div class="pt">in Brazil · in the kitchen · in 1991 · in spring · in the morning</div></div>
+<div class="i"><div class="en">ON = sobre uma superfície, um dia específico ou um transporte grande.</div><div class="pt">on the table · on the wall · on Monday · on March 17th · on the bus</div></div>
+<div class="i"><div class="en">AT = um ponto exato no espaço ou no tempo.</div><div class="pt">at home · at school · at the station · at 8:00 · at noon · at midnight</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">preposição em detalhe</div>
+<h2>Os usos completos de <i>at</i>, <i>in</i> e <i>on</i></h2>
+<p class="sdesc">Depois da regra geral, os casos que aparecem no dia a dia — inclusive os que fogem do óbvio, como <code>on the phone</code> e <code>in a difficult situation</code>.</p>
+<div class="items">
+<div class="i"><div class="en">AT — a specific place: I am at home now. · She studies at Oxford University. · My friend works at a hospital.</div><div class="pt"><i>At</i> para lugar específico: Estou em casa agora. · Ela estuda em Oxford. · Meu amigo trabalha num hospital.</div></div>
+<div class="i"><div class="en">AT — a specific time: The meeting is at 3 o'clock. · The shop opens at 9 a.m.</div><div class="pt"><i>At</i> para horário: A reunião é às 3. · A loja abre às 9 da manhã.</div></div>
+<div class="i"><div class="en">AT — an event or a position: They are at the concert tonight. · He is at the door. · We will meet at the bus stop.</div><div class="pt"><i>At</i> para evento ou posição: Eles estão no show hoje. · Ele está na porta. · A gente se encontra no ponto.</div></div>
+<div class="i"><div class="en">Think of "at" as a target: it shows a precise point in place, time or position.</div><div class="pt">Pense em <i>at</i> como um alvo: um ponto preciso no espaço, no tempo ou na posição.</div></div>
+<div class="i"><div class="en">IN — inside a room, a building, a city or a country: She is in her room. · We live in Germany.</div><div class="pt"><i>In</i> para dentro de: Ela está no quarto dela. · Moramos na Alemanha.</div></div>
+<div class="i"><div class="en">IN — inside a container or a group: He is in the box. · He works in a big company.</div><div class="pt"><i>In</i> para recipiente ou grupo: Está dentro da caixa. · Ele trabalha numa empresa grande.</div></div>
+<div class="i"><div class="en">IN — long periods of time: I was born in 2001. · It often rains in the winter.</div><div class="pt"><i>In</i> para períodos longos: Nasci em 2001. · Costuma chover no inverno.</div></div>
+<div class="i"><div class="en">IN — a condition or a situation: They are in a difficult situation.</div><div class="pt"><i>In</i> para situação: Eles estão numa situação difícil.</div></div>
+<div class="i"><div class="en">ON — on top of a surface: The book is on the table. · She wrote her name on the board. · There is a picture on the wall.</div><div class="pt"><i>On</i> para superfície: O livro está na mesa. · Ela escreveu o nome no quadro. · Tem um quadro na parede.</div></div>
+<div class="i"><div class="en">ON — days and dates: We will meet on Monday. · My birthday is on 15th May.</div><div class="pt"><i>On</i> para dias e datas: A gente se encontra na segunda. · Meu aniversário é 15 de maio.</div></div>
+<div class="i"><div class="en">ON — media and devices: He is on the phone right now. · I watch movies on Netflix.</div><div class="pt"><i>On</i> para aparelhos e mídia: Ele está no telefone agora. · Assisto a filmes na Netflix.</div></div>
+<div class="i"><div class="en">ON — floors and vehicles: They live on the 3rd floor. · She is on the bus to school.</div><div class="pt"><i>On</i> para andar e transporte: Moram no 3º andar. · Ela está no ônibus indo para a escola.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">present continuous</div>
+<h2>O que está acontecendo agora</h2>
+<p class="sdesc">Três usos, uma forma: <b>agora</b>, <b>temporário</b> e <b>por estes dias</b>.</p>
+<div class="items">
+<div class="i"><div class="en">Now — an action happening at this moment: I am talking on the phone now.</div><div class="pt">Agora: Estou falando ao telefone agora.</div></div>
+<div class="i"><div class="en">Temporary — a situation for a short time: We are staying with my aunt this week.</div><div class="pt">Temporário: Estamos na casa da minha tia esta semana.</div></div>
+<div class="i"><div class="en">Around now — something happening these days, not forever: She is studying for her exams.</div><div class="pt">Por estes dias: Ela está estudando para as provas.</div></div>
+<div class="i"><div class="en">Easy rule: use present continuous for actions happening now or for temporary situations.</div><div class="pt">Regra fácil: presente contínuo = agora ou temporário.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">quantificadores</div>
+<h2><i>Some</i>, <i>many</i>, <i>few</i>, <i>little</i>, <i>each</i></h2>
+<p class="sdesc">A escolha depende de duas perguntas: a frase é <b>afirmativa ou pergunta</b>, e o substantivo é <b>contável ou não</b>. E atenção: o artigo <code>a</code> em <i>a few</i> / <i>a little</i> inverte o sentido.</p>
+<div class="items">
+<div class="i"><div class="en">Some — usually in positive sentences: I bought some apples.</div><div class="pt"><i>Some</i> nas afirmativas: Comprei algumas maçãs.</div></div>
+<div class="i"><div class="en">Any — usually in questions and negative sentences: Is there any milk in the fridge?</div><div class="pt"><i>Any</i> nas perguntas e negativas: Tem leite na geladeira?</div></div>
+<div class="i"><div class="en">Many — a large number, with countable nouns: There are many books on the shelf.</div><div class="pt"><i>Many</i> para contáveis: Tem muitos livros na estante.</div></div>
+<div class="i"><div class="en">Much — a large amount, with uncountable nouns: Is there much milk in the bottle?</div><div class="pt"><i>Much</i> para incontáveis: Tem muito leite na garrafa?</div></div>
+<div class="i"><div class="en">Few — not many, often not enough: There are few apples left. <span class="def">plural countable</span></div><div class="pt"><i>Few</i> = poucas, e geralmente não bastam: Sobraram poucas maçãs.</div></div>
+<div class="i"><div class="en">A few — some, enough: There are a few apples left.</div><div class="pt"><i>A few</i> = algumas, e bastam: Ainda tem algumas maçãs.</div></div>
+<div class="i"><div class="en">Little — not much, often not enough: There is little water in the glass. <span class="def">uncountable</span></div><div class="pt"><i>Little</i> = pouca, e não basta: Tem pouca água no copo.</div></div>
+<div class="i"><div class="en">A little — some amount, enough: There is a little water in the glass.</div><div class="pt"><i>A little</i> = um pouco, e basta: Tem um pouco de água no copo.</div></div>
+<div class="i"><div class="en">Each — one by one: Each child gets a turn.</div><div class="pt"><i>Each</i> = um por um: Cada criança tem a sua vez.</div></div>
+<div class="i"><div class="en">Every — each person in the group, with no exceptions: Every child is ready.</div><div class="pt"><i>Every</i> = todos, sem exceção: Todas as crianças estão prontas.</div></div>
+<div class="i"><div class="en">All — the whole group together: All the children are ready.</div><div class="pt"><i>All</i> = o grupo inteiro junto: Todas as crianças estão prontas.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">intensidade</div>
+<h2><i>Very</i>, <i>too</i>, <i>enough</i> — e a linha do problema</h2>
+<p class="sdesc">A diferença entre <code>very</code> e <code>too</code> não é de grau, é de <b>consequência</b>: <i>too</i> sempre significa que virou problema.</p>
+<div class="items">
+<div class="i"><div class="en">Very — a lot, but still okay: The coffee is very hot. I can drink it.</div><div class="pt"><i>Very</i> = muito, mas dá: O café está muito quente. Consigo beber.</div></div>
+<div class="i"><div class="en">Too — so much that it becomes a problem: The coffee is too hot. I can't drink it.</div><div class="pt"><i>Too</i> = demais, virou problema: O café está quente demais. Não consigo beber.</div></div>
+<div class="i"><div class="en">Enough — the right amount: The bag is light enough. I can carry it.</div><div class="pt"><i>Enough</i> = o suficiente: A bolsa está leve o bastante. Consigo carregar.</div></div>
+<div class="i"><div class="en">Too — the bag is too heavy. I can't carry it.</div><div class="pt">A bolsa está pesada demais. Não consigo carregar.</div></div>
+<div class="i"><div class="en">Quite — a little strong: The test was quite hard. I made a few mistakes.</div><div class="pt"><i>Quite</i> = bem difícil: A prova foi bem difícil. Errei algumas.</div></div>
+<div class="i"><div class="en">Very — really strong: The test was very hard. Many students failed.</div><div class="pt"><i>Very</i> = muito difícil: A prova foi muito difícil. Muitos alunos reprovaram.</div></div>
+<div class="i"><div class="en">Too much — for things you don't count one by one: There is too much noise. I can't study.</div><div class="pt"><i>Too much</i> para incontáveis: Tem barulho demais. Não consigo estudar.</div></div>
+<div class="i"><div class="en">Too many — for things you can count: There are too many people. The room is full.</div><div class="pt"><i>Too many</i> para contáveis: Tem gente demais. A sala está cheia.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">no carro e na rua</div>
+<h2>Entrar, sair, encostar e buscar alguém</h2>
+<p class="sdesc">Os pares que resolvem qualquer situação de deslocamento — e a regra que separa <code>get in</code> de <code>get on</code>.</p>
+<div class="items">
+<div class="i"><div class="en">Get in — to enter a car: He got in the car and drove to work. · Get out — to leave a car: He got out of the car and closed the door.</div><div class="pt">entrar no carro · sair do carro</div></div>
+<div class="i"><div class="en">With cars and taxis we usually say get in / get out. With buses, trains and planes we say get on / get off.</div><div class="pt">carro e táxi: <i>get in / get out</i>. Ônibus, trem e avião: <i>get on / get off</i>.</div></div>
+<div class="i"><div class="en">Drive off — to leave by driving away: After saying goodbye, he drove off.</div><div class="pt">sair dirigindo: Depois de se despedir, ele foi embora de carro.</div></div>
+<div class="i"><div class="en">Pull over — to move your car to the side of the road: He pulled over when the engine made noise.</div><div class="pt">encostar: Ele encostou quando o motor fez barulho.</div></div>
+<div class="i"><div class="en">Pick up — to collect someone in your car: He picked her up. · Drop off — to take someone to a place and leave them there: He dropped her off at her house.</div><div class="pt">buscar alguém · deixar alguém</div></div>
+<div class="i"><div class="en">Take out — to remove something from inside: He took the book out of the box. · Put in — to place something inside: He put the book in the box.</div><div class="pt">tirar de dentro · colocar dentro</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">viagem</div>
+<h2>Hotel, reserva e passeio — a palavra certa</h2>
+<p class="sdesc">Três duplas que aparecem em qualquer viagem e que os aplicativos usam com precisão.</p>
+<div class="items">
+<div class="i"><div class="en">Hotel — a place where you pay to stay, usually in a private room: They stayed at a hotel near the beach.</div><div class="pt">Hotel — quarto privativo: Ficaram num hotel perto da praia.</div></div>
+<div class="i"><div class="en">Hostel — a building where you pay to stay in a shared room with others: She stayed in a hostel to save money.</div><div class="pt">Hostel — quarto compartilhado: Ela ficou num hostel para economizar.</div></div>
+<div class="i"><div class="en">Book — arrange a place, seat or service for a future time: She booked a flight to Paris.</div><div class="pt"><i>Book</i> = reservar com antecedência: Ela comprou passagem para Paris.</div></div>
+<div class="i"><div class="en">Reserve — keep something for a specific person or time: They reserved a table for two at the restaurant.</div><div class="pt"><i>Reserve</i> = guardar para alguém: Reservaram uma mesa para dois no restaurante.</div></div>
+<div class="i"><div class="en">Tour — a planned visit or journey to see places, often with a guide: They went on a tour of Italy, visiting five cities.</div><div class="pt">Tour — roteiro com várias paradas: Fizeram um tour pela Itália, visitando cinco cidades.</div></div>
+<div class="i"><div class="en">Excursion — a short trip for fun, learning or a special purpose: The hotel offered a day excursion to the mountains.</div><div class="pt">Excursão — passeio curto: O hotel oferecia uma excursão de um dia às montanhas.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">mudar, voltar, parar</div>
+<h2>Pares que o português junta e o inglês separa</h2>
+<p class="sdesc">Devolver não é reembolsar; parar não é pausar; voltar ao que era não é dar ré. Cada dupla tem uma linha divisória clara.</p>
+<div class="items">
+<div class="i"><div class="en">Return — to give something back: She returned the shoes because they were too small.</div><div class="pt"><i>Return</i> = devolver o objeto: Ela devolveu os sapatos porque eram pequenos.</div></div>
+<div class="i"><div class="en">Refund — to give back money that was paid: The shop refunded him $40 for the shoes.</div><div class="pt"><i>Refund</i> = devolver o dinheiro: A loja reembolsou 40 dólares pelos sapatos.</div></div>
+<div class="i"><div class="en">Stop — to end an action completely: The music stopped at the end of the song.</div><div class="pt"><i>Stop</i> = acabou: A música parou no fim da canção.</div></div>
+<div class="i"><div class="en">Pause — to stop for a short time, then continue later: He paused the music to answer the phone.</div><div class="pt"><i>Pause</i> = pausa e volta: Ele pausou a música para atender o telefone.</div></div>
+<div class="i"><div class="en">Revert — to go back to how something was before: The company reverted to its old logo.</div><div class="pt"><i>Revert</i> = voltar ao que era: A empresa voltou ao logo antigo.</div></div>
+<div class="i"><div class="en">Reverse — to move, turn or change in the opposite direction: The car reversed out of the garage.</div><div class="pt"><i>Reverse</i> = ir no sentido contrário: O carro saiu de ré da garagem.</div></div>
+<div class="i"><div class="en">Change — to make something different: She changed her hairstyle for the summer.</div><div class="pt"><i>Change</i> = ficar diferente: Ela mudou o cabelo para o verão.</div></div>
+<div class="i"><div class="en">Switch — to replace one thing with another: He switched from tea to coffee this morning.</div><div class="pt"><i>Switch</i> = trocar uma coisa por outra: Ele trocou o chá pelo café hoje de manhã.</div></div>
+<div class="i"><div class="en">Free — release completely: He freed the birds from the cage. · Free up — make time or space available: I need to free up memory on my phone.</div><div class="pt">libertar · liberar espaço</div></div>
+<div class="i"><div class="en">Set — place something: He set the glass on the table. · Set up — arrange or organize: They set up the chairs for the party.</div><div class="pt">colocar · montar/organizar</div></div>
+<div class="i"><div class="en">Give up — casual, personal: He gave up smoking after many tries. · Surrender — formal, military or serious: The soldiers surrendered after a long siege.</div><div class="pt">largar/desistir · render-se</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">velho e usado</div>
+<h2>Cinco palavras para "velho"</h2>
+<p class="sdesc">Cada uma carrega um julgamento diferente: idade, história, obsolescência ou desgaste.</p>
+<div class="items">
+<div class="i"><div class="en">Old — not new; has existed for a long time: This is an old phone, but it still works well.</div><div class="pt">Velho, mas funcional: É um celular velho, mas ainda funciona bem.</div></div>
+<div class="i"><div class="en">Ancient — extremely old, usually from very far in history: The pyramids are ancient buildings.</div><div class="pt">Antiquíssimo: As pirâmides são construções antiquíssimas.</div></div>
+<div class="i"><div class="en">Outdated — too old to be useful or suitable now: This typewriter is outdated.</div><div class="pt">Ultrapassado: Esta máquina de escrever está ultrapassada.</div></div>
+<div class="i"><div class="en">Used — not new; someone owned or used it before: This is a used car.</div><div class="pt">Usado, seminovo: Este é um carro usado.</div></div>
+<div class="i"><div class="en">Worn-out — damaged or in bad condition because it was used too much: These shoes are worn-out.</div><div class="pt">Gasto, acabado: Estes sapatos estão acabados.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">trânsito e trabalho</div>
+<h2>Descrever a estrada · e a palavra <i>vocation</i></h2>
+<p class="sdesc">Três estados possíveis de uma via, e a palavra que descreve o trabalho que se sente <b>chamado</b> a fazer.</p>
+<div class="items">
+<div class="i"><div class="en">Clear — free from traffic or obstacles: The road is clear.</div><div class="pt">Livre: A estrada está livre.</div></div>
+<div class="i"><div class="en">Blocked — something is in the way; you cannot pass: The road is blocked.</div><div class="pt">Bloqueada: A estrada está bloqueada.</div></div>
+<div class="i"><div class="en">Congested — full of vehicles; traffic is moving slowly or not at all: The road is congested.</div><div class="pt">Congestionada: A estrada está congestionada.</div></div>
+<div class="i"><div class="en">Vocation — work you feel especially suited to do; it feels more like a calling than just a job: For many, nursing is a vocation, not just a career.</div><div class="pt">Vocação — o trabalho que parece um chamado: Para muitos, a enfermagem é uma vocação, não só uma carreira.</div></div>
+</div>
+</section>
+
+</main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens.</div>
+</div>
+
+<footer>Sistema 06 · Situar a Frase — onde, quando e quanto</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+  const units=[];
+  secs.forEach(s=>{s.querySelectorAll('.i').forEach(el=>{units.push({el, sec:s, txt:el.textContent.toLowerCase()});});});
+  document.getElementById('m-total').textContent=units.length;
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0; const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));}});
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
