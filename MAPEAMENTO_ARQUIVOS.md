@@ -1,7 +1,33 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-02 — ver blocos 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12), todos concluídos.**
+> **Atualização mais recente: 2026-08-03 — ver blocos 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12), todos concluídos.**
+
+## 0l. Atualização 2026-08-03 — Sistema 16 (Baseado em Livros V07) · CONCLUÍDO
+
+> Fonte: **exclusivamente os arquivos `.md`**. Mesmo template visual do S15/S17/S18/S19.
+
+| Livro | Arquivo `.md` | Painel | Blocos | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S16 · Livro 01 | `02_English Vocabulary in Use. Elementary. 3rd Edition.md` | `livro01.html` | 58 unidades | 431 | 147 KB | ✅ já existia |
+| S16 · Livro 02 | `01_Practice Makes Perfect Complete English All-in-One …` | `livro02.html` | 16 | 289 | 84 KB | ✅ **2026-08-02** |
+| S16 · Livro 03 | `03_English Pronunciation in Use Elementary.md` | `livro03.html` | 15 | 173 | 56 KB | ✅ **2026-08-02** |
+| S16 · Livro 04 | `04_Grammar - Grammar in Use Intermediate Student's.md` | `livro04.html` | 13 | 226 | 68 KB | ✅ **2026-08-02** |
+| S16 · Livro 05 | `05_Practice Makes Perfect English Vocabulary for Beginning ESL …` | `livro05.html` | 19 | 407 | 143 KB | ✅ **2026-08-03** |
+| S16 · Livro 06 | `06_Practise Makes Perfect_ English Verbs 3rd Edition.md` | `livro06.html` | 20 | 235 | 81 KB | ✅ **2026-08-03** |
+
+**A numeração do painel não segue a numeração do `.md`:** o `livro01.html` (que já
+existia) é o `02_English Vocabulary in Use Elementary`; o `livro02.html` é o
+`01_PMP Complete English All-in-One`. Os demais coincidem.
+
+**Descartado nos seis:** enunciados de exercício, gabaritos ("Answer Key"),
+apêndices de verbos irregulares, prefácios e as caixas de método. No livro 05
+(vocabulário) as listas de palavras entraram agrupadas por tema com tradução; no
+livro 06 (verbos) entraram as frases-modelo de cada tempo-aspecto com o **motivo**
+de escolher aquela forma, que é o diferencial do livro.
+
+**Variante:** livros 01, 03 e 04 são Cambridge (in Use); livros 02, 05 e 06 são
+McGraw-Hill (Practice Makes Perfect) — inglês **americano**.
 
 ## 0k. Atualização 2026-08-02 — Sistema 15 (Baseado em Livros V06) · CONCLUÍDO
 
@@ -276,8 +302,8 @@ do original ficaram de fora por esse motivo. O **inglês real** (frases, listas,
 | 12 | Livros V03 — American English File | 6 | `index.html` + `livro01` | ✅ 1/6 · ⏳ 5 |
 | 13 | Livros V04 — English for Everyone | 6 | `index.html` + `livro01` | ✅ 1/6 · ⏳ 5 |
 | 14 | Livros V05 — Business & Vocabulário | 6 | `index.html` | ⏳ 6 |
-| 15 | Livros V06 — Exercícios & Vocabulário | 6 | `index.html` + `livro01` | ✅ 1/6 · ⏳ 5 |
-| 16 | Livros V07 — In Use & PMP | 6 | `index.html` + `livro01` | ✅ 1/6 · ⏳ 5 |
+| 15 | Livros V06 — Exercícios & Vocabulário | 6 | `index.html` + `livro01–06` | ✅ 6/6 |
+| 16 | Livros V07 — In Use & PMP | 6 | `index.html` + `livro01–06` | ✅ 6/6 |
 | 17 | Livros V08 — Sotaque & Vocabulário | 3 | `index.html` **(criado 07-24)** | ⏳ 3 |
 | 18 | Livros V09 — Cambridge B2 First | 5 | `index.html` **(criado 07-24)** | ⏳ 5 |
 | 19 | Livros V10 — Gramática Avançada | 7 | `index.html` **(criado 07-24)** | ⏳ 7 |
