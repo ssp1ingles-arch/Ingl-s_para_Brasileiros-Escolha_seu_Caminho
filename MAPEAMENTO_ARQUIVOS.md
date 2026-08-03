@@ -1,7 +1,39 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-03 — ver blocos 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12), todos concluídos.**
+> **Atualização mais recente: 2026-08-03 — ver blocos 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12), todos concluídos.**
+
+## 0m. Atualização 2026-08-03 — Sistema 14 (Baseado em Livros V05) · CONCLUÍDO
+
+> Fonte: **exclusivamente o arquivo `.md`**. Mesmo template visual do S15/S16/S17/S18.
+
+| Livro | Arquivo `.md` | Painel | Blocos | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S14 · Livro 01 | `01_EfE Business English 1` | `livro01.html` | 34 | 601 | 135 KB | ✅ já existia |
+| S14 · Livro 02 | `02_EfE Business English 2` | `livro02.html` | 32 | 443 | 122 KB | ✅ já existia |
+| S14 · Livro 03 | `03_EfE Course Book Level 3` | `livro03.html` | 28 | 687 | 150 KB | ✅ já existia |
+| S14 · Livro 04 | `04_EfE Practice Book Level 4` | `livro04.html` | 30 | 356 | 101 KB | ✅ já existia |
+| S14 · Livro 05 | `05_Perfecting your english pronunciation` | `livro05.html` | 18 | 297 | 89 KB | ✅ já existia |
+| S14 · Livro 06 | `06_4000 Essential English Words  Book 6.md` | `livro06.html` | 30 unidades | 600 | 205 KB | ✅ **2026-08-03** |
+
+**O livro 06 é o último painel que faltava no Sistema 14.** As 600 palavras
+(30 unidades × 20) entraram uma a uma com a **definição do próprio livro**
+traduzida, a **frase de exemplo** original com a palavra-alvo destacada e a
+tradução da frase. O `.md` é OCR e vinha com as frases sem espaço entre as
+palavras (`Thecatbecamefranticwhen…`) — todas foram recompostas.
+
+**Numeração das unidades:** os cabeçalhos `Word List` de 4 unidades se perderam
+no OCR (a da unidade 13 saiu como `Ward List`); as quatro foram recuperadas pela
+paginação. Cada unidade recebeu como título a **leitura que a fecha** no livro
+(`The North Star`, `The Avalanche`, `The End of Smallpox`…), que é o contexto em
+que aquelas 20 palavras aparecem juntas — a série não agrupa por tema.
+
+**Descartado:** enunciados de exercício, gabaritos, as perguntas de *Reading
+Comprehension*, a introdução metodológica de Paul Nation e o índice.
+
+**Também atualizados:** o hub do S14 (card do livro 06 saiu de "Em breve" para
+ativo; métricas do topo agora somam 6 livros, 2.984 itens, 172 blocos) e a
+entrada 14 do `sistemas.json` (descrição e tag "Em breve" → "2.984 itens").
 
 ## 0l. Atualização 2026-08-03 — Sistema 16 (Baseado em Livros V07) · CONCLUÍDO
 
