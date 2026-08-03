@@ -132,12 +132,12 @@
   {
     "numero": "11",
     "titulo": "Livros V02 — Gramática em Uso",
-    "descricao": "Seis livros de gramática e pronúncia (English Grammar in Use, Grammar Practice, Oxford Guide, Essential Grammar, Pronunciation Made Simple, Reactivate C1/C2) em painéis de exemplos reais. Cinco já disponíveis: 4.500+ exemplos, incluindo o Oxford Guide (elipse, ênfase, britânico × americano) e o Pronunciation Made Simple (pares mínimos, ritmo e entonação).",
+    "descricao": "Seis livros de gramática e pronúncia (English Grammar in Use, Grammar Practice, Oxford Guide, Essential Grammar, Pronunciation Made Simple, Reactivate C1/C2) em painéis de exemplos reais. Os seis já em painel: 4.750+ exemplos, do A1 ao C2 — do Essential Grammar in Use ao Reactivate C1/C2 (subjuntivo, inversão, clivadas), passando pelo Oxford Guide e pela pronúncia por pares mínimos.",
     "cor": "#4A9EFF",
     "icone": "📐",
     "tags": [
       "6 livros",
-      "5 disponíveis",
+      "6 disponíveis",
       "Intermediário+"
     ],
     "pasta": "Sistema 11 — Baseado em Livros V02"
@@ -229,7 +229,7 @@
     "tags": [
       "5 livros",
       "B2",
-      "5 disponíveis"
+      "6 disponíveis"
     ],
     "pasta": "Sistema 18 — Baseado em Livros V09"
   },

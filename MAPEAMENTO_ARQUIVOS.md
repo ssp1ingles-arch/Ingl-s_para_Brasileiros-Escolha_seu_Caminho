@@ -3,7 +3,7 @@
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
 > **Atualização mais recente: 2026-08-03 — ver blocos 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).**
 
-## 0n. Atualização 2026-08-03 — Sistema 11 (Baseado em Livros V02) · livros 03 e 05
+## 0n. Atualização 2026-08-03 — Sistema 11 (Baseado em Livros V02) · CONCLUÍDO (livros 03, 05 e 06)
 
 > Fonte: **exclusivamente o arquivo `.md`**. Template visual novo (o mesmo do S14/S15/S16/S18), não o antigo `example-list` dos livros 01, 02 e 04 deste Sistema.
 
@@ -63,8 +63,33 @@ e dos exemplos.
 **Descartado:** enunciados de exercício, gabaritos do Apêndice II, instruções
 de faixa de CD e os poemas de leitura em voz alta.
 
-**Continua pendente no S11:** `livro06.html` (*Reactivate Your Grammar And
-Vocabulary C1/C2*).
+### Livro 06 — Reactivate Your Grammar &amp; Vocabulary C1/C2 · ✅ 2026-08-03
+
+| Livro | Arquivo `.md` | Painel | Blocos | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S11 · Livro 06 | `06_Reactivate Your Grammar And Vocabulary C1C2 - Exams.md` | `livro06.html` | 21 | 253 | 88 KB | ✅ **2026-08-03** |
+
+**Com este painel o Sistema 11 fecha (6/6).** É o livro de nível mais alto do
+Sistema, e o recorte pegou justamente o que os outros cinco não alcançam:
+`wish`/`if only` nos cinco padrões, `would rather/sooner/prefer`,
+`it's high time`, `as if/as though`, o discurso indireto completo (tabela de
+mudanças, os casos em que **não** muda, perguntas relatadas e o padrão
+sintático de cada verbo de relato), o subjuntivo, a passiva nas formas
+difíceis (gerúndio, infinitivo perfeito, `get`-passive, dois objetos,
+`let/help/make`, `by` × `with`), as estruturas impessoal e pessoal
+(`It is said that…` × `He is said to…`), o causativo, a inversão, as clivadas,
+o *fronting* e os conectores de causa, propósito e contraste.
+
+**Descartado:** os enunciados de exercício, as lacunas, os gabaritos e os
+textos de simulado (Cambridge Part 1/Part 2), as unidades 1–9 e 11 por
+sobreposição com os livros 01, 02 e 04 do Sistema.
+
+**Idioms:** entraram as 28 expressões cujo par idiom + significado sobreviveu
+ao OCR. Duas do conjunto 5 se perderam (a lista da legenda das figuras veio
+truncada) e **não foram inventadas**.
+
+**Também atualizados:** o hub do S11 (card do livro 06 ativo; métricas 5 → 6
+disponíveis, 4.500+ → 4.750+ exemplos) e a entrada 11 do `sistemas.json`.
 
 ## 0m. Atualização 2026-08-03 — Sistema 14 (Baseado em Livros V05) · CONCLUÍDO
 
