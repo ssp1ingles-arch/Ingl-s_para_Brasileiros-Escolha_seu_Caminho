@@ -1,7 +1,34 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-02 — ver blocos 0i (Sistema 13) e 0h (Sistema 12), ambos concluídos.**
+> **Atualização mais recente: 2026-08-02 — ver blocos 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12), todos concluídos.**
+
+## 0k. Atualização 2026-08-02 — Sistema 15 (Baseado em Livros V06) · CONCLUÍDO
+
+> Fonte: **exclusivamente os arquivos `.md`**. Mesmo template visual do S17/S18/S19.
+
+| Livro | Arquivo `.md` | Painel | Blocos | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S15 · Livro 01 | `01_English Grammar in Use Supplementary Exercises …` | `livro01.html` | 16 | 123 | 49 KB | ✅ já existia |
+| S15 · Livro 02 | `02_Grammar - Grammar -Basic Grammar in Use …` | `livro02.html` | 23 | 490 | 119 KB | ✅ **2026-08-02** |
+| S15 · Livro 03 | `03_English Collocations in Use Intermediate Book.md` | `livro03.html` | 18 | 425 | 114 KB | ✅ **2026-08-02** |
+| S15 · Livro 04 | `04_Basic Grammar in Use Student's Book.md` | `livro04.html` | 16 | 338 | 86 KB | ✅ **2026-08-02** |
+| S15 · Livro 05 | `05_English Phrasal Verbs in Use Intermediate …` | `livro05.html` | 16 | 266 | 74 KB | ✅ **2026-08-02** |
+| S15 · Livro 06 | `06_Practice Makes Perfect English Conversation …` | `livro06.html` | 14 | 224 | 73 KB | ✅ **2026-08-02** |
+
+**Nomes de arquivo enganosos — o painel segue o CONTEÚDO, não o nome:**
+
+- `02_… Basic Grammar in Use … with Answers.md` → o conteúdo é **Essential Grammar in Use** (Murphy, Cambridge, 3ª ed., elementar).
+- `04_Basic Grammar in Use Student's Book.md` → o conteúdo é **English Idioms in Use Intermediate** (McCarthy &amp; O'Dell, Cambridge, 2ª ed.).
+
+**Descartado em todos os seis:** enunciados de exercício sem conteúdo, gabaritos
+numerados (as seções "Answer key" no fim de cada livro), apêndices de ortografia,
+rodapés de gráfica, e as caixas de método ("Over to you", "make a page in your
+vocabulary notebook"). Nos dumps das séries *in Use* também foram recompostas as
+ligaduras quebradas do OCR (`suff er` → `suffer`, `fi tness` → `fitness`).
+
+**Variante:** livros 01–05 são inglês **britânico** (Cambridge); o livro 06 é
+**americano** (McGraw-Hill) — a única fonte informal/coloquial do Sistema.
 
 ## 0i. Atualização 2026-08-02 — Sistema 13 (Baseado em Livros V04) · CONCLUÍDO
 
