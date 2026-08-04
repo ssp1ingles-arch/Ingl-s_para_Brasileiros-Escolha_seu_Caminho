@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 01 · Oxford English Grammar Course Advanced — Sistema 21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 21</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 21 · Livro 01 · C1–C2</div>
+<h1 class="title">Oxford English <em>Grammar Course</em> · Advanced</h1>
+<p class="lead">Michael Swan &amp; Catherine Walter · Oxford University Press. É o primeiro painel do Sistema 21 — e a escolha do recorte veio do que este livro tem de próprio: o <b>Swan é descritivo</b>, não normativo. Ele não diz só o que é certo; diz o que é <b>comum</b>, o que soa <b>formal demais para conversa</b>, o que se prefere na fala e o que se prefere na escrita. O painel ficou com os pontos em que essa voz aparece mais: as construções com <i>there</i> que ninguém ensina, os três verbos de vida dupla, o presente que narra e comenta, o progressivo da reclamação, a lista dos verbos que não vão para o progressivo, a escolha entre <i>will</i>, <i>going to</i> e presente progressivo com a regra do «futuro que já se vê no presente», o <i>be to</i> do noticiário, e a escala completa de permissão, obrigação e probabilidade. Inglês britânico.</p>
+
+<div class="metrics">
+  <div class="metric"><b>14</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>C1–C2</b><span>nível</span></div>
+  <div class="metric"><b>GB</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: there to be, always, going to, needn't…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">There is · estruturas</div>
+<h2><i>There is</i> — as construções que ninguém ensina</h2>
+<p class="sdesc">Todo mundo aprende <i>there is / there are</i>. O que o Swan mostra é que o <b>there</b> entra também com modal, com infinitivo, com gerúndio e com verbo de aparência.</p>
+<div class="items">
+<div class="i"><span class="tag">seem/appear</span><div class="en"><i>There seems to be</i> a hold-up.</div><div class="pt">Parece haver um congestionamento.</div></div>
+<div class="i"><span class="tag">modal</span><div class="en"><i>There may be</i> a job for you. · <i>There can't be</i> two people with that name.</div><div class="pt">Pode haver uma vaga para você. · Não pode haver duas pessoas com esse nome.</div></div>
+<div class="i"><span class="tag">certain/likely</span><div class="en"><i>There's certain to be</i> an inquiry. · <i>Are there likely to be</i> more strikes?</div><div class="pt">Certamente vai haver um inquérito. · É provável que haja mais greves?</div></div>
+<div class="i"><span class="tag">need/point</span><div class="en"><i>Is there any point in</i> talking to him? · <i>There's no need to</i> shout.</div><div class="pt">Adianta alguma coisa falar com ele? · Não precisa gritar.</div><div class="def">Também com <b>any/no sense</b>, <b>any/no use</b>.</div></div>
+<div class="i"><span class="tag">something wrong</span><div class="en"><i>Is there something wrong</i>?</div><div class="pt">Tem alguma coisa errada?</div><div class="def">O padrão <b>there + something/anything + wrong</b>.</div></div>
+<div class="i"><span class="tag">question tag</span><div class="en"><i>There won't be</i> a test, <i>will there</i>?</div><div class="pt">Não vai ter prova, vai?</div><div class="def">O <b>there</b> se repete na question tag como se fosse sujeito.</div></div>
+<div class="i"><span class="tag">infinitivo</span><div class="en">We want <i>there to be</i> a referendum. · I'd like <i>there to be</i> more time to think.</div><div class="pt">Queremos que haja um referendo. · Eu gostaria que houvesse mais tempo para pensar.</div><div class="def">O <b>there</b> como sujeito de infinitivo — construção que não existe em português.</div></div>
+<div class="i"><span class="tag">gerúndio</span><div class="en">What's the chance of <i>there being</i> an agreement?</div><div class="pt">Qual é a chance de haver um acordo?</div></div>
+<div class="i"><span class="tag">auxiliar be</span><div class="en"><i>There were</i> some people <i>singing</i> in the street. (= Some people were singing…)</div><div class="pt">Havia gente cantando na rua.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">be · do · have</div>
+<h2>Os três verbos de vida dupla</h2>
+<p class="sdesc"><b>Be</b>, <b>do</b> e <b>have</b> são auxiliares e verbos plenos ao mesmo tempo — e por isso podem aparecer <b>duas vezes</b> na mesma frase.</p>
+<div class="items">
+<div class="i"><div class="en">I <i>am being</i> served. · <i>Have</i> you <i>had</i> an invitation? · What <i>do</i> you <i>do</i>?</div><div class="pt">Estou sendo atendido. · Você recebeu convite? · O que você faz?</div><div class="def">Em cada frase o verbo aparece duas vezes: uma como auxiliar, outra como verbo pleno.</div></div>
+<div class="i"><span class="tag err">comportamento</span><div class="en">You<i>'re being</i> stupid. (= você está <b>fazendo</b> coisas estúpidas)</div><div class="pt">Você está sendo idiota.</div><div class="def">O <b>be</b> no progressivo descreve <b>comportamento</b>, não característica.</div></div>
+<div class="i"><span class="tag err">comportamento</span><div class="en">I <i>was being</i> careful. (= eu estava fazendo algo com cuidado)</div><div class="pt">Eu estava sendo cuidadoso.</div></div>
+<div class="i"><span class="tag err">sentimento não</span><div class="en">I<i>'m depressed</i> just now. <s>I'm being depressed</s> · She <i>was</i> very cheerful yesterday. <s>She was being cheerful</s></div><div class="pt">Estou deprimido no momento. · Ela estava muito animada ontem.</div><div class="def">Com <b>sentimento</b>, nunca o progressivo — só com comportamento.</div></div>
+<div class="i"><span class="tag">do enfático</span><div class="en">That cake <i>does</i> look good! · I <i>did</i> enjoy the concert.</div><div class="pt">Esse bolo está com uma cara ótima mesmo! · Eu gostei muito do show.</div><div class="def">O <b>do</b> com verbo afirmativo mostra que sentimos algo <b>fortemente</b> — é ênfase emotiva, não correção.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Presente · narração</div>
+<h2>O presente que narra — instrução, comentário e história</h2>
+<p class="sdesc">Simples para o que acontece <b>um depois do outro</b>; progressivo para a <b>situação de fundo</b>. É exatamente o par passado simples / passado progressivo, transposto para o presente.</p>
+<div class="items">
+<div class="i"><span class="tag">instrução</span><div class="en">'How do I get to the police station?' 'You <i>go</i> straight on for half a mile, then you <i>come</i> to a garage. You <i>take</i> the next left, then as you<i>'re coming</i> up to a railway bridge, look out for a sign on the right.'</div><div class="pt">"Como chego à delegacia?" "Você segue reto uns oitocentos metros, aí chega a uma oficina. Pega a próxima à esquerda e, quando estiver chegando a uma ponte ferroviária, procure uma placa à direita."</div><div class="def">Simples para a sequência; progressivo para o pano de fundo.</div></div>
+<div class="i"><span class="tag">receita</span><div class="en">I <i>put</i> some butter in a frying pan. While the butter <i>is melting</i>, I <i>break</i> three eggs into a bowl and <i>beat</i> them…</div><div class="pt">Ponho manteiga numa frigideira. Enquanto a manteiga derrete, quebro três ovos numa tigela e bato…</div></div>
+<div class="i"><span class="tag">comentário</span><div class="en">Chekhov <i>shoots</i>, Burns <i>punches</i> it away, and it<i>'s</i> a corner. Meanwhile Fernandez <i>is warming up</i>, ready to replace…</div><div class="pt">Chekhov chuta, Burns soca para longe, e é escanteio. Enquanto isso Fernandez está aquecendo, pronto para substituir…</div></div>
+<div class="i"><span class="tag">história</span><div class="en">So he<i>'s just having</i> breakfast when the doorbell <i>rings</i>. He <i>opens</i> the door and <i>sees</i> this beautiful woman outside. She<i>'s wearing</i>…</div><div class="pt">Então ele está tomando café da manhã quando a campainha toca. Ele abre a porta e vê uma mulher linda lá fora. Ela está usando…</div><div class="def">É assim que se conta piada e caso em inglês — tudo no presente.</div></div>
+<div class="i"><span class="tag">ritmo lento</span><div class="en">The Oxford boat <i>is moving</i> further and further ahead. And what<i>'s happening</i> now? Cambridge <i>are getting</i> very low in the water. <i>Are</i> they <i>sinking</i>?</div><div class="pt">O barco de Oxford está se distanciando cada vez mais. E o que está acontecendo agora? Cambridge está afundando na água. Estão naufragando?</div><div class="def">O progressivo domina quando o comentário é de ritmo <b>mais lento</b>.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Presente · always</div>
+<h2>Progressivo com <i>always</i> — a reclamação</h2>
+<p class="sdesc">Progressivo + <i>always</i> não descreve rotina: descreve algo <b>repetido, imprevisto e em geral irritante</b>. É a forma da queixa.</p>
+<div class="items">
+<div class="i"><div class="en">She<i>'s always turning up</i> with little presents for the children.</div><div class="pt">Ela vive aparecendo com presentinhos para as crianças.</div><div class="def">Aqui é afetuoso — o padrão nem sempre é queixa.</div></div>
+<div class="i"><div class="en">I<i>'m always running into</i> Joanna in the supermarket.</div><div class="pt">Vivo esbarrando na Joanna no supermercado.</div></div>
+<div class="i"><span class="tag err">queixa</span><div class="en">This computer<i>'s continually crashing</i> at the most inconvenient moments.</div><div class="pt">Este computador vive travando nos momentos mais inconvenientes.</div><div class="def">A estrutura é muito usada para <b>reclamação e crítica</b>.</div></div>
+<div class="i"><span class="tag err">queixa</span><div class="en">She<i>'s forever taking</i> days off because of one little illness or another.</div><div class="pt">Ela vive tirando folga por causa de uma doencinha ou outra.</div></div>
+<div class="i"><span class="tag err">queixa</span><div class="en">This government <i>is always thinking</i> of new ways to take your money.</div><div class="pt">Este governo vive inventando novas maneiras de tirar seu dinheiro.</div><div class="def">Advérbios que entram no padrão: <b>always, continually, forever</b>.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Presente · usos fixos</div>
+<h2><i>I hear</i>, <i>it says</i>, <i>here comes</i> e os performativos</h2>
+<p class="sdesc">Quatro usos do presente simples que não cabem em nenhuma regra geral — e que aparecem toda hora na fala.</p>
+<div class="items">
+<div class="i"><div class="en">I <i>hear</i> Karen's getting married. · I <i>see</i> they're closing High Street again.</div><div class="pt">Fiquei sabendo que a Karen vai casar. · Vi que vão fechar a High Street de novo.</div><div class="def">Com o sentido de "ouvi dizer", "vi" — introduz informação recebida.</div></div>
+<div class="i"><div class="en"><i>It says</i> in the paper there's a rail strike tomorrow. · Where <i>does it say</i> that I need a visa?</div><div class="pt">Diz no jornal que amanhã tem greve de trem. · Onde é que diz que preciso de visto?</div><div class="def">O <b>it says</b> para o que está escrito.</div></div>
+<div class="i"><div class="en"><i>Here comes</i> the postman. · This wind! <i>There goes</i> my hat!</div><div class="pt">Lá vem o carteiro. · Esse vento! Lá vai meu chapéu!</div><div class="def">Duas expressões fixas, sempre no presente simples.</div></div>
+<div class="i"><span class="tag">performativo</span><div class="en">I won't do it again – I <i>promise</i>. · I hereby <i>declare</i> you man and wife.</div><div class="pt">Não faço mais — prometo. · Declaro-os marido e mulher.</div><div class="def">Performativo: <b>dizer é fazer</b>. Sempre presente simples.</div></div>
+<div class="i"><span class="tag">performativo</span><div class="en">I <i>swear</i> to tell the truth. · I <i>name</i> this ship 'Spirit of Adventure'.</div><div class="pt">Juro dizer a verdade. · Batizo este navio de "Spirit of Adventure".</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Verbos não progressivos</div>
+<h2>A lista dos verbos que não vão para o progressivo</h2>
+<p class="sdesc">Mesmo falando do que acontece <b>neste instante</b>, esses verbos ficam no simples. O Swan os organiza em três famílias.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">I <i>don't like</i> her hairstyle. <s>I'm not liking</s> · I called because I <i>need</i> to talk. <s>I'm needing</s></div><div class="pt">Não gosto do cabelo dela. · Liguei porque preciso conversar.</div></div>
+<div class="i"><span class="tag">mente e sentidos</span><div class="en">assume · believe · doubt · feel (ter opinião) · hate · hear · imagine (supor) · know · (dis)like · love · prefer · realise · recognise · regret · remember · see · smell · suppose · taste · think (ter opinião) · understand · want · wish</div><div class="pt">Estados mentais, emocionais e uso dos sentidos.</div></div>
+<div class="i"><div class="en">'I <i>love</i> you.' 'I <i>don't believe</i> you.' · I <i>doubt</i> if the train will be on time. · Who <i>do</i> you <i>think</i> will win? · I <i>feel</i> it's time for a break.</div><div class="pt">"Eu te amo." "Não acredito em você." · Duvido que o trem chegue na hora. · Quem você acha que vai ganhar? · Sinto que está na hora de uma pausa.</div></div>
+<div class="i"><span class="tag">comunicar e reagir</span><div class="en">(dis)agree · appear · astonish · deny · impress · mean · please · promise · satisfy · seem · surprise</div><div class="pt">Verbos de comunicação e de causar reação.</div></div>
+<div class="i"><div class="en">What <i>do</i> you <i>mean</i>? · We <i>seem</i> to have a problem. · Your attitude <i>surprises</i> me.</div><div class="pt">O que você quer dizer? · Parece que temos um problema. · Sua atitude me surpreende.</div></div>
+<div class="i"><span class="tag">outros estados</span><div class="en">be · belong · concern · consist · cost · depend · deserve · fit · have (possuir) · include · involve · lack · matter · measure (ter tal medida) · need · owe · own · possess · resemble · weigh (ter tal peso)</div><div class="pt">Os demais verbos de estado.</div></div>
+<div class="i"><div class="en">Who <i>does</i> this car <i>belong</i> to? · I <i>need</i> help. · 'I'm late.' 'It <i>doesn't matter</i>.'</div><div class="pt">De quem é este carro? · Preciso de ajuda. · "Estou atrasado." "Não tem problema."</div></div>
+<div class="i"><span class="tag err">exceção</span><div class="en"><i>Want</i> e <i>mean</i> não vão para o presente progressivo, mas <b>vão</b> para o present perfect progressive: I<i>'ve been wanting</i> to meet you for ages.</div><div class="pt">Faz séculos que eu queria te conhecer.</div></div>
+<div class="i"><span class="tag err">exceção</span><div class="en">I<i>'ve been meaning</i> to tell you – there's a problem with the central heating.</div><div class="pt">Eu vinha querendo te contar — tem um problema no aquecimento central.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Futuro · as três formas</div>
+<h2><i>Will</i>, <i>going to</i> ou presente progressivo?</h2>
+<p class="sdesc">A regra do Swan é elegante: usamos forma <b>presente</b> quando já dá para <b>ver o futuro no presente</b> — o plano, o arranjo ou o sinal já existe agora.</p>
+<div class="items">
+<div class="i"><span class="tag err">a regra</span><div class="en">I<i>'m seeing</i> Janet on Tuesday. (o arranjo já existe agora) × I wonder if she<i>'ll recognise</i> me. (não se fala do presente)</div><div class="pt">Vou ver a Janet na terça. × Será que ela vai me reconhecer?</div></div>
+<div class="i"><span class="tag err">a regra</span><div class="en">We<i>'re going to get</i> a new car. (a decisão já existe) × I hope it<i>'ll be</i> better than the old one. (não se fala do presente)</div><div class="pt">Vamos comprar um carro novo. × Espero que seja melhor que o antigo.</div><div class="def">O <b>will</b> é a forma mais comum: serve quando se dá informação sobre o futuro sem razão especial para usar forma presente.</div></div>
+<div class="i"><span class="tag err">plano</span><div class="en">I<i>'m going to take</i> a holiday some time soon. × Joe<i>'s spending</i> next week in France.</div><div class="pt">Vou tirar férias em breve. × O Joe vai passar a semana que vem na França.</div><div class="def">Os dois servem para <b>plano</b> — mas o progressivo se usa quando hora e lugar já estão <b>fixados</b>.</div></div>
+<div class="i"><span class="tag err">plano</span><div class="en">Emma<i>'s going to study</i> biology. × Phil<i>'s starting</i> work on Monday.</div><div class="pt">A Emma vai estudar biologia. × O Phil começa a trabalhar na segunda.</div></div>
+<div class="i"><span class="tag reg">falado</span><div class="en">We<i>'re meeting</i> Sandra at 6.00.</div><div class="pt">Vamos encontrar a Sandra às seis.</div><div class="def"><b>Going to</b> e presente progressivo são bem mais comuns na <b>fala</b> — porque a conversa trata de futuro que já se vê chegando.</div></div>
+<div class="i"><span class="tag reg">escrito</span><div class="en">The President <i>will arrive</i> at the airport at 14.00. He <i>will meet</i>…</div><div class="pt">O presidente chegará ao aeroporto às 14h. Ele se encontrará…</div><div class="def">O <b>will</b> domina na escrita e em itinerário oficial — futuro impessoal e menos imediato.</div></div>
+<div class="i"><span class="tag reg">falado</span><div class="en">Na fala informal, <i>going to</i> costuma sair como /ˈɡənə/ — escrito às vezes como <i>gonna</i>.</div><div class="pt">Nota de pronúncia do próprio livro.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Futuro · be + infinitivo</div>
+<h2><i>Be to</i> — plano oficial, pré-condição e ordem</h2>
+<p class="sdesc">Três usos de uma estrutura que quase não se ensina e que domina o noticiário britânico e o inglês dos pais dando ordem.</p>
+<div class="items">
+<div class="i"><span class="tag reg">oficial</span><div class="en">The Prime Minister <i>is to visit</i> British soldiers in Antarctica.</div><div class="pt">O primeiro-ministro vai visitar os soldados britânicos na Antártida.</div><div class="def">Plano oficial e arranjo fixado — a forma padrão da manchete.</div></div>
+<div class="i"><span class="tag reg">oficial</span><div class="en">Our firm <i>is to merge</i> with Universal Export.</div><div class="pt">Nossa empresa vai se fundir com a Universal Export.</div></div>
+<div class="i"><span class="tag">pré-condição</span><div class="en">We'd better hurry <i>if we're to get</i> there by lunchtime.</div><div class="pt">É melhor nos apressarmos se quisermos chegar lá até o almoço.</div><div class="def">Em oração com <i>if</i>: algo que precisa acontecer primeiro para que outra coisa aconteça.</div></div>
+<div class="i"><span class="tag">pré-condição</span><div class="en">You'll need to start working <i>if you're to pass</i> your exam.</div><div class="pt">Você vai ter de começar a estudar se quiser passar na prova.</div></div>
+<div class="i"><span class="tag">ordem</span><div class="en">You<i>'re to do</i> your homework before you go to bed. · Tell Jenny she<i>'s not to be</i> back late.</div><div class="pt">Você vai fazer a lição antes de dormir. · Diga à Jenny que ela não pode voltar tarde.</div><div class="def">Usada por pais e superiores para <b>dar ordem</b>.</div></div>
+<div class="i"><span class="tag">futuro perfeito</span><div class="en">We<i>'ll have finished</i> planting the new trees by Wednesday. · This government <i>will have ruined</i> the country before the next election.</div><div class="pt">Teremos terminado de plantar as árvores novas até quarta. · Este governo terá arruinado o país antes da próxima eleição.</div><div class="def">Algo <b>concluído até</b> certo momento futuro.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Perfect × past</div>
+<h2>Present perfect × passado simples — a conexão com o agora</h2>
+<p class="sdesc">Os dois falam de coisa terminada. A diferença é se aquilo tem <b>conexão com o presente</b>.</p>
+<div class="items">
+<div class="i"><span class="tag err">a diferença</span><div class="en">I<i>'ve made</i> a cake. Would you like a slice? × I didn't have much to do this morning, so I <i>made</i> a cake.</div><div class="pt">Fiz um bolo. Quer uma fatia? × Não tinha muito o que fazer hoje de manhã, então fiz um bolo.</div><div class="def">No primeiro o bolo está aqui agora; no segundo, só se conta o que aconteceu.</div></div>
+<div class="i"><span class="tag err">origem</span><div class="en">Who <i>wrote</i> that? <s>Who has written that?</s> · Bill <i>gave</i> me this necklace. · <i>Did</i> you <i>put</i> this here?</div><div class="pt">Quem escreveu isso? · O Bill me deu este colar. · Foi você que pôs isso aqui?</div><div class="def">Para a <b>origem</b> de algo presente, usa-se o passado simples — não o present perfect.</div></div>
+<div class="i"><span class="tag err">origem</span><div class="en">Whose idea <i>was</i> it to come here on holiday?</div><div class="pt">De quem foi a ideia de vir para cá nas férias?</div></div>
+<div class="i"><span class="tag err">today, this week</span><div class="en"><i>Has</i> Barbara <i>phoned</i> today? × Barbara <i>phoned</i> today. She needed some advice.</div><div class="pt">A Barbara ligou hoje? × A Barbara ligou hoje. Ela precisava de um conselho.</div><div class="def">Com <b>today, this week</b>: perfect quando se pensa no período <b>inteiro até agora</b> (comum em pergunta e negativa); passado quando se pensa numa parte já <b>encerrada</b>.</div></div>
+<div class="i"><span class="tag err">today, this week</span><div class="en">I <i>haven't seen</i> John this week. × I <i>saw</i> John this week, and he said…</div><div class="pt">Não vi o John esta semana. × Vi o John esta semana, e ele disse…</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Perfect progressive</div>
+<h2>Present perfect progressive — duração e o tempo preenchido</h2>
+<p class="sdesc">Dois usos: dizer <b>há quanto tempo</b> algo vem acontecendo e dizer <b>com o que</b> a pessoa andou ocupando o tempo.</p>
+<div class="items">
+<div class="i"><span class="tag">duração</span><div class="en">'Are you waiting for a table?' 'Yes. I<i>'ve been waiting</i> since eight o'clock.'</div><div class="pt">"Está esperando mesa?" "Estou. Espero desde as oito."</div></div>
+<div class="i"><span class="tag">duração</span><div class="en">Mark's studying engineering. He<i>'s been doing</i> practical work for the last six months.</div><div class="pt">O Mark está estudando engenharia. Faz seis meses que está fazendo trabalho prático.</div></div>
+<div class="i"><span class="tag err">estativos</span><div class="en">We<i>'ve had</i> this car for ten years. <s>We've been having this car</s> · How long <i>have</i> you <i>been</i> in England? <s>have you been being</s></div><div class="pt">Temos este carro há dez anos. · Há quanto tempo você está na Inglaterra?</div><div class="def">Lembre que <b>have</b> e <b>be</b> não vão para o progressivo.</div></div>
+<div class="i"><span class="tag err">confusão</span><div class="en">How long <i>have you been here for</i>? (= até agora) × How long <i>are you here for</i>? (= até quando)</div><div class="pt">Há quanto tempo você está aqui? × Você vai ficar aqui até quando?</div><div class="def">Duas perguntas parecidíssimas com sentidos opostos no tempo.</div></div>
+<div class="i"><span class="tag">tempo preenchido</span><div class="en">Sorry I haven't been to see you. I<i>'ve been working</i> very hard. · 'You're all wet!' 'Yes, I<i>'ve been swimming</i>.'</div><div class="pt">Desculpe não ter ido te ver. Andei trabalhando muito. · "Você está todo molhado!" "Estou, andei nadando."</div></div>
+<div class="i"><span class="tag">tempo preenchido</span><div class="en">'What <i>have</i> you <i>been doing</i> with yourself since I last saw you?' 'Travelling.'</div><div class="pt">"O que você andou fazendo desde a última vez que te vi?" "Viajando."</div></div>
+<div class="i"><span class="tag err">progressivo × simples</span><div class="en">I<i>'ve been living</i> here since August. × I<i>'ve lived</i> in this village all my life.</div><div class="pt">Moro aqui desde agosto. × Morei nesta vila a vida inteira.</div><div class="def">O progressivo é normal para o <b>temporário</b>; o simples, para o estado permanente e imutável.</div></div>
+<div class="i"><span class="tag err">progressivo × simples</span><div class="en">Lucy<i>'s been covering</i> cushions all afternoon. × An ice-cap <i>has covered</i> Greenland for something like 5 million years.</div><div class="pt">A Lucy passou a tarde encapando almofadas. × Uma calota de gelo cobre a Groenlândia há uns 5 milhões de anos.</div></div>
+<div class="i"><div class="en">The Dutch <i>have been reclaiming</i> land from the sea for centuries. · The universe <i>has been expanding</i> steadily since its origin.</div><div class="pt">Os holandeses vêm ganhando terra do mar há séculos. · O universo vem se expandindo continuamente desde sua origem.</div><div class="def">O progressivo cabe em situação longa e permanente quando a ênfase é na <b>atividade ou na mudança</b>.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Passado · past perfect</div>
+<h2>Past perfect com conjunção temporal — quando é opcional</h2>
+<p class="sdesc">Depois de <i>after</i>, <i>as soon as</i>, <i>once</i> e <i>when</i>, o past perfect nem sempre é preciso. Usá-lo <b>separa</b> as duas ações; não usá-lo apenas as encadeia.</p>
+<div class="items">
+<div class="i"><span class="tag">sem past perfect</span><div class="en">After the new government <i>came</i> in, things were very different. · As soon as Mary <i>arrived</i> we all sat down to dinner.</div><div class="pt">Depois que o novo governo assumiu, as coisas ficaram bem diferentes. · Assim que a Mary chegou, sentamos todos para jantar.</div><div class="def">Aqui não se volta atrás — apenas se avança de um evento ao seguinte.</div></div>
+<div class="i"><span class="tag">sem past perfect</span><div class="en">Once it <i>stopped</i> raining we started playing again.</div><div class="pt">Assim que parou de chover, voltamos a jogar.</div></div>
+<div class="i"><span class="tag err">com past perfect</span><div class="en">After the plane <i>had landed</i> they discovered bullet holes in the wings.</div><div class="pt">Depois que o avião pousou, descobriram buracos de bala nas asas.</div><div class="def">O past perfect enfatiza que a primeira ação foi <b>separada e concluída</b> antes de a segunda começar.</div></div>
+<div class="i"><span class="tag err">com past perfect</span><div class="en">As soon as I <i>had finished</i> my exams I took a long holiday. · Once they <i>had checked</i> all my bags I was allowed into the building.</div><div class="pt">Assim que terminei as provas, tirei férias longas. · Depois que revistaram todas as minhas malas, me deixaram entrar no prédio.</div></div>
+<div class="i"><span class="tag err">when</span><div class="en">When I <i>opened</i> the window, the cat jumped out. × When I <i>had opened</i> the windows, I sat down and had a cup of tea.</div><div class="pt">Quando abri a janela, o gato pulou para fora. × Depois de ter aberto as janelas, sentei e tomei um chá.</div><div class="def">Com <b>when</b> a diferença fica clara: sem past perfect as ações quase se sobrepõem; com ele, uma termina antes da outra.</div></div>
+<div class="i"><span class="tag err">when</span><div class="en">When I <i>phoned</i> her, she came at once. × When I <i>had made</i> all my phone calls, I did some gardening.</div><div class="pt">Quando liguei para ela, veio na hora. × Depois de fazer todas as ligações, cuidei do jardim.</div></div>
+<div class="i"><span class="tag err">passado que continua</span><div class="en">Those people we met in Paris <i>were</i> very nice. · I got that job because I <i>spoke</i> French.</div><div class="pt">Aquelas pessoas que conhecemos em Paris eram muito simpáticas. · Consegui aquele emprego porque falava francês.</div><div class="def">Mesmo que a situação <b>não tenha mudado</b>, ao falar do passado usa-se tempo passado.</div></div>
+<div class="i"><span class="tag err">repetição</span><div class="en">My father <i>travelled</i> a lot when I was young. × I <i>was playing</i> a lot of tennis when I got to know Peter.</div><div class="pt">Meu pai viajava muito quando eu era novo. × Eu estava jogando muito tênis quando conheci o Peter.</div><div class="def">Para repetição usa-se o passado simples — mas o progressivo entra para repetição <b>em torno de um momento</b> específico.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Modais · permissão</div>
+<h2>Permissão — a escala de <i>can</i> a <i>might</i></h2>
+<p class="sdesc">Quatro verbos pedem permissão, mas só dois a <b>concedem</b>. E a escolha do verbo comunica exatamente o quanto se está pedindo.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Can/Could</i> I have some more tea? · Excuse me – <i>can/could</i> I just get past?</div><div class="pt">Posso tomar mais chá? · Com licença, dá para eu passar?</div><div class="def"><b>Can</b> é o menos formal; <b>could</b> é um pouco mais. Entre conhecidos, ou para pedir coisa pequena a estranhos.</div></div>
+<div class="i"><span class="tag reg">formal</span><div class="en"><i>Could</i> I stop work half an hour early? · <i>Could</i> I take your car for the afternoon?</div><div class="pt">Eu poderia sair meia hora mais cedo? · Eu poderia pegar seu carro à tarde?</div><div class="def"><b>Could</b> domina em situação formal ou quando o que se pede é <b>importante</b>.</div></div>
+<div class="i"><span class="tag reg">muito educado</span><div class="en"><i>Could I possibly</i> take your car for the afternoon? · <i>Do you think I could</i> leave my bags here for half an hour?</div><div class="pt">Será que eu poderia pegar seu carro à tarde? · Você acha que eu poderia deixar minhas malas aqui por meia hora?</div><div class="def"><b>possibly</b> e <b>Do you think…</b> tornam o pedido ainda mais educado.</div></div>
+<div class="i"><span class="tag reg">formal</span><div class="en"><i>May</i> I use your phone? · <i>May</i> I help you? · <i>Might</i> I make a suggestion?</div><div class="pt">Posso usar seu telefone? · Posso ajudá-lo? · Permite-me uma sugestão?</div><div class="def"><b>May</b> é parecido com <i>could</i>, mas menos comum. <b>Might</b> é extremamente educado — e raro.</div></div>
+<div class="i"><span class="tag err">conceder</span><div class="en">'Could I start late tomorrow?' 'Of course you <i>can</i>.' <s>Of course you could.</s></div><div class="pt">"Eu poderia começar mais tarde amanhã?" "Claro que pode."</div><div class="def">A permissão se <b>concede</b> com can ou may — nunca com could ou might.</div></div>
+<div class="i"><span class="tag err">conceder</span><div class="en">Sorry, you <i>can't</i> have the car today – I need it. · You <i>may</i> stroke the horses, but you <i>may not</i> feed them.</div><div class="pt">Desculpe, você não pode ficar com o carro hoje — preciso dele. · Vocês podem acariciar os cavalos, mas não podem alimentá-los.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Modais · obrigação</div>
+<h2>Obrigação — <i>should</i>, <i>ought to</i>, <i>need</i> e o par <i>mustn't</i> × <i>needn't</i></h2>
+<p class="sdesc">O <i>should</i> é mais fraco que o <i>must</i> — e por isso serve para deixar ordem mais <b>educada</b>. E há um par que inverte o sentido: proibido × desnecessário.</p>
+<div class="items">
+<div class="i"><span class="tag err">força</span><div class="en">All drivers <i>must</i> have adequate insurance: it's the law. × You <i>should</i> insure your computer against accidental damage – it's sensible.</div><div class="pt">Todo motorista deve ter seguro adequado: é a lei. × Você devia fazer seguro do computador — é sensato.</div><div class="def"><b>Must</b> = obrigação real; <b>should</b> = sugestão, conselho, opinião.</div></div>
+<div class="i"><span class="tag reg">educado</span><div class="en">Applications <i>should</i> be sent before 30 June. · Visitors <i>should</i> report to the office.</div><div class="pt">As candidaturas devem ser enviadas até 30 de junho. · Os visitantes devem se apresentar na secretaria.</div><div class="def">Ordem e instrução ficam mais educadas com <b>should</b> no lugar de <i>must</i>.</div></div>
+<div class="i"><div class="en">You <i>ought to</i> insure your computer. · People <i>ought to</i> smile more.</div><div class="pt">Você devia fazer seguro do computador. · As pessoas deviam sorrir mais.</div><div class="def"><b>Ought</b> é parecido com <i>should</i>, menos comum, e sempre seguido de <b>to</b>.</div></div>
+<div class="i"><div class="en"><i>Do we need to</i> book? · I think Alex <i>needs to</i> take a break.</div><div class="pt">Precisamos reservar? · Acho que o Alex precisa dar uma pausa.</div><div class="def"><b>Need</b> como verbo comum: com <i>do</i>, com <i>-s</i> e com infinitivo com <i>to</i>.</div></div>
+<div class="i"><div class="en"><i>Need we</i> book? · Tell her she <i>needn't</i> come in tomorrow.</div><div class="pt">Precisamos reservar? · Diga a ela que não precisa vir amanhã.</div><div class="def">Como <b>modal</b> — sobretudo em pergunta e negativa, para o que é necessário <b>no momento da fala</b>.</div></div>
+<div class="i"><span class="tag err">o par</span><div class="en">In bridge, you <i>mustn't</i> look at other people's cards. (não é permitido) × You <i>needn't</i> play for money, but you can if you like. (não é necessário)</div><div class="pt">No bridge, você não pode olhar as cartas dos outros. × Você não precisa jogar a dinheiro, mas pode se quiser.</div><div class="def">O par que mais confunde: <b>mustn't</b> é proibição, <b>needn't</b> é ausência de necessidade.</div></div>
+<div class="i"><div class="en"><i>Will</i> you come this way, please? · What <i>will</i> you have to drink? · He<i>'ll</i> do anything for money. · She <i>won't</i> tell us anything.</div><div class="pt">Pode vir por aqui, por favor? · O que você vai querer beber? · Ele faz qualquer coisa por dinheiro. · Ela não quer nos contar nada.</div><div class="def">O <b>will</b> de <b>disposição</b> — querer ou não querer fazer.</div></div>
+<div class="i"><span class="tag reg">educado</span><div class="en"><i>Would</i> you come this way, please?</div><div class="pt">Poderia vir por aqui, por favor?</div><div class="def">O <b>would</b> é menos direto e torna o pedido mais educado.</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Modais · probabilidade</div>
+<h2>Probabilidade — e por que <i>can</i> está fora</h2>
+<p class="sdesc">Para dizer que algo <b>talvez</b> seja verdade, o inglês usa may, might e could — e há duas restrições que o brasileiro viola o tempo todo.</p>
+<div class="items">
+<div class="i"><div class="en">Let's hurry – the shop <i>may</i> still be open. · We <i>may</i> go to Japan this summer.</div><div class="pt">Vamos nos apressar — a loja talvez ainda esteja aberta. · Talvez a gente vá ao Japão neste verão.</div><div class="def">= há uma chance de que aconteça.</div></div>
+<div class="i"><div class="en">It <i>might/could</i> rain later, but I don't really think it will.</div><div class="pt">Pode chover mais tarde, mas eu acho que não vai.</div><div class="def"><b>Might</b> e <b>could</b> expressam probabilidade <b>menor</b> que <i>may</i>.</div></div>
+<div class="i"><span class="tag err">nunca can</span><div class="en">Andy <i>may</i> be in Joe's office. <s>Andy can be in Joe's office.</s></div><div class="pt">O Andy talvez esteja na sala do Joe.</div><div class="def">O <b>can</b> não se usa para probabilidade — é um dos erros mais frequentes.</div></div>
+<div class="i"><span class="tag err">nunca em pergunta</span><div class="en">Do you think the firm <i>may</i> lose money? <s>May the firm lose money?</s></div><div class="pt">Você acha que a empresa pode ter prejuízo?</div><div class="def">O <b>may</b> não entra em <b>pergunta</b> com esse sentido — usa-se <i>Do you think…</i>.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 21 V12 · Livro 01 · Oxford English Grammar Course Advanced (Swan &amp; Walter) &mdash; C1/C2, inglês real tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' \u2014 '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
