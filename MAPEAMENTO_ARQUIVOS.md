@@ -1,7 +1,105 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-03 — ver blocos 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).**
+> **Atualização mais recente: 2026-08-04 — ver bloco 0p (Sistemas 21 e 22, ambos fechados).**
+> Anteriores: 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+
+## 0p. Atualização 2026-08-04 — Sistemas 21 e 22 (Gramática Avançada) · **fechados**
+
+> Segue o `REGRAS_AVANCADO.md`. Acento dourado `#F59E0B`; a explicação **é** conteúdo;
+> entram comparação entre estruturas, nota de registro e erro comum com o porquê.
+> Mínimo aplicado nesta sessão: **12 blocos e 150 itens por painel** (verificado por script).
+
+### S21 — Baseado em Livros V12 · agora 5 de 5 painéis
+
+| Livro | Arquivo `.md` | Painel | Blocos | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S21 · Livro 01 | `01_Oxford English Grammar Course Advanced…` | `livro01.html` | 14 | 91 | 45 KB | ✅ 2026-08-03 |
+| S21 · Livro 02 | `02_English Vocabulary in Use Advanced 100 units…` | `livro02.html` | 18 | 214 | 64 KB | ✅ **2026-08-04** |
+| S21 · Livro 03 | `03_English Vocabulary in Use Upper-intermediate…` | `livro03.html` | 18 | 219 | 60 KB | ✅ **2026-08-04** |
+| S21 · Livro 04 | `04_Grammar and Vocabulary for Cambridge Advanced and Proficiency` | `livro04.html` | 16 | 162 | 55 KB | ✅ **2026-08-04** |
+| S21 · Livro 05 | `05_New English File - Advanced Level…` | `livro05.html` | 21 | 164 | 59 KB | ✅ **2026-08-04** |
+
+### S22 — Baseado em Livros V13 · agora 3 de 3 painéis (era 0)
+
+| Livro | Arquivo `.md` | Painel | Blocos | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S22 · Livro 01 | `01_Advancing Vocabulary Skills - By Sherrie L. Nist` | `livro01.html` | 15 | 150 | 57 KB | ✅ **2026-08-04** |
+| S22 · Livro 02 | `02_English Advancing A Bridge to Success` | `livro02.html` | 20 | 174 | 55 KB | ✅ **2026-08-04** |
+| S22 · Livro 03 | `03_New Cambridge Advanced English Student's book` | `livro03.html` | 16 | 155 | 58 KB | ✅ **2026-08-04** |
+
+**Total da sessão: 7 painéis novos, 1.238 itens.**
+
+### Sobreposição verificada — S21 livro02/03 × S20 livro06
+
+Antes de implementar, foi conferido se `02_English Vocabulary in Use Advanced`
+e `03_… Upper-intermediate` são edições distintas do S20 livro06. Resultado:
+
+- **S21 livro02 e S20 livro06 são o MESMO livro** (McCarthy & O'Dell, Cambridge)
+  em edições diferentes: o S20 tem a **3ª edição (2017)**; o S21 tem a edição em
+  **100 unidades (2002)**. Comparando os sumários, ~25 unidades batem com título
+  idêntico (`Travel and accommodation`, `Cramming for success`, `Weather and climate`,
+  `At work: colleagues and routines`, `Advertising`, `Talking about books`,
+  `Divided by a common language`, `Abbreviations and acronyms`…), e a sobreposição
+  real é maior — o OCR degradado impede casar o resto automaticamente.
+- **Mas o painel do S20 livro06 é raso** (7 blocos, 37 KB) e pegou só o
+  **meta-vocabulário**: colocação, conotação, registro, idioms gerais, fórmulas de
+  polidez, britânico × americano. As ~90 unidades **temáticas** ficaram de fora.
+- **Decisão:** o S21 livro02 foi construído sobre o que o S20 deixou de fora —
+  trabalho e rotina de escritório, carreira, negócios, dinheiro pessoal, adjetivos
+  de caráter e sociabilidade, desejo e aversão, aparência, prefixos, idioms de
+  situação e phrasal verbs. Zero repetição de bloco entre os dois painéis.
+- **S21 livro03 (Upper-intermediate) é livro diferente**, de outro nível (B2–C1).
+  Sem conflito. Recorte próprio: formação de palavra, som (onomatopeia, homógrafos,
+  homófonos), incontáveis, coletivos e expressões fixas (similes, binomials, idioms).
+
+### Recorte de cada painel novo
+
+- **S21 l02** — unidades temáticas do *Vocabulary in Use Advanced* (complementar ao S20 l06).
+- **S21 l03** — como a palavra inglesa **se monta e como soa**: compostos, substantivos
+  nascidos de phrasal verb, origens (nomes de gente e de cidade), a lógica sonora do
+  `gr-`/`cl-`/`sp-`, homógrafos e homófonos, incontáveis, coletivos, similes e binomials.
+- **S21 l04** — o que o **CAE/CPE Paper 3** cobra: subjuntivo presente e passado, Unreal
+  Past, condicionais improváveis, inversão após advérbio negativo (com a regra de quando
+  **não** inverter), cleft com `it`/`what`/`all`, metáfora lexical, prefixos e sufixos,
+  paráfrase estrutural.
+- **S21 l05** — a gramática **dentro da conversa**: discourse markers (resultado, razão,
+  contraste, digressão), *distancing* com `seem`/`appear` e passiva de relato, a escala da
+  especulação com modais, `have` em todas as funções (inclusive o causativo), cleft da fala,
+  sons e voz humana.
+- **S22 l01** — **único livro americano** dos três Sistemas avançados (`padrão US`). Método
+  próprio: nenhuma palavra é definida antes de ser usada. Reorganizado **por campo semântico**,
+  não por capítulo, como manda o `REGRAS_AVANCADO.md` §3.
+- **S22 l02** — **linguagem funcional**: pedir (com a armadilha do `would you mind`), oferecer,
+  aceitar/recusar, opinar em dois registros, criticar, pedir esclarecimento, `wish`/`if only`,
+  condicionais mistas, discurso indireto, perguntas indiretas, subjuntivo de recomendação.
+- **S22 l03** — as duas seções fixas do Leo Jones: **Grammar review** e **Word study**. Juntar
+  frases do falado para o escrito, o sistema do passado + expressões de tempo, modais em pares
+  que se confundem, escalas de força entre sinônimos, artigos, contável × incontável, prefixos.
+
+### Também atualizados
+
+- Hubs `index.html` do S21 e do S22: todos os cards "Em breve" viraram cards ativos, com
+  blocos/itens reais; métrica passou a **5/5** e **3/3 painéis prontos**.
+- A nota do hub do S21 sobre "PDFs sem prefixo numérico" foi corrigida — **todos já estão
+  prefixados**; a nota agora aponta a relação complementar entre S21 l02 e S20 l06.
+
+### Pendências conhecidas
+
+- **S21 livro01 está abaixo do mínimo desta sessão**: 14 blocos / **91 itens** (mínimo 150).
+  Foi implementado na sessão de 2026-08-03, antes da regra valer. Fica registrado para
+  ampliação futura — não foi mexido aqui por estar fora da ordem pedida.
+- **S20 livro06 continua raso** (7 blocos / 37 KB) e agora é o painel mais fino dos três
+  Sistemas avançados. Como o S21 l02 cobre o complemento temático, a ampliação do l06
+  deixou de ser urgente, mas segue em aberto.
+- Os utilitários `scratchpad/mkpanel.py` e `scratchpad/hubcard.py` **não existiam** no
+  repositório nem no histórico do git. Foram reescritos do zero nesta sessão, a partir do
+  `livro01.html` do S21 como molde, e vivem no scratchpad da sessão (não versionados).
+  `mkpanel.py` trava a gravação com `assert` se o painel ficar abaixo de 12 blocos ou 150
+  itens; `hubcard.py` lê blocos/itens **do próprio painel**, para o card nunca desencontrar
+  do conteúdo.
+
+---
 
 ## 0o. Atualização 2026-08-03 — Sistema 20 (Baseado em Livros V11 · Gramática Avançada) · livro 01
 
