@@ -37,7 +37,28 @@ referências cruzadas de página e o material de exame que não é linguagem
 ativo; métrica "em preparação" → "1 disponível"), a tabela do
 `REGRAS.md` da pasta e a entrada 20 do `sistemas.json`.
 
-**Continuam pendentes no S20:** livros 02 a 07.
+**Situação do S20 em 2026-08-03 (fim da sessão):** 6 dos 7 painéis prontos.
+
+| Livro | Painel | Blocos | Itens | Recorte |
+|---|---|---|---|---|
+| 01 · Objective Proficiency | `livro01.html` | 20 | 232 | Grammar folder inteiro, ordem pedagógica |
+| 02 · Advanced Grammar in Use | `livro02.html` | 20 | 221 | 20 das 100 unidades, as que não repetem o 01 |
+| 03 · Grammar and Vocabulary for Advanced | `livro03.html` | 10 | 106 | padrões de complemento e orações |
+| 04 · Advanced Language Practice | `livro04.html` | 9 | 81 | colocação: organizadores, preposições, phrasal |
+| 05 · Complete Advanced | — | — | — | ⏳ **pendente** |
+| 06 · English Vocabulary in Use Advanced | `livro06.html` | 8 | 88 | as unidades do "inglês sobre o inglês" |
+| 07 · English Pronunciation in Use Advanced | `livro07.html` | 6 | 43 | acento e proeminência (IPA do OCR inutilizável) |
+
+**Os painéis não têm todos o mesmo tamanho, e isso é deliberado em parte e
+circunstancial em parte.** Deliberado: cada livro entrou só com o que os
+anteriores do Sistema não cobriam, e quanto mais painéis o Sistema ganha, menor
+fica a área que sobra para o seguinte — o 01 e o 02 pegaram a gramática inteira,
+os demais pegaram o que restou. Circunstancial: o livro 07 é pequeno porque o
+OCR destruiu os símbolos fonéticos, e recompor IPA por adivinhação teria
+produzido um painel de pronúncia com erros.
+
+**Pendentes:** S20 livro05 (*Complete Advanced*), os 5 livros do **S21** e os 3
+do **S22** — 9 painéis.
 
 ## 0n. Atualização 2026-08-03 — Sistema 11 (Baseado em Livros V02) · CONCLUÍDO (livros 03, 05 e 06)
 
