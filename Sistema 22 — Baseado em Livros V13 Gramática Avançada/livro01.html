@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 01 · Advancing Vocabulary Skills — Sistema 22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 22</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 22 · Livro 01 · C1–C2</div>
+<h1 class="title">Advancing <em>Vocabulary Skills</em></h1>
+<p class="lead">Sherrie L. Nist &amp; Carole Mohr · Townsend Press · 3ª edição. É o único livro <b>americano</b> dos três Sistemas avançados, e o método dele é diferente de tudo o que veio antes: nenhuma palavra é definida antes de ser <b>usada</b>. Cada item chega em duas frases reais e o sentido se deduz do contexto — que é como vocabulário de verdade se aprende. O painel reorganiza as palavras <b>por campo de sentido</b>, não pela ordem dos capítulos: gente e caráter, os estados de ânimo, falar claro e falar obscuro, começar e impedir, quantidade e alcance, acaso e intenção, o vocabulário de instituição e poder. É o léxico do texto acadêmico e jornalístico americano — o que se lê, não o que se conversa. Inglês americano.</p>
+
+<div class="metrics">
+  <div class="metric"><b>15</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>C1–C2</b><span>nível</span></div>
+  <div class="metric"><b>US</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: ubiquitous, scoff, lucid, imminent, meticulous…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+<section id="s01">
+<div class="snum">Gente · como é</div>
+<h2>As pessoas — o que se admira nelas</h2>
+<p class="sdesc">Adjetivos de caráter que o texto acadêmico americano usa o tempo todo. Todos vêm com a frase que os define.</p>
+<div class="items">
+<div class="i"><div class="en">Melissa is so <i>gregarious</i> that she wants to be with other people even when she's studying.</div><div class="pt">A Melissa é tão sociável que quer companhia até quando está estudando.</div><div class="def"><b>Gregarious</b> /grɪˈgɛr-i-əs/ — que procura e gosta da companhia dos outros.</div></div>
+<div class="i"><div class="en">The juggler was so <i>dexterous</i> that he managed to keep five balls in motion at once.</div><div class="pt">O malabarista era tão hábil que conseguia manter cinco bolas no ar de uma vez.</div><div class="def"><b>Dexterous</b> — habilidoso com as mãos ou com o corpo.</div></div>
+<div class="i"><div class="en">The judge was <i>scrupulous</i> about never accepting a bribe.</div><div class="pt">O juiz era escrupuloso quanto a jamais aceitar suborno.</div><div class="def"><b>Scrupulous</b> — cuidadoso com padrões morais; consciencioso.</div></div>
+<div class="i"><div class="en">Children are naturally <i>inquisitive</i>. They wonder about the world and are constantly asking «Why?»</div><div class="pt">Criança é naturalmente curiosa. Se pergunta sobre o mundo e vive perguntando «por quê?».</div></div>
+<div class="i"><div class="en">People enjoy visiting my parents, who are <i>adept</i> at making guests feel at home.</div><div class="pt">As pessoas gostam de visitar meus pais, que têm um jeito ótimo de fazer o convidado se sentir em casa.</div><div class="def"><b>Adept at</b> + gerúndio — hábil em fazer algo.</div></div>
+<div class="i"><div class="en">Once an energetic, <i>robust</i> man, Mr. Rand has been considerably weakened by illness.</div><div class="pt">Antes um homem enérgico e vigoroso, o sr. Rand ficou bem debilitado pela doença.</div></div>
+<div class="i"><div class="en">At age 5, Jonathan is already learning to be <i>magnanimous</i>. He forgives his baby sister even when she hits him.</div><div class="pt">Aos cinco anos o Jonathan já está aprendendo a ser magnânimo. Perdoa a irmãzinha mesmo quando ela bate nele.</div><div class="def"><b>Magnanimous</b> — de coração grande, generoso no perdão.</div></div>
+<div class="i"><div class="en">Ken is <i>meticulous</i> about his appearance. He never has a wrinkle in his clothing or a hair out of place.</div><div class="pt">O Ken é meticuloso com a aparência. Nunca tem um vinco na roupa nem um fio fora do lugar.</div></div>
+<div class="i"><div class="en">My sister is a <i>connoisseur</i> of Southern novels. She's read dozens of them.</div><div class="pt">Minha irmã é uma especialista em romances do Sul dos EUA. Já leu dezenas.</div><div class="def"><b>Connoisseur</b> /kɒn-ə-ˈsɜr/ — entendido, autoridade no assunto. Do francês.</div></div>
+<div class="i"><div class="en">Smart <i>entrepreneurs</i> are sure to start up new businesses there soon.</div><div class="pt">Empreendedores espertos com certeza vão abrir negócios lá em breve.</div></div>
+<div class="i"><div class="en">Ms. Stone's appearance was <i>austere</i>. She wore plain, quiet clothing with no jewelry.</div><div class="pt">A aparência da sra. Stone era austera. Usava roupa simples e discreta, sem joia.</div><div class="def"><b>Austere</b> — muito simples, despojado. Também se diz de ambiente.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Gente · o defeito</div>
+<h2>As pessoas — o que se critica nelas</h2>
+<p class="sdesc">O mesmo campo, do outro lado. Repare que vários trazem <b>julgamento embutido</b>: usar a palavra já é condenar.</p>
+<div class="items">
+<div class="i"><div class="en">My show-off aunt has some <i>ostentatious</i> jewelry, such as a gold bracelet so heavy she can hardly lift her arm.</div><div class="pt">Minha tia exibida tem umas joias ostensivas, tipo uma pulseira de ouro tão pesada que ela mal levanta o braço.</div><div class="def"><b>Ostentatious</b> — feito para impressionar; espalhafatoso.</div></div>
+<div class="i"><div class="en">Denise is completely <i>egocentric</i>. Whatever happens, she thinks only of how it will affect her.</div><div class="pt">A Denise é completamente egocêntrica. Aconteça o que acontecer, só pensa em como aquilo a afeta.</div></div>
+<div class="i"><div class="en">It was <i>presumptuous</i> of Eric to announce his engagement before she had actually agreed to marry him.</div><div class="pt">Foi atrevimento do Eric anunciar o noivado antes de ela ter de fato aceitado casar.</div><div class="def"><b>Presumptuous</b> — atrevido, que se adianta ao que lhe cabe.</div></div>
+<div class="i"><div class="en">Children tend to be <i>impetuous</i> and often don't think about the consequences of their actions.</div><div class="pt">Criança tende a ser impulsiva e muitas vezes não pensa nas consequências.</div></div>
+<div class="i"><div class="en">Lily can't resist <i>flamboyant</i> clothes. She'd wear a hot-pink dress with gold trim to a funeral.</div><div class="pt">A Lily não resiste a roupa espalhafatosa. Iria de vestido rosa-choque com dourado a um velório.</div></div>
+<div class="i"><div class="en">Annie, a <i>zealot</i> about health, runs a hundred miles a week and never lets a grain of sugar touch her lips.</div><div class="pt">A Annie, uma fanática por saúde, corre 160 km por semana e não deixa um grão de açúcar passar pela boca.</div><div class="def"><b>Zealot</b> /ˈzɛl-ət/ — extremista. O <i>z</i> soa como em <i>zebra</i>, mas o <i>ea</i> é curto.</div></div>
+<div class="i"><div class="en">My grandmother once bought a «magnetic box» from a <i>charlatan</i> who assured her it would cure her arthritis.</div><div class="pt">Minha avó uma vez comprou uma «caixa magnética» de um charlatão que garantiu que curaria a artrite dela.</div></div>
+<div class="i"><div class="en">Psychologists are trying to understand why <i>masochists</i> obtain satisfaction from suffering.</div><div class="pt">Psicólogos tentam entender por que masoquistas obtêm satisfação do sofrimento.</div></div>
+<div class="i"><div class="en"><i>Foibles</i> — such as drinking soup through a straw — can often be easily tolerated.</div><div class="pt">Manias — como tomar sopa de canudo — costumam ser fáceis de tolerar.</div><div class="def"><b>Foible</b> é a falha <b>pequena</b>, por oposição ao defeito grave de caráter.</div></div>
+<div class="i"><div class="en">My uncle asks very personal questions, but it's just an <i>idiosyncrasy</i> of his.</div><div class="pt">Meu tio faz perguntas muito pessoais, mas é só uma mania dele.</div><div class="def"><b>Idiosyncrasy</b> — hábito pessoal peculiar.</div></div>
+<div class="i"><div class="en">Paul is very <i>reticent</i> about his first marriage; he never talks about it.</div><div class="pt">O Paul é muito reservado sobre o primeiro casamento; nunca fala nisso.</div><div class="def"><b>Reticent about</b> — calado a respeito de algo específico.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Ânimo · para baixo</div>
+<h2>Os estados de ânimo — quando desaba</h2>
+<p class="sdesc">O inglês acadêmico separa finamente <b>tristeza</b>, <b>desespero</b>, <b>apatia</b> e <b>angústia</b>. O português usa duas ou três palavras para tudo isso.</p>
+<div class="items">
+<div class="i"><div class="en">Devon becomes <i>despondent</i> too easily. If he gets even one bad grade, he loses all hope.</div><div class="pt">O Devon desanima fácil demais. Basta uma nota ruim e ele perde toda a esperança.</div><div class="def"><b>Despondent</b> — deprimido, sem esperança.</div></div>
+<div class="i"><div class="en">For months after his wife died, Mr. Craig was <i>despondent</i>. He even considered suicide.</div><div class="pt">Por meses depois da morte da esposa, o sr. Craig ficou abatido. Chegou a pensar em suicídio.</div></div>
+<div class="i"><div class="en">Wendy seemed to recover from the flu, but one symptom persisted — <i>lethargy</i>. She felt exhausted for weeks.</div><div class="pt">A Wendy parecia recuperada da gripe, mas um sintoma persistiu: a letargia. Ficou exausta por semanas.</div><div class="def"><b>Lethargy</b> — inatividade, prostração. O adjetivo é <b>lethargic</b>.</div></div>
+<div class="i"><div class="en">The parents of the little girl who wandered off were <i>distraught</i> until she was found.</div><div class="pt">Os pais da menininha que se perdeu ficaram desesperados até ela ser encontrada.</div><div class="def"><b>Distraught</b> /dɪ-ˈstrɔt/ — angustiado a ponto de perder o controle. Mais forte que <i>worried</i>.</div></div>
+<div class="i"><div class="en">After a family quarrel, Tamara finds <i>solace</i> in the privacy of her own room.</div><div class="pt">Depois de uma briga de família, a Tamara encontra consolo na privacidade do próprio quarto.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">The <i>plight</i> of the homeless can be somewhat relieved by decent shelters.</div><div class="pt">A situação difícil dos sem-teto pode ser um pouco aliviada por abrigos decentes.</div><div class="def"><b>Plight</b> — situação infeliz e difícil. Não é «promessa».</div></div>
+<div class="i"><div class="en">The death of a beloved pet is a <i>grievous</i> loss for a child.</div><div class="pt">A morte de um bicho de estimação querido é uma perda dolorosa para uma criança.</div></div>
+<div class="i"><div class="en">Dolores was especially <i>contrite</i> about tearing her sister's dress.</div><div class="pt">A Dolores estava especialmente arrependida por ter rasgado o vestido da irmã.</div><div class="def"><b>Contrite</b> — sinceramente arrependido. Termo do direito e da religião.</div></div>
+<div class="i"><div class="en">The <i>rancor</i> between my uncles has lasted for twenty years.</div><div class="pt">O rancor entre meus tios já dura vinte anos.</div></div>
+<div class="i"><div class="en">The reason for his <i>antipathy</i> was poor eyesight: he couldn't see the chalkboard.</div><div class="pt">A razão da antipatia dele era a vista ruim: não enxergava o quadro.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Ânimo · para cima</div>
+<h2>Os estados de ânimo — quando levanta</h2>
+<p class="sdesc">Do outro lado da escala. E duas palavras aqui carregam <b>ironia</b> — usá-las é criticar o excesso.</p>
+<div class="items">
+<div class="i"><div class="en">I was <i>euphoric</i> when I received my grades. To my amazement and joy, they were all A's and B's.</div><div class="pt">Fiquei eufórico quando recebi as notas. Para minha surpresa e alegria, eram todas A e B.</div></div>
+<div class="i"><div class="en">Joanne is <i>euphoric</i> today. She's just gotten the lead role in the school's production.</div><div class="pt">A Joanne está radiante hoje. Acabou de conseguir o papel principal na montagem da escola.</div></div>
+<div class="i"><div class="en">Children can be amazingly <i>resilient</i>. Plant life is <i>resilient</i> too — flowers were growing in the ashes weeks after Mount St. Helens erupted.</div><div class="pt">Criança pode ser incrivelmente resiliente. A vida vegetal também: semanas depois da erupção do Monte Santa Helena, já havia flores nas cinzas.</div><div class="def"><b>Resilient</b> — que se recupera rápido.</div></div>
+<div class="i"><div class="en">Visits from friends <i>bolstered</i> her spirits.</div><div class="pt">As visitas dos amigos levantaram o ânimo dela.</div><div class="def"><b>Bolster</b> serve para o concreto e o abstrato: <i>we had to bolster the porch with cinder blocks</i>.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">The verses in greeting cards are often far too sentimental. I prefer humor to such <i>maudlin</i> messages.</div><div class="pt">Os versos de cartão de felicitação são sentimentais demais. Prefiro humor a essas mensagens piegas.</div><div class="def"><b>Maudlin</b> — emotivo em excesso, água com açúcar. É crítica.</div></div>
+<div class="i"><div class="en">The audience at the rock concert was so <i>raucous</i> that we feared the noise would lead to violence.</div><div class="pt">A plateia do show de rock estava tão desordeira que temíamos que o barulho desse em violência.</div></div>
+<div class="i"><div class="en">The intense eyes of the woman in the photograph <i>mesmerized</i> me. I couldn't take my eyes off it.</div><div class="pt">Os olhos intensos da mulher da foto me hipnotizaram. Não conseguia desviar o olhar.</div><div class="def"><b>Mesmerize</b> vem de Franz Mesmer, o médico do «magnetismo animal» — daí o sentido de hipnotizar.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Falar · claro</div>
+<h2>Dizer com clareza — e o elogio a quem consegue</h2>
+<p class="sdesc">Metade do vocabulário acadêmico é sobre <b>a qualidade do que se diz</b>. Aqui, o lado bom.</p>
+<div class="items">
+<div class="i"><div class="en">I usually find computer manuals horribly unclear, but this one is <i>lucid</i>.</div><div class="pt">Normalmente acho manual de computador terrivelmente confuso, mas este é claríssimo.</div><div class="def"><b>Lucid</b> — fácil de entender.</div></div>
+<div class="i"><div class="en">The scientist's explanation of the greenhouse effect was so <i>lucid</i> that the entire audience grasped it.</div><div class="pt">A explicação do cientista sobre o efeito estufa foi tão clara que a plateia inteira entendeu.</div></div>
+<div class="i"><div class="en">Her taste in clothes is <i>impeccable</i>. She always looks stylish but never overdressed.</div><div class="pt">O gosto dela para roupa é impecável. Sempre elegante, nunca exagerada.</div></div>
+<div class="i"><div class="en">Can anyone <i>corroborate</i> your story?</div><div class="pt">Alguém pode confirmar sua versão?</div><div class="def"><b>Corroborate</b> — confirmar com evidência independente. Termo do direito e da ciência.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Stacy went to the law library to look up information that might be <i>germane</i> to her client's case.</div><div class="pt">A Stacy foi à biblioteca de direito procurar informação que pudesse ser pertinente ao caso do cliente.</div><div class="def"><b>Germane to</b> — relevante para. Nada a ver com «alemão» nem com «germe».</div></div>
+<div class="i"><div class="en">The medical center's annual fee is <i>inclusive</i>, covering all visits, tests and treatments.</div><div class="pt">A anuidade do centro médico é integral: cobre consultas, exames e tratamentos.</div></div>
+<div class="i"><div class="en">Our history teacher's broad knowledge <i>encompasses</i> details of life in ancient Egypt, Greece, and Rome.</div><div class="pt">O conhecimento amplo do nosso professor de história abrange detalhes da vida no Egito, na Grécia e em Roma antigos.</div></div>
+<div class="i"><div class="en">«I have said this before, but let me <i>reiterate</i>…»</div><div class="pt">«Já disse isso antes, mas deixem-me reiterar…»</div><div class="def"><b>Reiterate</b> — repetir para reforçar. Muito usado em discurso formal.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Falar · obscuro</div>
+<h2>Dizer sem dizer — o vocabulário da fuga</h2>
+<p class="sdesc">O lado oposto: as palavras para <b>ambiguidade</b>, <b>vazio</b> e <b>esquiva</b>. São armas de crítica no texto jornalístico.</p>
+<div class="items">
+<div class="i"><div class="en">The «Mona Lisa» is famous for the woman's <i>ambiguous</i> expression. Is she smiling or not?</div><div class="pt">A «Mona Lisa» é famosa pela expressão ambígua da mulher. Ela está sorrindo ou não?</div></div>
+<div class="i"><div class="en">When Bob asks about a raise, his boss <i>equivocates</i>, saying, «You've been doing good work, Bob.»</div><div class="pt">Quando o Bob pergunta do aumento, o chefe se esquiva: «Você tem feito um bom trabalho, Bob.»</div><div class="def"><b>Equivocate</b> — falar de propósito de modo pouco claro, para não se comprometer.</div></div>
+<div class="i"><div class="en">He never gives specific ideas. He just gives a <i>nebulous</i> answer like «Oh, something I can use.»</div><div class="pt">Ele nunca dá ideias específicas. Só dá uma resposta vaga tipo «ah, alguma coisa que eu possa usar».</div><div class="def"><b>Nebulous</b> — indefinido, sem contorno. De <i>nebula</i>, nuvem.</div></div>
+<div class="i"><div class="en">The conversation at the party was <i>inane</i>, consisting mainly of foolish comments about whose clothes were the most «awesome».</div><div class="pt">A conversa na festa era vazia, basicamente comentários bobos sobre quem estava com a roupa mais «incrível».</div><div class="def"><b>Inane</b> /ɪ-ˈneɪn/ — tolo e sem conteúdo.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Dr. Segura has a <i>facetious</i> sign on his office door: «I'd like to help you out. Which way did you come in?»</div><div class="pt">O dr. Segura tem uma placa jocosa na porta: «Eu adoraria te ajudar a sair. Por onde você entrou?»</div><div class="def"><b>Facetious</b> — brincalhão, dito de gozação. Não confundir com <b>factious</b> nem <b>fictitious</b>.</div></div>
+<div class="i"><div class="en">The instruction manuals often use such <i>esoteric</i> terms that they seem to be written in a foreign language.</div><div class="pt">Os manuais usam termos tão herméticos que parecem escritos em língua estrangeira.</div></div>
+<div class="i"><div class="en">The doctor's examination was <i>perfunctory</i>. He seemed to be just going through the motions.</div><div class="pt">O exame do médico foi superficial. Ele parecia estar só cumprindo tabela.</div><div class="def"><b>Perfunctory</b> — feito sem interesse, só para constar.</div></div>
+<div class="i"><div class="en">Joyce reviewed <i>superficially</i>, flipping through the pages an hour before the test.</div><div class="pt">A Joyce revisou por cima, folheando as páginas uma hora antes da prova.</div></div>
+<div class="i"><div class="en">Karen's apparent affection for Raul is a <i>sham</i>. He's rich, and she cares only about his money.</div><div class="pt">O suposto afeto da Karen pelo Raul é fingimento. Ele é rico, e ela só se importa com o dinheiro.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Agir · causar</div>
+<h2>Começar, causar e espalhar</h2>
+<p class="sdesc">Verbos de <b>iniciar processo</b>. Vários são a forma culta de algo que a conversa diz com phrasal verb.</p>
+<div class="items">
+<div class="i"><div class="en">The rock group's violent performance <i>instigated</i> a riot in the audience.</div><div class="pt">A performance violenta da banda instigou um tumulto na plateia.</div></div>
+<div class="i"><div class="en">Mark's search for a larger house was <i>precipitated</i> by his marriage to a woman with four children.</div><div class="pt">A busca do Mark por uma casa maior foi precipitada pelo casamento com uma mulher com quatro filhos.</div><div class="def"><b>Precipitate</b> como verbo: <b>desencadear</b>. Nada a ver com pressa.</div></div>
+<div class="i"><div class="en">Campaign workers went all over the city to <i>disseminate</i> pamphlets and flyers.</div><div class="pt">Os cabos eleitorais percorreram a cidade para distribuir panfletos.</div><div class="def"><b>Disseminate</b> — de <i>semen</i>, semente: espalhar como quem semeia.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">He <i>advocates</i> violence as a means of social reform.</div><div class="pt">Ele defende a violência como meio de reforma social.</div><div class="def"><b>Advocate</b> como verbo é <b>defender uma ideia</b> — e não leva <i>for</i> em inglês americano formal.</div></div>
+<div class="i"><div class="en">The Allies <i>emancipated</i> many political prisoners who had been used as slave laborers.</div><div class="pt">Os Aliados libertaram muitos prisioneiros políticos que tinham sido usados como escravos.</div></div>
+<div class="i"><div class="en">The school counselor <i>exhorted</i> the parents to make every effort to keep their children off drugs.</div><div class="pt">A orientadora exortou os pais a fazer todo o esforço para manter os filhos longe das drogas.</div><div class="def"><b>Exhort somebody to do</b> — urgir com veemência.</div></div>
+<div class="i"><div class="en">When Sarah and I were asked to <i>collaborate</i> on an article, we found it difficult to work together.</div><div class="pt">Quando pediram que eu e a Sarah colaborássemos num artigo, achamos difícil trabalhar juntos.</div></div>
+<div class="i"><div class="en">Lauren <i>embellished</i> the door of her locker with postcards and photos of her cats.</div><div class="pt">A Lauren enfeitou a porta do armário com cartões-postais e fotos dos gatos dela.</div><div class="def">Também figurado: <b>embellish a story</b> é floreá-la além da verdade.</div></div>
+<div class="i"><div class="en">Let's watch the crane <i>hoist</i> the beams into place for the new skyscraper.</div><div class="pt">Vamos ver o guindaste içar as vigas para o novo arranha-céu.</div></div>
+<div class="i"><div class="en">The photograph dramatically <i>juxtaposed</i> white birch trees and a dark gray sky.</div><div class="pt">A fotografia justapunha dramaticamente bétulas brancas e um céu cinza-escuro.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Agir · impedir</div>
+<h2>Parar, evitar e recuar</h2>
+<p class="sdesc">O campo inverso: <b>bloquear</b>, <b>desviar</b>, <b>abrir mão</b>. É o vocabulário do noticiário político.</p>
+<div class="items">
+<div class="i"><div class="en">Decades of communism in Eastern Europe didn't <i>squelch</i> the desire for freedom.</div><div class="pt">Décadas de comunismo no Leste Europeu não sufocaram o desejo de liberdade.</div><div class="def"><b>Squelch</b> — abafar, reprimir. Também serve para um arroto: <i>I couldn't squelch a burp</i>.</div></div>
+<div class="i"><div class="en">Muddy roads <i>impeded</i> the progress of the trucks bringing food to the refugees.</div><div class="pt">Estradas enlameadas atrapalharam o avanço dos caminhões que levavam comida aos refugiados.</div></div>
+<div class="i"><div class="en">If we take this roundabout route, we can <i>circumvent</i> the rush-hour traffic.</div><div class="pt">Se pegarmos esse desvio, dá para contornar o trânsito do horário de pico.</div><div class="def"><b>Circumvent</b> — literalmente «vir ao redor». Também se usa para <b>burlar</b> uma regra.</div></div>
+<div class="i"><div class="en">Fans must <i>relinquish</i> their six-packs at the gate before they take their seats.</div><div class="pt">Os torcedores têm que entregar as cervejas no portão antes de sentar.</div><div class="def"><b>Relinquish</b> — abrir mão, ceder. Formal.</div></div>
+<div class="i"><div class="en">When his baby sister was born, seven-year-old Jeremy <i>regressed</i> and began sucking his thumb again.</div><div class="pt">Quando a irmãzinha nasceu, o Jeremy, de sete anos, regrediu e voltou a chupar o dedo.</div></div>
+<div class="i"><div class="en">Children who look or act «different» are often <i>ostracized</i> by their classmates.</div><div class="pt">Crianças que parecem ou agem de forma «diferente» são frequentemente excluídas pelos colegas.</div><div class="def"><b>Ostracize</b> vem do <i>óstrakon</i> grego, o caco de cerâmica em que se votava o banimento.</div></div>
+<div class="i"><div class="en">My cousin's recent moodiness has <i>estranged</i> some of his old friends.</div><div class="pt">O mau humor recente do meu primo afastou alguns velhos amigos.</div></div>
+<div class="i"><div class="en">Nick's mother often <i>berates</i> him. And when she isn't yelling at him, she ignores him.</div><div class="pt">A mãe do Nick vive dando bronca nele. E quando não está gritando, ignora.</div></div>
+<div class="i"><div class="en">Bystanders <i>scoffed at</i> the street musician playing a tune on a row of tin cans.</div><div class="pt">Os passantes zombaram do músico de rua que tocava uma melodia numa fileira de latas.</div><div class="def"><b>Scoff at</b> — sempre com <b>at</b>.</div></div>
+<div class="i"><div class="en">At family gatherings, we kids were always <i>relegated</i> to the kitchen table.</div><div class="pt">Nas reuniões de família, nós crianças éramos sempre relegados à mesa da cozinha.</div></div>
+<div class="i"><div class="en">Smallpox has been <i>eradicated</i> — the first time in history that humans wiped out a disease.</div><div class="pt">A varíola foi erradicada — a primeira vez na história que se eliminou uma doença.</div><div class="def"><b>Eradicate</b> — de <i>radix</i>, raiz: arrancar pela raiz.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Quantidade</div>
+<h2>Muito, pouco, em toda parte</h2>
+<p class="sdesc">O campo da <b>extensão</b>. Estas palavras aparecem em toda página de artigo científico e de reportagem.</p>
+<div class="items">
+<div class="i"><div class="en">Mites are <i>ubiquitous</i>. They live on top of Mt. Everest, in the depths of the ocean, at the South Pole.</div><div class="pt">Os ácaros estão em toda parte. Vivem no topo do Everest, no fundo do oceano, no Polo Sul.</div><div class="def"><b>Ubiquitous</b> /juː-ˈbɪk-wɪ-təs/ — onipresente.</div></div>
+<div class="i"><div class="en">The show was <i>replete</i> with dazzling effects: gorgeous scenery, glittering costumes, thrilling music.</div><div class="pt">O espetáculo estava repleto de efeitos deslumbrantes: cenário lindo, figurinos brilhantes, música emocionante.</div><div class="def"><b>Replete with</b> — sempre com <b>with</b>.</div></div>
+<div class="i"><div class="en">After his brief announcement, the President was <i>inundated</i> with questions from reporters.</div><div class="pt">Depois do breve anúncio, o Presidente foi inundado de perguntas dos repórteres.</div></div>
+<div class="i"><div class="en">Rabbits deserve their reputation for being <i>prolific</i>. A female can produce three families each summer.</div><div class="pt">Os coelhos merecem a fama de prolíficos. Uma fêmea pode ter três ninhadas por verão.</div></div>
+<div class="i"><div class="en">Haydn was a <i>prolific</i> composer. He wrote, among many other works, 104 symphonies.</div><div class="pt">Haydn foi um compositor prolífico. Escreveu, entre muitas outras obras, 104 sinfonias.</div></div>
+<div class="i"><div class="en">Hana's doctors hope that chemotherapy will halt the <i>proliferation</i> of cancer cells.</div><div class="pt">Os médicos da Hana esperam que a quimioterapia detenha a proliferação das células cancerosas.</div></div>
+<div class="i"><div class="en">There were only <i>sporadic</i> showers after noon.</div><div class="pt">Depois do meio-dia houve só pancadas esparsas de chuva.</div><div class="def"><b>Sporadic</b> — irregular, aqui e ali. O oposto de <i>steady</i>.</div></div>
+<div class="i"><div class="en">The team was reduced through <i>attrition</i> — those who retire, quit because of injuries, and so on.</div><div class="pt">A equipe encolheu por desgaste natural: quem se aposenta, quem sai por lesão, e assim por diante.</div><div class="def"><b>Attrition</b> — perda gradual e natural de indivíduos. Termo de RH e de guerra.</div></div>
+<div class="i"><div class="en">The student body appears quite <i>homogeneous</i>, but there are significant differences among the students.</div><div class="pt">O corpo discente parece bem homogêneo, mas há diferenças significativas entre os alunos.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Some species are <i>indigenous</i> to the island — they live nowhere else in the world.</div><div class="pt">Algumas espécies são nativas da ilha — não existem em nenhum outro lugar do mundo.</div><div class="def"><b>Indigenous to</b> — nativo de. Nada a ver com <i>indigent</i> (indigente).</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Acaso · intenção</div>
+<h2>De propósito ou por acaso — e o que se esconde</h2>
+<p class="sdesc">Um par que o texto jurídico e jornalístico usa para <b>atribuir responsabilidade</b>: foi de caso pensado ou não?</p>
+<div class="items">
+<div class="i"><div class="en">Alexander Fleming's discovery of penicillin was <i>inadvertent</i>. He forgot to cover a dish of bacteria.</div><div class="pt">A descoberta da penicilina por Alexander Fleming foi acidental. Ele esqueceu de cobrir uma placa de bactérias.</div><div class="def"><b>Inadvertent</b> — não intencional.</div></div>
+<div class="i"><div class="en">It was strictly <i>fortuitous</i> that Vince found his missing class notes. They happened to drop out of his dictionary.</div><div class="pt">Foi puro acaso o Vince achar as anotações perdidas. Elas caíram do dicionário dele.</div></div>
+<div class="i"><div class="en">The birth of triplets wasn't entirely <i>fortuitous</i>. The mother had taken a fertility drug.</div><div class="pt">O nascimento de trigêmeos não foi totalmente fortuito. A mãe tinha tomado um remédio para fertilidade.</div></div>
+<div class="i"><div class="en">In a <i>clandestine</i> meeting in an alley, Steve sold his employer's formula to a competitor.</div><div class="pt">Num encontro clandestino num beco, o Steve vendeu a fórmula do patrão a um concorrente.</div></div>
+<div class="i"><div class="en">Years of <i>illicit</i> activities resulted in Gene's being sentenced to a life term.</div><div class="pt">Anos de atividades ilícitas resultaram na prisão perpétua do Gene.</div></div>
+<div class="i"><div class="en">The <i>conspiracy</i> to overthrow the government was started by two of the premier's own advisors.</div><div class="pt">A conspiração para derrubar o governo partiu de dois assessores do próprio premiê.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Saul was suspected of robbing a bank, but he was <i>exonerated</i> when the camera's photos showed someone else.</div><div class="pt">O Saul foi suspeito de assaltar um banco, mas foi inocentado quando as fotos da câmera mostraram outra pessoa.</div><div class="def"><b>Exonerate</b> — inocentar formalmente. Não é «exonerar de um cargo».</div></div>
+<div class="i"><div class="en">Ali wasn't using much <i>discretion</i> when he passed a police car at eighty miles an hour.</div><div class="pt">O Ali não usou muito bom senso ao ultrapassar uma viatura a 130 por hora.</div><div class="def"><b>Discretion</b> aqui é <b>bom senso</b>, não «discrição» no sentido de sigilo.</div></div>
+<div class="i"><div class="en">With that <i>contingency</i> in mind, she decided to rent a house rather than buy one.</div><div class="pt">Com essa possibilidade em mente, ela decidiu alugar uma casa em vez de comprar.</div></div>
+<div class="i"><div class="en">«Unless you pay your bill, we'll have no <i>recourse</i> but to sue you.»</div><div class="pt">«Se não pagar a conta, não nos restará alternativa senão processá-lo.»</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Poder · instituição</div>
+<h2>O vocabulário de instituição e autoridade</h2>
+<p class="sdesc">É aqui que este livro americano mais se distingue: o léxico de <b>governo, empresa e tribunal</b>.</p>
+<div class="items">
+<div class="i"><div class="en">In 1776, the American colonists, tired of being ruled by England, fought for their <i>autonomy</i>.</div><div class="pt">Em 1776 os colonos americanos, cansados de serem governados pela Inglaterra, lutaram por autonomia.</div></div>
+<div class="i"><div class="en"><i>Bureaucratic</i> organizations can become so bogged down in regulations that almost no work gets done.</div><div class="pt">Organizações burocráticas podem atolar tanto em regulamento que quase nada é feito.</div></div>
+<div class="i"><div class="en">All the union members voted for the strike, giving their leaders a clear <i>mandate</i>.</div><div class="pt">Todos os sindicalizados votaram pela greve, dando à liderança um mandato claro.</div><div class="def"><b>Mandate</b> — autorização conferida por quem elegeu.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">By greeting the dictator with extreme courtesy, the legislature seemed to <i>sanction</i> his policies.</div><div class="pt">Ao receber o ditador com extrema cortesia, o legislativo pareceu chancelar as políticas dele.</div><div class="def">Cuidado: <b>sanction</b> como verbo é <b>aprovar</b>; como substantivo no plural (<i>sanctions</i>) é <b>punição</b>. Sentidos opostos.</div></div>
+<div class="i"><div class="en">Some <i>dissidents</i> in the Catholic church favor allowing women to be priests.</div><div class="pt">Alguns dissidentes na Igreja Católica defendem permitir mulheres no sacerdócio.</div></div>
+<div class="i"><div class="en">During college, many students are <i>subsidized</i> by their parents.</div><div class="pt">Na faculdade, muitos estudantes são sustentados pelos pais.</div></div>
+<div class="i"><div class="en">The president of the Student Council acts as a <i>liaison</i> between the students and the administration.</div><div class="pt">O presidente do grêmio serve de elo entre os alunos e a direção.</div><div class="def"><b>Liaison</b> /ˈliː-eɪ-zɒn/ — do francês. Ligação, ponte entre duas partes.</div></div>
+<div class="i"><div class="en">When the company <i>standardized</i> its pay scale, the salary for each job became identical across departments.</div><div class="pt">Quando a empresa padronizou a tabela salarial, o salário de cada cargo ficou igual em todos os setores.</div></div>
+<div class="i"><div class="en">For a <i>cohesive</i> family — one that stays together even when stresses threaten to tear it apart.</div><div class="pt">Uma família coesa é a que fica junta mesmo quando as tensões ameaçam desfazê-la.</div></div>
+<div class="i"><div class="en">Her age would be a <i>liability</i>. Instead, she found that it gave her an advantage.</div><div class="pt">A idade dela seria um ponto fraco. Em vez disso, acabou sendo uma vantagem.</div><div class="def"><b>Liability</b> — desvantagem, ônus. O oposto de <b>asset</b>.</div></div>
+<div class="i"><div class="en">Loni's purple hair may be a <i>detriment</i> when she goes for a job interview.</div><div class="pt">O cabelo roxo da Loni pode ser um empecilho numa entrevista de emprego.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Tempo · mudança</div>
+<h2>O tempo, o auge e a transformação</h2>
+<p class="sdesc">Palavras de <b>fase</b>: o que ainda não começou, o que está no pico, o que mudou de forma.</p>
+<div class="items">
+<div class="i"><div class="en">Many insects lay eggs that remain <i>dormant</i> all winter and do not hatch until spring.</div><div class="pt">Muitos insetos põem ovos que ficam dormentes o inverno todo e só eclodem na primavera.</div></div>
+<div class="i"><div class="en">A visit to Puerto Rico reawakened Anita's <i>dormant</i> interest in Spanish.</div><div class="pt">Uma viagem a Porto Rico despertou o interesse adormecido da Anita pelo espanhol.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">We canceled the picnic because a thunderstorm seemed <i>imminent</i>.</div><div class="pt">Cancelamos o piquenique porque uma tempestade parecia iminente.</div><div class="def">Não confundir <b>imminent</b> (iminente) com <b>eminent</b> (eminente, ilustre).</div></div>
+<div class="i"><div class="en">Florence reached the <i>zenith</i> of her career when she became president of Ace Products.</div><div class="pt">A Florence chegou ao auge da carreira quando virou presidente da Ace Products.</div><div class="def"><b>Zenith</b> — o ponto mais alto. O oposto é <b>nadir</b>.</div></div>
+<div class="i"><div class="en">In <i>retrospect</i>, it's clear she should have gotten help sooner.</div><div class="pt">Em retrospecto, está claro que ela deveria ter procurado ajuda antes.</div><div class="def"><b>In retrospect</b> — olhando para trás. Expressão fixa.</div></div>
+<div class="i"><div class="en">A caterpillar's transformation into a butterfly is a well-known example of <i>metamorphosis</i>.</div><div class="pt">A transformação de lagarta em borboleta é um exemplo conhecido de metamorfose.</div></div>
+<div class="i"><div class="en">As soon as you drive a new car off the lot, it <i>depreciates</i>.</div><div class="pt">Assim que você tira um carro novo da concessionária, ele desvaloriza.</div></div>
+<div class="i"><div class="en">The brothers' paths <i>diverged</i> greatly. One became a famous lawyer, the other ended up in jail.</div><div class="pt">Os caminhos dos irmãos divergiram muito. Um virou advogado famoso, o outro foi parar na cadeia.</div></div>
+<div class="i"><div class="en">People in <i>sedentary</i> occupations need to make a special effort to exercise.</div><div class="pt">Quem tem ocupação sedentária precisa fazer um esforço extra para se exercitar.</div></div>
+<div class="i"><div class="en">Patty feels that her promise to marry him is <i>irrevocable</i>.</div><div class="pt">A Patty sente que a promessa de casar com ele é irrevogável.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Escolha · critério</div>
+<h2>Escolher bem, escolher mal, não escolher</h2>
+<p class="sdesc">O campo do <b>critério</b> — e a diferença entre quem seleciona e quem aceita tudo.</p>
+<div class="items">
+<div class="i"><div class="en">Some people end up in debt because of <i>indiscriminate</i> spending, so be selective about what you buy.</div><div class="pt">Muita gente se endivida por gastar sem critério; seja seletivo no que compra.</div></div>
+<div class="i"><div class="en">I confess to an <i>indiscriminate</i> love of chocolate. I don't distinguish between plain Hershey bars and fancy imported chocolates.</div><div class="pt">Confesso um amor indiscriminado por chocolate. Não distingo barra comum de chocolate importado fino.</div></div>
+<div class="i"><div class="en">Terry didn't want to move in the first place, so she was <i>predisposed</i> to hate the new apartment.</div><div class="pt">A Terry nem queria se mudar, então já estava predisposta a odiar o apartamento novo.</div></div>
+<div class="i"><div class="en">Because Ivan has a <i>propensity</i> to gain weight, he watches what he eats.</div><div class="pt">Como o Ivan tem tendência a engordar, ele cuida do que come.</div><div class="def"><b>Propensity to</b> + infinitivo — inclinação natural.</div></div>
+<div class="i"><div class="en">For the weary traveler, <i>optimum</i> hotel accommodations include a quiet room and a comfortable bed.</div><div class="pt">Para o viajante cansado, a hospedagem ideal inclui quarto silencioso e cama confortável.</div><div class="def"><b>Optimum</b> — o melhor possível nas circunstâncias. É mais preciso que <i>best</i>.</div></div>
+<div class="i"><div class="en">A grammar book usually starts with <i>rudimentary</i> skills, such as identifying nouns and verbs.</div><div class="pt">Um livro de gramática costuma começar por habilidades rudimentares, como identificar substantivos e verbos.</div></div>
+<div class="i"><div class="en">I thought my sister would <i>fritter away</i> her entire allowance on M&amp;M's.</div><div class="pt">Achei que minha irmã fosse torrar a mesada inteira em M&amp;M's.</div><div class="def"><b>Fritter away</b> — desperdiçar aos poucos. Sempre com <b>away</b>.</div></div>
+<div class="i"><div class="en">It wasn't really <i>incongruous</i> for a former general to join the peace movement. He had seen the horrors of war.</div><div class="pt">Não era tão incongruente um ex-general aderir ao movimento pacifista. Ele tinha visto os horrores da guerra.</div></div>
+<div class="i"><div class="en">The driver continued into the intersection, apparently <i>oblivious</i> to the fact that the light had turned red.</div><div class="pt">O motorista avançou o cruzamento, aparentemente alheio ao fato de o sinal ter fechado.</div><div class="def"><b>Oblivious to</b> — sem perceber. Sempre com <b>to</b>.</div></div>
+<div class="i"><div class="en">Computers aren't <i>infallible</i>. If you put the wrong data into a computer, you'll get wrong answers.</div><div class="pt">Computador não é infalível. Se você põe dado errado, sai resposta errada.</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Sentidos · aparência</div>
+<h2>O que se vê, o que se sente, o que se vive por tabela</h2>
+<p class="sdesc">Último campo: <b>percepção</b> e <b>aparência</b> — inclusive a experiência que não é sua.</p>
+<div class="items">
+<div class="i"><div class="en">A person in a flotation tank has almost no <i>sensory</i> stimulation. The tank is dark and soundproof.</div><div class="pt">Quem está num tanque de flutuação quase não tem estímulo sensorial. O tanque é escuro e à prova de som.</div></div>
+<div class="i"><div class="en">I don't like to take risks myself, but I love the <i>vicarious</i> thrill of watching adventures in a movie.</div><div class="pt">Eu não gosto de me arriscar, mas adoro a emoção vivida por tabela ao assistir aventuras no cinema.</div><div class="def"><b>Vicarious</b> — experimentado pela imaginação, através do outro. Não tem equivalente de uma palavra em português.</div></div>
+<div class="i"><div class="en">If you can't afford to travel, reading guidebooks can give you a <i>vicarious</i> experience of foreign countries.</div><div class="pt">Se você não tem como viajar, ler guias dá uma experiência indireta de países estrangeiros.</div></div>
+<div class="i"><div class="en">Most people found E.T. adorable, but I thought the little alien was <i>grotesque</i>.</div><div class="pt">A maioria achou o E.T. adorável, mas eu achei o alienígena grotesco.</div></div>
+<div class="i"><div class="en">When a <i>facsimile</i> of an old Sears-Roebuck catalog was published, it became a bestseller.</div><div class="pt">Quando publicaram um fac-símile de um catálogo antigo da Sears-Roebuck, virou best-seller.</div><div class="def">A palavra <b>fax</b> é a abreviação de <b>facsimile</b> — cópia exata.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Batman and Robin matched wits with the Joker and the Penguin, who were <i>notorious</i> for their evil deeds.</div><div class="pt">Batman e Robin enfrentaram o Coringa e o Pinguim, notórios por suas maldades.</div><div class="def"><b>Notorious</b> é sempre <b>negativo</b> — famoso por algo ruim. Não é sinônimo de <i>famous</i>.</div></div>
+<div class="i"><div class="en">Supermarket tabloids sell well because many people want to know the <i>sordid</i> details of celebrities' divorces.</div><div class="pt">Tabloide de supermercado vende bem porque muita gente quer os detalhes sórdidos dos divórcios das celebridades.</div></div>
+<div class="i"><div class="en">Most children engage in <i>innocuous</i> pranks on Halloween, but some get out of hand.</div><div class="pt">A maioria das crianças faz travessuras inofensivas no Halloween, mas algumas passam do ponto.</div><div class="def"><b>Innocuous</b> — sem efeito nocivo.</div></div>
+<div class="i"><div class="en">The Tlingit Indians <i>venerate</i> the wolf and the raven.</div><div class="pt">Os índios tlingit veneram o lobo e o corvo.</div></div>
+<div class="i"><div class="en">The guests made it clear that they <i>venerated</i> her; when she entered the room, everyone rose.</div><div class="pt">Os convidados deixaram claro que a veneravam: quando ela entrou, todos se levantaram.</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Juntar · pertencer</div>
+<h2>O que se une, o que é essencial e o que corrói</h2>
+<p class="sdesc">Fecha o painel o campo da <b>relação entre as partes</b> — mais o vocabulário que descreve o que faz mal.</p>
+<div class="items">
+<div class="i"><div class="en">Four colleges formed a <i>coalition</i> to operate a shared Center of Higher Education.</div><div class="pt">Quatro faculdades formaram uma coalizão para manter um centro de ensino superior compartilhado.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Arguing seems to be an <i>integral</i> part of Laura and Nate's relationship.</div><div class="pt">Discutir parece ser parte essencial da relação da Laura com o Nate.</div><div class="def"><b>Integral</b> — indispensável ao todo. Não é «íntegro».</div></div>
+<div class="i"><div class="en">Voting is <i>integral to</i> democracy. Without free elections, a democratic system cannot continue to exist.</div><div class="pt">O voto é essencial à democracia. Sem eleições livres, um sistema democrático não se sustenta.</div></div>
+<div class="i"><div class="en">Most students who work hard will eventually see results <i>commensurate with</i> their efforts.</div><div class="pt">A maioria dos alunos que se esforça acaba vendo resultados proporcionais ao esforço.</div><div class="def"><b>Commensurate with</b> — na mesma medida que. Sempre com <b>with</b>.</div></div>
+<div class="i"><div class="en">«Make the punishment fit the crime» means that a penalty should be <i>commensurate with</i> the degree of wrongdoing.</div><div class="pt">«Que a pena caiba ao crime» significa que a punição deve ser proporcional à gravidade da falta.</div></div>
+<div class="i"><div class="en">For many of us, the word <i>sea</i> has a <i>connotation</i> of salty air and vast openness.</div><div class="pt">Para muitos de nós, a palavra <i>sea</i> traz a conotação de ar salgado e imensidão.</div><div class="def"><b>Connotation</b> — o que a palavra sugere além do sentido literal.</div></div>
+<div class="i"><div class="en"><i>Sayonara</i> actually means «if it must be so» and thus has <i>connotations</i> of sadness at parting.</div><div class="pt"><i>Sayonara</i> quer dizer literalmente «se assim tem de ser», e por isso carrega conotação de tristeza na despedida.</div></div>
+<div class="i"><div class="en">The <i>dilapidated</i> house must have once been handsome. Some of its broken windows are stained glass.</div><div class="pt">A casa caindo aos pedaços já deve ter sido bonita. Algumas das janelas quebradas são de vitral.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Never mix ammonia and bleach. The <i>noxious</i> gas they produce could land you in the hospital.</div><div class="pt">Nunca misture amoníaco com água sanitária. O gás nocivo que produzem pode te mandar para o hospital.</div><div class="def"><b>Noxious</b> — nocivo à saúde. Não confundir com <b>obnoxious</b>, que é «insuportável» (de pessoa).</div></div>
+<div class="i"><div class="en">The horror story featured a <i>diabolic</i> villain who turned an entire townful of people into zombies.</div><div class="pt">A história de terror tinha um vilão diabólico que transformou a cidade inteira em zumbis.</div></div>
+<div class="i"><div class="en">My parents <i>chided</i> me for getting sunburned, but my blistered skin hurt a lot more than their scolding.</div><div class="pt">Meus pais me repreenderam por ter me queimado de sol, mas a pele empolada doía muito mais que a bronca.</div><div class="def"><b>Chide</b> é repreensão <b>branda</b> — bem mais leve que <b>berate</b>.</div></div>
+<div class="i"><div class="en">The company's failure to clean up the oil spill was <i>reprehensible</i> and drew harsh criticism.</div><div class="pt">A omissão da empresa em limpar o vazamento de óleo foi condenável e atraiu críticas duras.</div></div>
+</div>
+</section>
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+
+</div>
+<footer>Sistema 22 · Livro 01 · Advancing Vocabulary Skills (Nist &amp; Mohr · Townsend Press) &mdash; inglês real tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' \u2014 '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
