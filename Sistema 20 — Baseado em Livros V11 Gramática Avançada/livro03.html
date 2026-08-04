@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 03 · Grammar and Vocabulary for Advanced — Sistema 20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 20</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 20 · Livro 03 · C1</div>
+<h1 class="title">Grammar and Vocabulary <em>for Advanced</em></h1>
+<p class="lead">Simon Haines &amp; Martin Hewings · Cambridge University Press. O livro oficial de preparação para o <b>C1 Advanced</b> que junta gramática e vocabulário no mesmo volume. O que ele tem de próprio é o <b>START POINT</b> — cada ponto começa pelo que o aluno já deveria saber e avança dali — e o foco nos <b>padrões de complemento</b>: que verbo pede dois objetos, qual aceita inverter com <i>for</i> ou <i>to</i>, qual muda de sentido entre infinitivo e <i>-ing</i>. O painel ficou com o que os livros 01 e 02 do Sistema não alcançam: verbos com dois objetos, padrões verbais, orações adverbiais, participiais, substantivas e relativas reduzidas — mais os sufixos produtivos <i>-free</i>, <i>-friendly</i> e <i>-mad</i>. Inglês britânico.</p>
+
+<div class="metrics">
+  <div class="metric"><b>10</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>C1</b><span>nível</span></div>
+  <div class="metric"><b>GB</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: two objects, participle, as/when, -free…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Unit 1 · tenses</div>
+<h2>Simples × contínuo — estado, hábito e o que é temporário</h2>
+<p class="sdesc">O <b>START POINT</b> do livro: cada tempo carrega uma intenção. E o contínuo com verbo de estado não é erro — é o modo de dizer que a situação é <b>temporária ou atípica</b>.</p>
+<div class="items">
+<div class="i"><span class="tag">presente contínuo</span><div class="en">I<i>'m working</i> at home while our office block is being renovated. (= estado temporário) · I<i>'m phoning</i> from the train. (= ação em curso)</div><div class="pt">Estou trabalhando em casa enquanto nosso prédio é reformado. · Estou ligando do trem.</div></div>
+<div class="i"><span class="tag">presente simples</span><div class="en">Public transport <i>has</i> a number of advantages over driving. (= estado permanente) · I <i>catch</i> the train at 7.05 every morning. (= hábito)</div><div class="pt">O transporte público tem várias vantagens sobre dirigir. · Pego o trem das 7h05 toda manhã.</div></div>
+<div class="i"><span class="tag">passado</span><div class="en">I <i>was travelling</i> home when the train broke down. (= ação em curso num ponto do passado) · I <i>sold</i> my car last week. (= ação concluída)</div><div class="pt">Eu estava voltando para casa quando o trem quebrou. · Vendi meu carro semana passada.</div></div>
+<div class="i"><span class="tag">passado</span><div class="en">I <i>drove</i> to work for a couple of years. (= situação passada que já não existe) · I <i>caught</i> the train every morning at 7.15. (= ação repetida no passado)</div><div class="pt">Fui de carro para o trabalho por uns dois anos. · Eu pegava o trem toda manhã às 7h15.</div></div>
+<div class="i"><span class="tag err">estado no contínuo</span><div class="en">I<i>'m appreciating</i> being able to get up later than usual. (= sugere um arranjo temporário) × Now that I work at home I <i>appreciate</i> being able to get up late. (= mais permanente)</div><div class="pt">Estou curtindo poder acordar mais tarde que o normal. × Agora que trabalho em casa, gosto de poder acordar tarde.</div><div class="def">Verbo de estado no contínuo sinaliza que a situação é <b>temporária ou atípica</b>.</div></div>
+<div class="i"><span class="tag err">processo</span><div class="en">I<i>'m regretting</i> selling my car already. (= comecei a me arrepender e o arrependimento pode crescer) × I <i>regret</i> selling my car. (= uma atitude que dificilmente vai mudar)</div><div class="pt">Já estou me arrependendo de ter vendido meu carro. × Me arrependo de ter vendido meu carro.</div><div class="def">Com verbos de estado mental (consider, understand) e de atitude (hope, regret), o contínuo mostra um <b>processo em andamento</b> na hora da fala.</div></div>
+<div class="i"><span class="tag err">dois sentidos</span><div class="en">I'm now <i>thinking of</i> buying a motorbike. (think of = considerar, ação) × Do you <i>think</i> that's a good idea? (think = ter opinião, estado)</div><div class="pt">Agora estou pensando em comprar uma moto. × Você acha que é boa ideia?</div></div>
+<div class="i"><span class="tag">performativo</span><div class="en">I <i>admit</i> that it can be frustrating at times. · I <i>predict</i> that increasing numbers of people will start working at home.</div><div class="pt">Admito que pode ser frustrante às vezes. · Prevejo que cada vez mais gente vai começar a trabalhar em casa.</div><div class="def">Presente simples com o verbo que <b>realiza</b> o que descreve: ao dizer "I admit", a pessoa está admitindo.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Unit 9 · dois objetos</div>
+<h2>Verbos com dois objetos — e a hora de inverter</h2>
+<p class="sdesc">Muitos verbos aceitam as duas ordens. A escolha não é livre: inverte-se para <b>destacar</b> o objeto indireto ou quando ele é <b>mais longo</b> que o direto.</p>
+<div class="items">
+<div class="i"><div class="en">Interactions between infants will often <i>copy parental speech</i>. (transitivo, um objeto) · <i>Fetch me your hat</i>. (transitivo, dois objetos) · Infants are keen to <i>interact</i> with others. (intransitivo)</div><div class="pt">A interação entre bebês muitas vezes copia a fala dos pais. · Vá buscar seu chapéu para mim. · Os bebês gostam de interagir com os outros.</div><div class="def">Com dois objetos, o <b>indireto</b> é em geral pessoa e vem primeiro; o <b>direto</b> é coisa. Verbo intransitivo não tem passiva.</div></div>
+<div class="i"><div class="en">I recently <i>bought my two-year-old daughter a cuddly elephant</i>. ou I recently <i>bought a cuddly elephant for my two-year-old daughter</i>.</div><div class="pt">Comprei há pouco um elefante de pelúcia para minha filha de dois anos.</div></div>
+<div class="i"><div class="en">A child might <i>offer their mother some food</i>. ou A child might <i>offer some food to their mother</i>.</div><div class="pt">Uma criança pode oferecer comida à mãe.</div></div>
+<div class="i"><span class="tag err">objeto longo</span><div class="en">She <i>lent the book to</i> one of the students who asked for some additional reading. <s>She lent one of the students who asked for some additional reading the book.</s></div><div class="pt">Ela emprestou o livro a um dos alunos que pediu leitura complementar.</div><div class="def">Inverte-se para dar destaque ao objeto indireto — ou quando ele é <b>muito mais longo</b> que o direto.</div></div>
+<div class="i"><span class="tag">for</span><div class="en">Go to the toy box and <i>find the car for me</i>. ou Go to the toy box and <i>find me the car</i>.</div><div class="pt">Vá até a caixa de brinquedos e ache o carrinho para mim.</div><div class="def">Com <b>for</b>: build, find, get.</div></div>
+<div class="i"><span class="tag">to</span><div class="en">She <i>gave a toy to me</i>. ou She <i>gave me a toy</i>.</div><div class="pt">Ela me deu um brinquedo.</div><div class="def">Com <b>to</b>: give, offer, show.</div></div>
+<div class="i"><span class="tag err">muda o sentido</span><div class="en">I couldn't find her email address, so I had to <i>write a letter to her</i>. × She was too young to write herself, so I <i>wrote the letter for her</i>. (= no lugar dela)</div><div class="pt">Não achei o e-mail dela, então tive de escrever uma carta para ela. × Ela era nova demais para escrever, então escrevi a carta por ela.</div><div class="def">Com play, read e write cabem <b>for</b> e <b>to</b> — e muitas vezes o sentido muda.</div></div>
+<div class="i"><div class="en"><i>Reading stories for/to</i> young children is an important part of this process.</div><div class="pt">Ler histórias para crianças pequenas é parte importante desse processo.</div><div class="def">Às vezes o sentido é praticamente o mesmo.</div></div>
+<div class="i"><span class="tag err">não invertem</span><div class="en">Most parents <i>ask themselves the question</i>: 'Did they copy that from us?'</div><div class="pt">A maioria dos pais se faz a pergunta: "Será que copiaram isso da gente?"</div><div class="def">Alguns verbos de dois objetos <b>não</b> aceitam a inversão com for/to: ask, guarantee, refuse.</div></div>
+<div class="i"><span class="tag err">pronome</span><div class="en">I <i>bought it for my daughter</i>. · <i>Give it to me</i>.</div><div class="pt">Comprei para minha filha. · Me dá isso.</div><div class="def">Se o objeto direto é <b>pronome</b>, a ordem é direto + for/to + indireto. "I bought my daughter it" e "Give me it" aparecem na fala, mas são considerados mau estilo — e devem ser evitados na escrita e na prova.</div></div>
+<div class="i"><span class="tag err">só com for</span><div class="en"><i>Mend this for me</i>. <s>Mend me this.</s></div><div class="pt">Conserte isto para mim.</div><div class="def">Alguns verbos só admitem a ordem com <b>for</b>: collect, fix, mend.</div></div>
+<div class="i"><span class="tag err">só com to</span><div class="en">Dr Jackman will be <i>describing this process to you</i> in detail. <s>describing you this process</s></div><div class="pt">A dra. Jackman vai descrever esse processo a vocês em detalhe.</div><div class="def">Outros só com <b>to</b>: describe, explain, mention.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Unit 10 · verbo + verbo</div>
+<h2>Infinitivo ou <i>-ing</i> — quando dá na mesma e quando não</h2>
+<p class="sdesc">Três grupos: os que aceitam os dois <b>sem</b> diferença, os que aceitam os dois <b>com</b> diferença, e os que só aceitam um. Mais a regra do <i>would</i> e a das duas formas em <i>-ing</i>.</p>
+<div class="items">
+<div class="i"><div class="en">I <i>started to scream</i>. ou I <i>started screaming</i>.</div><div class="pt">Comecei a gritar.</div><div class="def">Sem diferença de sentido: begin, not bother, cease, continue, start.</div></div>
+<div class="i"><span class="tag err">evitar</span><div class="en">I was <i>beginning to feel</i> quite at home there. <s>I was beginning feeling…</s></div><div class="pt">Eu estava começando a me sentir bem em casa ali.</div><div class="def">Evita-se pôr <b>duas formas em -ing</b> seguidas.</div></div>
+<div class="i"><span class="tag err">nuance</span><div class="en">When I was younger, I used to <i>hate to swim</i> in the sea. (= sugere que eu nadava regularmente) × …used to <i>hate swimming</i> in the sea. (= nadar em geral)</div><div class="pt">Quando eu era mais novo, odiava nadar no mar.</div><div class="def">Com hate, like, love e prefer os dois cabem — mas prefere-se o <b>infinitivo</b> quando se fala de algo feito regularmente.</div></div>
+<div class="i"><span class="tag err">regra</span><div class="en">I<i>'d love to think</i> that it could avoid a huge expansion in visitors. <s>I'd love thinking…</s></div><div class="pt">Eu adoraria achar que isso poderia evitar uma explosão de visitantes.</div><div class="def">Depois de <b>would</b> com hate, like, love ou prefer, só infinitivo.</div></div>
+<div class="i"><span class="tag err">muda o sentido</span><div class="en">I <i>came to realise</i> that the Lombok people are very kind. (= percepção gradual) × It <i>came swimming</i> towards me. (= veio nadando na minha direção)</div><div class="pt">Acabei percebendo que o povo de Lombok é muito gentil. × Veio nadando na minha direção.</div></div>
+<div class="i"><span class="tag err">preposição</span><div class="en">I'd really been <i>looking forward to staying</i> at the Hotel Sanar. <s>looking forward to stay</s></div><div class="pt">Eu estava mesmo ansioso para me hospedar no Hotel Sanar.</div><div class="def">Depois da <b>preposição</b> <i>to</i>, sempre <i>-ing</i>. É o erro clássico.</div></div>
+<div class="i"><span class="tag err">preposição</span><div class="en">I <i>put off going</i> home for as long as possible. <s>put off to go</s></div><div class="pt">Adiei ir para casa o máximo que pude.</div><div class="def">O mesmo depois da preposição de um phrasal verb.</div></div>
+<div class="i"><span class="tag err">posição do not</span><div class="en">I <i>regretted not speaking</i> the local language. (= não falei e me arrependi) × I <i>didn't regret speaking</i> the local language. (= falei e não me arrependi)</div><div class="pt">Me arrependi de não falar a língua local. × Não me arrependi de falar a língua local.</div><div class="def">A posição do <b>not</b> muda o sentido inteiro.</div></div>
+<div class="i"><span class="tag err">posição do not</span><div class="en">I <i>was told not to exercise</i>. (= disseram que eu não devia) × I <i>wasn't told to exercise</i>. (= não me disseram que eu devia)</div><div class="pt">Me disseram para não fazer exercício. × Não me disseram para fazer exercício.</div></div>
+<div class="i"><span class="tag">let / make</span><div class="en">They <i>made us wait</i> outside the harbour for hours. × We <i>were made to wait</i> outside the harbour for hours.</div><div class="pt">Nos fizeram esperar fora do porto por horas.</div><div class="def">Com objeto, <b>let</b> e <b>make</b> pedem infinitivo sem <i>to</i>. Mas na <b>passiva</b> de <i>make</i> entra o <i>to</i>.</div></div>
+<div class="i"><span class="tag">percepção</span><div class="en">I <i>felt it stinging</i> me across the stomach. ou I <i>felt it sting</i> me across the stomach.</div><div class="pt">Senti aquilo me ferroando a barriga.</div><div class="def">Verbos de percepção (feel, hear, notice, observe, overhear, see, watch) aceitam <i>-ing</i> ou infinitivo sem <i>to</i>.</div></div>
+<div class="i"><span class="tag err">nuance</span><div class="en">I sat on the beach and I <i>watched the sun setting</i>. × I <i>watched the sun set</i> and then went home.</div><div class="pt">Sentei na praia e fiquei vendo o sol se pôr. × Vi o sol se pôr e então fui para casa.</div><div class="def">O <i>-ing</i> mostra a ação <b>em curso</b>; o infinitivo, a ação <b>completa</b>.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Unit 13 · orações adverbiais</div>
+<h2>Orações adverbiais — e o <i>as</i> que significa duas coisas</h2>
+<p class="sdesc">Duas regras estruturais que valem sempre, mais a distinção entre <b>as</b>, <b>when</b> e <b>while</b> — que o português resolve tudo com "quando".</p>
+<div class="items">
+<div class="i"><span class="tag err">estrutura</span><div class="en">I don't eat much for breakfast <i>because I'm always in a rush</i>. <s>Because I'm always in a rush.</s> (sozinho)</div><div class="pt">Não como muito no café da manhã porque estou sempre com pressa.</div><div class="def">A oração adverbial <b>tem</b> de estar ligada a uma principal; não vale como frase separada.</div></div>
+<div class="i"><span class="tag err">estrutura</span><div class="en">Usa-se <b>uma</b> conjunção só para ligar a adverbial à principal. <s>Because I'm always in a rush, so I don't eat breakfast.</s></div><div class="pt">O erro de pôr "because… so…" na mesma frase.</div></div>
+<div class="i"><div class="en">I generally have a sandwich and a packet of crisps <i>as/when/while</i> I'm sitting at my desk.</div><div class="pt">Geralmente como um sanduíche e um pacote de batata frita enquanto estou sentado na minha mesa.</div><div class="def">As, when e while servem para algo que acontece <b>enquanto</b> outra coisa se dá.</div></div>
+<div class="i"><span class="tag err">ambíguo</span><div class="en">I opened the window <i>as</i> I was cooking. (= porque eu estava cozinhando <b>ou</b> enquanto eu cozinhava)</div><div class="pt">Abri a janela porque estava cozinhando / enquanto cozinhava.</div><div class="def">O <b>as</b> pode significar as duas coisas — e o contexto é que decide.</div></div>
+<div class="i"><span class="tag err">sem will</span><div class="en">I'd like to have something more substantial <i>before I leave</i> home in the morning. <s>before I will leave home</s></div><div class="pt">Eu gostaria de comer algo mais reforçado antes de sair de casa de manhã.</div><div class="def">Não se usa <b>will</b> depois de conjunção temporal (before, until, when) para falar do futuro.</div></div>
+<div class="i"><span class="tag err">sem will</span><div class="en"><i>When I've written up</i> the research, I'll let you have a copy.</div><div class="pt">Quando eu tiver redigido a pesquisa, te mando uma cópia.</div><div class="def">Para a ação concluída antes da outra, present perfect — nunca futuro.</div></div>
+<div class="i"><span class="tag">só when</span><div class="en">I remember once I was eating some sweets in my bedroom <i>when</i> my mother walked in.</div><div class="pt">Lembro que uma vez eu estava comendo doce no quarto quando minha mãe entrou.</div><div class="def"><b>When</b> (não as nem while) para um <b>ponto</b> no tempo.</div></div>
+<div class="i"><span class="tag">só when</span><div class="en"><i>When</i> I get home late, I take a ready meal out of the freezer. · <i>When</i> I was younger, my mother used to keep an eye on what I ate.</div><div class="pt">Quando chego tarde em casa, tiro uma refeição pronta do congelador. · Quando eu era mais novo, minha mãe ficava de olho no que eu comia.</div><div class="def">Para descrever as <b>circunstâncias</b> e para um <b>período</b> da vida.</div></div>
+<div class="i"><span class="tag">só when</span><div class="en"><i>When / Whenever</i> I've had one of those ready meals, I feel hungry by the time I go to bed.</div><div class="pt">Toda vez que como uma dessas refeições prontas, sinto fome na hora de dormir.</div><div class="def">Para "toda vez que".</div></div>
+<div class="i"><span class="tag err">só as</span><div class="en"><i>As</i> I put on weight, it gets more and more difficult to exercise. (melhor que <i>when</i> ou <i>while</i>)</div><div class="pt">À medida que engordo, fica cada vez mais difícil me exercitar.</div><div class="def">Prefere-se <b>as</b> para mostrar que uma coisa muda <b>ao mesmo tempo</b> que a outra.</div></div>
+<div class="i"><span class="tag err">nunca while</span><div class="en"><i>As/When</i> I turned the corner, the bus was just pulling up. <s>While I turned the corner…</s></div><div class="pt">Quando virei a esquina, o ônibus estava justamente encostando.</div><div class="def">Para destacar o <b>instante</b> em que algo acontece: as ou when — nunca <i>while</i>.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Unit 15 · orações participiais</div>
+<h2>Oração participial — e o particípio solto que ridiculariza a frase</h2>
+<p class="sdesc">O particípio se refere ao <b>sujeito da oração principal</b>. Ignorar isso produz o erro mais constrangedor da escrita avançada — o livro dá o exemplo de quem acaba dizendo que estava rosnando.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Walking into each village</i>, I was met by a pack of unfriendly dogs.</div><div class="pt">Ao entrar em cada vilarejo, eu era recebido por uma matilha de cães hostis.</div><div class="def">Orações participiais são mais comuns na <b>escrita</b> e servem para dizer as coisas de forma econômica.</div></div>
+<div class="i"><span class="tag err">particípio solto</span><div class="en"><i>Snarling aggressively</i>, the dogs were pretty terrifying at first. ✓ (os cães rosnavam e os cães eram apavorantes)</div><div class="pt">Rosnando agressivamente, os cães eram bem apavorantes no começo.</div><div class="def">O particípio se refere ao <b>sujeito</b> da principal.</div></div>
+<div class="i"><span class="tag err">particípio solto</span><div class="en"><s>Snarling aggressively, I kept away from the dogs.</s> → The dogs were snarling aggressively, <i>so I kept away</i> from them.</div><div class="pt">O autor queria dizer que os cães rosnavam — mas a frase diz que <b>ele</b> rosnava.</div><div class="def">Quando os sujeitos são <b>diferentes</b>, a oração participial não serve.</div></div>
+<div class="i"><span class="tag reg">formal</span><div class="en">Scorpions in North Africa, <i>some measuring up to 20 centimetres</i>, can kill adults.</div><div class="pt">Escorpiões do norte da África, alguns medindo até 20 centímetros, podem matar adultos.</div><div class="def">No inglês formal a oração participial pode ter <b>sujeito próprio</b> — aqui, <i>some</i>.</div></div>
+<div class="i"><span class="tag err">posição do not</span><div class="en"><i>Not wanting to carry</i> my backpack any further, I went to the first hotel I came across.</div><div class="pt">Não querendo carregar mais a mochila, entrei no primeiro hotel que apareceu.</div><div class="def">O <b>not</b> vem antes do particípio.</div></div>
+<div class="i"><span class="tag">-ing simultâneo</span><div class="en"><i>Opening up my sleeping bag</i>, I discovered a scorpion.</div><div class="pt">Ao abrir meu saco de dormir, descobri um escorpião.</div><div class="def">O particípio presente marca algo <b>simultâneo</b> ou imediatamente anterior à ação principal.</div></div>
+<div class="i"><span class="tag">-ing fundo</span><div class="en"><i>Living mainly in warm climates</i>, scorpions have existed for over 400 million years.</div><div class="pt">Vivendo sobretudo em climas quentes, os escorpiões existem há mais de 400 milhões de anos.</div><div class="def">Para dar <b>informação de fundo</b>.</div></div>
+<div class="i"><span class="tag">-ing após fala</span><div class="en">'Wait for me here,' said Frank, <i>running out of the house</i>.</div><div class="pt">"Espere por mim aqui", disse o Frank, saindo correndo de casa.</div><div class="def">Depois de fala citada, para dizer o que a pessoa fazia enquanto falava.</div></div>
+<div class="i"><span class="tag">-ing causa</span><div class="en"><i>Arriving in Amalfi early in the afternoon</i>, I had time to look around the town.</div><div class="pt">Chegando a Amalfi no começo da tarde, tive tempo de dar uma volta pela cidade.</div><div class="def">= porque cheguei cedo. O particípio presente também dá <b>causa ou resultado</b>.</div></div>
+<div class="i"><span class="tag">-ed causa</span><div class="en"><i>Made from the softest leather imaginable</i>, they are as comfortable as a pair of slippers.</div><div class="pt">Feitas do couro mais macio imaginável, são tão confortáveis quanto um par de pantufas.</div><div class="def">Particípio passado exprimindo <b>causa</b>.</div></div>
+<div class="i"><span class="tag">-ed condição</span><div class="en"><i>Sold in Britain</i>, the boots would have cost a lot more.</div><div class="pt">Vendidas na Grã-Bretanha, as botas teriam custado bem mais.</div><div class="def">Aqui o particípio passado exprime <b>condição</b>: se fossem vendidas…</div></div>
+<div class="i"><span class="tag">having + -ed</span><div class="en"><i>Having fallen over a number of times</i>, I was feeling thoroughly miserable.</div><div class="pt">Tendo caído várias vezes, eu me sentia péssimo.</div><div class="def">= porque eu tinha caído várias vezes. Marca a <b>anterioridade</b>.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Unit 16 · orações substantivas</div>
+<h2>Orações substantivas — <i>that</i>, <i>the fact that</i> e as <i>wh-</i></h2>
+<p class="sdesc">Funcionam como um substantivo dentro da frase. O que se cobra é <b>quando é preciso o <i>the fact that</i></b> e o que só a oração com <i>wh-</i> pode fazer.</p>
+<div class="items">
+<div class="i"><div class="en"><i>What you've told us</i> is very interesting. (= a informação é interessante) · Nine o'clock is <i>when we usually meet</i>. (= nosso horário habitual)</div><div class="pt">O que você nos contou é muito interessante. · Nove horas é quando costumamos nos reunir.</div><div class="def">A oração substantiva funciona como um substantivo ou sintagma nominal.</div></div>
+<div class="i"><span class="tag reg">informal</span><div class="en">It's also good to know <i>(that)</i> they're helping the environment. · I can guarantee <i>(that)</i> you'll make a lot of new friends.</div><div class="pt">Também é bom saber que estão ajudando o meio ambiente. · Garanto que você vai fazer muitos amigos novos.</div><div class="def">No informal, o <b>that</b> costuma cair.</div></div>
+<div class="i"><span class="tag err">sujeito</span><div class="en"><i>The fact that</i> you're not a member of the trust makes no difference. (melhor que <i>That you're not a member… makes no difference</i>)</div><div class="pt">O fato de você não ser sócio da entidade não faz diferença.</div><div class="def">Quando a oração é <b>sujeito</b>, prefere-se <i>the fact that</i>.</div></div>
+<div class="i"><span class="tag err">preposição</span><div class="en">We have to <i>face (up to) the fact that</i> we don't have enough resources at the moment.</div><div class="pt">Temos de encarar o fato de que não temos recursos suficientes no momento.</div><div class="def">Depois de preposição e de verbos como change, face (up to), overlook, também <b>the fact that</b>.</div></div>
+<div class="i"><div class="en"><i>The idea that</i> it's all hard work is just wrong.</div><div class="pt">A ideia de que é tudo trabalho pesado está simplesmente errada.</div><div class="def">No lugar de <i>fact</i> cabem argument, assumption, belief, claim, idea, notion, view.</div></div>
+<div class="i"><span class="tag err">of</span><div class="en">We'd like to follow the example <i>of what</i> they've done at Broadstone Park.</div><div class="pt">Gostaríamos de seguir o exemplo do que fizeram em Broadstone Park.</div><div class="def">Depois de certos substantivos (example, problem), é preciso <b>of</b> antes da palavra <i>wh-</i>.</div></div>
+<div class="i"><span class="tag err">objeto</span><div class="en">I'll be happy to <i>advise you when</i> to come.</div><div class="pt">Terei prazer em orientá-lo sobre quando vir.</div><div class="def">Alguns verbos (advise, teach) exigem <b>objeto</b> antes da palavra <i>wh-</i>.</div></div>
+<div class="i"><div class="en">It's entirely up to you to <i>decide how much</i> time you can give.</div><div class="pt">Cabe inteiramente a você decidir quanto tempo pode dedicar.</div><div class="def">Orações com <b>how</b> são comuns depois de decide, know.</div></div>
+<div class="i"><span class="tag err">só wh-</span><div class="en">If you've got any questions <i>about what</i> I've said so far, I'd be happy to answer them. <s>about that I've said</s></div><div class="pt">Se tiver dúvidas sobre o que eu disse até agora, terei prazer em respondê-las.</div><div class="def">Depois de preposição cabe oração com <b>wh-</b>, mas nunca com <i>that</i>.</div></div>
+<div class="i"><div class="en">We will be very grateful for <i>whatever</i> time people can spare. · You can phone <i>whoever</i> is in charge of arranging lifts.</div><div class="pt">Ficaremos muito gratos por qualquer tempo que as pessoas puderem dedicar. · Você pode ligar para quem estiver encarregado das caronas.</div><div class="def">Whatever (= qualquer coisa), whoever (= quem quer que), whichever (= um de um número limitado).</div></div>
+<div class="i"><div class="en"><i>Why</i> most people volunteer is that they want fresh air and exercise. ou <i>The reason (why/that)</i> most people volunteer…</div><div class="pt">O motivo pelo qual a maioria se voluntaria é que quer ar puro e exercício.</div><div class="def">Muitas vezes cabe trocar a oração <i>wh-</i> por um substantivo de sentido próximo.</div></div>
+<div class="i"><div class="en">Clearing the vegetation is <i>what</i> is urgently needed. ou Clearing the vegetation is <i>something which/that</i> is urgently needed.</div><div class="pt">Limpar a vegetação é o que se precisa com urgência.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Unit 26 · sufixos</div>
+<h2>Adjetivos que viram sufixo — <i>-free</i>, <i>-friendly</i>, <i>-mad</i></h2>
+<p class="sdesc">Três sufixos muito produtivos no inglês contemporâneo, cada um com um sentido fixo. É formação de palavra de nível C1 — e o substantivo do composto fica sempre no <b>singular</b>.</p>
+<div class="items">
+<div class="i"><span class="tag">-free</span><div class="en">I always buy <i>fat-free</i> yoghurt.</div><div class="pt">Sempre compro iogurte desnatado.</div><div class="def"><b>-free</b> = sem uma coisa indesejável.</div></div>
+<div class="i"><span class="tag">-free</span><div class="en">Our neighbourhood doesn't have any crime. It's a <i>crime-free</i> neighbourhood.</div><div class="pt">Nosso bairro não tem criminalidade. É um bairro livre de crime.</div></div>
+<div class="i"><span class="tag">-free</span><div class="en">There's a zone around the school where cars cannot go. It's a <i>car-free</i> zone.</div><div class="pt">Há uma zona em volta da escola onde carro não entra. É uma zona sem carros.</div></div>
+<div class="i"><span class="tag">-friendly</span><div class="en"><i>Child-friendly</i> software comes pre-installed.</div><div class="pt">Software adequado a crianças vem pré-instalado.</div><div class="def"><b>-friendly</b> = adequado a, ou que acolhe bem.</div></div>
+<div class="i"><span class="tag">-friendly</span><div class="en">The council is planning to make the city centre suitable for cyclists. It's going to be a <i>cyclist-friendly</i> centre.</div><div class="pt">A prefeitura pretende deixar o centro adequado a ciclistas. Vai ser um centro amigável ao ciclista.</div></div>
+<div class="i"><span class="tag">-friendly</span><div class="en">I need accommodation where they allow pets. I need <i>pet-friendly</i> accommodation.</div><div class="pt">Preciso de hospedagem que aceite animais. Preciso de hospedagem <i>pet friendly</i>.</div></div>
+<div class="i"><span class="tag">-mad</span><div class="en">My husband is <i>football-mad</i>.</div><div class="pt">Meu marido é louco por futebol.</div><div class="def"><b>-mad</b> = que gosta ou faz algo obsessivamente.</div></div>
+<div class="i"><span class="tag">-mad</span><div class="en">The young people around here are all obsessed with their cars. They're all <i>car-mad</i>. · Many of my colleagues are obsessive about their work. They're all <i>work-mad</i>.</div><div class="pt">Os jovens daqui são todos obcecados pelos carros. · Muitos colegas meus são obcecados pelo trabalho.</div></div>
+<div class="i"><span class="tag err">singular</span><div class="en">O substantivo desses compostos fica sempre no <b>singular</b>: <i>car-free</i>, não <s>cars-free</s>.</div><div class="pt">Regra do próprio livro.</div></div>
+<div class="i"><span class="tag err">person / persons</span><div class="en">There were a lot of <i>people</i> on the station, but only one <i>person</i> got on the train.</div><div class="pt">Havia muita gente na estação, mas só uma pessoa entrou no trem.</div><div class="def">Na fala e na escrita do dia a dia, o plural de <i>person</i> é <b>people</b>.</div></div>
+<div class="i"><span class="tag reg">jurídico</span><div class="en">The crime was committed by <i>person or persons unknown</i>.</div><div class="pt">O crime foi cometido por pessoa ou pessoas desconhecidas.</div><div class="def">O plural <b>persons</b> quase não existe na fala, mas aparece em contextos formais e jurídicos.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Unit 8 · comparação</div>
+<h2>Comparativo — as exceções à regra das sílabas</h2>
+<p class="sdesc">A regra "uma sílaba leva <i>-er</i>, três ou mais levam <i>more</i>" tem uma lista inteira de exceções nos dois sentidos. É onde o C1 se distingue do intermediário.</p>
+<div class="items">
+<div class="i"><div class="en">Accommodation would be <i>cheaper</i> in Athens. · It's probably the <i>cheapest</i> hotel in Athens.</div><div class="pt">A hospedagem seria mais barata em Atenas. · É provavelmente o hotel mais barato de Atenas.</div><div class="def">A regra normal: uma sílaba leva <b>-er/-est</b>.</div></div>
+<div class="i"><span class="tag err">exceção</span><div class="en">I want to come home <i>more relaxed</i>. <s>relaxeder</s></div><div class="pt">Quero voltar para casa mais relaxado.</div><div class="def">Antes de adjetivo particípio (<b>-ed</b> ou <b>-ing</b>), sempre <i>more/most</i> — mesmo com poucas sílabas.</div></div>
+<div class="i"><span class="tag err">exceção</span><div class="en">It'd be <i>more fun</i> to go to Corfu.</div><div class="pt">Seria mais divertido ir a Corfu.</div><div class="def">Também com <b>fun, real, right, wrong</b>.</div></div>
+<div class="i"><div class="en">I want to come home <i>healthier / more healthy</i>. · The walking tour was the <i>healthiest / most healthy</i> holiday I've had.</div><div class="pt">Quero voltar para casa mais saudável. · A caminhada foi as férias mais saudáveis que já tive.</div><div class="def">Com duas sílabas, em geral os <b>dois</b> servem.</div></div>
+<div class="i"><span class="tag err">só more</span><div class="en">It was the <i>most boring</i> holiday I've ever had. · It would be <i>more peaceful</i> than being in a city.</div><div class="pt">Foram as férias mais chatas que já tive. · Seria mais tranquilo do que estar numa cidade.</div><div class="def">Sempre <i>more/most</i>: adjetivos particípios e os terminados em <b>-ful</b> ou <b>-less</b>.</div></div>
+<div class="i"><span class="tag err">só more</span><div class="en">I'm <i>more afraid</i> of flying than travelling by boat. · The Parthenon is one of the <i>most famous</i> buildings in the world.</div><div class="pt">Tenho mais medo de voar do que de viajar de barco. · O Partenon é um dos edifícios mais famosos do mundo.</div><div class="def">Lista fechada que só aceita <i>more/most</i>: afraid, alert, alike, alone, ashamed, cautious, complex, direct, exact, famous, frequent, modern, special, recent.</div></div>
+<div class="i"><span class="tag err">exceção</span><div class="en">I came back feeling <i>unhealthier</i> than when I went away. (ou <i>more unhealthy</i>)</div><div class="pt">Voltei me sentindo menos saudável do que quando fui.</div><div class="def">Com três sílabas o normal é <i>more/most</i> — mas <b>unhappy, unhealthy, unlikely, unlucky, unsteady, untidy</b> aceitam <i>-er/-est</i>.</div></div>
+<div class="i"><div class="en"><i>The longer</i> we leave it, <i>the more expensive</i> it's going to be.</div><div class="pt">Quanto mais adiarmos, mais caro vai ficar.</div></div>
+<div class="i"><span class="tag reg">formal</span><div class="en">Hotels in Corfu are quite cheap — although <i>less cheap</i> than they used to be. · It was the <i>least expensive</i> flight I could find.</div><div class="pt">Os hotéis de Corfu são bem baratos, embora menos baratos do que já foram. · Foi o voo menos caro que consegui achar.</div><div class="def"><b>Less/least</b> é o oposto de more/most e funciona com todos os adjetivos.</div></div>
+<div class="i"><span class="tag reg">informal</span><div class="en">It's probably <i>not as unspoilt as</i> some of the other Greek islands.</div><div class="pt">Provavelmente não é tão preservada quanto outras ilhas gregas.</div><div class="def">No informal prefere-se <b>not as… as</b> a <i>less… than</i>.</div></div>
+<div class="i"><div class="en">We could live <i>more cheaply</i> in Athens. · <i>Most importantly</i>, we need to book our flights soon.</div><div class="pt">Poderíamos viver de forma mais barata em Atenas. · O mais importante é que precisamos comprar as passagens logo.</div><div class="def">Advérbio quase sempre com <b>more/most</b> — as exceções comuns são <i>hard</i> e <i>fast</i>.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Unit 11 · relativas</div>
+<h2>Restritiva × explicativa — e onde a oração tem de ficar</h2>
+<p class="sdesc">A restritiva <b>define</b> de quem se fala; a explicativa só <b>acrescenta</b>. E há uma regra de posição que resolve boa parte da ambiguidade na escrita.</p>
+<div class="items">
+<div class="i"><div class="en">The old photograph <i>that you can see ahead of you</i> shows Marconi at Signal Hill. (restritiva) × The story of radio probably begins with Heinrich Hertz, <i>who was the first to produce radio waves</i>. (explicativa)</div><div class="pt">A foto antiga que você vê à frente mostra Marconi em Signal Hill. × A história do rádio provavelmente começa com Heinrich Hertz, que foi o primeiro a produzir ondas de rádio.</div><div class="def">A restritiva especifica <b>qual</b>; a explicativa só acrescenta informação.</div></div>
+<div class="i"><span class="tag err">posição</span><div class="en">There are just a few of the wireless telegraphs <i>that the factory produced</i> left in the world. (melhor que <i>…left in the world that the factory produced</i>)</div><div class="pt">Restam no mundo apenas alguns dos telégrafos sem fio que a fábrica produziu.</div><div class="def">A relativa fica o <b>mais perto possível</b> do substantivo a que se refere.</div></div>
+<div class="i"><div class="en">The owner of the old radio claims that it is in excellent condition — <i>which</i> is obviously not the case.</div><div class="pt">O dono do rádio antigo afirma que ele está em excelente estado — o que obviamente não é verdade.</div><div class="def">Algumas relativas retomam a <b>ideia inteira</b> da oração anterior, não um substantivo. Quase sempre com <i>which</i>.</div></div>
+<div class="i"><span class="tag">sujeito</span><div class="en">There were many people <i>who</i> doubted that Marconi would ever succeed. (informalmente: <i>… that doubted …</i>)</div><div class="pt">Havia muita gente que duvidava que Marconi um dia teria sucesso.</div><div class="def">Relativa restritiva com o pronome como <b>sujeito</b>: não se pode omitir.</div></div>
+<div class="i"><span class="tag err">pode omitir</span><div class="en">Augusto Righi was an Italian physicist <i>(who/that)</i> Marconi studied with in the 1890s.</div><div class="pt">Augusto Righi foi um físico italiano com quem Marconi estudou nos anos 1890.</div><div class="def">Quando o relativo é <b>objeto</b> de uma restritiva, pode cair.</div></div>
+<div class="i"><span class="tag err">não pode omitir</span><div class="en">The story of radio probably begins with Heinrich Hertz, <i>who</i> was the first to produce radio waves in a laboratory.</div><div class="pt">A história do rádio começa com Heinrich Hertz, que foi o primeiro a produzir ondas de rádio em laboratório.</div><div class="def">Na <b>explicativa</b> o pronome nunca cai.</div></div>
+<div class="i"><span class="tag reg">muito formal</span><div class="en">Augusto Righi, <i>who</i> Marconi respected greatly, guided his research. (muito formal: <i>whom</i> Marconi respected greatly)</div><div class="pt">Augusto Righi, a quem Marconi respeitava muito, orientou sua pesquisa.</div><div class="def">O <b>whom</b> hoje só se usa em estilo muito formal, sobretudo escrito.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Unit 12 · relativas reduzidas</div>
+<h2>Relativa reduzida — e as três vezes em que não dá</h2>
+<p class="sdesc">Uma restritiva pode virar particípio e economizar duas palavras. Mas há <b>três situações</b> em que a redução não funciona — e é aí que o erro aparece.</p>
+<div class="items">
+<div class="i"><div class="en">The editor <i>working on</i> the cookbook is often there, too. (= The editor <i>who is working</i>…)</div><div class="pt">O editor que está trabalhando no livro de receitas costuma estar lá também.</div><div class="def">A oração em <b>-ing</b> corresponde à relativa com verbo <b>ativo</b>.</div></div>
+<div class="i"><div class="en">A challenge <i>facing</i> food photographers is how to keep food looking fresh. (= A challenge <i>which faces</i>…)</div><div class="pt">Um desafio que os fotógrafos de comida enfrentam é manter o alimento com aparência fresca.</div></div>
+<div class="i"><div class="en">The big problem is the heat <i>produced by</i> the lights. (= … the heat <i>that is produced</i>…)</div><div class="pt">O grande problema é o calor produzido pelas luzes.</div><div class="def">A oração em <b>-ed</b> corresponde à relativa com verbo <b>passivo</b>.</div></div>
+<div class="i"><div class="en">Personally, I prefer food <i>not made of</i> cardboard!</div><div class="pt">Pessoalmente, prefiro comida que não seja feita de papelão!</div></div>
+<div class="i"><span class="tag err">estativos</span><div class="en">This spray bottle <i>contains</i> glycerine mixed with water. <s>is containing</s> × I generally have with me a spray bottle <i>containing</i> glycerine and water. ✓</div><div class="pt">Este borrifador contém glicerina misturada com água. × Costumo levar comigo um borrifador contendo glicerina e água.</div><div class="def">Verbos que não vão para o contínuo <b>podem</b> aparecer na relativa reduzida em <i>-ing</i>. Também belong to, comprise, consist of, constitute, equal, own, possess, resemble, result from, surround.</div></div>
+<div class="i"><span class="tag err">não reduz</span><div class="en">A technique <i>that might be used</i> in photographing meat is to use a glycerine spray.</div><div class="pt">Uma técnica que pode ser usada ao fotografar carne é usar spray de glicerina.</div><div class="def">Não se reduz quando o primeiro verbo da relativa é <b>modal</b>.</div></div>
+<div class="i"><span class="tag err">não reduz</span><div class="en">Food <i>that can't be frozen</i> is particularly difficult to photograph.</div><div class="pt">Comida que não pode ser congelada é especialmente difícil de fotografar.</div></div>
+<div class="i"><span class="tag err">não reduz</span><div class="en">Sometimes the chef <i>who created</i> the dish comes to the studio. <s>the chef creating the dish</s> × The chef <i>preparing</i> the food today works in a well-known restaurant. ✓</div><div class="pt">Às vezes o chef que criou o prato vem ao estúdio. × O chef que está preparando a comida hoje trabalha num restaurante conhecido.</div><div class="def">Não se usa o <b>-ing</b> reduzido para uma ação <b>única e concluída</b>.</div></div>
+<div class="i"><span class="tag reg">escrito</span><div class="en">Her photographs, <i>taken in her studio in California</i>… (= … <i>which were taken</i>…)</div><div class="pt">As fotografias dela, tiradas no estúdio na Califórnia…</div><div class="def">A redução também serve para a <b>explicativa</b>, sobretudo no inglês escrito — entre vírgulas ou travessões.</div></div>
+<div class="i"><span class="tag reg">escrito</span><div class="en">My parents — <i>not having much money</i> — rarely took us to restaurants. (= … <i>who didn't have much money</i>…)</div><div class="pt">Meus pais — não tendo muito dinheiro — raramente nos levavam a restaurante.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 20 V11 · Livro 03 · Grammar and Vocabulary for Advanced (Cambridge) &mdash; C1, inglês real tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' \u2014 '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
