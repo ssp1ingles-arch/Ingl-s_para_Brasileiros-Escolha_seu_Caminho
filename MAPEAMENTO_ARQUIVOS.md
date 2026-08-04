@@ -1,8 +1,69 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-04 — ver bloco 0p (Sistemas 21 e 22, ambos fechados).**
-> Anteriores: 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+> **Atualização mais recente: 2026-08-04 — ver bloco 0q (segunda passada em S21 l01 e S20 l06).**
+> Anteriores: 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+
+## 0q. Atualização 2026-08-04 (T2) — segunda passada nos dois painéis rasos
+
+> As duas pendências registradas no bloco 0p foram fechadas. Os dois painéis
+> passaram do mínimo de **12 blocos / 150 itens** por larga margem.
+
+| Painel | Antes | Depois | Ganho |
+|---|---|---|---|
+| S21 · `livro01.html` — Oxford English Grammar Course Advanced | 14 blocos / **91** itens / 46 KB | 36 blocos / **276** itens / 143 KB | +22 blocos, +185 itens |
+| S20 · `livro06.html` — English Vocabulary in Use Advanced 3rd | 8 blocos / **88** itens / 36 KB | 30 blocos / **291** itens / 146 KB | +22 blocos, +203 itens |
+
+**S21 livro01 — o que a segunda passada acrescentou.** A primeira passada
+(2026-08-03) tinha lido só as Seções 2–5 do Swan. Esta leu o resto das 17 Seções
+da Parte 1 e a **Parte 2 inteira** (*grammar beyond the sentence*): negativas
+(`not` × `no`, `I don't think`), pergunta negativa, imperativo e exclamação,
+modais perfeitos (com o par `needn't have` × `didn't need to`), `had better` e
+`be supposed to`, as razões reais para usar passiva e a passiva de relato do
+noticiário, infinitivo × `-ing` em dois blocos, verbo + preposição, causativas,
+as exceções de artigo, seis pares de preposição confundida, *fronting* e
+inversão, as duas *cleft sentences*, discourse markers de argumento e de
+atitude, elipse, gramática da conversa e estilos abreviados.
+
+**S20 livro06 — sobreposição verificada antes de escrever.** Como o S21 livro02
+é a edição em 100 unidades do mesmo livro, foi conferido o recorte de lá antes
+de escolher o daqui. O S21 ficou com as unidades **temáticas** (trabalho,
+carreira, dinheiro, caráter, relações, aparência, prefixos, idioms, phrasal
+verbs) — nada disso entrou aqui. O recorte novo é o que o S21 não toca:
+palavras que se confundem e polissemia, sufixos, raízes clássicas e *blends*,
+siglas, as cinco metáforas mortas do inglês corrente, a escala da vagueza
+numérica, o jeito de dizer, a manchete, a língua da burocracia, escrita
+acadêmica em dois blocos, e o vocabulário funcional (permitir, reclamar,
+desculpar-se, elogiar, concordar, recordar, causa e efeito, comparar,
+modalidade). **Zero repetição de bloco entre os dois painéis.**
+
+### Utilitários agora versionados
+
+`scratchpad/mkpanel.py` e `scratchpad/hubcard.py` viviam no scratchpad da sessão
+e se perderam de novo. Foram reescritos e **versionados em `tmp/`**:
+
+- **`tmp/mkpanel.py`** — `check` conta blocos/itens e sai com erro abaixo do
+  mínimo; `append` acrescenta blocos de um spec JSON a um painel existente,
+  renumerando os ids e atualizando a métrica de blocos; `build` gera painel novo.
+  A gravação trava com `assert` se ficar abaixo de **12 blocos / 150 itens**.
+- **`tmp/hubcard.py`** — `sync` atualiza o `.hc-meta` do card lendo os números
+  **do próprio painel**; `status` aponta card desencontrado do conteúdo;
+  `metric` recalcula o "N/M painéis prontos" do topo do hub.
+
+### Pendência nova que o `hubcard.py status` revelou
+
+Rodar `hubcard.py status` no hub do S20 mostrou que **outros três painéis do S20
+estão abaixo do mínimo de 150 itens** — não estavam mapeados até agora:
+
+| Painel | Estado | Fonte disponível |
+|---|---|---|
+| S20 · `livro03.html` — Grammar and Vocabulary for Advanced | 10 blocos / **106** itens | `.md` na pasta |
+| S20 · `livro04.html` — Advanced Language Practice (Michael Vince) | 9 blocos / **81** itens | `.md` na pasta |
+| S20 · `livro07.html` — English Pronunciation in Use Advanced | 6 blocos / **43** itens | `.md` na pasta |
+
+Os demais painéis dos três Sistemas avançados estão todos acima do mínimo.
+
+---
 
 ## 0p. Atualização 2026-08-04 — Sistemas 21 e 22 (Gramática Avançada) · **fechados**
 
