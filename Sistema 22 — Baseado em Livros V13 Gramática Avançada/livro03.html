@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 03 · New Cambridge Advanced English — Sistema 22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 22</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 22 · Livro 03 · C1–C2</div>
+<h1 class="title">New <em>Cambridge Advanced</em> English</h1>
+<p class="lead">Leo Jones · Cambridge University Press · nova edição. O livro se organiza por tema, mas o que sustenta cada unidade são duas seções fixas: <b>Grammar review</b> — as «áreas-problema» da gramática inglesa — e <b>Word study</b>. O painel fica nessas duas. Como transformar a narrativa falada em escrita (a diferença real entre B2 e C1 na redação), o sistema inteiro do passado com as expressões de tempo que casam com cada forma, os <b>modais em pares que se confundem</b> (<i>mustn't</i> × <i>don't have to</i>, <i>needn't have</i> × <i>didn't have to</i>, <i>can't have</i> × <i>may not have</i>), as escalas de <b>força</b> entre sinônimos — de <i>uneasy</i> a <i>petrified</i> —, o artigo que muda o sentido da frase, os substantivos de dupla natureza e o mapa dos prefixos. Inglês britânico.</p>
+
+<div class="metrics">
+  <div class="metric"><b>16</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>C1–C2</b><span>nível</span></div>
+  <div class="metric"><b>GB</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: needn't have, petrified, high street, mis-, at low tide…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+<section id="s01">
+<div class="snum">Escrever · juntar frases</div>
+<h2>Do falado para o escrito — a diferença que faz o nível</h2>
+<p class="sdesc">No inglês <b>falado</b>, a narrativa vem em frases curtas na ordem dos fatos, ligadas por <i>and</i> e <i>then</i>. No <b>escrito</b>, as frases são mais longas e complexas. É essa passagem que separa o B2 do C1.</p>
+<div class="items">
+<div class="i"><div class="en"><b>Falado:</b> Their ship went down in a typhoon. They managed to swim to a nearby island. They wanted to attract the attention of passing ships. They lit a fire on the highest point. A passing cruise liner spotted the smoke. They were rescued.</div><div class="def">Seis frases curtas, na ordem dos acontecimentos. Correto — e monótono.</div></div>
+<div class="i"><div class="en"><b>Escrito:</b> Their ship went down in a typhoon <i>but</i> they managed to swim to a nearby island. They wanted to attract the attention of passing ships, <i>so</i> they lit a fire on the highest point of the island. A passing cruise liner spotted the smoke <i>and</i> they were rescued.</div><div class="pt">O navio deles afundou num tufão, mas conseguiram nadar até uma ilha próxima. Queriam atrair a atenção dos navios que passavam, então acenderam uma fogueira no ponto mais alto da ilha. Um transatlântico avistou a fumaça e eles foram resgatados.</div><div class="def">Seis frases viram três. Os conectivos <b>and</b>, <b>but</b>, <b>so</b> e <b>then</b> são o primeiro passo.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en"><b>Mais avançado:</b> They managed to swim to a nearby island <i>after</i> their ship <i>had gone down</i> in a typhoon. <i>As</i> they wanted to attract the attention of passing ships, they lit a fire…</div><div class="pt">Conseguiram nadar até uma ilha próxima depois que o navio afundara num tufão. Como queriam atrair a atenção dos navios que passavam, acenderam uma fogueira…</div><div class="def">Repare em duas coisas: a ordem dos fatos <b>deixa de ser cronológica</b>, e o verbo muda para <b>past perfect</b> por causa disso.</div></div>
+<div class="i"><div class="en">They were nearly drowned <i>after</i> their ship <i>had gone down</i> in a hurricane.</div><div class="pt">Quase se afogaram depois que o navio afundara num furacão.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Ao subordinar uma oração, é preciso <b>ajustar o tempo verbal</b>: <i>did</i> vira <i>had done</i>.</div><div class="def">Esquecer esse ajuste é o erro mais comum ao tentar escrever «mais avançado».</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Escrever · conectivos</div>
+<h2>O repertório de conectivos — e o que cada um faz</h2>
+<p class="sdesc">A lista que o livro manda usar. Vale menos decorá-la do que perceber que cada um marca <b>uma relação diferente</b>.</p>
+<div class="items">
+<div class="i"><div class="en"><i>after</i> · <i>before</i> · <i>as soon as</i> · <i>by the time</i> · <i>once</i> · <i>until</i> · <i>when</i> · <i>while</i></div><div class="pt">depois que · antes que · assim que · quando (já) · uma vez que · até que · quando · enquanto</div><div class="def">Relação de <b>tempo</b>.</div></div>
+<div class="i"><div class="en"><i>because</i> · <i>as</i> · <i>since</i></div><div class="pt">porque · como · já que</div><div class="def">Relação de <b>causa</b>. <b>As</b> e <b>since</b> costumam abrir a frase.</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><i>so</i> · <i>so that</i></div><div class="pt">então · para que</div><div class="def"><b>So</b> é resultado; <b>so that</b> é finalidade. Uma palavra de diferença, duas relações.</div></div>
+<div class="i"><div class="en"><i>although</i> · <i>however</i> · <i>but</i></div><div class="pt">embora · no entanto · mas</div><div class="def">Relação de <b>contraste</b>. <b>However</b> liga duas frases; <b>although</b> liga duas orações.</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><i>eventually</i> · <i>finally</i> · <i>in the end</i> · <i>subsequently</i> · <i>and then</i></div><div class="pt">por fim · finalmente · no final · posteriormente · e então</div><div class="def">Relação de <b>sequência</b>. <b>Eventually</b> é falso amigo: significa «no final», não «eventualmente».</div></div>
+<div class="i"><div class="en"><i>which</i></div><div class="pt">o que / que</div><div class="def">Liga acrescentando informação sobre o que se acabou de dizer.</div></div>
+<div class="i"><div class="en">They spent a long time drinking coffee and talking, <i>so</i> they got home very late.</div><div class="pt">Passaram muito tempo tomando café e conversando, então chegaram em casa bem tarde.</div></div>
+<div class="i"><div class="en"><i>Because</i> the airport was closed <i>because of</i> fog, many flights were delayed <i>and</i> we had to spend the night in the departure lounge.</div><div class="pt">Como o aeroporto estava fechado por causa do nevoeiro, muitos voos atrasaram e tivemos que passar a noite no saguão de embarque.</div></div>
+<div class="i"><div class="en">The kidnappers were caught by the police <i>as</i> they were trying to get out of the country, <i>although</i> the ransom money had already been paid.</div><div class="pt">Os sequestradores foram presos pela polícia quando tentavam sair do país, embora o resgate já tivesse sido pago.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Passado · simples e perfect</div>
+<h2>Passado simples ou present perfect — o critério real</h2>
+<p class="sdesc">Não é questão de «quando aconteceu». É questão de <b>qual período está em jogo</b> e <b>se o efeito chega até hoje</b>.</p>
+<div class="items">
+<div class="i"><div class="en">She <i>was</i> born in India and <i>came</i> to Britain when she was 18.</div><div class="pt">Ela nasceu na Índia e veio para a Grã-Bretanha aos 18.</div><div class="def"><b>Passado simples</b>: eventos em tempo <b>definido</b> no passado.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">She <i>started</i> learning English six years ago.</div><div class="pt">Ela começou a aprender inglês há seis anos.</div><div class="def"><b>Ago</b> marca tempo definido — sempre com passado simples.</div></div>
+<div class="i"><div class="en">Look over there: someone <i>has broken</i> a window. I wonder who <i>did</i> it?</div><div class="pt">Olha ali: alguém quebrou uma janela. Quem será que foi?</div><div class="def">As duas formas na mesma situação: <b>has broken</b> porque o resultado está à vista <b>agora</b>; <b>did</b> porque a pergunta é sobre o ato passado.</div></div>
+<div class="i"><div class="en">She <i>has worked</i> hard all her life.</div><div class="pt">Ela trabalhou duro a vida toda.</div><div class="def"><b>Present perfect</b>: período <b>ainda não terminado</b> — a vida dela continua.</div></div>
+<div class="i"><div class="en">I <i>haven't seen</i> her recently. · <i>Have you ever been</i> to the USA?</div><div class="pt">Não a tenho visto ultimamente. · Você já esteve nos EUA?</div></div>
+<div class="i"><div class="en">I<i>'ve just returned</i> from a long trip, so I don't feel like travelling anywhere.</div><div class="pt">Acabei de voltar de uma viagem longa, então não estou a fim de viajar.</div><div class="def">Evento recente com <b>resultado no presente</b>.</div></div>
+<div class="i"><div class="en">I heard on the news today that there <i>has been</i> a terrible earthquake in China.</div><div class="pt">Ouvi no noticiário hoje que houve um terremoto terrível na China.</div><div class="def"><b>Today</b> é período ainda não terminado — daí o present perfect.</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><i>Did you enjoy</i> your holiday? · <i>Have you enjoyed</i> your holiday?</div><div class="pt">Você curtiu as férias? · Você tem curtido as férias?</div><div class="def">A primeira: as férias <b>acabaram</b>. A segunda: ainda estão acontecendo. É só isso que muda.</div></div>
+<div class="i"><div class="en">She <i>lived</i> abroad for two years. · She <i>has lived</i> abroad for two years.</div><div class="pt">Ela morou no exterior por dois anos. · Ela mora no exterior há dois anos.</div><div class="def">A primeira: já voltou. A segunda: <b>ainda está lá</b>.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Passado · past perfect</div>
+<h2>O <i>past perfect</i> — e quando ele é opcional</h2>
+<p class="sdesc">Serve para o que aconteceu <b>antes</b> de outro momento passado. Mas o livro faz uma observação que quase nenhum outro faz: às vezes ele é <b>dispensável</b>.</p>
+<div class="items">
+<div class="i"><div class="en">It was very cold when he got to Moscow because winter <i>had already arrived</i>.</div><div class="pt">Estava muito frio quando ele chegou a Moscou porque o inverno já tinha chegado.</div></div>
+<div class="i"><div class="en">My car wouldn't start this morning because I <i>had left</i> the lights on all night.</div><div class="pt">Meu carro não pegou hoje de manhã porque eu tinha deixado os faróis acesos a noite toda.</div><div class="def">A <b>causa</b> de uma situação passada que o ouvinte já conhece.</div></div>
+<div class="i"><div class="en">He couldn't get on the plane because he <i>had forgotten</i> his passport.</div><div class="pt">Ele não conseguiu embarcar porque tinha esquecido o passaporte.</div></div>
+<div class="i"><div class="en">She said she <i>had been</i> in Burma in 1988 but that she <i>had never been</i> to India.</div><div class="pt">Ela disse que tinha estado na Birmânia em 1988, mas que nunca tinha ido à Índia.</div><div class="def">No <b>discurso indireto</b> o past perfect é obrigatório.</div></div>
+<div class="i"><div class="en">We asked him why he <i>hadn't come</i> to the party the previous weekend.</div><div class="pt">Perguntamos a ele por que não tinha vindo à festa no fim de semana anterior.</div></div>
+<div class="i"><div class="en">When we <i>heard</i> the song we started singing. · When we <i>had heard</i> the song we started singing.</div><div class="pt">Quando ouvimos a música começamos a cantar. · Quando terminamos de ouvir a música começamos a cantar.</div><div class="def">Diferença real: na primeira, cantam <b>junto</b>; na segunda, só <b>depois</b> que a música acabou.</div></div>
+<div class="i"><div class="en"><i>After I had been</i> to Japan, I spent a week in Korea. = <i>After I went</i> to Japan, I spent a week in Korea.</div><div class="pt">Depois de ir ao Japão, passei uma semana na Coreia.</div><div class="def">Aqui <b>não há diferença de sentido</b>. O <b>after</b> já ordena os fatos, então o past perfect é opcional.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Passado · expressões de tempo</div>
+<h2>Que expressão de tempo casa com que tempo verbal</h2>
+<p class="sdesc">O atalho mais útil do capítulo: certas expressões <b>obrigam</b> uma forma verbal. Decorar a lista resolve metade dos erros.</p>
+<div class="items">
+<div class="i"><div class="en">Só com <b>passado simples</b>: <i>in 1997</i>, <i>a long time ago</i>, <i>a moment ago</i>, <i>last year</i>, <i>yesterday</i>, <i>the other day</i>, <i>when I was younger</i>, <i>at midnight</i>.</div></div>
+<div class="i"><div class="en"><i>In 1989</i> Japan <i>overtook</i> the USA as the world's richest nation.</div><div class="pt">Em 1989 o Japão ultrapassou os EUA como nação mais rica do mundo.</div></div>
+<div class="i"><div class="en"><i>Did</i> you <i>see</i> that documentary about South Africa on TV <i>the other day</i>?</div><div class="pt">Você viu aquele documentário sobre a África do Sul na TV outro dia?</div></div>
+<div class="i"><div class="en">Só com <b>present perfect</b>: <i>since</i>, <i>lately</i>, <i>so far</i>, <i>till now</i>, <i>yet</i>, <i>already</i>, <i>this week</i>, <i>this year</i>, <i>all my life</i>, <i>never</i>, <i>recently</i>.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">I <i>haven't been</i> abroad <i>since</i> January.</div><div class="pt">Não viajo para fora desde janeiro.</div><div class="def"><b>Since</b> + present perfect. Nunca <s>I didn't go abroad since January</s>.</div></div>
+<div class="i"><div class="en"><i>Have</i> you <i>seen</i> any good TV programmes <i>lately</i>?</div><div class="pt">Você viu algum programa bom na TV ultimamente?</div></div>
+<div class="i"><div class="en">Com <b>os dois</b>, conforme a situação: <i>ever</i>, <i>always</i>, <i>never</i>, <i>this afternoon</i>, <i>not long ago</i>, <i>still</i>.</div></div>
+<div class="i"><div class="en">«<i>Have you ever been</i> to Kenya?» «Yes, I have. I <i>went</i> there earlier this year.»</div><div class="pt">«Você já esteve no Quênia?» «Já. Fui lá no começo do ano.»</div><div class="def">A pergunta genérica em present perfect; a resposta com data específica em passado simples. É o padrão típico da conversa.</div></div>
+<div class="i"><div class="en">«<i>Did you ever go</i> to Mombasa while you were in Kenya?»</div><div class="pt">«Você chegou a ir a Mombaça enquanto estava no Quênia?»</div><div class="def">Aqui <b>ever</b> vai com passado simples, porque o período (<i>while you were in Kenya</i>) <b>já terminou</b>.</div></div>
+<div class="i"><div class="en">Só com <b>past perfect</b>: <i>by then</i>, <i>a few days before</i>, <i>not long before that</i>, <i>by 11 o'clock</i> (no passado).</div></div>
+<div class="i"><div class="en">He <i>had booked</i> his tickets <i>a few days before</i>. · We were worried because she <i>hadn't arrived by 11 o'clock</i>.</div><div class="pt">Ele tinha comprado as passagens alguns dias antes. · Estávamos preocupados porque ela não tinha chegado até as 11.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Modais · obrigação</div>
+<h2>Os pares de modais que se confundem — obrigação</h2>
+<p class="sdesc">Aqui está o núcleo do capítulo de modais: pares que <b>parecem</b> equivalentes e significam coisas opostas.</p>
+<div class="items">
+<div class="i"><span class="tag">err</span><div class="en">You <i>mustn't</i> tell her. ≠ You <i>don't have to</i> tell her.</div><div class="pt">Você não pode contar a ela. ≠ Você não precisa contar a ela.</div><div class="def"><b>Mustn't</b> = proibido. <b>Don't have to</b> = não é necessário. Opostos completos.</div></div>
+<div class="i"><div class="en">You <i>needn't</i> tell her. = You <i>don't have to</i> tell her.</div><div class="pt">Você não precisa contar a ela.</div><div class="def"><b>Needn't</b> e <b>don't have to</b> são equivalentes.</div></div>
+<div class="i"><div class="en">You <i>oughtn't to</i> tell her. = You <i>shouldn't</i> tell her.</div><div class="pt">Você não deveria contar a ela.</div><div class="def">Conselho, não proibição. <b>Ought</b> é o único modal que leva <b>to</b>.</div></div>
+<div class="i"><div class="en">I <i>should have trusted</i> him but… ≠ I <i>had to trust</i> him but…</div><div class="pt">Eu deveria ter confiado nele, mas… ≠ Eu tive que confiar nele, mas…</div><div class="def"><b>Should have</b> = era o certo e não fiz. <b>Had to</b> = fui obrigado e fiz.</div></div>
+<div class="i"><div class="en">I <i>shouldn't have trusted</i> him. ≠ I <i>didn't have to trust</i> him.</div><div class="pt">Eu não deveria ter confiado nele. ≠ Eu não era obrigado a confiar nele.</div><div class="def">O primeiro é arrependimento; o segundo é constatação de que não havia obrigação.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">I <i>needn't have trusted</i> him.</div><div class="pt">Eu não precisava ter confiado nele (mas confiei).</div><div class="def"><b>Needn't have</b> + particípio: eu fiz — e era desnecessário. Já <b>didn't have to</b>: talvez nem tenha feito.</div></div>
+<div class="i"><div class="en">You<i>'d better</i> tell him sooner or later. = You <i>ought to</i> tell him. = You <i>have to</i> / <i>have got to</i> tell him.</div><div class="pt">É melhor você contar a ele mais cedo ou mais tarde.</div><div class="def">Quatro formas, todas puxando para a mesma direção — mas <b>had better</b> carrega uma leve <b>ameaça</b>.</div></div>
+<div class="i"><div class="en">You <i>needn't</i> tell him yet. = You <i>don't have to</i> tell him yet. ≠ You <i>mustn't</i> tell him yet.</div><div class="pt">Você ainda não precisa contar. ≠ Você ainda não pode contar.</div></div>
+<div class="i"><div class="en">It wasn't a good idea to tell her. = I <i>shouldn't have told</i> her.</div><div class="pt">Não foi boa ideia contar a ela. = Eu não deveria ter contado.</div></div>
+<div class="i"><div class="en">It wasn't necessary to tell her. = I <i>didn't have to tell</i> her.</div><div class="pt">Não era necessário contar a ela.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Modais · dedução</div>
+<h2>Os pares de modais — dedução e possibilidade</h2>
+<p class="sdesc">O segundo grupo: modais que falam de <b>quanta certeza</b> você tem. Um deslize aqui muda o grau de compromisso da frase.</p>
+<div class="items">
+<div class="i"><div class="en">They <i>might tell</i> me… · They <i>may tell</i> me…</div><div class="pt">Eles talvez me contem…</div><div class="def">Possibilidade <b>futura</b>. Praticamente equivalentes.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">They <i>might have told</i> me… · They <i>may have told</i> me…</div><div class="pt">Eles talvez tenham me contado…</div><div class="def">Possibilidade <b>passada</b>. Mas atenção: <i>You might have told me!</i> em tom de reclamação significa «você bem que podia ter me contado».</div></div>
+<div class="i"><div class="en">He <i>may not have seen</i> her. ≠ He <i>can't have seen</i> her.</div><div class="pt">Pode ser que ele não a tenha visto. ≠ Ele não pode tê-la visto.</div><div class="def"><b>May not</b> = talvez não. <b>Can't</b> = tenho quase certeza de que não. Graus de certeza bem diferentes.</div></div>
+<div class="i"><div class="en">He <i>may not be seeing</i> her. ≠ He <i>can't be seeing</i> her.</div><div class="pt">Talvez ele não esteja saindo com ela. ≠ Não é possível que ele esteja saindo com ela.</div></div>
+<div class="i"><div class="en">She <i>can't have lunch</i> because… ≠ She <i>can't be having lunch</i> because…</div><div class="pt">Ela não pode almoçar porque… ≠ Não é possível que ela esteja almoçando porque…</div><div class="def">O primeiro é <b>impossibilidade prática</b>; o segundo é <b>dedução</b>. Mesmo modal, funções distintas.</div></div>
+<div class="i"><div class="en">She <i>can't have had</i> lunch because…</div><div class="pt">Ela não pode ter almoçado porque…</div><div class="def">Dedução sobre o <b>passado</b>.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">We <i>could have</i> tea early because… ≠ We <i>were able to have</i> tea early because…</div><div class="pt">A gente podia tomar chá mais cedo porque… ≠ A gente conseguiu tomar chá mais cedo porque…</div><div class="def"><b>Could</b> é capacidade geral; <b>was/were able to</b> é a realização <b>concreta</b> numa ocasião.</div></div>
+<div class="i"><div class="en">You <i>must be</i> joking. = You <i>can't be</i> serious.</div><div class="pt">Você deve estar brincando. = Você não pode estar falando sério.</div><div class="def">As duas metades da mesma dedução — uma pela afirmativa, outra pela negativa.</div></div>
+<div class="i"><div class="en">You <i>have to</i> tell a joke. = You<i>'ve got to</i> tell a joke.</div><div class="pt">Você tem que contar uma piada.</div><div class="def">Aqui é obrigação, não dedução. <b>Must be</b> × <b>have to</b>: o mesmo verbo, dois mundos.</div></div>
+<div class="i"><div class="en"><i>We might as well have</i> lunch soon. = We've got nothing better to do, so let's have lunch.</div><div class="pt">A gente bem que podia almoçar logo. = Não temos nada melhor para fazer, então vamos almoçar.</div><div class="def"><b>Might as well</b> = já que não há nada melhor. Não é possibilidade — é resignação.</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><i>We might well have</i> lunch soon. = We'll probably have lunch soon.</div><div class="pt">É bem provável que a gente almoce logo.</div><div class="def">Uma letra de diferença de <b>might as well</b>, e o sentido é outro: aqui é <b>probabilidade</b>.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Sinônimos · força</div>
+<h2>A escala de força — de <i>uneasy</i> a <i>petrified</i></h2>
+<p class="sdesc">Adjetivos «sinônimos» quase nunca são intercambiáveis: cada um tem uma <b>força</b>. Responder <i>petrified</i> onde cabia <i>apprehensive</i> é exagero cômico.</p>
+<div class="items">
+<div class="i"><div class="en">«Would you be <i>afraid</i>?» — «No, I'd be absolutely <i>petrified</i>!»</div><div class="pt">«Você teria medo?» — «Medo? Eu ficaria apavorado!»</div></div>
+<div class="i"><div class="en">«Would you be <i>afraid</i>?» — «No, but I suppose I'd be a bit <i>apprehensive</i>.»</div><div class="pt">«Você teria medo?» — «Não, mas acho que ficaria meio apreensivo.»</div><div class="def">Mesma pergunta, duas respostas de <b>força oposta</b>.</div></div>
+<div class="i"><div class="en"><b>AFRAID</b>, do mais fraco ao mais forte: <i>uneasy</i> → <i>apprehensive</i> → <i>anxious</i> → <i>nervous</i> → <i>worried</i> → <i>frightened</i> → <i>scared</i> → <i>terrified</i> → <i>scared stiff</i> → <i>petrified</i>.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en"><b>ANNOYED</b>: <i>discontented</i> → <i>dissatisfied</i> → <i>irritated</i> → <i>cross</i> → <i>grumpy</i> → <i>upset</i> → <i>resentful</i> → <i>indignant</i> → <i>furious</i> → <i>livid</i>.</div><div class="def"><b>Cross</b> é britânico e brando — é o que se diz a uma criança. <b>Livid</b> é o topo da escala.</div></div>
+<div class="i"><div class="en"><b>SURPRISED</b>: <i>taken aback</i> → <i>amazed</i> → <i>astonished</i> → <i>stunned</i> → <i>shocked</i> → <i>horrified</i>.</div><div class="def">A partir de <b>shocked</b> a surpresa vira <b>negativa</b>.</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><b>CALM</b>: <i>relaxed</i> → <i>unworried</i> → <i>unruffled</i> → <i>composed</i> → <i>serene</i> → <i>detached</i> → <i>impassive</i> → <i>indifferent</i> → <i>unmoved</i>.</div><div class="def">Os últimos deixam de ser elogio: <b>indifferent</b> e <b>unmoved</b> sugerem <b>frieza</b>.</div></div>
+<div class="i"><div class="en"><b>HAPPY</b>: <i>glad</i> → <i>pleased</i> → <i>satisfied</i> → <i>cheerful</i> → <i>light-hearted</i> → <i>delighted</i> → <i>thrilled</i> → <i>overjoyed</i> → <i>exhilarated</i> → <i>on top of the world</i> → <i>pleased as Punch</i>.</div><div class="def"><b>Pleased as Punch</b> vem do boneco Punch do teatro de fantoches inglês.</div></div>
+<div class="i"><div class="en"><b>UNHAPPY</b>: <i>sorry</i> → <i>dissatisfied</i> → <i>disappointed</i> → <i>fed up</i> → <i>feeling low</i> → <i>down in the dumps</i> → <i>miserable</i> → <i>dejected</i> → <i>wretched</i> → <i>desperate</i> → <i>heartbroken</i> → <i>inconsolable</i>.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">«How would you feel if you saw a shark while you were swimming?» «I'd be absolutely <i>terrified</i>!»</div><div class="pt">«Como você se sentiria se visse um tubarão nadando?» «Eu ficaria apavorado!»</div><div class="def">Repare no <b>absolutely</b>: adjetivo de topo de escala pede <b>absolutely</b>, não <s>very</s>.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Personalidade</div>
+<h2>Descrever gente — e os pares de opostos</h2>
+<p class="sdesc">O vocabulário de caráter organizado como o livro organiza: em <b>pares</b>, porque é assim que ele se fixa.</p>
+<div class="items">
+<div class="i"><div class="en"><i>ambitious</i> ≠ <i>easy-going</i></div><div class="pt">ambicioso ≠ tranquilo, sem pressa</div></div>
+<div class="i"><div class="en"><i>out-going</i> / <i>gregarious</i> ≠ <i>introverted</i> / <i>reserved</i> / <i>shy</i></div><div class="pt">extrovertido / sociável ≠ introvertido / reservado / tímido</div><div class="def">Três graus do lado introvertido: <b>reserved</b> é neutro, <b>shy</b> é insegurança, <b>introverted</b> é temperamento.</div></div>
+<div class="i"><div class="en"><i>serious</i> / <i>earnest</i> ≠ <i>frivolous</i></div><div class="pt">sério / compenetrado ≠ fútil</div><div class="def"><b>Earnest</b> é sério <b>com sinceridade</b> — quase sempre elogio.</div></div>
+<div class="i"><div class="en"><i>cautious</i> ≠ <i>spontaneous</i></div><div class="pt">cauteloso ≠ espontâneo</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><i>outspoken</i> ≠ <i>sensitive</i></div><div class="pt">que fala o que pensa ≠ sensível</div><div class="def"><b>Outspoken</b> não é «falastrão»: é quem diz o que pensa mesmo quando é impopular.</div></div>
+<div class="i"><div class="en"><i>self-confident</i> · <i>resourceful</i> · <i>passionate</i> · <i>enthusiastic</i> · <i>artistic</i></div><div class="pt">autoconfiante · desenrolado · apaixonado · entusiasmado · artístico</div><div class="def"><b>Resourceful</b> — quem se vira com o que tem.</div></div>
+<div class="i"><div class="en"><i>ruthless</i></div><div class="pt">implacável, sem escrúpulos</div><div class="def">O mais negativo da lista — quem não hesita em prejudicar para conseguir o que quer.</div></div>
+<div class="i"><div class="en">Idade: <i>in his teens</i> · <i>in her mid-twenties</i> · <i>thirty-something</i> · <i>in her early/late thirties</i> · <i>fortyish</i> · <i>middle-aged</i> · <i>over sixty</i></div><div class="pt">adolescente · lá pelos 25 · trinta e poucos · no começo/fim dos trinta · uns quarenta · de meia-idade · mais de sessenta</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">Rosto e cabelo: <i>an open face</i> · <i>curly/wavy/straight hair</i> · <i>a pale/dark complexion</i> · <i>bushy eyebrows</i> · <i>a good tan</i> · <i>wrinkles</i> · <i>a double chin</i> · <i>laughter lines</i></div><div class="pt">rosto franco · cabelo cacheado/ondulado/liso · pele clara/escura · sobrancelhas cheias · bronzeado bom · rugas · papada · pés de galinha</div><div class="def"><b>Laughter lines</b> é a forma simpática de dizer o que <b>wrinkles</b> diz sem simpatia.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Altura e porte: <i>athletic</i> / <i>well-built</i> · <i>slim</i> / <i>skinny</i> · <i>plump</i> / <i>chubby</i></div><div class="pt">atlético / bem construído · esbelto / magrelo · rechonchudo / gordinho</div><div class="def">Em cada par, o primeiro é <b>elogio</b> e o segundo não: <b>slim</b> agrada, <b>skinny</b> ofende.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Idioms · lose</div>
+<h2>A família de <i>lose</i> — quinze expressões de um verbo só</h2>
+<p class="sdesc">Um verbo, quinze expressões fixas. É o método do livro: estudar idiom <b>por verbo-base</b>.</p>
+<div class="items">
+<div class="i"><div class="en">We didn't have a map and so we <i>lost our way</i>.</div><div class="pt">Não tínhamos mapa e acabamos nos perdendo.</div></div>
+<div class="i"><div class="en">I'm sorry that I <i>lost my head</i> when the policeman stopped me.</div><div class="pt">Desculpa ter perdido a cabeça quando o policial me parou.</div><div class="def"><b>Lose one's head</b> — entrar em pânico, perder o controle.</div></div>
+<div class="i"><div class="en">I enjoy <i>losing myself in</i> a good book, but this one is so dull that I've <i>lost interest</i> in it.</div><div class="pt">Adoro me perder num bom livro, mas este é tão sem graça que perdi o interesse.</div><div class="def"><b>Lose oneself in</b> é positivo: mergulhar. <b>Lose interest in</b> é o oposto.</div></div>
+<div class="i"><div class="en">I'm so glad you're back — we <i>were lost without</i> you.</div><div class="pt">Que bom que você voltou — a gente estava perdido sem você.</div></div>
+<div class="i"><div class="en">I know you felt humiliated when you had to apologise, but don't <i>lose any sleep over</i> it.</div><div class="pt">Sei que você se sentiu humilhado ao ter que se desculpar, mas não perca o sono por isso.</div><div class="def">Aqui aparecem dois: <b>lose face</b> (passar vergonha em público) e <b>not lose any sleep over</b> (não se atormentar).</div></div>
+<div class="i"><div class="en">I don't want to stand too near the edge in case I <i>lose my balance</i>.</div><div class="pt">Não quero ficar perto demais da beirada, vai que eu perco o equilíbrio.</div></div>
+<div class="i"><div class="en">70 million people <i>lost their lives</i> in the First and Second World Wars.</div><div class="pt">70 milhões de pessoas perderam a vida nas duas Guerras Mundiais.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">The only way to <i>lose weight</i> is to eat less; it's easy to <i>lose heart</i> when other people are eating as much as they like.</div><div class="pt">O único jeito de emagrecer é comer menos; é fácil desanimar quando os outros comem à vontade.</div><div class="def"><b>Lose heart</b> — desanimar. Não confundir com <b>lose one's heart to</b>, que é apaixonar-se.</div></div>
+<div class="i"><div class="en">I was going to complain to the manager but in the end I <i>lost my nerve</i>.</div><div class="pt">Eu ia reclamar com o gerente, mas na hora me faltou coragem.</div></div>
+<div class="i"><div class="en">We used to correspond regularly but now we've <i>lost touch</i>.</div><div class="pt">A gente se correspondia com frequência, mas agora perdemos contato.</div></div>
+<div class="i"><div class="en">I <i>lost my temper with</i> her when she refused to listen to my explanation.</div><div class="pt">Perdi a paciência com ela quando se recusou a ouvir minha explicação.</div><div class="def"><b>Lose one's temper with somebody</b> — sempre com <b>with</b>.</div></div>
+<div class="i"><div class="en">He gets so upset when someone else is winning — he's such <i>a bad loser</i>. I've <i>lost count</i> of the times he's stormed off.</div><div class="pt">Ele fica tão chateado quando outro está ganhando — é um mau perdedor. Já perdi a conta das vezes que saiu batendo o pé.</div></div>
+<div class="i"><div class="en">I <i>was at a loss</i> — I didn't know what to say to him.</div><div class="pt">Fiquei sem reação — não sabia o que dizer a ele.</div><div class="def"><b>Be at a loss</b> — não saber o que dizer ou fazer.</div></div>
+<div class="i"><div class="en">She began to <i>lose patience</i> with the whole process.</div><div class="pt">Ela começou a perder a paciência com o processo todo.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Colocações · high e low</div>
+<h2>A família <i>high</i>, <i>low</i> e <i>middle</i></h2>
+<p class="sdesc">Outro grupo montado em torno de uma palavra. Repare que quase nenhuma dessas expressões tem a ver com <b>altura</b>.</p>
+<div class="items">
+<div class="i"><div class="en">I have searched <i>high and low</i> for my keys.</div><div class="pt">Procurei minhas chaves em tudo quanto é canto.</div></div>
+<div class="i"><div class="en">Delays at the airport may be terrible in <i>high season</i>.</div><div class="pt">Os atrasos no aeroporto podem ser terríveis na alta temporada.</div></div>
+<div class="i"><div class="en">This CD contains the <i>highlights</i> of the show, not the whole thing.</div><div class="pt">Este CD traz os melhores momentos do espetáculo, não a íntegra.</div></div>
+<div class="i"><div class="en">Use a yellow pen to <i>highlight</i> useful new words.</div><div class="pt">Use uma caneta amarela para destacar as palavras novas úteis.</div><div class="def">Mesmo radical, duas classes: <b>highlight</b> verbo e <b>highlights</b> substantivo.</div></div>
+<div class="i"><div class="en">Operas and chamber music are often considered <i>highbrow</i>, while musicals are sometimes described as <i>lowbrow</i> — or at least <i>middlebrow</i>.</div><div class="pt">Ópera e música de câmara costumam ser consideradas eruditas, enquanto musicais às vezes são descritos como populares — ou pelo menos de gosto médio.</div><div class="def"><b>Brow</b> é sobrancelha: a metáfora vem da frenologia do século XIX. Os três são julgamentos de <b>gosto cultural</b>.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">Good quality <i>hi-fi</i> equipment is on sale in every <i>high street</i>.</div><div class="pt">Equipamento de som de qualidade está à venda em toda rua comercial.</div><div class="def"><b>High street</b> é a rua principal de comércio — britânico. Nos EUA seria <b>Main Street</b>.</div></div>
+<div class="i"><div class="en">Would you like to live in a <i>high-rise</i> building — or do you think <i>low-rise</i> buildings are more pleasant?</div><div class="pt">Você gostaria de morar num prédio alto — ou acha que prédios baixos são mais agradáveis?</div></div>
+<div class="i"><div class="en">Passengers and vehicles will be carried on <i>high-tech</i> shuttle trains.</div><div class="pt">Passageiros e veículos serão transportados em trens-lançadeira de alta tecnologia.</div></div>
+<div class="i"><div class="en">Everyone was <i>in high spirits</i> before the weekend.</div><div class="pt">Todo mundo estava animadíssimo antes do fim de semana.</div></div>
+<div class="i"><div class="en">There's less room on the beach <i>at high tide</i> than <i>at low tide</i>.</div><div class="pt">Há menos espaço na praia na maré alta do que na maré baixa.</div></div>
+<div class="i"><div class="en">I've got a bad cold and my work is getting me down — that's why I'm <i>feeling low</i>.</div><div class="pt">Estou muito resfriado e o trabalho está me derrubando — por isso estou para baixo.</div></div>
+<div class="i"><div class="en">Do you think a person is <i>middle-aged</i> when they're 40, 50 or older?</div><div class="pt">Você acha que a pessoa é de meia-idade aos 40, aos 50 ou mais?</div></div>
+<div class="i"><div class="en">In Britain, it's not only <i>middle-class</i> people who own their own homes.</div><div class="pt">Na Grã-Bretanha, não é só a classe média que tem casa própria.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Students who do well at secondary school can go on to <i>higher education</i>.</div><div class="pt">Alunos que vão bem no ensino médio podem seguir para o ensino superior.</div><div class="def"><b>Higher education</b> = universidade. <b>High school</b> = ensino médio. Não são a mesma coisa.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Don't put off doing this work any longer — <i>it's high time</i> you did it.</div><div class="pt">Não adie mais este trabalho — já está mais que na hora de fazê-lo.</div><div class="def">Depois de <b>it's high time</b> vem <b>passado</b>, não presente.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Artigos</div>
+<h2>O artigo que muda o sentido da frase</h2>
+<p class="sdesc">Não é detalhe: nestas frases o artigo é <b>a única diferença</b> — e o sentido vira outro.</p>
+<div class="items">
+<div class="i"><div class="en">She has some grey <i>hairs</i>. · She has some grey <i>hair</i>.</div><div class="pt">Ela tem alguns fios brancos. · Ela tem um pouco de cabelo grisalho.</div><div class="def">Contável: fios avulsos. Incontável: a cor do cabelo em geral.</div></div>
+<div class="i"><div class="en">She has grey hair. · She has <i>a</i> grey hair.</div><div class="pt">Ela tem cabelo grisalho. · Ela tem um fio branco.</div><div class="def">Um artigo indefinido e a frase deixa de descrever a pessoa para apontar um fio.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">There's <i>a</i> hair in my soup! · There's hair in my soup!</div><div class="pt">Tem um cabelo na minha sopa! · Tem cabelo na minha sopa!</div><div class="def">A segunda é bem pior — sugere <b>uma quantidade</b> de cabelo.</div></div>
+<div class="i"><div class="en">Ask <i>a</i> teacher if you have a question. · Ask <i>any</i> teacher. · Ask <i>the</i> teacher.</div><div class="pt">Pergunte a um professor. · Pergunte a qualquer professor. · Pergunte ao professor.</div><div class="def"><b>A</b> = um qualquer, indeterminado. <b>Any</b> = tanto faz qual. <b>The</b> = aquele específico que os dois conhecem.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">After leaving school he went <i>to sea</i>. · After leaving <i>the</i> school he went <i>to the sea</i>.</div><div class="pt">Depois de terminar os estudos, ele foi para o mar (tornou-se marinheiro). · Depois de sair da escola, ele foi até o mar.</div><div class="def">Sem artigo, a expressão é <b>institucional</b>: <i>go to sea</i> = seguir carreira no mar; <i>leave school</i> = terminar os estudos.</div></div>
+<div class="i"><div class="en">I'm going to buy <i>a</i> paper. · I'm going to buy <i>the</i> paper.</div><div class="pt">Vou comprar um jornal. · Vou comprar o jornal (o de sempre).</div><div class="def">Contável, <b>paper</b> = jornal.</div></div>
+<div class="i"><div class="en">I'm going to buy <i>some</i> paper. · I'm going to buy paper.</div><div class="pt">Vou comprar papel.</div><div class="def">Incontável, <b>paper</b> = papel. O artigo decide qual dos dois sentidos está em jogo.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Contável · incontável</div>
+<h2>O mesmo substantivo nas duas naturezas</h2>
+<p class="sdesc">Muitos substantivos são <b>os dois</b> — e mudam de sentido conforme a natureza. É o que o artigo do bloco anterior estava sinalizando.</p>
+<div class="items">
+<div class="i"><div class="en"><b>U</b> Our house is built of <i>stone</i>. · <b>C</b> There's <i>a stone</i> in my shoe.</div><div class="pt">Nossa casa é de pedra. · Tem uma pedrinha no meu sapato.</div><div class="def">Incontável = o material. Contável = o objeto.</div></div>
+<div class="i"><div class="en"><b>U</b> She's away on <i>business</i>. <i>Business</i> is improving. · <b>C</b> The number of small <i>businesses</i> is increasing.</div><div class="pt">Ela está viajando a trabalho. Os negócios estão melhorando. · O número de pequenas empresas está crescendo.</div><div class="def">Incontável = a atividade. Contável = a empresa.</div></div>
+<div class="i"><div class="en"><b>U</b> How much <i>fruit</i> was sold? · <b>C</b> An orange is a citrus <i>fruit</i>. My favourite <i>fruits</i> are oranges and mangoes.</div><div class="pt">Quanta fruta foi vendida? · A laranja é uma fruta cítrica. Minhas frutas favoritas são laranja e manga.</div><div class="def">Contável quando se fala de <b>tipos</b> de fruta.</div></div>
+<div class="i"><div class="en"><b>U</b> <i>Painting</i> is not as easy as it looks. · <b>C</b> What a beautiful <i>painting</i>! I enjoy looking at <i>paintings</i>.</div><div class="pt">Pintar não é tão fácil quanto parece. · Que quadro lindo! Gosto de ver quadros.</div><div class="def">Incontável = a atividade. Contável = a obra.</div></div>
+<div class="i"><div class="en">Funcionam igual: <i>glass</i>, <i>metal</i>, <i>wood</i>, <i>brick</i>, <i>cloth</i>, <i>plastic</i>, <i>bone</i>.</div><div class="def">Material (incontável) × objeto feito dele (contável). <b>A glass</b> é um copo; <b>glass</b> é vidro.</div></div>
+<div class="i"><div class="en">Funcionam igual: <i>light</i>, <i>noise</i>, <i>sound</i>, <i>space</i>, <i>pain</i>.</div><div class="def"><b>A noise</b> é um barulho específico; <b>noise</b> é barulho em geral.</div></div>
+<div class="i"><div class="en">Funcionam igual: <i>life</i>, <i>crime</i>, <i>language</i>, <i>religion</i>, <i>pleasure</i>, <i>cake</i>, <i>fish</i>.</div><div class="def"><b>Crime</b> é a criminalidade; <b>a crime</b> é um crime. <b>Fish</b> é peixe como alimento; <b>fishes</b> são espécies.</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Prefixos · negativos</div>
+<h2>Qual prefixo negativo vai com qual adjetivo</h2>
+<p class="sdesc">Cinco prefixos negativos, e não há regra perfeita — mas há um padrão forte pela <b>letra inicial</b>.</p>
+<div class="items">
+<div class="i"><div class="en"><i>un-</i>: <i>unhelpful</i> · <i>unsatisfactory</i> · <i>unstable</i></div><div class="pt">inútil · insatisfatório · instável</div><div class="def"><b>Un-</b> é o mais comum e o mais produtivo — na dúvida, é a aposta mais segura.</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><i>dis-</i>: <i>disagreeable</i> · <i>disorganised</i> · <i>dissatisfied</i></div><div class="pt">desagradável · desorganizado · insatisfeito</div><div class="def">Repare: <b>dissatisfied</b> ≠ <b>unsatisfactory</b>. O primeiro é a pessoa; o segundo é a coisa.</div></div>
+<div class="i"><div class="en"><i>in-</i>: <i>inaccessible</i> · <i>inaccurate</i> · <i>inadequate</i></div><div class="pt">inacessível · impreciso · inadequado</div></div>
+<div class="i"><div class="en"><i>im-</i> antes de <b>m</b> e <b>p</b>: <i>immature</i> · <i>immoral</i> · <i>impatient</i> · <i>imperfect</i></div><div class="pt">imaturo · imoral · impaciente · imperfeito</div><div class="def">É a regra mais confiável do grupo: antes de <b>m</b> ou <b>p</b>, o <i>in-</i> vira <b>im-</b>.</div></div>
+<div class="i"><div class="en"><i>il-</i> antes de <b>l</b>: <i>illegal</i> · <i>illegitimate</i> · <i>illegible</i> · <i>illiterate</i> · <i>illogical</i></div><div class="pt">ilegal · ilegítimo · ilegível · analfabeto · ilógico</div><div class="def">Mesma lógica: antes de <b>l</b>, vira <b>il-</b>.</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><i>ir-</i> antes de <b>r</b>: <i>irrespectful</i>? Não — <i>disrespectful</i>. Mas <i>irregular</i>, <i>irrational</i>, <i>irresponsible</i>.</div><div class="pt">irregular · irracional · irresponsável</div><div class="def">A regra do <b>r</b> funciona — mas <b>respectful</b> é exceção e leva <b>dis-</b>.</div></div>
+<div class="i"><div class="en">Mais exemplos com <i>un-</i>: <i>unacceptable</i>, <i>unbearable</i>, <i>unconscious</i>, <i>unforeseen</i>, <i>ungrateful</i>, <i>unhealthy</i>, <i>unnatural</i>, <i>unwilling</i>.</div><div class="pt">inaceitável · insuportável · inconsciente · imprevisto · ingrato · pouco saudável · antinatural · relutante</div></div>
+<div class="i"><div class="en">Mais exemplos com <i>in-</i> / <i>im-</i>: <i>incomplete</i>, <i>inconvenient</i>, <i>incredible</i>, <i>indiscreet</i>, <i>inexperienced</i>, <i>infrequent</i>, <i>insufficient</i>, <i>impersonal</i>, <i>impolite</i>, <i>improbable</i>.</div><div class="pt">incompleto · inconveniente · incrível · indiscreto · inexperiente · pouco frequente · insuficiente · impessoal · mal-educado · improvável</div></div>
+<div class="i"><div class="en">Mais exemplos com <i>dis-</i>: <i>discontented</i>, <i>dishonest</i>, <i>disloyal</i>, <i>disobedient</i>.</div><div class="pt">descontente · desonesto · desleal · desobediente</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Prefixos · sentido</div>
+<h2>Os prefixos que mudam o sentido do verbo</h2>
+<p class="sdesc">Estes não negam: <b>redirecionam</b>. E são altamente produtivos — dá para formar palavra nova com eles.</p>
+<div class="items">
+<div class="i"><div class="en"><i>mis-</i> = errado: <i>miscalculate</i> · <i>misspell</i> · <i>misunderstand</i></div><div class="pt">calcular errado · escrever errado · entender errado</div></div>
+<div class="i"><div class="en">«Accommodation» is a word that is frequently <i>misspelt</i>.</div><div class="pt">«Accommodation» é uma palavra frequentemente escrita errado.</div><div class="def">E com razão: dois <b>c</b> e dois <b>m</b>.</div></div>
+<div class="i"><div class="en"><i>out-</i> = além, superando: <i>outgrow</i> · <i>outlive</i> · <i>outnumber</i></div><div class="pt">crescer demais para · sobreviver a · superar em número</div></div>
+<div class="i"><div class="en">The girls <i>outnumbered</i> the boys at the party.</div><div class="pt">As meninas eram mais numerosas que os meninos na festa.</div></div>
+<div class="i"><div class="en"><i>re-</i> = de novo: <i>rebuild</i> · <i>reuse</i> · <i>rewrite</i> · <i>reconsider</i> · <i>rearrange</i></div><div class="pt">reconstruir · reutilizar · reescrever · reconsiderar · reorganizar</div></div>
+<div class="i"><div class="en">I've <i>rewritten</i> the letter but I'm still dissatisfied with it.</div><div class="pt">Reescrevi a carta, mas continuo insatisfeito com ela.</div></div>
+<div class="i"><div class="en"><i>un-</i> = desfazer a ação: <i>unbutton</i> · <i>undo</i> · <i>untie</i> · <i>unlock</i> · <i>unpack</i> · <i>unwind</i> · <i>unzip</i></div><div class="pt">desabotoar · desfazer · desamarrar · destrancar · desfazer as malas · desenrolar · abrir o zíper</div><div class="def">É o mesmo <b>un-</b> dos adjetivos, mas com verbo o sentido é <b>reversão</b>, não negação.</div></div>
+<div class="i"><div class="en">This knot is so tight that I can't <i>undo</i> it.</div><div class="pt">Este nó está tão apertado que não consigo desfazer.</div></div>
+<div class="i"><div class="en"><i>mid-</i> = no meio: <i>mid-July</i> · <i>midway</i> · <i>midwinter</i></div><div class="pt">meados de julho · no meio do caminho · pleno inverno</div></div>
+<div class="i"><div class="en">It's warmer in <i>mid-July</i> than in <i>mid-February</i>.</div><div class="pt">Faz mais calor em meados de julho do que em meados de fevereiro.</div></div>
+</div>
+</section>
+
+<section id="s16">
+<div class="snum">Prefixos · grau</div>
+<h2>Os prefixos de grau — demais, de menos, extremamente</h2>
+<p class="sdesc">Fecham o mapa: os que marcam <b>quantidade</b> ou <b>intensidade</b>. São os que mais aparecem em texto de crítica.</p>
+<div class="items">
+<div class="i"><div class="en"><i>over-</i> = excessivamente: <i>overact</i> · <i>overcook</i> · <i>overpolite</i> · <i>overripe</i> · <i>oversensitive</i></div><div class="pt">exagerar na atuação · cozinhar demais · polido demais · passado (fruta) · sensível demais</div></div>
+<div class="i"><div class="en"><i>Overripe</i> fruit doesn't taste good and may not keep well.</div><div class="pt">Fruta passada não tem gosto bom e não se conserva bem.</div></div>
+<div class="i"><div class="en">She tends to get quite <i>oversensitive</i> when people <i>overreact</i>.</div><div class="pt">Ela tende a ficar sensível demais quando as pessoas reagem de forma exagerada.</div></div>
+<div class="i"><div class="en"><i>under-</i> = insuficientemente: <i>undercharge</i> · <i>underpowered</i> · <i>understaffed</i> · <i>underestimate</i> · <i>undervalued</i></div><div class="pt">cobrar a menos · com pouca potência · com falta de pessoal · subestimar · subvalorizado</div></div>
+<div class="i"><div class="en">This car is so <i>underpowered</i> that it won't go up hills.</div><div class="pt">Este carro tem tão pouca potência que não sobe ladeira.</div></div>
+<div class="i"><div class="en">They've closed down the hospital because it's <i>understaffed</i>.</div><div class="pt">Fecharam o hospital porque está com falta de pessoal.</div></div>
+<div class="i"><div class="en"><i>self-</i> = a si mesmo: <i>self-control</i> · <i>self-interest</i> · <i>self-sufficient</i> · <i>self-confident</i> · <i>self-explanatory</i> · <i>self-contained</i></div><div class="pt">autocontrole · interesse próprio · autossuficiente · autoconfiante · autoexplicativo · independente / autossuficiente</div></div>
+<div class="i"><div class="en">The country is <i>self-sufficient</i> in oil.</div><div class="pt">O país é autossuficiente em petróleo.</div></div>
+<div class="i"><div class="en"><i>ultra-</i> = extremamente: <i>ultra-modern</i> · <i>ultra-sensitive</i> · <i>ultra-cautious</i> · <i>ultra-fashionable</i></div><div class="pt">ultramoderno · ultrassensível · ultracauteloso · ultrafashion</div></div>
+<div class="i"><div class="en">I wouldn't like to work in an <i>ultra-modern</i> building.</div><div class="pt">Eu não gostaria de trabalhar num prédio ultramoderno.</div></div>
+<div class="i"><div class="en">An <i>ultra-modern</i> hospital is being built between the two towns to replace the old ones, which have <i>outlived</i> their usefulness.</div><div class="pt">Um hospital ultramoderno está sendo construído entre as duas cidades para substituir os antigos, que já não servem mais.</div><div class="def"><b>Outlive one's usefulness</b> — expressão fixa: já não tem mais serventia.</div></div>
+<div class="i"><div class="en">Don't you think John and Mary are <i>incompatible</i>? He's so conceited and <i>self-confident</i>, whilst she's so gentle and <i>self-effacing</i>.</div><div class="pt">Você não acha o John e a Mary incompatíveis? Ele é tão convencido e cheio de si, e ela tão gentil e discreta.</div><div class="def"><b>Self-effacing</b> — que se apaga, que não se põe à frente.</div></div>
+</div>
+</section>
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+
+</div>
+<footer>Sistema 22 · Livro 03 · New Cambridge Advanced English (Leo Jones · CUP) &mdash; inglês real tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' \u2014 '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
