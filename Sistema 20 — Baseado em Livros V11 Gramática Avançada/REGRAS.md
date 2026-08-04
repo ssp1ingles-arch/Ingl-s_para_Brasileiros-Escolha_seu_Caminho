@@ -23,7 +23,7 @@ Sempre inglês real com exemplo completo; nunca gabarito isolado nem enunciado d
 ## 5. Livros deste Sistema
 | # | Livro | Status |
 |---|---|---|
-| 01 | Objective Proficiency (Cambridge) | ⏳ aguardando |
+| 01 | Objective Proficiency (Cambridge) | ✅ `livro01.html` — 20 blocos, 232 itens (2026-08-03) |
 | 02 | Advanced Grammar in Use (Hewings) | ⏳ aguardando |
 | 03 | Grammar and Vocabulary for Advanced (Cambridge) | ⏳ aguardando |
 | 04 | Advanced Language Practice (Michael Vince) | ⏳ aguardando |

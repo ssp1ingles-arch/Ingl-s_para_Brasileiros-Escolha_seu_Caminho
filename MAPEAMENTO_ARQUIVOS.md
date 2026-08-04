@@ -1,7 +1,43 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-03 — ver blocos 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).**
+> **Atualização mais recente: 2026-08-03 — ver blocos 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).**
+
+## 0o. Atualização 2026-08-03 — Sistema 20 (Baseado em Livros V11 · Gramática Avançada) · livro 01
+
+> **Este Sistema segue o `REGRAS_AVANCADO.md`, não as regras de livro dos demais.** Acento dourado `#F59E0B`; a explicação **é** conteúdo; entram comparação entre estruturas, nota de registro e erro comum com o porquê.
+
+| Livro | Arquivo `.md` | Painel | Blocos | Itens | Tamanho | Status |
+|---|---|---|---|---|---|---|
+| S20 · Livro 01 | `01_Objective Proficiency Student's Book with Answers…` | `livro01.html` | 20 | 232 | 91 KB | ✅ **2026-08-03** |
+
+**É o primeiro painel do Sistema 20** — até aqui a pasta só tinha o `index.html`.
+
+**Fonte dentro do livro:** o **Grammar folder** (páginas 178–188 do impresso,
+`Página 180`–`190` no `.md`), que é onde o Objective Proficiency concentra a
+explicação de gramática das 20 unidades. É exatamente o material que o
+`REGRAS_AVANCADO.md` §4 pede: estrutura → explicação → exemplo → comparação →
+registro. O corpo das unidades (textos de listening, tarefas de speaking,
+exercícios de Use of English) ficou fora.
+
+**Ordem:** pedagógica, não a do livro, como manda o `REGRAS_AVANCADO.md` §3 —
+substantivos e artigos primeiro, depois tempos verbais, modais, condicionais,
+gerúndio/infinitivo, passiva, discurso indireto e só então oração participial,
+inversão, gradação, comparação e ordem dos advérbios.
+
+**OCR:** o `.md` do Grammar folder vem com as **duas colunas intercaladas**
+(uma linha de cada coluna, alternando). Todos os 20 blocos foram remontados a
+partir do sentido; nenhuma frase de exemplo foi inventada.
+
+**Descartado:** enunciados de exercício, gabaritos, mapas de conteúdo,
+referências cruzadas de página e o material de exame que não é linguagem
+(instruções de prova, tempos de gravação).
+
+**Também atualizados:** o hub do S20 (card do livro 01 saiu de "Em breve" para
+ativo; métrica "em preparação" → "1 disponível"), a tabela do
+`REGRAS.md` da pasta e a entrada 20 do `sistemas.json`.
+
+**Continuam pendentes no S20:** livros 02 a 07.
 
 ## 0n. Atualização 2026-08-03 — Sistema 11 (Baseado em Livros V02) · CONCLUÍDO (livros 03, 05 e 06)
 
