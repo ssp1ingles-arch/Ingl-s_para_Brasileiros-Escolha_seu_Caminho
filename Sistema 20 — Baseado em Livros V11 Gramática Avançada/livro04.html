@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 04 · Advanced Language Practice — Sistema 20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 20</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 20 · Livro 04 · C1–C2</div>
+<h1 class="title">Advanced <em>Language Practice</em></h1>
+<p class="lead">Michael Vince · Macmillan, edição com chave de respostas. Livro de preparação para <b>CAE e Proficiency</b> cujo miolo é justamente aquilo que nenhuma gramática de referência organiza bem: <b>colocação</b>. O que ele tem de próprio, e que os livros 01, 02 e 03 do Sistema não cobrem, são as unidades de <i>text organisers</i> (como o texto se articula), de <b>preposição depois de adjetivo e de substantivo</b>, as expressões fixas iniciadas por preposição e os <b>phrasal verbs no segundo sentido</b> — o que não se deduz das partes. O painel foi montado sobre essas seções, que são listas de bloco pronto, não regra. Inglês britânico.</p>
+
+<div class="metrics">
+  <div class="metric"><b>9</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>C1–C2</b><span>nível</span></div>
+  <div class="metric"><b>GB</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: however, married to, out of, bring up…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Grammar 27 · acrescentar</div>
+<h2>Organizadores de texto — acrescentar e desenvolver</h2>
+<p class="sdesc">O que o Vince chama de <b>text organisers</b>: as palavras que fazem o leitor entender como a informação está montada. Sem elas, o texto de C1 vira uma lista de frases soltas.</p>
+<div class="items">
+<div class="i"><span class="tag">acrescentar</span><div class="en"><i>As well as</i> the obvious dangers, there was the weather to be considered.</div><div class="pt">Além dos perigos óbvios, havia o tempo a considerar.</div></div>
+<div class="i"><span class="tag">acrescentar</span><div class="en"><i>In addition to</i> the obvious dangers, there was the weather to be considered.</div><div class="pt">Somados aos perigos óbvios, havia o tempo a considerar.</div><div class="def">Mesma ideia, registro um pouco mais formal.</div></div>
+<div class="i"><span class="tag">acrescentar</span><div class="en"><i>Not only were</i> there the obvious dangers, <i>but</i> there was <i>also</i> the weather to be considered.</div><div class="pt">Não só havia os perigos óbvios como também havia o tempo a considerar.</div><div class="def">Note a <b>inversão</b> obrigatória depois de <i>not only</i> no início.</div></div>
+<div class="i"><span class="tag">desenvolver</span><div class="en"><i>Besides</i> / <i>furthermore</i> / <i>in addition</i> / <i>moreover</i>, smoking has been directly linked to lung cancer.</div><div class="pt">Além disso, o cigarro foi diretamente associado ao câncer de pulmão.</div><div class="def">Registro <b>formal</b>, de texto escrito.</div></div>
+<div class="i"><span class="tag reg">informal</span><div class="en"><i>What's more</i> / <i>on top of that</i> / <i>to make matters worse</i>, smoking has been directly linked to lung cancer.</div><div class="pt">Ainda por cima, o cigarro foi diretamente associado ao câncer de pulmão.</div><div class="def">Os mesmos organizadores em registro <b>falado e informal</b>.</div></div>
+<div class="i"><span class="tag">começar</span><div class="en">That's absolute rubbish! <i>For a start</i> / <i>first of all</i> / <i>in the first place</i> / <i>for one thing</i>, it was Rod who said that, not me. <i>And secondly</i>…</div><div class="pt">Isso é uma baboseira completa! Para começar, quem disse isso foi o Rod, não eu. E, em segundo lugar…</div><div class="def">Abrir uma sequência de argumentos.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Grammar 27 · contraste</div>
+<h2>Organizadores de texto — contraste</h2>
+<p class="sdesc">Sete formas de opor duas ideias, e cada uma ocupa uma <b>posição</b> diferente na frase. Trocar a posição é o erro mais comum de quem escreve para exame.</p>
+<div class="items">
+<div class="i"><div class="en">The identity of the attacker is known to the police. <i>However</i> / <i>nevertheless</i> / <i>all the same</i>, no name has been released.</div><div class="pt">A identidade do agressor é conhecida pela polícia. No entanto, nenhum nome foi divulgado.</div><div class="def">No <b>início</b> da segunda frase.</div></div>
+<div class="i"><span class="tag err">posição</span><div class="en">The identity of the attacker is known to the police. No name has, <i>however</i> / <i>all the same</i>, been released.</div><div class="pt">A identidade do agressor é conhecida. Nenhum nome, no entanto, foi divulgado.</div><div class="def">O mesmo conector no <b>meio</b> da frase, entre vírgulas.</div></div>
+<div class="i"><span class="tag err">posição</span><div class="en">A name has <i>nevertheless</i> / <i>none the less</i> / <i>still</i> not been released.</div><div class="pt">Ainda assim, nenhum nome foi divulgado.</div><div class="def">E aqui sem vírgulas, colado ao verbo.</div></div>
+<div class="i"><div class="en"><i>(Al)though</i> / <i>while</i> / <i>even though</i> / <i>despite the fact that</i> the identity of the attacker is known to the police, no name has been released.</div><div class="pt">Embora a identidade do agressor seja conhecida pela polícia, nenhum nome foi divulgado.</div><div class="def">Aqui o contraste vira <b>uma frase só</b>, com oração subordinada.</div></div>
+<div class="i"><span class="tag err">correção</span><div class="en">No, I didn't say the President got it wrong. <i>On the contrary</i>, I think he's handled the affair superbly.</div><div class="pt">Não, eu não disse que o presidente errou. Pelo contrário, acho que ele conduziu o caso muito bem.</div><div class="def"><b>On the contrary</b> corrige o que o outro disse — não é sinônimo de <i>however</i>.</div></div>
+<div class="i"><div class="en">I prefer city life <i>as opposed to</i> country life. · I prefer city life, <i>whereas</i> John prefers country life.</div><div class="pt">Prefiro a vida urbana em oposição à vida no campo. · Prefiro a vida urbana, ao passo que o John prefere a do campo.</div><div class="def"><b>Whereas</b> opõe duas pessoas ou situações em paralelo.</div></div>
+<div class="i"><div class="en">Donahue established his reputation as a novelist. <i>In contrast</i>, his new book is a non-fiction work.</div><div class="pt">Donahue construiu sua reputação como romancista. Em contraste, seu novo livro é de não ficção.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Grammar 27 · razão e generalização</div>
+<h2>Organizadores — explicar, generalizar e qualificar</h2>
+<p class="sdesc">Os conectores de causa dividem-se por <b>registro</b>: <i>thus</i> e <i>hence</i> são de texto acadêmico; <i>so</i> é de conversa. E há a família dos que atenuam a afirmação.</p>
+<div class="items">
+<div class="i"><span class="tag reg">formal</span><div class="en">The government does not intend to cause any further provocation. <i>As a result</i> / <i>accordingly</i> / <i>thus</i> / <i>hence</i> / <i>consequently</i> / <i>for that reason</i>, all troops have been withdrawn.</div><div class="pt">O governo não pretende provocar mais. Em consequência, todas as tropas foram retiradas.</div><div class="def"><b>Thus</b>, <b>hence</b> e <b>accordingly</b> são marcadamente formais — de relatório e texto acadêmico.</div></div>
+<div class="i"><div class="en">The employers have promised to investigate these complaints, and we <i>in turn</i> have agreed to end the strike.</div><div class="pt">Os empregadores prometeram apurar as queixas e nós, por nossa vez, concordamos em encerrar a greve.</div><div class="def"><b>In turn</b> marca a resposta recíproca.</div></div>
+<div class="i"><span class="tag">generalizar</span><div class="en"><i>Broadly speaking</i> / <i>generally speaking</i> / <i>on the whole</i> / <i>by and large</i>, this has been an encouraging year for the company.</div><div class="pt">De modo geral, foi um ano animador para a empresa.</div></div>
+<div class="i"><span class="tag">generalizar</span><div class="en"><i>To a large / some / a certain extent</i>, this has been an encouraging year for the company.</div><div class="pt">Em grande / certa medida, foi um ano animador para a empresa.</div><div class="def">Atenua a afirmação sem negá-la — recurso central da escrita de exame.</div></div>
+<div class="i"><span class="tag">concessão</span><div class="en">OK, so you two have had a few problems. <i>Even so</i> / <i>all the same</i>, I don't see why you need to split up.</div><div class="pt">Tudo bem, vocês dois tiveram alguns problemas. Ainda assim, não vejo por que precisam se separar.</div></div>
+<div class="i"><span class="tag">concessão</span><div class="en">Lancaster is a man of great personal integrity. <i>Having said that</i> / <i>even so</i> / <i>all the same</i>, I don't think he'd make a good chairman.</div><div class="pt">Lancaster é um homem de grande integridade. Dito isso, não acho que daria um bom presidente.</div><div class="def"><b>Having said that</b> concede antes de discordar — é a fórmula da argumentação educada.</div></div>
+<div class="i"><span class="tag">nova informação</span><div class="en">She then turned to Henry, who <i>incidentally</i> / <i>by the way</i> is now about two metres tall, and said…</div><div class="pt">Aí ela se virou para o Henry, que aliás agora tem quase dois metros, e disse…</div></div>
+<div class="i"><span class="tag reg">falado</span><div class="en"><i>By the way</i> / <i>incidentally</i>, do you remember an old friend of ours called Ransom?</div><div class="pt">A propósito, você lembra de um velho amigo nosso chamado Ransom?</div></div>
+<div class="i"><span class="tag">franqueza</span><div class="en">What did you think of 'Death in Action'? ~ <i>To be (perfectly) honest</i> / <i>to tell the truth</i>, I can't stand films like that.</div><div class="pt">O que você achou de "Death in Action"? ~ Para ser (bem) honesto, não suporto filmes desse tipo.</div><div class="def">Marca que o que vem é uma opinião franca, possivelmente desagradável.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Grammar 22 · adjetivo + preposição</div>
+<h2>Preposição depois de adjetivo — a lista que se decora</h2>
+<p class="sdesc">Não há lógica: é colocação. O Vince organiza por preposição, e é assim que se decora — em <b>blocos</b>, não palavra a palavra.</p>
+<div class="items">
+<div class="i"><span class="tag">of</span><div class="en">afraid <i>of</i> · ashamed <i>of</i> · aware <i>of</i> · capable <i>of</i> · conscious <i>of</i> · fond <i>of</i> · full <i>of</i> · indicative <i>of</i> · irrespective <i>of</i> · jealous <i>of</i></div><div class="pt">com medo de · envergonhado de · ciente de · capaz de · consciente de · afeiçoado a · cheio de · indicativo de · independentemente de · com ciúme de</div></div>
+<div class="i"><span class="tag">of</span><div class="en">It was <i>good of</i> you to help. (be good of someone to do something)</div><div class="pt">Foi gentil da sua parte ajudar.</div><div class="def">Note a estrutura: <b>good of</b> + pessoa + infinitivo.</div></div>
+<div class="i"><span class="tag">about</span><div class="en">annoyed <i>about</i> · anxious <i>about</i> · certain <i>about</i> · excited <i>about</i> · pleased <i>about</i> · right <i>about</i> · serious <i>about</i> · sorry <i>about</i> · upset <i>about</i> · wrong <i>about</i></div><div class="pt">irritado com · ansioso por · certo de · animado com · contente com · certo sobre · sério quanto a · triste por · chateado com · errado sobre</div></div>
+<div class="i"><span class="tag err">with × at</span><div class="en">angry <i>with</i> (a person) · annoyed <i>with</i> (a person) × angry <i>at</i> (a person) · annoyed <i>at</i> (a person)</div><div class="pt">Com pessoa, as duas preposições aparecem — <b>with</b> é a mais comum no britânico.</div></div>
+<div class="i"><span class="tag">with</span><div class="en">bored <i>with</i> · commensurate <i>with</i> · connected <i>with</i> · happy <i>with</i> · incompatible <i>with</i> · obsessed <i>with</i> · pleased <i>with</i> · preoccupied <i>with</i></div><div class="pt">entediado com · proporcional a · ligado a · satisfeito com · incompatível com · obcecado por · satisfeito com · preocupado com</div></div>
+<div class="i"><span class="tag">at</span><div class="en">be bad <i>at</i> · be good <i>at</i> · surprised <i>at</i> · be good at dealing <i>with</i></div><div class="pt">ser ruim em · ser bom em · surpreso com · saber lidar bem com</div></div>
+<div class="i"><span class="tag">to</span><div class="en">addicted <i>to</i> · attentive <i>to</i> · grateful <i>to</i> · kind <i>to</i> · immune <i>to</i> · impervious <i>to</i> · indifferent <i>to</i> · liable <i>to</i> (propenso a sofrer de) · married <i>to</i> · prone <i>to</i></div><div class="pt">viciado em · atencioso com · grato a · gentil com · imune a · impermeável a · indiferente a · sujeito a · casado com · propenso a</div><div class="def">O <b>married to</b> derruba quase todo brasileiro — nunca <i>married with</i>.</div></div>
+<div class="i"><span class="tag">by</span><div class="en">baffled <i>by</i> · bored <i>by</i> · detained <i>by</i> · distressed <i>by</i> · plagued <i>by</i> · shocked <i>by</i> · surprised <i>by</i></div><div class="pt">perplexo com · entediado por · detido por · angustiado por · assolado por · chocado com · surpreso com</div></div>
+<div class="i"><span class="tag err">for</span><div class="en">early <i>for</i> · eligible <i>for</i> · famous <i>for</i> · late <i>for</i> · liable <i>for</i> (legalmente responsável) · ready <i>for</i> · responsible <i>for</i> · sorry <i>for</i></div><div class="pt">adiantado para · elegível a · famoso por · atrasado para · responsável por (juridicamente) · pronto para · responsável por · com pena de</div><div class="def">Compare: <b>liable to</b> = propenso a; <b>liable for</b> = juridicamente responsável.</div></div>
+<div class="i"><span class="tag">in / from</span><div class="en">deficient <i>in</i> · experienced <i>in</i> · implicated <i>in</i> · interested <i>in</i> × absent <i>from</i> · derived <i>from</i> · different <i>from</i> · safe <i>from</i> · missing <i>from</i></div><div class="pt">deficiente em · experiente em · implicado em · interessado em × ausente de · derivado de · diferente de · a salvo de · faltando em</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Grammar 22 · substantivo + preposição</div>
+<h2>Preposição depois de substantivo</h2>
+<p class="sdesc">O mesmo substantivo com preposição diferente muda de sentido — <i>dispute over</i> não é <i>dispute with</i>.</p>
+<div class="items">
+<div class="i"><span class="tag">on</span><div class="en">an authority <i>on</i> (especialista) · a ban <i>on</i> · a comment <i>on</i> · an effect <i>on</i> · an influence <i>on</i> · a restriction <i>on</i> · a tax <i>on</i></div><div class="pt">uma autoridade em · uma proibição de · um comentário sobre · um efeito sobre · uma influência sobre · uma restrição a · um imposto sobre</div></div>
+<div class="i"><span class="tag">to</span><div class="en">access <i>to</i> · an alternative <i>to</i> · an attitude <i>to</i> · an exception <i>to</i> · a solution <i>to</i> · a threat <i>to</i> · a witness <i>to</i></div><div class="pt">acesso a · uma alternativa a · uma atitude em relação a · uma exceção a · uma solução para · uma ameaça a · uma testemunha de</div><div class="def"><b>Solution to</b>, nunca <i>solution for</i> — erro clássico.</div></div>
+<div class="i"><span class="tag err">over × with</span><div class="en">be in dispute <i>over</i> something × be in dispute <i>with</i> someone</div><div class="pt">estar em litígio <b>sobre</b> alguma coisa × estar em litígio <b>com</b> alguém</div><div class="def">A preposição separa o <b>objeto</b> da disputa da <b>parte</b> com quem se disputa.</div></div>
+<div class="i"><span class="tag">over</span><div class="en">be in authority <i>over</i> · have control <i>over</i></div><div class="pt">ter autoridade sobre · ter controle sobre</div></div>
+<div class="i"><span class="tag">with</span><div class="en">contrast <i>with</i> · encounter <i>with</i> · link <i>with</i> · quarrel <i>with</i> · relationship <i>with</i></div><div class="pt">contraste com · encontro com · ligação com · briga com · relação com</div></div>
+<div class="i"><span class="tag">for</span><div class="en">admiration <i>for</i> · craving <i>for</i> · credit <i>for</i> · cure <i>for</i> · desire <i>for</i> · disregard <i>for</i> · provision <i>for</i> · recipe <i>for</i> · respect <i>for</i> · responsibility <i>for</i> · room <i>for</i> · sympathy <i>for</i></div><div class="pt">admiração por · desejo intenso de · crédito por · cura para · desejo de · desprezo por · provisão para · receita de · respeito por · responsabilidade por · espaço para · compaixão por</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Grammar 22 · expressões com <i>in</i></div>
+<h2>Expressões fixas com <i>in</i></h2>
+<p class="sdesc">Blocos prontos que aparecem em prova de C1/C2. Duas delas mudam de sentido só pelo artigo — <i>in charge of</i> não é <i>in the charge of</i>.</p>
+<div class="items">
+<div class="i"><div class="en"><i>in advance</i> · <i>in all likelihood</i> · <i>in answer to</i> · <i>in any case</i> · <i>in comparison with</i> · <i>in comfort</i></div><div class="pt">com antecedência · com toda a probabilidade · em resposta a · de qualquer forma · em comparação com · com conforto</div></div>
+<div class="i"><span class="tag err">o artigo muda</span><div class="en"><i>in charge of</i> (= responsável por) × <i>in the charge of</i> (= sob os cuidados de)</div><div class="pt">encarregado de × aos cuidados de</div><div class="def">Um artigo inverte quem manda em quem.</div></div>
+<div class="i"><div class="en"><i>in the balance</i> · <i>in collaboration with</i> · <i>in decline</i> · <i>in demand</i> · <i>in dispute</i> · <i>in distress</i></div><div class="pt">em suspenso · em colaboração com · em declínio · em alta procura · em disputa · em apuros</div></div>
+<div class="i"><div class="en"><i>in the early stages</i> · <i>in earnest</i> · <i>in the end</i> · <i>in fear of</i> · <i>in (good) condition</i> · <i>in harmony</i></div><div class="pt">nos primeiros estágios · para valer · no fim · com medo de · em bom estado · em harmonia</div></div>
+<div class="i"><span class="tag err">favour</span><div class="en">be <i>in favour of</i> something × be <i>in favour with</i> someone</div><div class="pt">ser a favor de algo × estar nas boas graças de alguém</div></div>
+<div class="i"><div class="en"><i>in high spirits</i> · <i>in jeopardy</i> · <i>in one way or another</i> · <i>in practice</i> · <i>in recognition of</i> · <i>in response to</i></div><div class="pt">de bom humor · em risco · de um jeito ou de outro · na prática · em reconhecimento a · em resposta a</div></div>
+<div class="i"><span class="tag err">par</span><div class="en"><i>in theory</i> × <i>in practice</i> · <i>in short</i> · <i>in time</i> · <i>in trouble</i> · <i>in turn</i></div><div class="pt">na teoria × na prática · em resumo · a tempo · em apuros · por sua vez</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Grammar 22 · outras preposições</div>
+<h2>Expressões fixas com <i>on</i>, <i>at</i>, <i>by</i>, <i>out of</i> e <i>under</i></h2>
+<p class="sdesc">A segunda metade da lista. São blocos que o candidato precisa reconhecer de imediato na prova de <i>Use of English</i>.</p>
+<div class="items">
+<div class="i"><span class="tag">with</span><div class="en"><i>with the exception of</i> · <i>with intent to</i> · <i>with regard to</i> · <i>with a view to</i></div><div class="pt">com exceção de · com a intenção de · no que diz respeito a · com vistas a</div><div class="def"><b>With a view to</b> pede <i>-ing</i>: <i>with a view to improving…</i></div></div>
+<div class="i"><span class="tag">at</span><div class="en"><i>at any rate</i> · <i>at fault</i> · <i>at first sight</i> · <i>at the first/second attempt</i> · <i>at the end</i> · <i>at large</i></div><div class="pt">de qualquer modo · culpado · à primeira vista · na primeira/segunda tentativa · no fim · à solta</div></div>
+<div class="i"><span class="tag">on</span><div class="en"><i>on average</i> · <i>on approval</i> · <i>on a regular basis</i> · <i>on behalf of</i> · <i>on the contrary</i> · <i>on good terms</i></div><div class="pt">em média · para aprovação · regularmente · em nome de · pelo contrário · em bons termos</div></div>
+<div class="i"><span class="tag">on</span><div class="en"><i>on loan</i> · <i>on the market</i> (à venda) · <i>on (its) merits</i> · <i>on offer</i> · <i>on purpose</i> · <i>on the verge of</i></div><div class="pt">emprestado · à venda · pelos próprios méritos · em promoção · de propósito · à beira de</div></div>
+<div class="i"><span class="tag">beyond / by</span><div class="en"><i>beyond belief</i> · <i>beyond a joke</i> · <i>beyond the shadow of a doubt</i> × <i>by coincidence</i> · <i>by mistake</i> · <i>by the time</i> · <i>by rights</i> · <i>by surprise</i></div><div class="pt">inacreditável · sério demais para ser piada · sem sombra de dúvida × por coincidência · por engano · quando · por direito · de surpresa</div></div>
+<div class="i"><span class="tag err">for</span><div class="en"><i>for fear of</i> (porque algo pode acontecer) · <i>for life</i> · <i>not for long</i> · <i>for the foreseeable future</i> · <i>for the time being</i></div><div class="pt">com medo de · para a vida toda · não por muito tempo · num futuro previsível · por enquanto</div></div>
+<div class="i"><span class="tag">out of</span><div class="en"><i>out of breath</i> · <i>out of control</i> · <i>out of danger</i> · <i>out of focus</i> · <i>out of luck</i> · <i>out of the ordinary</i></div><div class="pt">sem fôlego · fora de controle · fora de perigo · fora de foco · sem sorte · fora do comum</div></div>
+<div class="i"><span class="tag">out of</span><div class="en"><i>out of pocket</i> · <i>out of practice</i> · <i>out of all proportion</i> · <i>out of reach</i> · <i>out of stock</i> · <i>out of work</i></div><div class="pt">no prejuízo · destreinado · fora de proporção · fora de alcance · em falta no estoque · desempregado</div></div>
+<div class="i"><span class="tag">under</span><div class="en"><i>under age</i> · <i>under the circumstances</i> · <i>under control</i> · <i>under cover of</i> · be <i>under the impression that</i> · <i>under the influence of</i></div><div class="pt">menor de idade · nas circunstâncias · sob controle · sob o disfarce de · estar com a impressão de que · sob a influência de</div></div>
+<div class="i"><span class="tag">under</span><div class="en"><i>under</i> (a law) · <i>under an obligation</i> · <i>under pressure</i> · <i>under repair</i> · <i>under stress</i> · <i>under suspicion</i></div><div class="pt">nos termos de (uma lei) · sob obrigação · sob pressão · em reparo · sob estresse · sob suspeita</div></div>
+<div class="i"><span class="tag">without / after</span><div class="en"><i>without a chance</i> · <i>without delay</i> · <i>without exception</i> · <i>without a word</i> × <i>after all</i></div><div class="pt">sem chance · sem demora · sem exceção · sem dizer uma palavra × afinal de contas</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Grammar 21 · verbo + preposição</div>
+<h2>Verbo + preposição — os padrões fixos</h2>
+<p class="sdesc">Aqui a preposição é parte do verbo. Trocar <i>accuse of</i> por <i>accuse for</i> não é estilo — é erro.</p>
+<div class="items">
+<div class="i"><span class="tag">in</span><div class="en">be absorbed <i>in</i> something (especialmente <i>absorbed in her work / a book</i>) · confide <i>in</i> someone · be engrossed <i>in</i> something</div><div class="pt">estar absorto em · confiar-se a alguém · estar imerso em</div></div>
+<div class="i"><span class="tag">in</span><div class="en">implicate someone <i>in</i> something · involve someone <i>in</i> something · result <i>in</i> something · specialise <i>in</i> something · succeed <i>in</i> something</div><div class="pt">implicar alguém em · envolver alguém em · resultar em · especializar-se em · ter êxito em</div><div class="def"><b>Succeed in</b> + <i>-ing</i>, nunca <i>succeed to</i>.</div></div>
+<div class="i"><span class="tag">for</span><div class="en">account <i>for</i> something · allow <i>for</i> something (levar em conta) · blame someone <i>for</i> something · care <i>for</i> something/someone · cater <i>for</i></div><div class="pt">explicar/responder por · levar em consideração · culpar alguém por · cuidar de/gostar de · atender a</div></div>
+<div class="i"><span class="tag err">for</span><div class="en">apologise <i>for</i> something/someone (em nome deles: <i>Let me apologise for Jack.</i>) · charge someone <i>for</i> something (cobrar) · pay <i>for</i> someone/something</div><div class="pt">desculpar-se por · cobrar de alguém por algo · pagar por</div></div>
+<div class="i"><span class="tag">for</span><div class="en">count <i>for</i> something (<i>I count for nothing in this company.</i>) · earmark something <i>for</i> a particular use</div><div class="pt">valer/contar (Não valho nada nesta empresa.) · destinar algo a um uso específico</div></div>
+<div class="i"><span class="tag">of</span><div class="en">accuse someone <i>of</i> something · convict someone <i>of</i> something · remind someone <i>of</i> something · suspect someone <i>of</i> something</div><div class="pt">acusar alguém de · condenar alguém por · lembrar alguém de · suspeitar de alguém por</div><div class="def">Todos com <b>of</b> — nunca <i>for</i>.</div></div>
+<div class="i"><span class="tag">with</span><div class="en">acquaint someone <i>with</i> · associate someone <i>with</i> · charge someone <i>with</i> something · coincide <i>with</i> · collide <i>with</i> · comply <i>with</i></div><div class="pt">familiarizar alguém com · associar alguém a · acusar formalmente alguém de · coincidir com · colidir com · cumprir</div><div class="def">Note: <b>charge someone with</b> = acusar formalmente; <b>charge someone for</b> = cobrar.</div></div>
+<div class="i"><span class="tag">with</span><div class="en">be concerned <i>with</i> · confront someone <i>with</i> · confuse someone/something <i>with</i> · be cluttered <i>with</i> · be crammed <i>with</i></div><div class="pt">dizer respeito a · confrontar alguém com · confundir algo com · estar abarrotado de · estar entupido de</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Grammar 23 · phrasal verbs</div>
+<h2>Phrasal verbs com o sentido que não se adivinha</h2>
+<p class="sdesc">O Vince parte do princípio de que o aluno já conhece o phrasal verb básico — e vai atrás do <b>segundo sentido</b>, o que não se deduz das partes.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Add up</i> (fazer sentido) — His evidence just doesn't <i>add up</i>.</div><div class="pt">O depoimento dele simplesmente não fecha.</div><div class="def">Não é "somar": é <b>fazer sentido</b>.</div></div>
+<div class="i"><div class="en"><i>Ask after</i> (perguntar por alguém) — Jim was <i>asking after</i> you.</div><div class="pt">O Jim estava perguntando de você.</div></div>
+<div class="i"><div class="en"><i>Back down</i> (ceder numa discussão) — Sheila was right, so Paul had to <i>back down</i>.</div><div class="pt">A Sheila tinha razão, então o Paul teve de recuar.</div></div>
+<div class="i"><div class="en"><i>Bargain for</i> (contar com, prever) — We hadn't <i>bargained for</i> there being so much traffic, and we missed the plane.</div><div class="pt">Não contávamos com tanto trânsito e perdemos o avião.</div></div>
+<div class="i"><div class="en"><i>Bear out</i> (confirmar a veracidade) — Helen's alibi was <i>borne out</i> by her sister.</div><div class="pt">O álibi da Helen foi confirmado pela irmã dela.</div></div>
+<div class="i"><div class="en"><i>Break down</i> (perder o controle emocional) — David <i>broke down</i> and wept when he heard the news.</div><div class="pt">O David desabou e chorou quando soube da notícia.</div><div class="def">Aqui não é "quebrar": é <b>desabar</b>.</div></div>
+<div class="i"><div class="en"><i>Break off</i> (parar de falar) — He <i>broke off</i> to answer the phone.</div><div class="pt">Ele interrompeu o que dizia para atender o telefone.</div></div>
+<div class="i"><div class="en"><i>Break up</i> (chegar ao fim) — The party finally <i>broke up</i> at 3.00 am.</div><div class="pt">A festa finalmente se dispersou às três da manhã.</div></div>
+<div class="i"><div class="en"><i>Bring about</i> (causar) — The crisis was <i>brought about</i> by Brenda's resignation.</div><div class="pt">A crise foi provocada pela renúncia da Brenda.</div></div>
+<div class="i"><div class="en"><i>Bring off</i> (conseguir realizar) — The team tried for years to win the competition and they finally <i>brought it off</i>.</div><div class="pt">O time tentou por anos ganhar a competição e finalmente conseguiu.</div></div>
+<div class="i"><div class="en"><i>Bring on</i> (desencadear uma doença) — Sitting in the damp <i>brought on</i> his rheumatism.</div><div class="pt">Ficar na umidade desencadeou o reumatismo dele.</div></div>
+<div class="i"><div class="en"><i>Bring on/upon oneself</i> (atrair problema para si) — You have <i>brought this on/upon yourself</i>.</div><div class="pt">Você trouxe isso para si mesmo.</div></div>
+<div class="i"><div class="en"><i>Bring round</i> (convencer alguém do seu ponto de vista) — After much discussion, I <i>brought the committee round</i> to my point of view.</div><div class="pt">Depois de muita discussão, trouxe a comissão para o meu ponto de vista.</div></div>
+<div class="i"><div class="en"><i>Bring up</i> (mencionar) — I feel I ought to <i>bring up</i> another small matter.</div><div class="pt">Sinto que devo mencionar outro assunto pequeno.</div><div class="def">Além de "criar (um filho)", <b>bring up</b> é <b>trazer à baila</b>.</div></div>
+<div class="i"><div class="en"><i>Call up</i> (convocar para o serviço militar) — Mark was <i>called up</i> when the war broke out.</div><div class="pt">O Mark foi convocado quando a guerra estourou.</div></div>
+<div class="i"><div class="en"><i>Carry off</i> (sair-se bem apesar da dificuldade) — Jane had a difficult role to play, but she <i>carried it off</i>.</div><div class="pt">A Jane tinha um papel difícil, mas se saiu bem.</div></div>
+<div class="i"><div class="en"><i>Carry out</i> (executar um plano) — The attack was successfully <i>carried out</i>.</div><div class="pt">O ataque foi executado com sucesso.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 20 V11 · Livro 04 · Advanced Language Practice (Michael Vince) &mdash; C1/C2, inglês real tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' \u2014 '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
