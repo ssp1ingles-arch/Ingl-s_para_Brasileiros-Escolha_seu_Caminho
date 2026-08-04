@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 07 · English Pronunciation in Use Advanced — Sistema 20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 20</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 20 · Livro 07 · C1–C2</div>
+<h1 class="title">English Pronunciation <em>in Use</em> · Advanced</h1>
+<p class="lead">Martin Hewings · Cambridge University Press. Pronúncia de nível avançado — e o recorte aqui foi ditado pela fonte: o <code>.md</code> veio com os <b>símbolos fonéticos corrompidos</b> pelo OCR, mas a notação própria do livro sobreviveu intacta — o apóstrofo do acento (<i>'party</i>, <i>,contro'versial</i>) e as MAIÚSCULAS da proeminência (<i>I'm going to a PARty</i>). O painel foi montado só sobre o que é legível com segurança: a distinção entre <b>acento</b> e <b>proeminência</b>, o <i>stress shift</i>, os sufixos que mexem ou não no acento, a pronúncia de <i>-tion/-sion/-ssion</i> e as palavras que mantêm o acento mas trocam a vogal. Os exercícios de transcrição em IPA ficaram de fora — nenhum símbolo foi reconstruído por adivinhação.</p>
+
+<div class="metrics">
+  <div class="metric"><b>6</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>C1–C2</b><span>nível</span></div>
+  <div class="metric"><b>GB</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: stress shift, sufixo, -tion, vogal…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Unit 10 · stress × prominence</div>
+<h2>Acento e proeminência — não são a mesma coisa</h2>
+<p class="sdesc">O livro separa dois conceitos que quase todo material funde. O <b>acento</b> é da palavra e está no dicionário; a <b>proeminência</b> é da frase e depende do que se quer destacar.</p>
+<div class="items">
+<div class="i"><div class="en">'party — acento numa sílaba só · re'member — acento numa sílaba só</div><div class="pt">O dicionário marca qual sílaba leva o acento.</div><div class="def">O sinal <b>'</b> marca o acento principal.</div></div>
+<div class="i"><div class="en">,contro'versial · 'kinder,garten — duas sílabas acentuadas</div><div class="pt">Palavras longas têm acento principal e secundário.</div><div class="def">O sinal <b>,</b> marca o acento <b>secundário</b>; o <b>'</b> marca o principal.</div></div>
+<div class="i"><div class="en">I'm going to a <i>PAR</i>ty. · I can't re<i>MEM</i>ber.</div><div class="pt">Vou a uma festa. · Não consigo lembrar.</div><div class="def">Na conversa, uma das sílabas acentuadas fica <b>proeminente</b> — o livro a escreve em MAIÚSCULAS. Em palavra de um acento só, é a sílaba acentuada.</div></div>
+<div class="i"><div class="en">It was contro<i>VER</i>sial. · She goes to <i>KIN</i>dergarten.</div><div class="pt">Foi polêmico. · Ela vai para a pré-escola.</div><div class="def">Em palavra de dois acentos, a proeminência costuma cair no acento <b>principal</b>.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Unit 10 · stress shift</div>
+<h2><i>Stress shift</i> — o acento que anda de lugar</h2>
+<p class="sdesc">Quando duas palavras proeminentes se encostam, o acento da primeira <b>recua</b> para a sílaba do acento secundário. É o que faz a fala soar ritmada em vez de picotada.</p>
+<div class="items">
+<div class="i"><div class="en">It was contro<i>VER</i>sial. × She gave a <i>CON</i>troversial <i>AN</i>swer.</div><div class="pt">Foi polêmico. × Ela deu uma resposta polêmica.</div><div class="def">A proeminência recua para a sílaba do acento secundário porque a palavra seguinte já traz uma sílaba proeminente logo no início.</div></div>
+<div class="i"><div class="en">,under'stand → I <i>UN</i>derstand <i>EV</i>erything.</div><div class="pt">Eu entendo tudo.</div><div class="def">O <i>stress shift</i> só acontece em palavras cujo acento <b>secundário vem antes</b> do principal.</div></div>
+<div class="i"><div class="en">,disap'pointing → It was a <i>DIS</i>appointing <i>OUT</i>come.</div><div class="pt">Foi um resultado decepcionante.</div></div>
+<div class="i"><div class="en">Também sofrem <i>stress shift</i>: ,alto'gether · ,inde'pendent · ,indi'stinct · ,medi'ocre · ,satis'factory · ,uni'versity · ,week'end · ,worth'while</div><div class="pt">A lista do próprio livro.</div></div>
+<div class="i"><div class="en">Topônimos com acento na última sílaba: ,Ber'lin · ,Kow'loon · ,Montre'al</div><div class="pt">Nomes de lugar também sofrem o deslocamento.</div></div>
+<div class="i"><div class="en">Números: ,thir'teen · ,nine'teen · ,forty-'five · ,seventy-'eight</div><div class="pt">Os terminados em <b>-teen</b> e os compostos de duas partes.</div><div class="def">É por isso que <i>thirteen</i> soa diferente sozinho e dentro de "thirteen people".</div></div>
+<div class="i"><span class="tag err">exceções</span><div class="en">Raramente sofrem <i>stress shift</i>: a,proxi'mation · ,corre'spondence · ,inde'cision · pro,nunci'ation</div><div class="pt">Têm acento secundário, mas o deslocamento quase não ocorre.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Unit 11 · sufixos neutros</div>
+<h2>Sufixos que <i>não</i> mexem no acento</h2>
+<p class="sdesc">Um grupo grande de sufixos é neutro: você acrescenta e o acento fica onde estava na raiz. Saber quais são poupa metade do trabalho.</p>
+<div class="items">
+<div class="i"><div class="en">Sufixos neutros: <i>-able</i> · <i>-age</i> · <i>-al</i> · <i>-er</i> · <i>-ful</i> · <i>-less</i> · <i>-ness</i> · <i>-ous</i> · <i>-fy</i></div><div class="pt">Com estes, o acento da raiz não se move.</div></div>
+<div class="i"><div class="en">'comfort → 'comfortable · per'cent → per'centage</div><div class="pt">conforto → confortável · por cento → porcentagem</div></div>
+<div class="i"><div class="en">e'lectric → e'lectrical · 'amplify → 'amplifier</div><div class="pt">elétrico → elétrico (adj.) · amplificar → amplificador</div></div>
+<div class="i"><div class="en">re'gret → re'gretful · re'gard → re'gardless</div><div class="pt">lamentar → pesaroso · considerar → independentemente de</div></div>
+<div class="i"><div class="en">'foolish → 'foolishness · di'saster → di'sastrous</div><div class="pt">tolo → tolice · desastre → desastroso</div></div>
+<div class="i"><div class="en">'beauty → 'beautify</div><div class="pt">beleza → embelezar</div></div>
+<div class="i"><span class="tag err">exceção</span><div class="en">ad'mire → '<i>admirable</i></div><div class="pt">admirar → admirável</div><div class="def">Apesar de <b>-able</b> ser neutro, aqui o acento recua. O livro lista as exceções de <i>-able</i> e <i>-al</i> à parte.</div></div>
+<div class="i"><span class="tag err">contraste</span><div class="en">'commerce → com'mercial</div><div class="pt">comércio → comercial</div><div class="def">Aqui o sufixo <b>-ial</b> puxa o acento — é o assunto do bloco seguinte.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Unit 12 · sufixos que puxam</div>
+<h2>Sufixos que puxam o acento para a sílaba anterior</h2>
+<p class="sdesc">Cinco sufixos põem o acento principal <b>imediatamente antes</b> deles. É a regra mais rentável do livro: uma vez sabida, resolve centenas de palavras.</p>
+<div class="items">
+<div class="i"><div class="en">Sufixos que puxam o acento: <i>-ial</i> · <i>-ic</i> · <i>-ion</i> · <i>-ive</i> · <i>-ity</i></div><div class="pt">O acento principal cai na sílaba logo antes do sufixo.</div></div>
+<div class="i"><div class="en">'editor → edi'torial</div><div class="pt">editor → editorial</div></div>
+<div class="i"><div class="en">'atmosphere → ,atmos'pheric</div><div class="pt">atmosfera → atmosférico</div></div>
+<div class="i"><div class="en">ac'celerate → ac,cele'ration</div><div class="pt">acelerar → aceleração</div></div>
+<div class="i"><div class="en">'instinct → in'stinctive</div><div class="pt">instinto → instintivo</div></div>
+<div class="i"><div class="en">'generous → ,gene'rosity · di'verse → di'versity</div><div class="pt">generoso → generosidade · diverso → diversidade</div></div>
+<div class="i"><span class="tag err">exceção</span><div class="en">Em <i>-ative</i> o acento fica onde estava na raiz: in'vestigate → in'vestigative · 'speculate → 'speculative</div><div class="pt">investigar → investigativo · especular → especulativo</div><div class="def">O <b>-ative</b> foge da regra do <i>-ive</i>.</div></div>
+<div class="i"><div class="en">He faces prose<i>CU</i>tion. × He's a <i>PROS</i>ecution <i>WIT</i>ness.</div><div class="pt">Ele responde a processo. × Ele é testemunha de acusação.</div><div class="def">Muitas palavras com esses sufixos também sofrem <b>stress shift</b>.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Unit 12 · -tion / -sion</div>
+<h2>Como se pronuncia <i>-tion</i>, <i>-sion</i> e <i>-ssion</i></h2>
+<p class="sdesc">Quatro regras que dependem da <b>letra anterior</b> — e que resolvem a pronúncia de milhares de substantivos.</p>
+<div class="items">
+<div class="i"><div class="en"><i>-tion</i> depois da letra <b>s</b> → /tʃən/: <i>suggestion</i> · <i>digestion</i></div><div class="pt">sugestão · digestão</div><div class="def">Soa como "tchan".</div></div>
+<div class="i"><div class="en"><i>-tion</i> depois de outras letras → /ʃən/: <i>education</i> · <i>adoption</i></div><div class="pt">educação · adoção</div><div class="def">Soa como "chan".</div></div>
+<div class="i"><div class="en"><i>-sion</i> depois de consoante → /ʃən/: <i>extension</i> · <i>comprehension</i></div><div class="pt">extensão · compreensão</div></div>
+<div class="i"><div class="en"><i>-sion</i> depois de vogal → /ʒən/: <i>decision</i> · <i>persuasion</i></div><div class="pt">decisão · persuasão</div><div class="def">Aqui é o "j" de <i>já</i> — a diferença que o brasileiro mais erra.</div></div>
+<div class="i"><div class="en"><i>-ssion</i> → sempre /ʃən/: <i>admission</i> · <i>expression</i></div><div class="pt">admissão · expressão</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Unit 13 · vogal que muda</div>
+<h2>O acento fica, mas a vogal muda</h2>
+<p class="sdesc">Um grupo de palavras mantém a sílaba acentuada e, ainda assim, <b>muda o som da vogal</b>. É a armadilha final: quem acerta o acento erra o som.</p>
+<div class="items">
+<div class="i"><div class="en">ex'treme /iː/ → ex'tremity /e/</div><div class="pt">extremo → extremidade</div><div class="def">Mesma sílaba acentuada, vogal diferente.</div></div>
+<div class="i"><div class="en">de'rive /aɪ/ → de'rivative /ɪ/</div><div class="pt">derivar → derivativo</div></div>
+<div class="i"><div class="en">'bible /aɪ/ → 'biblical /ɪ/</div><div class="pt">bíblia → bíblico</div></div>
+<div class="i"><div class="en">'nation /eɪ/ → 'national /æ/</div><div class="pt">nação → nacional</div></div>
+<div class="i"><div class="en">com'pete /iː/ → com'petitive /e/</div><div class="pt">competir → competitivo</div></div>
+<div class="i"><div class="en">'type /aɪ/ → 'typical /ɪ/</div><div class="pt">tipo → típico</div></div>
+<div class="i"><div class="en">de'fame /eɪ/ → de'famatory /æ/</div><div class="pt">difamar → difamatório</div></div>
+<div class="i"><div class="en">inter'vene /iː/ → inter'vention /e/</div><div class="pt">intervir → intervenção</div></div>
+<div class="i"><div class="en">'wise /aɪ/ → 'wisdom /ɪ/</div><div class="pt">sábio → sabedoria</div></div>
+<div class="i"><div class="en">'sane /eɪ/ → 'sanity /æ/</div><div class="pt">são → sanidade</div></div>
+<div class="i"><div class="en">com'pare /eə/ → com'parative /æ/</div><div class="pt">comparar → comparativo</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 20 V11 · Livro 07 · English Pronunciation in Use Advanced (Cambridge) &mdash; C1/C2, inglês real tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' \u2014 '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
