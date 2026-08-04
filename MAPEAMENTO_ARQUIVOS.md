@@ -1,8 +1,84 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-04 — ver bloco 0q (segunda passada em S21 l01 e S20 l06).**
-> Anteriores: 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+> **Atualização mais recente: 2026-08-04 — ver bloco 0r (S20 l03, l04 e l07 ampliados; os 15 painéis avançados agora acima do mínimo).**
+> Anteriores: 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+
+## 0r. Atualização 2026-08-04 (T3) — S20 livros 03, 04 e 07 · **os três Sistemas avançados fechados**
+
+> Fecha as três pendências abertas no bloco 0q. Com isto, **os 15 painéis dos
+> Sistemas 20, 21 e 22 estão todos acima do mínimo de 12 blocos / 150 itens**,
+> verificado por `tmp/mkpanel.py check`.
+
+| Painel | Antes | Depois | Ganho |
+|---|---|---|---|
+| S20 · `livro03.html` — Grammar and Vocabulary for Advanced | 10 blocos / **106** itens | 28 blocos / **251** itens | +18 blocos, +145 itens |
+| S20 · `livro04.html` — Advanced Language Practice (Vince) | 9 blocos / **81** itens | 29 blocos / **248** itens | +20 blocos, +167 itens |
+| S20 · `livro07.html` — English Pronunciation in Use Advanced | 6 blocos / **43** itens | 26 blocos / **200** itens | +20 blocos, +157 itens |
+
+**S20 livro03 — a seção de vocabulário inteira.** A primeira passada tinha ficado
+só na seção de *gramática* (Units 1–25), que já é coberta pelos livros 01, 02 e 05
+do Sistema. A segunda passada pegou a **seção de vocabulário (Units 26–45)**, que
+nenhum outro painel do S20 toca — nem o livro06, que é do mesmo editor mas de
+outra obra. Recorte: a língua do segredo, os pares que se confundem, os adjetivos
+de crítica que elogiam × os que destroem, migração, `take` × `make`, linguagem
+neutra de gênero, gradável × extremo, phrasal verbs com `get` e a manchete
+econômica. *Um bloco escrito foi descartado antes do commit por duplicar o `s07`
+(sufixos `-free`/`-friendly`/`-mad`), que já existia.*
+
+**S20 livro04 — proof-reading, phrasal 2/3 e as Words and phrases.** Três seções
+que faltavam. A **Grammar 28** traz ortografia, parônimos, homófonos e
+**pontuação** — território que nenhum outro livro dos três Sistemas cobre, e cujas
+regras não são as do português. Mais as listas **2 e 3 de phrasal verbs** (o painel
+só tinha a 1) e as dez seções **Words and phrases** que fecham o livro. As frases
+de exercício foram remontadas **completas** a partir da chave de respostas do
+próprio livro, conforme `REGRAS_AVANCADO.md` §3.
+
+### S20 livro07 — a limitação do OCR, verificada e contornada
+
+A advertência sobre o IPA se confirmou, e por script: o `.md` tem **zero**
+caracteres IPA restantes. O que sobrou dentro das barras é lixo — `/a:sbr.../`,
+`/n?1l/`, `/0ae?/` — e em vários casos dois fonemas distintos colapsaram no mesmo
+dígrafo ASCII, o que torna a reconstrução impossível mesmo por inferência.
+**Nenhum símbolo foi reconstruído**; confirmado por script que os 20 blocos novos
+não contêm transcrição fonética.
+
+O que **sobreviveu intacto** foi a metade *prosódica* do livro, porque ela é feita
+de prosa e de MAIÚSCULAS, não de símbolo:
+
+- a marcação de proeminência — `He's got a HOUSE in LIVerpool`;
+- as marcas de acento `'` e `,` — `,contro'versial`, `'news,paper`;
+- as unidades de fala marcadas com `//`.
+
+Sobre isso foram montados os 20 blocos: britânico × americano, acento em composto
+(por tipo e em compostos de três partes), phrasal verbs de um e de dois acentos
+— onde o acento chega a mudar o sentido (`'live on` × `,live 'on`) —, ligação
+entre palavras, contrações que só existem na fala, o `t` que cai ou vira oclusiva
+glotal, unidades de fala e como o corte muda o sentido, proeminência, a palavra
+final «vazia», expressões vagas, tom descendente × ascendente como marca de
+*notícia × não notícia*, *tails*, question tags nos dois tons, contraste, a
+exclamação que vira sarcasmo só pelo tom, os sinais de escuta ativa, os incisos da
+fala preparada e o *step-up* do palestrante. Onde a fonte só tinha IPA, o som vai
+**descrito em palavras**.
+
+**A meta de 150 itens foi atingida sem inventar nada** — o material legível era
+mais abundante do que a estimativa inicial sugeria. O que ficou de fora, e ficará:
+os exercícios de transcrição fonética e a Section E1 (prática do alfabeto
+fonêmico), que dependem inteiramente dos símbolos perdidos. Recuperá-los exigiria
+um **novo OCR do PDF** com suporte a Unicode fonético.
+
+### Estado final dos três Sistemas avançados
+
+| Sistema | Painéis | Faixa de itens |
+|---|---|---|
+| **S20** · V11 | 7 de 7 | 157 – 291 |
+| **S21** · V12 | 5 de 5 | 162 – 276 |
+| **S22** · V13 | 3 de 3 | 150 – 174 |
+
+Nenhum painel abaixo do mínimo. `tmp/hubcard.py status` não aponta nenhum card
+desencontrado do respectivo painel em nenhum dos três hubs.
+
+---
 
 ## 0q. Atualização 2026-08-04 (T2) — segunda passada nos dois painéis rasos
 
