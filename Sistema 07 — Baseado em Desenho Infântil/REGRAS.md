@@ -1,4 +1,4 @@
-# REGRAS — Sistema 06 · Baseado em Desenho Infantil
+# REGRAS — Sistema 07 · Baseado em Desenho Infantil
 
 > Leia também o `REGRAS_GERAIS.md` na raiz.
 
@@ -12,7 +12,7 @@
 - Legendas / transcrições curtas das cenas com tradução.
 
 ## 3. O que NÃO pertence aqui
-- Transcrições de canais/podcasts para adultos → **Sistema 07**.
+- Transcrições de canais/podcasts para adultos → **Sistema 08**.
 - Gramática teórica estruturada → **Sistema 01**.
 - Dicas de estudo, metodologia sobre "aprender como criança" (é o conceito, não conteúdo de painel).
 

@@ -1,4 +1,4 @@
-# REGRAS — Sistema 07 · Transcrições e Canais
+# REGRAS — Sistema 08 · Transcrições e Canais
 
 > Leia também o `REGRAS_GERAIS.md` na raiz.
 
@@ -13,8 +13,8 @@
 
 ## 3. O que NÃO pertence aqui
 - Comentário pedagógico do apresentador / dicas de estudo / resumo motivacional do episódio.
-- Cenas de desenho infantil → **Sistema 06**.
-- Conteúdo de livros PDF → **Sistema 08**.
+- Cenas de desenho infantil → **Sistema 07**.
+- Conteúdo de livros PDF → **Sistemas 10 a 26**.
 
 ## 4. Formato padrão do painel
 Painel dark por canal/episódio. Cada item: trecho transcrito + expressões destacadas + tradução/uso. Botão "← Voltar ao início" → `../index.html`.
