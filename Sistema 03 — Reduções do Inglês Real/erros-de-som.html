@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erros de som do brasileiro — Sistema 03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="index.html" class="back">&#8592; Voltar ao Sistema 03</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 03 · reduções do inglês real · erros de som</div>
+<h1 class="title">Sons que o <em>brasileiro erra</em></h1>
+<p class="lead">Não é fonética geral — é a lista específica do que a boca brasileira faz de errado em inglês, e o ajuste que corrige. Cada item traz <i>como muitos falam</i>, <i>como se fala</i> e a frase para treinar. A escrita da pronúncia é aproximada, em letras normais: o objetivo é você conseguir repetir agora.</p>
+
+<div class="metrics">
+  <div class="metric"><b>12</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>A1–B2</b><span>nível</span></div>
+  <div class="metric"><b>US</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar palavra ou som — ex.: three, work, clothes, TH…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">os oito do card</div>
+<h2>Os oito que aparecem primeiro</h2>
+<p class="sdesc">O núcleo do material de origem: as oito palavras que quase todo brasileiro pronuncia errado no começo.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é "tchú"</span><div class="en"><i>Two</i> — say "tú", with a clean T.</div><div class="pt">O W é mudo, e o T não vira "tch".</div><div class="def">Frase: <i>I have two brothers.</i></div></div>
+<div class="i"><span class="tag err">não é "tri" nem "fri"</span><div class="en"><i>Three</i> — say "thríi", tongue between the teeth.</div><div class="pt">A língua sai entre os dentes e o ar passa raspando.</div><div class="def">Frase: <i>Three coffees, please.</i></div></div>
+<div class="i"><span class="tag err">não é "dâ" nem "zâ"</span><div class="en"><i>The</i> — say "the" with voice, tongue on the teeth.</div><div class="pt">Mesmo lugar do <i>three</i>, mas com a garganta vibrando.</div><div class="def">Frase: <i>The house on the corner.</i></div></div>
+<div class="i"><span class="tag err">não é "uórk"</span><div class="en"><i>Work</i> — say "uârk", closed vowel.</div><div class="pt">A vogal é fechada, tipo um "â" — nunca "ó".</div><div class="def">Frase: <i>I work from home.</i></div></div>
+<div class="i"><span class="tag err">não é "bitch"</span><div class="en"><i>Beach</i> — say "biiitch", long i.</div><div class="pt">Estique bem o "i". Curto vira outra palavra, e feia.</div><div class="def">Frase: <i>Let's go to the beach.</i></div></div>
+<div class="i"><span class="tag err">não é "uórk-ed"</span><div class="en"><i>Worked</i> — say "uârkt", one syllable.</div><div class="pt">O -ED vira só um T. Não vira sílaba.</div><div class="def">Frase: <i>I worked all day.</i></div></div>
+<div class="i"><span class="tag err">não é "com-for-tá-vel"</span><div class="en"><i>Comfortable</i> — say "kâmf-ter-bol", three syllables.</div><div class="pt">São três sílabas, não cinco. O meio some.</div><div class="def">Frase: <i>This chair is comfortable.</i></div></div>
+<div class="i"><span class="tag err">não é "clô-des"</span><div class="en"><i>Clothes</i> — say "clôuz", almost like "close".</div><div class="pt">Praticamente igual a <i>close</i>. Não tem sílaba extra.</div><div class="def">Frase: <i>Put your clothes away.</i></div></div>
+<div class="i"><div class="en"><i>Two</i> and <i>too</i> and <i>to</i> can all sound the same.</div><div class="pt">Two, too e to podem soar igual — o contexto resolve.</div></div>
+<div class="i"><div class="en"><i>Three</i> is not <i>free</i>.</div><div class="pt">Three não é free — o F não entra.</div></div>
+<div class="i"><div class="en"><i>Work</i> and <i>walk</i> are different: "uârk" and "uók".</div><div class="pt">Work e walk são diferentes — a segunda tem o "ó".</div></div>
+<div class="i"><div class="en"><i>Beach</i>, <i>peach</i>, <i>teach</i> — all long i.</div><div class="pt">Beach, peach, teach — todas com i longo.</div></div>
+<div class="i"><div class="en"><i>Clothes</i> is one syllable. <i>Closes</i> is two.</div><div class="pt">Clothes tem uma sílaba; closes tem duas.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">TH</div>
+<h2>TH — o som que não existe em português</h2>
+<p class="sdesc">São dois sons, não um. E nenhum dos dois é D, T, F, S ou Z. A língua precisa sair.</p>
+<div class="items">
+<div class="i"><span class="tag">TH surdo</span><div class="en"><i>Think</i> — "thínk", no voice, air only.</div><div class="pt">Língua entre os dentes, só ar. Não é "finki" nem "tchinki".</div><div class="def">Frase: <i>I think so.</i></div></div>
+<div class="i"><span class="tag">TH surdo</span><div class="en"><i>Thank you</i> — "thénk iú".</div><div class="pt">O mais usado de todos — vale treinar até sair sozinho.</div><div class="def">Frase: <i>Thank you very much.</i></div></div>
+<div class="i"><span class="tag">TH surdo</span><div class="en"><i>Thursday</i> — "thârz-dei".</div><div class="pt">Começa igual a <i>think</i>.</div><div class="def">Frase: <i>See you on Thursday.</i></div></div>
+<div class="i"><span class="tag">TH sonoro</span><div class="en"><i>This</i> — "thís", with voice.</div><div class="pt">Mesma língua, mas a garganta vibra.</div><div class="def">Frase: <i>This is my house.</i></div></div>
+<div class="i"><span class="tag">TH sonoro</span><div class="en"><i>That</i> — "thét", with voice.</div><div class="pt">Não é "dét".</div><div class="def">Frase: <i>That's a good idea.</i></div></div>
+<div class="i"><span class="tag">TH sonoro</span><div class="en"><i>Mother</i>, <i>father</i>, <i>brother</i> — voiced TH in the middle.</div><div class="pt">No meio da palavra o TH também é sonoro.</div><div class="def">Frase: <i>My brother and my mother.</i></div></div>
+<div class="i"><span class="tag">TH sonoro</span><div class="en"><i>Weather</i> and <i>together</i> — same voiced TH.</div><div class="pt">Weather e together seguem a mesma regra.</div></div>
+<div class="i"><div class="en"><i>Thing</i> × <i>sing</i> — the TH is not an S.</div><div class="pt">Thing não é sing.</div></div>
+<div class="i"><div class="en"><i>Think</i> × <i>sink</i> — same trap.</div><div class="pt">Think não é sink.</div></div>
+<div class="i"><div class="en"><i>Both</i> ends with the airy TH.</div><div class="pt">Both termina com o TH de ar.</div></div>
+<div class="i"><div class="en"><i>With</i> can end either way — both are accepted.</div><div class="pt">With aceita as duas formas, dependendo da região.</div></div>
+<div class="i"><div class="en">Put the tongue out a little. It feels wrong and it is right.</div><div class="pt">Ponha a língua um pouco para fora. Parece errado e está certo.</div></div>
+<div class="i"><div class="en">If nobody understands your <i>three</i>, you said <i>free</i>.</div><div class="pt">Se ninguém entende seu three, você disse free.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">-ED</div>
+<h2>O -ED do passado</h2>
+<p class="sdesc">O erro mais audível do brasileiro: transformar o -ED em sílaba. Ele só vira sílaba depois de T e D.</p>
+<div class="items">
+<div class="i"><span class="tag">vira T</span><div class="en"><i>Worked</i> — "uârkt".</div><div class="pt">Depois de som surdo, o -ED vira T.</div><div class="def">Frase: <i>She worked late.</i></div></div>
+<div class="i"><span class="tag">vira T</span><div class="en"><i>Talked</i> — "tókt".</div><div class="pt">Uma sílaba só.</div><div class="def">Frase: <i>We talked for hours.</i></div></div>
+<div class="i"><span class="tag">vira T</span><div class="en"><i>Watched</i> — "uótcht".</div><div class="pt">Nada de "uotch-ed".</div><div class="def">Frase: <i>I watched the game.</i></div></div>
+<div class="i"><span class="tag">vira T</span><div class="en"><i>Stopped</i> — "stópt".</div><div class="pt">Uma sílaba.</div><div class="def">Frase: <i>The bus stopped here.</i></div></div>
+<div class="i"><span class="tag">vira D</span><div class="en"><i>Played</i> — "pleid".</div><div class="pt">Depois de som sonoro, o -ED vira D.</div><div class="def">Frase: <i>They played all afternoon.</i></div></div>
+<div class="i"><span class="tag">vira D</span><div class="en"><i>Lived</i> — "lívd".</div><div class="pt">Uma sílaba.</div><div class="def">Frase: <i>I lived there for a year.</i></div></div>
+<div class="i"><span class="tag">vira D</span><div class="en"><i>Called</i> — "kóld".</div><div class="pt">Não é "col-ed".</div><div class="def">Frase: <i>She called me twice.</i></div></div>
+<div class="i"><span class="tag reg">vira ID</span><div class="en"><i>Wanted</i> — "uóntid".</div><div class="pt">Depois de T ou D, aí sim vira sílaba.</div><div class="def">Frase: <i>I wanted to tell you.</i></div></div>
+<div class="i"><span class="tag reg">vira ID</span><div class="en"><i>Needed</i> — "níidid".</div><div class="pt">A regra vale para os dois lados: T e D.</div><div class="def">Frase: <i>We needed more time.</i></div></div>
+<div class="i"><span class="tag reg">vira ID</span><div class="en"><i>Decided</i> — "disáidid".</div><div class="pt">Termina em D, então ganha sílaba.</div><div class="def">Frase: <i>He decided to stay.</i></div></div>
+<div class="i"><div class="en">The rule in one line: only after T and D does -ED become a syllable.</div><div class="pt">A regra em uma linha: só depois de T e D o -ED vira sílaba.</div></div>
+<div class="i"><div class="en"><i>Asked</i> is "ésct" — one syllable, hard for everyone.</div><div class="pt">Asked é "ésct" — uma sílaba, difícil para todo mundo.</div></div>
+<div class="i"><div class="en"><i>Finished</i> is "fínisht".</div><div class="pt">Finished é "fínisht".</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">i curto × longo</div>
+<h2>O i curto e o i longo</h2>
+<p class="sdesc">Em português só existe um i. Em inglês são dois, e trocar muda a palavra — às vezes de forma constrangedora.</p>
+<div class="items">
+<div class="i"><span class="tag err">cuidado</span><div class="en"><i>Beach</i> "biiitch" × <i>bitch</i> "bitch".</div><div class="pt">O i longo salva você do vexame.</div><div class="def">Frase: <i>The beach was empty.</i></div></div>
+<div class="i"><span class="tag err">cuidado</span><div class="en"><i>Sheet</i> "shiiit" × <i>shit</i> "shit".</div><div class="pt">Mesmo par, mesmo risco.</div><div class="def">Frase: <i>A clean sheet of paper.</i></div></div>
+<div class="i"><div class="en"><i>Ship</i> "ship" × <i>sheep</i> "shiiip".</div><div class="pt">Navio e ovelha.</div><div class="def">Frase: <i>The ship left at dawn.</i></div></div>
+<div class="i"><div class="en"><i>Live</i> "lív" × <i>leave</i> "líiiv".</div><div class="pt">Morar e sair.</div><div class="def">Frase: <i>I live here. I leave at six.</i></div></div>
+<div class="i"><div class="en"><i>Bit</i> "bit" × <i>beat</i> "biiit".</div><div class="pt">Pedaço e batida.</div></div>
+<div class="i"><div class="en"><i>Fill</i> "fil" × <i>feel</i> "fíiil".</div><div class="pt">Encher e sentir.</div><div class="def">Frase: <i>I feel fine.</i></div></div>
+<div class="i"><div class="en"><i>Hit</i> "hit" × <i>heat</i> "híiit".</div><div class="pt">Bater e calor.</div></div>
+<div class="i"><div class="en"><i>Sit</i> "sit" × <i>seat</i> "síiit".</div><div class="pt">Sentar e assento.</div><div class="def">Frase: <i>Is this seat free?</i></div></div>
+<div class="i"><div class="en"><i>It</i> is short. <i>Eat</i> is long.</div><div class="pt">It é curto. Eat é longo.</div><div class="def">Frase: <i>Eat it.</i> — a frase que treina os dois.</div></div>
+<div class="i"><div class="en">The short i is relaxed, almost between i and e.</div><div class="pt">O i curto é relaxado, quase entre i e e.</div></div>
+<div class="i"><div class="en">The long i is stretched and tense.</div><div class="pt">O i longo é esticado e tenso.</div></div>
+<div class="i"><div class="en"><i>This</i> is short; <i>these</i> is long.</div><div class="pt">This é curto; these é longo.</div><div class="def">Frase: <i>This one or these ones?</i></div></div>
+<div class="i"><div class="en"><i>Chip</i> "tchip" × <i>cheap</i> "tchíiip".</div><div class="pt">Batata frita e barato.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">a vogal de work</div>
+<h2>A vogal de <i>work</i>, <i>word</i>, <i>world</i></h2>
+<p class="sdesc">Não é "ó" e não é "ê". É uma vogal fechada, no meio da boca, que o português não tem.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é "uórk"</span><div class="en"><i>Work</i> — "uârk".</div><div class="pt">Boca quase fechada, som abafado.</div><div class="def">Frase: <i>What do you do for work?</i></div></div>
+<div class="i"><span class="tag err">não é "uórd"</span><div class="en"><i>Word</i> — "uârd".</div><div class="pt">Mesma vogal de <i>work</i>.</div><div class="def">Frase: <i>What's the word for this?</i></div></div>
+<div class="i"><span class="tag err">não é "uórld"</span><div class="en"><i>World</i> — "uârld".</div><div class="pt">Mesma vogal, mais o L no fim.</div><div class="def">Frase: <i>The best in the world.</i></div></div>
+<div class="i"><div class="en"><i>Girl</i> — "gârl".</div><div class="pt">Mesma família.</div><div class="def">Frase: <i>The girl next door.</i></div></div>
+<div class="i"><div class="en"><i>Bird</i> — "bârd".</div><div class="pt">Mesma vogal.</div></div>
+<div class="i"><div class="en"><i>Turn</i> — "târn".</div><div class="pt">Mesma vogal.</div><div class="def">Frase: <i>It's your turn.</i></div></div>
+<div class="i"><div class="en"><i>Shirt</i> — "shârt".</div><div class="pt">Não é "shórt" — essa é outra palavra.</div><div class="def">Frase: <i>A white shirt.</i></div></div>
+<div class="i"><div class="en"><i>Shirt</i> × <i>short</i> — different vowels entirely.</div><div class="pt">Shirt e short têm vogais completamente diferentes.</div></div>
+<div class="i"><div class="en"><i>Hurt</i> — "hârt".</div><div class="pt">Mesma vogal.</div><div class="def">Frase: <i>My back hurts.</i></div></div>
+<div class="i"><div class="en"><i>First</i> — "fârst".</div><div class="pt">Mesma vogal.</div><div class="def">Frase: <i>You go first.</i></div></div>
+<div class="i"><div class="en"><i>Learn</i> — "lârn", not "lêarn".</div><div class="pt">Apesar do EA na escrita, o som é o mesmo de work.</div></div>
+<div class="i"><div class="en"><i>Early</i> — "ârli".</div><div class="pt">Mesma vogal.</div><div class="def">Frase: <i>I woke up early.</i></div></div>
+<div class="i"><div class="en">Same vowel, five spellings: <i>work, bird, turn, learn, her</i>.</div><div class="pt">A mesma vogal aparece escrita de cinco jeitos.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">o E fantasma</div>
+<h2>O "i" que o brasileiro põe onde não tem</h2>
+<p class="sdesc">O português não gosta de consoante solta no fim nem de duas consoantes juntas no começo. O inglês gosta — e é aí que sobra vogal.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é "fêicibuqui"</span><div class="en"><i>Facebook</i> ends in a K. Nothing after it.</div><div class="pt">Termina no K, seco. Não tem "i" no fim.</div></div>
+<div class="i"><span class="tag err">não é "hót-dogui"</span><div class="en"><i>Hot dog</i> — "hót dóg", no extra vowel.</div><div class="pt">Sem vogal no fim e sem "tch" no meio.</div></div>
+<div class="i"><span class="tag err">não é "iskúl"</span><div class="en"><i>School</i> starts with S+K. No "i" before it.</div><div class="pt">Comece direto no S. Não ponha "i" na frente.</div><div class="def">Frase: <i>I go to school by bus.</i></div></div>
+<div class="i"><span class="tag err">não é "ispêin"</span><div class="en"><i>Spain</i> — start on the S.</div><div class="pt">Sem "i" antes do S.</div></div>
+<div class="i"><span class="tag err">não é "istóp"</span><div class="en"><i>Stop</i> — start on the S.</div><div class="pt">Mesma regra.</div><div class="def">Frase: <i>Stop here, please.</i></div></div>
+<div class="i"><span class="tag err">não é "istúdent"</span><div class="en"><i>Student</i> — start on the S.</div><div class="pt">Mesma regra.</div></div>
+<div class="i"><span class="tag err">não é "istréti"</span><div class="en"><i>Street</i> — three consonants, then the vowel.</div><div class="pt">S+T+R juntos, sem nada no meio.</div></div>
+<div class="i"><div class="en"><i>Big</i> ends in G, not "guí".</div><div class="pt">Big termina em G seco.</div></div>
+<div class="i"><div class="en"><i>Club</i> ends in B, not "búbi".</div><div class="pt">Club termina em B seco.</div></div>
+<div class="i"><div class="en"><i>Good</i> ends in D, not "gúdi".</div><div class="pt">Good termina em D seco.</div><div class="def">Frase: <i>That's a good idea.</i></div></div>
+<div class="i"><div class="en"><i>Help</i> ends in P, not "hélpi".</div><div class="pt">Help termina em P seco.</div></div>
+<div class="i"><div class="en">Cut the vowel at the end. The word just stops.</div><div class="pt">Corte a vogal do fim. A palavra simplesmente para.</div></div>
+<div class="i"><div class="en">This one change makes you sound much more natural.</div><div class="pt">Só esse ajuste já muda muito o quanto você soa natural.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">sílabas que somem</div>
+<h2>Sílabas que somem na fala</h2>
+<p class="sdesc">Palavras que o brasileiro pronuncia inteiras e o nativo encurta. Falar todas as sílabas soa estrangeiro.</p>
+<div class="items">
+<div class="i"><span class="tag reg">3 sílabas</span><div class="en"><i>Comfortable</i> — "kâmf-ter-bol".</div><div class="pt">Não é com-for-tá-vel.</div><div class="def">Frase: <i>Make yourself comfortable.</i></div></div>
+<div class="i"><span class="tag reg">3 sílabas</span><div class="en"><i>Vegetable</i> — "védj-te-bol".</div><div class="pt">O segundo E some.</div></div>
+<div class="i"><span class="tag reg">2 sílabas</span><div class="en"><i>Chocolate</i> — "tchók-let".</div><div class="pt">Duas sílabas, não quatro.</div><div class="def">Frase: <i>I'd like chocolate ice cream.</i></div></div>
+<div class="i"><span class="tag reg">2 sílabas</span><div class="en"><i>Business</i> — "bíz-nes".</div><div class="pt">O I do meio some.</div><div class="def">Frase: <i>He's here on business.</i></div></div>
+<div class="i"><span class="tag reg">2 sílabas</span><div class="en"><i>Different</i> — "dí-frent".</div><div class="pt">Três viram duas.</div></div>
+<div class="i"><span class="tag reg">2 sílabas</span><div class="en"><i>Every</i> — "év-ri".</div><div class="pt">O E do meio some.</div><div class="def">Frase: <i>Every day.</i></div></div>
+<div class="i"><span class="tag reg">2 sílabas</span><div class="en"><i>Family</i> — "fém-li".</div><div class="pt">Na fala rápida vira duas.</div><div class="def">Frase: <i>My whole family came.</i></div></div>
+<div class="i"><span class="tag reg">1 sílaba</span><div class="en"><i>Clothes</i> — "clôuz".</div><div class="pt">Uma sílaba só.</div></div>
+<div class="i"><div class="en"><i>Interesting</i> — "ín-tres-ting".</div><div class="pt">Três sílabas na fala normal.</div></div>
+<div class="i"><div class="en"><i>Restaurant</i> — "rés-trant".</div><div class="pt">Duas sílabas.</div><div class="def">Frase: <i>A good restaurant nearby.</i></div></div>
+<div class="i"><div class="en"><i>Wednesday</i> — "uénz-dei".</div><div class="pt">O D do meio não é falado.</div></div>
+<div class="i"><div class="en"><i>Temperature</i> — "tém-pra-tcher".</div><div class="pt">O segundo E some.</div></div>
+<div class="i"><div class="en">When in doubt, the unstressed vowel is the one that disappears.</div><div class="pt">Na dúvida, a vogal que some é a que não tem força.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">letras mudas</div>
+<h2>Letras que não se falam</h2>
+<p class="sdesc">A escrita do inglês guarda letras que a fala abandonou. Falar essas letras entrega o sotaque na hora.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Know</i> — the K is silent. Say "nôu".</div><div class="pt">O K é mudo.</div><div class="def">Frase: <i>I know what you mean.</i></div></div>
+<div class="i"><div class="en"><i>Knee</i>, <i>knife</i>, <i>knock</i> — all silent K.</div><div class="pt">Todos com K mudo.</div></div>
+<div class="i"><div class="en"><i>Write</i> — the W is silent. Say "ráit".</div><div class="pt">O W é mudo.</div><div class="def">Frase: <i>Write your name here.</i></div></div>
+<div class="i"><div class="en"><i>Wrong</i> — silent W. Say "róng".</div><div class="pt">Mesmo caso.</div></div>
+<div class="i"><div class="en"><i>Island</i> — the S is silent. Say "áiland".</div><div class="pt">O S não é falado.</div></div>
+<div class="i"><div class="en"><i>Listen</i> — the T is silent. Say "líssen".</div><div class="pt">O T some.</div><div class="def">Frase: <i>Listen to me.</i></div></div>
+<div class="i"><div class="en"><i>Castle</i> — silent T. Say "késsol".</div><div class="pt">Mesmo caso.</div></div>
+<div class="i"><div class="en"><i>Half</i> — the L is silent. Say "héf".</div><div class="pt">O L não é falado.</div></div>
+<div class="i"><div class="en"><i>Talk</i> and <i>walk</i> — silent L. "tók" and "uók".</div><div class="pt">O L some nas duas.</div><div class="def">Frase: <i>Let's talk and walk.</i></div></div>
+<div class="i"><div class="en"><i>Hour</i> — the H is silent. Say "áuer".</div><div class="pt">O H é mudo — mas em <i>house</i> ele é falado.</div><div class="def">Frase: <i>In an hour.</i></div></div>
+<div class="i"><div class="en"><i>Honest</i> — silent H. Say "ónest".</div><div class="pt">Mesmo caso de hour.</div></div>
+<div class="i"><div class="en"><i>Sign</i> — the G is silent. Say "sáin".</div><div class="pt">O G some.</div></div>
+<div class="i"><div class="en"><i>Receipt</i> — the P is silent. Say "rissíit".</div><div class="pt">O P não é falado.</div><div class="def">Frase: <i>Can I have the receipt?</i></div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">R e L</div>
+<h2>R e L — as duas consoantes que entregam</h2>
+<p class="sdesc">O R do português não existe em inglês, e o L final vira U na boca brasileira. Os dois ajustes são simples.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é R de "rato"</span><div class="en"><i>Red</i> — the tongue curls back and never touches.</div><div class="pt">A língua se enrola para trás e não encosta em nada.</div><div class="def">Frase: <i>The red car.</i></div></div>
+<div class="i"><span class="tag err">não é R de "rato"</span><div class="en"><i>Right</i> — same curled R.</div><div class="pt">Nada de R de garganta.</div><div class="def">Frase: <i>You're right.</i></div></div>
+<div class="i"><div class="en"><i>Rain</i>, <i>run</i>, <i>read</i> — all the same R.</div><div class="pt">Todos com o mesmo R enrolado.</div></div>
+<div class="i"><div class="en"><i>Car</i>, <i>far</i>, <i>door</i> — the R colors the vowel.</div><div class="pt">No fim, o R tinge a vogal em vez de aparecer sozinho.</div></div>
+<div class="i"><span class="tag err">não vira U</span><div class="en"><i>Well</i> — keep the L. Don't say "uéu".</div><div class="pt">O L final continua L, não vira U.</div><div class="def">Frase: <i>Well done!</i></div></div>
+<div class="i"><span class="tag err">não vira U</span><div class="en"><i>Ball</i> — "ból" with a real L.</div><div class="pt">Não é "bóu".</div></div>
+<div class="i"><span class="tag err">não vira U</span><div class="en"><i>People</i> — "píi-pol", L at the end.</div><div class="pt">Não é "pípou".</div><div class="def">Frase: <i>A lot of people came.</i></div></div>
+<div class="i"><span class="tag err">não vira U</span><div class="en"><i>Hotel</i> — "hou-tél", L at the end.</div><div class="pt">Não é "rotéu".</div></div>
+<div class="i"><div class="en"><i>Little</i> — "lí-dol", both Ls real.</div><div class="pt">Os dois L existem.</div></div>
+<div class="i"><div class="en">To make the L, the tongue touches behind the front teeth.</div><div class="pt">Para o L, a língua encosta atrás dos dentes da frente.</div></div>
+<div class="i"><div class="en"><i>Girl</i> is the hardest: curled R plus real L.</div><div class="pt">Girl é a mais difícil: R enrolado mais L de verdade.</div></div>
+<div class="i"><div class="en"><i>World</i> is the same trap.</div><div class="pt">World tem a mesma armadilha.</div></div>
+<div class="i"><div class="en">Slow down on R and L. Speed comes later.</div><div class="pt">Vá devagar no R e no L. A velocidade vem depois.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">V, B e H</div>
+<h2>V × B, e o H que existe</h2>
+<p class="sdesc">Três consoantes que o português trata de outro jeito — e que mudam a palavra quando saem trocadas.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Very</i> — the top teeth touch the bottom lip.</div><div class="pt">Os dentes de cima tocam o lábio de baixo.</div><div class="def">Frase: <i>Very good.</i></div></div>
+<div class="i"><div class="en"><i>Very</i> × <i>berry</i> — different words.</div><div class="pt">Very e berry são palavras diferentes.</div></div>
+<div class="i"><div class="en"><i>Vote</i> × <i>boat</i> — same trap.</div><div class="pt">Vote e boat, mesma armadilha.</div></div>
+<div class="i"><div class="en"><i>Van</i> × <i>ban</i>.</div><div class="pt">Van e ban.</div></div>
+<div class="i"><div class="en"><i>House</i> — the H is pronounced, with a puff of air.</div><div class="pt">O H é falado, com um sopro.</div><div class="def">Frase: <i>My house is near.</i></div></div>
+<div class="i"><div class="en"><i>Happy</i>, <i>hot</i>, <i>hand</i> — all with real H.</div><div class="pt">Todos com H falado.</div></div>
+<div class="i"><div class="en"><i>Hair</i> × <i>air</i> — the H changes the word.</div><div class="pt">Hair e air mudam com o H.</div></div>
+<div class="i"><div class="en"><i>Eat</i> × <i>heat</i> — same.</div><div class="pt">Eat e heat, mesma coisa.</div></div>
+<div class="i"><div class="en">But <i>hour</i> and <i>honest</i> keep the H silent.</div><div class="pt">Mas hour e honest mantêm o H mudo.</div></div>
+<div class="i"><div class="en"><i>Think</i> × <i>fink</i> — the TH is not an F.</div><div class="pt">O TH não é F.</div></div>
+<div class="i"><div class="en"><i>Three</i> × <i>free</i> — the classic one.</div><div class="pt">O par clássico.</div></div>
+<div class="i"><div class="en"><i>Day</i> × <i>they</i> — the TH is not a D.</div><div class="pt">O TH não é D.</div></div>
+<div class="i"><div class="en"><i>Dis</i> is not <i>this</i>.</div><div class="pt">Dis não é this.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">muda o sentido</div>
+<h2>Quando errar muda a palavra</h2>
+<p class="sdesc">A lista que vale decorar: pares em que o erro de som não gera sotaque, gera outra frase.</p>
+<div class="items">
+<div class="i"><span class="tag err">cuidado</span><div class="en"><i>Beach</i> × <i>bitch</i></div><div class="pt">Praia × palavrão. Estique o i.</div><div class="def">Frase segura: <i>We spent the day at the beach.</i></div></div>
+<div class="i"><span class="tag err">cuidado</span><div class="en"><i>Sheet</i> × <i>shit</i></div><div class="pt">Lençol/folha × palavrão.</div><div class="def">Frase segura: <i>A sheet of paper.</i></div></div>
+<div class="i"><span class="tag err">cuidado</span><div class="en"><i>Can't</i> × <i>can</i></div><div class="pt">No inglês americano o T quase some — a vogal é que diferencia.</div><div class="def">Frase: <i>I can't hear you.</i></div></div>
+<div class="i"><div class="en"><i>Live</i> × <i>leave</i></div><div class="pt">Morar × sair.</div></div>
+<div class="i"><div class="en"><i>Ship</i> × <i>sheep</i></div><div class="pt">Navio × ovelha.</div></div>
+<div class="i"><div class="en"><i>Full</i> × <i>fool</i></div><div class="pt">Cheio × bobo.</div></div>
+<div class="i"><div class="en"><i>Walk</i> × <i>work</i></div><div class="pt">Andar × trabalhar.</div><div class="def">Frase: <i>I walk to work.</i> — treina os dois.</div></div>
+<div class="i"><div class="en"><i>Shirt</i> × <i>short</i></div><div class="pt">Camisa × curto.</div></div>
+<div class="i"><div class="en"><i>Man</i> × <i>men</i></div><div class="pt">Homem × homens.</div></div>
+<div class="i"><div class="en"><i>Bad</i> × <i>bed</i></div><div class="pt">Ruim × cama.</div></div>
+<div class="i"><div class="en"><i>Thin</i> × <i>tin</i></div><div class="pt">Magro × lata.</div></div>
+<div class="i"><div class="en"><i>Coat</i> × <i>caught</i></div><div class="pt">Casaco × pegou.</div></div>
+<div class="i"><div class="en"><i>Cheap</i> × <i>chip</i></div><div class="pt">Barato × batata frita.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">como treinar</div>
+<h2>Como treinar sem professor</h2>
+<p class="sdesc">O que funciona quando você está sozinho e quer corrigir a boca, não a teoria.</p>
+<div class="items">
+<div class="i"><div class="en">Record yourself saying the word. Then compare.</div><div class="pt">Grave-se dizendo a palavra. Depois compare.</div></div>
+<div class="i"><div class="en">Say the pair out loud: <i>beach, bitch, beach, bitch</i>.</div><div class="pt">Diga o par em voz alta, alternando.</div></div>
+<div class="i"><div class="en">Exaggerate first. Normal comes later.</div><div class="pt">Exagere primeiro. O natural vem depois.</div></div>
+<div class="i"><div class="en">Put your hand on your throat to feel the voiced TH.</div><div class="pt">Ponha a mão na garganta para sentir o TH sonoro.</div></div>
+<div class="i"><div class="en">Look in the mirror when you practice the TH.</div><div class="pt">Olhe no espelho ao treinar o TH — a língua tem que aparecer.</div></div>
+<div class="i"><div class="en">Practise one sound a week, not all of them.</div><div class="pt">Treine um som por semana, não todos.</div></div>
+<div class="i"><div class="en">Use full sentences, not isolated words.</div><div class="pt">Use frases inteiras, não palavras soltas.</div></div>
+<div class="i"><div class="en">Shadow a native: say it at the same time as the audio.</div><div class="pt">Faça shadowing: fale junto com o áudio.</div></div>
+<div class="i"><div class="en">If people ask you to repeat, note which word it was.</div><div class="pt">Se pedirem para repetir, anote qual foi a palavra.</div></div>
+<div class="i"><div class="en">That word is your next exercise.</div><div class="pt">Essa palavra é o seu próximo exercício.</div></div>
+<div class="i"><div class="en">The goal is being understood, not losing your accent.</div><div class="pt">O objetivo é ser entendido, não perder o sotaque.</div></div>
+<div class="i"><div class="en">Nobody loses their accent completely, and nobody needs to.</div><div class="pt">Ninguém perde o sotaque por completo, e ninguém precisa.</div></div>
+<div class="i"><div class="en">Fix what changes the meaning first. The rest is style.</div><div class="pt">Corrija primeiro o que muda o sentido. O resto é estilo.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 03 · Reduções do Inglês Real — erros de som do brasileiro</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' — '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>
