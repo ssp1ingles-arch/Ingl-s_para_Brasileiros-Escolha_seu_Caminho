@@ -299,6 +299,19 @@
     "pasta": "Sistema 23 — Baseado em Livros — Kids"
   },
   {
+    "numero": "25",
+    "titulo": "Pronúncia & Conversação",
+    "descricao": "A frase pronta para a situação inteira. Speak English: 30 Days to Better English organiza a conversação em trinta dias temáticos — apresentar-se, pedir ajuda na rua, comprar, comer fora, telefonar, contar o passado, dar opinião. Everyday Dialogues traz trinta diálogos completos do cotidiano, com quem fala e o que responde: do cumprimento formal ao pronto-socorro, do correio ao pet shop. Dois painéis prontos, 312 itens. O terceiro livro, English Pronunciation in Use (Cambridge), depende de transcrição fonética e aguarda reconversão do OCR.",
+    "cor": "#8B5CF6",
+    "icone": "🗣️",
+    "tags": [
+      "pronúncia",
+      "conversação",
+      "diálogo real"
+    ],
+    "pasta": "Sistema 25 — Baseado em Livros V15"
+  },
+  {
     "numero": "26",
     "titulo": "Vocabulário & Oratória",
     "descricao": "Três livros para a palavra certa e o jeito de dizê-la. Vocabulary Builder (Norman Lewis) destrava o inglês culto por raiz grega e latina — aprenda ego e abra egoist, egotist, egomaniac. Talk Like TED traz as falas reais dos palestrantes e as frases que abrem e viram uma apresentação. The Art of Public Speaking, o clássico de 1915, ensina ênfase por contraste, mudança de tom, ritmo e pausa. Três painéis, 469 itens.",

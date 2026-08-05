@@ -1,8 +1,58 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-05 (T2) — ver bloco 0t (Sistema 26 completo: 3 painéis, 36 blocos, 469 itens; entra no sistemas.json, que vai a 24 entradas). S24 e S25 aguardam reconversão do OCR.**
-> Anteriores: 0s (Sistema 08 reformatado), 0r (S20 l03, l04 e l07), 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+> **Atualização mais recente: 2026-08-05 (T3) — ver bloco 0u (Sistema 25 com 2 de 3 painéis: 24 blocos, 312 itens; sistemas.json vai a 25 entradas). Pendentes de reconversão do OCR: S25 livro02 e os três livros do S24.**
+> Anteriores: 0t (Sistema 26 completo), 0s (Sistema 08 reformatado), 0r (S20 l03, l04 e l07), 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+
+## 0u. Atualização 2026-08-05 (T3) — Sistema 25 (Pronúncia & Conversação) · **2 de 3 livros**
+
+| Painel | Livro | Blocos | Itens |
+|---|---|---|---|
+| `livro01.html` | Speak English: 30 Days to Better English | 12 | **156** |
+| `livro02.html` | English Pronunciation in Use Intermediate | — | **pendente** |
+| `livro03.html` | Everyday Dialogues | 12 | **156** |
+| | | **24** | **312** |
+
+Hub criado com três cards: dois ativos e o `livro02` como **placeholder sem
+`href`** (um `<div class="hub-card soon">`, não um `<a>`, para não gerar link
+morto), com o selo "Em breve — aguardando reconversão do OCR". S25 entra no
+`sistemas.json` — a raiz vai de 24 para **25 entradas**.
+
+**Livro 01 — a chave foram as páginas de resposta.** O livro é organizado em 30
+dias temáticos, e os exercícios são de lacuna. As páginas `Progress check -
+Answers` trazem a frase **completa**, com a lacuna já preenchida: são 488 frases
+inteiras. Agrupei os 30 dias em 12 blocos (apresentar-se, família e descrever
+pessoas, rotina, onde você mora, pedir ajuda na rua, pedir algo, compras,
+comparar, descrever, casa, montar a pergunta, notas de uso). Mesmo recurso já
+usado nos Sistemas avançados — ver bloco 0r.
+
+**Livro 03 — diálogos íntegros.** A fonte tem 30 diálogos numerados
+(`Dialogue 1-1` … `3-11`) com falante identificado, e o OCR preservou a estrutura.
+Extraí os 29 que têm três ou mais falas e montei 12 blocos por situação.
+
+**Normalização aplicada nas duas fontes:** ligaduras tipográficas do dump
+(`Oﬃcial` → Official, `ﬂat` → flat) via `unicodedata.normalize('NFKC')` antes de
+qualquer extração. Sem isso as palavras entram no painel com glifo quebrado.
+
+**Descartado (REGRAS_GERAIS §4):** "como usar este livro", método e motivação, os
+enunciados sem inglês, os gabaritos de alternativa (`1-a, 2-c`) e, no livro 03, os
+fragmentos de fala sem contexto e as `LANGUAGE NOTES` que são comentário
+pedagógico.
+
+`tmp/garimpa.py` versionado nesta leva — é a ferramenta de medição de candidatos
+usada antes de extrair, ao lado de `mkpanel.py` e `hubcard.py`.
+
+### ⚠️ S25 livro02 — pendente de reconversão do OCR
+
+`English Pronunciation in Use Intermediate` (Cambridge) tem transcrição fonética
+em praticamente todo item, e **o IPA não sobreviveu à conversão**. O painel não sai
+sem isso: um livro de pronúncia sem símbolo fonético vira lista de palavras solta,
+que as REGRAS mandam descartar. Mesma causa dos três livros do S24.
+
+**Ordem sugerida quando a reconversão sair:** S24 l03 (Clear Speech, 82,5% limpo),
+depois S25 l02, e por fim S24 l02 e l01 — que são os piores OCRs do acervo.
+
+---
 
 ## 0t. Atualização 2026-08-05 (T2) — Sistema 26 (Vocabulário & Oratória) · **completo**
 
