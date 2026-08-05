@@ -79,7 +79,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
   <p class="lead">Foi assim que você aprendeu português: ouvindo diálogos simples, cena após cena, até tudo fazer sentido. Aqui o método é o mesmo — uma série em inglês americano, com linguagem clara e progressão real, das primeiras palavras às conversas de verdade.</p>
   <div class="metrics">
     <div class="metric"><b>7</b><span>níveis</span></div>
-    <div class="metric"><b>37</b><span>cenas</span></div>
+    <div class="metric"><b>54</b><span>cenas</span></div>
     <div class="metric"><b>A1 → B2</b><span>progressão</span></div>
   </div>
 
@@ -121,6 +121,9 @@ const LEVELS = [
        ph:[["One, two, three, four, five.","Um, dois, três, quatro, cinco."],["Six, seven, eight, nine, ten.","Seis, sete, oito, nove, dez."],["Eleven, twelve!","Onze, doze!"]]},
       {t:"Peço desculpas", scene:"Cena: um esbarrão sem querer",
        ph:[["Oops, I'm sorry!","Ops, me desculpe!"],["That's okay.","Tudo bem."],["Let's play, okay?","Vamos brincar, tá?"]]},
+      {t:"Hora de dormir", scene:"Cena: a mãe chama para deitar",
+       ph:[["Is it time for bed?","Já é hora de dormir?"],["Yes, it is.","Sim, é."],["It's nine o'clock.","São nove horas."],["Good night, Mom. — Good night, Scott.","Boa noite, mãe. — Boa noite, Scott."]],
+       tip:"Good evening = boa noite ao chegar. Good night = boa noite ao sair ou dormir."},
     ]
   },
   {
@@ -141,6 +144,11 @@ const LEVELS = [
        ph:[["Let's play ball!","Vamos jogar bola!"],["You're it! Let's play tag.","Você pegou! Vamos brincar de pega-pega."],["Let's jump rope now.","Agora vamos pular corda."]]},
       {t:"Comida no almoço", scene:"Cena: almoço em família",
        ph:[["What's for lunch, Mom?","O que tem pro almoço, mãe?"],["Do you want spaghetti?","Você quer espaguete?"],["Yes, please. / No, thank you.","Sim, por favor. / Não, obrigado."]]},
+      {t:"Cheguei atrasado", scene:"Cena: chegando em casa depois da hora do jantar",
+       ph:[["Hi Mom, I'm sorry I'm late.","Oi mãe, desculpa o atraso."],["It's okay.","Tudo bem."],["I made chicken.","Fiz frango."],["That's my favorite. Thanks!","É o meu preferido. Obrigado!"]]},
+      {t:"Hoje não dá", scene:"Cena: recusando um convite pelo telefone",
+       ph:[["Do you want to come to the park?","Você quer vir ao parque?"],["I want to, but I can't.","Eu quero, mas não posso."],["Why not? — Because I'm sick.","Por quê? — Porque estou doente."],["I'm tired now. I'm going to sleep.","Estou cansado agora. Vou dormir."],["Talk to you later.","A gente se fala depois."]],
+       tip:"\"I want to, but I can't\" resolve quase toda recusa educada."},
     ]
   },
   {
@@ -160,6 +168,11 @@ const LEVELS = [
        tip:"Direções: turn left (vire à esquerda), follow me (me siga)."},
       {t:"Estou doente", scene:"Cena: indo à enfermaria",
        ph:[["What's wrong? I'm sick.","O que houve? Estou doente."],["I have a stomach ache.","Estou com dor de barriga."],["I hope you feel better soon.","Espero que melhore logo."]]},
+      {t:"Achados e perdidos", scene:"Cena: a caixa de objetos perdidos da escola",
+       ph:[["Whose scarf is that?","De quem é aquele cachecol?"],["I think it's Anna's scarf.","Acho que é o cachecol da Anna."],["Whose mittens are those? — They're hers too.","De quem são aquelas luvas? — São dela também."],["Anna, are these yours? — Yes, thanks! I lost them.","Anna, estas são suas? — Sim, obrigada! Eu tinha perdido."]],
+       tip:"De quem é: whose + coisa. Dela = hers, dele = his."},
+      {t:"Onde fica a praça de alimentação?", scene:"Cena: procurando no mapa do shopping",
+       ph:[["Where's the food court? — I don't know.","Onde fica a praça de alimentação? — Não sei."],["Let's look at the map. Here it is.","Vamos ver o mapa. Aqui está."],["It's across from the music store.","Fica em frente à loja de música."],["Turn left and go around the corner.","Vire à esquerda e dobre a esquina."],["They're over there, next to the ice cream shop.","Eles estão ali, do lado da sorveteria."]]},
     ]
   },
   {
@@ -179,6 +192,13 @@ const LEVELS = [
       {t:"Comparações", scene:"Cena: no zoológico, comparando animais",
        ph:[["A zebra is slower than a gazelle.","A zebra é mais lenta que a gazela."],["Which animal is faster?","Qual animal é mais rápido?"],["A cat is as fast as a polar bear.","O gato é tão rápido quanto o urso polar."]],
        tip:"Comparar: faster than (mais rápido que), as fast as (tão rápido quanto)."},
+      {t:"No supermercado", scene:"Cena: conferindo as compras da festa por telefone",
+       ph:[["Is everything ready for the party?","Está tudo pronto para a festa?"],["Are there enough pretzels? — I think so. There are three bags.","Tem salgadinho suficiente? — Acho que sim. São três pacotes."],["Do we need cake? — No, we don't. We have cupcakes.","Precisamos de bolo? — Não. Temos cupcakes."],["There's only one can. We don't have enough.","Só tem uma latinha. Não é suficiente."],["How many cans do we need? — We need 12 cans.","Quantas latas precisamos? — Precisamos de 12."]],
+       tip:"Contável no plural: are there enough...? / how many...? Resposta: there are..."},
+      {t:"Matéria favorita", scene:"Cena: conversa no corredor da escola",
+       ph:[["What's your favorite subject? — I like science best.","Qual é a sua matéria favorita? — Gosto mais de ciências."],["Why do you like science? — I think it's easy.","Por que você gosta de ciências? — Acho fácil."],["I don't think so. I think it's hard.","Eu não acho. Acho difícil."],["Which subject do you like best? — I like English.","De qual matéria você gosta mais? — Gosto de inglês."],["It's easier than science.","É mais fácil que ciências."]]},
+      {t:"Estação favorita", scene:"Cena: discutindo verão e inverno",
+       ph:[["Summer is my favorite season. — Why?","O verão é a minha estação favorita. — Por quê?"],["Because it's hot and there's no school.","Porque é quente e não tem aula."],["I love winter. I like skiing.","Eu amo o inverno. Gosto de esquiar."],["I go skiing with my family every weekend.","Vou esquiar com a minha família todo fim de semana."],["You can't go skiing in summer. — Oh yes I can! I can go water skiing.","Não dá para esquiar no verão. — Ah, dá sim! Posso fazer esqui aquático."]]},
     ]
   },
   {
@@ -191,6 +211,18 @@ const LEVELS = [
        ph:[["What did you do last weekend?","O que você fez no fim de semana passado?"],["I went shopping and bought a bike.","Fui às compras e comprei uma bicicleta."],["I rode my bike to the beach.","Andei de bike até a praia."]]},
       {t:"Eu esqueci de...", scene:"Cena: preparando para sair",
        ph:[["I forgot to do something.","Esqueci de fazer uma coisa."],["Did you put on sunscreen? Yes, I did.","Passou protetor solar? Sim, passei."],["Did you turn off the radio?","Você desligou o rádio?"]]},
+      {t:"Fotos antigas", scene:"Cena: folheando o álbum de família",
+       ph:[["Is that you in this picture? — Yes, it is.","É você nessa foto? — Sim, sou eu."],["You were so young! — I was four.","Você era tão pequeno! — Eu tinha quatro anos."],["Why were you hiding behind your dad? — I was shy.","Por que você estava se escondendo atrás do seu pai? — Eu era tímido."],["When did you learn how to do karate? — When I was four.","Quando você aprendeu karatê? — Quando eu tinha quatro anos."],["I tried to do karate, but I wasn't very good.","Tentei fazer karatê, mas eu não era muito bom."]],
+       tip:"Idade no passado: I was four (eu tinha quatro anos), não \"I had\"."},
+      {t:"Desculpa o atraso", scene:"Cena: encontrando o amigo na porta do cinema",
+       ph:[["I'm sorry I'm late. I was helping my little brother.","Desculpa o atraso. Eu estava ajudando meu irmãozinho."],["That's okay. What was he doing?","Tudo bem. O que ele estava fazendo?"],["He was washing the car.","Ele estava lavando o carro."],["How long have you been waiting?","Há quanto tempo você está esperando?"],["Not very long. Only a few minutes.","Nem muito. Só uns minutos."]],
+       tip:"O que estava acontecendo: was/were + verbo -ing."},
+      {t:"Depois do zoológico", scene:"Cena: voltando para casa, cansados",
+       ph:[["There were so many interesting animals!","Tinha tantos animais interessantes!"],["What a great day. — It sure was.","Que dia bom. — Foi mesmo."],["I'm tired now. We really walked a lot.","Estou cansado agora. A gente andou muito."],["What did you like best? — I liked the penguins best.","Do que você gostou mais? — Gostei mais dos pinguins."],["Did you see them playing on the ice?","Você viu eles brincando no gelo?"]],
+       tip:"Tinha (existia) no passado: there was (singular) / there were (plural)."},
+      {t:"Os biscoitos queimaram", scene:"Cena: na cozinha, o cheiro chega antes",
+       ph:[["Something smells good. What are you doing?","Está com um cheiro bom. O que você está fazendo?"],["I'm baking cookies. — Are they done?","Estou assando biscoitos. — Já estão prontos?"],["Almost. They're going to be done in about two minutes.","Quase. Ficam prontos em uns dois minutos."],["What happened to the cookies? — I don't know.","O que aconteceu com os biscoitos? — Não sei."],["They don't look good, but they smell good. — How is it? — It tastes great!","Não parecem bons, mas cheiram bem. — E aí? — Está uma delícia!"]],
+       tip:"Verbos de sentido: it smells good, it looks good, it tastes great."},
     ]
   },
   {
@@ -205,6 +237,11 @@ const LEVELS = [
        ph:[["What do you want to be?","O que você quer ser?"],["I want to be a singer.","Eu quero ser cantor."],["I love to dance — a dancer!","Eu adoro dançar — dançarina!"]]},
       {t:"Acho que vou ser (will)", scene:"Cena: imaginando quando crescer",
        ph:[["What will you be when you grow up?","O que você vai ser quando crescer?"],["I think I'll be a tennis player.","Acho que vou ser jogador de tênis."],["Maybe I'll be a designer.","Talvez eu seja designer."]]},
+      {t:"Vamos acampar", scene:"Cena: combinando a viagem por telefone",
+       ph:[["We're going camping tomorrow. I'm really excited.","Vamos acampar amanhã. Estou muito animado."],["How's the weather going to be? — It's going to be cold.","Como vai estar o tempo? — Vai estar frio."],["We need jackets. — Yes, I have a new jacket.","Precisamos de casacos. — Sim, tenho um casaco novo."],["Is it going to rain? — I'm not sure. I hope not.","Vai chover? — Não tenho certeza. Espero que não."],["Do we need umbrellas? — I don't know, but I have a new umbrella too.","Precisamos de guarda-chuva? — Não sei, mas também tenho um novo."]]},
+      {t:"Festa junta", scene:"Cena: descobrindo que os aniversários são perto",
+       ph:[["What's the date today? — It's the first.","Que dia é hoje? — Dia primeiro."],["Yesterday was my birthday. — Oh, I'm sorry, I forgot!","Ontem foi meu aniversário. — Ah, desculpa, esqueci!"],["That's okay. I'm going to have a party on Saturday. Can you come?","Tudo bem. Vou dar uma festa no sábado. Você vem?"],["When's your birthday? — It's on September 9th.","Quando é seu aniversário? — É 9 de setembro."],["Let's have a party together! — That's a good idea.","Vamos fazer uma festa junta! — Boa ideia."]],
+       tip:"Datas: on September 9th, on Saturday — a preposição é on."},
     ]
   },
   {
@@ -222,6 +259,14 @@ const LEVELS = [
        tip:"Sonho/hipótese: would (iria/gostaria), I'd = I would."},
       {t:"Como é a sua personalidade?", scene:"Cena: vendo fotos antigas",
        ph:[["Are you usually shy or outgoing?","Você costuma ser tímido ou extrovertido?"],["I'm shy when I meet new people.","Sou tímido quando conheço gente nova."],["You're so outgoing!","Você é tão extrovertido!"]]},
+      {t:"Já esteve na França?", scene:"Cena: contando os planos de férias",
+       ph:[["I'm going to France this summer. My family is going there on vacation.","Vou para a França neste verão. Minha família vai passar as férias lá."],["Have you been there before? — No, it's my first time.","Você já esteve lá antes? — Não, é a primeira vez."],["I've been there twice. My uncle lives there.","Eu já estive lá duas vezes. Meu tio mora lá."],["You'll love France. There's a lot to see and the food is great.","Você vai amar a França. Tem muito o que ver e a comida é ótima."],["There's only one problem — I don't speak French. — Don't worry, you'll be fine.","Só tem um problema — não falo francês. — Não se preocupe, você vai se virar."]],
+       tip:"Experiência: have you been there? / I've been there twice."},
+      {t:"Intercâmbio", scene:"Cena: conhecendo a estudante que mora com a Jenny",
+       ph:[["Is she here on a homestay? — Yes, she is.","Ela está aqui em intercâmbio na casa de uma família? — Sim."],["She's staying with Jenny's family.","Ela está morando com a família da Jenny."],["Are you enjoying your homestay? — Yes, I am. They're very nice.","Você está gostando do intercâmbio? — Estou. Eles são muito legais."],["Have you been on a homestay? — Not yet, but I'd like to go on one someday.","Você já fez intercâmbio? — Ainda não, mas gostaria de fazer um dia."],["I don't know Vietnamese, but I want to learn. — I can teach you.","Não sei vietnamita, mas quero aprender. — Eu posso te ensinar."]]},
+      {t:"No cinema", scene:"Cena: na fila, antes do filme começar",
+       ph:[["Have you already bought your ticket? — Yes, I have.","Você já comprou seu ingresso? — Já."],["And I bought your ticket too. — Wow, thanks!","E comprei o seu também. — Nossa, obrigado!"],["Let's go, the movie is going to start.","Vamos, o filme vai começar."],["I've heard it's funny. — Really? I've heard it's scary.","Ouvi dizer que é engraçado. — Sério? Ouvi dizer que é de terror."],["Maybe it's scary and funny.","Talvez seja assustador e engraçado."]],
+       tip:"already com present perfect: have you already bought...? (você já comprou?)"},
     ]
   }
 ];
