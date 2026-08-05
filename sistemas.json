@@ -297,5 +297,18 @@
       "Kids"
     ],
     "pasta": "Sistema 23 — Baseado em Livros — Kids"
+  },
+  {
+    "numero": "26",
+    "titulo": "Vocabulário & Oratória",
+    "descricao": "Três livros para a palavra certa e o jeito de dizê-la. Vocabulary Builder (Norman Lewis) destrava o inglês culto por raiz grega e latina — aprenda ego e abra egoist, egotist, egomaniac. Talk Like TED traz as falas reais dos palestrantes e as frases que abrem e viram uma apresentação. The Art of Public Speaking, o clássico de 1915, ensina ênfase por contraste, mudança de tom, ritmo e pausa. Três painéis, 469 itens.",
+    "cor": "#F59E0B",
+    "icone": "🎤",
+    "tags": [
+      "vocabulário avançado",
+      "oratória",
+      "fala pública"
+    ],
+    "pasta": "Sistema 26 — Baseado em Livros V16"
   }
 ]

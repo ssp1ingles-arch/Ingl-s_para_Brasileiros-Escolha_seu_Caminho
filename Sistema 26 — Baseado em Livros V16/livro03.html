@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Art of Public Speaking — Sistema 26 · Livro 03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar</a>
+<div class="wrap">
+
+<div class="eyebrow">SISTEMA 26 · LIVRO 03</div>
+<h1 class="title">The Art of <em>Public Speaking</em></h1>
+<p class="lead">O clássico de Dale Carnegie e J. Berg Esenwein, de 1915 — e ainda o tratado mais direto sobre o que a voz faz com uma ideia. Aqui, o <i>inglês real</i> do livro: as máximas, as frases de treino e os trechos de discurso que ele manda ler em voz alta.</p>
+
+<div class="metrics">
+  <div class="metric"><b>12</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>B2–C1</b><span>nível</span></div>
+  <div class="metric"><b>US</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar frase, técnica ou tradução…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Medo de palco</div>
+<h2><i>Stage-fright</i> — o primeiro obstáculo</h2>
+<p class="sdesc">O livro abre pelo medo, e trata dele sem misticismo: respire, relaxe e comece falando com uma pessoa só.</p>
+<div class="items">
+<div class="i"><div class="en">How can I overcome self-consciousness and the fear that paralyzes me before an audience?</div><div class="pt">Como eu supero a autoconsciência e o medo que me paralisa diante de uma plateia?</div></div>
+<div class="i"><div class="en">Do not be disheartened if at first you suffer from stage-fright.</div><div class="pt">Não desanime se no começo você sofrer de medo de palco.</div></div>
+<div class="i"><div class="en">Take a deep breath, relax, and begin in a quiet conversational tone.</div><div class="pt">Respire fundo, relaxe e comece num tom baixo de conversa.</div></div>
+<div class="i"><div class="en">Speak as though you were speaking to one large friend.</div><div class="pt">Fale como se estivesse falando com um único amigo grande.</div><div class="def">A imagem que o livro dá para dissolver a plateia.</div></div>
+<div class="i"><div class="en">I wonder if I am doing this right! How does my hair look? I know I shall fail.</div><div class="pt">Será que estou fazendo isso certo? Como está meu cabelo? Eu sei que vou falhar.</div><div class="def">O monólogo interno que o livro manda calar.</div></div>
+<div class="i"><div class="en">There, I told you I would fail, and I did.</div><div class="pt">Pronto, eu avisei que ia falhar, e falhei.</div></div>
+<div class="i"><div class="en">Success or failure in business is caused more by mental attitude even than by mental capacity.</div><div class="pt">Sucesso ou fracasso nos negócios vem mais da atitude mental do que da capacidade mental.</div></div>
+<div class="i"><div class="en">Nothing advertises itself so thoroughly as conceit.</div><div class="pt">Nada se anuncia tão completamente quanto a presunção.</div></div>
+<div class="i"><div class="en">One may be so full of self as to be empty.</div><div class="pt">É possível estar tão cheio de si a ponto de estar vazio.</div></div>
+<div class="i"><div class="en">Be absorbed by your subject.</div><div class="pt">Deixe-se absorver pelo seu assunto.</div><div class="def">O antídoto do livro para o medo: pensar no tema, não em si.</div></div>
+<div class="i"><div class="en">The first thing for the beginner in public speaking is to speak — not to study voice and gesture.</div><div class="pt">A primeira coisa para o iniciante em falar em público é falar — não estudar voz e gesto.</div></div>
+<div class="i"><div class="en">Destiny is not a matter of chance. It is a matter of choice.</div><div class="pt">O destino não é questão de acaso. É questão de escolha.</div></div>
+<div class="i"><div class="en">What effect do habits of thought have on confidence?</div><div class="pt">Que efeito os hábitos de pensamento têm sobre a confiança?</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Plateia</div>
+<h2>Domínio da plateia — <i>assume mastery</i></h2>
+<p class="sdesc">O bloco sobre a relação com quem escuta: olhar, postura diante do grupo e o direito de ocupar o palco.</p>
+<div class="items">
+<div class="i"><div class="en">In public speech, as in electricity, there is a positive and a negative force.</div><div class="pt">Na fala em público, como na eletricidade, existe uma força positiva e uma negativa.</div></div>
+<div class="i"><div class="en">Either you or your audience are going to possess the positive factor.</div><div class="pt">Ou você ou a sua plateia vai ficar com o fator positivo.</div></div>
+<div class="i"><div class="en">Reflect that your audience will not hurt you.</div><div class="pt">Reflita que a sua plateia não vai te machucar.</div></div>
+<div class="i"><div class="en">Face your audience pluckily — if your knees quake, make them stop.</div><div class="pt">Encare a plateia com coragem — se os joelhos tremerem, faça-os parar.</div></div>
+<div class="i"><div class="en">In your audience lies some victory for you and the cause you represent.</div><div class="pt">Na sua plateia está alguma vitória para você e para a causa que representa.</div></div>
+<div class="i"><div class="en">All writers have borne testimony to the power of a speaker's eye in impressing an audience.</div><div class="pt">Todos os escritores atestaram o poder do olhar do orador para impressionar uma plateia.</div></div>
+<div class="i"><div class="en">Look them earnestly in the face and repeat this truth.</div><div class="pt">Olhe-os com sinceridade no rosto e repita esta verdade.</div></div>
+<div class="i"><div class="en">The trouble with many speakers is that they go before an audience with their minds a blank.</div><div class="pt">O problema de muitos oradores é subir diante da plateia com a cabeça em branco.</div></div>
+<div class="i"><div class="en">Have something to say.</div><div class="pt">Tenha algo a dizer.</div><div class="def">O conselho mais curto e mais duro do livro.</div></div>
+<div class="i"><div class="en">Pause, and give the attention-powers of your audience a rest.</div><div class="pt">Pause, e dê descanso à capacidade de atenção da sua plateia.</div></div>
+<div class="i"><div class="en">If you have given the audience a big idea, pause and let them turn it over.</div><div class="pt">Se você deu à plateia uma ideia grande, pause e deixe que a revirem.</div></div>
+<div class="i"><div class="en">Your audience will wait for you.</div><div class="pt">A sua plateia vai esperar por você.</div></div>
+<div class="i"><div class="en">Apply the correct method of everyday speech to the platform.</div><div class="pt">Aplique à tribuna o método correto da fala do dia a dia.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Monotonia</div>
+<h2>Monotonia — o inimigo número um</h2>
+<p class="sdesc">Para o livro, todo defeito de oratória desemboca em monotonia. As frases com que ele define e ataca o problema.</p>
+<div class="items">
+<div class="i"><div class="en">Monotony is poverty, whether in speech or in life.</div><div class="pt">Monotonia é pobreza, seja na fala ou na vida.</div></div>
+<div class="i"><div class="en">The worst punishment that human ingenuity has ever been able to invent is extreme monotony — solitary confinement.</div><div class="pt">O pior castigo que a engenhosidade humana já inventou é a monotonia extrema — o confinamento solitário.</div></div>
+<div class="i"><div class="en">We obviate monotony in dress by replenishing our wardrobes.</div><div class="pt">A gente evita monotonia na roupa renovando o guarda-roupa.</div></div>
+<div class="i"><div class="en">We avoid monotony in speech by multiplying our powers of speech.</div><div class="pt">Evitamos monotonia na fala multiplicando nossos recursos de fala.</div></div>
+<div class="i"><div class="en">Why is monotony one of the worst as well as one of the most common faults of speakers?</div><div class="pt">Por que a monotonia é um dos piores e ao mesmo tempo mais comuns defeitos dos oradores?</div></div>
+<div class="i"><div class="en">Describe one method of destroying monotony of thought-presentation.</div><div class="pt">Descreva um método de destruir a monotonia na apresentação do pensamento.</div></div>
+<div class="i"><div class="en">The department-store prince does not disgust the public by playing only the one tune.</div><div class="pt">O príncipe da loja de departamentos não enoja o público tocando uma nota só.</div></div>
+<div class="i"><div class="en">It is there that monotony caused by lack of emphasis is so painfully apparent.</div><div class="pt">É ali que a monotonia causada pela falta de ênfase fica dolorosamente visível.</div></div>
+<div class="i"><div class="en">When you have mastered the mechanics of speech you will no longer be troubled with monotony.</div><div class="pt">Quando você dominar a mecânica da fala, a monotonia deixa de ser problema.</div></div>
+<div class="i"><div class="en">Use the changes of tempo indicated in the following, noting how they prevent monotony.</div><div class="pt">Use as mudanças de ritmo indicadas a seguir, reparando como elas evitam a monotonia.</div></div>
+<div class="i"><div class="en">Avoid it as you would shun a deadly dull bore.</div><div class="pt">Evite isso como você fugiria de um chato mortalmente entediante.</div></div>
+<div class="i"><div class="en">The virtue of art lies in detachment, in sequestering one object from the embarrassing variety.</div><div class="pt">A virtude da arte está no desprendimento, em isolar um objeto da variedade constrangedora.</div></div>
+<div class="i"><div class="en">What relation does this have to the use of the voice?</div><div class="pt">Que relação isso tem com o uso da voz?</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Ênfase</div>
+<h2>Ênfase — <i>contrast and comparison</i></h2>
+<p class="sdesc">O princípio central do livro: ênfase não é volume, é diferença. Só destaca quem não destaca tudo.</p>
+<div class="items">
+<div class="i"><div class="en">EMPHASIS is a matter of CONTRAST and COMPARISON.</div><div class="pt">ÊNFASE é questão de CONTRASTE e COMPARAÇÃO.</div><div class="def">O princípio que o livro põe em caixa alta.</div></div>
+<div class="i"><div class="en">Not every word is of special importance — therefore only certain words demand emphasis.</div><div class="pt">Nem toda palavra é especialmente importante — portanto só certas palavras exigem ênfase.</div></div>
+<div class="i"><div class="en">The speaker that fires his force and emphasis at random into a sentence will not get results.</div><div class="pt">O orador que dispara força e ênfase a esmo numa frase não vai obter resultado.</div></div>
+<div class="i"><div class="en">Let us not confound loudness with emphasis.</div><div class="pt">Não confundamos volume com ênfase.</div></div>
+<div class="i"><div class="en">To yell is not a sign of earnestness, intelligence, or feeling.</div><div class="pt">Gritar não é sinal de sinceridade, inteligência ou sentimento.</div></div>
+<div class="i"><div class="en">Notice how the meaning changes by merely putting the emphasis on different words.</div><div class="pt">Repare como o sentido muda só de pôr a ênfase em palavras diferentes.</div></div>
+<div class="i"><div class="en">DESTINY is NOT a matter of CHANCE. It is a matter of CHOICE.</div><div class="pt">O DESTINO NÃO é questão de ACASO. É questão de ESCOLHA.</div><div class="def">A mesma frase, agora marcada — chance contrasta com choice.</div></div>
+<div class="i"><div class="en">Chance takes emphasis because it is contrasted with choice in the next sentence.</div><div class="pt">Chance recebe ênfase porque contrasta com choice na frase seguinte.</div></div>
+<div class="i"><div class="en">As a public speaker you can assist this emphasis of contrast with your voice.</div><div class="pt">Como orador, você pode reforçar essa ênfase de contraste com a voz.</div></div>
+<div class="i"><div class="en">You must understand that there are no steel-riveted rules of emphasis.</div><div class="pt">Você precisa entender que não há regras de ênfase cravadas em aço.</div></div>
+<div class="i"><div class="en">One speaker will put one interpretation on a speech, another will use different emphasis.</div><div class="pt">Um orador dá uma interpretação ao discurso, outro usa ênfase diferente.</div></div>
+<div class="i"><div class="en">The words you, had, would, are all emphatic, because they have been made different.</div><div class="pt">As palavras you, had, would são todas enfáticas porque foram feitas diferentes.</div></div>
+<div class="i"><div class="en">The new idea is emphatic because it introduces something the listener does not have yet.</div><div class="pt">A ideia nova é enfática porque introduz algo que o ouvinte ainda não tem.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Tom</div>
+<h2>Mudança de tom — <i>change of pitch</i></h2>
+<p class="sdesc">Subir e descer a altura da voz é o recurso mais barato contra a fala plana.</p>
+<div class="items">
+<div class="i"><div class="en">Every big change of thought requires a big change of pitch.</div><div class="pt">Toda grande mudança de pensamento exige uma grande mudança de tom.</div></div>
+<div class="i"><div class="en">If you have been talking on a low pitch, jump to a high one on the emphatic word.</div><div class="pt">Se você vinha falando num tom baixo, salte para um alto na palavra enfática.</div></div>
+<div class="i"><div class="en">If you have been talking on a high pitch, take a low one on your emphatic ideas.</div><div class="pt">Se você vinha falando num tom alto, use um baixo nas ideias enfáticas.</div></div>
+<div class="i"><div class="en">If you have been talking loudly, utter the emphatic word in a concentrated whisper.</div><div class="pt">Se você vinha falando alto, diga a palavra enfática num sussurro concentrado.</div></div>
+<div class="i"><div class="en">And you have intense emphasis.</div><div class="pt">E você tem ênfase intensa.</div></div>
+<div class="i"><div class="en">Learn to speak some thoughts in a very high tone — others in a very, very low tone.</div><div class="pt">Aprenda a dizer alguns pensamentos num tom bem alto — outros num tom bem, bem baixo.</div></div>
+<div class="i"><div class="en">We are not now discussing the inflection of single words, but the general pitch in which phrases are spoken.</div><div class="pt">Não estamos discutindo a inflexão de palavras isoladas, mas o tom geral em que as frases são ditas.</div></div>
+<div class="i"><div class="en">Speak the following lines with as marked variations in pitch as your interpretation may dictate.</div><div class="pt">Diga as linhas seguintes com as variações de tom que a sua interpretação pedir.</div></div>
+<div class="i"><div class="en">Make a diagram of a conversation you have heard, showing where high and low pitches were used.</div><div class="pt">Faça um diagrama de uma conversa que você ouviu, marcando onde os tons altos e baixos foram usados.</div></div>
+<div class="i"><div class="en">Think I'll wander down and see you when you're married — eh, my boy?</div><div class="pt">Acho que vou dar uma passada para te ver quando você casar — hein, meu rapaz?</div><div class="def">Frase de treino: a inflexão final muda tudo.</div></div>
+<div class="i"><div class="en">Read again, changing emphasis slightly.</div><div class="pt">Leia de novo, mudando um pouco a ênfase.</div></div>
+<div class="i"><div class="en">Each of these will explain how to get emphasis through the use of a certain principle.</div><div class="pt">Cada um deles vai explicar como obter ênfase pelo uso de um princípio.</div></div>
+<div class="i"><div class="en">Size of type is his device to show emphasis in bold relief.</div><div class="pt">O tamanho da fonte é o recurso dele para mostrar ênfase em alto relevo.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Ritmo</div>
+<h2>Mudança de ritmo — <i>change of tempo</i></h2>
+<p class="sdesc">Correr e desacelerar de propósito. O livro trata o ritmo como pontuação falada.</p>
+<div class="items">
+<div class="i"><div class="en">Be careful in regulating your tempo not to get your movement too fast.</div><div class="pt">Ao regular seu ritmo, cuidado para não acelerar demais.</div></div>
+<div class="i"><div class="en">Use the same common sense with your mind.</div><div class="pt">Use o mesmo bom senso com a sua cabeça.</div></div>
+<div class="i"><div class="en">Apply the blacksmith's homely principle when you are speaking.</div><div class="pt">Aplique o princípio simples do ferreiro quando estiver falando.</div></div>
+<div class="i"><div class="en">Study this potential device until you have absorbed and assimilated it.</div><div class="pt">Estude este recurso até tê-lo absorvido e assimilado.</div></div>
+<div class="i"><div class="en">Do not forget: this is one of the main methods that you must continually employ.</div><div class="pt">Não esqueça: este é um dos métodos principais que você deve empregar sempre.</div></div>
+<div class="i"><div class="en">Let it be repeated: the thought that follows a pause is much more dynamic.</div><div class="pt">Repita-se: o pensamento que vem depois de uma pausa é muito mais dinâmico.</div></div>
+<div class="i"><div class="en">Much more dynamic than if no pause had occurred.</div><div class="pt">Muito mais dinâmico do que se nenhuma pausa tivesse ocorrido.</div></div>
+<div class="i"><div class="en">Let us repeat, every big change of thought requires a big change of pitch.</div><div class="pt">Repetimos: toda grande mudança de pensamento exige uma grande mudança de tom.</div></div>
+<div class="i"><div class="en">The average speaker will deliver the line with about the same amount of emphasis on each word.</div><div class="pt">O orador médio entrega a frase com mais ou menos a mesma ênfase em cada palavra.</div></div>
+<div class="i"><div class="en">That is putting it mildly. It is maddening.</div><div class="pt">E isso é dizer pouco. É enlouquecedor.</div></div>
+<div class="i"><div class="en">He looked at her in angry astonishment.</div><div class="pt">Ele olhou para ela com espanto irritado.</div><div class="def">Frase de treino para ritmo e ênfase.</div></div>
+<div class="i"><div class="en">Take the following from a novel and read it aloud.</div><div class="pt">Pegue o trecho seguinte de um romance e leia em voz alta.</div></div>
+<div class="i"><div class="en">Read the chapters on Inflection, Feeling, Pause, Change of Pitch, Change of Tempo.</div><div class="pt">Leia os capítulos sobre inflexão, sentimento, pausa, mudança de tom e mudança de ritmo.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Trechos</div>
+<h2>Trechos para ler em voz alta</h2>
+<p class="sdesc">As passagens oratórias que o livro traz como exercício de leitura — inglês de tribuna, ainda utilizável.</p>
+<div class="items">
+<div class="i"><div class="en">We have left undone those things we ought to have done.</div><div class="pt">Deixamos por fazer aquilo que deveríamos ter feito.</div></div>
+<div class="i"><div class="en">Let the men whose loyalty is to the dollar stand aside.</div><div class="pt">Que os homens cuja lealdade é ao dólar fiquem de lado.</div></div>
+<div class="i"><div class="en">While the men whose loyalty is to the flag come to the front.</div><div class="pt">Enquanto os homens cuja lealdade é à bandeira venham para a frente.</div><div class="def">Paralelismo — a estrutura repetida que carrega o contraste.</div></div>
+<div class="i"><div class="en">The curse of this country is not a lack of education.</div><div class="pt">A maldição deste país não é a falta de educação.</div></div>
+<div class="i"><div class="en">Republics have always needed men.</div><div class="pt">As repúblicas sempre precisaram de homens.</div></div>
+<div class="i"><div class="en">Let them take their chances as they can.</div><div class="pt">Que corram os riscos que puderem.</div></div>
+<div class="i"><div class="en">Let his friends and kin desert him, while he planned and plugged and hurried.</div><div class="pt">Que seus amigos e parentes o abandonem, enquanto ele planejava, batalhava e corria.</div></div>
+<div class="i"><div class="en">On his quest for gold and power.</div><div class="pt">Na sua busca por ouro e poder.</div></div>
+<div class="i"><div class="en">That was his great motto and the rule of his life.</div><div class="pt">Esse era o grande lema dele e a regra da sua vida.</div></div>
+<div class="i"><div class="en">If you see a man bite a dog, hurry back to the office and write the story.</div><div class="pt">Se você vir um homem morder um cachorro, corra de volta à redação e escreva a matéria.</div><div class="def">A definição clássica de notícia — o inesperado.</div></div>
+<div class="i"><div class="en">We expect an astronomer to discover heavenly bodies rather than cooking recipes.</div><div class="pt">Esperamos que um astrônomo descubra corpos celestes, não receitas de cozinha.</div></div>
+<div class="i"><div class="en">Is not the color of the horse impressed upon us more emphatically when you say it that way?</div><div class="pt">A cor do cavalo não se grava na gente com mais força quando você diz assim?</div></div>
+<div class="i"><div class="en">The last words uttered to his son were these.</div><div class="pt">As últimas palavras ditas ao filho foram estas.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Pausa</div>
+<h2>A pausa — o silêncio que sublinha</h2>
+<p class="sdesc">O recurso que o livro considera mais subestimado: o que vem depois do silêncio pesa mais.</p>
+<div class="items">
+<div class="i"><div class="en">The thought that follows a pause is much more dynamic.</div><div class="pt">O pensamento que vem depois de uma pausa é muito mais dinâmico.</div></div>
+<div class="i"><div class="en">A pause before a word throws the listener forward onto it.</div><div class="pt">Uma pausa antes de uma palavra joga o ouvinte para cima dela.</div></div>
+<div class="i"><div class="en">Silence is a form of emphasis.</div><div class="pt">O silêncio é uma forma de ênfase.</div></div>
+<div class="i"><div class="en">Do not fill every second with sound.</div><div class="pt">Não preencha cada segundo com som.</div></div>
+<div class="i"><div class="en">The pause gives the audience time to think.</div><div class="pt">A pausa dá à plateia tempo para pensar.</div></div>
+<div class="i"><div class="en">Where you pause is where you tell the listener to pay attention.</div><div class="pt">Onde você pausa é onde você diz ao ouvinte para prestar atenção.</div></div>
+<div class="i"><div class="en">A speaker who never pauses never emphasizes.</div><div class="pt">Um orador que nunca pausa nunca enfatiza.</div></div>
+<div class="i"><div class="en">Read the following aloud and mark where you would pause.</div><div class="pt">Leia o seguinte em voz alta e marque onde você pausaria.</div></div>
+<div class="i"><div class="en">Then read it again without the pauses and note the difference.</div><div class="pt">Depois leia de novo sem as pausas e repare na diferença.</div></div>
+<div class="i"><div class="en">The pause is not hesitation; hesitation is fear, the pause is control.</div><div class="pt">A pausa não é hesitação; hesitação é medo, pausa é controle.</div></div>
+<div class="i"><div class="en">Let the idea land before you move on.</div><div class="pt">Deixe a ideia aterrissar antes de seguir adiante.</div></div>
+<div class="i"><div class="en">Note how force is emphasized repeatedly in this passage.</div><div class="pt">Repare como a força é enfatizada repetidamente nesta passagem.</div></div>
+<div class="i"><div class="en">Are there any others you would emphasize? Why?</div><div class="pt">Há outras que você enfatizaria? Por quê?</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Sinceridade</div>
+<h2><i>Earnestness</i> — sinceridade e força</h2>
+<p class="sdesc">A qualidade que o livro considera insubstituível: a plateia perdoa técnica ruim, não perdoa fingimento.</p>
+<div class="items">
+<div class="i"><div class="en">To yell is not a sign of earnestness.</div><div class="pt">Gritar não é sinal de sinceridade.</div></div>
+<div class="i"><div class="en">Nor of intelligence, nor of feeling.</div><div class="pt">Nem de inteligência, nem de sentimento.</div></div>
+<div class="i"><div class="en">His emphasis was both correct and powerful.</div><div class="pt">A ênfase dele era ao mesmo tempo correta e poderosa.</div></div>
+<div class="i"><div class="en">Be absorbed by your subject and the audience will be absorbed by you.</div><div class="pt">Deixe-se absorver pelo assunto e a plateia se deixará absorver por você.</div></div>
+<div class="i"><div class="en">The speaker who believes what he says needs fewer tricks.</div><div class="pt">O orador que acredita no que diz precisa de menos truques.</div></div>
+<div class="i"><div class="en">Success or failure is caused more by mental attitude than by mental capacity.</div><div class="pt">Sucesso ou fracasso vem mais da atitude mental do que da capacidade mental.</div></div>
+<div class="i"><div class="en">One may be so full of self as to be empty.</div><div class="pt">É possível estar tão cheio de si a ponto de estar vazio.</div></div>
+<div class="i"><div class="en">Nothing advertises itself so thoroughly as conceit.</div><div class="pt">Nada se anuncia tão completamente quanto a presunção.</div></div>
+<div class="i"><div class="en">Destiny is a matter of choice.</div><div class="pt">O destino é questão de escolha.</div></div>
+<div class="i"><div class="en">Write out very briefly any experience you may have had involving these teachings.</div><div class="pt">Escreva bem brevemente qualquer experiência que você tenha tido envolvendo estes ensinamentos.</div></div>
+<div class="i"><div class="en">Give a three-minute talk on stage-fright.</div><div class="pt">Faça uma fala de três minutos sobre medo de palco.</div></div>
+<div class="i"><div class="en">This principle has a very important bearing in determining your emphasis.</div><div class="pt">Este princípio tem um peso muito importante na hora de determinar a sua ênfase.</div></div>
+<div class="i"><div class="en">The truthful, inside story of almost any life is most entertaining.</div><div class="pt">A história verdadeira, de dentro, de quase qualquer vida é muito interessante.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Máximas</div>
+<h2>Máximas para levar</h2>
+<p class="sdesc">As sentenças curtas do livro — o tipo de frase que se guarda inteira.</p>
+<div class="items">
+<div class="i"><div class="en">Monotony is poverty.</div><div class="pt">Monotonia é pobreza.</div></div>
+<div class="i"><div class="en">Emphasis is contrast.</div><div class="pt">Ênfase é contraste.</div></div>
+<div class="i"><div class="en">Speak — do not study speaking.</div><div class="pt">Fale — não fique estudando o falar.</div></div>
+<div class="i"><div class="en">Destiny is not a matter of chance.</div><div class="pt">O destino não é questão de acaso.</div></div>
+<div class="i"><div class="en">Loudness is not emphasis.</div><div class="pt">Volume não é ênfase.</div></div>
+<div class="i"><div class="en">There are no steel-riveted rules.</div><div class="pt">Não há regras cravadas em aço.</div></div>
+<div class="i"><div class="en">Every big change of thought requires a big change of pitch.</div><div class="pt">Toda grande mudança de pensamento exige uma grande mudança de tom.</div></div>
+<div class="i"><div class="en">Be absorbed by your subject.</div><div class="pt">Deixe-se absorver pelo seu assunto.</div></div>
+<div class="i"><div class="en">Begin as though you were speaking to one large friend.</div><div class="pt">Comece como se falasse com um único amigo grande.</div></div>
+<div class="i"><div class="en">Only certain words demand emphasis.</div><div class="pt">Só certas palavras exigem ênfase.</div></div>
+<div class="i"><div class="en">The pause is control.</div><div class="pt">A pausa é controle.</div></div>
+<div class="i"><div class="en">Mental attitude beats mental capacity.</div><div class="pt">Atitude mental vence capacidade mental.</div></div>
+<div class="i"><div class="en">Multiply your powers of speech.</div><div class="pt">Multiplique seus recursos de fala.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Treino</div>
+<h2>Exercícios de leitura em voz alta</h2>
+<p class="sdesc">As instruções de treino do livro que trazem inglês real utilizável — não os enunciados vazios.</p>
+<div class="items">
+<div class="i"><div class="en">Speak the following lines with marked variations in pitch.</div><div class="pt">Diga as linhas seguintes com variações marcadas de tom.</div></div>
+<div class="i"><div class="en">Read again, changing emphasis slightly.</div><div class="pt">Leia de novo, mudando um pouco a ênfase.</div></div>
+<div class="i"><div class="en">Notice how the meaning changes by putting the emphasis on different words.</div><div class="pt">Repare como o sentido muda ao pôr a ênfase em palavras diferentes.</div></div>
+<div class="i"><div class="en">The most emphatic words are italicized in this selection.</div><div class="pt">As palavras mais enfáticas estão em itálico nesta seleção.</div></div>
+<div class="i"><div class="en">Use the changes of tempo indicated in the following.</div><div class="pt">Use as mudanças de ritmo indicadas a seguir.</div></div>
+<div class="i"><div class="en">Make a diagram of a conversation you have heard.</div><div class="pt">Faça um diagrama de uma conversa que você ouviu.</div></div>
+<div class="i"><div class="en">Showing where high and low pitches were used.</div><div class="pt">Mostrando onde os tons altos e baixos foram usados.</div></div>
+<div class="i"><div class="en">Learn to speak some thoughts in a very low tone.</div><div class="pt">Aprenda a dizer alguns pensamentos num tom bem baixo.</div></div>
+<div class="i"><div class="en">Read the following aloud and mark where you would pause.</div><div class="pt">Leia o seguinte em voz alta e marque onde você pausaria.</div></div>
+<div class="i"><div class="en">Describe some of the effects of monotony.</div><div class="pt">Descreva alguns dos efeitos da monotonia.</div></div>
+<div class="i"><div class="en">Give a three-minute talk, including a kindly imitation of two victims.</div><div class="pt">Faça uma fala de três minutos, com uma imitação gentil de duas vítimas.</div></div>
+<div class="i"><div class="en">Study this device until you have absorbed and assimilated it.</div><div class="pt">Estude este recurso até tê-lo absorvido e assimilado.</div></div>
+<div class="i"><div class="en">Apply the same common sense to your delivery.</div><div class="pt">Aplique o mesmo bom senso à sua entrega.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Vocabulário</div>
+<h2>O vocabulário técnico da tribuna</h2>
+<p class="sdesc">Os termos que o livro usa o tempo todo, cada um em frase de uso.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Stage-fright</i> is the fear that grips you before an audience.</div><div class="pt">Stage-fright é o medo que aperta antes da plateia.</div></div>
+<div class="i"><div class="en"><i>Delivery</i> is the way a speech is spoken, not what it says.</div><div class="pt">Delivery é o jeito como o discurso é dito, não o que ele diz.</div></div>
+<div class="i"><div class="en"><i>Pitch</i> is how high or low the voice is.</div><div class="pt">Pitch é quão aguda ou grave está a voz.</div></div>
+<div class="i"><div class="en"><i>Tempo</i> is the speed at which you speak.</div><div class="pt">Tempo é a velocidade com que você fala.</div></div>
+<div class="i"><div class="en"><i>Inflection</i> is the rise or fall of the voice on a word.</div><div class="pt">Inflection é a subida ou descida da voz numa palavra.</div></div>
+<div class="i"><div class="en"><i>Enunciation</i> is saying each sound clearly.</div><div class="pt">Enunciation é dizer cada som com clareza.</div></div>
+<div class="i"><div class="en"><i>Articulation</i> is how the mouth forms the sounds.</div><div class="pt">Articulation é como a boca forma os sons.</div></div>
+<div class="i"><div class="en"><i>Earnestness</i> is honest conviction, and it shows.</div><div class="pt">Earnestness é convicção honesta, e ela aparece.</div></div>
+<div class="i"><div class="en"><i>Monotony</i> is sameness that dulls the listener.</div><div class="pt">Monotony é a mesmice que embota o ouvinte.</div></div>
+<div class="i"><div class="en">A <i>pause</i> is a deliberate silence, not hesitation.</div><div class="pt">A pause é um silêncio deliberado, não hesitação.</div></div>
+<div class="i"><div class="en">To <i>emphasize</i> is to make one word different from the rest.</div><div class="pt">Emphasize é tornar uma palavra diferente das outras.</div></div>
+<div class="i"><div class="en">A <i>selection</i> is a passage chosen for reading aloud.</div><div class="pt">Selection é uma passagem escolhida para leitura em voz alta.</div></div>
+<div class="i"><div class="en">To <i>deliver</i> a speech is to give it before an audience.</div><div class="pt">Deliver a speech é proferi-lo diante de uma plateia.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 26 · Livro 03 — The Art of Public Speaking (Carnegie &amp; Esenwein)</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' — '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

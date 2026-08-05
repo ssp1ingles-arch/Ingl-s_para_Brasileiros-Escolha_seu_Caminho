@@ -1,8 +1,80 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-05 — ver bloco 0s (Sistema 08 · Transcrições e Canais reformatado; 45 episódios, 13 painéis quebrados recuperados). Pendência de fonte aberta: Luke's ep. 959.**
-> Anteriores: 0r (S20 l03, l04 e l07), 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+> **Atualização mais recente: 2026-08-05 (T2) — ver bloco 0t (Sistema 26 completo: 3 painéis, 36 blocos, 469 itens; entra no sistemas.json, que vai a 24 entradas). S24 e S25 aguardam reconversão do OCR.**
+> Anteriores: 0s (Sistema 08 reformatado), 0r (S20 l03, l04 e l07), 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+
+## 0t. Atualização 2026-08-05 (T2) — Sistema 26 (Vocabulário & Oratória) · **completo**
+
+Os três livros do S26 viraram painel, a partir dos `.md` (os PDFs seguem só como
+arquivamento, e continuam fora do git pelo `.gitignore`).
+
+| Painel | Livro | Blocos | Itens |
+|---|---|---|---|
+| `livro01.html` | Vocabulary Builder (Norman Lewis) | 12 | **157** |
+| `livro02.html` | Talk Like TED (Carmine Gallo) | 12 | **156** |
+| `livro03.html` | The Art of Public Speaking (Carnegie & Esenwein, 1915) | 12 | **156** |
+| | | **36** | **469** |
+
+Hub criado do zero (não existia) e S26 adicionado ao `sistemas.json` — a raiz
+passa de 23 para **24 entradas**.
+
+**Recorte de cada livro.** O `livro01` é organizado por família de raiz, como o
+próprio Lewis ensina: `ego/alter`, `verto`, `dexter/sinister`, `misein`,
+`monos-bi-polys`, `-logy`, `-iatreia/paidos`, `derma`, prefixos, sufixos, o método
+do autor e os pares que o brasileiro troca. O `livro02` segue os nove segredos do
+Gallo, mas sempre pelas falas reais dos palestrantes (Jobs, Gates, Robinson,
+Cuddy, Bryan Stevenson, Jill Bolte Taylor), mais dois blocos práticos de frases de
+abertura e vocabulário de oratória. O `livro03` vai por técnica — medo de palco,
+domínio da plateia, monotonia, ênfase por contraste, tom, ritmo, pausa,
+sinceridade — com as máximas e os trechos que o livro manda ler em voz alta.
+
+**Descartado (REGRAS_GERAIS §4).** No Lewis, os exercícios de pareamento, os
+quizzes YES/NO, as lacunas, as **302 linhas de `KEY:`** (gabarito isolado) e as
+listas de palavras sem frase de uso — que são a maior parte do volume bruto. No
+Gallo, o "como usar este livro", os resumos de capítulo sem inglês e o comentário
+metodológico. No Carnegie, os enunciados de exercício vazios.
+
+### A quebra de linha hifenizada — o detalhe que mudou o diagnóstico
+
+Numa primeira leitura o Vocabulary Builder parecia render só ~68 linhas
+aproveitáveis, e foi reportado como abaixo do mínimo. O erro era de método: o dump
+quebra palavra no fim da linha (`the pro-
+noun ego`), e sem remontar isso a prosa
+do livro se fragmenta e some no filtro. Com as quebras remontadas, o mesmo arquivo
+rende **2.322 frases de prosa aproveitáveis**. Vale para qualquer `.md` desta
+leva — **remontar antes de medir.**
+
+### Qualidade de OCR das nove fontes (medida)
+
+Percentual de linhas que passam no filtro de sanidade tipográfica:
+
+| Livro | % limpo | Coladas | Lixo |
+|---|---|---|---|
+| S26 l03 · Art of Public Speaking | 88,5% | 0,16% | 1,5% |
+| S26 l02 · Talk Like TED | 88,4% | 0,25% | 2,3% |
+| S24 l03 · Clear Speech | 82,5% | 0,16% | 0,7% |
+| S25 l01 · Speak English 30 Days | 78,4% | 0,04% | 9,0% |
+| S25 l03 · Everyday Dialogues | 71,9% | 0,13% | 2,5% |
+| S26 l01 · Vocabulary Builder | 68,1% | 0,55% | 6,1% |
+| S25 l02 · Pronunciation in Use | 66,1% | 0,77% | 0,4% |
+| S24 l02 · Tree or Three | 64,7% | 1,45% | 0,1% |
+| S24 l01 · Ship or Sheep | 56,5% | 1,51% | 8,3% |
+
+### ⚠️ S24 e S25 — aguardando reconversão do OCR
+
+Os três piores OCRs do acervo são os livros de pronúncia do S24, e o motivo é
+estrutural: são páginas densas com transcrição fonética, e **o IPA foi destruído
+na conversão** — `electric` virou `/rrlektrrk/`, `electricity` virou
+`/l,lekrtrrseti/`. A corrupção não para no IPA: palavras se fundem
+(`Didyou see the men?`, `That'sabadcut.`) e há lixo de scanner no meio da frase
+(`rvVhy don't you come down?`, `\Mhat a beautiful curl!`).
+
+O núcleo do Ship or Sheep são **173 frases de par mínimo** rotuladas `a -`/`b -`,
+recuperáveis mas exigindo conserto item a item. **Decisão pendente do usuário:**
+reconverter os PDFs de S24/S25 antes de implementar.
+
+---
 
 ## 0s. Atualização 2026-08-05 — Sistema 08 (Transcrições e Canais) · **reformatado, 45 episódios**
 
