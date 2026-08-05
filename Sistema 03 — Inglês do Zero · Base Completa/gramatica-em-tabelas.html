@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gramática em Tabelas — Sistema 03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#64DFDF;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:780px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:780px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.pt b{color:var(--text);font-weight:600;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 03</a>
+<div class="wrap">
+<div class="eyebrow">Sistema 03 · Base · gramática em tabelas</div>
+<h1 class="title">Gramática em <em>Tabelas</em></h1>
+<p class="lead">A fundação estruturada em grades de consulta rápida: a concordância de <b>be / have / do</b>, os <b>12 tempos verbais</b> lado a lado, o verbo <b>to be</b> conjugado nos nove tempos, os irregulares em hoje/ontem/amanhã, a tabela completa de <b>pronomes</b>, os determinantes, as classes gramaticais com o erro típico de cada uma, plural e coletivos, e 78 pares de opostos.</p>
+<div class="metrics">
+  <div class="metric"><b>10</b><span>seções</span></div>
+  <div class="metric"><b id="m-total">—</b><span>itens</span></div>
+  <div class="metric"><b>19</b><span>tabelas</span></div>
+  <div class="metric"><b>A1–A2</b><span>nível</span></div>
+</div>
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: were, myself, plural, opostos…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+<div class="layout">
+  <nav class="toc"><h3>Índice</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+<section id="concordancia">
+<div class="snum">Seção 01</div>
+<h2>A grade de concordância — be, have, do</h2>
+<p class="sdesc">A base de tudo. Antes de qualquer tempo verbal, é preciso acertar qual forma anda com qual pessoa.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Pronome</th><th>TO BE presente</th><th>TO BE passado</th><th>TO HAVE presente</th><th>TO HAVE passado</th><th>TO DO presente</th></tr></thead><tbody>
+<tr><td><b>I</b></td><td>am</td><td>was</td><td>have</td><td>had</td><td>do</td></tr>
+<tr><td><b>You</b></td><td>are</td><td>were</td><td>have</td><td>had</td><td>do</td></tr>
+<tr><td><b>He / She / It</b></td><td>is</td><td>was</td><td>has</td><td>had</td><td>does</td></tr>
+<tr><td><b>We / They</b></td><td>are</td><td>were</td><td>have</td><td>had</td><td>do</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Pronome</th><th>Passado</th><th>Presente</th><th>Futuro</th></tr></thead><tbody>
+<tr><td><b>I</b></td><td>was / had / did</td><td>am / have / do</td><td>will be / will have / will do</td></tr>
+<tr><td><b>You</b></td><td>were / had / did</td><td>are / have / do</td><td>will be / will have / will do</td></tr>
+<tr><td><b>He / She / It</b></td><td>was / had / did</td><td>is / has / does</td><td>will be / will have / will do</td></tr>
+<tr><td><b>We / They</b></td><td>were / had / did</td><td>are / have / do</td><td>will be / will have / will do</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Afirmativa</th><th>Negativa</th></tr></thead><tbody>
+<tr><td>I am good</td><td>I am not good</td></tr>
+<tr><td>You are good</td><td>You are not good</td></tr>
+<tr><td>He is good</td><td>He is not good</td></tr>
+<tr><td>She is good</td><td>She is not good</td></tr>
+<tr><td>It is good</td><td>It is not good</td></tr>
+<tr><td>We are good</td><td>We are not good</td></tr>
+<tr><td>They are good</td><td>They are not good</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="12-tempos">
+<div class="snum">Seção 02</div>
+<h2>Os 12 tempos verbais</h2>
+<p class="sdesc">Toda a máquina do tempo do inglês numa tabela só — o mesmo verbo nas doze formas, para ver o padrão em vez de decorar caso a caso.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Tempo</th><th>Exemplo com <i>cook</i></th><th>Exemplo com <i>teach</i></th></tr></thead><tbody>
+<tr><td><b>Simple Present</b></td><td>He cooks every day.</td><td>I teach</td></tr>
+<tr><td><b>Present Continuous</b></td><td>He is cooking now.</td><td>I am teaching</td></tr>
+<tr><td><b>Present Perfect</b></td><td>He has cooked dinner.</td><td>I have taught</td></tr>
+<tr><td><b>Present Perfect Continuous</b></td><td>He has been cooking for an hour.</td><td>I have been teaching</td></tr>
+<tr><td><b>Simple Past</b></td><td>He cooked yesterday.</td><td>I taught</td></tr>
+<tr><td><b>Past Continuous</b></td><td>He was cooking last night.</td><td>I was teaching</td></tr>
+<tr><td><b>Past Perfect</b></td><td>He had cooked before dinner.</td><td>I had taught</td></tr>
+<tr><td><b>Past Perfect Continuous</b></td><td>He had been cooking for two hours.</td><td>I had been teaching</td></tr>
+<tr><td><b>Simple Future</b></td><td>He will cook tomorrow.</td><td>I will teach</td></tr>
+<tr><td><b>Future Continuous</b></td><td>He will be cooking at noon.</td><td>I will be teaching</td></tr>
+<tr><td><b>Future Perfect</b></td><td>He will have cooked by then.</td><td>I will have taught</td></tr>
+<tr><td><b>Future Perfect Continuous</b></td><td>He will have been cooking for two hours.</td><td>I will have been teaching</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Futuro</th><th>Estrutura</th><th>Quando usar</th><th>Exemplo</th></tr></thead><tbody>
+<tr><td><b>will</b></td><td>will + verbo base</td><td>Decisão na hora, previsão, promessa</td><td>I will call you later.</td></tr>
+<tr><td><b>be going to</b></td><td>am/is/are + going to + verbo</td><td>Plano já decidido, intenção</td><td>We are going to travel.</td></tr>
+<tr><td><b>be going to</b></td><td>com evidência à vista</td><td>Algo que se vê que vai acontecer</td><td>Look at those clouds — it's going to rain.</td></tr>
+<tr><td><b>Present Continuous</b></td><td>am/is/are + verbo-ing</td><td>Compromisso marcado, com hora e lugar</td><td>I'm meeting her at six.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Marcador de tempo</th><th>Tempo que ele exige</th></tr></thead><tbody>
+<tr><td>Sometimes</td><td>I do.</td></tr>
+<tr><td>Yesterday</td><td>I did.</td></tr>
+<tr><td>4 days ago</td><td>I did.</td></tr>
+<tr><td>Last week</td><td>I did.</td></tr>
+<tr><td>Tomorrow</td><td>I will do.</td></tr>
+<tr><td>Next spring</td><td>I will do.</td></tr>
+<tr><td>Next century</td><td>I will do.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="to-be-9-tempos">
+<div class="snum">Seção 03</div>
+<h2>O verbo TO BE nos nove tempos</h2>
+<p class="sdesc">O verbo mais usado do inglês conjugado por completo. As sete pessoas, os nove tempos — a referência para nunca mais travar.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Tempo</th><th>I</th><th>You</th><th>He / She / It</th><th>We / They</th></tr></thead><tbody>
+<tr><td><b>Present Simple</b></td><td>I am a student.</td><td>You are my friend.</td><td>He is at work.</td><td>They are happy.</td></tr>
+<tr><td><b>Past Simple</b></td><td>I was a student.</td><td>You were my friend.</td><td>He was at work.</td><td>They were happy.</td></tr>
+<tr><td><b>Future Simple</b></td><td>I will be a student.</td><td>You will be my friend.</td><td>He will be at work.</td><td>They will be happy.</td></tr>
+<tr><td><b>Present Continuous</b></td><td>I am being patient.</td><td>You are being kind.</td><td>He is being funny.</td><td>They are being helpful.</td></tr>
+<tr><td><b>Past Continuous</b></td><td>I was being patient.</td><td>You were being kind.</td><td>He was being funny.</td><td>They were being helpful.</td></tr>
+<tr><td><b>Present Perfect</b></td><td>I have been a student.</td><td>You have been my friend.</td><td>He has been at work.</td><td>They have been happy.</td></tr>
+<tr><td><b>Past Perfect</b></td><td>I had been a student.</td><td>You had been my friend.</td><td>He had been at work.</td><td>They had been happy.</td></tr>
+<tr><td><b>Future Perfect</b></td><td>I will have been a student.</td><td>You will have been my friend.</td><td>He will have been at work.</td><td>They will have been happy.</td></tr>
+<tr><td><b>Present Perf. Cont.</b></td><td>I have been being patient.</td><td>You have been being kind.</td><td>He has been being funny.</td><td>They have been being helpful.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="irregulares">
+<div class="snum">Seção 04</div>
+<h2>Verbos irregulares — hoje, ontem, amanhã</h2>
+<p class="sdesc">Os irregulares mais frequentes, na ordem em que se usam: o que faço hoje, o que fiz ontem, o que farei amanhã.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Hoje</th><th>Ontem</th><th>Amanhã</th></tr></thead><tbody>
+<tr><td>I go</td><td>I went</td><td>I will go</td></tr>
+<tr><td>I see</td><td>I saw</td><td>I will see</td></tr>
+<tr><td>I eat</td><td>I ate</td><td>I will eat</td></tr>
+<tr><td>I drink</td><td>I drank</td><td>I will drink</td></tr>
+<tr><td>I write</td><td>I wrote</td><td>I will write</td></tr>
+<tr><td>I speak</td><td>I spoke</td><td>I will speak</td></tr>
+<tr><td>I give</td><td>I gave</td><td>I will give</td></tr>
+<tr><td>I come</td><td>I came</td><td>I will come</td></tr>
+<tr><td>I run</td><td>I ran</td><td>I will run</td></tr>
+<tr><td>I buy</td><td>I bought</td><td>I will buy</td></tr>
+<tr><td>I leave</td><td>I left</td><td>I will leave</td></tr>
+<tr><td>I feel</td><td>I felt</td><td>I will feel</td></tr>
+<tr><td>I tell</td><td>I told</td><td>I will tell</td></tr>
+<tr><td>I have</td><td>I had</td><td>I will have</td></tr>
+<tr><td>I do</td><td>I did</td><td>I will do</td></tr>
+<tr><td>I make</td><td>I made</td><td>I will make</td></tr>
+<tr><td>I take</td><td>I took</td><td>I will take</td></tr>
+<tr><td>I get</td><td>I got</td><td>I will get</td></tr>
+<tr><td>I find</td><td>I found</td><td>I will find</td></tr>
+<tr><td>I keep</td><td>I kept</td><td>I will keep</td></tr>
+<tr><td>I meet</td><td>I met</td><td>I will meet</td></tr>
+<tr><td>I pay</td><td>I paid</td><td>I will pay</td></tr>
+<tr><td>I lose</td><td>I lost</td><td>I will lose</td></tr>
+<tr><td>I win</td><td>I won</td><td>I will win</td></tr>
+<tr><td>I sleep</td><td>I slept</td><td>I will sleep</td></tr>
+<tr><td>I break</td><td>I broke</td><td>I will break</td></tr>
+<tr><td>I choose</td><td>I chose</td><td>I will choose</td></tr>
+<tr><td>I drive</td><td>I drove</td><td>I will drive</td></tr>
+<tr><td>I fall</td><td>I fell</td><td>I will fall</td></tr>
+<tr><td>I forget</td><td>I forgot</td><td>I will forget</td></tr>
+<tr><td>I sit</td><td>I sat</td><td>I will sit</td></tr>
+<tr><td>I fight</td><td>I fought</td><td>I will fought</td></tr>
+<tr><td>I read</td><td>I read</td><td>I will read</td></tr>
+<tr><td>I walk</td><td>I walked</td><td>I will walk</td></tr>
+<tr><td>I work</td><td>I worked</td><td>I will work</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Presente contínuo x simples</th><th></th></tr></thead><tbody>
+<tr><td>I eat</td><td>I am eating</td></tr>
+<tr><td>I drink</td><td>I am drinking</td></tr>
+<tr><td>I read</td><td>I am reading</td></tr>
+<tr><td>I write</td><td>I am writing</td></tr>
+<tr><td>I run</td><td>I am running</td></tr>
+<tr><td>I study</td><td>I am studying</td></tr>
+<tr><td>I sleep</td><td>I am sleeping</td></tr>
+<tr><td>I work</td><td>I am working</td></tr>
+<tr><td>I cook</td><td>I am cooking</td></tr>
+<tr><td>I drive</td><td>I am driving</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="pronomes">
+<div class="snum">Seção 05</div>
+<h2>Pronomes — a tabela completa</h2>
+<p class="sdesc">Um pronome é uma palavra que ocupa o lugar de um substantivo. Cinco colunas resolvem quase todos os casos.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Sujeito</th><th>Objeto</th><th>Possessivo adjetivo</th><th>Possessivo pronome</th><th>Reflexivo</th></tr></thead><tbody>
+<tr><td><b>I</b></td><td>me</td><td>my</td><td>mine</td><td>myself</td></tr>
+<tr><td><b>You</b></td><td>you</td><td>your</td><td>yours</td><td>yourself / yourselves</td></tr>
+<tr><td><b>He</b></td><td>him</td><td>his</td><td>his</td><td>himself</td></tr>
+<tr><td><b>She</b></td><td>her</td><td>her</td><td>hers</td><td>herself</td></tr>
+<tr><td><b>It</b></td><td>it</td><td>its</td><td>its</td><td>itself</td></tr>
+<tr><td><b>We</b></td><td>us</td><td>our</td><td>ours</td><td>ourselves</td></tr>
+<tr><td><b>They</b></td><td>them</td><td>their</td><td>theirs</td><td>themselves</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Tipo de pronome</th><th>Exemplos</th></tr></thead><tbody>
+<tr><td><b>Pessoal</b></td><td>I, you, he, she, it, we, they</td></tr>
+<tr><td><b>Possessivo</b></td><td>mine, yours, his, hers, ours, theirs</td></tr>
+<tr><td><b>Reflexivo</b></td><td>myself, yourself, himself, herself, themselves</td></tr>
+<tr><td><b>Demonstrativo</b></td><td>this, that, these, those</td></tr>
+<tr><td><b>Interrogativo</b></td><td>who, whom, which, what, whose</td></tr>
+<tr><td><b>Relativo</b></td><td>who, which, that</td></tr>
+<tr><td><b>Indefinido</b></td><td>someone, anyone, everyone, nobody</td></tr>
+<tr><td><b>Distributivo</b></td><td>each, either, neither</td></tr>
+<tr><td><b>Recíproco</b></td><td>each other, one another</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<div class="en">I have a teddy bear.</div>
+<div class="pt">Eu tenho um ursinho de pelúcia.</div>
+</div>
+<div class="i">
+<div class="en">Mom gave me a cookie.</div>
+<div class="pt">A mamãe me deu um biscoito.</div>
+</div>
+<div class="i">
+<div class="en">We play hide and seek.</div>
+<div class="pt">Nós brincamos de esconde-esconde.</div>
+</div>
+<div class="i">
+<div class="en">Can you sing a song?</div>
+<div class="pt">Você sabe cantar uma música?</div>
+</div>
+<div class="i">
+<div class="en">He likes chocolate ice cream.</div>
+<div class="pt">Ele gosta de sorvete de chocolate.</div>
+</div>
+<div class="i">
+<div class="en">She has a pretty dress.</div>
+<div class="pt">Ela tem um vestido bonito.</div>
+</div>
+<div class="i">
+<div class="en">It is a fluffy bunny.</div>
+<div class="pt">É um coelhinho fofinho.</div>
+</div>
+<div class="i">
+<div class="en">They are my new classmates.</div>
+<div class="pt">Eles são meus novos colegas de turma.</div>
+</div>
+<div class="i">
+<div class="en">The cat purrs when it is happy.</div>
+<div class="pt">O gato ronrona quando está feliz.</div>
+</div>
+</div>
+</section>
+
+<section id="determinantes">
+<div class="snum">Seção 06</div>
+<h2>Determinantes — as palavrinhas antes do substantivo</h2>
+<p class="sdesc">Sete tipos de palavra que se colocam antes do substantivo para dizer <b>qual</b>, <b>de quem</b> ou <b>quanto</b>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Tipo</th><th>Quais são</th><th>Frase-modelo</th></tr></thead><tbody>
+<tr><td><b>Artigos</b></td><td>a, an, the</td><td><b>The</b> boy is running.</td></tr>
+<tr><td><b>Demonstrativos</b></td><td>this, that, these, those</td><td><b>This</b> pen is mine.</td></tr>
+<tr><td><b>Possessivos</b></td><td>my, your, his, her, our, their</td><td><b>Her</b> bag is new.</td></tr>
+<tr><td><b>Quantificadores</b></td><td>some, many, much, few</td><td>I have <b>many</b> books.</td></tr>
+<tr><td><b>Distributivos</b></td><td>each, every, either, neither</td><td><b>Each</b> student got a notebook.</td></tr>
+<tr><td><b>Numerais</b></td><td>one, two, first, second</td><td>She came <b>first</b> in the race.</td></tr>
+<tr><td><b>Interrogativos</b></td><td>which, what, whose</td><td><b>Which</b> dress do you like?</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="classes">
+<div class="snum">Seção 07</div>
+<h2>As classes gramaticais em ficha</h2>
+<p class="sdesc">Verbo, advérbio, preposição e conjunção — o que cada um faz, os tipos que existem e os erros que o brasileiro mais comete.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Classe</th><th>O que faz</th><th>Tipos</th><th>Erro comum</th></tr></thead><tbody>
+<tr><td><b>Verbo</b></td><td>mostra ação ou estado</td><td>principal, auxiliar, transitivo, intransitivo, finito, não-finito</td><td><span class="x">She eat rice</span> &rarr; <span class="ok">She eats rice</span></td></tr>
+<tr><td><b>Advérbio</b></td><td>modifica verbo, adjetivo ou outro advérbio</td><td>modo, tempo, lugar, frequência, grau</td><td><span class="x">She runs quick</span> &rarr; <span class="ok">She runs quickly</span></td></tr>
+<tr><td><b>Preposição</b></td><td>mostra relação entre palavras</td><td>de tempo, de lugar, de direção, de modo</td><td><span class="x">Enter into the room</span> &rarr; <span class="ok">Enter the room</span></td></tr>
+<tr><td><b>Conjunção</b></td><td>une partes da frase</td><td>coordenativa, subordinativa, correlativa</td><td><span class="x">Although he is rich but&hellip;</span> &rarr; <span class="ok">Although he is rich,&hellip;</span></td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Formas do verbo</th><th>Exemplo</th></tr></thead><tbody>
+<tr><td><b>V1</b> — presente</td><td>write</td></tr>
+<tr><td><b>V2</b> — passado</td><td>wrote</td></tr>
+<tr><td><b>V3</b> — particípio passado</td><td>written</td></tr>
+</tbody></table></div>
+<div class="items">
+<div class="i">
+<span class="tag">verbo transitivo</span>
+<div class="en">Ram eats an apple.</div>
+<div class="pt">Precisa de objeto — <i>an apple</i>.</div>
+</div>
+<div class="i">
+<span class="tag">verbo intransitivo</span>
+<div class="en">The baby sleeps.</div>
+<div class="pt">Não precisa de objeto.</div>
+</div>
+<div class="i">
+<span class="tag">verbo finito</span>
+<div class="en">She writes a letter.</div>
+<div class="pt">Concorda com o sujeito e marca tempo.</div>
+</div>
+<div class="i">
+<span class="tag">verbo não-finito</span>
+<div class="en">To write &middot; Writing &middot; Written</div>
+<div class="pt">Não marca tempo nem concorda com o sujeito.</div>
+</div>
+<div class="i">
+<span class="tag">advérbio de modo</span>
+<div class="en">She speaks politely.</div>
+<div class="pt">Ela fala educadamente.</div>
+</div>
+<div class="i">
+<span class="tag">advérbio — comparação</span>
+<div class="en">Fast &rarr; Faster &rarr; Fastest &middot; Well &rarr; Better &rarr; Best</div>
+<div class="pt">Advérbios também têm grau.</div>
+</div>
+</div>
+</section>
+
+<section id="plural">
+<div class="snum">Seção 08</div>
+<h2>Plural e substantivos coletivos</h2>
+<p class="sdesc">A regra geral é acrescentar <b>-s</b>. O que vale a pena decorar são as exceções — e os coletivos, que em inglês têm nome próprio.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Terminação</th><th>Regra</th><th>Exemplos</th></tr></thead><tbody>
+<tr><td>regular</td><td>+ <b>s</b></td><td>snob / snobs &middot; dollar / dollars</td></tr>
+<tr><td>-s, -sh, -ch, -x</td><td>+ <b>es</b></td><td>kindness / kindnesses &middot; splash / splashes &middot; catch / catches &middot; hex / hexes</td></tr>
+<tr><td>-ay, -ey, -oy</td><td>+ <b>s</b></td><td>monkey / monkeys &middot; boy / boys &middot; turkey / turkeys</td></tr>
+<tr><td>-y após consoante</td><td><b>y &rarr; i</b> + es</td><td>butterfly / butterflies &middot; mystery / mysteries</td></tr>
+<tr><td>hifenizado</td><td>pluraliza a palavra principal</td><td>mother-in-law / mothers-in-law</td></tr>
+<tr><td>nome próprio</td><td>+ <b>s</b> ou <b>es</b>, sem trocar letra</td><td>the Smiths &middot; the Woodses</td></tr>
+<tr><td>irregular</td><td>vale tudo</td><td>fish / fish &middot; deer / deer &middot; leaf / leaves &middot; child / children &middot; woman / women &middot; tooth / teeth</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Grupo de&hellip;</th><th>Chama-se</th></tr></thead><tbody>
+<tr><td>diretores</td><td><b>Board</b></td></tr>
+<tr><td>flores</td><td><b>Garland</b></td></tr>
+<tr><td>jogadores</td><td><b>Team</b></td></tr>
+<tr><td>artistas</td><td><b>Troupe</b></td></tr>
+<tr><td>marinheiros</td><td><b>Crew</b></td></tr>
+<tr><td>trabalhadores</td><td><b>Union</b></td></tr>
+<tr><td>informações</td><td><b>Data</b></td></tr>
+<tr><td>músicos</td><td><b>Band</b></td></tr>
+<tr><td>ladrões</td><td><b>Gang</b></td></tr>
+<tr><td>quadros</td><td><b>Gallery</b></td></tr>
+<tr><td>soldados</td><td><b>Regiment</b></td></tr>
+<tr><td>leis</td><td><b>Code</b></td></tr>
+<tr><td>ouvintes</td><td><b>Assembly</b></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="opostos">
+<div class="snum">Seção 09</div>
+<h2>Palavras e seus opostos</h2>
+<p class="sdesc">Aprender aos pares dobra o vocabulário pelo mesmo esforço — e os opostos são a forma mais rápida de fixar um adjetivo.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Palavra</th><th>Oposto</th><th>Palavra</th><th>Oposto</th></tr></thead><tbody>
+<tr><td>big</td><td>small</td><td>fast</td><td>slow</td></tr>
+<tr><td>love</td><td>hate</td><td>tall</td><td>short</td></tr>
+<tr><td>heavy</td><td>light</td><td>young</td><td>old</td></tr>
+<tr><td>strong</td><td>weak</td><td>happy</td><td>sad</td></tr>
+<tr><td>early</td><td>late</td><td>easy</td><td>hard</td></tr>
+<tr><td>rich</td><td>poor</td><td>loud</td><td>quiet</td></tr>
+<tr><td>open</td><td>closed</td><td>full</td><td>empty</td></tr>
+<tr><td>wet</td><td>dry</td><td>bright</td><td>dark</td></tr>
+<tr><td>thick</td><td>thin</td><td>give</td><td>take</td></tr>
+<tr><td>new</td><td>old</td><td>day</td><td>night</td></tr>
+<tr><td>right</td><td>wrong</td><td>near</td><td>far</td></tr>
+<tr><td>begin</td><td>end</td><td>push</td><td>pull</td></tr>
+<tr><td>in</td><td>out</td><td>up</td><td>down</td></tr>
+<tr><td>left</td><td>right</td><td>over</td><td>under</td></tr>
+<tr><td>win</td><td>lose</td><td>hot</td><td>cold</td></tr>
+<tr><td>male</td><td>female</td><td>friend</td><td>enemy</td></tr>
+<tr><td>sweet</td><td>bitter</td><td>true</td><td>false</td></tr>
+<tr><td>soft</td><td>hard</td><td>buy</td><td>sell</td></tr>
+<tr><td>inside</td><td>outside</td><td>summer</td><td>winter</td></tr>
+<tr><td>safe</td><td>dangerous</td><td>alive</td><td>dead</td></tr>
+<tr><td>good</td><td>bad</td><td>modern</td><td>ancient</td></tr>
+<tr><td>fresh</td><td>stale</td><td>wild</td><td>tame</td></tr>
+<tr><td>deep</td><td>shallow</td><td>fasten</td><td>loosen</td></tr>
+<tr><td>beautiful</td><td>ugly</td><td>polite</td><td>rude</td></tr>
+<tr><td>success</td><td>failure</td><td>top</td><td>bottom</td></tr>
+<tr><td>same</td><td>different</td><td>healthy</td><td>sick</td></tr>
+<tr><td>generous</td><td>stingy</td><td>clean</td><td>dirty</td></tr>
+<tr><td>enter</td><td>exit</td><td>accept</td><td>reject</td></tr>
+<tr><td>gain</td><td>lose</td><td>work</td><td>rest</td></tr>
+<tr><td>wide</td><td>narrow</td><td>start</td><td>finish</td></tr>
+<tr><td>laugh</td><td>cry</td><td>brave</td><td>coward</td></tr>
+<tr><td>active</td><td>lazy</td><td>increase</td><td>decrease</td></tr>
+<tr><td>sharp</td><td>blunt</td><td>present</td><td>absent</td></tr>
+<tr><td>secure</td><td>insecure</td><td>expand</td><td>shrink</td></tr>
+<tr><td>arrive</td><td>depart</td><td>tight</td><td>loose</td></tr>
+<tr><td>create</td><td>destroy</td><td>float</td><td>sink</td></tr>
+<tr><td>move</td><td>stay</td><td>busy</td><td>idle</td></tr>
+<tr><td>natural</td><td>artificial</td><td>useful</td><td>useless</td></tr>
+<tr><td>private</td><td>public</td><td>victory</td><td>defeat</td></tr>
+</tbody></table></div>
+</section>
+  
+<section id="wh-questions">
+<div class="snum">Seção 10</div>
+<h2>Palavras interrogativas (WH)</h2>
+<p class="sdesc">As quinze perguntas que abrem quase toda conversa — a palavra, o que ela quer dizer, em que situação entra e a frase pronta.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Palavra</th><th>Tradução</th><th>Quando usar</th><th>Exemplo</th></tr></thead><tbody>
+<tr><td><b>What</b></td><td>O quê / Qual</td><td>Coisas, informações, ações</td><td>What is your name?</td></tr>
+<tr><td><b>Where</b></td><td>Onde</td><td>Lugar / localização</td><td>Where do you live?</td></tr>
+<tr><td><b>When</b></td><td>Quando</td><td>Tempo / momento</td><td>When is your birthday?</td></tr>
+<tr><td><b>Why</b></td><td>Por quê</td><td>Razão / motivo</td><td>Why are you sad?</td></tr>
+<tr><td><b>Who</b></td><td>Quem</td><td>Pessoas (sujeito)</td><td>Who called you?</td></tr>
+<tr><td><b>Whom</b></td><td>Quem (formal)</td><td>Pessoa como objeto</td><td>Whom did you see?</td></tr>
+<tr><td><b>Whose</b></td><td>De quem</td><td>Posse / pertencimento</td><td>Whose car is this?</td></tr>
+<tr><td><b>Which</b></td><td>Qual / Quais</td><td>Escolha entre opções</td><td>Which color do you prefer?</td></tr>
+<tr><td><b>How</b></td><td>Como</td><td>Modo / maneira</td><td>How do you cook this?</td></tr>
+<tr><td><b>How much</b></td><td>Quanto</td><td>Preço / qtd. incontável</td><td>How much is it?</td></tr>
+<tr><td><b>How many</b></td><td>Quantos/as</td><td>Quantidade contável</td><td>How many books?</td></tr>
+<tr><td><b>How long</b></td><td>Quanto tempo</td><td>Duração</td><td>How long is the movie?</td></tr>
+<tr><td><b>How old</b></td><td>Quantos anos</td><td>Idade</td><td>How old are you?</td></tr>
+<tr><td><b>How far</b></td><td>Quão longe</td><td>Distância</td><td>How far is the station?</td></tr>
+<tr><td><b>How often</b></td><td>Com que frequência</td><td>Frequência</td><td>How often do you travel?</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Detalhe que muda tudo</th><th>Exemplo</th></tr></thead><tbody>
+<tr><td><b>What</b> é aberto; <b>which</b> é entre opções dadas</td><td>What is your name? · Which one do you prefer?</td></tr>
+<tr><td><b>Who</b> é sujeito; <b>whom</b> é objeto (formal)</td><td>Who called? · To whom should I speak?</td></tr>
+<tr><td><b>Why</b> pede <b>because</b> na resposta</td><td>Why are you late? — Because the bus broke down.</td></tr>
+<tr><td><b>What</b> + substantivo forma pergunta específica</td><td>What time is it? · What kind of music? · What color is it?</td></tr>
+<tr><td>Pergunta indireta: a ordem volta a ser de frase</td><td>Can you tell me where he is? (não <i>where is he</i>)</td></tr>
+</tbody></table></div>
+</section>
+</main>
+</div>
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+<footer>Sistema 03 · Inglês do Zero · Base Completa — Gramática em Tabelas · inglês real, tirado da fonte</footer>
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>units.push({el, sec:s, txt:el.textContent}));
+  });
+  document.getElementById('m-total').textContent=units.length;
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({el:w, rows:[...w.querySelectorAll('tbody tr')]}));
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' seções.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0; const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';});
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    const esc=raw.replace(/[<>&]/g,'');
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'seção':'seções')+' para &ldquo;'+esc+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+esc+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id)); } });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

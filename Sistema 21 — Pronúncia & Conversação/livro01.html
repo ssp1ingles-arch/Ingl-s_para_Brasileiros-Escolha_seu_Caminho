@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speak English: 30 Days to Better English — Sistema 21 · Livro 01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar</a>
+<div class="wrap">
+
+<div class="eyebrow">SISTEMA 21 · LIVRO 01</div>
+<h1 class="title">Speak English <em>em 30 dias</em></h1>
+<p class="lead">Um curso de conversação organizado em trinta dias, cada um com uma situação inteira: apresentar-se, pedir ajuda na rua, comprar, comer fora, telefonar, contar o passado, dar opinião. Aqui está a <i>frase pronta</i> de cada dia — a que você usa sem montar na hora.</p>
+
+<div class="metrics">
+  <div class="metric"><b>12</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>A2–B1</b><span>nível</span></div>
+  <div class="metric"><b>GB</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar frase, situação ou tradução…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Apresentar-se</div>
+<h2>Dias 1–2 — <i>Say hello</i> e dar seus dados</h2>
+<p class="sdesc">O primeiro contato: cumprimentar, apresentar alguém, corrigir o próprio nome e dizer de onde se é.</p>
+<div class="items">
+<div class="i"><div class="en">Pleased to meet you!</div><div class="pt">Prazer em conhecer você!</div></div>
+<div class="i"><div class="en">This is my colleague, Rob. — Nice to meet you, Rob.</div><div class="pt">Este é meu colega, Rob. — Prazer, Rob.</div><div class="def">This is… é como se apresenta terceiros em inglês.</div></div>
+<div class="i"><div class="en">Actually, Richard.</div><div class="pt">Na verdade, Richard.</div><div class="def">Actually corrige com educação — não significa "atualmente".</div></div>
+<div class="i"><div class="en">Is he your brother?</div><div class="pt">Ele é seu irmão?</div></div>
+<div class="i"><div class="en">Are they German?</div><div class="pt">Eles são alemães?</div></div>
+<div class="i"><div class="en">They aren't my friends.</div><div class="pt">Eles não são meus amigos.</div></div>
+<div class="i"><div class="en">We aren't Spanish.</div><div class="pt">Nós não somos espanhóis.</div></div>
+<div class="i"><div class="en">Dan is from Germany. He's German.</div><div class="pt">O Dan é da Alemanha. Ele é alemão.</div></div>
+<div class="i"><div class="en">Suzie is from Spain. She's Spanish.</div><div class="pt">A Suzie é da Espanha. Ela é espanhola.</div></div>
+<div class="i"><div class="en">Luis is from Brazil. He's Brazilian.</div><div class="pt">O Luis é do Brasil. Ele é brasileiro.</div></div>
+<div class="i"><div class="en">My friend is from Japan. She's Japanese.</div><div class="pt">Minha amiga é do Japão. Ela é japonesa.</div></div>
+<div class="i"><div class="en">Rob is from Italy. He's Italian.</div><div class="pt">O Rob é da Itália. Ele é italiano.</div></div>
+<div class="i"><div class="en">You can say "L for London" when you spell a word out loud.</div><div class="pt">Você pode dizer "L de London" ao soletrar em voz alta.</div><div class="def">Soletrar ao telefone: letra + palavra conhecida.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Família</div>
+<h2>Dias 3–4 — família e descrever pessoas</h2>
+<p class="sdesc">Falar de quem é seu, e descrever alguém pela aparência, idade e jeito.</p>
+<div class="items">
+<div class="i"><div class="en">She has two children. They are 2 and 4 years old.</div><div class="pt">Ela tem dois filhos. Eles têm 2 e 4 anos.</div></div>
+<div class="i"><div class="en">John lives in Paris. He is a teacher.</div><div class="pt">O John mora em Paris. Ele é professor.</div></div>
+<div class="i"><div class="en">My teacher is very kind. He helps me.</div><div class="pt">Meu professor é muito gentil. Ele me ajuda.</div></div>
+<div class="i"><div class="en">My cousins live in London. Their flat is beautiful.</div><div class="pt">Meus primos moram em Londres. O apartamento deles é lindo.</div></div>
+<div class="i"><div class="en">How tall are you?</div><div class="pt">Qual é a sua altura?</div></div>
+<div class="i"><div class="en">My father isn't tall. He's quite short.</div><div class="pt">Meu pai não é alto. Ele é bem baixo.</div></div>
+<div class="i"><div class="en">I'm not slim or overweight. I'm average build.</div><div class="pt">Não sou magro nem acima do peso. Sou de porte médio.</div></div>
+<div class="i"><div class="en">She's got long, wavy hair and blue eyes.</div><div class="pt">Ela tem cabelo comprido e ondulado e olhos azuis.</div></div>
+<div class="i"><div class="en">Her hair isn't wavy or curly. It's straight.</div><div class="pt">O cabelo dela não é ondulado nem cacheado. É liso.</div></div>
+<div class="i"><div class="en">He's tanned from the sun.</div><div class="pt">Ele está bronzeado de sol.</div></div>
+<div class="i"><div class="en">How old is she? — In her 30s, I think.</div><div class="pt">Quantos anos ela tem? — Uns trinta e poucos, eu acho.</div><div class="def">in her 30s = na casa dos trinta.</div></div>
+<div class="i"><div class="en">Both her sons are teenagers. One is 14 and the other is 17.</div><div class="pt">Os dois filhos dela são adolescentes. Um tem 14 e o outro 17.</div></div>
+<div class="i"><div class="en">What does your mother look like? — She's tall and slim.</div><div class="pt">Como sua mãe é fisicamente? — Ela é alta e magra.</div><div class="def">look like pergunta aparência; be like pergunta personalidade.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Rotina</div>
+<h2>Dias 5–6 — sua vida e seus hobbies</h2>
+<p class="sdesc">O dia a dia e o que você gosta de fazer — com as perguntas que puxam esse assunto.</p>
+<div class="items">
+<div class="i"><div class="en">Where do you work?</div><div class="pt">Onde você trabalha?</div></div>
+<div class="i"><div class="en">When do you get up in the morning?</div><div class="pt">Que horas você levanta de manhã?</div></div>
+<div class="i"><div class="en">How often do you have English lessons? — Three times a week.</div><div class="pt">Com que frequência você tem aula de inglês? — Três vezes por semana.</div></div>
+<div class="i"><div class="en">Which do you prefer — coffee or tea?</div><div class="pt">O que você prefere — café ou chá?</div></div>
+<div class="i"><div class="en">What is her name?</div><div class="pt">Qual é o nome dela?</div></div>
+<div class="i"><div class="en">Do you think English is difficult?</div><div class="pt">Você acha o inglês difícil?</div></div>
+<div class="i"><div class="en">She often tells us funny stories.</div><div class="pt">Ela vive contando histórias engraçadas para a gente.</div></div>
+<div class="i"><div class="en">He's a popular teacher — lots of people like him.</div><div class="pt">Ele é um professor querido — muita gente gosta dele.</div></div>
+<div class="i"><div class="en">She's very generous with her money.</div><div class="pt">Ela é muito generosa com o dinheiro dela.</div></div>
+<div class="i"><div class="en">She's a friendly person and everyone likes her.</div><div class="pt">Ela é uma pessoa simpática e todo mundo gosta dela.</div></div>
+<div class="i"><div class="en">Are you scared of spiders?</div><div class="pt">Você tem medo de aranha?</div></div>
+<div class="i"><div class="en">He can be quite nasty to his friends.</div><div class="pt">Ele consegue ser bem cruel com os amigos.</div></div>
+<div class="i"><div class="en">At weekends I like wearing casual clothes: jeans and trainers.</div><div class="pt">Nos fins de semana gosto de usar roupa casual: jeans e tênis.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Onde você mora</div>
+<h2>Dia 7 — a casa e o que tem nela</h2>
+<p class="sdesc"><i>There is</i> / <i>there are</i> e as preposições de lugar, na situação em que se usam de verdade.</p>
+<div class="items">
+<div class="i"><div class="en">There's a man outside the door.</div><div class="pt">Tem um homem do lado de fora da porta.</div></div>
+<div class="i"><div class="en">There are some students in the classroom.</div><div class="pt">Tem alguns alunos na sala de aula.</div></div>
+<div class="i"><div class="en">Is there any coffee left?</div><div class="pt">Sobrou café?</div><div class="def">any em pergunta e negativa; some em afirmativa.</div></div>
+<div class="i"><div class="en">There are some biscuits in the cupboard.</div><div class="pt">Tem uns biscoitos no armário.</div></div>
+<div class="i"><div class="en">There isn't any money in my wallet.</div><div class="pt">Não tem dinheiro nenhum na minha carteira.</div></div>
+<div class="i"><div class="en">There aren't any clean plates left!</div><div class="pt">Não sobrou prato limpo nenhum!</div></div>
+<div class="i"><div class="en">Are there any clean plates in the dishwasher?</div><div class="pt">Tem prato limpo na lava-louças?</div></div>
+<div class="i"><div class="en">There is some milk in the fridge.</div><div class="pt">Tem leite na geladeira.</div></div>
+<div class="i"><div class="en">There's a bank on the corner of my street.</div><div class="pt">Tem um banco na esquina da minha rua.</div></div>
+<div class="i"><div class="en">The sofa is next to the coffee table.</div><div class="pt">O sofá fica ao lado da mesinha de centro.</div></div>
+<div class="i"><div class="en">The oven is between the sink and the fridge.</div><div class="pt">O forno fica entre a pia e a geladeira.</div></div>
+<div class="i"><div class="en">The table is in the middle of the kitchen.</div><div class="pt">A mesa fica no meio da cozinha.</div></div>
+<div class="i"><div class="en">In the corner of the bedroom there's a lamp.</div><div class="pt">No canto do quarto tem um abajur.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Pedir ajuda</div>
+<h2>Dia 8 — <i>Excuse me!</i> na rua</h2>
+<p class="sdesc">As seis formas de abordar um estranho e pedir informação, todas do próprio livro.</p>
+<div class="items">
+<div class="i"><div class="en">Excuse me! Is there a train station near here?</div><div class="pt">Com licença! Tem uma estação de trem por aqui?</div></div>
+<div class="i"><div class="en">Excuse me! I'm looking for the train station.</div><div class="pt">Com licença! Estou procurando a estação de trem.</div></div>
+<div class="i"><div class="en">Excuse me! Do you know where the train station is?</div><div class="pt">Com licença! Você sabe onde fica a estação de trem?</div></div>
+<div class="i"><div class="en">Excuse me! Do you know where I can find a train station?</div><div class="pt">Com licença! Você sabe onde eu encontro uma estação de trem?</div></div>
+<div class="i"><div class="en">Excuse me! Do you know if there is a train station near here?</div><div class="pt">Com licença! Você sabe se tem uma estação de trem por perto?</div></div>
+<div class="i"><div class="en">Excuse me! Do you know the Lotus Restaurant?</div><div class="pt">Com licença! Você conhece o restaurante Lotus?</div></div>
+<div class="i"><div class="en">Do you know where the police station is?</div><div class="pt">Você sabe onde fica a delegacia?</div></div>
+<div class="i"><div class="en">Excuse me! Is there a supermarket near here?</div><div class="pt">Com licença! Tem um supermercado por aqui?</div></div>
+<div class="i"><div class="en">Do you know if there is a bank on this street?</div><div class="pt">Você sabe se tem um banco nesta rua?</div></div>
+<div class="i"><div class="en">Excuse me! Is this seat free?</div><div class="pt">Com licença! Este lugar está livre?</div></div>
+<div class="i"><div class="en">Excuse me! Do you have the time?</div><div class="pt">Com licença! Você tem horas?</div></div>
+<div class="i"><div class="en">What time is it, please?</div><div class="pt">Que horas são, por favor?</div></div>
+<div class="i"><div class="en">Say "please" at the end when you ask other people to do something.</div><div class="pt">Diga "please" no fim quando pedir algo a alguém.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Pedir algo</div>
+<h2>Dia 9 — <i>Can</i>, <i>could</i> e <i>I'd like</i></h2>
+<p class="sdesc">Como pedir sem soar rude: os modais e a fórmula de loja.</p>
+<div class="items">
+<div class="i"><div class="en">Can you pass me the newspaper, please?</div><div class="pt">Você pode me passar o jornal, por favor?</div></div>
+<div class="i"><div class="en">Could you help me with my bag, please?</div><div class="pt">Você poderia me ajudar com a minha mala, por favor?</div><div class="def">could é mais educado que can.</div></div>
+<div class="i"><div class="en">I'd like to buy these jeans, please.</div><div class="pt">Eu gostaria de comprar esta calça jeans, por favor.</div></div>
+<div class="i"><div class="en">I'd like to post these letters, please.</div><div class="pt">Eu gostaria de postar estas cartas, por favor.</div></div>
+<div class="i"><div class="en">Good morning! I'd like to buy this paper, please.</div><div class="pt">Bom dia! Eu gostaria de comprar este jornal, por favor.</div></div>
+<div class="i"><div class="en">Would you like some more coffee? — Yes, I would, thank you!</div><div class="pt">Você gostaria de mais café? — Sim, gostaria, obrigado!</div></div>
+<div class="i"><div class="en">What would you like to drink?</div><div class="pt">O que você gostaria de beber?</div></div>
+<div class="i"><div class="en">Where would you like to visit while you're here?</div><div class="pt">Onde você gostaria de visitar enquanto está aqui?</div></div>
+<div class="i"><div class="en">Use a phrase like "Sure", "Of course" or "Straightaway!" to agree.</div><div class="pt">Use "Sure", "Of course" ou "Straightaway!" para aceitar.</div></div>
+<div class="i"><div class="en">Modal auxiliary verbs do not change for he, she or it.</div><div class="pt">Verbos modais não mudam para he, she ou it.</div><div class="def">he can, não he cans.</div></div>
+<div class="i"><div class="en">You don't need "do" or "does" in the question form.</div><div class="pt">Você não precisa de "do" nem "does" na pergunta com modal.</div></div>
+<div class="i"><div class="en">Say "Good morning", "Good afternoon" or "Hello" before you ask.</div><div class="pt">Diga "Good morning", "Good afternoon" ou "Hello" antes de pedir.</div></div>
+<div class="i"><div class="en">Use polite words like "please", "thank you" and "excuse me".</div><div class="pt">Use palavras educadas como "please", "thank you" e "excuse me".</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Compras</div>
+<h2>Dias 11–12 — na loja</h2>
+<p class="sdesc">Provar, pedir outro tamanho, perguntar preço e pagar.</p>
+<div class="items">
+<div class="i"><div class="en">I'd like to buy a pair of jeans.</div><div class="pt">Eu gostaria de comprar uma calça jeans.</div></div>
+<div class="i"><div class="en">Do you have this in a larger size?</div><div class="pt">Vocês têm isto num tamanho maior?</div></div>
+<div class="i"><div class="en">Is this on sale?</div><div class="pt">Isto está em promoção?</div></div>
+<div class="i"><div class="en">Can I try this on?</div><div class="pt">Posso experimentar?</div></div>
+<div class="i"><div class="en">Where are the changing rooms, please?</div><div class="pt">Onde ficam os provadores, por favor?</div></div>
+<div class="i"><div class="en">These jeans don't fit me. They're too big!</div><div class="pt">Esta calça não me serve. Está grande demais!</div><div class="def">fit = servir no corpo; suit = combinar com a pessoa.</div></div>
+<div class="i"><div class="en">Where can I pay? — The cash tills are over there.</div><div class="pt">Onde eu pago? — Os caixas ficam ali.</div></div>
+<div class="i"><div class="en">I don't have enough money to buy this coat. It's too expensive!</div><div class="pt">Não tenho dinheiro suficiente para comprar este casaco. É caro demais!</div></div>
+<div class="i"><div class="en">Which shoes do you prefer — these ones or those ones?</div><div class="pt">De quais sapatos você gosta mais — destes ou daqueles?</div></div>
+<div class="i"><div class="en">These boots go well with my jeans.</div><div class="pt">Estas botas combinam com o meu jeans.</div></div>
+<div class="i"><div class="en">Put on a jumper! It's cold outside.</div><div class="pt">Põe um casaco! Está frio lá fora.</div></div>
+<div class="i"><div class="en">In the summer I don't wear trousers. I wear shorts and a t-shirt.</div><div class="pt">No verão eu não uso calça. Uso bermuda e camiseta.</div></div>
+<div class="i"><div class="en">She wears lots of jewellery — necklaces, bracelets and a ring.</div><div class="pt">Ela usa muita bijuteria — colares, pulseiras e anel.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Comparar</div>
+<h2>Dia 13 — comparar coisas</h2>
+<p class="sdesc">Comparativo e superlativo saindo em frase, não em tabela.</p>
+<div class="items">
+<div class="i"><div class="en">My brother is taller than my father.</div><div class="pt">Meu irmão é mais alto que meu pai.</div></div>
+<div class="i"><div class="en">My sister is also taller than my mother.</div><div class="pt">Minha irmã também é mais alta que minha mãe.</div></div>
+<div class="i"><div class="en">Do you think that English is easier than French?</div><div class="pt">Você acha que o inglês é mais fácil que o francês?</div></div>
+<div class="i"><div class="en">Or do you think that French is more difficult than English?</div><div class="pt">Ou você acha que o francês é mais difícil que o inglês?</div><div class="def">Curta: -er. Longa: more + adjetivo.</div></div>
+<div class="i"><div class="en">In my opinion English is simpler.</div><div class="pt">Na minha opinião o inglês é mais simples.</div></div>
+<div class="i"><div class="en">But perhaps it has more words than French.</div><div class="pt">Mas talvez tenha mais palavras que o francês.</div></div>
+<div class="i"><div class="en">She's politer than her sister. / She's more polite than her sister.</div><div class="pt">Ela é mais educada que a irmã.</div><div class="def">Adjetivos de duas sílabas aceitam as duas formas.</div></div>
+<div class="i"><div class="en">Smoking is worse for you than not exercising.</div><div class="pt">Fumar é pior para você do que não se exercitar.</div><div class="def">bad → worse, irregular.</div></div>
+<div class="i"><div class="en">Sarah is a better student than Melissa.</div><div class="pt">A Sarah é uma aluna melhor que a Melissa.</div><div class="def">good → better, irregular.</div></div>
+<div class="i"><div class="en">Who is older — you or your brother?</div><div class="pt">Quem é mais velho — você ou seu irmão?</div></div>
+<div class="i"><div class="en">There are a lot of shops in this town.</div><div class="pt">Tem um monte de lojas nesta cidade.</div></div>
+<div class="i"><div class="en">He has a few tracksuits.</div><div class="pt">Ele tem uns agasalhos.</div></div>
+<div class="i"><div class="en">I don't have a lot of time to go shopping.</div><div class="pt">Não tenho muito tempo para fazer compras.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Descrever</div>
+<h2>Dia 12 — descrever coisas e qualidades</h2>
+<p class="sdesc">Os adjetivos do livro com a glosa que ele mesmo dá entre parênteses.</p>
+<div class="items">
+<div class="i"><div class="en">Her house is very tidy — everything in the right place.</div><div class="pt">A casa dela é muito arrumada — tudo no lugar certo.</div></div>
+<div class="i"><div class="en">This bag is very heavy — it weighs a lot.</div><div class="pt">Esta bolsa é muito pesada — pesa bastante.</div></div>
+<div class="i"><div class="en">She often tells us funny stories — amusing ones.</div><div class="pt">Ela sempre nos conta histórias engraçadas — divertidas.</div></div>
+<div class="i"><div class="en">Our holiday was fantastic — very good indeed.</div><div class="pt">Nossas férias foram fantásticas — muito boas mesmo.</div></div>
+<div class="i"><div class="en">It's a formal restaurant. You need to wear a shirt and tie.</div><div class="pt">É um restaurante formal. Você precisa usar camisa e gravata.</div></div>
+<div class="i"><div class="en">Her wedding dress is beautiful: long and white.</div><div class="pt">O vestido de noiva dela é lindo: longo e branco.</div></div>
+<div class="i"><div class="en">He needs a new pair of football boots.</div><div class="pt">Ele precisa de um par novo de chuteiras.</div></div>
+<div class="i"><div class="en">I like his new suit. Both the trousers and the jacket look good.</div><div class="pt">Gosto do terno novo dele. Tanto a calça quanto o paletó ficam bons.</div></div>
+<div class="i"><div class="en">She has lots of pairs of shoes.</div><div class="pt">Ela tem vários pares de sapato.</div></div>
+<div class="i"><div class="en">I'd like to buy both the green jumper and the red jumper.</div><div class="pt">Eu gostaria de comprar tanto o casaco verde quanto o vermelho.</div></div>
+<div class="i"><div class="en">I don't like many clothes shops. I only go to two or three.</div><div class="pt">Não gosto de muitas lojas de roupa. Só vou a duas ou três.</div></div>
+<div class="i"><div class="en">Singular countable nouns must have an article.</div><div class="pt">Substantivo contável no singular precisa de artigo.</div><div class="def">a car, não car.</div></div>
+<div class="i"><div class="en">You can't put an indefinite article before an uncountable noun.</div><div class="pt">Não se usa artigo indefinido antes de substantivo incontável.</div><div class="def">water, não a water.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Casa e rotina</div>
+<h2>Em casa — objetos e tarefas</h2>
+<p class="sdesc">O vocabulário doméstico em frase de uso, como o livro apresenta.</p>
+<div class="items">
+<div class="i"><div class="en">If your clothes are dirty, put them in the washing machine.</div><div class="pt">Se sua roupa estiver suja, ponha na máquina de lavar.</div></div>
+<div class="i"><div class="en">We eat our dinner at the kitchen table.</div><div class="pt">A gente janta na mesa da cozinha.</div></div>
+<div class="i"><div class="en">They don't like carpets, but they have lots of small rugs.</div><div class="pt">Eles não gostam de carpete, mas têm vários tapetes pequenos.</div></div>
+<div class="i"><div class="en">There isn't a washing machine in the kitchen.</div><div class="pt">Não tem máquina de lavar na cozinha.</div></div>
+<div class="i"><div class="en">The dishwasher is under the sink.</div><div class="pt">A lava-louças fica embaixo da pia.</div></div>
+<div class="i"><div class="en">The box is on top of the cupboards.</div><div class="pt">A caixa está em cima dos armários.</div></div>
+<div class="i"><div class="en">There are two paintings on the wall.</div><div class="pt">Tem dois quadros na parede.</div></div>
+<div class="i"><div class="en">There's a table next to the bed.</div><div class="pt">Tem uma mesa ao lado da cama.</div></div>
+<div class="i"><div class="en">I live in front of a school.</div><div class="pt">Eu moro em frente a uma escola.</div></div>
+<div class="i"><div class="en">This is my new car. It is a Ferrari.</div><div class="pt">Este é meu carro novo. É uma Ferrari.</div></div>
+<div class="i"><div class="en">We live in Paris. Our house is small.</div><div class="pt">A gente mora em Paris. Nossa casa é pequena.</div></div>
+<div class="i"><div class="en">The red car is my new car. It's mine.</div><div class="pt">O carro vermelho é o meu carro novo. É meu.</div></div>
+<div class="i"><div class="en">The small house is our house. It's ours.</div><div class="pt">A casa pequena é a nossa casa. É nossa.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Perguntar</div>
+<h2>Montar a pergunta certa</h2>
+<p class="sdesc">O livro insiste: prepare a pergunta antes de falar. Os moldes de pergunta que ele treina.</p>
+<div class="items">
+<div class="i"><div class="en">Prepare your question before you speak.</div><div class="pt">Prepare a sua pergunta antes de falar.</div></div>
+<div class="i"><div class="en">What do you need to know?</div><div class="pt">O que você precisa saber?</div></div>
+<div class="i"><div class="en">Listen for the information words. These words are stressed.</div><div class="pt">Preste atenção nas palavras de informação. São elas que recebem a força.</div></div>
+<div class="i"><div class="en">Do you know John?</div><div class="pt">Você conhece o John?</div></div>
+<div class="i"><div class="en">Has she got long hair?</div><div class="pt">Ela tem cabelo comprido?</div></div>
+<div class="i"><div class="en">Do you look like your father?</div><div class="pt">Você é parecido com seu pai?</div></div>
+<div class="i"><div class="en">Are you like your father?</div><div class="pt">Você é como seu pai (no jeito)?</div></div>
+<div class="i"><div class="en">What is he like?</div><div class="pt">Como ele é (de personalidade)?</div></div>
+<div class="i"><div class="en">He has got brown hair.</div><div class="pt">Ele tem cabelo castanho.</div></div>
+<div class="i"><div class="en">I have got blue eyes.</div><div class="pt">Eu tenho olhos azuis.</div></div>
+<div class="i"><div class="en">She doesn't have long hair.</div><div class="pt">Ela não tem cabelo comprido.</div></div>
+<div class="i"><div class="en">I'm like my mother. We're both tall and slim.</div><div class="pt">Eu sou como minha mãe. Nós duas somos altas e magras.</div></div>
+<div class="i"><div class="en">He is in his 60s.</div><div class="pt">Ele está na casa dos sessenta.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Uso</div>
+<h2>Notas de uso que evitam erro</h2>
+<p class="sdesc">As observações do livro sobre pontos que o falante de português erra — cada uma com a frase que a demonstra.</p>
+<div class="items">
+<div class="i"><div class="en">We can't use 's with objects — only with people.</div><div class="pt">Não se usa 's com objetos — só com pessoas.</div><div class="def">the leg of the table, não the table's leg.</div></div>
+<div class="i"><div class="en">You only need one article or determiner before a noun.</div><div class="pt">Você só precisa de um artigo ou determinante antes do substantivo.</div></div>
+<div class="i"><div class="en">Uncountable nouns cannot have an indefinite article.</div><div class="pt">Substantivo incontável não aceita artigo indefinido.</div></div>
+<div class="i"><div class="en">Use "the" when talking about something for the second time.</div><div class="pt">Use "the" ao falar de algo pela segunda vez.</div></div>
+<div class="i"><div class="en">Use "the" when talking about specific things.</div><div class="pt">Use "the" ao falar de coisas específicas.</div></div>
+<div class="i"><div class="en">Use "the" when talking about unique things.</div><div class="pt">Use "the" ao falar de coisas únicas.</div><div class="def">the sun, the moon.</div></div>
+<div class="i"><div class="en">Say "to buy" or "to have" when you want something.</div><div class="pt">Diga "to buy" ou "to have" quando quiser alguma coisa.</div><div class="def">I'd like to buy…</div></div>
+<div class="i"><div class="en">When you have two letters which are the same, say "double".</div><div class="pt">Quando há duas letras iguais, diga "double".</div><div class="def">double L, ao soletrar.</div></div>
+<div class="i"><div class="en">Can and could are modal auxiliary verbs.</div><div class="pt">Can e could são verbos auxiliares modais.</div></div>
+<div class="i"><div class="en">This means you use them with another verb.</div><div class="pt">Isso quer dizer que você os usa junto com outro verbo.</div></div>
+<div class="i"><div class="en">Actually means "in fact", not "at the moment".</div><div class="pt">Actually significa "na verdade", não "atualmente".</div><div class="def">Falso amigo clássico.</div></div>
+<div class="i"><div class="en">Both the trousers and the jacket look good.</div><div class="pt">Tanto a calça quanto o paletó ficam bons.</div><div class="def">trousers é plural em inglês.</div></div>
+<div class="i"><div class="en">She's got long hair — "has got" is common in British English.</div><div class="pt">Ela tem cabelo comprido — "has got" é comum no inglês britânico.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 21 · Livro 01 — Speak English: 30 Days to Better English</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' — '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

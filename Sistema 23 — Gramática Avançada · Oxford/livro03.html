@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 03 · English Vocabulary in Use — Upper-intermediate — Sistema 23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 23</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 23 · Livro 03 · B2–C1</div>
+<h1 class="title">English <em>Vocabulary in Use</em> · Upper-intermediate</h1>
+<p class="lead">Michael McCarthy &amp; Felicity O'Dell · Cambridge · <i>with answers</i>. É a ponte entre o intermediário e o avançado — e por isso o recorte aqui é outro. O painel do <b>Livro 02</b> deste mesmo Sistema pega vocabulário <b>temático</b>; este pega o que o Upper-intermediate tem de próprio: <b>como a palavra inglesa se monta e como ela soa</b>. Os adjetivos compostos que descrevem gente inteira num hífen, os substantivos que nascem de phrasal verb e dominam a manchete de jornal, as palavras que vieram de nomes de pessoa e de cidade, a lógica sonora do <i>gr-</i>, do <i>cl-</i> e do <i>sp-</i>, os pares que se escrevem igual e soam diferente, os incontáveis que o brasileiro sempre pluraliza, e o bloco grande das expressões fixas: <i>similes</i>, <i>binomials</i> e idioms. Inglês britânico.</p>
+
+<div class="metrics">
+  <div class="metric"><b>18</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>B2–C1</b><span>nível</span></div>
+  <div class="metric"><b>GB</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: easy-going, breakthrough, as good as gold, odds and ends…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+<section id="s01">
+<div class="snum">Compostos · aparência</div>
+<h2>Descrever uma pessoa inteira com hífens</h2>
+<p class="sdesc">O adjetivo composto é <b>duas palavras com hífen</b>, e a segunda quase sempre é particípio. Em sequência, eles descrevem alguém da cabeça aos pés.</p>
+<div class="items">
+<div class="i"><div class="en">Tom was a <i>curly-haired</i>, <i>sun-tanned</i>, <i>blue-eyed</i>, <i>rosy-cheeked</i> young man.</div><div class="pt">O Tom era um rapaz de cabelo cacheado, bronzeado, de olhos azuis e bochechas rosadas.</div></div>
+<div class="i"><div class="en">…<i>thin-lipped</i>, <i>broad-shouldered</i>, <i>left-handed</i>, <i>slim-hipped</i>…</div><div class="pt">…de lábios finos, ombros largos, canhoto, quadril estreito…</div></div>
+<div class="i"><div class="en">…<i>long-legged</i>, <i>flat-footed</i>…</div><div class="pt">…de pernas compridas, pé chato…</div></div>
+<div class="i"><div class="en">…wearing an <i>open-necked</i> shirt, <i>brand-new</i>, <i>tight-fitting</i> jeans and <i>open-toed</i> sandals.</div><div class="pt">…de camisa com o colarinho aberto, jeans novo em folha e justo, e sandália aberta na frente.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">O padrão é sempre o mesmo: <i>parte do corpo + -ed</i>.</div><div class="def"><b>Blue-eyed</b>, <b>broad-shouldered</b>, <b>curly-haired</b>. Não existe <s>blue-eye man</s>.</div></div>
+<div class="i"><div class="en"><i>a well-dressed</i> woman · <i>a never-ending</i> story · <i>shocking-pink</i> trousers</div><div class="pt">uma mulher bem-vestida · uma história sem fim · uma calça rosa-choque</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Compostos · caráter</div>
+<h2>A pessoa inteira em nove adjetivos</h2>
+<p class="sdesc">O mesmo mecanismo, agora para <b>caráter</b>. Repare que os cinco primeiros elogiam e os quatro últimos não.</p>
+<div class="items">
+<div class="i"><div class="en">Melissa was <i>absent-minded</i>.</div><div class="pt">A Melissa era distraída.</div><div class="def"><b>Absent-minded</b> = forgetful.</div></div>
+<div class="i"><div class="en">She was <i>easy-going</i>.</div><div class="pt">Ela era tranquila.</div><div class="def"><b>Easy-going</b> = relaxed, não se estressa.</div></div>
+<div class="i"><div class="en">She was <i>good-tempered</i> and <i>warm-hearted</i>.</div><div class="pt">Ela era de bem com a vida e de bom coração.</div><div class="def"><b>Good-tempered</b> = cheerful; <b>warm-hearted</b> = kind.</div></div>
+<div class="i"><div class="en">She was <i>quick-witted</i>.</div><div class="pt">Ela era esperta.</div><div class="def"><b>Quick-witted</b> = inteligente, de raciocínio rápido.</div></div>
+<div class="i"><div class="en">…if perhaps a little <i>big-headed</i> at times.</div><div class="pt">…embora às vezes um pouco convencida.</div><div class="def"><b>Big-headed</b> = proud of herself.</div></div>
+<div class="i"><div class="en">…<i>two-faced</i>…</div><div class="pt">…falsa…</div><div class="def"><b>Two-faced</b> = hypocritical.</div></div>
+<div class="i"><div class="en">…<i>self-centred</i>…</div><div class="pt">…egocêntrica…</div><div class="def"><b>Self-centred</b> = egotistical.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">…and <i>stuck-up</i> at times.</div><div class="pt">…e esnobe, às vezes.</div><div class="def"><b>Stuck-up</b> = snobbish. É coloquial.</div></div>
+<div class="i"><div class="en">He's very <i>light-hearted</i> about it.</div><div class="pt">Ele leva isso na brincadeira.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Compostos · preposição</div>
+<h2>Quando a segunda parte é uma preposição</h2>
+<p class="sdesc">Grupo especial: <b>adjetivo + preposição</b>. Quase todos vêm colados a um substantivo típico — vale aprender o par inteiro.</p>
+<div class="items">
+<div class="i"><div class="en">an <i>all-out</i> strike</div><div class="pt">uma greve total</div></div>
+<div class="i"><div class="en">a <i>burnt-out</i> car</div><div class="pt">um carro carbonizado</div><div class="def">Nada sobrou depois do incêndio.</div></div>
+<div class="i"><div class="en">a <i>broken-down</i> bus</div><div class="pt">um ônibus quebrado</div></div>
+<div class="i"><div class="en">a <i>built-up</i> area</div><div class="pt">uma área urbanizada</div><div class="def">Cheia de construções — é o termo do código de trânsito britânico.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">a <i>hard-up</i> student</div><div class="pt">um estudante duro</div><div class="def"><b>Hard-up</b> = poor.</div></div>
+<div class="i"><div class="en"><i>cast-off</i> clothes</div><div class="pt">roupa de segunda mão</div><div class="def">Que o dono não quer mais.</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><i>worn-out</i> shoes</div><div class="pt">sapatos gastos</div><div class="def">Cuidado: <b>worn-out</b> aplicado a <b>pessoa</b> quer dizer exausta.</div></div>
+<div class="i"><div class="en">a <i>drive-in</i> movie · <i>well-off</i> bankers · a <i>run-down</i> area</div><div class="pt">um cinema drive-in · banqueiros abastados · uma área degradada</div></div>
+<div class="i"><div class="en"><i>air-conditioned</i> · <i>bullet-proof</i> · <i>cut-price</i> · <i>drip-dry</i> · <i>duty-free</i></div><div class="pt">com ar-condicionado · à prova de balas · com desconto · que seca sem passar · livre de impostos</div></div>
+<div class="i"><div class="en"><i>hand-made</i> · <i>interest-free</i> · <i>last-minute</i> · <i>long-distance</i> · <i>long-standing</i></div><div class="pt">feito à mão · sem juros · de última hora · de longa distância · de longa data</div></div>
+<div class="i"><div class="en"><i>off-peak</i> · <i>part-time</i> · <i>record-breaking</i> · <i>remote-controlled</i> · <i>so-called</i></div><div class="pt">fora do horário de pico · meio período · recorde · por controle remoto · assim chamado</div><div class="def"><b>So-called</b> quase sempre carrega ironia: sugere que o nome não se justifica.</div></div>
+<div class="i"><div class="en"><i>sugar-free</i> · <i>time-consuming</i> · <i>top-secret</i> · <i>world-famous</i></div><div class="pt">sem açúcar · que consome muito tempo · ultrassecreto · mundialmente famoso</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Compostos · do phrasal verb</div>
+<h2>O substantivo que nasce do phrasal verb</h2>
+<p class="sdesc">Muita manchete de jornal em inglês é feita disso: pega-se o phrasal verb e vira substantivo. O plural é sempre <b>-s no fim</b> (<i>pin-ups</i>).</p>
+<div class="items">
+<div class="i"><div class="en">In response to the pay offer, there was a <i>walk-out</i> at the factory.</div><div class="pt">Em resposta à proposta salarial, houve uma paralisação na fábrica.</div><div class="def"><b>Walk-out</b> = strike.</div></div>
+<div class="i"><div class="en">There is going to be a <i>crack-down</i> on public spending.</div><div class="pt">Vai haver um aperto nos gastos públicos.</div></div>
+<div class="i"><div class="en">There has been a <i>break-out</i> from the local prison.</div><div class="pt">Houve uma fuga da penitenciária local.</div></div>
+<div class="i"><div class="en">Last month saw a tremendous <i>shake-up</i> in personnel.</div><div class="pt">No mês passado houve uma reformulação enorme no quadro de pessoal.</div></div>
+<div class="i"><div class="en">I never expected the <i>break-up</i> of the USSR.</div><div class="pt">Eu nunca esperei o colapso da URSS.</div></div>
+<div class="i"><div class="en">The <i>takeover</i> of one of our leading hotel chains has just been announced.</div><div class="pt">Acaba de ser anunciada a aquisição de uma das nossas maiores redes de hotéis.</div></div>
+<div class="i"><div class="en">We're trying to find some new <i>outlets</i> for our products.</div><div class="pt">Estamos procurando novos pontos de venda para os nossos produtos.</div></div>
+<div class="i"><div class="en">Take your things to the <i>check-out</i> to pay for them.</div><div class="pt">Leve suas coisas ao caixa para pagar.</div></div>
+<div class="i"><div class="en"><i>Cutbacks</i> will be essential until the recession is over.</div><div class="pt">Cortes serão indispensáveis até a recessão passar.</div></div>
+<div class="i"><div class="en">We made a profit of &pound;1,000 on a <i>turnover</i> of &pound;10,000.</div><div class="pt">Tivemos mil libras de lucro sobre um faturamento de dez mil.</div></div>
+<div class="i"><div class="en">What the computer produces depends on the quality of the <i>input</i>. · <i>Output</i> has increased.</div><div class="pt">O que o computador produz depende da qualidade do que entra. · A produção aumentou.</div></div>
+<div class="i"><div class="en">We have a rather rapid staff <i>turnover</i>.</div><div class="pt">Temos uma rotatividade de pessoal bem alta.</div><div class="def">Mesmo substantivo, <b>outro sentido</b>: faturamento × rotatividade. O contexto decide.</div></div>
+<div class="i"><div class="en">He went through the stage of being a <i>dropout</i>.</div><div class="pt">Ele passou pela fase de largar tudo.</div><div class="def"><b>Dropout</b>: quem rejeita a sociedade — ou quem abandona os estudos.</div></div>
+<div class="i"><div class="en">It will be a long time before the consequences of <i>fallout</i> from Chernobyl are no longer felt.</div><div class="pt">Vai demorar muito para as consequências da radiação de Chernobyl deixarem de ser sentidas.</div></div>
+<div class="i"><div class="en">I can get you a <i>printout</i> of the latest figures.</div><div class="pt">Posso te conseguir uma impressão dos números mais recentes.</div></div>
+<div class="i"><div class="en">A <i>breakthrough</i> has been made in AIDS research.</div><div class="pt">Houve um avanço decisivo na pesquisa da aids.</div></div>
+<div class="i"><div class="en">Many of the problems were caused by a <i>breakdown</i> in communications.</div><div class="pt">Muitos dos problemas vieram de uma falha de comunicação.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Origens · pessoas</div>
+<h2>Palavras que já foram nome de gente</h2>
+<p class="sdesc">Cada uma dessas palavras foi, um dia, o <b>sobrenome de alguém</b>. Saber a história é o que fixa o sentido.</p>
+<div class="items">
+<div class="i"><div class="en"><i>biro</i> — ball-point pen</div><div class="pt">caneta esferográfica</div><div class="def">De <b>Laszlo Biro</b>, o inventor húngaro.</div></div>
+<div class="i"><div class="en"><i>boycott</i> — refuse to deal with</div><div class="pt">boicote / boicotar</div><div class="def">De um <b>proprietário de terras na Irlanda</b> que tratou tão mal os arrendatários que foi isolado socialmente.</div></div>
+<div class="i"><div class="en"><i>braille</i></div><div class="pt">braile</div><div class="def">De <b>Louis Braille</b>, o inventor francês do sistema.</div></div>
+<div class="i"><div class="en"><i>chauvinist</i></div><div class="pt">chauvinista</div><div class="def">De <b>Nicolas Chauvin</b>, francês fanaticamente devotado a Napoleão.</div></div>
+<div class="i"><div class="en"><i>hooligan</i> — a rough, lawless youth</div><div class="pt">arruaceiro</div><div class="def">Do sobrenome irlandês <b>Hooligan</b>.</div></div>
+<div class="i"><div class="en"><i>machiavellian</i> — cunning, deceitful, unscrupulous</div><div class="pt">maquiavélico</div><div class="def">De <b>Niccolò Machiavelli</b>, o estadista italiano morto em 1527.</div></div>
+<div class="i"><div class="en"><i>mentor</i> — loyal and wise adviser</div><div class="pt">mentor</div><div class="def">De <b>Mentor</b>, amigo de Odisseu.</div></div>
+<div class="i"><div class="en"><i>pamphlet</i> — a small leaflet</div><div class="pt">panfleto</div><div class="def">De <b>Pamphilus</b>, personagem de um poema de amor do século XII.</div></div>
+<div class="i"><div class="en"><i>to pander</i> — to indulge someone's desires</div><div class="pt">condescender, satisfazer os caprichos de alguém</div><div class="def">De <b>Pandaros</b>, alcoviteiro da mitologia grega.</div></div>
+<div class="i"><div class="en"><i>saxophone</i> · <i>watt</i></div><div class="pt">saxofone · watt</div><div class="def">Do belga <b>Adolphe Sax</b> e do escocês <b>James Watt</b>.</div></div>
+<div class="i"><div class="en"><i>tawdry</i> — cheap and tasteless</div><div class="pt">espalhafatoso e vagabundo</div><div class="def">De <b>St Audrey</b>, em cuja feira anual em Ely se vendiam echarpes baratas e berrantes.</div></div>
+<div class="i"><div class="en"><i>trilby</i> · <i>wellingtons</i> (ou <i>wellies</i>) · <i>leotard</i> · <i>bowler</i> · <i>cardigan</i> · <i>busby</i> · <i>stetson</i> · <i>mackintosh</i> (ou <i>mac</i>)</div><div class="pt">chapéu trilby · galochas · collant · chapéu-coco · cardigã · barretina · chapéu de caubói · capa de chuva</div><div class="def">Roupa — sobretudo chapéu — é a categoria que mais herdou nome de gente.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Origens · lugares</div>
+<h2>Palavras que já foram nome de cidade</h2>
+<p class="sdesc">O mesmo mecanismo com <b>topônimos</b> — e uma lista de tecidos em que cada nome é uma cidade.</p>
+<div class="items">
+<div class="i"><div class="en"><i>bedlam</i> — chaos</div><div class="pt">pandemônio</div><div class="def">Do nome de um famoso hospício de Londres que ficava onde hoje é a Liverpool Street Station.</div></div>
+<div class="i"><div class="en"><i>spartan</i> — severely simple</div><div class="pt">espartano</div><div class="def">Da cidade grega de <b>Esparta</b>, famosa pela austeridade.</div></div>
+<div class="i"><div class="en"><i>canter</i></div><div class="pt">meio-galope</div><div class="def">Encurtamento de <b>Canterbury</b>, cidade no sudeste da Inglaterra. Mais rápido que o trote, mais lento que o galope.</div></div>
+<div class="i"><div class="en"><i>gypsy</i></div><div class="pt">cigano</div><div class="def">Achava-se que esse povo tinha vindo do <b>Egito</b> — daí o nome.</div></div>
+<div class="i"><div class="en"><i>angora</i> (Ankara) · <i>cashmere</i> (Kashmir) · <i>damask</i> (Damascus)</div><div class="pt">angorá · caxemira · damasco</div></div>
+<div class="i"><div class="en"><i>denim</i> (Nîmes, França) · <i>gauze</i> (Gaza) · <i>muslin</i> (Mosul, Iraque)</div><div class="pt">jeans · gaze · musselina</div><div class="def"><b>Denim</b> é literalmente <i>de Nîmes</i>.</div></div>
+<div class="i"><div class="en"><i>satin</i> (Qingjiang, China) · <i>suede</i> (Suécia) · <i>tweed</i> (rio Tweed, Escócia)</div><div class="pt">cetim · camurça · tweed</div><div class="def"><b>Suede</b> vem do francês <i>gants de Suède</i> — luvas da Suécia.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Som · gr-, cl-, sp-</div>
+<h2>O som que já carrega o sentido</h2>
+<p class="sdesc">Em inglês certas combinações de letras têm <b>associação sonora fixa</b>. Não é regra gramatical — é um padrão que ajuda a adivinhar palavra nova.</p>
+<div class="items">
+<div class="i"><div class="en">Vogal <b>curta</b> = som curto e seco; vogal <b>longa</b> = som mais demorado.</div><div class="def">Compare <b>pip</b> /pɪp/ com <b>peep</b> /piːp/ — a diferença de duração está na própria vogal.</div></div>
+<div class="i"><div class="en"><i>gr-</i> sugere algo <b>desagradável ou sofrido</b>.</div></div>
+<div class="i"><div class="en"><i>groan</i> — make a deep sound forced out by pain or despair</div><div class="pt">gemer</div></div>
+<div class="i"><div class="en"><i>grumble</i> — complain in a bad-tempered way · <i>grumpy</i> — bad-tempered</div><div class="pt">resmungar · rabugento</div></div>
+<div class="i"><div class="en"><i>grunt</i> — make a low, rough sound · <i>growl</i> — make a low, threatening sound</div><div class="pt">grunhir · rosnar</div></div>
+<div class="i"><div class="en"><i>cl-</i> sugere algo <b>agudo e/ou metálico</b>.</div></div>
+<div class="i"><div class="en"><i>click</i> — short sharp sound · <i>clang</i> — loud ringing noise · <i>clank</i> — dull metallic noise</div><div class="pt">clique · badalada · tinido surdo</div><div class="def">A escala do volume: <b>clank</b> &lt; <b>clang</b>.</div></div>
+<div class="i"><div class="en"><i>clash</i> — loud, broken, confused noise · <i>clink</i> — small bits of metal or glass knocking</div><div class="pt">estrondo de metais · tinir de copos</div></div>
+<div class="i"><div class="en">Horses go <i>clip-clop</i> on the road.</div><div class="pt">O cavalo faz cloc-cloc na estrada.</div></div>
+<div class="i"><div class="en"><i>sp-</i> tem associação com <b>água, líquidos e pós</b>.</div></div>
+<div class="i"><div class="en"><i>splash</i> — cause a liquid to fly about in drops · <i>spit</i> — send liquid out from the mouth</div><div class="pt">espirrar · cuspir</div></div>
+<div class="i"><div class="en"><i>splutter</i> · <i>spray</i> · <i>sprinkle</i> · <i>spurt</i></div><div class="pt">engasgar cuspindo · borrifar · salpicar · esguichar</div><div class="def"><b>Spurt</b>: sair de repente, num jato.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Som · -ash, wh-, -ggle</div>
+<h2>Violento, aéreo e repetido</h2>
+<p class="sdesc">Mais três padrões sonoros — e o último é o que dá nome a metade dos verbos de movimento pequeno em inglês.</p>
+<div class="items">
+<div class="i"><div class="en"><i>-ash</i> no fim sugere algo <b>rápido e violento</b>.</div></div>
+<div class="i"><div class="en"><i>smash</i> — break violently into small pieces</div><div class="pt">espatifar</div></div>
+<div class="i"><div class="en"><i>dash</i> — move or be moved violently · <i>crash</i> — strike suddenly, violently and noisily</div><div class="pt">disparar · colidir com estrondo</div></div>
+<div class="i"><div class="en"><i>bash</i> — strike heavily so as to break or injure · <i>gash</i> — a long deep cut or wound</div><div class="pt">espancar · corte profundo</div></div>
+<div class="i"><div class="en"><i>wh-</i> no começo sugere <b>movimento de ar</b>.</div></div>
+<div class="i"><div class="en"><i>whistle</i> — a high-pitched noise made by forcing air through a small opening</div><div class="pt">assobio / apito</div></div>
+<div class="i"><div class="en"><i>whirr</i> — sound like a bird's wings moving rapidly · <i>whizz</i> — the sound of something rushing through air</div><div class="pt">zunido de asas · zunido de algo cortando o ar</div></div>
+<div class="i"><div class="en"><i>wheeze</i> — breathe noisily with a whistling sound in the chest · <i>whip</i></div><div class="pt">chiar ao respirar · chicote / chicotear</div></div>
+<div class="i"><div class="en"><i>-ckle</i>, <i>-ggle</i> e <i>-zzle</i> no fim sugerem algo <b>leve e repetido</b>.</div></div>
+<div class="i"><div class="en"><i>trickle</i> — to flow in a thin stream · <i>crackle</i> — a series of short cracking sounds</div><div class="pt">escorrer em fio · crepitar</div></div>
+<div class="i"><div class="en"><i>tinkle</i> — a succession of light ringing sounds · <i>giggle</i> — laugh lightly in a nervous or silly way</div><div class="pt">tilintar · dar risadinha</div></div>
+<div class="i"><div class="en"><i>wriggle</i> — move with quick short twistings · <i>sizzle</i> — a hissing sound like something cooking in fat</div><div class="pt">se contorcer · chiar na frigideira</div></div>
+<div class="i"><div class="en"><i>drizzle</i> — small, fine rain</div><div class="pt">chuvisco</div><div class="def">Repare: o padrão «leve e repetido» funciona igual para <b>som</b> e para <b>movimento</b>.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Homógrafos</div>
+<h2>Escreve igual, soa diferente — e muda tudo</h2>
+<p class="sdesc"><b>Homógrafo</b>: mesma grafia, pronúncia e sentido diferentes. É a armadilha de leitura em voz alta.</p>
+<div class="items">
+<div class="i"><div class="en">I <i>live</i> /lɪv/ in the north of England. · Your favourite pop star is singing <i>live</i> /laɪv/ on TV tonight.</div><div class="pt">Eu moro no norte da Inglaterra. · Seu cantor favorito canta ao vivo na TV hoje.</div></div>
+<div class="i"><div class="en">I <i>read</i> /riːd/ in bed each night. · I <i>read</i> /red/ War and Peace last year.</div><div class="pt">Eu leio na cama toda noite. · Eu li Guerra e Paz ano passado.</div><div class="def">Presente e passado se escrevem igual — só o som separa.</div></div>
+<div class="i"><div class="en">The <i>lead</i> /liːd/ singer in the group is great. · <i>Lead</i> /led/ pipes are dangerous.</div><div class="pt">O vocalista da banda é ótimo. · Canos de chumbo são perigosos.</div></div>
+<div class="i"><div class="en">The <i>wind</i> /wɪnd/ blew the tree down. · Don't forget to <i>wind</i> /waɪnd/ your watch.</div><div class="pt">O vento derrubou a árvore. · Não esqueça de dar corda no relógio.</div></div>
+<div class="i"><div class="en">I <i>wound</i> /waʊnd/ my watch last night. · He suffered a terrible <i>wound</i> /wuːnd/ in the war.</div><div class="pt">Dei corda no relógio ontem à noite. · Ele sofreu um ferimento terrível na guerra.</div><div class="def">Aqui é ainda pior: o passado de <b>wind</b> se escreve igual ao substantivo <b>wound</b>.</div></div>
+<div class="i"><div class="en">They learn to <i>row</i> /rəʊ/ well. · They had a <i>row</i> /raʊ/ over money and split up.</div><div class="pt">Eles aprendem a remar bem. · Tiveram uma briga por dinheiro e se separaram.</div></div>
+<div class="i"><div class="en">This book is called English Vocabulary in <i>Use</i> /juːs/. · You must know how to <i>use</i> /juːz/ words.</div><div class="pt">Este livro se chama English Vocabulary in Use. · Você precisa saber usar as palavras.</div><div class="def">O <b>substantivo</b> termina em /s/ e o <b>verbo</b> em /z/. Vale para vários pares.</div></div>
+<div class="i"><div class="en">They lived in a large old <i>house</i> /haʊs/. · The buildings <i>house</i> /haʊz/ a library.</div><div class="pt">Eles moravam numa casa velha e grande. · Os prédios abrigam uma biblioteca.</div><div class="def">Mesmo padrão: substantivo /s/, verbo /z/.</div></div>
+<div class="i"><div class="en">The <i>sow</i> /saʊ/ has five piglets. · The farmers <i>sow</i> /səʊ/ the seeds in the spring.</div><div class="pt">A porca tem cinco leitões. · Os agricultores semeiam na primavera.</div></div>
+<div class="i"><div class="en">I <i>bathed</i> /bɑːθt/ the baby this morning. · We <i>bathed</i> /beɪðd/ in the sea every day.</div><div class="pt">Dei banho no bebê hoje de manhã. · A gente se banhava no mar todo dia.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Homófonos</div>
+<h2>Soa igual, escreve diferente</h2>
+<p class="sdesc"><b>Homófono</b>: mesma pronúncia, grafia e sentido diferentes. É a armadilha de <b>escrita</b> — a que o corretor não pega.</p>
+<div class="items">
+<div class="i"><div class="en"><i>air</i> / <i>heir</i></div><div class="pt">ar / herdeiro</div><div class="def">O <b>h</b> de <b>heir</b> é mudo.</div></div>
+<div class="i"><div class="en"><i>aloud</i> / <i>allowed</i></div><div class="pt">em voz alta / permitido</div></div>
+<div class="i"><div class="en"><i>dough</i> / <i>doe</i></div><div class="pt">massa de pão / corça</div></div>
+<div class="i"><div class="en"><i>fare</i> / <i>fair</i></div><div class="pt">passagem / justo (ou feira)</div></div>
+<div class="i"><div class="en"><i>faze</i> / <i>phase</i></div><div class="pt">abalar / fase</div></div>
+<div class="i"><div class="en"><i>floe</i> / <i>flow</i></div><div class="pt">banquisa / fluxo</div></div>
+<div class="i"><div class="en"><i>flu</i> / <i>flew</i></div><div class="pt">gripe / voou</div></div>
+<div class="i"><div class="en"><i>grate</i> / <i>great</i></div><div class="pt">ralar / ótimo</div></div>
+<div class="i"><div class="en"><i>groan</i> / <i>grown</i></div><div class="pt">gemer / crescido</div></div>
+<div class="i"><div class="en"><i>hoarse</i> / <i>horse</i></div><div class="pt">rouco / cavalo</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><i>its</i> / <i>it's</i></div><div class="pt">dele (possessivo) / it is</div><div class="def">O erro mais comum do inglês escrito — inclusive entre nativos.</div></div>
+<div class="i"><div class="en"><i>lays</i> / <i>laze</i> · <i>might</i> / <i>mite</i> · <i>mown</i> / <i>moan</i></div><div class="pt">põe / vadiar · poderia / ácaro · ceifado / gemer</div></div>
+<div class="i"><div class="en"><i>our</i> / <i>hour</i> · <i>pale</i> / <i>pail</i></div><div class="pt">nosso / hora · pálido / balde</div><div class="def"><b>Hour</b> também tem <b>h</b> mudo.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Incontáveis</div>
+<h2>As palavras que o brasileiro sempre pluraliza — e não pode</h2>
+<p class="sdesc">Não vão para o plural nem aceitam <i>a/an</i>. A lista é <b>curta e fixa</b>: vale decorar de uma vez.</p>
+<div class="items">
+<div class="i"><span class="tag">err</span><div class="en">She gave me some <i>advice</i>. <s>an advice</s> <s>some advices</s></div><div class="pt">Ela me deu um conselho.</div><div class="def">Para contar: <b>a piece of advice</b>.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">I need some <i>information</i>. <s>an information</s> <s>informations</s></div><div class="pt">Preciso de uma informação.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">Don't forget your <i>luggage</i> / <i>baggage</i>.</div><div class="pt">Não esqueça sua bagagem.</div><div class="def"><b>Baggage</b> é a forma americana. Para contar: <b>a piece of luggage</b>.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">We've booked the <i>accommodation</i>. <s>accommodations</s></div><div class="pt">Já reservamos a hospedagem.</div><div class="def">Em inglês americano <b>accommodations</b> no plural existe — em britânico, não.</div></div>
+<div class="i"><div class="en">We need new skiing <i>equipment</i>.</div><div class="pt">Precisamos de equipamento de esqui novo.</div></div>
+<div class="i"><div class="en"><i>Travel</i> broadens the mind.</div><div class="pt">Viajar abre a cabeça.</div><div class="def"><b>Travel</b> incontável é a atividade; <b>a trip</b> / <b>a journey</b> é a viagem concreta.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">She's made a lot of <i>progress</i> in a very short time.</div><div class="pt">Ela progrediu muito em pouco tempo.</div></div>
+<div class="i"><div class="en">I picked up some interesting <i>knowledge</i> on that course.</div><div class="pt">Aprendi coisas interessantes naquele curso.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">She has done some <i>research</i> on marine life.</div><div class="pt">Ela fez pesquisa sobre vida marinha.</div><div class="def"><b>Research</b> nunca vai para o plural — mesmo na academia.</div></div>
+<div class="i"><div class="en">They've done a lot of <i>work</i> on the project.</div><div class="pt">Eles trabalharam muito no projeto.</div></div>
+<div class="i"><div class="en"><i>soap</i> · <i>toothpaste</i> · <i>washing powder</i> · <i>washing-up liquid</i> · <i>polish</i> · <i>paper</i></div><div class="pt">sabonete · pasta de dente · sabão em pó · detergente · lustra-móveis · papel</div><div class="def">Os itens de casa — todos incontáveis.</div></div>
+<div class="i"><div class="en"><i>food</i> · <i>sugar</i> · <i>rice</i> · <i>spaghetti</i> · <i>butter</i> · <i>flour</i> · <i>soup</i></div><div class="pt">comida · açúcar · arroz · espaguete · manteiga · farinha · sopa</div></div>
+<div class="i"><div class="en"><i>cloth</i>, <i>cotton</i>, <i>silk</i>, <i>leather</i>, <i>wool</i> · <i>stone</i>, <i>brick</i>, <i>plastic</i>, <i>wood</i>, <i>concrete</i> · <i>coal</i>, <i>oil</i>, <i>petrol</i></div><div class="pt">tecido, algodão, seda, couro, lã · pedra, tijolo, plástico, madeira, concreto · carvão, petróleo, gasolina</div><div class="def">Material e recurso: incontáveis por natureza.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Coletivos</div>
+<h2>Um bando de quê?</h2>
+<p class="sdesc">O inglês exige o coletivo <b>certo</b> para cada grupo — e usar o errado soa imediatamente estranho.</p>
+<div class="items">
+<div class="i"><div class="en">a <i>group</i> of people (pequeno) · a <i>crowd</i> of people (grande) · a <i>gang</i> of football fans</div><div class="pt">um grupo · uma multidão · uma turma de torcedores</div><div class="def"><b>Gang</b> carrega carga negativa.</div></div>
+<div class="i"><div class="en">a <i>flock</i> of sheep · a <i>flock</i> of birds (geese, pigeons)</div><div class="pt">um rebanho de ovelhas · um bando de pássaros</div></div>
+<div class="i"><div class="en">a <i>herd</i> of cows, deer, goats</div><div class="pt">uma manada de vacas, cervos, cabras</div></div>
+<div class="i"><div class="en">a <i>shoal</i> of fish · a shoal of <i>herring</i> / <i>mackerel</i></div><div class="pt">um cardume</div><div class="def">Repare: o nome do peixe fica no <b>singular</b> depois de <i>shoal of</i>.</div></div>
+<div class="i"><div class="en">a <i>swarm</i> of insects · a swarm of bees / gnats</div><div class="pt">um enxame de insetos · de abelhas / mosquitinhos</div><div class="def"><b>Swarm</b> é sobretudo para insetos <b>voadores</b>.</div></div>
+<div class="i"><div class="en">a <i>pack</i> of dogs / wolves / hyenas — and a pack of <i>cards</i></div><div class="pt">uma matilha — e um baralho</div><div class="def">O mesmo <b>pack</b> serve para matilha e para baralho.</div></div>
+<div class="i"><div class="en">A <i>team</i> of surgeons / experts / reporters / detectives arrived at the scene.</div><div class="pt">Uma equipe de cirurgiões / peritos / repórteres / detetives chegou ao local.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">The <i>crew</i> were all saved when the ship sank.</div><div class="pt">Toda a tripulação foi salva quando o navio afundou.</div><div class="def">Em britânico, o coletivo leva verbo no <b>plural</b>: <i>the crew were</i>.</div></div>
+<div class="i"><div class="en">The <i>company</i> are rehearsing a new production. · The <i>cast</i> were all amateurs.</div><div class="pt">A companhia está ensaiando uma nova montagem. · O elenco era todo de amadores.</div><div class="def"><b>Company</b> = grupo de atores; <b>cast</b> = o elenco de uma montagem específica.</div></div>
+<div class="i"><div class="en">The <i>staff</i> are on strike.</div><div class="pt">Os funcionários estão em greve.</div><div class="def"><b>Staff</b> serve para qualquer grupo que divide um local de trabalho.</div></div>
+<div class="i"><div class="en">a <i>row</i> of cottages · a <i>clump</i> of trees · a <i>range</i> of hills</div><div class="pt">uma fileira de casinhas · um bosquete · uma cadeia de colinas</div></div>
+<div class="i"><div class="en">a <i>pile</i> / <i>heap</i> of papers · a <i>bunch</i> of flowers (grapes, bananas) · a <i>stack</i> of chairs · a <i>set</i> of tools</div><div class="pt">uma pilha de papéis · um buquê / cacho · uma pilha de cadeiras · um jogo de ferramentas</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Similes · as…as…</div>
+<h2>As comparações fixas — e o aviso que vem com elas</h2>
+<p class="sdesc"><b>Atenção de registro:</b> simile fixo <b>não é neutro</b>. É informal, muitas vezes humorístico. O livro recomenda mantê-los como vocabulário <b>de reconhecimento</b>, não de uso.</p>
+<div class="items">
+<div class="i"><div class="en">as <i>blind as a bat</i> · as <i>thin as a rake</i> · as <i>strong as an ox</i> · as <i>quiet as a mouse</i></div><div class="pt">cego como um morcego · magro como um palito · forte como um boi · quieto como um rato</div></div>
+<div class="i"><div class="en">as <i>heavy as lead</i> ≠ as <i>light as a feather</i></div><div class="pt">pesado como chumbo ≠ leve como uma pena</div><div class="def">Vários vêm em <b>pares de opostos</b> — é o jeito mais fácil de fixar.</div></div>
+<div class="i"><div class="en">as <i>drunk as a lord</i> ≠ as <i>sober as a judge</i></div><div class="pt">bêbado como um gambá ≠ sóbrio como um juiz</div></div>
+<div class="i"><div class="en">as <i>black as night</i> ≠ as <i>white as snow</i></div><div class="pt">negro como a noite ≠ branco como a neve</div></div>
+<div class="i"><div class="en">as <i>brown as a berry</i> · as <i>good as gold</i> · as <i>cool as a cucumber</i></div><div class="pt">bronzeadíssimo · comportadíssimo · frio como uma pedra</div><div class="def">Esses três se fixam pelo <b>som</b>, não pelo sentido.</div></div>
+<div class="i"><div class="en">The bed was as <i>hard as iron</i> and I couldn't sleep.</div><div class="pt">A cama era dura feito ferro e não consegui dormir.</div></div>
+<div class="i"><div class="en">I'll water this plant. The soil's as <i>dry as a bone</i>.</div><div class="pt">Vou regar essa planta. A terra está seca feito osso.</div></div>
+<div class="i"><div class="en">He's as <i>mad as a hatter</i>. He crossed the Atlantic in a bathtub.</div><div class="pt">Ele é doido varrido. Atravessou o Atlântico numa banheira.</div></div>
+<div class="i"><div class="en">She told the teacher, as <i>bold as brass</i>, that his lessons were boring.</div><div class="pt">Ela disse ao professor, com o maior descaramento, que as aulas dele eram chatas.</div></div>
+<div class="i"><div class="en">You'll have to speak up; he's as <i>deaf as a post</i>.</div><div class="pt">Fale mais alto; ele é surdo como uma porta.</div></div>
+<div class="i"><div class="en">Using the computer's as <i>easy as falling off a log</i>.</div><div class="pt">Usar o computador é fácil feito chupar bala.</div></div>
+<div class="i"><div class="en">She knew the answer as <i>quick as a flash</i>. · His face went as <i>red as a beetroot</i>.</div><div class="pt">Ela soube a resposta num piscar de olhos. · O rosto dele ficou vermelho feito pimentão.</div></div>
+<div class="i"><div class="en">The Princess's skin was as <i>white as snow</i>. · When he saw it, his face went as <i>white as a sheet</i>.</div><div class="pt">A pele da princesa era branca como a neve. · Quando ele viu, ficou branco feito papel.</div><div class="def">Mesma cor, <b>sentidos opostos</b>: <b>snow</b> é beleza, <b>a sheet</b> é medo ou horror.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">The fish was bad and I was as <i>sick as a dog</i>. · She ran off with my money; I felt as <i>sick as a parrot</i>.</div><div class="pt">O peixe estava estragado e eu passei muito mal. · Ela fugiu com meu dinheiro; fiquei arrasado.</div><div class="def"><b>Sick as a dog</b> é vomitar; <b>sick as a parrot</b> é decepção e frustração. A segunda parte muda tudo.</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Similes · like…</div>
+<h2>As comparações com <i>like</i></h2>
+<p class="sdesc">O outro formato do simile. Mesma advertência de registro: <b>informal</b>.</p>
+<div class="items">
+<div class="i"><div class="en">My plan <i>worked like a dream</i>.</div><div class="pt">Meu plano funcionou perfeitamente.</div></div>
+<div class="i"><div class="en">Be careful the boss doesn't see you; she has <i>eyes like a hawk</i>.</div><div class="pt">Cuidado para a chefe não te ver; ela tem olhos de águia.</div></div>
+<div class="i"><div class="en">No wonder he's fat. He <i>eats like a horse</i> and <i>drinks like a fish</i>.</div><div class="pt">Não é à toa que ele é gordo. Come feito um cavalo e bebe feito um gambá.</div></div>
+<div class="i"><div class="en">Did you sleep well? Yes, thanks, <i>like a log</i>.</div><div class="pt">Dormiu bem? Dormi, obrigado, feito uma pedra.</div></div>
+<div class="i"><div class="en">Sorry, I forgot to ring him again. I've got a <i>head like a sieve</i>!</div><div class="pt">Desculpa, esqueci de ligar de novo. Minha cabeça é uma peneira!</div></div>
+<div class="i"><div class="en">The boss is <i>like a bear with a sore head</i> today.</div><div class="pt">O chefe está com um humor terrível hoje.</div></div>
+<div class="i"><div class="en">She goes around <i>like a bull in a china shop</i>.</div><div class="pt">Ela é um elefante numa loja de louças.</div><div class="def">Comportar-se de forma desastrada e insensível.</div></div>
+<div class="i"><div class="en">Criticising the government in his presence is <i>like a red rag to a bull</i>.</div><div class="pt">Criticar o governo na frente dele é como agitar um pano vermelho na frente do touro.</div><div class="def">Certeza de deixá-lo furioso.</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Binomials</div>
+<h2>Os pares que não se invertem</h2>
+<p class="sdesc"><b>Binomial</b>: duas palavras ligadas por conjunção, em <b>ordem fixa</b>. Inverter soa errado imediatamente. Quase todos são informais — com poucas exceções.</p>
+<div class="items">
+<div class="i"><div class="en"><i>odds and ends</i></div><div class="pt">miudezas</div><div class="def">Coisinhas sem importância: <i>let's get the main things packed; we can do the odds and ends later</i>.</div></div>
+<div class="i"><div class="en">Every relationship needs a bit of <i>give and take</i>.</div><div class="pt">Toda relação precisa de um pouco de jogo de cintura.</div></div>
+<div class="i"><div class="en">Tears are <i>part and parcel</i> of growing up.</div><div class="pt">Choro faz parte do crescer.</div><div class="def">Grupo 1: dá para reconhecer pelo <b>padrão sonoro</b> — aliteração.</div></div>
+<div class="i"><div class="en">The boss was <i>ranting and raving</i> at us.</div><div class="pt">O chefe estava esbravejando com a gente.</div></div>
+<div class="i"><div class="en">The old cottage has gone to <i>rack and ruin</i>.</div><div class="pt">A casinha velha caiu aos pedaços.</div></div>
+<div class="i"><div class="en">He's so <i>prim and proper</i> at work. · The hotel was a bit <i>rough and ready</i>.</div><div class="pt">Ele é todo certinho no trabalho. · O hotel era meio simplório.</div></div>
+<div class="i"><div class="en">She has to <i>wine and dine</i> important clients.</div><div class="pt">Ela tem que receber e entreter clientes importantes.</div></div>
+<div class="i"><div class="en">You can <i>pick and choose</i>; it's up to you.</div><div class="pt">Você pode escolher à vontade; é com você.</div><div class="def">Grupo 2: dá para reconhecer porque as duas palavras são <b>quase sinônimas</b>.</div></div>
+<div class="i"><div class="en">My English is progressing in <i>leaps and bounds</i>.</div><div class="pt">Meu inglês está avançando a passos largos.</div></div>
+<div class="i"><div class="en">It's nice to have some <i>peace and quiet</i>. · The doctor recommended some <i>rest and recreation</i>.</div><div class="pt">É bom ter um pouco de paz e sossego. · O médico recomendou descanso e lazer.</div></div>
+<div class="i"><div class="en"><i>First and foremost</i>, you must work hard.</div><div class="pt">Antes de tudo e acima de tudo, você tem que trabalhar duro.</div></div>
+<div class="i"><div class="en">There are cafés <i>here and there</i>. · We've had meetings <i>on and off</i>.</div><div class="pt">Há cafés aqui e ali. · Tivemos reuniões de vez em quando.</div><div class="def">Grupo 3: palavras gramaticais também formam binomial.</div></div>
+<div class="i"><div class="en">I've been running <i>back and forth</i> all day.</div><div class="pt">Passei o dia indo e voltando.</div><div class="def"><b>To and fro</b> funciona igual.</div></div>
+<div class="i"><div class="en">He is unemployed and <i>down and out</i>. · She's better now, and <i>out and about</i> again.</div><div class="pt">Ele está desempregado e na miséria. · Ela melhorou e já está saindo de novo.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">A <i>black and white</i> film, please. · <i>Ladies and gentlemen</i>, your attention, please!</div><div class="pt">Um filme em preto e branco, por favor. · Senhoras e senhores, atenção!</div><div class="def">Estes são <b>neutros</b>: cabem em contexto formal também.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">There was <i>hot and cold</i> water in every room.</div><div class="pt">Havia água quente e fria em todos os quartos.</div><div class="def">Repare que o português inverte a ordem em vários desses pares — o inglês não admite a inversão.</div></div>
+<div class="i"><div class="en">You've got your sweater on <i>back to front</i>.</div><div class="pt">Você está com o suéter do avesso.</div><div class="def">Daqui em diante: binomials ligados por <b>outra coisa</b> que não <i>and</i>.</div></div>
+<div class="i"><div class="en">He won't help her; she'll have to <i>sink or swim</i>. · <i>Slowly but surely</i>, I realised the boat was sinking.</div><div class="pt">Ele não vai ajudá-la; ela que se vire. · Lenta mas seguramente, percebi que o barco afundava.</div></div>
+<div class="i"><div class="en"><i>Sooner or later</i>, you'll learn your lesson. · It had to be <i>all or nothing</i>.</div><div class="pt">Cedo ou tarde você vai aprender. · Tinha que ser tudo ou nada.</div></div>
+<div class="i"><div class="en">That's all I can offer you; <i>take it or leave it</i>. · It's about the same distance, <i>give or take</i> a few miles.</div><div class="pt">É tudo que posso oferecer; é pegar ou largar. · É mais ou menos a mesma distância, com uma milha a mais ou a menos.</div></div>
+</div>
+</section>
+
+<section id="s16">
+<div class="snum">Conversa · expressões</div>
+<h2>As expressões que organizam a fala</h2>
+<p class="sdesc">Sentido transparente, <b>forma fixa</b>. São difíceis de achar no dicionário — o jeito é reconhecê-las na fala e guardar inteiras.</p>
+<div class="items">
+<div class="i"><div class="en"><i>As I was saying</i>, I haven't seen her for years.</div><div class="pt">Como eu estava dizendo, não a vejo há anos.</div><div class="def">Retoma a conversa num ponto anterior.</div></div>
+<div class="i"><div class="en"><i>As I say</i> / <i>as you say</i>, we'll have to get there early to get a seat.</div><div class="pt">Como eu disse / como você disse, temos que chegar cedo para pegar lugar.</div><div class="def">Repete e confirma o que já foi dito.</div></div>
+<div class="i"><div class="en"><i>Talking of</i> skiing, whatever happened to Bill Jakes?</div><div class="pt">Falando em esqui, o que foi feito do Bill Jakes?</div><div class="def">Abre assunto novo mas <b>amarrando</b> ao atual.</div></div>
+<div class="i"><div class="en"><i>If you ask me</i>, she's heading for trouble.</div><div class="pt">Se quer saber, ela está indo direto para o problema.</div><div class="def">Dá opinião — mesmo que ninguém tenha pedido.</div></div>
+<div class="i"><div class="en"><i>That reminds me</i>, I haven't rung George yet.</div><div class="pt">Falando nisso, ainda não liguei para o George.</div></div>
+<div class="i"><div class="en"><i>Come to think of it</i>, did he give me his number after all?</div><div class="pt">Pensando bem, ele chegou a me dar o número dele?</div><div class="def">Algo na conversa fez você perceber que pode haver um problema.</div></div>
+<div class="i"><div class="en"><i>This is it.</i> · <i>That's it.</i></div><div class="pt">É isso aí. · Acabou.</div><div class="def"><b>This is it</b>: este é o ponto importante. <b>That's it</b>: é a última coisa, terminamos.</div></div>
+<div class="i"><div class="en">We talked about <i>this and that</i>, or <i>this, that and the other</i>.</div><div class="pt">A gente conversou sobre isso e aquilo.</div><div class="def">Assuntos variados e sem importância.</div></div>
+<div class="i"><div class="en">So, <i>that's that</i>, then.</div><div class="pt">Então está resolvido.</div><div class="def">Combinado, fechado, finalizado.</div></div>
+<div class="i"><div class="en"><i>If the worst comes to the worst</i>, we'll have to cancel the holiday.</div><div class="pt">Na pior das hipóteses, teremos que cancelar as férias.</div></div>
+<div class="i"><div class="en"><i>If all else fails</i>, we could fax them.</div><div class="pt">Se nada mais der certo, a gente manda um fax.</div></div>
+<div class="i"><div class="en"><i>What with one thing and another</i>, I haven't had time to reply to her letter.</div><div class="pt">Entre uma coisa e outra, não tive tempo de responder a carta dela.</div></div>
+</div>
+</section>
+
+<section id="s17">
+<div class="snum">Idioms · pessoas</div>
+<h2>Julgar alguém em quatro palavras</h2>
+<p class="sdesc">Os idioms que descrevem gente — organizados pelo <b>eixo</b> em que julgam: bondade, velocidade, e distância da norma.</p>
+<div class="items">
+<div class="i"><div class="en">She has a <i>heart of gold</i>. ≠ She's <i>as hard as nails</i>.</div><div class="pt">Ela tem um coração de ouro. ≠ Ela é dura como pedra.</div><div class="def"><b>As hard as nails</b>: nenhuma compaixão pelos outros.</div></div>
+<div class="i"><div class="en">He's <i>as good as gold</i>. ≠ He's rather <i>a cold fish</i>.</div><div class="pt">Ele é um santo. ≠ Ele é meio frio.</div><div class="def"><b>As good as gold</b> se usa sobretudo para <b>criança</b> bem-comportada.</div></div>
+<div class="i"><div class="en">He's such an <i>awkward customer</i>.</div><div class="pt">Ele é uma pessoa difícil de lidar.</div></div>
+<div class="i"><div class="en">She's a <i>pain in the neck</i>. Nobody likes her.</div><div class="pt">Ela é um pé no saco. Ninguém gosta dela.</div></div>
+<div class="i"><div class="en">He <i>gets on everyone's nerves</i>.</div><div class="pt">Ele irrita todo mundo.</div></div>
+<div class="i"><div class="en">He's very <i>quick off the mark</i>; he always gets things before everybody else.</div><div class="pt">Ele é rápido no gatilho; consegue as coisas antes de todo mundo.</div></div>
+<div class="i"><div class="en">I was a bit <i>slow off the mark</i>; the job had been filled by the time I got the forms.</div><div class="pt">Eu fui meio lento; quando peguei os formulários a vaga já estava preenchida.</div></div>
+<div class="i"><div class="en">You've asked him to marry you! You're a <i>fast worker</i>!</div><div class="pt">Você já o pediu em casamento! Você não perde tempo!</div></div>
+<div class="i"><div class="en">Come on! Hurry up! You're such a <i>slow-coach</i>!</div><div class="pt">Vamos! Anda! Você é uma lesma!</div></div>
+<div class="i"><div class="en">She's a bit of an <i>odd-ball</i>; very strange.</div><div class="pt">Ela é meio esquisitona.</div></div>
+<div class="i"><div class="en">He's really <i>over the top</i>. · He's <i>round the bend</i>, if you ask me.</div><div class="pt">Ele é exagerado demais. · Ele é doido de pedra, se quer saber.</div></div>
+<div class="i"><div class="en">My politics are very <i>middle-of-the-road</i>.</div><div class="pt">Minha posição política é bem de centro.</div><div class="def">Nem de esquerda nem de direita, sem ideias radicais.</div></div>
+<div class="i"><div class="en"><i>teacher's pet</i> · a real <i>know-all</i> · a bit of a <i>big-head</i> · a <i>lazy-bones</i></div><div class="pt">o queridinho do professor · um sabe-tudo · um metido · um preguiçoso</div><div class="def">Os três últimos servem para gente fora da sala de aula também.</div></div>
+</div>
+</section>
+
+<section id="s18">
+<div class="snum">Idioms · humor e corpo</div>
+<h2>Como se está — do topo do mundo ao fundo do poço</h2>
+<p class="sdesc"><b>Aviso do livro:</b> há exagero embutido nesses idioms. Eles comentam a situação e <b>aliviam o tom</b> — por isso, só em contexto informal.</p>
+<div class="items">
+<div class="i"><div class="en">Jo's <i>as happy as the day is long</i>.</div><div class="pt">A Jo é a felicidade em pessoa.</div></div>
+<div class="i"><div class="en">Mary seems to be <i>on cloud nine</i> these days.</div><div class="pt">A Mary parece estar nas nuvens ultimamente.</div></div>
+<div class="i"><div class="en">Everyone seemed to be <i>in high spirits</i>.</div><div class="pt">Todo mundo parecia animadíssimo.</div></div>
+<div class="i"><div class="en">She seems to be <i>keeping her chin up</i>.</div><div class="pt">Ela parece estar mantendo o ânimo.</div><div class="def">Feliz <b>apesar</b> das coisas ruins.</div></div>
+<div class="i"><div class="en">He had a <i>face as long as a fiddle</i>.</div><div class="pt">Ele estava com uma cara de enterro.</div></div>
+<div class="i"><div class="en">She certainly looked <i>down in the dumps</i>.</div><div class="pt">Ela estava visivelmente na fossa.</div></div>
+<div class="i"><div class="en">Gerry is <i>in a (black) mood</i>. · Mark was <i>like a bear with a sore head</i>.</div><div class="pt">O Gerry está de mau humor. · O Mark estava insuportável.</div></div>
+<div class="i"><div class="en"><i>I could eat a horse!</i> · <i>I'm feeling all in.</i></div><div class="pt">Estou morrendo de fome! · Estou acabado.</div></div>
+<div class="i"><div class="en">You're looking a bit <i>under the weather</i>. ≠ She looked, and felt, <i>on top form</i>.</div><div class="pt">Você está com uma cara meio adoentada. ≠ Ela estava, e se sentia, em plena forma.</div></div>
+<div class="i"><div class="en">I suddenly felt <i>as if my head was going round</i>. · I was almost <i>at death's door</i> last week!</div><div class="pt">De repente fiquei tonto. · Semana passada eu estava quase morrendo!</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Old Nora's <i>as fit as a fiddle</i>.</div><div class="pt">A velha Nora está firme e forte.</div><div class="def">Repare: <b>fiddle</b> aparece nos dois — <i>face as long as a fiddle</i> (triste) e <i>as fit as a fiddle</i> (saudável). Não têm relação.</div></div>
+<div class="i"><div class="en">She was <i>scared stiff</i>. · She <i>frightened the life out of</i> him.</div><div class="pt">Ela estava apavorada. · Ela o assustou de morte.</div></div>
+<div class="i"><div class="en">We were all <i>shaking in our shoes</i>. · The poor lad was <i>scared out of his wits</i>.</div><div class="pt">Estávamos todos tremendo de medo. · O coitado do rapaz estava morto de pavor.</div></div>
+<div class="i"><div class="en">I <i>jumped out of my skin</i> when I heard the bang.</div><div class="pt">Eu quase pulei do susto quando ouvi o estrondo.</div></div>
+<div class="i"><div class="en">Don't <i>get carried away</i> by promises that won't be kept. <i>Keep a cool head.</i></div><div class="pt">Não se empolgue com promessas que não serão cumpridas. Mantenha a cabeça fria.</div><div class="def">Do horóscopo — que, segundo o livro, é o melhor lugar para colher idioms de humor e estado.</div></div>
+<div class="i"><div class="en">Someone will say something that will make you <i>swell with pride</i> and you may feel <i>on top of the world</i>.</div><div class="pt">Alguém vai dizer algo que vai te encher de orgulho, e você pode se sentir o rei do mundo.</div></div>
+</div>
+</section>
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+
+</div>
+<footer>Sistema 23 · Livro 03 · English Vocabulary in Use Upper-intermediate (McCarthy &amp; O'Dell) &mdash; inglês real tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' \u2014 '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

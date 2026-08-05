@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Falsos cognatos — Sistema 15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F97316;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="index.html" class="back">&#8592; Voltar ao Sistema 15</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 15 · dúvidas pontuais · falsos cognatos</div>
+<h1 class="title">Falsos <em>cognatos</em></h1>
+<p class="lead">Palavras que parecem uma coisa e são outra. O erro não é de vocabulário — é de confiança: você <i>já sabe</i> o que a palavra quer dizer, e é justamente aí que ela te derruba. Cada item traz o que parece, o que é de verdade e a frase que fixa.</p>
+
+<div class="metrics">
+  <div class="metric"><b>12</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>A2–B2</b><span>nível</span></div>
+  <div class="metric"><b>US</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar palavra em inglês ou português — ex.: pretend, fingir, library…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">os dez clássicos</div>
+<h2>Os dez que todo brasileiro erra</h2>
+<p class="sdesc">O núcleo do card: as dez palavras que aparecem em toda lista de falso cognato, e continuam derrubando.</p>
+<div class="items">
+<div class="i"><span class="tag err">parece "puxar"</span><div class="en"><i>Push</i> the door.</div><div class="pt"><b>Empurre</b> a porta.</div><div class="def">Push = empurrar. Puxar é <i>pull</i> — e é o que está escrito na outra porta.</div></div>
+<div class="i"><span class="tag err">parece "pretender"</span><div class="en">She <i>pretends</i> to sleep.</div><div class="pt">Ela <b>finge</b> que dorme.</div><div class="def">Pretend = fingir. Pretender é <i>to intend</i> ou <i>to plan</i>.</div></div>
+<div class="i"><span class="tag err">parece "atualmente"</span><div class="en"><i>Actually</i>, I'm busy.</div><div class="pt"><b>Na verdade</b>, estou ocupado.</div><div class="def">Actually = na verdade. Atualmente é <i>currently</i> ou <i>nowadays</i>.</div></div>
+<div class="i"><span class="tag err">parece "realizar"</span><div class="en">I <i>realized</i> my mistake.</div><div class="pt">Eu <b>percebi</b> meu erro.</div><div class="def">Realize = perceber, dar-se conta. Realizar (fazer) é <i>to carry out</i>.</div></div>
+<div class="i"><span class="tag err">parece "parentes"</span><div class="en">My <i>parents</i> are here.</div><div class="pt">Meus <b>pais</b> estão aqui.</div><div class="def">Parents = pai e mãe. Parentes é <i>relatives</i>.</div></div>
+<div class="i"><span class="tag err">parece "fábrica"</span><div class="en">This <i>fabric</i> is soft.</div><div class="pt">Este <b>tecido</b> é macio.</div><div class="def">Fabric = tecido. Fábrica é <i>factory</i>.</div></div>
+<div class="i"><span class="tag err">parece "livraria"</span><div class="en">I study at the <i>library</i>.</div><div class="pt">Eu estudo na <b>biblioteca</b>.</div><div class="def">Library = biblioteca. Livraria é <i>bookstore</i>.</div></div>
+<div class="i"><span class="tag err">parece "colégio"</span><div class="en">She goes to <i>college</i>.</div><div class="pt">Ela faz <b>faculdade</b>.</div><div class="def">College = faculdade. Colégio é <i>high school</i>.</div></div>
+<div class="i"><span class="tag err">parece "costume"</span><div class="en">A Halloween <i>costume</i>.</div><div class="pt">Uma <b>fantasia</b> de Halloween.</div><div class="def">Costume = fantasia, traje. Costume (hábito) é <i>habit</i> ou <i>custom</i>.</div></div>
+<div class="i"><span class="tag err">parece "lanche"</span><div class="en">Let's have <i>lunch</i>.</div><div class="pt">Vamos <b>almoçar</b>.</div><div class="def">Lunch = almoço. Lanche é <i>snack</i>.</div></div>
+<div class="i"><div class="en">I <i>pulled</i> the rope and he <i>pushed</i> the box.</div><div class="pt">Eu puxei a corda e ele empurrou a caixa.</div><div class="def">O par completo, para não trocar um pelo outro.</div></div>
+<div class="i"><div class="en">I <i>intend</i> to travel next year.</div><div class="pt">Eu pretendo viajar no ano que vem.</div><div class="def">A forma certa de dizer "pretender".</div></div>
+<div class="i"><div class="en"><i>Currently</i>, I work from home.</div><div class="pt">Atualmente, eu trabalho de casa.</div><div class="def">A forma certa de dizer "atualmente".</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">verbos</div>
+<h2>Verbos que enganam</h2>
+<p class="sdesc">O grupo mais perigoso: o verbo entra na frase inteiro e muda o sentido sem avisar.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é "assistir (ver)"</span><div class="en">She <i>assisted</i> the surgeon.</div><div class="pt">Ela <b>auxiliou</b> o cirurgião.</div><div class="def">Assist = auxiliar. Assistir a um filme é <i>to watch</i>.</div></div>
+<div class="i"><span class="tag err">não é "atender"</span><div class="en">I <i>attend</i> class every morning.</div><div class="pt">Eu <b>frequento</b> a aula toda manhã.</div><div class="def">Attend = comparecer, frequentar. Atender o telefone é <i>to answer</i>.</div></div>
+<div class="i"><span class="tag err">não é "suportar"</span><div class="en">My family <i>supports</i> my decision.</div><div class="pt">Minha família <b>apoia</b> minha decisão.</div><div class="def">Support = apoiar. Suportar (tolerar) é <i>to stand</i> ou <i>to put up with</i>.</div></div>
+<div class="i"><span class="tag err">não é "resumir"</span><div class="en">Let's <i>resume</i> the meeting.</div><div class="pt">Vamos <b>retomar</b> a reunião.</div><div class="def">Resume = retomar. Resumir é <i>to summarize</i>.</div></div>
+<div class="i"><span class="tag err">não é "recordar"</span><div class="en">They <i>recorded</i> the song.</div><div class="pt">Eles <b>gravaram</b> a música.</div><div class="def">Record = gravar. Recordar é <i>to remember</i>.</div></div>
+<div class="i"><span class="tag err">não é "comprar"</span><div class="en">They <i>comprised</i> three departments.</div><div class="pt">Eles <b>compreendiam</b> três departamentos.</div><div class="def">Comprise = abranger, compor-se de.</div></div>
+<div class="i"><span class="tag err">não é "esperar (aguardar)"</span><div class="en">I <i>expect</i> good news.</div><div class="pt">Eu <b>espero</b> (tenho expectativa de) boas notícias.</div><div class="def">Expect = ter expectativa. Aguardar é <i>to wait</i>.</div></div>
+<div class="i"><span class="tag err">não é "exigir"</span><div class="en">The job <i>requires</i> patience.</div><div class="pt">O trabalho <b>exige</b> paciência.</div><div class="def">Este acerta — mas cuidado: <i>to require</i> não é "requerer" no sentido de pedir formalmente.</div></div>
+<div class="i"><span class="tag err">não é "ignorar"</span><div class="en">I was <i>ignorant</i> of the rule.</div><div class="pt">Eu <b>desconhecia</b> a regra.</div><div class="def">Ignorant = que não sabe. Ignorar alguém é <i>to ignore</i>.</div></div>
+<div class="i"><div class="en">Can you <i>watch</i> this video with me?</div><div class="pt">Você pode assistir a este vídeo comigo?</div><div class="def">A forma certa de "assistir".</div></div>
+<div class="i"><div class="en">Please <i>answer</i> the phone.</div><div class="pt">Por favor, atenda o telefone.</div><div class="def">A forma certa de "atender".</div></div>
+<div class="i"><div class="en">I can't <i>stand</i> the noise.</div><div class="pt">Não suporto o barulho.</div><div class="def">A forma certa de "suportar".</div></div>
+<div class="i"><div class="en">Could you <i>summarize</i> the report?</div><div class="pt">Você poderia resumir o relatório?</div><div class="def">A forma certa de "resumir".</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">pessoas</div>
+<h2>Pessoas, família e relações</h2>
+<p class="sdesc">Falar de quem é seu é das primeiras coisas que se faz em inglês — e das primeiras onde se escorrega.</p>
+<div class="items">
+<div class="i"><div class="en">My <i>relatives</i> came from Bahia.</div><div class="pt">Meus <b>parentes</b> vieram da Bahia.</div><div class="def">Relatives = parentes. <i>Parents</i> é só pai e mãe.</div></div>
+<div class="i"><div class="en">He is my <i>cousin</i>.</div><div class="pt">Ele é meu <b>primo</b>.</div><div class="def">Cousin cobre primo e prima — não muda com o gênero.</div></div>
+<div class="i"><div class="en">She's a <i>relative</i> of mine.</div><div class="pt">Ela é uma parenta minha.</div></div>
+<div class="i"><span class="tag err">não é "parente"</span><div class="en">He's a <i>relevant</i> author.</div><div class="pt">Ele é um autor <b>relevante</b>.</div></div>
+<div class="i"><span class="tag err">não é "sensível"</span><div class="en">She's a <i>sensible</i> person.</div><div class="pt">Ela é uma pessoa <b>sensata</b>.</div><div class="def">Sensible = sensato. Sensível é <i>sensitive</i>.</div></div>
+<div class="i"><div class="en">He's very <i>sensitive</i> to criticism.</div><div class="pt">Ele é muito sensível a críticas.</div><div class="def">O par do item anterior.</div></div>
+<div class="i"><span class="tag err">não é "educado"</span><div class="en">He is well <i>educated</i>.</div><div class="pt">Ele tem <b>boa formação</b>.</div><div class="def">Educated = instruído. Educado (com boas maneiras) é <i>polite</i>.</div></div>
+<div class="i"><div class="en">She's very <i>polite</i>.</div><div class="pt">Ela é muito educada.</div><div class="def">A forma certa de "educado".</div></div>
+<div class="i"><span class="tag err">não é "esperto"</span><div class="en">He's an <i>expert</i> in tax law.</div><div class="pt">Ele é <b>especialista</b> em direito tributário.</div><div class="def">Expert = especialista. Esperto é <i>clever</i> ou <i>smart</i>.</div></div>
+<div class="i"><span class="tag err">não é "idoso"</span><div class="en">He's the <i>eldest</i> son.</div><div class="pt">Ele é o filho <b>mais velho</b>.</div></div>
+<div class="i"><span class="tag err">não é "casualidade"</span><div class="en">We met by <i>chance</i>.</div><div class="pt">A gente se encontrou por <b>acaso</b>.</div><div class="def">Casualty em inglês é vítima de acidente.</div></div>
+<div class="i"><span class="tag err">não é "pais"</span><div class="en">Which <i>country</i> are you from?</div><div class="pt">De que <b>país</b> você é?</div><div class="def">País é country. <i>Parents</i> continua sendo pai e mãe.</div></div>
+<div class="i"><div class="en">My <i>parents</i> are my mother and father — my <i>relatives</i> are everyone else.</div><div class="pt">Meus parents são minha mãe e meu pai — meus relatives são todo o resto.</div><div class="def">A frase que fecha a confusão.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">escola</div>
+<h2>Escola, faculdade e estudo</h2>
+<p class="sdesc">O campo onde quase toda palavra parece portuguesa e quase nenhuma é.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é "colégio"</span><div class="en">I'm applying to <i>college</i>.</div><div class="pt">Estou me candidatando à <b>faculdade</b>.</div></div>
+<div class="i"><div class="en">I finished <i>high school</i> last year.</div><div class="pt">Terminei o ensino médio ano passado.</div><div class="def">A forma certa de "colégio".</div></div>
+<div class="i"><span class="tag err">não é "livraria"</span><div class="en">The <i>library</i> closes at nine.</div><div class="pt">A <b>biblioteca</b> fecha às nove.</div></div>
+<div class="i"><div class="en">I bought it at the <i>bookstore</i>.</div><div class="pt">Comprei na livraria.</div><div class="def">A forma certa de "livraria".</div></div>
+<div class="i"><span class="tag err">não é "leitura"</span><div class="en">The <i>lecture</i> lasted two hours.</div><div class="pt">A <b>palestra</b> durou duas horas.</div><div class="def">Lecture = aula expositiva, palestra. Leitura é <i>reading</i>.</div></div>
+<div class="i"><span class="tag err">não é "grau"</span><div class="en">She has a <i>degree</i> in biology.</div><div class="pt">Ela tem <b>diploma</b> de biologia.</div></div>
+<div class="i"><span class="tag err">não é "graduação" (o curso)</span><div class="en">Her <i>graduation</i> is in June.</div><div class="pt">A <b>formatura</b> dela é em junho.</div><div class="def">Graduation = a cerimônia. O curso é <i>the degree</i> ou <i>undergrad</i>.</div></div>
+<div class="i"><span class="tag err">não é "curso" qualquer</span><div class="en">I'm taking a <i>course</i> in statistics.</div><div class="pt">Estou fazendo um curso de estatística.</div></div>
+<div class="i"><span class="tag err">não é "nota" (bilhete)</span><div class="en">I got a good <i>grade</i>.</div><div class="pt">Tirei uma boa <b>nota</b>.</div><div class="def">Grade = nota escolar. Bilhete é <i>note</i>.</div></div>
+<div class="i"><span class="tag err">não é "prova" de roupa</span><div class="en">The <i>test</i> was hard.</div><div class="pt">A prova estava difícil.</div></div>
+<div class="i"><span class="tag err">não é "faculdade" (o prédio)</span><div class="en">The <i>faculty</i> met on Monday.</div><div class="pt">O <b>corpo docente</b> se reuniu na segunda.</div><div class="def">Faculty = os professores, não o lugar.</div></div>
+<div class="i"><div class="en">He's an <i>undergraduate</i> student.</div><div class="pt">Ele é aluno de graduação.</div></div>
+<div class="i"><div class="en">I have a <i>class</i> at ten.</div><div class="pt">Tenho aula às dez.</div><div class="def">Class = aula. Classe (social) também é class, mas sala é <i>classroom</i>.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">trabalho</div>
+<h2>Trabalho, dinheiro e escritório</h2>
+<p class="sdesc">As palavras que aparecem em currículo e reunião — e que custam caro quando saem trocadas.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é "fábrica"</span><div class="en">The <i>fabric</i> comes from Italy.</div><div class="pt">O <b>tecido</b> vem da Itália.</div></div>
+<div class="i"><div class="en">He works at a car <i>factory</i>.</div><div class="pt">Ele trabalha numa fábrica de carros.</div><div class="def">A forma certa de "fábrica".</div></div>
+<div class="i"><span class="tag err">não é "aplicação"</span><div class="en">I sent my <i>application</i> yesterday.</div><div class="pt">Enviei minha <b>candidatura</b> ontem.</div><div class="def">Application = inscrição, candidatura. Aplicação (dinheiro) é <i>investment</i>.</div></div>
+<div class="i"><span class="tag err">não é "apontamento"</span><div class="en">I have an <i>appointment</i> at three.</div><div class="pt">Tenho um <b>compromisso marcado</b> às três.</div></div>
+<div class="i"><span class="tag err">não é "compromisso"</span><div class="en">We reached a <i>compromise</i>.</div><div class="pt">Chegamos a um <b>meio-termo</b>.</div><div class="def">Compromise = concessão mútua. Compromisso é <i>commitment</i>.</div></div>
+<div class="i"><span class="tag err">não é "pretensão"</span><div class="en">That's a <i>pretentious</i> restaurant.</div><div class="pt">É um restaurante <b>pretensioso</b>.</div></div>
+<div class="i"><span class="tag err">não é "salário" qualquer</span><div class="en">What's your <i>income</i>?</div><div class="pt">Qual é a sua <b>renda</b>?</div><div class="def">Income = renda total. Salário é <i>salary</i> ou <i>wage</i>.</div></div>
+<div class="i"><span class="tag err">não é "cargo"</span><div class="en">There's an extra <i>charge</i> for delivery.</div><div class="pt">Há uma <b>taxa</b> extra pela entrega.</div><div class="def">Charge = cobrança. Cargo é <i>position</i> ou <i>role</i>.</div></div>
+<div class="i"><span class="tag err">não é "advertir"</span><div class="en">They <i>advertise</i> on the radio.</div><div class="pt">Eles <b>anunciam</b> no rádio.</div><div class="def">Advertise = anunciar. Advertir é <i>to warn</i>.</div></div>
+<div class="i"><span class="tag err">não é "notícia"</span><div class="en">I gave <i>notice</i> last week.</div><div class="pt">Eu <b>avisei que sairia</b> semana passada.</div><div class="def">Notice = aviso prévio. Notícia é <i>news</i>.</div></div>
+<div class="i"><span class="tag err">não é "eventualmente"</span><div class="en">He <i>eventually</i> agreed.</div><div class="pt">Ele <b>acabou concordando</b>.</div><div class="def">Eventually = por fim. Eventualmente é <i>occasionally</i>.</div></div>
+<div class="i"><div class="en">We meet <i>occasionally</i>.</div><div class="pt">A gente se encontra eventualmente.</div><div class="def">A forma certa de "eventualmente".</div></div>
+<div class="i"><span class="tag err">não é "efetivo"</span><div class="en">The change is <i>effective</i> today.</div><div class="pt">A mudança <b>entra em vigor</b> hoje.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">adjetivos</div>
+<h2>Adjetivos traiçoeiros</h2>
+<p class="sdesc">Adjetivo errado não trava a frase — só muda o que você disse. É o pior tipo de erro: passa despercebido.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é "atual"</span><div class="en">The <i>actual</i> cost was higher.</div><div class="pt">O custo <b>real</b> foi maior.</div><div class="def">Actual = real, verdadeiro. Atual é <i>current</i>.</div></div>
+<div class="i"><div class="en">The <i>current</i> version is 3.0.</div><div class="pt">A versão atual é a 3.0.</div><div class="def">A forma certa de "atual".</div></div>
+<div class="i"><span class="tag err">não é "particular" (privado)</span><div class="en">Is there any <i>particular</i> reason?</div><div class="pt">Existe algum motivo <b>específico</b>?</div><div class="def">Particular = específico. Particular (privado) é <i>private</i>.</div></div>
+<div class="i"><span class="tag err">não é "compreensivo"</span><div class="en">It's a <i>comprehensive</i> report.</div><div class="pt">É um relatório <b>abrangente</b>.</div><div class="def">Comprehensive = completo. Compreensivo é <i>understanding</i>.</div></div>
+<div class="i"><span class="tag err">não é "gracioso"</span><div class="en">It was a <i>disgrace</i>.</div><div class="pt">Foi uma <b>vergonha</b>.</div><div class="def">Disgrace = desonra. Desgraça é <i>misfortune</i>.</div></div>
+<div class="i"><span class="tag err">não é "largo"</span><div class="en">It's a <i>large</i> house.</div><div class="pt">É uma casa <b>grande</b>.</div><div class="def">Large = grande. Largo é <i>wide</i>.</div></div>
+<div class="i"><span class="tag err">não é "esquisito"</span><div class="en">What an <i>exquisite</i> dress!</div><div class="pt">Que vestido <b>refinado</b>!</div><div class="def">Exquisite = requintado. Esquisito é <i>weird</i>.</div></div>
+<div class="i"><span class="tag err">não é "injúria"</span><div class="en">He recovered from the <i>injury</i>.</div><div class="pt">Ele se recuperou da <b>lesão</b>.</div></div>
+<div class="i"><span class="tag err">não é "prejuízo"</span><div class="en">That's a <i>prejudice</i>.</div><div class="pt">Isso é <b>preconceito</b>.</div><div class="def">Prejudice = preconceito. Prejuízo é <i>loss</i> ou <i>damage</i>.</div></div>
+<div class="i"><span class="tag err">não é "conveniente"</span><div class="en">A <i>convenient</i> time for you?</div><div class="pt">Um horário <b>que te sirva</b>?</div></div>
+<div class="i"><span class="tag err">não é "realizado"</span><div class="en">I feel <i>fulfilled</i>.</div><div class="pt">Me sinto realizado.</div><div class="def">A forma certa de "realizado".</div></div>
+<div class="i"><span class="tag err">não é "terno"</span><div class="en">That color <i>suits</i> you.</div><div class="pt">Essa cor <b>combina</b> com você.</div><div class="def">Suit também é terno, mas como verbo é combinar/servir.</div></div>
+<div class="i"><span class="tag err">não é "tenro"</span><div class="en">The meat is <i>tender</i>.</div><div class="pt">A carne está <b>macia</b>.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">comida</div>
+<h2>Comida, casa e roupa</h2>
+<p class="sdesc">O vocabulário mais cotidiano — e o que mais gera mal-entendido em viagem.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é "lanche"</span><div class="en"><i>Lunch</i> is at noon.</div><div class="pt">O <b>almoço</b> é ao meio-dia.</div></div>
+<div class="i"><div class="en">I had a <i>snack</i> before dinner.</div><div class="pt">Comi um lanche antes do jantar.</div><div class="def">A forma certa de "lanche".</div></div>
+<div class="i"><span class="tag err">não é "costume"</span><div class="en">She wore a pirate <i>costume</i>.</div><div class="pt">Ela usou uma <b>fantasia</b> de pirata.</div></div>
+<div class="i"><div class="en">It's a local <i>custom</i>.</div><div class="pt">É um costume local.</div><div class="def">A forma certa de "costume" (hábito).</div></div>
+<div class="i"><span class="tag err">não é "pasta" (arquivo)</span><div class="en">I ordered <i>pasta</i>.</div><div class="pt">Pedi <b>massa</b>.</div><div class="def">Pasta = macarrão. Pasta de arquivo é <i>folder</i>.</div></div>
+<div class="i"><span class="tag err">não é "pipoca" doce</span><div class="en">Pass me the <i>jelly</i>.</div><div class="pt">Me passa a <b>geleia</b>.</div><div class="def">Jelly = geleia. Gelatina é <i>Jell-O</i> ou <i>jelly</i> no inglês britânico.</div></div>
+<div class="i"><span class="tag err">não é "taça"</span><div class="en">A <i>cup</i> of coffee.</div><div class="pt">Uma <b>xícara</b> de café.</div><div class="def">Cup = xícara. Taça é <i>glass</i>.</div></div>
+<div class="i"><span class="tag err">não é "copo"</span><div class="en">He wears <i>glasses</i>.</div><div class="pt">Ele usa <b>óculos</b>.</div><div class="def">No plural muda de sentido.</div></div>
+<div class="i"><span class="tag err">não é "sopa"</span><div class="en">Use <i>soap</i> to wash your hands.</div><div class="pt">Use <b>sabonete</b> para lavar as mãos.</div><div class="def">Soap = sabonete. Sopa é <i>soup</i>.</div></div>
+<div class="i"><span class="tag err">não é "assinatura"</span><div class="en">Bring the <i>bill</i>, please.</div><div class="pt">Traga a <b>conta</b>, por favor.</div></div>
+<div class="i"><span class="tag err">não é "maçã" só</span><div class="en">The <i>apartment</i> has two bedrooms.</div><div class="pt">O apartamento tem dois quartos.</div></div>
+<div class="i"><span class="tag err">não é "quarto" qualquer</span><div class="en">There's no <i>room</i> for this.</div><div class="pt">Não tem <b>espaço</b> para isso.</div><div class="def">Room = quarto e também espaço.</div></div>
+<div class="i"><span class="tag err">não é "tecido" de roupa</span><div class="en">I need a paper <i>tissue</i>.</div><div class="pt">Preciso de um <b>lenço de papel</b>.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">corpo</div>
+<h2>Corpo, saúde e sensações</h2>
+<p class="sdesc">Um erro aqui vira constrangimento — literalmente, no caso do primeiro item.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é "constrangido"</span><div class="en">I'm <i>constipated</i>.</div><div class="pt">Estou com <b>prisão de ventre</b>.</div><div class="def">O clássico. Constrangido é <i>embarrassed</i>.</div></div>
+<div class="i"><div class="en">I'm <i>embarrassed</i>.</div><div class="pt">Estou constrangido.</div><div class="def">A forma certa — e a que evita o mal-entendido acima.</div></div>
+<div class="i"><span class="tag err">não é "grávida"</span><div class="en">She's <i>embarrassed</i>, not pregnant.</div><div class="pt">Ela está constrangida, não grávida.</div><div class="def">Em espanhol <i>embarazada</i> é grávida — a confusão vem por aí.</div></div>
+<div class="i"><span class="tag err">não é "injúria"</span><div class="en">He has a knee <i>injury</i>.</div><div class="pt">Ele tem uma <b>lesão</b> no joelho.</div></div>
+<div class="i"><span class="tag err">não é "ferida" leve</span><div class="en">It's a deep <i>wound</i>.</div><div class="pt">É um <b>ferimento</b> profundo.</div></div>
+<div class="i"><span class="tag err">não é "intoxicado"</span><div class="en">He was <i>intoxicated</i>.</div><div class="pt">Ele estava <b>embriagado</b>.</div><div class="def">Intoxicated = alcoolizado. Intoxicação alimentar é <i>food poisoning</i>.</div></div>
+<div class="i"><span class="tag err">não é "pretender"</span><div class="en">Stop <i>pretending</i> you're fine.</div><div class="pt">Pare de <b>fingir</b> que está bem.</div></div>
+<div class="i"><span class="tag err">não é "resfriado"</span><div class="en">I have a <i>cold</i>.</div><div class="pt">Estou <b>resfriado</b>.</div><div class="def">Este acerta — mas note que é <i>have</i>, não <i>be</i>.</div></div>
+<div class="i"><span class="tag err">não é "esperto"</span><div class="en">My eyes <i>smart</i>.</div><div class="pt">Meus olhos <b>ardem</b>.</div><div class="def">Smart como verbo é arder.</div></div>
+<div class="i"><span class="tag err">não é "apreensivo"</span><div class="en">He's <i>apprehensive</i> about the exam.</div><div class="pt">Ele está <b>apreensivo</b> com a prova.</div><div class="def">Este é cognato verdadeiro — nem todos enganam.</div></div>
+<div class="i"><span class="tag err">não é "desordem"</span><div class="en">He has a sleep <i>disorder</i>.</div><div class="pt">Ele tem um <b>distúrbio</b> do sono.</div></div>
+<div class="i"><span class="tag err">não é "terapia" só</span><div class="en">She's in <i>therapy</i>.</div><div class="pt">Ela faz terapia.</div></div>
+<div class="i"><span class="tag err">não é "gripe"</span><div class="en">I caught the <i>flu</i>.</div><div class="pt">Peguei uma <b>gripe</b>.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">tempo</div>
+<h2>Tempo, frequência e ordem</h2>
+<p class="sdesc">Advérbios que mudam quando a coisa acontece — e por isso mudam a frase inteira.</p>
+<div class="items">
+<div class="i"><span class="tag err">não é "atualmente"</span><div class="en"><i>Actually</i>, I disagree.</div><div class="pt"><b>Na verdade</b>, eu discordo.</div></div>
+<div class="i"><span class="tag err">não é "eventualmente"</span><div class="en">We'll <i>eventually</i> get there.</div><div class="pt">A gente <b>acaba chegando</b> lá.</div></div>
+<div class="i"><span class="tag err">não é "presentemente"</span><div class="en">He'll arrive <i>presently</i>.</div><div class="pt">Ele chega <b>daqui a pouco</b>.</div></div>
+<div class="i"><span class="tag err">não é "ultimamente" sempre</span><div class="en"><i>Ultimately</i>, it's your call.</div><div class="pt"><b>No fim das contas</b>, a decisão é sua.</div><div class="def">Ultimately = em última análise. Ultimamente é <i>lately</i>.</div></div>
+<div class="i"><div class="en">I've been tired <i>lately</i>.</div><div class="pt">Tenho andado cansado ultimamente.</div><div class="def">A forma certa de "ultimamente".</div></div>
+<div class="i"><span class="tag err">não é "finalmente" sempre</span><div class="en"><i>Finally</i>, we agreed.</div><div class="pt"><b>Por fim</b>, concordamos.</div></div>
+<div class="i"><span class="tag err">não é "data" só</span><div class="en">I have a <i>date</i> tonight.</div><div class="pt">Tenho um <b>encontro</b> hoje à noite.</div></div>
+<div class="i"><span class="tag err">não é "jornada"</span><div class="en">It was a long <i>journey</i>.</div><div class="pt">Foi uma <b>viagem</b> longa.</div><div class="def">Journey = viagem. Jornada de trabalho é <i>workday</i>.</div></div>
+<div class="i"><span class="tag err">não é "legenda"</span><div class="en">Read the <i>caption</i>.</div><div class="pt">Leia a <b>legenda</b> da foto.</div><div class="def">Legenda de filme é <i>subtitle</i>.</div></div>
+<div class="i"><span class="tag err">não é "agenda"</span><div class="en">What's on the <i>agenda</i>?</div><div class="pt">O que está na <b>pauta</b>?</div><div class="def">Agenda = pauta da reunião. Agenda de anotar é <i>planner</i>.</div></div>
+<div class="i"><span class="tag err">não é "assistir"</span><div class="en">I'll <i>attend</i> the wedding.</div><div class="pt">Vou <b>comparecer</b> ao casamento.</div></div>
+<div class="i"><span class="tag err">não é "reunião" informal</span><div class="en">We had a <i>meeting</i>.</div><div class="pt">Tivemos uma reunião.</div></div>
+<div class="i"><div class="en"><i>Nowadays</i> everyone works remotely.</div><div class="pt">Hoje em dia todo mundo trabalha remoto.</div><div class="def">Outra forma certa de "atualmente".</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">quase</div>
+<h2>Palavras que quase acertam</h2>
+<p class="sdesc">As mais perigosas: acertam em um sentido e erram em outro. Você usa certo uma vez e erra na próxima.</p>
+<div class="items">
+<div class="i"><span class="tag">parcial</span><div class="en"><i>Exit</i> through the back door.</div><div class="pt"><b>Saia</b> pela porta dos fundos.</div><div class="def">Exit = saída. Êxito é <i>success</i>.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">I'm reading a <i>novel</i>.</div><div class="pt">Estou lendo um <b>romance</b>.</div><div class="def">Novel = romance. Novela é <i>soap opera</i>.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">Take this <i>note</i>.</div><div class="pt">Pegue este <b>bilhete</b>.</div><div class="def">Note = anotação. Nota escolar é <i>grade</i>.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">Push the <i>cart</i>.</div><div class="pt">Empurre o <b>carrinho</b>.</div><div class="def">Cart = carrinho. Carta é <i>letter</i>.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">She has a good <i>record</i>.</div><div class="pt">Ela tem um bom <b>histórico</b>.</div><div class="def">Record = registro, recorde. Recordar é <i>remember</i>.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">That's a fair <i>argument</i>.</div><div class="pt">É um <b>argumento</b> justo.</div><div class="def">Argument também é discussão, briga.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">They had an <i>argument</i>.</div><div class="pt">Eles tiveram uma <b>discussão</b>.</div><div class="def">O outro sentido do mesmo item.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">Send me the <i>file</i>.</div><div class="pt">Me manda o <b>arquivo</b>.</div><div class="def">File = arquivo. Fila é <i>line</i> ou <i>queue</i>.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">Stand in <i>line</i>.</div><div class="pt">Fique na fila.</div><div class="def">A forma certa de "fila".</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">It's a big <i>deal</i>.</div><div class="pt">É coisa <b>séria</b>.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">He's in <i>trouble</i>.</div><div class="pt">Ele está <b>encrencado</b>.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en">The <i>press</i> was there.</div><div class="pt">A <b>imprensa</b> estava lá.</div><div class="def">Press = imprensa e também apertar.</div></div>
+<div class="i"><span class="tag">parcial</span><div class="en"><i>Press</i> the button.</div><div class="pt">Aperte o botão.</div><div class="def">O outro sentido.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">espanhol</div>
+<h2>Os que vêm do espanhol</h2>
+<p class="sdesc">Uma parte dos falsos cognatos do brasileiro entra pelo espanhol, não pelo português. Vale conhecer a origem da confusão.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Embarrassed</i> means constrangido, not grávida.</div><div class="pt">Embarrassed significa constrangido, não grávida.</div><div class="def">Do espanhol <i>embarazada</i>.</div></div>
+<div class="i"><div class="en"><i>Exit</i> means saída, not êxito.</div><div class="pt">Exit significa saída, não êxito.</div><div class="def">Do espanhol <i>éxito</i>.</div></div>
+<div class="i"><div class="en"><i>Success</i> is the word for êxito.</div><div class="pt">Success é a palavra para êxito.</div></div>
+<div class="i"><div class="en"><i>Carpet</i> means tapete, not pasta.</div><div class="pt">Carpet significa tapete, não pasta.</div><div class="def">Do espanhol <i>carpeta</i>.</div></div>
+<div class="i"><div class="en"><i>Folder</i> is the word for pasta.</div><div class="pt">Folder é a palavra para pasta.</div></div>
+<div class="i"><div class="en"><i>Molest</i> is much stronger than incomodar.</div><div class="pt">Molest é muito mais grave do que incomodar.</div><div class="def">Do espanhol <i>molestar</i>. Use <i>to bother</i>.</div></div>
+<div class="i"><div class="en"><i>To bother</i> is the word for incomodar.</div><div class="pt">To bother é a palavra para incomodar.</div></div>
+<div class="i"><div class="en"><i>Realize</i> means perceber, not realizar.</div><div class="pt">Realize significa perceber, não realizar.</div></div>
+<div class="i"><div class="en"><i>Assist</i> means auxiliar, not assistir.</div><div class="pt">Assist significa auxiliar, não assistir.</div></div>
+<div class="i"><div class="en"><i>Compromise</i> means meio-termo, not compromisso.</div><div class="pt">Compromise significa meio-termo, não compromisso.</div></div>
+<div class="i"><div class="en"><i>Commitment</i> is the word for compromisso.</div><div class="pt">Commitment é a palavra para compromisso.</div></div>
+<div class="i"><div class="en"><i>Discussion</i> is usually a conversa, not a briga.</div><div class="pt">Discussion normalmente é uma conversa, não uma briga.</div></div>
+<div class="i"><div class="en"><i>Argument</i> is the word for a briga.</div><div class="pt">Argument é a palavra para briga.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">como não cair</div>
+<h2>Como parar de cair nessa</h2>
+<p class="sdesc">Não dá para decorar mil pares. Dá para criar o reflexo de desconfiar — estas frases treinam isso.</p>
+<div class="items">
+<div class="i"><div class="en">If the word looks too easy, check it.</div><div class="pt">Se a palavra parece fácil demais, confira.</div></div>
+<div class="i"><div class="en">The more Latin the word looks, the more likely it fools you.</div><div class="pt">Quanto mais latina a palavra parece, maior a chance de ela te enganar.</div></div>
+<div class="i"><div class="en">Learn the pair, not the word.</div><div class="pt">Aprenda o par, não a palavra.</div><div class="def"><i>actually × currently</i> gruda melhor que <i>actually</i> sozinho.</div></div>
+<div class="i"><div class="en">Say the right one out loud until it sounds normal.</div><div class="pt">Diga a certa em voz alta até soar normal.</div></div>
+<div class="i"><div class="en"><i>Actually</i> ≠ atualmente · <i>currently</i> = atualmente</div><div class="pt">Actually não é atualmente; currently é.</div><div class="def">O par mais útil da lista inteira.</div></div>
+<div class="i"><div class="en"><i>Pretend</i> ≠ pretender · <i>intend</i> = pretender</div><div class="pt">Pretend não é pretender; intend é.</div></div>
+<div class="i"><div class="en"><i>Realize</i> ≠ realizar · <i>carry out</i> = realizar</div><div class="pt">Realize não é realizar; carry out é.</div></div>
+<div class="i"><div class="en"><i>Parents</i> ≠ parentes · <i>relatives</i> = parentes</div><div class="pt">Parents não é parentes; relatives é.</div></div>
+<div class="i"><div class="en"><i>Library</i> ≠ livraria · <i>bookstore</i> = livraria</div><div class="pt">Library não é livraria; bookstore é.</div></div>
+<div class="i"><div class="en"><i>College</i> ≠ colégio · <i>high school</i> = colégio</div><div class="pt">College não é colégio; high school é.</div></div>
+<div class="i"><div class="en"><i>Fabric</i> ≠ fábrica · <i>factory</i> = fábrica</div><div class="pt">Fabric não é fábrica; factory é.</div></div>
+<div class="i"><div class="en"><i>Costume</i> ≠ costume · <i>custom</i> = costume</div><div class="pt">Costume não é costume (hábito); custom é.</div></div>
+<div class="i"><div class="en"><i>Lunch</i> ≠ lanche · <i>snack</i> = lanche</div><div class="pt">Lunch não é lanche; snack é.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 15 · Dúvidas Pontuais — falsos cognatos</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' — '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

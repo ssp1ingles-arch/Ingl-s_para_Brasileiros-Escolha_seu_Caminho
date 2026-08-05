@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 05 · B2 First 5 — Sistema 20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#60A5FA;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead a{color:var(--accent);}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 20</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 20 · Livro 05 · inglês falado de nível B2</div>
+<h1 class="title"><em>B2 First 5</em> &#8212; recados, profissões e coisas que dão errado</h1>
+<p class="lead">Cambridge English · quatro provas, áudio transcrito. Este volume tem os melhores <b>recados de secretária eletrônica</b> da série &#8212; alguém preso no escritório tentando remarcar, alguém pedindo um favor por telefone &#8212; e um anúncio de estação de trem que é uma aula de inglês funcional. As gravações longas trazem gente contando o próprio ofício: montar uma empresa de barras de cereal com dois amigos de faculdade, ser figurante num filme, tocar um parque de vida selvagem, praticar parkour, ser bombeira e ensinar gente a pilotar helicóptero.</p>
+
+<div class="metrics">
+  <div class="metric"><b>16</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>4</b><span>provas completas</span></div>
+  <div class="metric"><b>B2</b><span>nível</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: put off, recado, trem, bombeira, festival…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Part 1 · telefone</div>
+<h2>Deixar recado, remarcar e pedir favor</h2>
+<p class="sdesc">Três recados de secretária eletrônica inteiros. É o inglês de <b>avisar que vai atrasar</b> sem soar rude: <code>there's no way I can&#8230;</code>, <code>would you mind very much if&#8230;</code>, <code>ring me back and let me know</code>.</p>
+<div class="items">
+<div class="i"><div class="en">Hi, it's Marta. I'm stuck in the office &#8212; I should have left by now to get to you for midday, as arranged.</div><div class="pt">Oi, é a Marta. Estou presa no escritório &#8212; já deveria ter saído para chegar aí ao meio-dia, como combinado.</div></div>
+<div class="i"><div class="en">I hope you haven't left already to meet me at the hotel.</div><div class="pt">Espero que você ainda não tenha saído para me encontrar no hotel.</div></div>
+<div class="i"><div class="en">Anyway, there's no way I can leave till after lunch because I have to have a meeting with the manager here in ten minutes.</div><div class="pt">Enfim, não tem como eu sair antes do almoço, porque tenho uma reunião com o gerente daqui a dez minutos.</div></div>
+<div class="i"><div class="en">And even if I leave at two, I won't get to you until at least three, traffic permitting!</div><div class="pt">E, mesmo saindo às duas, só chego aí pelas três, se o trânsito deixar!</div></div>
+<div class="i"><div class="en">I assume we'll still meet at the hotel. Ring me back and let me know if that's going to be OK with you.</div><div class="pt">Suponho que a gente ainda vai se encontrar no hotel. Me liga de volta e me avisa se está tudo bem para você.</div></div>
+<div class="i"><div class="en">Otherwise we'll have to cancel it altogether. I'll ring your mobile as well.</div><div class="pt">Senão a gente vai ter que cancelar de vez. Vou ligar no seu celular também.</div></div>
+<div class="i"><div class="en">Hi, Sarah, thanks for your message about Friday. I'm really sorry but I can't do the other dates you suggested.</div><div class="pt">Oi, Sarah, obrigada pelo recado sobre sexta. Sinto muito, mas não consigo nas outras datas que você sugeriu.</div></div>
+<div class="i"><div class="en">Would you mind very much if we left it for now?</div><div class="pt">Você se importaria muito se a gente deixasse isso para depois?</div></div>
+<div class="i"><div class="en">Anyway, what I was wondering was, could you tell Lizzie I can't make her party?</div><div class="pt">Enfim, o que eu queria saber é: você poderia dizer à Lizzie que não vou conseguir ir à festa dela?</div></div>
+<div class="i"><div class="en">I know you were intending to go, and it'll sound better coming from you.</div><div class="pt">Sei que você pretendia ir, e vai soar melhor vindo de você.</div></div>
+<div class="i"><div class="en">It's work mainly &#8212; there are a number of deadlines I need to meet so I'm trying to clear my diary.</div><div class="pt">É trabalho, principalmente &#8212; tenho vários prazos para cumprir, então estou tentando esvaziar a agenda.</div></div>
+<div class="i"><div class="en">You brought this on yourself, Patricia, you really did. I told you that you shouldn't go and study at a university so far away from home.</div><div class="pt">Você mesma se meteu nisso, Patricia, sério. Eu disse que você não devia ir estudar numa universidade tão longe de casa.</div></div>
+<div class="i"><div class="en">How can your family give you help when you need it if you're living on the other side of the world?</div><div class="pt">Como sua família vai poder te ajudar quando você precisar se você mora do outro lado do mundo?</div></div>
+<div class="i"><div class="en">If you're as short of money as you say you are, then ask about a job in the university library.</div><div class="pt">Se você está tão sem dinheiro quanto diz, então pergunte sobre uma vaga na biblioteca da universidade.</div></div>
+<div class="i"><div class="en">They're usually looking for part-time assistants and like to help students.</div><div class="pt">Eles geralmente procuram auxiliares de meio período e gostam de ajudar estudantes.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Part 1 · trajeto</div>
+<h2>Estação, trânsito e o que deu errado no caminho</h2>
+<p class="sdesc">Um anúncio de estação inteiro (o inglês formal de <code>we regret to announce</code>), a mulher que perdeu o trem porque o horário mudou e a que perdeu o celular. Vocabulário de <b>plataforma, atraso e conexão</b>.</p>
+<div class="items">
+<div class="i"><div class="en">We regret to announce that the twelve thirty-three from London to Oxford has been cancelled, due to staff sickness.</div><div class="pt">Lamentamos informar que o trem das doze e trinta e três de Londres para Oxford foi cancelado, por licença médica da equipe.</div></div>
+<div class="i"><div class="en">Passengers wishing to travel to Oxford should cross to platform seven and join the twelve forty-five service to Reading.</div><div class="pt">Passageiros com destino a Oxford devem se dirigir à plataforma sete e embarcar no serviço das doze e quarenta e cinco para Reading.</div></div>
+<div class="i"><div class="en">&#8230; where they will be able to connect with the stopping service to Oxford.</div><div class="pt">&#8230; onde poderão fazer conexão com o trem parador para Oxford.</div></div>
+<div class="i"><div class="en">We also regret to announce that the twelve thirty-eight express to London has been delayed. This is due to signal failure outside this station.</div><div class="pt">Também lamentamos informar que o expresso das doze e trinta e oito para Londres está atrasado. Isso se deve a uma falha de sinalização fora desta estação.</div></div>
+<div class="i"><div class="en">Passengers should remain on this platform. An announcement will be made regarding the platform for the London train within the next five minutes.</div><div class="pt">Os passageiros devem permanecer nesta plataforma. Um anúncio sobre a plataforma do trem para Londres será feito nos próximos cinco minutos.</div></div>
+<div class="i"><div class="en">So there I was, in the freezing cold, standing on platform three, waiting for the eight thirty train to Cardiff.</div><div class="pt">E lá estava eu, no frio congelante, de pé na plataforma três, esperando o trem das oito e meia para Cardiff.</div></div>
+<div class="i"><div class="en">It's my regular train &#8212; the one I've been catching for ages.</div><div class="pt">É o meu trem de sempre &#8212; o que eu pego há um tempão.</div></div>
+<div class="i"><div class="en">But what I hadn't realised was that the timetable had changed the day before.</div><div class="pt">Mas o que eu não tinha percebido é que o horário tinha mudado no dia anterior.</div></div>
+<div class="i"><div class="en">My train had been rescheduled for twenty minutes earlier and they'd changed the platform too.</div><div class="pt">Meu trem tinha sido remarcado para vinte minutos antes e eles também tinham mudado a plataforma.</div></div>
+<div class="i"><div class="en">My ticket was one of those that's only valid for a certain train, so you can imagine how cross I was!</div><div class="pt">Minha passagem era daquelas que só valem para um trem específico, então imagina como eu fiquei brava!</div></div>
+<div class="i"><div class="en">This traffic is terrible. You'd better phone Cathy and tell her we're going to be late.</div><div class="pt">Este trânsito está terrível. É melhor você ligar para a Cathy e avisar que vamos nos atrasar.</div></div>
+<div class="i"><div class="en">I can't. My mobile phone's disappeared. I had it when I phoned you from the car yesterday evening.</div><div class="pt">Não posso. Meu celular sumiu. Eu estava com ele quando te liguei do carro ontem à noite.</div></div>
+<div class="i"><div class="en">Then I called in at the supermarket, and I suspect it was lifted out of my bag then.</div><div class="pt">Aí passei no supermercado, e desconfio que tenha sido tirado da minha bolsa nessa hora.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Part 2 · Tom Aitken</div>
+<h2>Montar uma empresa com dois amigos de faculdade</h2>
+<p class="sdesc">Três amigos que odiavam as barras de cereal que comiam a caminho do trabalho e resolveram fazer a sua. Inglês de <b>testar, largar o emprego e aguentar nove meses no cartão de crédito</b>.</p>
+<div class="items">
+<div class="i"><div class="en">Well, there are three of us &#8212; me, David and Alan. We met at university about twelve years ago.</div><div class="pt">Bom, somos três &#8212; eu, o David e o Alan. Nos conhecemos na faculdade há uns doze anos.</div></div>
+<div class="i"><div class="en">David did business management, Alan studied economics and I intended to do the same but decided on geography instead.</div><div class="pt">O David fez administração, o Alan estudou economia e eu pretendia fazer o mesmo, mas acabei escolhendo geografia.</div></div>
+<div class="i"><div class="en">Fun, but not as useful as economics as it turned out!</div><div class="pt">Divertido, mas não tão útil quanto economia, como se viu depois!</div></div>
+<div class="i"><div class="en">When we left university we all got different jobs, but we shared a flat together in London.</div><div class="pt">Quando saímos da faculdade, cada um pegou um emprego diferente, mas dividimos um apartamento em Londres.</div></div>
+<div class="i"><div class="en">And we like the same things &#8212; skiing and surfing nowadays &#8212; and competing against each other.</div><div class="pt">E gostamos das mesmas coisas &#8212; hoje esqui e surfe &#8212; e de competir uns com os outros.</div></div>
+<div class="i"><div class="en">Well, we'd all got into the habit of buying a fruit or cereal bar on the way to work in the morning. But we never really enjoyed them &#8212; most of them tasted of nothing.</div><div class="pt">Bom, todos nós tínhamos o hábito de comprar uma barra de fruta ou cereal a caminho do trabalho de manhã. Mas nunca gostávamos delas &#8212; a maioria não tinha gosto de nada.</div></div>
+<div class="i"><div class="en">So that got us going. We began by making a bar which included apple and gave out free samples to people on their way to work.</div><div class="pt">Então foi isso que nos motivou. Começamos fazendo uma barra com maçã e distribuindo amostras grátis para as pessoas a caminho do trabalho.</div></div>
+<div class="i"><div class="en">David wanted to try banana, but Alan and I didn't agree.</div><div class="pt">O David queria testar banana, mas o Alan e eu não concordamos.</div></div>
+<div class="i"><div class="en">Anyway, we all enjoyed cooking and had fun trying different things before we decided to see if we could make a go of it commercially.</div><div class="pt">Enfim, todos nós gostávamos de cozinhar e nos divertimos testando coisas diferentes antes de decidir ver se aquilo dava certo comercialmente.</div></div>
+<div class="i"><div class="en">We thought about renting a shop for a bit, but finally settled for a market on Saturdays and Sundays for a month.</div><div class="pt">Pensamos em alugar uma loja por um tempo, mas no fim ficamos com uma feira aos sábados e domingos por um mês.</div></div>
+<div class="i"><div class="en">At the end of the month, we had overwhelming support so we all went into work the next day and quit.</div><div class="pt">No fim do mês, a resposta foi esmagadora, então todos fomos trabalhar no dia seguinte e pedimos demissão.</div></div>
+<div class="i"><div class="en">Some people thought we were a bit naive or even a bit stupid. I actually think we were just keen, you know, ready to get going.</div><div class="pt">Algumas pessoas acharam que a gente era meio ingênuo ou até meio burro. Eu acho que a gente estava só empolgado, sabe, pronto para começar.</div></div>
+<div class="i"><div class="en">But it was hard &#8212; nine months of living off our credit cards till we were functioning properly.</div><div class="pt">Mas foi duro &#8212; nove meses vivendo do cartão de crédito até a coisa começar a funcionar direito.</div></div>
+<div class="i"><div class="en">The problem was finance &#8212; our friends were unable to contribute, and the banks were not interested either.</div><div class="pt">O problema era o dinheiro &#8212; nossos amigos não podiam contribuir, e os bancos também não se interessaram.</div></div>
+<div class="i"><div class="en">If it hadn't been for an American businessman, we might never have made it.</div><div class="pt">Se não fosse por um empresário americano, talvez a gente nunca tivesse conseguido.</div></div>
+<div class="i"><div class="en">I like to think it's the quality of the product. Nearly all fruit or cereal bars contain extra sugar.</div><div class="pt">Gosto de pensar que é a qualidade do produto. Quase toda barra de fruta ou cereal tem açúcar adicionado.</div></div>
+<div class="i"><div class="en">Crunch bars are totally pure; we rely on the goodness of the natural ingredients &#8212; nuts, cereal etc. &#8212; and nothing else.</div><div class="pt">As barras Crunch são totalmente puras; a gente conta com a qualidade dos ingredientes naturais &#8212; castanhas, cereais etc. &#8212; e nada mais.</div></div>
+<div class="i"><div class="en">Yes, but we're still the leaders, that's the advantage of coming first.</div><div class="pt">Sim, mas ainda somos os líderes; essa é a vantagem de ter chegado primeiro.</div></div>
+<div class="i"><div class="en">The immediate future is we're extending the number of bars from five to eight varieties next month.</div><div class="pt">O futuro imediato é ampliar de cinco para oito variedades de barra no mês que vem.</div></div>
+<div class="i"><div class="en">At the moment, we're working on increasing the amount of paper rather than plastic that we use for the wrappers.</div><div class="pt">No momento, estamos trabalhando para aumentar a quantidade de papel em vez de plástico nas embalagens.</div></div>
+<div class="i"><div class="en">And we're even looking at a kind that could be used as a wrapper but also eaten. Now that's recycling for you!</div><div class="pt">E estamos até olhando um tipo que serviria de embalagem e também poderia ser comido. Isso é que é reciclagem!</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Part 2 · Charlie Lee</div>
+<h2>Um dia como figurante de cinema</h2>
+<p class="sdesc">Da fila do teste ao dia da gravação: o que ele teve que vestir, onde teve que ficar, por que não podia usar sapato e quanto tempo demorou para receber.</p>
+<div class="items">
+<div class="i"><div class="en">One day I got an email from a friend. He said an agency he knew was looking for Chinese people who lived in London to be extras in a film.</div><div class="pt">Um dia recebi um e-mail de um amigo. Ele disse que uma agência que ele conhecia procurava chineses que morassem em Londres para serem figurantes num filme.</div></div>
+<div class="i"><div class="en">There were hundreds of Chinese people queuing up outside, hoping to be extras.</div><div class="pt">Havia centenas de chineses fazendo fila lá fora, na esperança de ser figurantes.</div></div>
+<div class="i"><div class="en">Not for about a month, and then I got a phone call to say I'd been selected.</div><div class="pt">Só depois de uns um mês, e aí recebi um telefonema dizendo que eu tinha sido selecionado.</div></div>
+<div class="i"><div class="en">They wanted me to play the part of a tourist who is having an argument.</div><div class="pt">Eles queriam que eu fizesse o papel de um turista que está discutindo com alguém.</div></div>
+<div class="i"><div class="en">My boss wouldn't give me the time off, so I thought that that would be the end of my film career.</div><div class="pt">Meu chefe não me deu folga, então achei que aquilo seria o fim da minha carreira no cinema.</div></div>
+<div class="i"><div class="en">About a month later the agency rang to check if I was still available, but for a different part. This time I said yes, and decided that I would just take a day off sick.</div><div class="pt">Cerca de um mês depois a agência ligou para saber se eu ainda estava disponível, mas para outro papel. Dessa vez eu disse que sim e decidi tirar um dia de atestado.</div></div>
+<div class="i"><div class="en">I was told that I would need to go in casual summer clothes, even though it was raincoat weather, and I had to be at the studio for seven a.m.</div><div class="pt">Me disseram que eu teria que ir com roupa leve de verão, mesmo estando um tempo de capa de chuva, e que eu tinha que estar no estúdio às sete da manhã.</div></div>
+<div class="i"><div class="en">Well, when I got to the studio I was amazed. The exterior looked like a really huge sports centre.</div><div class="pt">Bom, quando cheguei no estúdio fiquei impressionado. Por fora parecia um centro esportivo gigantesco.</div></div>
+<div class="i"><div class="en">Really weird. I literally walked from a cold winter's day outside into a studio&#8230;</div><div class="pt">Muito estranho. Eu literalmente saí de um dia frio de inverno e entrei num estúdio&#8230;</div></div>
+<div class="i"><div class="en">As it was supposed to be Hong Kong, even the taxis were Chinese ones.</div><div class="pt">Como era para ser Hong Kong, até os táxis eram chineses.</div></div>
+<div class="i"><div class="en">Apparently, my clothes weren't quite right, so instead of walking across the lobby with some beautiful women, I was asked to hang around beside the main doors by some luggage.</div><div class="pt">Aparentemente minha roupa não estava adequada, então, em vez de atravessar o saguão com umas mulheres lindas, me pediram para ficar parado perto da porta principal, ao lado de umas malas.</div></div>
+<div class="i"><div class="en">Well, the filming lasted about four hours. The extras had to be very quiet, and we were told not to wear shoes as they made too much noise.</div><div class="pt">Bom, a filmagem durou umas quatro horas. Os figurantes tinham que ficar bem quietos, e mandaram a gente tirar os sapatos porque faziam barulho demais.</div></div>
+<div class="i"><div class="en">By lunchtime we were all hungry and tired of doing the same scene.</div><div class="pt">Na hora do almoço, estávamos todos com fome e cansados de fazer a mesma cena.</div></div>
+<div class="i"><div class="en">They got different people on the set so I went off to the canteen, which was quite a distance from the main studio.</div><div class="pt">Chamaram outras pessoas para o set, então fui para o refeitório, que era bem longe do estúdio principal.</div></div>
+<div class="i"><div class="en">But we weren't allowed to talk to the stars or take photos or anything like that as we'd signed a contract to that effect.</div><div class="pt">Mas não podíamos falar com os astros nem tirar foto nem nada disso, porque tínhamos assinado um contrato nesse sentido.</div></div>
+<div class="i"><div class="en">Actually I was quite surprised by how much I had made! But I didn't get it until six months later, which I thought was a bit long.</div><div class="pt">Na verdade, fiquei bem surpreso com o quanto ganhei! Mas só recebi seis meses depois, o que achei um pouco demais.</div></div>
+<div class="i"><div class="en">However, friends who've been extras say that even nine months isn't unusual.</div><div class="pt">Mas amigos que já foram figurantes dizem que até nove meses não é incomum.</div></div>
+<div class="i"><div class="en">But I saw the film when it came out, and yes, there I am in the lobby, right at the back.</div><div class="pt">Mas eu vi o filme quando estreou e, sim, lá estou eu no saguão, bem no fundo.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Part 2 · Damon Walker</div>
+<h2>Tocar um parque de vida selvagem</h2>
+<p class="sdesc">Um homem que herdou do pai um parque construído sobre uma fazenda. Fala das jornadas longas, do cheiro da limpeza, da rotatividade de funcionários e do projeto com as escolas.</p>
+<div class="items">
+<div class="i"><div class="en">He bought the land here when it was a farm, but never made much profit, so he decided to develop it as a wildlife park for the public.</div><div class="pt">Ele comprou esta terra quando era uma fazenda, mas nunca deu muito lucro, então decidiu transformá-la num parque de vida selvagem aberto ao público.</div></div>
+<div class="i"><div class="en">He could see the existing land was suitable for animals such as lions and tigers &#8212; he just needed to construct places to keep them safe.</div><div class="pt">Ele via que o terreno servia para animais como leões e tigres &#8212; só precisava construir lugares para mantê-los em segurança.</div></div>
+<div class="i"><div class="en">Then, after the park had been open for a year, he built three lakes, in which he put several varieties of fish.</div><div class="pt">Aí, depois de um ano de parque aberto, ele construiu três lagos, nos quais colocou várias espécies de peixe.</div></div>
+<div class="i"><div class="en">I had to work in the park every weekend, but I didn't want to.</div><div class="pt">Eu tinha que trabalhar no parque todo fim de semana, mas não queria.</div></div>
+<div class="i"><div class="en">The lions and tigers looked beautiful but I was nervous of being near them. The monkeys made me laugh, but the animals I really loved were the camels.</div><div class="pt">Os leões e tigres eram lindos, mas eu ficava nervoso perto deles. Os macacos me faziam rir, mas os bichos que eu amava de verdade eram os camelos.</div></div>
+<div class="i"><div class="en">Not very long, but it's a wonderful country. At weekends, I went on camping trips and saw so much wildlife.</div><div class="pt">Não muito tempo, mas é um país maravilhoso. Nos fins de semana eu ia acampar e via muita vida selvagem.</div></div>
+<div class="i"><div class="en">And the beaches were superb. I wasn't keen on the sharks though! But there were dolphins.</div><div class="pt">E as praias eram magníficas. Mas eu não curti muito os tubarões! Mas tinha golfinhos.</div></div>
+<div class="i"><div class="en">Yes. We have over two thousand species, which have to be cared for daily.</div><div class="pt">Sim. Temos mais de duas mil espécies, que precisam de cuidado diário.</div></div>
+<div class="i"><div class="en">First thing, we check all the animals, then we start with the cleaning out, and the smell is awful! I'm used to that now.</div><div class="pt">Primeiro, a gente confere todos os animais, depois começa a limpeza, e o cheiro é horrível! Hoje já estou acostumado.</div></div>
+<div class="i"><div class="en">But for me the long hours are the worst part of the job.</div><div class="pt">Mas, para mim, a jornada longa é a pior parte do trabalho.</div></div>
+<div class="i"><div class="en">You could have planned some time off, but if there's a problem with the animals, you can't leave until you're sure they're OK.</div><div class="pt">Você pode ter planejado uma folga, mas, se tem um problema com os animais, não dá para ir embora até ter certeza de que estão bem.</div></div>
+<div class="i"><div class="en">I have twelve park-keepers, but we have a very high turnover of staff.</div><div class="pt">Tenho doze tratadores, mas a rotatividade de pessoal é altíssima.</div></div>
+<div class="i"><div class="en">We get from ten to twenty applications for jobs here every month.</div><div class="pt">Recebemos de dez a vinte candidaturas por mês para vagas aqui.</div></div>
+<div class="i"><div class="en">But once they realise how hard it is, they sometimes leave within twenty-four hours.</div><div class="pt">Mas, quando percebem o quanto é duro, às vezes vão embora em vinte e quatro horas.</div></div>
+<div class="i"><div class="en">This year we've started a wildlife project with the local schools.</div><div class="pt">Este ano começamos um projeto de vida selvagem com as escolas da região.</div></div>
+<div class="i"><div class="en">I find it very satisfying, helping the children improve their understanding of wildlife.</div><div class="pt">Acho muito gratificante ajudar as crianças a melhorar a compreensão que têm da vida selvagem.</div></div>
+<div class="i"><div class="en">In fact, I plan to install several video cameras, so the animals can be observed more closely at any time of the day or night.</div><div class="pt">Aliás, pretendo instalar várias câmeras de vídeo, para que os animais possam ser observados de perto a qualquer hora do dia ou da noite.</div></div>
+<div class="i"><div class="en">We're making healthy profits now, so I'm planning extras for children.</div><div class="pt">Estamos tendo bons lucros agora, então estou planejando novidades para as crianças.</div></div>
+<div class="i"><div class="en">If we continue doing well, I might consider having a track laid for a little train to take children around the park; but that will have to wait for another two or three years.</div><div class="pt">Se continuarmos indo bem, talvez eu considere assentar trilhos para um trenzinho que leve as crianças pelo parque; mas isso vai ter que esperar mais dois ou três anos.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Part 2 · Kate Jenner</div>
+<h2>Parkour &#8212; correr e saltar pela cidade</h2>
+<p class="sdesc">Uma estudante americana explica o parkour: o que é preciso para começar, o problema dela com equilíbrio, como a faculdade reagiu e o que ela ganhou fazendo um comercial.</p>
+<div class="items">
+<div class="i"><div class="en">I first heard about it when I was on vacation in France and took it up when I came back to the US.</div><div class="pt">Ouvi falar disso pela primeira vez quando estava de férias na França e comecei a praticar quando voltei para os EUA.</div></div>
+<div class="i"><div class="en">The idea is to move from one point to another as efficiently and quickly as possible.</div><div class="pt">A ideia é ir de um ponto a outro da forma mais eficiente e rápida possível.</div></div>
+<div class="i"><div class="en">We train to run and jump and climb over obstacles, which can be anything in the surrounding environment, like high walls, rocks and trees.</div><div class="pt">A gente treina para correr, saltar e escalar obstáculos, que podem ser qualquer coisa do ambiente ao redor, como muros altos, pedras e árvores.</div></div>
+<div class="i"><div class="en">Yes, it's an exciting challenge, a mixture of gymnastics and cross-country.</div><div class="pt">Sim, é um desafio empolgante, uma mistura de ginástica com corrida em terreno acidentado.</div></div>
+<div class="i"><div class="en">Then they join a parkour club like the one I'm in and realise what dedication is involved in mastering those moves.</div><div class="pt">Aí entram num clube de parkour como o meu e percebem quanta dedicação é preciso para dominar aqueles movimentos.</div></div>
+<div class="i"><div class="en">To start training you have to be fit enough to run at least five kilometres. And it's really important to have a healthy diet to keep up your strength.</div><div class="pt">Para começar a treinar você precisa estar em forma o bastante para correr pelo menos cinco quilômetros. E é muito importante ter uma alimentação saudável para manter a força.</div></div>
+<div class="i"><div class="en">The first thing I learnt was how to fall without hurting myself because like with all sports, safety is a vital consideration.</div><div class="pt">A primeira coisa que aprendi foi como cair sem me machucar, porque, como em todo esporte, a segurança é fundamental.</div></div>
+<div class="i"><div class="en">You've got to have every athletic skill there is &#8212; endurance, strength, flexibility. You need the agility of a cat.</div><div class="pt">Você precisa ter todas as habilidades atléticas que existem &#8212; resistência, força, flexibilidade. Precisa da agilidade de um gato.</div></div>
+<div class="i"><div class="en">I can do most things but I do have a problem with balance, especially on any kind of narrow ledge. I'm getting better with practice.</div><div class="pt">Consigo fazer quase tudo, mas tenho um problema com equilíbrio, principalmente em qualquer beirada estreita. Estou melhorando com a prática.</div></div>
+<div class="i"><div class="en">When I'm walking along I scan every part of my surroundings, from courtyards up to rooftops, always on the lookout for possible locations to practise in.</div><div class="pt">Quando estou andando, eu varro cada parte do ambiente com os olhos, dos pátios aos telhados, sempre atenta a possíveis lugares para praticar.</div></div>
+<div class="i"><div class="en">Parkour opens your eyes, makes you observant.</div><div class="pt">O parkour abre seus olhos, te deixa observador.</div></div>
+<div class="i"><div class="en">They didn't know for a long time. I didn't think they'd be interested, or they'd disapprove. But when they found out, I was surprised that they didn't make a fuss about it.</div><div class="pt">Eles não souberam por muito tempo. Achei que não se interessariam, ou que desaprovariam. Mas, quando descobriram, me surpreendeu eles não fazerem estardalhaço.</div></div>
+<div class="i"><div class="en">In general, parkour enthusiasts respect authority, and if we're asked not to climb on a wall, for example, we don't argue, but just move along.</div><div class="pt">No geral, os praticantes de parkour respeitam a autoridade e, se pedem para a gente não subir num muro, por exemplo, não discutimos, só seguimos em frente.</div></div>
+<div class="i"><div class="en">I explained to our campus safety director how much planning goes into parkour, and gave him a demonstration.</div><div class="pt">Expliquei ao diretor de segurança do campus quanto planejamento existe no parkour e fiz uma demonstração para ele.</div></div>
+<div class="i"><div class="en">He called it 'architecture acrobatics', which I thought was a nice description.</div><div class="pt">Ele chamou aquilo de "acrobacia arquitetônica", o que achei uma descrição bonita.</div></div>
+<div class="i"><div class="en">People who practise it want to improve themselves and are focused on success.</div><div class="pt">Quem pratica quer melhorar a si mesmo e é focado em resultado.</div></div>
+<div class="i"><div class="en">Anyway, the result is I'm hoping to be allowed to teach parkour classes at the college, though insurance could be an issue.</div><div class="pt">Enfim, o resultado é que espero conseguir permissão para dar aulas de parkour na faculdade, embora o seguro possa ser um problema.</div></div>
+<div class="i"><div class="en">I've just spent a week in Los Angeles doing parkour for a soft drink commercial.</div><div class="pt">Acabei de passar uma semana em Los Angeles fazendo parkour para um comercial de refrigerante.</div></div>
+<div class="i"><div class="en">If we get it, we'll use the money to spread the word about parkour and get beginners started with free instruction.</div><div class="pt">Se conseguirmos, vamos usar o dinheiro para divulgar o parkour e dar aulas gratuitas para iniciantes.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Part 4 · Amanda Nixon</div>
+<h2>Ser bombeira &#8212; e chefiar uma equipe</h2>
+<p class="sdesc">Dez anos no corpo de bombeiros, três deles chefiando sete pessoas. Fala do teste final do curso, de trotes às duas da manhã e de deixar o marido sozinho no restaurante.</p>
+<div class="items">
+<div class="i"><div class="en">A friend of mine mentioned it and said her husband had just started. So I suggested it to my husband, but he wasn't interested.</div><div class="pt">Uma amiga minha comentou e disse que o marido dela tinha acabado de começar. Então sugeri ao meu marido, mas ele não se interessou.</div></div>
+<div class="i"><div class="en">When I saw my friend a few days later, she actually joked about me applying.</div><div class="pt">Quando vi minha amiga alguns dias depois, ela brincou dizendo que eu é que deveria me candidatar.</div></div>
+<div class="i"><div class="en">So I wrote down a list of my strengths and weaknesses and found I was quite suited to the job.</div><div class="pt">Então fiz uma lista dos meus pontos fortes e fracos e vi que eu combinava bastante com o trabalho.</div></div>
+<div class="i"><div class="en">The only weakness I could come up with was the fact that I'm a woman, and that wasn't going to put me off!</div><div class="pt">O único ponto fraco que consegui achar foi o fato de eu ser mulher &#8212; e isso não ia me desanimar!</div></div>
+<div class="i"><div class="en">Oh yes! The course was pretty tough. On the last day, I was expected to carry one of my colleagues out of a three-storey building down a ladder.</div><div class="pt">Ah, sim! O curso foi bem duro. No último dia, eu tinha que carregar um colega para fora de um prédio de três andares descendo por uma escada.</div></div>
+<div class="i"><div class="en">But the lightest person there was at least eighty-five kilos. I didn't manage it on my first attempt.</div><div class="pt">Mas a pessoa mais leve ali tinha pelo menos oitenta e cinco quilos. Não consegui na primeira tentativa.</div></div>
+<div class="i"><div class="en">But when I realised that if I didn't do it that would be it, I just found something extra from somewhere. It was great to get through.</div><div class="pt">Mas, quando percebi que, se eu não conseguisse, seria o fim, tirei forças sabe-se lá de onde. Foi ótimo passar.</div></div>
+<div class="i"><div class="en">Well, I don't think about it until it's over. Learning to stay calm comes with experience.</div><div class="pt">Bom, eu não penso nisso até acabar. Aprender a manter a calma vem com a experiência.</div></div>
+<div class="i"><div class="en">I mean, some of the things we have to do are not what you want to see, but you have to get on with it.</div><div class="pt">Quer dizer, algumas das coisas que temos que fazer não são o que ninguém quer ver, mas você tem que tocar em frente.</div></div>
+<div class="i"><div class="en">Some people like to talk things through with colleagues back at the station, but not me. I'd rather keep any anxieties I have to myself.</div><div class="pt">Algumas pessoas gostam de conversar sobre as coisas com os colegas de volta ao quartel, mas eu não. Prefiro guardar minhas angústias para mim.</div></div>
+<div class="i"><div class="en">It's nice to get home and put it all behind you. But I have to be careful not to get rid of all my emotions on my family.</div><div class="pt">É bom chegar em casa e deixar tudo para trás. Mas tenho que tomar cuidado para não descarregar todas as minhas emoções na família.</div></div>
+<div class="i"><div class="en">More than once my husband has been left in a restaurant eating by himself &#8212; which I still feel guilty about, though he seems to take it in his stride.</div><div class="pt">Mais de uma vez meu marido ficou num restaurante comendo sozinho &#8212; do que ainda me sinto culpada, embora ele pareça levar numa boa.</div></div>
+<div class="i"><div class="en">And the last party we went to, I got called. When I arrived back three hours later, I'd missed all the fun &#8212; but they'd saved me some food.</div><div class="pt">E na última festa a que fomos eu fui chamada. Quando voltei, três horas depois, tinha perdido toda a diversão &#8212; mas guardaram comida para mim.</div></div>
+<div class="i"><div class="en">Well, you have to get to the station as quickly as you can. And you never know what the emergency is.</div><div class="pt">Bom, você tem que chegar ao quartel o mais rápido possível. E nunca se sabe qual é a emergência.</div></div>
+<div class="i"><div class="en">Often, it's a false alarm, but you don't know that until you get there.</div><div class="pt">Muitas vezes é alarme falso, mas você só descobre quando chega lá.</div></div>
+<div class="i"><div class="en">But it makes me mad the way some people enjoy getting the fire service out just for a joke.</div><div class="pt">Mas me deixa furiosa o jeito como algumas pessoas se divertem tirando os bombeiros de casa só de brincadeira.</div></div>
+<div class="i"><div class="en">I often have to calm my crew down as they get frustrated by it too. If it's two in the morning, that's even worse.</div><div class="pt">Muitas vezes eu tenho que acalmar minha equipe, porque eles também ficam frustrados com isso. Se for às duas da manhã, é ainda pior.</div></div>
+<div class="i"><div class="en">Well, no two days are ever the same, which is great.</div><div class="pt">Bom, não existem dois dias iguais, o que é ótimo.</div></div>
+<div class="i"><div class="en">But the real satisfaction comes from knowing that you're doing something worthwhile. There's a fantastic sense of achievement, knowing that you're highly trained to save someone's life.</div><div class="pt">Mas a satisfação de verdade vem de saber que você está fazendo algo que vale a pena. Há uma sensação fantástica de realização em saber que você é altamente treinada para salvar a vida de alguém.</div></div>
+<div class="i"><div class="en">The other route, which I'd rather take, is to do something with new recruits &#8212; help them really get to grips with the job.</div><div class="pt">O outro caminho, que eu preferiria seguir, é fazer algo com os recrutas novos &#8212; ajudá-los a pegar de verdade o jeito do trabalho.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Part 4 · Alex Miller</div>
+<h2>Ensinar gente a pilotar helicóptero</h2>
+<p class="sdesc">Um instrutor de voo descreve a semana típica: aula experimental no sábado, desconto que ninguém aceita durante a semana, o aluno arrogante e a papelada obrigatória.</p>
+<div class="items">
+<div class="i"><div class="en">Well, I'll start with Saturday because weekends are the busiest time for me. That's when most people want to take flying lessons.</div><div class="pt">Bom, vou começar pelo sábado, porque o fim de semana é meu período mais cheio. É quando a maioria quer fazer aula de voo.</div></div>
+<div class="i"><div class="en">We try to get people on weekdays by offering a forty percent discount, but there's very little demand.</div><div class="pt">A gente tenta atrair as pessoas nos dias de semana oferecendo quarenta por cento de desconto, mas a procura é pequena.</div></div>
+<div class="i"><div class="en">These always begin with a briefing about helicopter controls. Students always feel more secure once they understand these.</div><div class="pt">Elas sempre começam com uma explicação dos controles do helicóptero. Os alunos se sentem mais seguros quando entendem isso.</div></div>
+<div class="i"><div class="en">I do this on the ground because I don't want to waste time with the engine running, as fuel is so expensive.</div><div class="pt">Faço isso no chão, porque não quero perder tempo com o motor ligado, já que o combustível é caríssimo.</div></div>
+<div class="i"><div class="en">Then the student has half an hour in the air to get a feel for flying.</div><div class="pt">Depois o aluno tem meia hora no ar para pegar o jeito do voo.</div></div>
+<div class="i"><div class="en">Not really, although it does rather depend on the student. Some people have a natural aptitude and temperament for flying and others are just too nervous.</div><div class="pt">Nem tanto, embora dependa bastante do aluno. Algumas pessoas têm aptidão e temperamento naturais para voar e outras são simplesmente nervosas demais.</div></div>
+<div class="i"><div class="en">The only way you can find out if someone has this natural ability to fly is to go up in the air.</div><div class="pt">O único jeito de descobrir se alguém tem essa habilidade natural para voar é subir no ar.</div></div>
+<div class="i"><div class="en">Sometimes it's a little nerve-wracking but the helicopters do have dual control, so I can take control if there's a major problem.</div><div class="pt">Às vezes é meio angustiante, mas os helicópteros têm comando duplo, então posso assumir se houver um problema grande.</div></div>
+<div class="i"><div class="en">What I don't like is when students are arrogant on their first time out and think they know it all and refuse to listen to my instructions.</div><div class="pt">O que eu não gosto é quando o aluno é arrogante na primeira vez, acha que sabe tudo e se recusa a ouvir minhas instruções.</div></div>
+<div class="i"><div class="en">When they first enquire, a lot of people are surprised by the number of lessons needed, but once they're at the controls of a helicopter, they realise it's not as easy as it looks.</div><div class="pt">Quando entram em contato, muita gente se surpreende com o número de aulas necessárias, mas, ao pegar nos controles do helicóptero, percebem que não é tão fácil quanto parece.</div></div>
+<div class="i"><div class="en">Helicopters are all different and can be extremely unstable machines, and students are all over the place at first.</div><div class="pt">Os helicópteros são todos diferentes e podem ser máquinas extremamente instáveis, e os alunos ficam totalmente descontrolados no começo.</div></div>
+<div class="i"><div class="en">But at the end of the day, it's a bit like learning to drive a car &#8212; some people pick it up really easily and others take ages. No two clients are alike actually.</div><div class="pt">Mas, no fim das contas, é meio como aprender a dirigir &#8212; alguns pegam facilmente e outros demoram um tempão. Na verdade, não há dois clientes iguais.</div></div>
+<div class="i"><div class="en">After each student has left, the law states that I have to keep a record of every flight &#8212; where we've flown and for how long, what the weather was like, any problems and so on.</div><div class="pt">Depois que cada aluno vai embora, a lei determina que eu registre cada voo &#8212; por onde voamos e por quanto tempo, como estava o tempo, quaisquer problemas e assim por diante.</div></div>
+<div class="i"><div class="en">These records must be accurate in case of any accidents or problems.</div><div class="pt">Esses registros precisam ser precisos em caso de acidentes ou problemas.</div></div>
+<div class="i"><div class="en">Finally, because I'm self-employed, I have to keep my accounts up to date.</div><div class="pt">Por fim, como sou autônomo, tenho que manter minha contabilidade em dia.</div></div>
+<div class="i"><div class="en">Well, when you work for yourself you can worry if there're no bookings, but I look at it this way &#8212; the busy and quiet times usually balance each other out.</div><div class="pt">Bom, quando você trabalha por conta própria, dá para se preocupar quando não tem agendamento, mas eu vejo assim: os períodos cheios e vazios costumam se compensar.</div></div>
+<div class="i"><div class="en">So I tend to enjoy the time off and have a round of golf or whatever, and then I don't mind working long hours when I'm busy.</div><div class="pt">Então eu costumo aproveitar a folga, jogar uma partida de golfe ou o que for, e aí não me incomodo de trabalhar muitas horas quando está cheio.</div></div>
+<div class="i"><div class="en">Although last Monday when there were no bookings I thought I'd better do my accounts, as I'd been putting off doing that job for a long time.</div><div class="pt">Embora na segunda-feira passada, quando não havia agendamentos, achei melhor fazer a contabilidade, já que estava adiando essa tarefa havia muito tempo.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Part 4 · Sandra Morelle</div>
+<h2>Salto com vara &#8212; um esporte que mulher &quot;não fazia&quot;</h2>
+<p class="sdesc">Uma campeã fala do medo de ficar de cabeça para baixo, de subir o sarrafo a cada competição e das ginastas que estão migrando para a modalidade.</p>
+<div class="items">
+<div class="i"><div class="en">I think a lot of people made the mistake of thinking that women simply didn't have the upper-body strength it requires.</div><div class="pt">Acho que muita gente cometeu o erro de achar que as mulheres simplesmente não tinham a força de tronco que a modalidade exige.</div></div>
+<div class="i"><div class="en">But women's sport has come a long way since then. For a start, they're now playing more so-called men's sports, like basketball and soccer.</div><div class="pt">Mas o esporte feminino avançou muito desde então. Para começar, hoje elas jogam mais os chamados esportes masculinos, como basquete e futebol.</div></div>
+<div class="i"><div class="en">But with the pole vault, I reckon the attraction's probably that it's slightly risky, so it appeals in the same way as other so-called extreme sports.</div><div class="pt">Mas, no salto com vara, acho que a atração é ser levemente arriscado, então atrai do mesmo jeito que os chamados esportes radicais.</div></div>
+<div class="i"><div class="en">Well, I'd always regarded it as one of those sports that women just didn't do.</div><div class="pt">Bom, eu sempre encarei como um daqueles esportes que mulher simplesmente não fazia.</div></div>
+<div class="i"><div class="en">I was a heptathlete, doing a range of track and field sports, and my coach came to me and said, 'Hey, why don't you try the pole vault?'</div><div class="pt">Eu era heptatleta, fazia várias provas do atletismo, e meu treinador veio e disse: "Ei, por que você não tenta o salto com vara?"</div></div>
+<div class="i"><div class="en">Well, I knew how to run, how to throw things, jump off the ground. But it needs a lot of gymnastic technique that I didn't have at first.</div><div class="pt">Bom, eu sabia correr, arremessar, saltar do chão. Mas exige muita técnica de ginástica, que eu não tinha no começo.</div></div>
+<div class="i"><div class="en">I was very frightened to go upside-down because it didn't come easy. It took me years to feel I was going to land safely on the mat.</div><div class="pt">Eu tinha muito medo de ficar de cabeça para baixo, porque não vinha com facilidade. Levei anos para sentir que ia cair em segurança no colchão.</div></div>
+<div class="i"><div class="en">But I think it was the challenge that kept me involved in it.</div><div class="pt">Mas acho que foi o desafio que me manteve nisso.</div></div>
+<div class="i"><div class="en">You know, sometimes I don't realise how high it is unless I actually go up.</div><div class="pt">Sabe, às vezes eu não percebo o quanto é alto até subir de verdade.</div></div>
+<div class="i"><div class="en">You have to be daring enough to keep putting the bar up a little bit higher each time and keep perfecting the jumps.</div><div class="pt">Você tem que ser ousada o bastante para continuar subindo o sarrafo um pouquinho a cada vez e continuar aperfeiçoando os saltos.</div></div>
+<div class="i"><div class="en">Well, I know that the sport's so new still, and there are a lot of women who are taking it up, especially women who've been high-level gymnasts in the past.</div><div class="pt">Bom, sei que a modalidade ainda é muito nova e que muitas mulheres estão começando, principalmente as que foram ginastas de alto nível.</div></div>
+<div class="i"><div class="en">So I know that there are a lot of talented girls wanting to beat me.</div><div class="pt">Então sei que há muitas garotas talentosas querendo me vencer.</div></div>
+<div class="i"><div class="en">But I feel that if I'm fresh and that my technique is right, then I'm going to put the bar up as high as I can in each competition.</div><div class="pt">Mas sinto que, se eu estiver descansada e minha técnica estiver certa, vou subir o sarrafo o mais alto que puder em cada competição.</div></div>
+<div class="i"><div class="en">I reckon they just feel that this is a sport where you can make the same sort of money, but it's not so stressful on your body.</div><div class="pt">Acho que elas simplesmente sentem que é um esporte em que dá para ganhar o mesmo tipo de dinheiro, mas que castiga menos o corpo.</div></div>
+<div class="i"><div class="en">Well, I'm glad she's confident because we had a great battle last season, and that really helps if, like me, you're keen to put the bar up and break records.</div><div class="pt">Bom, fico contente que ela esteja confiante, porque tivemos uma bela disputa na temporada passada, e isso ajuda muito se, como eu, você quer subir o sarrafo e bater recordes.</div></div>
+<div class="i"><div class="en">She's got gymnastic training and she's come on the scene very fast, so I'd be a fool not to see her as a serious challenge, but I reckon I can handle it.</div><div class="pt">Ela tem formação em ginástica e apareceu muito rápido, então eu seria boba de não vê-la como um desafio sério, mas acho que dou conta.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Part 4 · Sheila McLennan</div>
+<h2>Ser mãe de uma atleta de alto rendimento</h2>
+<p class="sdesc">A mãe de uma ginasta de dezenove anos fala do nervosismo da família, dos cinquenta quilômetros até o treino cinco noites por semana e do que ela largou para acompanhar a filha.</p>
+<div class="items">
+<div class="i"><div class="en">Well, the three of us all react differently. I feel apprehensive for her and find it hard to cover that up, so I chatter on a lot, which rather gives the game away!</div><div class="pt">Bom, nós três reagimos de formas diferentes. Eu fico apreensiva por ela e acho difícil disfarçar, então falo demais, o que meio que me entrega!</div></div>
+<div class="i"><div class="en">My husband Bob, on the other hand, is quietly confident that she'll do well. And Liz herself never wastes any time worrying before a competition.</div><div class="pt">Meu marido Bob, por outro lado, tem uma confiança silenciosa de que ela vai bem. E a própria Liz nunca perde tempo se preocupando antes de uma competição.</div></div>
+<div class="i"><div class="en">I'm delighted she's got such a good trainer, Natalie, who can encourage her along in a way I can't.</div><div class="pt">Fico encantada por ela ter uma treinadora tão boa, a Natalie, que consegue incentivá-la de um jeito que eu não consigo.</div></div>
+<div class="i"><div class="en">It's a tough timetable for a nineteen-year-old.</div><div class="pt">É uma rotina dura para uma jovem de dezenove anos.</div></div>
+<div class="i"><div class="en">We've also had a lot of pleasure from her sport and followed her around Europe for competitions.</div><div class="pt">A gente também teve muito prazer com o esporte dela e a acompanhou pela Europa nas competições.</div></div>
+<div class="i"><div class="en">It's up to us whether we go, and we have to pay our own way, but we want to be there for her.</div><div class="pt">Ir ou não é decisão nossa, e temos que pagar nossas próprias despesas, mas queremos estar lá por ela.</div></div>
+<div class="i"><div class="en">As a tiny child she was forever hanging off the sofa upside-down. She was walking at eight months and hasn't stopped moving since.</div><div class="pt">Quando pequenininha, ela vivia pendurada de cabeça para baixo no sofá. Andou com oito meses e não parou de se mexer desde então.</div></div>
+<div class="i"><div class="en">We let her try riding lessons, which she didn't really take to. She had fun playing tennis.</div><div class="pt">Deixamos ela tentar aulas de equitação, com as quais ela não se identificou. Ela se divertiu jogando tênis.</div></div>
+<div class="i"><div class="en">Then we tried her with ballet, which she loved, but didn't seem to be naturally suited to. Gymnastics was the solution, which we discovered a year later.</div><div class="pt">Aí tentamos balé, que ela adorou, mas para o qual não parecia ter dom natural. A ginástica foi a solução, que descobrimos um ano depois.</div></div>
+<div class="i"><div class="en">Oh yes. She socialises a lot with team members or other competitors.</div><div class="pt">Ah, sim. Ela convive bastante com as colegas de equipe e outras competidoras.</div></div>
+<div class="i"><div class="en">You'd think it'd be simple for someone like her to stay in good physical condition, but you should see how hard she has to work at it!</div><div class="pt">Você acharia que seria simples para alguém como ela se manter em boa forma física, mas você precisava ver o quanto ela tem que se esforçar!</div></div>
+<div class="i"><div class="en">Since she was fifteen, she's had training sessions five evenings a week, and someone has to drive her fifty kilometres there and back and spend four hours waiting for her.</div><div class="pt">Desde os quinze anos ela tem treino cinco noites por semana, e alguém tem que levá-la cinquenta quilômetros para lá e para cá e passar quatro horas esperando por ela.</div></div>
+<div class="i"><div class="en">Bob can't take the time off work, so it has to be me.</div><div class="pt">O Bob não consegue folga no trabalho, então tem que ser eu.</div></div>
+<div class="i"><div class="en">It'll all be over by the time she's twenty-one. There are any number of avenues to explore.</div><div class="pt">Vai estar tudo acabado quando ela fizer vinte e um. Há inúmeros caminhos a explorar.</div></div>
+<div class="i"><div class="en">At the moment I can't see her turning her back on her chosen sport.</div><div class="pt">No momento, não consigo vê-la dando as costas ao esporte que escolheu.</div></div>
+<div class="i"><div class="en">She's bright and takes things in well, but, having said that, she could never have succeeded in getting to this level if she weren't so determined.</div><div class="pt">Ela é inteligente e absorve bem as coisas, mas, dito isso, jamais teria chegado a esse nível se não fosse tão determinada.</div></div>
+<div class="i"><div class="en">I've seen other girls far more talented than her drop out because they couldn't deal with it.</div><div class="pt">Já vi outras garotas muito mais talentosas do que ela desistirem porque não davam conta.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Part 3 · grande evento</div>
+<h2>Trabalhar num grande evento esportivo</h2>
+<p class="sdesc">Segurança, estacionamento, torcedor, treinador e vendedora de sorvete falando do mesmo dia. Bom bloco de <b>ponto de vista</b>: cada um viu uma coisa.</p>
+<div class="items">
+<div class="i"><div class="en">The track here is good, very fast, and some of the athletes did spectacular times &#8212; broke their own records, some of them.</div><div class="pt">A pista aqui é boa, muito rápida, e alguns atletas fizeram tempos espetaculares &#8212; alguns bateram os próprios recordes.</div></div>
+<div class="i"><div class="en">Sadly, I'd been called away to an incident in one of the car parks &#8212; someone trying to break into a parked car.</div><div class="pt">Infelizmente, tinha sido chamado para uma ocorrência num dos estacionamentos &#8212; alguém tentando arrombar um carro estacionado.</div></div>
+<div class="i"><div class="en">The usual kind of thing at a big event, I'm afraid, however well-organised it may be, and it's part of my job to deal with things like that.</div><div class="pt">O tipo de coisa comum num evento grande, infelizmente, por mais bem organizado que seja, e faz parte do meu trabalho lidar com isso.</div></div>
+<div class="i"><div class="en">As far as I was concerned, everything went really smoothly, in the car park where I was working.</div><div class="pt">No que diz respeito a mim, correu tudo muito bem, no estacionamento em que eu trabalhava.</div></div>
+<div class="i"><div class="en">No-one seemed to lose their temper even if they had to queue to get in and out.</div><div class="pt">Ninguém pareceu perder a paciência, mesmo tendo que enfrentar fila para entrar e sair.</div></div>
+<div class="i"><div class="en">Mind you, it was all planned months in advance. We knew exactly what to do and how many vehicles we could get in every line.</div><div class="pt">Olha, tudo foi planejado com meses de antecedência. Sabíamos exatamente o que fazer e quantos veículos cabiam em cada fila.</div></div>
+<div class="i"><div class="en">It was good to get away from all those exhaust fumes, even if I didn't have a seat.</div><div class="pt">Foi bom sair de perto de toda aquela fumaça de escapamento, mesmo sem ter assento.</div></div>
+<div class="i"><div class="en">I guess he did his best, but he was a real disappointment.</div><div class="pt">Acho que ele deu o melhor de si, mas foi uma decepção e tanto.</div></div>
+<div class="i"><div class="en">If you ask me, he's been doing too much travelling and he's tired. Now I think that's unacceptable.</div><div class="pt">Para mim, ele tem viajado demais e está cansado. E acho isso inaceitável.</div></div>
+<div class="i"><div class="en">Anyway, I'm glad I've seen him &#8212; something to tell the grandchildren.</div><div class="pt">Enfim, fico feliz de ter visto ele &#8212; uma coisa para contar aos netos.</div></div>
+<div class="i"><div class="en">It's easy to praise athletes when they do well, but much harder to avoid blaming them when they don't live up to your expectations.</div><div class="pt">É fácil elogiar atletas quando vão bem, mas muito mais difícil evitar culpá-los quando não correspondem às suas expectativas.</div></div>
+<div class="i"><div class="en">People talk about always trying to improve your personal best time or height or distance and of course that's the aim, but there are some days when it just doesn't work out that way.</div><div class="pt">As pessoas falam em sempre tentar melhorar o próprio recorde de tempo, altura ou distância &#8212; e claro que esse é o objetivo &#8212;, mas tem dias em que simplesmente não é assim.</div></div>
+<div class="i"><div class="en">The way it worked out, I ended up seeing just about everything, which was really lucky.</div><div class="pt">Do jeito que aconteceu, acabei vendo praticamente tudo, o que foi muita sorte.</div></div>
+<div class="i"><div class="en">It was a hot day so I was kept busy selling ice-creams and cold drinks, mainly. In fact, I ran out at one stage.</div><div class="pt">Era um dia quente, então fiquei ocupada vendendo sorvete e bebida gelada, principalmente. Aliás, em certo momento acabou o estoque.</div></div>
+<div class="i"><div class="en">I had to stand all the time of course, so I was really tired by the end of the day, but it was worth it.</div><div class="pt">Tive que ficar de pé o tempo todo, claro, então terminei o dia exausta, mas valeu a pena.</div></div>
+<div class="i"><div class="en">But I wasn't complaining &#8212; I was put right at the front, so I had a marvellous view. I wouldn't have missed that for the world.</div><div class="pt">Mas eu não estava reclamando &#8212; me colocaram bem na frente, então eu tinha uma vista maravilhosa. Não perderia aquilo por nada neste mundo.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Part 3 · professores</div>
+<h2>Cinco professores de história e o que fazem em aula</h2>
+<p class="sdesc">Como cada um deixa a aula interessante: mudar a disposição das carteiras, usar músicas de séries, variar a abordagem, ligar com o bairro, não facilitar demais.</p>
+<div class="items">
+<div class="i"><div class="en">My lessons are a mixture of fun and practicality, which starts with arranging the desks in a gentle curve round the whiteboard.</div><div class="pt">Minhas aulas são uma mistura de diversão e praticidade, que começa por dispor as carteiras numa curva suave em volta do quadro.</div></div>
+<div class="i"><div class="en">I want students to think of history as more than just a lot of names &#8212; I hope I make it come alive for them.</div><div class="pt">Quero que os alunos vejam a história como mais do que um monte de nomes &#8212; espero fazer com que ela ganhe vida para eles.</div></div>
+<div class="i"><div class="en">I often borrow my students' ideas &#8212; I pick up on a good point they are making and I thank them for it. It's a habit with me.</div><div class="pt">Muitas vezes eu pego emprestadas as ideias dos alunos &#8212; capto um bom argumento que eles estão fazendo e agradeço por ele. É um hábito meu.</div></div>
+<div class="i"><div class="en">If you do that, they'll want to give you something in return by being involved.</div><div class="pt">Se você faz isso, eles vão querer retribuir se envolvendo.</div></div>
+<div class="i"><div class="en">Most teachers say that young people spend too much time in front of a screen and don't read enough at home, which is true.</div><div class="pt">A maioria dos professores diz que os jovens passam tempo demais na frente de uma tela e não leem o suficiente em casa, o que é verdade.</div></div>
+<div class="i"><div class="en">For my students, those things mean a lot, and can really add a spark.</div><div class="pt">Para os meus alunos, essas coisas significam muito e podem realmente acender uma faísca.</div></div>
+<div class="i"><div class="en">For example, I use the tune of a well-known detective series to signal to the students that they should open their books and start reading.</div><div class="pt">Por exemplo, eu uso a trilha de uma série policial conhecida para sinalizar aos alunos que devem abrir os livros e começar a ler.</div></div>
+<div class="i"><div class="en">It's not difficult, and you don't need lots of computers or hi-tech equipment.</div><div class="pt">Não é difícil, e você não precisa de um monte de computadores nem de equipamento de ponta.</div></div>
+<div class="i"><div class="en">I work with students of varying abilities, and I know that not everyone is crazy about history.</div><div class="pt">Trabalho com alunos de níveis variados e sei que nem todo mundo é apaixonado por história.</div></div>
+<div class="i"><div class="en">Each student needs something from me, so that means each lesson has to have a variety of approaches.</div><div class="pt">Cada aluno precisa de algo diferente de mim, então cada aula tem que ter uma variedade de abordagens.</div></div>
+<div class="i"><div class="en">Once, I had a student who was really keen on the history of art, so I got hold of some beautifully illustrated history books, which really sparked his imagination.</div><div class="pt">Uma vez tive um aluno muito interessado em história da arte, então arrumei uns livros de história lindamente ilustrados, que realmente despertaram a imaginação dele.</div></div>
+<div class="i"><div class="en">Learning history is not all about remembering hundreds of facts and dates, because you soon forget all that.</div><div class="pt">Aprender história não é só decorar centenas de fatos e datas, porque você logo esquece tudo isso.</div></div>
+<div class="i"><div class="en">I try to find ways to relate the history lesson I'm teaching to something interesting in the local area.</div><div class="pt">Tento achar maneiras de ligar a aula de história que estou dando a algo interessante da região.</div></div>
+<div class="i"><div class="en">Sometimes they will use the net at home, or they will interview their grandparents or other people they know well.</div><div class="pt">Às vezes eles usam a internet em casa, ou entrevistam os avós ou outras pessoas que conhecem bem.</div></div>
+<div class="i"><div class="en">My students tell me they never do anything boring in my lessons, and they often discover talents they never knew they had.</div><div class="pt">Meus alunos me dizem que nunca fazem nada chato nas minhas aulas, e muitas vezes descobrem talentos que não sabiam que tinham.</div></div>
+<div class="i"><div class="en">Some teachers make everything sound easy, and they believe students will like history that way. I'm of a different opinion.</div><div class="pt">Alguns professores fazem tudo parecer fácil e acreditam que assim os alunos vão gostar de história. Eu penso diferente.</div></div>
+<div class="i"><div class="en">If, for example, a student comes to me with an extract from a book they cannot understand, I encourage them to look at it again.</div><div class="pt">Se, por exemplo, um aluno vem até mim com um trecho de livro que não consegue entender, eu o incentivo a olhar de novo.</div></div>
+<div class="i"><div class="en">I know that if I don't make activities challenging, they won't learn. And my students are always keen to take part.</div><div class="pt">Sei que, se eu não tornar as atividades desafiadoras, eles não vão aprender. E meus alunos estão sempre dispostos a participar.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Part 3 · compositores</div>
+<h2>Como se escreve uma canção &#8212; cinco músicos</h2>
+<p class="sdesc">Começar pelo título, escrever só sobre o que se viveu, sentir qual melodia vai funcionar, compor a dois, entrar no estúdio sem ideia nenhuma.</p>
+<div class="items">
+<div class="i"><div class="en">I often start with a title. Once you've got a title, the rest of the songwriting process seems to come quite easily.</div><div class="pt">Eu costumo começar pelo título. Quando você tem um título, o resto do processo de composição parece vir com facilidade.</div></div>
+<div class="i"><div class="en">Sometimes I'll get an idea for part of a song in my head but don't know what to do with it, so I play it to another member of the band.</div><div class="pt">Às vezes tenho na cabeça a ideia de um trecho de música mas não sei o que fazer com ela, então toco para outro integrante da banda.</div></div>
+<div class="i"><div class="en">We usually end up doing half the song each.</div><div class="pt">Geralmente acabamos fazendo metade da música cada um.</div></div>
+<div class="i"><div class="en">When we first put it on tape, it just didn't work. Eventually someone suggested slowing it down &#8212; and that's the song that took us to number one.</div><div class="pt">Quando gravamos pela primeira vez, simplesmente não funcionou. No fim alguém sugeriu deixar mais lenta &#8212; e foi essa a música que nos levou ao primeiro lugar.</div></div>
+<div class="i"><div class="en">Songs are my way of telling the truth, my truth, as near as I can get to it. It makes it easier to write.</div><div class="pt">As canções são o meu jeito de dizer a verdade, a minha verdade, o mais perto que consigo chegar dela. Isso torna mais fácil escrever.</div></div>
+<div class="i"><div class="en">Some writers think of a situation and write as if they were in that situation. I don't think that works as well.</div><div class="pt">Alguns compositores pensam numa situação e escrevem como se estivessem nela. Acho que isso não funciona tão bem.</div></div>
+<div class="i"><div class="en">Writing from a personal point of view is much more effective. It's difficult for me to imagine myself in a situation.</div><div class="pt">Escrever a partir de um ponto de vista pessoal é muito mais eficaz. É difícil para mim me imaginar numa situação.</div></div>
+<div class="i"><div class="en">It has to be something inside me trying to get out.</div><div class="pt">Tem que ser algo dentro de mim tentando sair.</div></div>
+<div class="i"><div class="en">When I listen to my songs I seem to have a special sense which lets me know which ones will be exciting and make you want to listen.</div><div class="pt">Quando ouço minhas músicas, pareço ter um sentido especial que me diz quais vão ser empolgantes e dar vontade de ouvir.</div></div>
+<div class="i"><div class="en">It's got to be something I'd like to hear myself, so my songs usually involve pleasing tunes.</div><div class="pt">Tem que ser algo que eu mesmo gostaria de ouvir, então minhas músicas costumam ter melodias agradáveis.</div></div>
+<div class="i"><div class="en">Strangely enough though, my most successful song was written using a different process from all the others.</div><div class="pt">Curiosamente, porém, minha música de maior sucesso foi escrita por um processo diferente de todas as outras.</div></div>
+<div class="i"><div class="en">I like the collaborative process because as a songwriter I'm a bit slow.</div><div class="pt">Gosto do processo colaborativo porque, como compositor, sou meio lento.</div></div>
+<div class="i"><div class="en">Considering that I talk so much, it's strange that I find it hard to get an easy flow of words.</div><div class="pt">Considerando o quanto eu falo, é estranho que eu ache difícil conseguir um fluxo fácil de palavras.</div></div>
+<div class="i"><div class="en">But to compensate for that, I can write melody all day long, and love doing it.</div><div class="pt">Mas, para compensar, consigo escrever melodia o dia inteiro, e adoro fazer isso.</div></div>
+<div class="i"><div class="en">I find working with other people helpful because writing can be a lonely business and it's good to get feedback from others.</div><div class="pt">Acho útil trabalhar com outras pessoas porque escrever pode ser um ofício solitário e é bom receber retorno dos outros.</div></div>
+<div class="i"><div class="en">Writing songs is an exciting process for me. I never have any idea what's going to happen.</div><div class="pt">Compor é um processo empolgante para mim. Eu nunca faço ideia do que vai acontecer.</div></div>
+<div class="i"><div class="en">I don't wait until I get an idea. I say, today I'm going to write something &#8212; I go into my studio, pick up the guitar and start playing.</div><div class="pt">Eu não espero ter uma ideia. Eu digo: hoje vou escrever alguma coisa &#8212; entro no meu estúdio, pego o violão e começo a tocar.</div></div>
+<div class="i"><div class="en">You just have to believe that you can do it.</div><div class="pt">Você só tem que acreditar que consegue.</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Part 3 · festival</div>
+<h2>Acampar num festival de três dias</h2>
+<p class="sdesc">Cinco pessoas contando o que fariam diferente: chegar cedo, viajar leve, levar mais dinheiro, saber onde armou a barraca, conhecer os vizinhos de barraca.</p>
+<div class="items">
+<div class="i"><div class="en">This was the first time I'd been to a festival, so I went with two friends.</div><div class="pt">Era a primeira vez que eu ia a um festival, então fui com dois amigos.</div></div>
+<div class="i"><div class="en">I think I took the wrong clothes as well &#8212; jeans and sweatshirts rather than T-shirts and shorts.</div><div class="pt">Acho que também levei as roupas erradas &#8212; jeans e moletom em vez de camiseta e shorts.</div></div>
+<div class="i"><div class="en">It's worthwhile remembering this, because you want to enjoy yourself, not be worrying about your stuff.</div><div class="pt">Vale a pena lembrar disso, porque você quer se divertir, não ficar preocupado com suas coisas.</div></div>
+<div class="i"><div class="en">I had a great time, despite the problems, because the music was brilliant!</div><div class="pt">Me diverti muito, apesar dos problemas, porque a música era sensacional!</div></div>
+<div class="i"><div class="en">First of all, I'll make sure I get a good place to put up my tent.</div><div class="pt">Antes de tudo, vou garantir um bom lugar para armar minha barraca.</div></div>
+<div class="i"><div class="en">You need quite a bit of space if you and your friends all have your own tents, so my advice is to get to the festival site early.</div><div class="pt">Você precisa de bastante espaço se você e seus amigos têm cada um sua barraca, então meu conselho é chegar cedo ao local do festival.</div></div>
+<div class="i"><div class="en">Get together at home beforehand and check everyone knows what they're doing and taking.</div><div class="pt">Reúnam-se em casa antes e confiram se todo mundo sabe o que vai fazer e o que vai levar.</div></div>
+<div class="i"><div class="en">I mean, these festivals are expensive, so you can't afford to waste time when you get there.</div><div class="pt">Quer dizer, esses festivais são caros, então você não pode se dar ao luxo de perder tempo quando chegar.</div></div>
+<div class="i"><div class="en">The other thing I'll do is take more money, because the food on site is very expensive.</div><div class="pt">A outra coisa que vou fazer é levar mais dinheiro, porque a comida no local é caríssima.</div></div>
+<div class="i"><div class="en">It would've been really useful to have had suncream and a sun hat, but I left them at home, which was a bit silly of me.</div><div class="pt">Teria sido muito útil ter levado protetor solar e um chapéu, mas deixei em casa, o que foi meio bobo da minha parte.</div></div>
+<div class="i"><div class="en">Ironic really as I took loads of stuff more suitable for cold weather &#8212; like fleeces and jumpers &#8212; and I had to carry it all in my rucksack for miles to the campsite.</div><div class="pt">Irônico, porque levei um monte de coisa mais adequada para frio &#8212; casacos e blusas &#8212; e tive que carregar tudo na mochila por quilômetros até o acampamento.</div></div>
+<div class="i"><div class="en">I'd recommend travelling light.</div><div class="pt">Eu recomendaria viajar leve.</div></div>
+<div class="i"><div class="en">Someone who'd been before suggested we stayed at the local youth hostel, but we wanted to camp because it's by far the cheapest option.</div><div class="pt">Alguém que já tinha ido sugeriu que ficássemos no albergue da região, mas a gente queria acampar porque é de longe a opção mais barata.</div></div>
+<div class="i"><div class="en">You're also much closer to the music and that makes a big difference when the last band finishes at midnight and you're really tired.</div><div class="pt">Você também fica bem mais perto da música, e isso faz uma grande diferença quando a última banda termina à meia-noite e você está exausto.</div></div>
+<div class="i"><div class="en">But you really must make sure you know where you set up camp. It's really dark at the campsite, and you don't want to end up sleeping in a field.</div><div class="pt">Mas você precisa mesmo saber onde armou o acampamento. É muito escuro na área de camping, e você não quer acabar dormindo num campo qualquer.</div></div>
+<div class="i"><div class="en">When we arrived at the festival campsite we were totally amazed at how big it was.</div><div class="pt">Quando chegamos à área de camping do festival, ficamos totalmente espantados com o tamanho.</div></div>
+<div class="i"><div class="en">Everyone was really friendly though, and we found a good place to put up our tent quite quickly, which was cool.</div><div class="pt">Mas todo mundo era muito simpático, e achamos um bom lugar para armar a barraca bem rápido, o que foi legal.</div></div>
+<div class="i"><div class="en">The facilities weren't too bad, I suppose &#8212; apart from the queues for the showers.</div><div class="pt">As instalações não eram tão ruins, acho &#8212; tirando as filas para o banho.</div></div>
+<div class="i"><div class="en">I definitely felt better after we got to know the guys in the next tent &#8212; they were around a lot and so kept an eye on us and our things.</div><div class="pt">Eu me senti bem melhor depois que conhecemos os caras da barraca ao lado &#8212; eles ficavam por perto e ficavam de olho em nós e nas nossas coisas.</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Part 1 · opinar</div>
+<h2>Jornal, loja, exposição &#8212; dar uma opinião pessoal</h2>
+<p class="sdesc">Um homem falando do jornal que lê no trem, dois amigos discutindo uma loja de departamentos, gente numa exposição de arte, um escultor lembrando da escola e uma previsão do tempo.</p>
+<div class="items">
+<div class="i"><div class="en">I flick through a newspaper on the train to work every day. I usually turn to the sport first, I'm not into politics really.</div><div class="pt">Eu folheio um jornal no trem para o trabalho todo dia. Normalmente vou primeiro para os esportes; não curto muito política.</div></div>
+<div class="i"><div class="en">&#8230; then whatever catches my eye &#8212; crime stories, general news, even keeping up with the gossip.</div><div class="pt">&#8230; depois o que me chamar a atenção &#8212; casos policiais, notícias gerais, até acompanhar as fofocas.</div></div>
+<div class="i"><div class="en">But I steer clear of the serious papers &#8212; they're too big to handle comfortably on the train and they'd send me off to sleep in no time.</div><div class="pt">Mas eu fico longe dos jornalões sérios &#8212; são grandes demais para manusear com conforto no trem e me fariam dormir num instante.</div></div>
+<div class="i"><div class="en">It'd be a dull journey without a paper &#8212; but I'm just not one of those people who couldn't live without one.</div><div class="pt">Seria uma viagem sem graça sem um jornal &#8212; mas eu não sou daquelas pessoas que não conseguiriam viver sem um.</div></div>
+<div class="i"><div class="en">Have you been to that new place, Homestore? &#183; I went last week actually.</div><div class="pt">Você foi naquela loja nova, a Homestore? &#183; Fui semana passada, na verdade.</div></div>
+<div class="i"><div class="en">I went once but never again. It's huge and there's no-one to help you.</div><div class="pt">Fui uma vez e nunca mais. É gigantesca e não tem ninguém para te ajudar.</div></div>
+<div class="i"><div class="en">Well, the idea is that you find things for yourself. That way they can reduce staffing costs and pass that saving on to the customer.</div><div class="pt">Bom, a ideia é que você mesmo ache as coisas. Assim eles reduzem o custo de pessoal e repassam a economia ao cliente.</div></div>
+<div class="i"><div class="en">It's all quite well signposted after all, and there's a help desk if you need it.</div><div class="pt">Afinal, é tudo bem sinalizado, e tem um balcão de ajuda se você precisar.</div></div>
+<div class="i"><div class="en">I was looking for some new pans for the kitchen, and they're amazingly good value if you compare them with the other outlets.</div><div class="pt">Eu estava procurando panelas novas para a cozinha, e elas têm um custo-benefício incrível se você comparar com as outras lojas.</div></div>
+<div class="i"><div class="en">It's clever the way you're given one impression when you stand here at a distance and then everything shifts slightly when you get close.</div><div class="pt">É engenhoso o jeito como você tem uma impressão quando fica aqui à distância e depois tudo muda um pouco quando você chega perto.</div></div>
+<div class="i"><div class="en">Yeah, the colours change too when you look at it from a different angle.</div><div class="pt">É, as cores também mudam quando você olha de outro ângulo.</div></div>
+<div class="i"><div class="en">Don't be in such a rush! Let's read about this one in the catalogue before looking at those.</div><div class="pt">Não tenha tanta pressa! Vamos ler sobre este no catálogo antes de olhar aqueles.</div></div>
+<div class="i"><div class="en">One day at school, we were each given a piece of wood and told to do a sculpture.</div><div class="pt">Um dia na escola, deram a cada um de nós um pedaço de madeira e mandaram fazer uma escultura.</div></div>
+<div class="i"><div class="en">Everyone started cutting away at the outside, but I made a hole in my piece and started working from the inside outwards.</div><div class="pt">Todo mundo começou a talhar a parte de fora, mas eu fiz um buraco na minha peça e comecei a trabalhar de dentro para fora.</div></div>
+<div class="i"><div class="en">But I'd just done what came naturally. My sculpture was much admired.</div><div class="pt">Mas eu tinha feito apenas o que veio naturalmente. Minha escultura foi muito admirada.</div></div>
+<div class="i"><div class="en">&#8230; much to the disappointment of my mum and dad, who thought it was just a hobby and couldn't see where it was leading.</div><div class="pt">&#8230; para grande decepção da minha mãe e do meu pai, que achavam que era só um hobby e não viam aonde aquilo levaria.</div></div>
+<div class="i"><div class="en">Usually, unless it's an area I'm particularly interested in, I don't pay too much attention to scientists.</div><div class="pt">Normalmente, a não ser que seja uma área que me interesse especialmente, eu não presto muita atenção nos cientistas.</div></div>
+<div class="i"><div class="en">Often, clever, well-respected academics are not terribly good communicators, and they can take ten minutes to say what could be said in one.</div><div class="pt">Muitas vezes, acadêmicos inteligentes e respeitados não são grandes comunicadores e levam dez minutos para dizer o que se diria em um.</div></div>
+<div class="i"><div class="en">They also use a lot of technical language and this tends to lose a large section of their audience, me included.</div><div class="pt">Eles também usam muita linguagem técnica, e isso tende a perder boa parte do público, eu inclusive.</div></div>
+<div class="i"><div class="en">At six I was refusing to leave the house unless I felt my clothes would make me look cool &#8212; or so my parents say.</div><div class="pt">Aos seis anos eu me recusava a sair de casa a menos que sentisse que minha roupa me deixaria descolada &#8212; ou pelo menos é o que meus pais dizem.</div></div>
+<div class="i"><div class="en">I had very clear ideas even then &#8212; there was no negotiation.</div><div class="pt">Eu já tinha ideias muito claras naquela época &#8212; não havia negociação.</div></div>
+<div class="i"><div class="en">I think young children are actually more aware of what they and their friends are wearing than we realise.</div><div class="pt">Acho que as crianças pequenas têm, na verdade, mais consciência do que elas e os amigos estão vestindo do que a gente imagina.</div></div>
+<div class="i"><div class="en">This morning has seen the wind coming from an easterly direction and temperatures will begin to drop. There is a chance, too, of freezing fog early on.</div><div class="pt">Esta manhã teve vento de leste e as temperaturas vão começar a cair. Há também chance de nevoeiro congelante no início do dia.</div></div>
+<div class="i"><div class="en">The wind will swing round to the west, raising the temperature and bringing showers for most of us, and these will be with us for a while.</div><div class="pt">O vento vai girar para oeste, elevando a temperatura e trazendo pancadas de chuva para a maioria de nós, que devem durar um tempo.</div></div>
+<div class="i"><div class="en">You should always read the label. By law it has to tell you exactly what's contained in the product.</div><div class="pt">Você deve sempre ler o rótulo. Por lei, ele tem que dizer exatamente o que o produto contém.</div></div>
+<div class="i"><div class="en">There are breathing exercises, games, singing and relaxation to ensure a balance &#8212; some periods of activity and also some quiet time.</div><div class="pt">Há exercícios de respiração, brincadeiras, canto e relaxamento para garantir equilíbrio &#8212; períodos de atividade e também momentos de silêncio.</div></div>
+<div class="i"><div class="en">It's amazing what yoga can do for you &#8212; from developing a strong, healthy body to increasing concentration and attention.</div><div class="pt">É impressionante o que a ioga pode fazer por você &#8212; de desenvolver um corpo forte e saudável a aumentar a concentração e a atenção.</div></div>
+</div>
+</section>
+
+<section id="s16">
+<div class="snum">as quatro provas · vocabulário</div>
+<h2>As expressões que voltam nas gravações</h2>
+<p class="sdesc">Os <i>phrasal verbs</i> e as expressões feitas que aparecem no meio da fala nas quatro provas &#8212; com a frase exata em que apareceram.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Expressão</th><th>O que quer dizer</th><th>Como apareceu</th></tr></thead>
+<tbody>
+<tr><td><b>put off (doing)</b></td><td class="w">adiar</td><td class="w">I'd been <b>putting off</b> doing that job for a long time.</td></tr>
+<tr><td><b>put someone off</b></td><td class="w">desanimar alguém</td><td class="w">&#8230; and that wasn't going to <b>put me off</b>!</td></tr>
+<tr><td><b>put up (a tent)</b></td><td class="w">armar (barraca)</td><td class="w">&#8230; a good place to <b>put up</b> my tent.</td></tr>
+<tr><td><b>make a go of it</b></td><td class="w">fazer dar certo</td><td class="w">&#8230; to see if we could <b>make a go of it</b> commercially.</td></tr>
+<tr><td><b>settle for</b></td><td class="w">acabar aceitando</td><td class="w">&#8230; but finally <b>settled for</b> a market on Saturdays.</td></tr>
+<tr><td><b>live off</b></td><td class="w">viver às custas de</td><td class="w">Nine months of <b>living off</b> our credit cards.</td></tr>
+<tr><td><b>get going</b></td><td class="w">começar, deslanchar</td><td class="w">So that <b>got us going</b>.</td></tr>
+<tr><td><b>get on with it</b></td><td class="w">tocar em frente</td><td class="w">&#8230; but you have to <b>get on with it</b>.</td></tr>
+<tr><td><b>get through</b></td><td class="w">passar (numa prova dura)</td><td class="w">It was great to <b>get through</b>.</td></tr>
+<tr><td><b>get to grips with</b></td><td class="w">pegar o jeito de</td><td class="w">&#8230; help them really <b>get to grips with</b> the job.</td></tr>
+<tr><td><b>get rid of</b></td><td class="w">descarregar, se livrar de</td><td class="w">&#8230; not to <b>get rid of</b> all my emotions on my family.</td></tr>
+<tr><td><b>get hold of</b></td><td class="w">conseguir</td><td class="w">I <b>got hold of</b> some beautifully illustrated history books.</td></tr>
+<tr><td><b>take it in your stride</b></td><td class="w">levar numa boa</td><td class="w">&#8230; though he seems to <b>take it in his stride</b>.</td></tr>
+<tr><td><b>take to (something)</b></td><td class="w">se identificar com</td><td class="w">&#8230; riding lessons, which she didn't really <b>take to</b>.</td></tr>
+<tr><td><b>take up</b></td><td class="w">começar a praticar</td><td class="w">&#8230; and <b>took it up</b> when I came back to the US.</td></tr>
+<tr><td><b>take in</b></td><td class="w">absorver, entender</td><td class="w">She's bright and <b>takes things in</b> well.</td></tr>
+<tr><td><b>pick up on</b></td><td class="w">captar (uma ideia)</td><td class="w">I <b>pick up on</b> a good point they are making.</td></tr>
+<tr><td><b>pick it up</b></td><td class="w">pegar o jeito rápido</td><td class="w">Some people <b>pick it up</b> really easily.</td></tr>
+<tr><td><b>steer clear of</b></td><td class="w">ficar longe de</td><td class="w">I <b>steer clear of</b> the serious papers.</td></tr>
+<tr><td><b>flick through</b></td><td class="w">folhear</td><td class="w">I <b>flick through</b> a newspaper on the train.</td></tr>
+<tr><td><b>keep up with</b></td><td class="w">acompanhar</td><td class="w">&#8230; even <b>keeping up with</b> the gossip.</td></tr>
+<tr><td><b>keep an eye on</b></td><td class="w">ficar de olho em</td><td class="w">&#8230; so <b>kept an eye on</b> us and our things.</td></tr>
+<tr><td><b>run out (of)</b></td><td class="w">acabar (o estoque)</td><td class="w">In fact, I <b>ran out</b> at one stage.</td></tr>
+<tr><td><b>call in at</b></td><td class="w">passar em (um lugar)</td><td class="w">Then I <b>called in at</b> the supermarket.</td></tr>
+<tr><td><b>on the lookout for</b></td><td class="w">atento a, à procura de</td><td class="w">&#8230; always <b>on the lookout for</b> possible locations.</td></tr>
+<tr><td><b>lose your temper</b></td><td class="w">perder a paciência</td><td class="w">No-one seemed to <b>lose their temper</b>.</td></tr>
+<tr><td><b>live up to expectations</b></td><td class="w">corresponder às expectativas</td><td class="w">&#8230; when they don't <b>live up to your expectations</b>.</td></tr>
+<tr><td><b>give the game away</b></td><td class="w">entregar o jogo</td><td class="w">&#8230; so I chatter on a lot, which rather <b>gives the game away</b>!</td></tr>
+<tr><td><b>cover up</b></td><td class="w">disfarçar</td><td class="w">&#8230; and find it hard to <b>cover that up</b>.</td></tr>
+<tr><td><b>turn your back on</b></td><td class="w">dar as costas a</td><td class="w">I can't see her <b>turning her back on</b> her chosen sport.</td></tr>
+<tr><td><b>drop out</b></td><td class="w">desistir, abandonar</td><td class="w">I've seen other girls&#8230; <b>drop out</b>.</td></tr>
+<tr><td><b>make a fuss about</b></td><td class="w">fazer estardalhaço</td><td class="w">&#8230; they didn't <b>make a fuss about</b> it.</td></tr>
+<tr><td><b>put it all behind you</b></td><td class="w">deixar tudo para trás</td><td class="w">It's nice to get home and <b>put it all behind you</b>.</td></tr>
+<tr><td><b>mind you</b></td><td class="w">olha, veja bem</td><td class="w"><b>Mind you</b>, it was all planned months in advance.</td></tr>
+<tr><td><b>at the end of the day</b></td><td class="w">no fim das contas</td><td class="w">But <b>at the end of the day</b>, it's a bit like learning to drive.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+</main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 20 V09 · Livro 05 · Cambridge B2 First 5 (Student's Book with Answers) — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' seções.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'seção':'seções')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

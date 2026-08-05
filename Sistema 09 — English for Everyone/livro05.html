@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 05 · Practice Book Nível 2 — Sistema 09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead a{color:var(--accent);}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 09</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 09 · Livro 05 · A2</div>
+<h1 class="title">Practice Book — <em>Nível 2</em></h1>
+<p class="lead">DK · série <i>English for Everyone</i>. A continuação do nível 1, agora no A2 — e com uma vantagem: este volume traz, ao fim de cada bloco de unidades, uma tabela <b>Review</b> em que os próprios autores escolhem a <b>frase-modelo</b> de cada estrutura nova. Essa tabela virou a espinha dorsal deste painel, completada com as frases inteiras do gabarito. Cobre verbos de estado, saúde e clima, comparativos e superlativos, datas, todo o passado simples, a diferença entre pergunta de sujeito e de objeto, os pronomes indefinidos, as três formas de futuro, <i>might / should / could</i> e o present perfect com <i>yet</i> e <i>already</i>. Ficaram de fora enunciado de exercício, resposta de marcar caixinha e listas de vocabulário sem frase.</p>
+
+<div class="metrics">
+  <div class="metric"><b>12</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>49</b><span>unidades cobertas</span></div>
+  <div class="metric"><b>A2</b><span>nível</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: going to, might, who did, já fiz…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Unidade 05</div>
+<h2>Verbos de ação e verbos de estado</h2>
+<p class="sdesc">O erro mais comum de brasileiro em inglês: pôr no contínuo um verbo que não aceita. O livro apresenta o par certo ao lado do errado.</p>
+<div class="items">
+<div class="i"><div class="en">I want some chocolate.</div><div class="pt">Eu quero um chocolate. <i>(nunca <span class="x">I am wanting</span>)</i></div></div>
+<div class="i"><div class="en">He is reading a book at the moment.</div><div class="pt">Ele está lendo um livro no momento.</div></div>
+<div class="i"><div class="en">She is going to the store now.</div><div class="pt">Ela está indo à loja agora.</div></div>
+<div class="i"><div class="en">Jo remembers my birthday.</div><div class="pt">A Jo lembra do meu aniversário.</div></div>
+<div class="i"><div class="en">Fred doesn't like pizza.</div><div class="pt">O Fred não gosta de pizza.</div></div>
+<div class="i"><div class="en">Li is playing tennis at the moment.</div><div class="pt">O Li está jogando tênis no momento.</div></div>
+<div class="i"><div class="en">I always sing in the bath.</div><div class="pt">Eu sempre canto no banho.</div></div>
+<div class="i"><div class="en">We don't want to leave.</div><div class="pt">A gente não quer ir embora.</div></div>
+<div class="i"><div class="en">He likes the book.</div><div class="pt">Ele gosta do livro.</div></div>
+<div class="i"><div class="en">Sharon is reading a book.</div><div class="pt">A Sharon está lendo um livro.</div></div>
+<div class="i"><div class="en">I am carrying my laptop.</div><div class="pt">Eu estou carregando meu notebook.</div></div>
+<div class="i"><div class="en">We are working at the moment.</div><div class="pt">A gente está trabalhando no momento.</div></div>
+<div class="i"><div class="en">He isn't playing tennis.</div><div class="pt">Ele não está jogando tênis.</div></div>
+<div class="i"><div class="en">I am driving to work right now.</div><div class="pt">Eu estou dirigindo para o trabalho agora mesmo.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Unidades 11 – 13</div>
+<h2>Saúde, tempo e temperatura</h2>
+<p class="sdesc">As frases de referência do próprio livro para dizer que não está bem, descrever o tempo e dar a temperatura.</p>
+<div class="items">
+<div class="i"><div class="en">Are you okay? — No, I'm not feeling very well.</div><div class="pt">Você está bem? — Não, não estou me sentindo muito bem.</div></div>
+<div class="i"><div class="en">I have a broken foot. My foot hurts.</div><div class="pt">Eu quebrei o pé. Meu pé dói.</div></div>
+<div class="i"><div class="en">I have a pain in my head. I have a headache.</div><div class="pt">Eu estou com dor na cabeça. Estou com dor de cabeça.</div></div>
+<div class="i"><div class="en">What's the weather like? — Okay, but there are a lot of clouds. It's cloudy.</div><div class="pt">Como está o tempo? — Razoável, mas tem muita nuvem. Está nublado.</div></div>
+<div class="i"><div class="en">It's 27 degrees Celsius.</div><div class="pt">Estão 27 graus Celsius.</div></div>
+<div class="i"><div class="en">It's 10 degrees Fahrenheit.</div><div class="pt">Estão 10 graus Fahrenheit.</div></div>
+<div class="i"><div class="en">How hot is it? — It's boiling.</div><div class="pt">Está muito quente? — Está fervendo.</div></div>
+<div class="i"><div class="en">How cold is it? — It's freezing.</div><div class="pt">Está muito frio? — Está congelando.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Unidades 15 – 19</div>
+<h2>Comparar, escolher e contar alto</h2>
+<p class="sdesc">Comparativos, superlativos, a diferença entre <code>which</code> e <code>what</code>, e os números grandes por extenso.</p>
+<div class="items">
+<div class="i"><div class="en">Greece is warmer than France.</div><div class="pt">A Grécia é mais quente que a França.</div></div>
+<div class="i"><div class="en">K2 is higher than Annapurna, but Everest is the highest mountain in the world.</div><div class="pt">O K2 é mais alto que o Annapurna, mas o Everest é a montanha mais alta do mundo.</div></div>
+<div class="i"><div class="en">Do you want to go to Germany or France?</div><div class="pt">Você quer ir para a Alemanha ou para a França?</div></div>
+<div class="i"><div class="en">Do you want to go to Paris and Versailles?</div><div class="pt">Você quer ir a Paris e Versalhes?</div></div>
+<div class="i"><div class="en">What is the tallest building?</div><div class="pt">Qual é o prédio mais alto? <i>(what — resposta aberta)</i></div></div>
+<div class="i"><div class="en">Which mountain is higher, the Matterhorn or Mont Blanc?</div><div class="pt">Qual montanha é mais alta, o Matterhorn ou o Mont Blanc? <i>(which — escolha entre opções)</i></div></div>
+<div class="i"><div class="en">Two thousand, eight hundred and seventy-six.</div><div class="pt">Dois mil, oitocentos e setenta e seis.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Unidades 21 – 24</div>
+<h2>Datas e o passado de <i>to be</i></h2>
+<p class="sdesc">Escrever e dizer datas, e o passado do verbo <code>be</code> na afirmativa, negativa e pergunta — mais <code>could</code> para habilidade antiga.</p>
+<div class="items">
+<div class="i"><div class="en">His birthday is on May 10.</div><div class="pt">O aniversário dele é em 10 de maio.</div></div>
+<div class="i"><div class="en">My meeting is on the 18th of May.</div><div class="pt">Minha reunião é no dia 18 de maio.</div></div>
+<div class="i"><div class="en">She was a student in 1985.</div><div class="pt">Ela era estudante em 1985.</div></div>
+<div class="i"><div class="en">Was he in India last year?</div><div class="pt">Ele estava na Índia ano passado?</div></div>
+<div class="i"><div class="en">He wasn't in France.</div><div class="pt">Ele não estava na França.</div></div>
+<div class="i"><div class="en">I could climb trees when I was younger.</div><div class="pt">Eu conseguia subir em árvore quando era mais novo.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Unidades 23 – 28</div>
+<h2>Passado simples — regulares e irregulares</h2>
+<p class="sdesc">Contar o que aconteceu. O livro separa os verbos regulares dos irregulares e depois junta os dois na mesma narrativa.</p>
+<div class="items">
+<div class="i"><div class="en">I visited Luke last Friday.</div><div class="pt">Eu visitei o Luke na sexta passada.</div></div>
+<div class="i"><div class="en">I didn't play tennis.</div><div class="pt">Eu não joguei tênis.</div></div>
+<div class="i"><div class="en">I went to the movies last night.</div><div class="pt">Eu fui ao cinema ontem à noite.</div></div>
+<div class="i"><div class="en">I didn't go last week.</div><div class="pt">Eu não fui semana passada.</div></div>
+<div class="i"><div class="en">It's a movie about two brothers.</div><div class="pt">É um filme sobre dois irmãos.</div></div>
+<div class="i"><div class="en">I enjoyed it because it was thrilling.</div><div class="pt">Eu gostei porque foi emocionante.</div></div>
+<div class="i"><div class="en">My qualifications include degrees in biology and chemistry.</div><div class="pt">Minha formação inclui diplomas em biologia e química.</div></div>
+<div class="i"><div class="en">The interview at the bank went really well. I've got the job.</div><div class="pt">A entrevista no banco foi muito bem. Eu consegui o emprego.</div></div>
+<div class="i"><div class="en">The manager read my resume and said it was really good.</div><div class="pt">O gerente leu meu currículo e disse que estava muito bom.</div></div>
+<div class="i"><div class="en">I can start the job in January.</div><div class="pt">Eu posso começar no emprego em janeiro.</div></div>
+<div class="i"><div class="en">You need to have an interview before you can get the job.</div><div class="pt">Você precisa fazer uma entrevista antes de conseguir a vaga.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Unidades 29 – 31</div>
+<h2>Perguntar sobre o passado — sujeito x objeto</h2>
+<p class="sdesc">A distinção mais sutil da unidade: <i>Who called the bank?</i> não leva <code>did</code>; <i>Who did Ben call?</i> leva. A diferença é se a palavra interrogativa é o sujeito.</p>
+<div class="items">
+<div class="i"><div class="en">Did you have a good vacation? — Yes, we went to India.</div><div class="pt">Vocês tiveram férias boas? — Tivemos, a gente foi para a Índia.</div></div>
+<div class="i"><div class="en">Who called the bank?</div><div class="pt">Quem ligou para o banco? <i>(who é o sujeito — sem did)</i></div></div>
+<div class="i"><div class="en">Who did Ben call?</div><div class="pt">Para quem o Ben ligou? <i>(who é o objeto — com did)</i></div></div>
+<div class="i"><div class="en">What did the dog break?</div><div class="pt">O que o cachorro quebrou?</div></div>
+<div class="i"><div class="en">Who ate the last piece of cake?</div><div class="pt">Quem comeu o último pedaço de bolo?</div></div>
+<div class="i"><div class="en">Which TV program starts at 9pm?</div><div class="pt">Qual programa de TV começa às 21h?</div></div>
+<div class="i"><div class="en">Who did you see yesterday?</div><div class="pt">Quem você viu ontem?</div></div>
+<div class="i"><div class="en">What did Arjun start last month?</div><div class="pt">O que o Arjun começou mês passado?</div></div>
+<div class="i"><div class="en">Who is waiting outside?</div><div class="pt">Quem está esperando lá fora?</div></div>
+<div class="i"><div class="en">What did the manager say?</div><div class="pt">O que o gerente disse?</div></div>
+<div class="i"><div class="en">Which customer did you speak to?</div><div class="pt">Com qual cliente você falou?</div></div>
+<div class="i"><div class="en">Who gave Emma that book?</div><div class="pt">Quem deu aquele livro para a Emma?</div></div>
+<div class="i"><div class="en">What started at 7am?</div><div class="pt">O que começou às 7 da manhã?</div></div>
+<div class="i"><div class="en">How long did you go abroad for?</div><div class="pt">Por quanto tempo você ficou fora do país?</div></div>
+<div class="i"><div class="en">When did you leave the US?</div><div class="pt">Quando você saiu dos Estados Unidos?</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Unidades 32 – 33</div>
+<h2><i>Someone</i>, <i>anyone</i>, <i>everyone</i>, <i>no one</i> — e as perguntas curtas</h2>
+<p class="sdesc">Os pronomes indefinidos aplicados ao ambiente de trabalho, mais a "pergunta-eco" que mostra interesse na conversa.</p>
+<div class="items">
+<div class="i"><div class="en">Did anyone call me this morning? — Yes, someone called at 11 o'clock.</div><div class="pt">Alguém me ligou hoje de manhã? — Ligou sim, alguém ligou às 11.</div></div>
+<div class="i"><div class="en">Why is there no one in the office? — Everyone is at the big meeting.</div><div class="pt">Por que não tem ninguém no escritório? — Está todo mundo na reunião grande.</div></div>
+<div class="i"><div class="en">Please ask someone to phone Mr. Richards immediately.</div><div class="pt">Por favor, peça a alguém para ligar para o sr. Richards imediatamente.</div></div>
+<div class="i"><div class="en">Mrs. Turner didn't give anyone any work to do this week.</div><div class="pt">A sra. Turner não deu trabalho nenhum a ninguém esta semana.</div></div>
+<div class="i"><div class="en">Can I give anyone a lift to the station tomorrow morning?</div><div class="pt">Posso dar carona para alguém até a estação amanhã de manhã?</div></div>
+<div class="i"><div class="en">I'm sorry, but there isn't anyone in the office at the moment.</div><div class="pt">Desculpe, mas não tem ninguém no escritório no momento.</div></div>
+<div class="i"><div class="en">Somebody in room 212 needs a new computer.</div><div class="pt">Alguém na sala 212 precisa de um computador novo.</div></div>
+<div class="i"><div class="en">Nobody closed the window last night before they left the office.</div><div class="pt">Ninguém fechou a janela ontem à noite antes de sair do escritório.</div></div>
+<div class="i"><div class="en">Everyone knows that we have a new office.</div><div class="pt">Todo mundo sabe que a gente tem um escritório novo.</div></div>
+<div class="i"><div class="en">I went to the movies last night. — Did you?</div><div class="pt">Eu fui ao cinema ontem à noite. — Foi?</div></div>
+<div class="i"><div class="en">It was really exciting. — Was it?</div><div class="pt">Foi bem empolgante. — Foi mesmo?</div></div>
+<div class="i"><div class="en">I was very tired last night. — Were you?</div><div class="pt">Eu estava muito cansado ontem à noite. — Estava?</div></div>
+<div class="i"><div class="en">The cat likes its new food. — Does it?</div><div class="pt">O gato gostou da comida nova. — Gostou é?</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Unidades 35 – 37</div>
+<h2>Futuro com present continuous e com <i>going to</i></h2>
+<p class="sdesc">Compromisso marcado, plano decidido e previsão que dá para ver — as três leituras de futuro que este nível cobre.</p>
+<div class="items">
+<div class="i"><div class="en">At the moment, Dave is working, but tomorrow he is playing golf.</div><div class="pt">No momento o Dave está trabalhando, mas amanhã ele vai jogar golfe.</div></div>
+<div class="i"><div class="en">John's cousins are coming to the party tomorrow.</div><div class="pt">Os primos do John vêm à festa amanhã.</div></div>
+<div class="i"><div class="en">I am going to the dentist tomorrow morning.</div><div class="pt">Eu vou ao dentista amanhã de manhã.</div></div>
+<div class="i"><div class="en">My family and I are visiting my grandma on Saturday.</div><div class="pt">Eu e minha família vamos visitar minha avó no sábado.</div></div>
+<div class="i"><div class="en">A famous band is playing in Central Park this weekend.</div><div class="pt">Uma banda famosa vai tocar no Central Park neste fim de semana.</div></div>
+<div class="i"><div class="en">He is studying for his test tomorrow.</div><div class="pt">Ele vai estudar para a prova amanhã.</div></div>
+<div class="i"><div class="en">I'm going to buy a new car.</div><div class="pt">Eu vou comprar um carro novo.</div></div>
+<div class="i"><div class="en">We are going to exercise tonight.</div><div class="pt">A gente vai se exercitar hoje à noite.</div></div>
+<div class="i"><div class="en">Look at those clouds. It's going to rain soon.</div><div class="pt">Olha aquelas nuvens. Vai chover logo.</div></div>
+<div class="i"><div class="en">Oh no! She is going to fall off the ladder.</div><div class="pt">Ai, não! Ela vai cair da escada.</div></div>
+<div class="i"><div class="en">John is terrible at golf! He isn't going to win the tournament.</div><div class="pt">O John é péssimo no golfe! Ele não vai ganhar o torneio.</div></div>
+<div class="i"><div class="en">It's very windy! His umbrella is going to blow away.</div><div class="pt">Está ventando muito! O guarda-chuva dele vai voar.</div></div>
+<div class="i"><div class="en">You're carrying too much. You are going to drop everything.</div><div class="pt">Você está carregando coisa demais. Vai deixar tudo cair.</div></div>
+<div class="i"><div class="en">He is going to paint his bedroom by the end of this month.</div><div class="pt">Ele vai pintar o quarto até o fim deste mês.</div></div>
+<div class="i"><div class="en">He is going to get fit by the summer.</div><div class="pt">Ele vai entrar em forma até o verão.</div></div>
+<div class="i"><div class="en">Sorry, I can't. I'm visiting my parents this evening.</div><div class="pt">Desculpa, não posso. Eu vou visitar meus pais hoje à noite.</div></div>
+<div class="i"><div class="en">I'd like to, but I'm going to France this weekend.</div><div class="pt">Eu gostaria, mas vou para a França neste fim de semana.</div></div>
+<div class="i"><div class="en">That sounds nice, but I'm going swimming on Tuesday.</div><div class="pt">Parece legal, mas eu vou nadar na terça.</div></div>
+<div class="i"><div class="en">I'd love to, but I'm looking after my nephew tomorrow.</div><div class="pt">Eu adoraria, mas vou cuidar do meu sobrinho amanhã.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Unidades 39 – 43</div>
+<h2><i>Will</i>, <i>might</i>, <i>should</i> e <i>could</i></h2>
+<p class="sdesc">Quatro modais em sequência: previsão, decisão na hora, possibilidade, conselho e sugestão.</p>
+<div class="items">
+<div class="i"><div class="en">That new movie is great. They will love it.</div><div class="pt">Aquele filme novo é ótimo. Eles vão amar.</div></div>
+<div class="i"><div class="en">Oh, it's raining! I'll take my umbrella.</div><div class="pt">Ah, está chovendo! Vou levar meu guarda-chuva.</div></div>
+<div class="i"><div class="en">I might have a vacation.</div><div class="pt">Talvez eu tire férias.</div></div>
+<div class="i"><div class="en">I might go to town. I'm not sure.</div><div class="pt">Talvez eu vá ao centro. Não tenho certeza.</div></div>
+<div class="i"><div class="en">I don't know. I might have some pizza.</div><div class="pt">Não sei. Talvez eu coma uma pizza.</div></div>
+<div class="i"><div class="en">It's very sunny. You should wear a hat.</div><div class="pt">O sol está forte. Você deveria usar chapéu.</div></div>
+<div class="i"><div class="en">You're sick. You shouldn't go to work today.</div><div class="pt">Você está doente. Não deveria ir trabalhar hoje.</div></div>
+<div class="i"><div class="en">You could get a new car.</div><div class="pt">Você poderia comprar um carro novo.</div></div>
+<div class="i"><div class="en">We could make a salad or order a pizza.</div><div class="pt">A gente pode fazer uma salada ou pedir uma pizza.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Unidades 45 – 47</div>
+<h2>Present perfect — e o contraste com o passado simples</h2>
+<p class="sdesc">O par que o livro coloca lado a lado: a mesma viagem à França contada de duas formas, conforme se diga ou não <b>quando</b>.</p>
+<div class="items">
+<div class="i"><div class="en">Tom has just cleaned the windows.</div><div class="pt">O Tom acabou de limpar as janelas.</div></div>
+<div class="i"><div class="en">I visited France in 2010.</div><div class="pt">Eu visitei a França em 2010. <i>(digo quando)</i></div></div>
+<div class="i"><div class="en">I have visited France many times.</div><div class="pt">Eu já visitei a França muitas vezes. <i>(não digo quando)</i></div></div>
+<div class="i"><div class="en">I haven't ordered the pizza yet.</div><div class="pt">Eu ainda não pedi a pizza.</div></div>
+<div class="i"><div class="en">I've already ordered the pizza.</div><div class="pt">Eu já pedi a pizza.</div></div>
+<div class="i"><div class="en">We've already been surfing in Australia and Hawaii, but we haven't surfed in South Africa yet.</div><div class="pt">A gente já surfou na Austrália e no Havaí, mas ainda não surfou na África do Sul.</div></div>
+<div class="i"><div class="en">I've also never seen a lion, so I want to go on safari.</div><div class="pt">E eu também nunca vi um leão, então quero fazer um safári.</div></div>
+<div class="i"><div class="en">We've never done that before.</div><div class="pt">A gente nunca fez isso antes.</div></div>
+<div class="i"><div class="en">I haven't traveled in a helicopter yet, but I'm going to fly over New York in one soon.</div><div class="pt">Eu ainda não andei de helicóptero, mas vou sobrevoar Nova York num logo.</div></div>
+<div class="i"><div class="en">I haven't been to a music festival yet, but my friends really want to take me to one next summer.</div><div class="pt">Eu ainda não fui a um festival de música, mas meus amigos querem muito me levar a um no verão que vem.</div></div>
+<div class="i"><div class="en">I've never learned to ski, but my friend Sanjay is going to teach me next year.</div><div class="pt">Eu nunca aprendi a esquiar, mas meu amigo Sanjay vai me ensinar ano que vem.</div></div>
+<div class="i"><div class="en">I've never been on TV, but I'm going to be on a TV quiz show in a few weeks.</div><div class="pt">Eu nunca fui à TV, mas vou participar de um programa de perguntas daqui a algumas semanas.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Unidades 48 – 49</div>
+<h2>No restaurante, desejos e planos</h2>
+<p class="sdesc">As frases funcionais de pedir uma refeição e de falar do que se quer fazer — o fecho do nível 2.</p>
+<div class="items">
+<div class="i"><div class="en">Have you made a reservation? — Yes, I have.</div><div class="pt">Vocês fizeram reserva? — Fizemos sim.</div></div>
+<div class="i"><div class="en">Excuse me! Can we have the check, please.</div><div class="pt">Com licença! A conta, por favor.</div></div>
+<div class="i"><div class="en">I'd like to work in Asia.</div><div class="pt">Eu gostaria de trabalhar na Ásia.</div></div>
+<div class="i"><div class="en">I'm going to work there next year.</div><div class="pt">Eu vou trabalhar lá ano que vem.</div></div>
+<div class="i"><div class="en">I want to plan our year, so we can do more things.</div><div class="pt">Eu quero planejar o nosso ano, para a gente fazer mais coisas.</div></div>
+<div class="i"><div class="en">I'd really like to ride an elephant.</div><div class="pt">Eu gostaria muito de andar de elefante.</div></div>
+<div class="i"><div class="en">I know we're going to China next year, but this summer I want to go to Thailand.</div><div class="pt">Eu sei que a gente vai à China ano que vem, mas neste verão eu quero ir à Tailândia.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Mapa do nível 2</div>
+<h2>A tabela de referência do próprio livro</h2>
+<p class="sdesc">O <i>Review</i> que fecha cada bloco de unidades: a estrutura nova e a frase-modelo escolhida pelos autores para representá-la.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Estrutura</th><th>Frase-modelo</th><th>Unidade</th></tr></thead>
+<tbody>
+<tr><td class="w">dizer que não está bem</td><td>Are you okay? No, I'm not feeling very well.</td><td>11</td></tr>
+<tr><td class="w">problemas de saúde</td><td>I have a broken foot. My foot hurts.</td><td>11</td></tr>
+<tr><td class="w">falar do tempo</td><td>What's the weather like? It's cloudy.</td><td>13</td></tr>
+<tr><td class="w">dar a temperatura</td><td>It's 27 degrees Celsius.</td><td>13</td></tr>
+<tr><td class="w">adjetivos comparativos</td><td>Greece is warmer than France.</td><td>15</td></tr>
+<tr><td class="w">adjetivos superlativos</td><td>Everest is the highest mountain in the world.</td><td>16</td></tr>
+<tr><td class="w">números grandes</td><td>Two thousand, eight hundred and seventy-six.</td><td>19</td></tr>
+<tr><td class="w">escrever e dizer datas</td><td>My meeting is on the 18th of May.</td><td>21</td></tr>
+<tr><td class="w">passado de <i>to be</i></td><td>Was he in India last year? He wasn't in France.</td><td>22</td></tr>
+<tr><td class="w">verbos regulares no passado</td><td>I visited Luke last Friday. I didn't play tennis.</td><td>23</td></tr>
+<tr><td class="w"><i>could</i> para habilidade passada</td><td>I could climb trees when I was younger.</td><td>24</td></tr>
+<tr><td class="w">verbos irregulares no passado</td><td>I went to the movies last night.</td><td>26</td></tr>
+<tr><td class="w">perguntas no passado</td><td>Did you have a good vacation?</td><td>29</td></tr>
+<tr><td class="w">perguntas de sujeito e objeto</td><td>Who called the bank? · Who did Ben call?</td><td>31</td></tr>
+<tr><td class="w">futuro com present continuous</td><td>Tomorrow he is playing golf.</td><td>35</td></tr>
+<tr><td class="w"><i>going to</i> para planos</td><td>I'm going to buy a new car.</td><td>36</td></tr>
+<tr><td class="w"><i>going to</i> para previsão</td><td>Look at those clouds. It's going to rain soon.</td><td>37</td></tr>
+<tr><td class="w">futuro com <i>will</i></td><td>That new movie is great. They will love it.</td><td>39</td></tr>
+<tr><td class="w">decisão rápida com <i>will</i></td><td>Oh, it's raining! I'll take my umbrella.</td><td>40</td></tr>
+<tr><td class="w"><i>might</i> para possibilidade</td><td>I might have a vacation.</td><td>41</td></tr>
+<tr><td class="w"><i>should</i> para conselho</td><td>It's very sunny. You should wear a hat.</td><td>42</td></tr>
+<tr><td class="w"><i>could</i> para sugestão</td><td>You could get a new car.</td><td>43</td></tr>
+<tr><td class="w">present perfect</td><td>Tom has just cleaned the windows.</td><td>45</td></tr>
+<tr><td class="w"><i>yet</i> e <i>already</i></td><td>I haven't ordered the pizza yet.</td><td>47</td></tr>
+<tr><td class="w">pedir uma refeição</td><td>Can we have the check, please.</td><td>48</td></tr>
+<tr><td class="w">desejos e planos</td><td>I'd like to work in Asia.</td><td>49</td></tr>
+</tbody>
+</table></div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 09 V04 · Livro 05 · Practice Book Nível 2 — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' se\u00e7\u00f5es.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'se\u00e7\u00e3o':'se\u00e7\u00f5es')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 01 · Objective Proficiency — Sistema 22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 22</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 22 · Livro 01 · C2</div>
+<h1 class="title">Objective <em>Proficiency</em></h1>
+<p class="lead">Annette Capel &amp; Wendy Sharp · Cambridge University Press. O livro oficial de preparação para o <b>C2 Proficiency</b>. Aqui a explicação <b>é</b> o conteúdo: neste nível o que trava não é montar a frase, é a nuance — por que <i>will</i> e não <i>going to</i>, por que <i>quite busy</i> não é a mesma coisa que <i>quite impossible</i>, por que <i>I regret to say</i> aponta para a frente e <i>I regret telling</i> aponta para trás. O painel segue o <b>Grammar folder</b> do livro, unidade por unidade, em ordem pedagógica — do substantivo à inversão — sempre com a estrutura, o exemplo do próprio livro, a comparação com a estrutura vizinha e a nota de registro. Inglês britânico.</p>
+
+<div class="metrics">
+  <div class="metric"><b>20</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>C2</b><span>nível</span></div>
+  <div class="metric"><b>GB</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: inversion, gradable, participle, futuro…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Unit 5 · nouns</div>
+<h2>Contável, incontável — e os que são os dois</h2>
+<p class="sdesc">No C2 a pergunta não é "é contável?", e sim <b>o que muda no sentido</b> quando o mesmo substantivo aparece nas duas formas. <i>Hair</i> e <i>hairs</i> não são a mesma coisa; <i>capital</i> muda de assunto.</p>
+<div class="items">
+<div class="i"><span class="tag">contável</span><div class="en">Pode usar <i>a/an</i>, <i>the</i> ou <i>some</i>; tem plural; aceita <i>many, a large number of, several, a few, few, a lot of</i>.</div><div class="pt">As três marcas do substantivo contável.</div></div>
+<div class="i"><span class="tag">incontável</span><div class="en">Usa <i>the</i>, <i>some</i> ou nada; só existe no singular; aceita <i>much, a great deal of, a large amount of, little, a little, a lot of</i>.</div><div class="pt">As três marcas do incontável.</div></div>
+<div class="i"><span class="tag">incontável</span><div class="en">Substâncias (coal, china, flour), abstratos (happiness, admiration, freedom), todos os esportes, quase todo <i>-ing</i> (shopping, sightseeing).</div><div class="pt">Os grupos que são sempre incontáveis.</div></div>
+<div class="i"><span class="tag">incontável</span><div class="en">accommodation · information · traffic · advice · luggage · luck · weather · work · homework · furniture · evidence</div><div class="pt">A lista que derruba o brasileiro — todos incontáveis em inglês.</div><div class="def">Nenhum deles aceita <b>a/an</b> nem plural.</div></div>
+<div class="i"><span class="tag">os dois</span><div class="en">She has grey <i>hair</i>. × There are <i>hairs</i> on your jumper.</div><div class="pt">Ela tem cabelo grisalho. × Tem fios de cabelo no seu suéter.</div><div class="def">Incontável = a massa; contável = os fios individuais.</div></div>
+<div class="i"><span class="tag">os dois</span><div class="en">The bridge is built of <i>stone</i>. × I've got <i>a stone</i> in my shoe.</div><div class="pt">A ponte é feita de pedra. × Tenho uma pedrinha no sapato.</div></div>
+<div class="i"><span class="tag err">muda tudo</span><div class="en">What's <i>the capital</i> of your country? × The company has very little <i>capital</i> to work with.</div><div class="pt">Qual é a capital do seu país? × A empresa tem muito pouco capital.</div><div class="def">Aqui não é nuance: são <b>duas palavras diferentes</b>.</div></div>
+<div class="i"><span class="tag">medida</span><div class="en">a <i>bit/piece</i> of · a <i>lump of</i> sugar · a <i>shaft of</i> sunlight</div><div class="pt">um pedaço de · um torrão de açúcar · um raio de sol</div><div class="def">A maioria dos incontáveis se conta com <b>a bit/piece of</b>, mas há palavras específicas — e usá-las é marca de nível alto.</div></div>
+<div class="i"><span class="tag">concordância</span><div class="en">The class <i>is/are</i> doing exams at present. · The committee <i>is/are</i> looking into the matter of vandalism.</div><div class="pt">A turma está fazendo prova. · A comissão está apurando o caso de vandalismo.</div><div class="def">Coletivo aceita singular (a unidade) ou plural (as pessoas) — britânico.</div></div>
+<div class="i"><span class="tag err">pegadinha</span><div class="en">The news <i>is</i> on at 8.00 pm. · Athletics <i>is</i> an important part of the Olympics.</div><div class="pt">O jornal é às 8 da noite. · O atletismo é uma parte importante das Olimpíadas.</div><div class="def">Parecem plurais, mas pedem verbo no <b>singular</b>.</div></div>
+<div class="i"><span class="tag err">pegadinha</span><div class="en">The police <i>are</i> involved in trying to catch the thief.</div><div class="pt">A polícia está envolvida na tentativa de pegar o ladrão.</div><div class="def">Parece singular, mas pede verbo no <b>plural</b>.</div></div>
+<div class="i"><span class="tag">posse</span><div class="en">my uncle<i>'s</i> sister · the boy<i>'s</i> shoes · a year<i>'s</i> salary</div><div class="pt">a irmã do meu tio · os sapatos do menino · um salário anual</div><div class="def">Apóstrofo para <b>pessoas</b> e para expressões de tempo e distância.</div></div>
+<div class="i"><span class="tag">posse</span><div class="en">the back <i>of</i> the room · the cover <i>of</i> the book</div><div class="pt">o fundo da sala · a capa do livro</div><div class="def">Para <b>objetos</b>, em geral <i>of</i>.</div></div>
+<div class="i"><span class="tag">posse</span><div class="en">a <i>table</i> leg · a <i>night</i> flight · a <i>shop</i> window</div><div class="pt">um pé de mesa · um voo noturno · uma vitrine</div><div class="def">O substantivo funcionando de adjetivo indica <b>tipo, uso ou lugar</b> — é a terceira forma de posse.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Unit 14 · articles</div>
+<h2>Artigos — a regra e as exceções que caem na prova</h2>
+<p class="sdesc">O definido é <b>preciso</b>; o indefinido é <b>vago</b> ou apresenta algo pela primeira vez. Mas o que se cobra no C2 são as listas de onde não vai artigo nenhum.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Sport</i> is good for you. × <i>The sport</i> played the most is football.</div><div class="pt">Esporte faz bem. × O esporte mais praticado é o futebol.</div><div class="def">Plural, abstrato e incontável não levam artigo <b>em geral</b>; para delimitar, entra o <i>the</i>.</div></div>
+<div class="i"><div class="en"><i>The</i> runner in first place came from Kenya. × Steve is going to be <i>a</i> runner in the New York marathon.</div><div class="pt">O corredor em primeiro lugar era do Quênia. × O Steve vai ser um dos corredores da maratona de Nova York.</div><div class="def">Definido = específico; indefinido = vago, geral ou primeira menção.</div></div>
+<div class="i"><span class="tag">sem artigo</span><div class="en">I intend to visit <i>Australia</i>. · She's in <i>prison</i> for stealing. · Come down for <i>breakfast</i>!</div><div class="pt">Pretendo visitar a Austrália. · Ela está presa por roubo. · Desça para o café da manhã!</div><div class="def">Sem artigo: certos países; nomes de montanhas; refeições (a menos que sejam formais); <b>bed, school, hospital, prison</b> usados para o fim a que se destinam.</div></div>
+<div class="i"><span class="tag">com the</span><div class="en"><i>The</i> Sierra Nevada is a beautiful mountain range. · I read <i>The</i> Times. · Tessa plays <i>the</i> violin.</div><div class="pt">A Sierra Nevada é uma bela cadeia de montanhas. · Leio o Times. · A Tessa toca violino.</div><div class="def">Com <b>the</b>: rios, mares, oceanos, cadeias de montanhas, golfos e baías; jornais; instrumentos musicais.</div></div>
+<div class="i"><span class="tag">com the</span><div class="en"><i>The</i> sky is very blue.</div><div class="pt">O céu está bem azul.</div><div class="def">Também com superlativo e quando só existe um daquilo.</div></div>
+<div class="i"><span class="tag">a = um</span><div class="en">I'd like <i>a</i> cup of coffee. — Just <i>one</i> cup, not two.</div><div class="pt">Eu queria uma xícara de café. — Só uma, não duas.</div><div class="def">O indefinido significa "um" — salvo quando se quer enfatizar a quantidade, e aí entra <b>one</b>.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Unit 4 · past</div>
+<h2>Falar do passado — cinco formas, cinco intenções</h2>
+<p class="sdesc">Passado simples, <i>used to</i>, <i>would</i>, passado contínuo e passado perfeito não são intercambiáveis: cada um comunica um <b>tipo</b> de passado.</p>
+<div class="items">
+<div class="i"><span class="tag">completo</span><div class="en">Novak Djokovic <i>won</i> his first Grand Slam singles title in 2008, at the age of 20.</div><div class="pt">O Novak Djokovic ganhou seu primeiro Grand Slam de simples em 2008, aos 20 anos.</div><div class="def">Passado simples: ação <b>concluída</b>, em momento definido.</div></div>
+<div class="i"><span class="tag">hábito</span><div class="en">It was our little ritual. I <i>would</i> nod, she <i>would</i> smile and he <i>would</i> look longingly.</div><div class="pt">Era nosso pequeno ritual. Eu acenava com a cabeça, ela sorria e ele olhava com desejo.</div><div class="def">O <b>would</b> narrativo — hábito passado, tom literário.</div></div>
+<div class="i"><span class="tag">hábito</span><div class="en">I <i>used to go</i> swimming four or five times a week. · Every spring, Grant <i>visited</i> his elderly aunts in Maine.</div><div class="pt">Eu costumava nadar quatro ou cinco vezes por semana. · Toda primavera o Grant visitava as tias idosas no Maine.</div><div class="def">Para hábito passado servem <b>would</b>, <b>used to</b> e o passado simples com expressão de frequência.</div></div>
+<div class="i"><span class="tag">interrompido</span><div class="en">While Kevin <i>was away</i> visiting friends in Italy, his flat <i>was burgled</i>.</div><div class="pt">Enquanto o Kevin estava fora visitando amigos na Itália, o apartamento dele foi arrombado.</div><div class="def">Passado contínuo: o que já estava acontecendo antes e depois de outro fato.</div></div>
+<div class="i"><span class="tag">temporário</span><div class="en">The two families <i>were eating</i> a meal together for the first time.</div><div class="pt">As duas famílias estavam fazendo uma refeição juntas pela primeira vez.</div><div class="def">Passado contínuo também marca situação <b>temporária</b>.</div></div>
+<div class="i"><span class="tag">certeza</span><div class="en">Those early settlers <i>must have had</i> access to fresh water. · You <i>must have seen</i> that Johnny Depp film at least five times!</div><div class="pt">Aqueles primeiros colonos devem ter tido acesso a água doce. · Você deve ter visto aquele filme do Johnny Depp umas cinco vezes!</div><div class="def">Especular sobre o passado com <b>certeza</b>: must + have + particípio.</div></div>
+<div class="i"><span class="tag">incerteza</span><div class="en">I suppose it <i>could have been</i> my mistake, though I labelled everything clearly.</div><div class="pt">Suponho que possa ter sido erro meu, embora eu tenha etiquetado tudo com clareza.</div><div class="def">Incerteza: could/may/might + have + particípio.</div></div>
+<div class="i"><span class="tag">incerteza</span><div class="en">Experts are suggesting that the virus <i>may have been</i> carried long distances on the wind. · We <i>might have met</i> at that party in 2010?</div><div class="pt">Especialistas sugerem que o vírus pode ter sido levado a grandes distâncias pelo vento. · Será que a gente se conheceu naquela festa em 2010?</div></div>
+<div class="i"><span class="tag">impossível</span><div class="en">You <i>can't have got</i> to Leeds yet – it's a four-hour drive at least!</div><div class="pt">Você não pode ter chegado a Leeds ainda — são pelo menos quatro horas de carro!</div><div class="def">Impossibilidade no passado: can't / couldn't + have + particípio.</div></div>
+<div class="i"><span class="tag">impossível</span><div class="en">James <i>couldn't have played</i> cricket last week as he was away.</div><div class="pt">O James não pode ter jogado críquete semana passada, porque estava viajando.</div></div>
+<div class="i"><span class="tag">passiva</span><div class="en">Repairs <i>were being made</i> to the bridge at first light this morning.</div><div class="pt">Reparos estavam sendo feitos na ponte ao raiar do dia hoje.</div></div>
+<div class="i"><span class="tag">passiva</span><div class="en">Both sides <i>had been advised</i> to seek fresh legal representation before the trial.</div><div class="pt">As duas partes tinham sido aconselhadas a buscar nova representação jurídica antes do julgamento.</div></div>
+<div class="i"><span class="tag">infinitivo passivo</span><div class="en">This yoghurt needs <i>to be eaten</i> before the 25th. · Radical cuts to the budget seem <i>to have been made</i> by the Managing Director.</div><div class="pt">Este iogurte precisa ser comido antes do dia 25. · Cortes radicais no orçamento parecem ter sido feitos pelo diretor-geral.</div><div class="def">Só duas formas de infinitivo passivo são usuais: a presente e a perfeita. Comuns depois de <b>appear, prove, seem</b>.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Unit 1 · perfect tenses</div>
+<h2>Os tempos perfeitos — os seis, com o que cada um faz</h2>
+<p class="sdesc">Não é "passado que continua". Cada perfect comunica uma coisa específica: <b>continuidade</b>, <b>efeito presente</b>, <b>recência</b> ou <b>prazo</b>.</p>
+<div class="items">
+<div class="i"><span class="tag">present perfect</span><div class="en">Amelia Kenton <i>has lived</i> in the same house all her life.</div><div class="pt">A Amelia Kenton morou na mesma casa a vida inteira.</div><div class="def">Situação que começou no passado e <b>ainda é verdade</b>.</div></div>
+<div class="i"><span class="tag">present perfect</span><div class="en">I<i>'ve lost</i> my purse so I need some money for the bus.</div><div class="pt">Perdi minha carteira, então preciso de dinheiro para o ônibus.</div><div class="def">O <b>efeito presente</b> de algo que aconteceu antes.</div></div>
+<div class="i"><span class="tag">present perfect</span><div class="en">Jack <i>has just phoned</i> to wish you good luck.</div><div class="pt">O Jack acabou de ligar para te desejar boa sorte.</div><div class="def">Evento <b>recente</b>.</div></div>
+<div class="i"><span class="tag">present perfect</span><div class="en">As soon as I <i>have settled in</i>, come and stay!</div><div class="pt">Assim que eu me instalar, venha ficar comigo!</div><div class="def">Depois de conjunção temporal, o present perfect aponta para o <b>futuro</b>.</div></div>
+<div class="i"><span class="tag">pres. perf. contínuo</span><div class="en">I<i>'ve been sitting</i> at this computer all day!</div><div class="pt">Estou sentado neste computador o dia inteiro!</div><div class="def">Enfatiza o <b>período de tempo</b> envolvido.</div></div>
+<div class="i"><span class="tag">pres. perf. contínuo</span><div class="en">Membership numbers at this club <i>have been falling</i> year by year.</div><div class="pt">O número de sócios deste clube vem caindo ano a ano.</div><div class="def">Situação que <b>continua</b>.</div></div>
+<div class="i"><span class="tag">pres. perf. contínuo</span><div class="en">You can tell it<i>'s been raining</i> – the seats are still damp. · <i>Have you been crying</i>?</div><div class="pt">Dá para ver que choveu — os bancos ainda estão úmidos. · Você esteve chorando?</div><div class="def">Efeito presente de algo recente; ou algo que <b>acabou de parar</b>.</div></div>
+<div class="i"><span class="tag err">stative</span><div class="en"><s>I've been knowing Jim since he was 15.</s> → I<i>'ve known</i> Jim since he was 15.</div><div class="pt">Conheço o Jim desde os 15 anos dele.</div><div class="def">Verbos estativos (<b>be, know, seem</b>) não vão para o contínuo — nem no perfeito.</div></div>
+<div class="i"><span class="tag">past perfect</span><div class="en">Sailing towards the harbour, I remembered how it <i>had looked</i> on my first visit, ten years earlier.</div><div class="pt">Navegando rumo ao porto, lembrei de como ele estava na minha primeira visita, dez anos antes.</div><div class="def">Serve para <b>esclarecer a ordem</b> dos acontecimentos.</div></div>
+<div class="i"><span class="tag">past perfect</span><div class="en">I <i>had just stepped</i> into the bath when the phone rang.</div><div class="pt">Eu tinha acabado de entrar na banheira quando o telefone tocou.</div><div class="def">Frequentemente com <b>already</b> ou <b>just</b>.</div></div>
+<div class="i"><span class="tag">past perf. contínuo</span><div class="en">Their cat <i>had been missing</i> for over a week when a neighbour spotted it in the local park.</div><div class="pt">O gato deles estava desaparecido havia mais de uma semana quando um vizinho o avistou no parque.</div><div class="def">Enfatiza a <b>continuidade</b> num ponto anterior do tempo.</div></div>
+<div class="i"><span class="tag">future perfect</span><div class="en">By the end of September, I <i>will have started</i> that course in London.</div><div class="pt">Até o fim de setembro eu já terei começado aquele curso em Londres.</div><div class="def">Algo que ainda não aconteceu mas <b>certamente</b> terá acontecido até determinada data.</div></div>
+<div class="i"><span class="tag">fut. perf. contínuo</span><div class="en">Come next Saturday, we<i>'ll have been going out</i> together for a whole year!</div><div class="pt">No sábado que vem a gente vai estar namorando há um ano inteiro!</div><div class="def">Indica <b>duração</b> num ponto do futuro.</div></div>
+<div class="i"><span class="tag">arrependimento</span><div class="en">We <i>should never have bought</i> Alex that drum kit!</div><div class="pt">A gente nunca devia ter comprado aquela bateria para o Alex!</div><div class="def">Arrependimento = <b>should/ought to</b> + forma perfeita.</div></div>
+<div class="i"><span class="tag">arrependimento</span><div class="en">I'm sorry, I <i>ought to have remembered</i> that you can't eat strawberries.</div><div class="pt">Desculpe, eu devia ter lembrado que você não pode comer morango.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Unit 2 · future</div>
+<h2>Nove formas de falar do futuro</h2>
+<p class="sdesc">Em inglês não há "o" futuro: há <b>nove</b> maneiras, e a escolha comunica de onde vem a informação — previsão, evidência, plano, horário ou ordem.</p>
+<div class="items">
+<div class="i"><span class="tag">will</span><div class="en">You must go to India – you<i>'ll enjoy</i> it.</div><div class="pt">Você tem de ir à Índia — vai adorar.</div><div class="def">Previsão baseada em <b>experiência ou opinião</b>.</div></div>
+<div class="i"><span class="tag reg">formal</span><div class="en">The tour <i>will begin</i> at 9.30 and all visitors to the site <i>will need</i> to wear good walking shoes.</div><div class="pt">O passeio começará às 9h30 e todos os visitantes precisarão usar sapatos confortáveis.</div><div class="def">Em contexto mais <b>formal</b>, para arranjos já detalhados.</div></div>
+<div class="i"><span class="tag">will</span><div class="en">I think I<i>'ll go</i> to Paris next weekend.</div><div class="pt">Acho que vou a Paris no fim de semana que vem.</div><div class="def">Decisão tomada <b>na hora</b>.</div></div>
+<div class="i"><span class="tag">going to</span><div class="en">Look at those clouds – I'm sure it<i>'s going to rain</i>.</div><div class="pt">Olha essas nuvens — tenho certeza de que vai chover.</div><div class="def">Previsão com <b>evidência</b> à vista.</div></div>
+<div class="i"><span class="tag">going to</span><div class="en">I<i>'m going to see</i> the Museum of Modern Art when I get to New York.</div><div class="pt">Vou ver o Museu de Arte Moderna quando chegar a Nova York.</div><div class="def">Intenção ou decisão já tomada.</div></div>
+<div class="i"><span class="tag reg">shall</span><div class="en">I <i>shall</i> certainly travel first class next time I go abroad.</div><div class="pt">Certamente vou viajar de primeira classe da próxima vez que for ao exterior.</div><div class="def">Com <b>I</b> e <b>we</b>, no lugar de <i>will</i> — hoje bem menos usado que antigamente.</div></div>
+<div class="i"><span class="tag">shall</span><div class="en"><i>Shall I</i> carry your bags?</div><div class="pt">Quer que eu leve suas malas?</div><div class="def">Para <b>oferecer</b>.</div></div>
+<div class="i"><span class="tag">presente contínuo</span><div class="en">I<i>'m travelling</i> on the Orient Express to Venice. × I<i>'ll be travelling</i> on the Orient Express to Venice.</div><div class="pt">Vou de Orient Express até Veneza.</div><div class="def">Para o que já está <b>combinado</b>. O futuro contínuo diz o mesmo, um pouco mais formal.</div></div>
+<div class="i"><span class="tag">presente contínuo</span><div class="en">He<i>'s going climbing</i> in the Alps next summer.</div><div class="pt">Ele vai escalar nos Alpes no verão que vem.</div><div class="def">O presente contínuo de <b>go</b> evita o feio <i>going to go</i>.</div></div>
+<div class="i"><span class="tag">presente contínuo</span><div class="en">Paula <i>is taking</i> her mother on her honeymoon!</div><div class="pt">A Paula vai levar a mãe na lua de mel!</div><div class="def">Também serve para o <b>inesperado</b>.</div></div>
+<div class="i"><span class="tag">presente simples</span><div class="en">The train for Burnley <i>leaves</i> at 5.00 sharp every Friday evening.</div><div class="pt">O trem para Burnley sai às 17h em ponto toda sexta à noite.</div><div class="def">Horário, programação.</div></div>
+<div class="i"><span class="tag">presente simples</span><div class="en">When you <i>arrive</i> in Beijing, go directly to the hotel and I'll meet you in the lobby.</div><div class="pt">Quando você chegar a Pequim, vá direto para o hotel e eu te encontro no saguão.</div><div class="def">Depois de conjunção temporal — nunca <i>will</i>.</div></div>
+<div class="i"><span class="tag">futuro contínuo</span><div class="en">The ship <i>will be travelling</i> at 20 knots as it cruises in the Caribbean.</div><div class="pt">O navio estará navegando a 20 nós enquanto cruza o Caribe.</div><div class="def">Algo em andamento num momento ou período futuro.</div></div>
+<div class="i"><span class="tag reg">educado</span><div class="en"><i>Will you be needing</i> anything to drink, Sir?</div><div class="pt">O senhor vai querer beber alguma coisa?</div><div class="def">O futuro contínuo também serve para soar <b>muito educado</b>.</div></div>
+<div class="i"><span class="tag reg">oficial</span><div class="en">Passengers <i>are to leave</i> by the rear door of the aircraft.</div><div class="pt">Os passageiros devem sair pela porta traseira da aeronave.</div><div class="def"><b>be + infinitivo</b>: avisos oficiais, notícia, instrução formal e ordem.</div></div>
+<div class="i"><span class="tag">futuro perfeito</span><div class="en">I hope they <i>will have finished</i> the building work on the hotel before we go on holiday.</div><div class="pt">Espero que já tenham terminado a obra do hotel antes de sairmos de férias.</div><div class="def">Prazo até o qual algo estará concluído.</div></div>
+<div class="i"><span class="tag">fut. perf. contínuo</span><div class="en">The airline <i>will have been carrying</i> passengers for fifty years at the end of March.</div><div class="pt">No fim de março a companhia aérea completará cinquenta anos transportando passageiros.</div><div class="def">Não se usa com estativos: <b>see, believe, hear, know, become</b>.</div></div>
+<div class="i"><span class="tag">expressões</span><div class="en">to be <i>about to</i> · to be <i>on the verge/point of</i> · to be <i>bound/certain/likely/unlikely to</i> · to be <i>on the brink of</i></div><div class="pt">estar prestes a · estar à beira de · ser certo/provável/improvável que · estar no limiar de</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Unit 6 · likelihood</div>
+<h2>Graus de probabilidade — do possível ao impossível</h2>
+<p class="sdesc">Uma escala inteira de modais. E um detalhe que só o C2 cobra: <b>could</b> e <b>might</b> carregam crítica quando a entonação muda.</p>
+<div class="items">
+<div class="i"><span class="tag">possibilidade</span><div class="en">He <i>can</i> sound off-key at times when he sings.</div><div class="pt">Ele às vezes desafina quando canta.</div><div class="def"><b>Can</b> expressa possibilidade sem referência a tempo.</div></div>
+<div class="i"><span class="tag">possibilidade</span><div class="en">It <i>may/might/could</i> be a good concert / <i>have been</i> a good concert.</div><div class="pt">Pode ser um bom show / pode ter sido um bom show.</div><div class="def">Could, may e might: possibilidade no futuro, no presente e no passado.</div></div>
+<div class="i"><span class="tag">negativa</span><div class="en">Get your ticket today; there <i>may/might not</i> be many left.</div><div class="pt">Compre seu ingresso hoje; pode não sobrar muitos.</div></div>
+<div class="i"><span class="tag">negativa</span><div class="en">He <i>may/might not have bought</i> the album you wanted.</div><div class="pt">Ele pode não ter comprado o álbum que você queria.</div></div>
+<div class="i"><span class="tag">dedução</span><div class="en">You <i>must be</i> tired after your performance.</div><div class="pt">Você deve estar cansado depois da apresentação.</div><div class="def">Dedução: must be / must have been, will be / will have been, should be / should have been.</div></div>
+<div class="i"><span class="tag">dedução</span><div class="en">That<i>'ll be</i> my guitar teacher; I heard him ring the door bell.</div><div class="pt">Deve ser meu professor de violão; ouvi ele tocar a campainha.</div><div class="def">O <b>will</b> de dedução — pouco ensinado e muito usado.</div></div>
+<div class="i"><span class="tag">dedução</span><div class="en">She <i>should have been able</i> to sing at the concert, her sore throat was much better.</div><div class="pt">Ela devia ter conseguido cantar no show; a garganta dela estava bem melhor.</div></div>
+<div class="i"><span class="tag">impossível</span><div class="en">It <i>can't be</i> a flute; it sounds more like a clarinet.</div><div class="pt">Não pode ser flauta; soa mais como clarinete.</div><div class="def">Impossibilidade: cannot/can't e could not.</div></div>
+<div class="i"><span class="tag">impossível</span><div class="en">You <i>couldn't have seen</i> the new film – it hasn't been released yet.</div><div class="pt">Você não pode ter visto o filme novo — ele ainda nem estreou.</div></div>
+<div class="i"><span class="tag err">crítica</span><div class="en">You <i>might have told</i> me you'd be coming late. · You <i>could practise</i> a bit more.</div><div class="pt">Você bem que podia ter me avisado que ia chegar tarde. · Você bem que podia treinar um pouco mais.</div><div class="def">Aqui <b>could</b> e <b>might</b> não são possibilidade: são <b>crítica ou irritação</b>. A entonação é decisiva.</div></div>
+<div class="i"><span class="tag">expressões</span><div class="en">it's a <i>foregone conclusion</i> · <i>the chances are</i> · there's <i>every likelihood</i> · he's <i>bound to</i></div><div class="pt">é ponto pacífico · o mais provável é que · há toda a probabilidade · ele fatalmente vai</div></div>
+<div class="i"><span class="tag">expressões</span><div class="en">there's a <i>slim/faint chance</i> · <i>it's doubtful</i></div><div class="pt">há uma chance remota · é duvidoso</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Unit 18 · modals review</div>
+<h2>Modais — a grade das funções</h2>
+<p class="sdesc">O mesmo conjunto de verbos cobre obrigação, proibição, permissão, capacidade, conselho e dedução. Aqui cada função com o seu modal e o exemplo.</p>
+<div class="items">
+<div class="i"><span class="tag">obrigação forte</span><div class="en">All passengers <i>must</i> observe the no smoking policy on board.</div><div class="pt">Todos os passageiros devem respeitar a política de não fumar a bordo.</div></div>
+<div class="i"><span class="tag">obrigação forte</span><div class="en">You<i>'ll have to</i> wait in line like everyone else, I'm afraid. · I <i>had to</i> walk to school when I was young.</div><div class="pt">Você vai ter de esperar na fila como todo mundo. · Eu tinha de ir a pé para a escola quando era novo.</div></div>
+<div class="i"><span class="tag">obrigação fraca</span><div class="en">I <i>ought to</i> save a bit more money each month. · You really <i>should</i> try to keep on top of your homework.</div><div class="pt">Eu devia guardar um pouco mais de dinheiro por mês. · Você realmente devia se manter em dia com a lição.</div></div>
+<div class="i"><span class="tag">não cumprida</span><div class="en">George <i>should have gone</i> to visit his parents more often than he did. · We <i>ought to have done</i> more to this house.</div><div class="pt">O George devia ter visitado os pais mais vezes. · A gente devia ter feito mais nesta casa.</div><div class="def">Obrigação passada <b>não cumprida</b>.</div></div>
+<div class="i"><span class="tag">proibição</span><div class="en">Students <i>must not</i> bring any personal belongings into the examination room.</div><div class="pt">Os alunos não podem levar pertences pessoais para a sala de prova.</div></div>
+<div class="i"><span class="tag">proibição</span><div class="en">I don't care what you say, you <i>can't</i> stay out later than midnight.</div><div class="pt">Não me importa o que você diga, não pode ficar fora depois da meia-noite.</div></div>
+<div class="i"><span class="tag">sem necessidade</span><div class="en">We <i>don't need to</i> buy the cinema tickets in advance. · You <i>needn't have bothered</i> to come and see me off at the station.</div><div class="pt">Não precisamos comprar os ingressos com antecedência. · Você não precisava ter se dado ao trabalho de me acompanhar até a estação.</div><div class="def">O segundo diz que a pessoa <b>fez</b> algo que não era necessário.</div></div>
+<div class="i"><span class="tag">especulação</span><div class="en"><i>Could it have been</i> the right answer after all? · There <i>might be</i> some money in it for you.</div><div class="pt">Será que era a resposta certa afinal? · Pode ter algum dinheiro nisso para você.</div></div>
+<div class="i"><span class="tag">dedução</span><div class="en">That <i>must be</i> the turning just beyond the garage. · It <i>must have been</i> Mike's girlfriend you met.</div><div class="pt">Aquela deve ser a entrada logo depois da oficina. · Deve ter sido a namorada do Mike que você conheceu.</div></div>
+<div class="i"><span class="tag">capacidade</span><div class="en">I <i>can</i> get by on my forehand, but I <i>can't</i> play a backhand shot to save my life.</div><div class="pt">Eu me viro no forehand, mas não consigo dar um backhand nem para salvar minha vida.</div></div>
+<div class="i"><span class="tag">capacidade</span><div class="en">Everyone in the class <i>could</i> understand sign language perfectly.</div><div class="pt">Todo mundo na turma conseguia entender língua de sinais perfeitamente.</div></div>
+<div class="i"><span class="tag">impossibilidade</span><div class="en">Andrew <i>can't</i> play squash tonight. · There <i>couldn't have been</i> a power failure – the computer's still on.</div><div class="pt">O Andrew não pode jogar squash hoje. · Não pode ter faltado energia — o computador ainda está ligado.</div></div>
+<div class="i"><span class="tag">conselho</span><div class="en">You <i>should</i> cut down on chocolate if you want to lose weight. · Jerry really <i>ought to</i> see a doctor about his back problem.</div><div class="pt">Você devia diminuir o chocolate se quer emagrecer. · O Jerry devia mesmo ir a um médico por causa das costas.</div></div>
+<div class="i"><span class="tag reg">permissão</span><div class="en">You <i>can</i> have a break now. × You <i>may</i> leave if you wish.</div><div class="pt">Você pode fazer uma pausa agora. × Pode se retirar se desejar.</div><div class="def">O <b>may</b> é a versão <b>formal</b> da permissão.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Unit 3 · conditionals</div>
+<h2>Condicionais — as quatro, as mistas e as invertidas</h2>
+<p class="sdesc">Além das quatro básicas, o C2 cobra as <b>mistas</b> (presente que afeta o passado e vice-versa) e a <b>inversão sem <i>if</i></b>, que é a forma escrita e formal.</p>
+<div class="items">
+<div class="i"><span class="tag">zero</span><div class="en">If I eat too much in the evening, I <i>can't sleep</i> at night.</div><div class="pt">Se eu como demais à noite, não consigo dormir.</div><div class="def">If/When + presente | presente — situação real, sempre verdadeira.</div></div>
+<div class="i"><span class="tag">primeira</span><div class="en">If you don't apologise, you<i>'ll regret</i> it later.</div><div class="pt">Se você não pedir desculpa, vai se arrepender depois.</div><div class="def">If + presente | futuro com <b>will</b> — situação real.</div></div>
+<div class="i"><span class="tag">segunda</span><div class="en">If I <i>had</i> some money, I <i>would live</i> somewhere warmer. · If I <i>were</i> you, I<i>'d go</i> now before it rains.</div><div class="pt">Se eu tivesse dinheiro, moraria num lugar mais quente. · Se eu fosse você, iria agora antes de chover.</div><div class="def">If + passado | would/could/might — situação <b>irreal</b>.</div></div>
+<div class="i"><span class="tag">terceira</span><div class="en">If she <i>hadn't had</i> the chocolate chip ice cream, she <i>would have been</i> in a worse mood.</div><div class="pt">Se ela não tivesse tomado o sorvete de gotas de chocolate, estaria de humor pior.</div><div class="def">If + past perfect | would/could/might + have + particípio.</div></div>
+<div class="i"><span class="tag">mista</span><div class="en">If I <i>weren't</i> so untidy, I <i>wouldn't have lost</i> your keys.</div><div class="pt">Se eu não fosse tão desorganizado, não teria perdido suas chaves.</div><div class="def">Presente que afeta o <b>passado</b>: if + passado | would + have + particípio.</div></div>
+<div class="i"><span class="tag">mista</span><div class="en">If I <i>had moved</i> to California, I <i>would be</i> much richer today.</div><div class="pt">Se eu tivesse me mudado para a Califórnia, estaria bem mais rico hoje.</div><div class="def">Passado que afeta o <b>presente</b>: if + past perfect | would + infinitivo.</div></div>
+<div class="i"><span class="tag reg">inversão</span><div class="en">If you <i>should require</i> more assistance, please telephone. → <i>Should you require</i> more assistance, please telephone.</div><div class="pt">Caso precise de mais assistência, por favor telefone.</div><div class="def">A inversão é <b>mais formal</b> que o <i>if</i>. Na primeira condicional, soa tentativo e educado.</div></div>
+<div class="i"><span class="tag reg">inversão</span><div class="en">If you <i>went out</i> in this weather, you'd be soaked. → <i>Were you to go out</i> in this weather, you'd be thoroughly soaked.</div><div class="pt">Se você saísse com esse tempo, ficaria encharcado.</div></div>
+<div class="i"><span class="tag reg">inversão</span><div class="en">If I <i>had known</i> there was going to be a storm… → <i>Had I known</i> there was going to be a storm, I would have stayed indoors.</div><div class="pt">Se eu soubesse que ia ter tempestade, teria ficado em casa.</div></div>
+<div class="i"><span class="tag">outros</span><div class="en"><i>If you would</i> take a seat, the doctor will see you shortly. · I'll clean the house, <i>if you'll</i> mow the lawn.</div><div class="pt">Se puder se sentar, o médico já vai atendê-lo. · Eu limpo a casa se você cortar a grama.</div><div class="def">If + would / if + will — pedido educado e barganha.</div></div>
+<div class="i"><span class="tag">outros</span><div class="en"><i>Providing / provided that / as long as</i> são formas enfáticas de <i>if</i> — reforçam a condição.</div><div class="pt">Desde que, contanto que.</div></div>
+<div class="i"><span class="tag">outros</span><div class="en">Well, it's true, <i>even if</i> you refuse to believe me.</div><div class="pt">Pois é verdade, mesmo que você se recuse a acreditar em mim.</div><div class="def"><b>Even if</b> introduz uma condição extrema.</div></div>
+<div class="i"><span class="tag">outros</span><div class="en">I won't give a waiter a tip <i>except when / unless</i> I get excellent service.</div><div class="pt">Não dou gorjeta a garçom a não ser que o atendimento seja excelente.</div><div class="def"><b>Unless</b> = if… not; às vezes <b>except when</b> encaixa melhor.</div></div>
+<div class="i"><span class="tag">outros</span><div class="en"><i>Supposing/suppose</i> it rains tomorrow. What will we do?</div><div class="pt">Suponha que chova amanhã. O que a gente faz?</div><div class="def">Vai no <b>começo</b> e em geral não liga as orações — monta a condição.</div></div>
+<div class="i"><span class="tag">outros</span><div class="en"><i>Given that</i> this area is liable to flood, it would be unwise in the extreme to consider buying a house here.</div><div class="pt">Dado que esta área é sujeita a enchente, seria extremamente imprudente pensar em comprar casa aqui.</div><div class="def"><b>Given that</b> se usa quando o fato já é conhecido.</div></div>
+<div class="i"><span class="tag">outros</span><div class="en"><i>But for</i> his help, I would never have managed to survive the ferry crossing.</div><div class="pt">Não fosse a ajuda dele, eu nunca teria conseguido sobreviver à travessia de balsa.</div><div class="def"><b>But for</b> e <b>without</b> costumam aparecer com a terceira condicional.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Unit 10 · wishes</div>
+<h2>Desejo e preferência — o tempo verbal que denuncia a intenção</h2>
+<p class="sdesc">Passado para o presente, past perfect para o passado, <i>would</i> para a irritação. E a regra que quase ninguém sabe: <b><i>would</i> não entra se o sujeito é o mesmo</b>.</p>
+<div class="items">
+<div class="i"><div class="en">I wish I <i>could speak</i> Spanish.</div><div class="pt">Queria falar espanhol.</div><div class="def">Para o <b>presente</b>, tempo passado.</div></div>
+<div class="i"><div class="en">If only they <i>had listened</i> to their teacher.</div><div class="pt">Se ao menos eles tivessem escutado o professor.</div><div class="def">Para o <b>passado</b>, past perfect.</div></div>
+<div class="i"><div class="en">I wish he <i>would stop</i> answering me in English when I want to practise French.</div><div class="pt">Queria que ele parasse de me responder em inglês quando eu quero praticar francês.</div><div class="def"><b>Would</b> = irritação ou crítica de algo que está acontecendo agora.</div></div>
+<div class="i"><span class="tag err">regra</span><div class="en">O <i>would</i> não é usado quando o objeto e o sujeito são a mesma pessoa.</div><div class="pt">"I wish I would…" não funciona.</div></div>
+<div class="i"><div class="en"><i>If only</i> é talvez um pouco mais forte que <i>I wish</i>.</div><div class="pt">A diferença entre os dois é de intensidade.</div></div>
+<div class="i"><span class="tag">com objeto</span><div class="en">It's time the government <i>invested</i> in language training. · I'd rather you <i>learned</i> Spanish at school.</div><div class="pt">Já é hora de o governo investir em formação linguística. · Eu preferiria que você aprendesse espanhol na escola.</div><div class="def">Com objeto, <b>would rather</b> e <b>it's time</b> pedem passado — para ideia de presente.</div></div>
+<div class="i"><span class="tag">geral</span><div class="en">It's time <i>to leave</i>. · I'd rather <i>learn</i> Chinese than Russian.</div><div class="pt">Está na hora de ir. · Eu preferiria aprender chinês a russo.</div><div class="def">Numa afirmação <b>geral</b>, sem objeto, vem infinitivo.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Unit 9 · gerunds &amp; infinitives</div>
+<h2>Gerúndio × infinitivo — onde o sentido muda</h2>
+<p class="sdesc">Metade da unidade é lista de verbos. A outra metade — a que interessa — são os verbos que aceitam os dois e <b>mudam de sentido</b>: <i>stop</i>, <i>try</i>, <i>remember</i>, <i>regret</i>, <i>mean</i>, <i>go on</i>, <i>come</i>, <i>hear</i>.</p>
+<div class="items">
+<div class="i"><span class="tag">+ obj + to</span><div class="en">I <i>encouraged her to wear</i> her school uniform.</div><div class="pt">Eu a incentivei a usar o uniforme escolar.</div><div class="def">Pedem objeto antes do infinitivo: consider, warn, allow, believe, encourage.</div></div>
+<div class="i"><span class="tag">sem obj</span><div class="en">I <i>decided to throw out</i> all the clothes I hadn't worn for a year.</div><div class="pt">Decidi jogar fora toda a roupa que eu não usava havia um ano.</div><div class="def">Não pedem objeto: decide, refuse, hope, fail, agree, start.</div></div>
+<div class="i"><span class="tag">os dois</span><div class="en">I <i>like to swim</i> every morning. × I <i>like you to swim</i> so that you get some exercise.</div><div class="pt">Gosto de nadar toda manhã. × Gosto que você nade para se exercitar.</div><div class="def">Com ou sem objeto: hate, help, like, love, want, prefer, need.</div></div>
+<div class="i"><span class="tag">infinitivo puro</span><div class="en">I <i>made him shave</i> his beard off. · Her parents <i>let her choose</i> the shoes she wanted.</div><div class="pt">Eu o fiz raspar a barba. · Os pais dela deixaram que escolhesse os sapatos que queria.</div><div class="def">Objeto + infinitivo <b>sem to</b>: hear, feel, make, notice, see, watch, let.</div></div>
+<div class="i"><span class="tag">só to</span><div class="en">I <i>agreed to wear</i> the uniform.</div><div class="pt">Concordei em usar o uniforme.</div><div class="def">Só infinitivo: agree, aim, ask, demand, prepare, hope, manage, wish.</div></div>
+<div class="i"><span class="tag">só -ing</span><div class="en">Liz <i>couldn't imagine wearing</i> an evening dress.</div><div class="pt">A Liz não conseguia se imaginar usando um vestido de gala.</div><div class="def">Só gerúndio: consider, avoid, envisage, miss, imagine — e <b>todos os phrasal verbs</b>.</div></div>
+<div class="i"><span class="tag">tanto faz</span><div class="en">They <i>began singing / to sing</i> early in the programme.</div><div class="pt">Eles começaram a cantar cedo na programação.</div><div class="def">Sem mudança de sentido: begin, start, cease, continue.</div></div>
+<div class="i"><span class="tag err">muda</span><div class="en">They <i>came to accept</i> her opinions. (mudança gradual) × He <i>came running</i> into the room. (modo de se mover)</div><div class="pt">Eles acabaram aceitando as opiniões dela. × Ele entrou correndo na sala.</div></div>
+<div class="i"><span class="tag err">muda</span><div class="en">He <i>went on to talk</i> about the dress code. (passou ao próximo assunto) × He <i>went on talking</i> even when everyone started yawning. (continuou)</div><div class="pt">Ele passou a falar do código de vestimenta. × Ele continuou falando mesmo quando todos começaram a bocejar.</div></div>
+<div class="i"><span class="tag err">muda</span><div class="en">I <i>mean to wear</i> jeans to the barbecue. (pretendo) × It <i>means buying</i> a new pair of shoes. (implica)</div><div class="pt">Pretendo usar jeans no churrasco. × Isso implica comprar um sapato novo.</div></div>
+<div class="i"><span class="tag err">muda</span><div class="en">I <i>regret to say</i> that you are not properly attired. (presente/futuro) × I <i>regret telling</i> her that she looked scruffy. (passado)</div><div class="pt">Lamento dizer que o senhor não está trajado adequadamente. × Me arrependo de ter dito a ela que estava desleixada.</div><div class="def">Com o infinitivo, o arrependimento é do que se <b>vai</b> dizer; com o gerúndio, do que já se disse.</div></div>
+<div class="i"><span class="tag err">muda</span><div class="en">I <i>remember visiting</i> the Costume Museum when I was young. (a lembrança vem depois) × I <i>remembered to post</i> the parcel this morning. (a lembrança vem antes)</div><div class="pt">Lembro de ter visitado o Museu do Traje quando era jovem. × Lembrei de postar o pacote hoje de manhã.</div></div>
+<div class="i"><span class="tag err">muda</span><div class="en">They <i>stopped dancing</i> when she came into the room. (cessaram) × They <i>stopped to have</i> a cup of coffee halfway through the morning. (motivo)</div><div class="pt">Pararam de dançar quando ela entrou. × Pararam para tomar um café no meio da manhã.</div></div>
+<div class="i"><span class="tag err">muda</span><div class="en"><i>Try to stand</i> up straight. (tentativa) × If you can't get the car going, <i>try ringing</i> the garage. (experimento)</div><div class="pt">Tente ficar de pé reto. × Se o carro não pegar, experimente ligar para a oficina.</div></div>
+<div class="i"><span class="tag err">muda</span><div class="en">I <i>heard Adele sing</i> in London. (uma vez, do começo ao fim) × I <i>hear the birds singing</i> every morning. (ação repetida, em andamento)</div><div class="pt">Ouvi a Adele cantar em Londres. × Ouço os pássaros cantando toda manhã.</div></div>
+<div class="i"><span class="tag">obj + -ing</span><div class="en">I <i>overheard them talking</i> about the new manager. → They <i>were overheard talking</i> about the new manager.</div><div class="pt">Ouvi por acaso eles falando do novo gerente.</div><div class="def">Pedem objeto antes do <i>-ing</i> na ativa: catch, discover, observe, see, watch.</div></div>
+<div class="i"><span class="tag">sem obj + -ing</span><div class="en">I <i>suggested going</i> to the party early.</div><div class="pt">Sugeri irmos cedo para a festa.</div><div class="def">Não pedem objeto: admit, advise, consider, deny, face, finish, suggest.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Unit 12 · passive</div>
+<h2>Passiva — a escolha do foco</h2>
+<p class="sdesc">Ativa e passiva não dizem a mesma coisa: elas <b>focalizam</b> coisas diferentes. E há quatro tempos passivos que existem na teoria mas o inglês não usa.</p>
+<div class="items">
+<div class="i"><span class="tag">foco</span><div class="en">Massive waves <i>destroyed</i> the harbour wall. (voz ativa — o foco são as ondas e o que fizeram)</div><div class="pt">Ondas gigantes destruíram o quebra-mar.</div></div>
+<div class="i"><span class="tag">foco</span><div class="en">The harbour wall <i>was destroyed by</i> massive waves. (voz passiva — o foco é o quebra-mar e o que aconteceu com ele)</div><div class="pt">O quebra-mar foi destruído por ondas gigantes.</div><div class="def">O agente entra com <b>by</b>. A escolha da voz define o foco da frase.</div></div>
+<div class="i"><span class="tag">sem agente</span><div class="en">It's going to be quite some time before car body panels <i>are cast</i> from titanium.</div><div class="pt">Vai demorar bastante até que painéis de carroceria sejam fundidos em titânio.</div><div class="def">Sem agente quando a <b>ação</b> importa mais que quem a faz.</div></div>
+<div class="i"><span class="tag">sem agente</span><div class="en">In separate incidents across the city, shop windows <i>were smashed</i> and goods <i>taken</i>.</div><div class="pt">Em incidentes separados pela cidade, vitrines foram quebradas e mercadorias levadas.</div><div class="def">Sem agente quando não se sabe quem fez.</div></div>
+<div class="i"><span class="tag">sem agente</span><div class="en">The oily stain <i>had been hidden</i> from view until now.</div><div class="pt">A mancha de óleo tinha ficado escondida até agora.</div></div>
+<div class="i"><span class="tag reg">oficial</span><div class="en">Visitors <i>must be accompanied</i> by a member of staff at all times.</div><div class="pt">Os visitantes devem estar acompanhados por um funcionário o tempo todo.</div><div class="def">A passiva produz tom <b>oficial ou impessoal</b>.</div></div>
+<div class="i"><span class="tag reg">acadêmico</span><div class="en">Each solution <i>was heated</i> to boiling point prior to lab analysis.</div><div class="pt">Cada solução foi aquecida até o ponto de ebulição antes da análise laboratorial.</div><div class="def">É o registro do relatório e do texto científico.</div></div>
+<div class="i"><span class="tag">modal</span><div class="en">Miniature versions <i>can now be produced</i> at minimal cost.</div><div class="pt">Versões em miniatura agora podem ser produzidas a custo mínimo.</div><div class="def">Com modal: modal + <b>be</b> + particípio.</div></div>
+<div class="i"><span class="tag">exemplo longo</span><div class="en">An unmanned submarine <i>has been developed</i> to automatically track down and follow whales and tuna, alarming many conservationists.</div><div class="pt">Um submarino não tripulado foi desenvolvido para localizar e seguir automaticamente baleias e atuns, o que alarmou muitos ambientalistas.</div></div>
+<div class="i"><span class="tag">a grade</span><div class="en">It <i>is</i> made · It <i>is being</i> made · It <i>has been</i> made · It <i>was</i> made · It <i>was being</i> made · It <i>had been</i> made</div><div class="pt">Presente, presente contínuo, present perfect, passado, passado contínuo, past perfect.</div></div>
+<div class="i"><span class="tag">a grade</span><div class="en">It <i>will be</i> made · It <i>will have been</i> made</div><div class="pt">Futuro e futuro perfeito.</div></div>
+<div class="i"><span class="tag err">não existem</span><div class="en"><s>It has been being made</s> · <s>It had been being made</s> · <s>It will be being made</s> · <s>It will have been being made</s></div><div class="pt">As quatro formas passivas contínuas perfeitas não ocorrem normalmente em inglês.</div><div class="def">Existem no papel; ninguém diz.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Unit 13 · reported speech</div>
+<h2>Discurso indireto — inclusive o que não recua</h2>
+<p class="sdesc">Mudam pronomes, quase todos os tempos e todas as palavras de tempo e lugar. As exceções — <b>must</b>, condicionais, past perfect — são o que se cobra no C2.</p>
+<div class="items">
+<div class="i"><div class="en">'I saw this film two weeks ago.' → She said she <i>had seen that</i> film two weeks <i>before</i>.</div><div class="pt">"Vi este filme duas semanas atrás." → Ela disse que tinha visto aquele filme duas semanas antes.</div><div class="def">Mudam o tempo, o demonstrativo e a expressão de tempo — tudo de uma vez.</div></div>
+<div class="i"><span class="tag err">must</span><div class="en">'I must buy a new bicycle.' → She said she <i>had to</i> buy a new bicycle.</div><div class="pt">"Preciso comprar uma bicicleta nova." → Ela disse que precisava comprar uma bicicleta nova.</div><div class="def"><b>Must</b> de obrigação vira <b>had to</b>.</div></div>
+<div class="i"><span class="tag err">mustn't</span><div class="en">'You mustn't tell my mother.' → She said I <i>was not to</i> tell her mother.</div><div class="pt">"Você não pode contar para a minha mãe." → Ela disse que eu não devia contar para a mãe dela.</div><div class="def"><b>Mustn't</b> vira <b>was not to</b>.</div></div>
+<div class="i"><span class="tag err">must</span><div class="en">'You must not go more than 40 kph.' → He said you <i>mustn't</i> go more than 40 kph.</div><div class="pt">"Não se pode passar de 40 km/h." → Ele disse que não se pode passar de 40 km/h.</div><div class="def">Se o <b>must</b> fala de lei ou verdade geral, ele <b>não muda</b>.</div></div>
+<div class="i"><span class="tag">1ª condicional</span><div class="en">'If you don't hurry up, you'll miss your flight.' → She said that if we <i>didn't hurry</i> up, we <i>would miss</i> our flight.</div><div class="pt">"Se você não se apressar, vai perder o voo." → Ela disse que, se não nos apressássemos, perderíamos o voo.</div><div class="def">Na primeira condicional, o <i>if</i> recua e o <b>will</b> vira <b>would</b>.</div></div>
+<div class="i"><span class="tag">2ª condicional</span><div class="en">'He would be pleased if you visited him.' → She said he <i>would be</i> pleased if she <i>visited</i> him.</div><div class="pt">"Ele ficaria contente se você o visitasse." → Ela disse que ele ficaria contente se ela o visitasse.</div><div class="def">Segunda e terceira condicionais e past perfect <b>não mudam</b>.</div></div>
+<div class="i"><span class="tag">verbo de relato</span><div class="en">'What about picking up the litter?' she said. → She <i>suggested picking up</i> the litter.</div><div class="pt">"Que tal recolher o lixo?", ela disse. → Ela sugeriu recolher o lixo.</div><div class="def">No nível alto, o verbo de relato absorve o sentido da fala inteira.</div></div>
+<div class="i"><span class="tag">verbo de relato</span><div class="en">'Goodness! Look at that rubbish tip!' he said. → He <i>exclaimed in horror</i> when he saw the rubbish tip.</div><div class="pt">"Nossa! Olha aquele lixão!", ele disse. → Ele exclamou horrorizado ao ver o lixão.</div></div>
+<div class="i"><span class="tag">verbo de relato</span><div class="en">'I had absolutely nothing to do with it,' he said. → He <i>categorically denied</i> having anything to do with it.</div><div class="pt">"Eu não tive absolutamente nada a ver com isso", ele disse. → Ele negou categoricamente ter qualquer envolvimento.</div><div class="def">Um verbo mais um advérbio carregam o tom — é assim que se escreve num <i>report</i>.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Unit 7 · participle clauses</div>
+<h2>Orações participiais — a relativa enxuta</h2>
+<p class="sdesc">Fazem o serviço de uma relativa restritiva sem o pronome e sem o verbo conjugado. E a <b>posição</b> da oração muda a quem ela se refere — erro clássico de quem escreve rápido.</p>
+<div class="items">
+<div class="i"><div class="en">The man <i>dancing over there</i> is my brother. (= The man <i>who is dancing</i> over there is my brother.)</div><div class="pt">O homem que está dançando ali é meu irmão.</div><div class="def">A função é a de uma relativa restritiva.</div></div>
+<div class="i"><div class="en">The painting <i>sold at auction yesterday</i> has already been shipped to New York. (= The painting <i>that was sold</i> at auction yesterday…)</div><div class="pt">O quadro vendido em leilão ontem já foi despachado para Nova York.</div></div>
+<div class="i"><span class="tag err">posição</span><div class="en"><i>Standing at the top of the hill</i>, I could just see the village. (refere-se ao sujeito, <b>I</b>)</div><div class="pt">De pé no alto da colina, eu mal conseguia ver o vilarejo.</div></div>
+<div class="i"><span class="tag err">posição</span><div class="en">I could just see the village <i>standing at the top of the hill</i>. (refere-se ao objeto, <b>the village</b>)</div><div class="pt">Eu mal conseguia ver o vilarejo situado no alto da colina.</div><div class="def">A mesma oração, em posições diferentes, muda de sujeito — e de sentido.</div></div>
+<div class="i"><span class="tag">having</span><div class="en"><i>Having reached</i> the top of the hill, I could just see the village.</div><div class="pt">Tendo chegado ao topo da colina, eu mal conseguia ver o vilarejo.</div><div class="def"><b>Having</b> + particípio marca ação <b>anterior</b>.</div></div>
+<div class="i"><span class="tag">being</span><div class="en">The report <i>being published</i> today will force local governments back to the drawing board.</div><div class="pt">O relatório que está sendo publicado hoje vai obrigar os governos locais a recomeçar do zero.</div><div class="def"><b>Being</b> + particípio expressa passiva.</div></div>
+<div class="i"><span class="tag">-ed</span><div class="en">The images <i>provided by the Hubble Space Telescope</i> have given astronomers fresh insights.</div><div class="pt">As imagens fornecidas pelo telescópio espacial Hubble deram aos astrônomos novas perspectivas.</div><div class="def">O particípio passado sozinho faz o mesmo trabalho.</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Unit 8 · inversion</div>
+<h2>Inversão — a ênfase que reordena a frase</h2>
+<p class="sdesc">A ordem normal é sujeito + verbo. Quando se quer <b>ênfase</b>, ela se inverte. É recurso de inglês escrito e formal — e cai em toda prova de C2.</p>
+<div class="items">
+<div class="i"><div class="en">Madrid <i>offers</i> its visitors an excellent choice of restaurants and some wonderful bars too. → <i>Not only does Madrid offer</i> its visitors an excellent choice of restaurants, but there are also some wonderful bars.</div><div class="pt">Madri não só oferece aos visitantes uma excelente variedade de restaurantes como também tem bares maravilhosos.</div><div class="def">A mesma frase, reescrita com inversão para ganhar ênfase.</div></div>
+<div class="i"><span class="tag">advérbio negativo</span><div class="en"><i>Barely were we</i> into our costumes when it was time to go on stage.</div><div class="pt">Mal tínhamos vestido os figurinos e já era hora de entrar em cena.</div><div class="def">Os advérbios amplamente negativos: barely, hardly, rarely, scarcely, seldom.</div></div>
+<div class="i"><span class="tag">advérbio negativo</span><div class="en"><i>Seldom does a day go by</i> without someone ringing up to complain about the product.</div><div class="pt">Raramente passa um dia sem alguém ligar para reclamar do produto.</div></div>
+<div class="i"><span class="tag">never/nowhere</span><div class="en"><i>Never had I felt</i> more relaxed than that first week on Corsica.</div><div class="pt">Nunca eu tinha me sentido tão relaxado quanto naquela primeira semana na Córsega.</div></div>
+<div class="i"><span class="tag">never/nowhere</span><div class="en"><i>Nowhere could we find</i> fresh vegetables, and some dairy products were in short supply too.</div><div class="pt">Em lugar nenhum encontrávamos verduras frescas, e alguns laticínios também estavam em falta.</div></div>
+<div class="i"><span class="tag">little</span><div class="en"><i>Little did we realise</i> what we were letting ourselves in for.</div><div class="pt">Mal imaginávamos no que estávamos nos metendo.</div></div>
+<div class="i"><span class="tag">no sooner</span><div class="en"><i>No sooner had Phoebe arrived than</i> she helped herself to a drink without asking.</div><div class="pt">Mal a Phoebe chegou e já se serviu de uma bebida sem pedir.</div><div class="def">Sempre <b>than</b> depois de <i>no sooner</i>.</div></div>
+<div class="i"><span class="tag">not</span><div class="en"><i>Not a single word of thanks did they hear</i> from her.</div><div class="pt">Nem uma única palavra de agradecimento ouviram dela.</div></div>
+<div class="i"><span class="tag">expressão fixa</span><div class="en"><i>Had it not been for</i> supportive friends and family, she could not have handled the constant intrusion of the media.</div><div class="pt">Não fossem os amigos e a família que a apoiaram, ela não teria aguentado a intromissão constante da imprensa.</div><div class="def">A fórmula <b>Had it not been for…</b> explica por que o resultado foi outro.</div></div>
+<div class="i"><span class="tag">no fim</span><div class="en">Tim didn't feel like facing the press and <i>neither did Lucy</i>.</div><div class="pt">O Tim não estava a fim de encarar a imprensa, e a Lucy também não.</div><div class="def">A inversão também acontece no <b>fim</b> da frase com neither, nor e so.</div></div>
+<div class="i"><span class="tag">no fim</span><div class="en">Students haven't welcomed the new syllabus and <i>nor have their teachers</i>. · Karl will be pleased to finish work and <i>so will I</i>.</div><div class="pt">Os alunos não gostaram do novo currículo, e os professores também não. · O Karl vai ficar contente de terminar o trabalho, e eu também.</div></div>
+<div class="i"><span class="tag">oração temporal</span><div class="en"><i>Not until two days later did we remember</i> to call the school. · <i>Only once before have I felt</i> like this about a project.</div><div class="pt">Só dois dias depois lembramos de ligar para a escola. · Só uma vez antes me senti assim em relação a um projeto.</div><div class="def">Às vezes uma oração de tempo precede a inversão.</div></div>
+<div class="i"><span class="tag">lugar</span><div class="en"><i>At the end of the path lay the meadows</i>. · <i>In the distance stood the foothills</i> of the Himalayas.</div><div class="pt">No fim do caminho estendiam-se as campinas. · Ao longe erguiam-se os contrafortes do Himalaia.</div><div class="def">Adjunto de lugar à frente — a inversão é literária.</div></div>
+<div class="i"><span class="tag">preposicional</span><div class="en"><i>On no account are you to leave</i> this room! · <i>Under no circumstances can a replacement card be issued</i>.</div><div class="pt">De modo algum você deve sair desta sala! · Sob nenhuma circunstância pode ser emitido um cartão substituto.</div></div>
+<div class="i"><span class="tag">preposicional</span><div class="en"><i>In no way does that imply</i> defeat. · <i>At no time did you give me</i> an accurate picture of what was going on.</div><div class="pt">Isso de forma alguma implica derrota. · Em momento algum você me deu um quadro preciso do que estava acontecendo.</div></div>
+<div class="i"><span class="tag">so / such</span><div class="en"><i>So loud was the music that</i> we couldn't attempt to chat. · <i>So consistent has John's performance been that</i> he has earned the nickname 'Strongman'.</div><div class="pt">A música estava tão alta que não dava nem para tentar conversar. · O desempenho do John tem sido tão constante que ele ganhou o apelido de "Strongman".</div></div>
+<div class="i"><span class="tag">so / such</span><div class="en"><i>Such is the demand for tickets that</i> they are selling at double their face value.</div><div class="pt">Tamanha é a procura por ingressos que estão sendo vendidos pelo dobro do valor de face.</div><div class="def"><b>Such</b> enfatiza a <b>dimensão</b> de algo.</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Unit 11 · gradability</div>
+<h2>Gradável × não gradável — por que <i>very perfect</i> não existe</h2>
+<p class="sdesc">Adjetivo gradável admite grau (<i>fairly happy</i>, <i>very happy</i>); o não gradável já traz o extremo dentro de si e só aceita advérbios de <b>ênfase</b>. E há três — <i>pretty</i>, <i>really</i>, <i>quite</i> — que atravessam os dois lados.</p>
+<div class="items">
+<div class="i"><div class="en">We all feel <i>slightly frustrated</i> by the lack of communication on this project.</div><div class="pt">Todos nos sentimos um pouco frustrados com a falta de comunicação neste projeto.</div><div class="def">Adjetivo <b>gradável</b> + advérbio de quantidade.</div></div>
+<div class="i"><div class="en">Charlotte was <i>absolutely furious</i> when she heard the decision.</div><div class="pt">A Charlotte ficou absolutamente furiosa quando soube da decisão.</div><div class="def">Adjetivo <b>não gradável</b> + advérbio de ênfase.</div></div>
+<div class="i"><span class="tag">gradáveis</span><div class="en">deeply <i>angry</i> · extremely <i>cheerful</i> · fairly <i>happy</i> · immensely <i>hurt</i> · rather <i>irritable</i> · very <i>upset</i></div><div class="pt">A grade dos gradáveis com os advérbios que os acompanham.</div></div>
+<div class="i"><span class="tag">não gradáveis</span><div class="en">absolutely <i>awful</i> · completely <i>broken-hearted</i> · entirely <i>impossible</i> · totally <i>terrible</i> · utterly <i>wonderful</i></div><div class="pt">A grade dos não gradáveis.</div></div>
+<div class="i"><span class="tag reg">pretty</span><div class="en">Tom finds it <i>pretty quiet</i> around here in the evenings, so he often shoots off to town on his motorbike.</div><div class="pt">O Tom acha isto aqui bem sossegado à noite, então costuma dar uma fugida à cidade de moto.</div><div class="def"><b>Pretty</b> vai com os dois tipos — mas só em inglês <b>informal</b>.</div></div>
+<div class="i"><span class="tag reg">pretty</span><div class="en">It's <i>pretty amazing</i> that someone who was at death's door three months ago has just run the London marathon!</div><div class="pt">É bem incrível que alguém que estava às portas da morte três meses atrás tenha acabado de correr a maratona de Londres!</div></div>
+<div class="i"><span class="tag reg">really</span><div class="en">For a <i>really comfortable</i> night's sleep, choose Maxton's mattresses every time.</div><div class="pt">Para uma noite de sono realmente confortável, escolha sempre os colchões Maxton.</div><div class="def"><b>Really</b> vai com os dois — mas com não gradável o uso só cabe no informal.</div></div>
+<div class="i"><span class="tag reg">really</span><div class="en">I've just had a <i>really awful</i> run-in with Duncan over his marketing plan.</div><div class="pt">Acabei de ter um encontrão realmente horrível com o Duncan por causa do plano de marketing dele.</div></div>
+<div class="i"><span class="tag err">quite</span><div class="en">I'm <i>quite busy</i> at work at the moment, but I've known it much worse. (= <b>fairly</b> — razoavelmente)</div><div class="pt">Estou razoavelmente ocupado no trabalho, mas já vi bem pior.</div></div>
+<div class="i"><span class="tag err">quite</span><div class="en">You're <i>quite impossible</i> at times – sweet wrappers go in the bin not on the floor! (= <b>completely</b> — totalmente)</div><div class="pt">Você é totalmente impossível às vezes — papel de bala vai no lixo, não no chão!</div><div class="def">O mesmo <b>quite</b>: com gradável significa "razoavelmente"; com não gradável, "completamente".</div></div>
+<div class="i"><span class="tag">os dois</span><div class="en">Jake has been <i>blind</i> since an accident in childhood. (literal, não gradável) × Our consumer society is <i>fairly blind</i> to the issue of poverty. (figurado, gradável)</div><div class="pt">O Jake é cego desde um acidente na infância. × Nossa sociedade de consumo é bastante cega para a questão da pobreza.</div><div class="def">Alguns adjetivos são os dois — e a passagem de literal para figurado é o que muda.</div></div>
+</div>
+</section>
+
+<section id="s16">
+<div class="snum">Unit 17 · comparison</div>
+<h2>Comparação — além do <i>-er than</i></h2>
+<p class="sdesc">As estruturas que dão precisão: <b>not as… as</b> e suas variantes de intensidade, os advérbios de grau e a construção de dois comparativos.</p>
+<div class="items">
+<div class="i"><div class="en">I'm <i>happier</i> now <i>than</i> I've ever been. · That is <i>the most outrageous</i> suggestion you've made today!</div><div class="pt">Estou mais feliz agora do que nunca. · Essa é a sugestão mais absurda que você fez hoje!</div></div>
+<div class="i"><div class="en">Holly is <i>not as fast</i> on the tennis court <i>as</i> she used to be.</div><div class="pt">A Holly não é tão rápida na quadra de tênis quanto era.</div><div class="def">A variante <b>not so… as</b> é hoje menos comum.</div></div>
+<div class="i"><span class="tag">intensidade</span><div class="en">The new sports commentator is <i>nowhere near as good as</i> John Motson.</div><div class="pt">O novo comentarista esportivo não chega nem perto do John Motson.</div></div>
+<div class="i"><span class="tag">intensidade</span><div class="en">This album is <i>not nearly as good as</i> their last one.</div><div class="pt">Este álbum não é nem de longe tão bom quanto o anterior.</div><div class="def">Também existe <b>nothing like as… as</b>.</div></div>
+<div class="i"><span class="tag">grau</span><div class="en">You're <i>by far</i> the cleverest person in this class, you know.</div><div class="pt">Você é de longe a pessoa mais inteligente desta turma, viu?</div><div class="def">O advérbio de grau reforça a comparação.</div></div>
+<div class="i"><span class="tag">grau</span><div class="en">Sally is <i>a great deal</i> younger than her brother.</div><div class="pt">A Sally é bem mais nova que o irmão.</div><div class="def">Também: a bit, a good deal, a little, a lot.</div></div>
+<div class="i"><span class="tag">dois comparativos</span><div class="en"><i>The sooner</i> we get home, <i>the happier</i> I'll be.</div><div class="pt">Quanto mais cedo chegarmos em casa, mais feliz eu vou ficar.</div><div class="def">Dois comparativos mostram que, quando uma coisa muda, a outra muda junto.</div></div>
+<div class="i"><span class="tag">dois comparativos</span><div class="en"><i>The more</i> you practise the violin, <i>the easier</i> it will become.</div><div class="pt">Quanto mais você praticar violino, mais fácil vai ficar.</div></div>
+</div>
+</section>
+
+<section id="s17">
+<div class="snum">Unit 15 · purpose &amp; reason</div>
+<h2>Finalidade e causa — e onde cada conjunção cabe</h2>
+<p class="sdesc">A oração de finalidade vem <b>depois</b> da principal; a de causa pode vir antes ou depois. E duas das conjunções são de registro estritamente formal.</p>
+<div class="items">
+<div class="i"><div class="en">I keep my mobile switched off when I'm working, <i>so as not to</i> be distracted.</div><div class="pt">Deixo o celular desligado quando estou trabalhando, para não me distrair.</div><div class="def">A oração de finalidade vem normalmente <b>depois</b> da principal.</div></div>
+<div class="i"><span class="tag reg">formal</span><div class="en">Conjunções de finalidade: <i>for fear that</i> (formal) · <i>lest</i> (formal) · <i>in order to</i> · <i>in order not to</i> · <i>so as to</i> · <i>so as not to</i> · <i>so that</i></div><div class="pt">A lista completa — as duas primeiras só cabem em texto formal.</div></div>
+<div class="i"><div class="en"><i>As</i> it was late, Jenny went straight to bed.</div><div class="pt">Como era tarde, a Jenny foi direto para a cama.</div><div class="def">A oração de causa pode vir <b>antes</b> da principal.</div></div>
+<div class="i"><div class="en">I'd shut the window <i>in case</i> it rains.</div><div class="pt">Eu fecharia a janela, vai que chove.</div><div class="def">Ou depois.</div></div>
+<div class="i"><div class="en">Conjunções de causa: <i>as</i> · <i>because</i> · <i>in case</i> · <i>since</i></div><div class="pt">As quatro que o livro lista.</div></div>
+</div>
+</section>
+
+<section id="s18">
+<div class="snum">Unit 16 · concessive clauses</div>
+<h2>Orações concessivas — o contraste</h2>
+<p class="sdesc">Dão a informação que contrasta com o resto da frase. O ponto do C2 é a <b>estrutura</b>: <i>despite</i> e <i>in spite of</i> não aceitam verbo — a menos que se acrescente <i>the fact that</i>.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Although</i> Moravia had more than thirty books published in his lifetime, his first novel is undoubtedly the best.</div><div class="pt">Embora Moravia tenha publicado mais de trinta livros em vida, seu primeiro romance é sem dúvida o melhor.</div><div class="def">A concessiva pode vir antes ou depois da principal.</div></div>
+<div class="i"><div class="en">Shakespeare remains on the syllabus, <i>even though</i> many British teenagers find his plays inaccessible.</div><div class="pt">Shakespeare continua no currículo, mesmo que muitos adolescentes britânicos achem as peças dele inacessíveis.</div></div>
+<div class="i"><div class="en">Conjunções: <i>although</i> · <i>despite</i> · <i>even if</i> · <i>even though</i> · <i>in spite of</i> · <i>much as</i> · <i>though</i> · <i>whereas</i> · <i>while</i></div><div class="pt">A lista completa.</div></div>
+<div class="i"><span class="tag reg">formal</span><div class="en"><i>Much as</i> e <i>whereas</i> são menos comuns e aparecem principalmente no inglês escrito formal.</div><div class="pt">Nota de registro do próprio livro.</div></div>
+<div class="i"><span class="tag">elipse</span><div class="en"><i>Although (we were) exhausted</i>, we stayed up to watch the end of the film.</div><div class="pt">Embora exaustos, ficamos acordados para ver o fim do filme.</div><div class="def">Com <b>though</b> e <b>although</b> é possível omitir o verbo.</div></div>
+<div class="i"><span class="tag err">estrutura</span><div class="en"><i>Despite running</i> all the way to the station, we missed the train. · <i>In spite of the weather</i>, we had a good time.</div><div class="pt">Apesar de correr o caminho todo até a estação, perdemos o trem. · Apesar do tempo, nos divertimos.</div><div class="def"><b>Despite</b> e <b>in spite of</b> não podem ser seguidos de verbo: só gerúndio ou substantivo.</div></div>
+<div class="i"><span class="tag err">estrutura</span><div class="en"><i>Despite the fact that</i> Jess had very little money, her trip to Lisbon was a great success.</div><div class="pt">Apesar de a Jess ter muito pouco dinheiro, a viagem dela a Lisboa foi um grande sucesso.</div><div class="def">Acrescentando <b>the fact that</b>, aí sim entra verbo.</div></div>
+</div>
+</section>
+
+<section id="s19">
+<div class="snum">Unit 19 · word order</div>
+<h2>Onde cada advérbio cai na frase</h2>
+<p class="sdesc">Três posições — início, meio e fim — e um tipo de advérbio para cada uma. A regra do meio: <b>antes</b> do verbo principal, <b>entre</b> auxiliar e principal, <b>depois</b> do verbo <i>to be</i>.</p>
+<div class="items">
+<div class="i"><div class="en">As três posições: <i>Last night</i> I saw a ghost. (início) · I have <i>never</i> had a paranormal experience. (meio) · She left work <i>in a hurry</i>. (fim)</div><div class="pt">Ontem à noite eu vi um fantasma. · Nunca tive uma experiência paranormal. · Ela saiu do trabalho às pressas.</div></div>
+<div class="i"><span class="tag">início</span><div class="en">Advérbios de ligação (<i>However, Then</i>), de tempo (<i>Last night, Tomorrow</i>), alguns de frequência (<i>Usually, Once a year, Occasionally</i>) e alguns de certeza (<i>Maybe, Perhaps, Naturally</i>).</div><div class="pt">Os tipos que abrem a frase.</div></div>
+<div class="i"><span class="tag">início</span><div class="en"><i>Seldom have I seen</i> him so angry.</div><div class="pt">Raramente o vi tão bravo.</div><div class="def">Adverbial negativo no início <b>exige inversão</b>.</div></div>
+<div class="i"><span class="tag">início</span><div class="en"><i>Carefully</i> he placed the slide under the microscope.</div><div class="pt">Com cuidado, ele colocou a lâmina sob o microscópio.</div><div class="def">Advérbio de modo no início, para ênfase.</div></div>
+<div class="i"><span class="tag">meio</span><div class="en">He <i>will definitely win</i> the cup. · She <i>often loses</i> her keys.</div><div class="pt">Ele certamente vai ganhar a taça. · Ela perde as chaves com frequência.</div><div class="def">Certeza (definitely, certainly) e frequência indefinida (often, seldom, rarely, never, usually, occasionally).</div></div>
+<div class="i"><span class="tag">meio</span><div class="en">He <i>quickly dived</i> into the water. · I <i>have nearly finished</i> the washing.</div><div class="pt">Ele mergulhou depressa na água. · Já quase terminei a roupa.</div><div class="def">Modo e completude (almost, partly, nearly).</div></div>
+<div class="i"><span class="tag">meio</span><div class="en">She <i>was quite convinced</i> that she was right.</div><div class="pt">Ela estava bem convencida de que tinha razão.</div><div class="def">Grau — e note: <b>depois</b> do verbo <i>to be</i>.</div></div>
+<div class="i"><span class="tag">meio</span><div class="en">He didn't <i>even</i> apologise for forgetting my birthday. · They <i>just</i> appeared out of nowhere.</div><div class="pt">Ele nem pediu desculpa por esquecer meu aniversário. · Eles simplesmente apareceram do nada.</div><div class="def">Advérbios de foco: just, even.</div></div>
+<div class="i"><span class="tag">fim</span><div class="en">She crossed the lane <i>slowly</i>. · He dived into the water <i>quickly</i>.</div><div class="pt">Ela atravessou a rua devagar. · Ele mergulhou na água depressa.</div><div class="def">Modo também cabe no fim.</div></div>
+<div class="i"><span class="tag">fim</span><div class="en">She walked <i>into the park</i>. · We saw her <i>only last week</i>. · I go to the gym <i>twice a week</i>.</div><div class="pt">Ela entrou no parque. · Nós a vimos ainda na semana passada. · Vou à academia duas vezes por semana.</div><div class="def">Lugar, tempo e frequência definida.</div></div>
+<div class="i"><span class="tag">ordem</span><div class="en">We were walking <i>peacefully</i> <i>along the beach</i> <i>yesterday</i>, when we got a terrible fright.</div><div class="pt">Estávamos caminhando tranquilamente pela praia ontem quando levamos um susto terrível.</div><div class="def">Com mais de um no fim: <b>modo – lugar – tempo</b>. A ordem pode variar por ênfase.</div></div>
+<div class="i"><span class="tag">ordem</span><div class="en">I met him <i>for the first time</i> <i>at a concert</i> <i>last week</i>.</div><div class="pt">Eu o conheci num show na semana passada.</div></div>
+<div class="i"><span class="tag">qualquer posição</span><div class="en"><i>Personally</i>, I'm very annoyed with him. · I'm <i>personally</i> very annoyed with him. · I'm very annoyed with him, <i>personally</i>.</div><div class="pt">Pessoalmente, estou muito irritado com ele.</div><div class="def">Advérbios de comentário (personally, in theory, foolishly, in my opinion, undoubtedly) cabem nas três posições.</div></div>
+<div class="i"><span class="tag">qualquer posição</span><div class="en">I'm <i>sometimes</i> late with work. · <i>Sometimes</i> I'm late with work. · I'm late with work <i>sometimes</i>.</div><div class="pt">Às vezes eu me atraso com o trabalho.</div></div>
+<div class="i"><span class="tag err">-ly ou não</span><div class="en">I saw the UFO <i>high</i> over the mountains. × He thinks <i>highly</i> of the research done on Aboriginal beliefs.</div><div class="pt">Vi o OVNI bem alto sobre as montanhas. × Ele tem em alta conta a pesquisa sobre as crenças aborígenes.</div><div class="def">Mudam de sentido com e sem <b>-ly</b>: hard, direct, short, wide, late, free, wrong, right, high.</div></div>
+</div>
+</section>
+
+<section id="s20">
+<div class="snum">Unit 20 · have, get, go</div>
+<h2><i>Have</i> e <i>get</i> — mandar fazer, sofrer e conseguir</h2>
+<p class="sdesc">A mesma estrutura, três leituras diferentes. E a diferença de nuance entre <i>have</i> e <i>get</i>, que o livro explica caso a caso.</p>
+<div class="items">
+<div class="i"><span class="tag">serviço</span><div class="en">I <i>have my hair cut</i> every three weeks.</div><div class="pt">Corto o cabelo a cada três semanas.</div><div class="def">have + objeto + particípio: outra pessoa faz por você.</div></div>
+<div class="i"><span class="tag">experiência</span><div class="en">I <i>had my car stolen</i> last night.</div><div class="pt">Tive meu carro roubado ontem à noite.</div><div class="def">A mesma forma, outra leitura: algo que <b>aconteceu comigo</b>. Eu não organizei.</div></div>
+<div class="i"><span class="tag">experiência</span><div class="en">It's good to <i>have the birds singing</i> in the morning now it's spring. · I <i>had a dog follow</i> me home yesterday.</div><div class="pt">É bom ter os pássaros cantando de manhã agora que é primavera. · Ontem um cachorro me seguiu até em casa.</div></div>
+<div class="i"><span class="tag">ordem</span><div class="en">I <i>won't have you coming</i> home late every night!</div><div class="pt">Não vou admitir que você chegue tarde em casa toda noite!</div><div class="def">have + objeto + <i>-ing</i>, na negativa, proíbe.</div></div>
+<div class="i"><span class="tag">ordem</span><div class="en"><i>Have Mrs Jones sit down</i> and wait please. · The teacher <i>had us all running</i> round the field in the rain.</div><div class="pt">Peça à sra. Jones que se sente e espere, por favor. · O professor nos pôs todos correndo em volta do campo na chuva.</div></div>
+<div class="i"><span class="tag reg">get</span><div class="en">I <i>got the car repaired</i>.</div><div class="pt">Mandei consertar o carro.</div><div class="def">Forma mais <b>informal</b> de dizer <i>I had the car repaired</i>.</div></div>
+<div class="i"><span class="tag err">get</span><div class="en">She <i>got herself lost</i> on the underground.</div><div class="pt">Ela acabou se perdendo no metrô.</div><div class="def">Aqui o <b>get</b> sugere que a culpa foi dela própria.</div></div>
+<div class="i"><span class="tag">get</span><div class="en">I'll <i>get the washing done</i> if you do the ironing.</div><div class="pt">Eu lavo a roupa se você passar.</div><div class="def">Aqui implica que <b>eu mesmo</b> vou fazer.</div></div>
+<div class="i"><span class="tag">get</span><div class="en">I'll never <i>get this done</i> by tomorrow.</div><div class="pt">Nunca vou conseguir terminar isto até amanhã.</div><div class="def">Aqui é "não vou dar conta".</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 22 V11 · Livro 01 · Objective Proficiency (Cambridge) &mdash; C2, inglês real tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' — '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

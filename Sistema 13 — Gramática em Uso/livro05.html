@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 05 · English Pronunciation Made Simple — Sistema 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#4a9eff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 13</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 13 · Livro 05 · pronúncia</div>
+<h1 class="title">English Pronunciation <em>Made Simple</em></h1>
+<p class="lead">Paulette Dale &amp; Lillian Poms · Longman/Pearson. Inglês <b>americano</b>. O que faz este livro diferente dos outros de pronúncia do projeto é o método: para cada som ele diz exatamente <b>qual som você vai pôr no lugar</b> e <b>que palavra vai sair</b> — <i>sheep</i> virando <i>ship</i>, <i>very</i> virando <i>berry</i>, <i>thank</i> virando <i>sank</i>. O painel foi montado sobre esse mapa de confusões: o par mínimo, a frase em que o erro muda o sentido e a instrução física da boca. Ficaram de fora os enunciados de exercício, os gabaritos e as faixas de CD.</p>
+
+<div class="metrics">
+  <div class="metric"><b>22</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>42</b><span>lições</span></div>
+  <div class="metric"><b>EUA</b><span>sotaque</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar som, palavra ou tradução — ex.: th, sheep, ritmo, entonação…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Lição 02 · /iː/ × /ɪ/</div>
+<h2><i>sheep</i> × <i>ship</i> — a confusão número um</h2>
+<p class="sdesc">O português tem um <b>i</b> só; o inglês tem dois. O /iː/ é <b>longo e tenso</b> (sorria, estique os lábios); o /ɪ/ é <b>curto e relaxado</b>. Trocar um pelo outro muda a palavra.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɪ/ instead of /iː/: <i>sheep</i> will sound like <i>ship</i> · <i>eat</i> will sound like <i>it</i>.</div><div class="pt">Se você disser /ɪ/ no lugar de /iː/, "ovelha" vira "navio" e "comer" vira "isso".</div><div class="def">/iː/ é som <b>longo</b> — prolongue. Sinta a tensão nos lábios, na língua e no maxilar.</div></div>
+<div class="i"><span class="tag">/iː/</span><div class="en">each · eat · eager · eel · either · seal · mean · need · please · he · fee · she</div><div class="pt">Palavras com o i longo, no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">team × Tim · sleep × slip · green × grin · heel × hill · week × wick</div><div class="pt">time × Tim · dormir × escorregar · verde × sorriso largo · calcanhar × colina · semana × pavio</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">sheep × ship · leave × live · beaten × bitten · neat × knit · cheeks × chicks</div><div class="pt">ovelha × navio · partir × morar · batido × mordido · arrumado × tricotado · bochechas × pintinhos</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">heels × hills · beat × bit · beans × bins · heat × hit · wheel × will</div><div class="pt">saltos × colinas · batida × pedacinho · feijões × latas · calor × sucesso · roda × vontade</div></div>
+<div class="i"><div class="en">They cleaned the (<i>ship</i> / <i>sheep</i>).</div><div class="pt">Eles limparam o navio. / Eles limparam as ovelhas.</div><div class="def">Leia a frase duas vezes, uma com cada palavra — é assim que o livro treina.</div></div>
+<div class="i"><div class="en">Will he (<i>leave</i> / <i>live</i>)?</div><div class="pt">Ele vai embora? / Ele vai viver?</div></div>
+<div class="i"><div class="en">The boy was (<i>beaten</i> / <i>bitten</i>).</div><div class="pt">O menino apanhou. / O menino foi mordido.</div></div>
+<div class="i"><div class="en">His clothes are (<i>neat</i> / <i>knit</i>).</div><div class="pt">As roupas dele estão arrumadas. / As roupas dele são de tricô.</div></div>
+<div class="i"><div class="en">She has plump (<i>cheeks</i> / <i>chicks</i>).</div><div class="pt">Ela tem bochechas gordinhas. / Ela tem pintinhos gordinhos.</div></div>
+<div class="i"><div class="en">I like low (<i>heels</i> / <i>hills</i>).</div><div class="pt">Gosto de salto baixo. / Gosto de colinas baixas.</div></div>
+<div class="i"><div class="en">The children will (<i>sleep</i> / <i>slip</i>).</div><div class="pt">As crianças vão dormir. / As crianças vão escorregar.</div></div>
+<div class="i"><div class="en">I heard every (<i>beat</i> / <i>bit</i>).</div><div class="pt">Ouvi cada batida. / Ouvi cada pedacinho.</div></div>
+<div class="i"><div class="en">They stored the (<i>beans</i> / <i>bins</i>).</div><div class="pt">Guardaram os feijões. / Guardaram as caixas.</div></div>
+<div class="i"><div class="en">Everyone talks about the (<i>heat</i> / <i>hit</i>).</div><div class="pt">Todo mundo comenta o calor. / Todo mundo comenta o sucesso.</div></div>
+<div class="i"><span class="tag">diálogo</span><div class="en">Jim: Hi, Tina! Do you have a m<u>i</u>nute? — Tina: Yes, Jim. What <u>i</u>s <u>i</u>t?</div><div class="pt">Oi, Tina! Você tem um minuto? — Tenho, Jim. O que foi?</div><div class="def">Diálogo de treino: sublinhado = /ɪ/ curto.</div></div>
+<div class="i"><span class="tag">diálogo</span><div class="en">There is a f<i>i</i>ne s<i>ea</i>food place on F<i>i</i>fth Street. The f<i>i</i>sh is fr<i>e</i>sh, and the shr<i>i</i>mp is gr<i>ea</i>t. But <u>i</u>t <u>i</u>sn't ch<i>ea</i>p!</div><div class="pt">Tem um bom restaurante de frutos do mar na Rua Cinco. O peixe é fresco e o camarão é ótimo. Mas não é barato!</div></div>
+<div class="i"><span class="tag">diálogo</span><div class="en">That's OK. It will be "f<i>ea</i>st today, famine tomorrow"! I'll just have to <i>ea</i>t b<i>ea</i>ns the rest of the w<i>ee</i>k!</div><div class="pt">Tudo bem. Vai ser "banquete hoje, fome amanhã"! Vou ter de comer feijão o resto da semana!</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Lições 03–04 · /eɪ/ × /ɛ/</div>
+<h2><i>late</i> × <i>let</i> — o ditongo que o brasileiro achata</h2>
+<p class="sdesc">O /eɪ/ é <b>ditongo</b>: a língua desliza do meio da boca para perto do céu da boca. Se ele vira /ɛ/ puro, <i>late</i> vira <i>let</i>. E se o /ɛ/ abre demais, vira /æ/.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɛ/ instead of /eɪ/: <i>late</i> will sound like <i>let</i> · <i>paper</i> will sound like <i>pepper</i>.</div><div class="pt">Se você disser /ɛ/ no lugar de /eɪ/, "atrasado" vira "deixar" e "papel" vira "pimenta".</div><div class="def">/eɪ/ é ditongo — dois sons colados. Lábios espalhados, sem arredondar.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /eɪ/ instead of /ɛ/: <i>pen</i> will sound like <i>pain</i>.</div><div class="pt">Se você disser /eɪ/ no lugar de /ɛ/, "caneta" vira "dor".</div><div class="def">No /ɛ/ abra a boca mais que no /eɪ/ — mas não tanto quanto no /æ/.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /æ/ instead of /ɛ/: <i>met</i> will sound like <i>mat</i>.</div><div class="pt">Se você disser /æ/ no lugar de /ɛ/, "encontrei" vira "capacho".</div></div>
+<div class="i"><span class="tag">/eɪ/</span><div class="en">ate · aim · ache · ale · ape · eight · age · April · able · apron</div><div class="pt">O ditongo no começo da palavra.</div></div>
+<div class="i"><span class="tag">/eɪ/</span><div class="en">same · lake · place · rain · date · break · came · table · paint · paper</div><div class="pt">No meio da palavra.</div></div>
+<div class="i"><span class="tag">/eɪ/</span><div class="en">lay · way · obey · say · May · day · they · stay · weigh</div><div class="pt">No fim da palavra.</div></div>
+<div class="i"><span class="tag">grafia</span><div class="en">a — late · ai — main, fail · ay — day · eigh — eight, weigh</div><div class="pt">As quatro grafias mais comuns do /eɪ/.</div><div class="def">O livro insiste: em inglês a grafia é o mapa mais confiável que você tem.</div></div>
+<div class="i"><span class="tag">/ɛ/</span><div class="en">any · edge · effort · end · else · error · egg</div><div class="pt">O /ɛ/ no começo da palavra.</div></div>
+<div class="i"><span class="tag">/ɛ/</span><div class="en">bed · rest · bread · bent · next · fence</div><div class="pt">No meio da palavra.</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">late × let · paper × pepper · pen × pain · met × mat · main × men</div><div class="pt">atrasado × deixar · papel × pimenta · caneta × dor · encontrei × capacho · principal × homens</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Lições 05–06 · /æ/ × /ɑ/</div>
+<h2><i>hat</i> × <i>hot</i> — a vogal que não existe em português</h2>
+<p class="sdesc">O /æ/ não tem equivalente em português: lábios <b>espalhados</b> e boca <b>aberta</b>, mas não escancarada. Abrir demais produz /ɑ/, e <i>hat</i> vira <i>hot</i>.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɑ/ instead of /æ/: <i>hat</i> will sound like <i>hot</i>.</div><div class="pt">Se você disser /ɑ/ no lugar de /æ/, "chapéu" vira "quente".</div><div class="def">Abra a boca — mas não demais, ou você cai no /ɑ/.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɛ/ instead of /æ/: <i>bad</i> will sound like <i>bed</i>.</div><div class="pt">Se você disser /ɛ/ no lugar de /æ/, "ruim" vira "cama".</div></div>
+<div class="i"><span class="tag">/æ/</span><div class="en">apple · angry · am · and · after · absent</div><div class="pt">O /æ/ no começo da palavra.</div></div>
+<div class="i"><span class="tag">/æ/</span><div class="en">back · cat · black · happy · map · last</div><div class="pt">No meio da palavra.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /oʊ/ instead of /ɑ/: <i>not</i> will sound like <i>note</i>.</div><div class="pt">Se você disser /oʊ/ no lugar de /ɑ/, "não" vira "bilhete".</div><div class="def">No /ɑ/ a boca abre <b>mais do que em qualquer outra vogal</b>.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʌ/ instead of /ɑ/: <i>not</i> will sound like <i>nut</i>.</div><div class="pt">Se você disser /ʌ/ no lugar de /ɑ/, "não" vira "noz".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɔ/ instead of /ɑ/: <i>cot</i> will sound like <i>caught</i>.</div><div class="pt">Se você disser /ɔ/ no lugar de /ɑ/, "catre" vira "pegou".</div></div>
+<div class="i"><span class="tag">/ɑ/</span><div class="en">on · honest · are · arch · option · top · shop · block · cot · pop</div><div class="pt">O /ɑ/ como em <i>arm, hot, father</i>.</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">hat × hot · bad × bed · cap × cop · pat × pot · ran × Ron</div><div class="pt">chapéu × quente · ruim × cama · boné × policial · tapinha × panela · correu × Ron</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Lições 09–11 · /ʌ/ × /oʊ/ × /ɔ/</div>
+<h2><i>come</i> × <i>comb</i> × <i>calm</i> — as três que se embolam</h2>
+<p class="sdesc">O /ʌ/ é <b>curto, rápido e sem tensão</b> — os lábios quase não se mexem. O /oʊ/ é <b>ditongo longo</b>, com lábios em O. O /ɔ/ pede lábios projetados e queixo baixo.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɑ/ instead of /ʌ/: <i>color</i> will sound like <i>collar</i>.</div><div class="pt">Se você disser /ɑ/ no lugar de /ʌ/, "cor" vira "colarinho".</div><div class="def">O /ʌ/ é curto e sem tensão nenhuma. Relaxe.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /oʊ/ instead of /ʌ/: <i>come</i> will sound like <i>comb</i>.</div><div class="pt">Se você disser /oʊ/ no lugar de /ʌ/, "vir" vira "pente".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɔ/ instead of /ʌ/: <i>done</i> will sound like <i>dawn</i>.</div><div class="pt">Se você disser /ɔ/ no lugar de /ʌ/, "feito" vira "amanhecer".</div></div>
+<div class="i"><span class="tag">/ʌ/</span><div class="en">up · us · under · ugly · hug · much · onion · rough · won · must · but · come</div><div class="pt">O /ʌ/ como em <i>up, but, come</i>.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʌ/ instead of /oʊ/: <i>coat</i> will sound like <i>cut</i>.</div><div class="pt">Se você disser /ʌ/ no lugar de /oʊ/, "casaco" vira "corte".</div><div class="def">Arredonde os lábios na forma da letra O. O /oʊ/ é <b>longo</b>.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɔ/ instead of /oʊ/: <i>bold</i> will sound like <i>bald</i>.</div><div class="pt">Se você disser /ɔ/ no lugar de /oʊ/, "ousado" vira "careca".</div></div>
+<div class="i"><span class="tag">/oʊ/</span><div class="en">oval · odor · oat · boat · spoke · roam · loan · soul · go · sew · snow</div><div class="pt">O /oʊ/ como em <i>oh, no, boat</i>.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɑ/ instead of /ɔ/: <i>caller</i> will sound like <i>collar</i>.</div><div class="pt">Se você disser /ɑ/ no lugar de /ɔ/, "quem liga" vira "colarinho".</div><div class="def">Projete os lábios e baixe o queixo.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /oʊ/ instead of /ɔ/: <i>bought</i> will sound like <i>boat</i>. · If you say /ʌ/: <i>bought</i> will sound like <i>but</i>.</div><div class="pt">"Comprou" virando "barco" — ou virando "mas".</div></div>
+<div class="i"><span class="tag">/ɔ/</span><div class="en">all · awe · awful · always · often · wrong · boss · taught · flaw · thaw</div><div class="pt">O /ɔ/ como em <i>all, caught, boss</i>.</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">color × collar · come × comb · done × dawn · coat × cut · bold × bald · cot × caught · not × note × nut</div><div class="pt">A grade inteira de confusão entre as quatro vogais posteriores.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Lição 08 · /uː/ × /ʊ/</div>
+<h2><i>pool</i> × <i>pull</i> — projetar os lábios</h2>
+<p class="sdesc">Mesma história do /iː/ × /ɪ/, agora atrás: o /uː/ é <b>longo</b> e pede lábios <b>projetados</b>; o /ʊ/ é curto e relaxado.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">When you substitute /ʊ/ for /uː/: <i>pool</i> becomes <i>pull</i> · <i>suit</i> becomes <i>soot</i>.</div><div class="pt">"Piscina" vira "puxar"; "terno" vira "fuligem".</div><div class="def">Projete os lábios no /uː/ e você nunca mais confunde <b>pull</b> com <b>pool</b>.</div></div>
+<div class="i"><span class="tag">/uː/</span><div class="en">food · suit · group · ruler · pool · truth · threw · flew · through</div><div class="pt">O /uː/ no meio da palavra.</div></div>
+<div class="i"><span class="tag">/uː/</span><div class="en">shoe · do · new · chew · you · too · rule</div><div class="pt">No fim da palavra.</div></div>
+<div class="i"><span class="tag">/ʊ/</span><div class="en">cook · put · pull · book · foot · good · would · wood · soot</div><div class="pt">O /ʊ/ curto, como em <i>cook</i> e <i>put</i>.</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">pool × pull · suit × soot · fool × full · Luke × look · who'd × hood</div><div class="pt">piscina × puxar · terno × fuligem · bobo × cheio · Luke × olhar · quem teria × capuz</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Lições 13–14 · /ɝ/ · /ɚ/ · /ə/</div>
+<h2>O <i>r</i> vocálico e o schwa — as vogais fracas</h2>
+<p class="sdesc">Duas vogais que quase nenhuma outra língua tem. O <b>/ɝ/</b> de <i>turn</i> só aparece em sílaba <b>tônica</b> e é tenso. O <b>/ɚ/</b> de <i>father</i> é o mesmo som relaxado, e só aparece em sílaba <b>átona</b>. E o <b>/ə/</b> é a vogal em que quase toda sílaba átona do inglês se transforma.</p>
+<div class="items">
+<div class="i"><div class="en">/ɝ/ always receives strong emphasis and is found only in <i>stressed</i> syllables.</div><div class="pt">O /ɝ/ sempre recebe ênfase forte e só aparece em sílaba tônica.</div><div class="def">Lábios levemente projetados, músculos da língua <b>tensos</b>.</div></div>
+<div class="i"><span class="tag">/ɝ/</span><div class="en">early · urge · urban · fur · curve · turn · learn · herb · word · verb · circus</div><div class="pt">O som de <i>turn, first, serve</i>.</div></div>
+<div class="i"><span class="tag">/ɝ/</span><div class="en">prefer · sir · stir · her</div><div class="pt">No fim da palavra.</div></div>
+<div class="i"><div class="en">The lips and jaw are the same as for /ɝ/, but the tongue muscles are <i>completely relaxed</i>. /ɚ/ never receives strong emphasis.</div><div class="pt">Lábios e queixo iguais aos do /ɝ/, mas a língua totalmente relaxada. O /ɚ/ nunca é tônico.</div></div>
+<div class="i"><span class="tag">/ɚ/</span><div class="en">baker · sooner · butter · teacher · mirror · mother · weather</div><div class="pt">O /ɚ/ no fim da palavra — o <i>-er</i> de todo dia.</div></div>
+<div class="i"><span class="tag">/ɚ/</span><div class="en">liberty · butterfly · flowerpot · perhaps · understood · surprise · deliver</div><div class="pt">No meio da palavra.</div></div>
+<div class="i"><div class="en">The vowel /ɚ/ does <i>not</i> occur at the beginning of words.</div><div class="pt">O /ɚ/ nunca aparece no começo de palavra.</div></div>
+<div class="i"><span class="tag">/ə/</span><div class="en">a · upon · soda · about · sofa · lesson · pencil</div><div class="pt">O schwa — a vogal átona mais comum do inglês.</div><div class="def">Emphasize /ə/ <b>less</b> than the other vowels in the word.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Lições 15–17 · /aʊ/ /aɪ/ /ɔɪ/</div>
+<h2>Os três ditongos — deslizar de verdade</h2>
+<p class="sdesc">Ditongo é dois sons colados. Se os lábios não deslizam de aberto para fechado, o ditongo vira vogal simples e a palavra muda.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɑ/ instead of /aʊ/: <i>pound</i> will sound like <i>pond</i> · <i>down</i> will sound like <i>Don</i>.</div><div class="pt">"Libra" vira "lago"; "para baixo" vira "Don".</div><div class="def">/aʊ/ = /ɑ/ + /ʊ/. Os lábios têm de sair de aberto para fechado.</div></div>
+<div class="i"><span class="tag">/aʊ/</span><div class="en">owl · ourselves · ounce · outside · outlet · loud · mouse · mountain · down · cow · allow</div><div class="pt">O som de <i>out, house, cow</i>.</div></div>
+<div class="i"><span class="tag">grafia</span><div class="en">/aʊ/ is always represented by the letter <i>o</i> followed by <i>u</i>, <i>w</i> or <i>ugh</i>.</div><div class="pt">O /aʊ/ é sempre escrito com o seguido de u, w ou ugh.</div><div class="def">Regra sem exceção prática — vale decorar.</div></div>
+<div class="i"><span class="tag">/aɪ/</span><div class="en">idea · item · ice · icon · aisle · bite/byte · fight · kind · five · eye/I · by/buy · lie/lye · sigh</div><div class="pt">O som de <i>I, my, pie</i>.</div><div class="def">Frequentemente escrito com <b>i</b> ou <b>y</b>. Cuidado só com a grafia irregular.</div></div>
+<div class="i"><span class="tag">/ɔɪ/</span><div class="en">oil · oyster · oink · ointment · oily · join · foil · noise · boil · coin · poison</div><div class="pt">O som de <i>oil, noise, boy</i>.</div></div>
+<div class="i"><span class="tag">/ɔɪ/</span><div class="en">toy · enjoy · destroy · boy · annoy</div><div class="pt">No fim da palavra.</div></div>
+<div class="i"><span class="tag">grafia</span><div class="en">English words with /ɔɪ/ are spelled <i>oy</i> or <i>oi</i>. There are virtually no exceptions.</div><div class="pt">O /ɔɪ/ se escreve oy ou oi — praticamente sem exceção.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Lição 19 · acento da palavra</div>
+<h2>Onde cai a sílaba forte</h2>
+<p class="sdesc">O inglês <b>não tem acento gráfico</b> nem regra fixa — e errar a sílaba muda a palavra. Estas são as regularidades que o livro identifica.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en"><i>desert</i> (região seca) will sound like <i>dessert</i> (doce) · <i>invalid</i> (pessoa doente) will sound like <i>invalid</i> (nulo).</div><div class="pt">Errar a sílaba tônica troca a palavra inteira.</div><div class="def">Em inglês <b>não há regra consistente</b> de acentuação — por isso é preciso ouvir e imitar.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you stress every vowel equally and forget to reduce the unaccented ones: <i>tomorrow</i> and <i>because</i> will sound wrong.</div><div class="pt">Se você pronunciar todas as vogais com o mesmo peso, sem reduzir as átonas, tudo soa errado.</div><div class="def">É exatamente o que o falante de português faz por hábito.</div></div>
+<div class="i"><span class="tag">1ª sílaba</span><div class="en">The majority of two-syllable words: <i>o</i>ven · <i>aw</i>ful · <i>ev</i>er · <i>bro</i>ther · <i>Tues</i>day · <i>win</i>dow</div><div class="pt">A maioria das palavras de duas sílabas é acentuada na primeira.</div></div>
+<div class="i"><span class="tag">1ª sílaba</span><div class="en">Compound nouns: <i>bed</i>room · <i>stop</i>light · <i>school</i>house · <i>book</i>store</div><div class="pt">Substantivo composto: acento na primeira parte.</div></div>
+<div class="i"><span class="tag">1ª sílaba</span><div class="en">Multiples of ten: <i>twen</i>ty · <i>thir</i>ty · <i>for</i>ty · <i>fif</i>ty · <i>six</i>ty · <i>sev</i>enty</div><div class="pt">Múltiplos de dez: acento na primeira sílaba.</div></div>
+<div class="i"><span class="tag">2ª sílaba</span><div class="en">Reflexive pronouns: my<i>self</i> · your<i>self</i> · him<i>self</i> · her<i>self</i> · our<i>selves</i></div><div class="pt">Pronome reflexivo: acento na segunda sílaba.</div></div>
+<div class="i"><span class="tag">2ª sílaba</span><div class="en">Compound verbs: out<i>do</i> · out<i>done</i> · out<i>run</i> · out<i>smart</i> · over<i>look</i></div><div class="pt">Verbo composto: acento na segunda ou na última sílaba.</div></div>
+<div class="i"><span class="tag">contraste</span><div class="en"><i>ap</i>ple × a<i>round</i> · <i>ta</i>ble × al<i>low</i> · <i>mo</i>ther × in<i>vite</i> · <i>tea</i>cher × com<i>plete</i></div><div class="pt">Coluna da esquerda: acento na primeira. Direita: na segunda.</div></div>
+<div class="i"><span class="tag">contraste</span><div class="en"><i>win</i>ter × sup<i>port</i> · <i>pa</i>per × be<i>lieve</i> · <i>base</i>ball × my<i>self</i> · <i>break</i>fast × out<i>run</i> · <i>six</i>ty × be<i>hind</i></div><div class="pt">Mais pares de treino do mesmo exercício.</div></div>
+<div class="i"><span class="tag">3 sílabas</span><div class="en">1ª: <i>ac</i>cident, <i>straw</i>berry, <i>sev</i>enty · 2ª: ac<i>cep</i>tance, va<i>nil</i>la, ex<i>am</i>ine · 3ª: after<i>noon</i>, abso<i>lute</i></div><div class="pt">Palavras de três sílabas têm os três padrões possíveis.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Lição 20 · acento da frase</div>
+<h2>Content words × function words</h2>
+<p class="sdesc">Dentro da frase, o inglês acentua só as palavras que <b>carregam sentido</b> e engole as gramaticais. É daí que vem o ritmo da língua — e é isso que o brasileiro não faz.</p>
+<div class="items">
+<div class="i"><div class="en"><b>Content words</b> — nouns, verbs, adjectives, adverbs and question words. We normally <i>stress</i> them.</div><div class="pt">Palavras de conteúdo: substantivo, verbo, adjetivo, advérbio e palavra interrogativa. São as acentuadas.</div></div>
+<div class="i"><div class="en"><b>Function words</b> — articles (<i>the, a</i>), prepositions (<i>for, of, in, to</i>), pronouns (<i>I, her, him, he, she, you</i>), conjunctions (<i>but, as, and</i>), helping verbs (<i>is, was, are, were, has, can</i>). We normally do <i>not</i> stress them.</div><div class="pt">Palavras de função: artigo, preposição, pronome, conjunção e auxiliar. Não recebem acento.</div></div>
+<div class="i"><div class="en"><i>soon</i>er or <i>lat</i>er · in a <i>mo</i>ment · an <i>ap</i>ple a <i>day</i></div><div class="pt">mais cedo ou mais tarde · num instante · uma maçã por dia</div><div class="def">Só o que está em destaque recebe força.</div></div>
+<div class="i"><div class="en">to <i>tell</i> the <i>truth</i> · as <i>soft</i> as a <i>kit</i>ten</div><div class="pt">para dizer a verdade · macio como um gatinho</div></div>
+<div class="i"><div class="en"><i>Si</i>lence is <i>gold</i>en. · <i>Hon</i>esty is the <i>best</i> <i>pol</i>icy.</div><div class="pt">O silêncio é de ouro. · A honestidade é a melhor política.</div></div>
+<div class="i"><div class="en"><i>Truth</i> is <i>strang</i>er than <i>fic</i>tion. · A <i>pen</i>ny <i>saved</i> is a <i>pen</i>ny <i>earned</i>.</div><div class="pt">A realidade supera a ficção. · Um centavo economizado é um centavo ganho.</div></div>
+<div class="i"><div class="en">To <i>err</i> is <i>hu</i>man; to for<i>give</i> is di<i>vine</i>.</div><div class="pt">Errar é humano; perdoar é divino.</div></div>
+<div class="i"><span class="tag">ênfase</span><div class="en">I <i>bought</i> ten ties. (não me deram — eu comprei)</div><div class="pt">Eu comprei dez gravatas.</div><div class="def">Mudar a palavra acentuada muda o sentido sem mudar uma letra.</div></div>
+<div class="i"><span class="tag">ênfase</span><div class="en">I bought ten <i>ties</i>. (não camisas — gravatas)</div><div class="pt">Eu comprei dez gravatas.</div></div>
+<div class="i"><span class="tag">ênfase</span><div class="en">Who likes candy? ~ <i>Sam</i> likes candy. · What does Sam like? ~ Sam likes <i>candy</i>.</div><div class="pt">Quem gosta de doce? ~ O Sam. · Do que o Sam gosta? ~ De doce.</div><div class="def">A resposta acentua exatamente o que a pergunta pediu.</div></div>
+<div class="i"><span class="tag">ênfase</span><div class="en">Is that his car? ~ No, that's <i>her</i> car. · Will she stay? ~ No, she'll <i>leave</i>.</div><div class="pt">Esse carro é dele? ~ Não, é dela. · Ela vai ficar? ~ Não, vai embora.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Lição 21 · ritmo</div>
+<h2>Contração, blending e redução</h2>
+<p class="sdesc">Não usar contração deixa a fala <b>dura e artificial</b>. E, na conversa, as palavras se colam umas nas outras e sons somem. Isso é inglês correto — só nunca se escreve assim.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you stress each word equally: "He will leave at three" will sound like "He. Will. Leave. At. Three."</div><div class="pt">Acentuar cada palavra igual produz aquele ritmo picotado de sotaque.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you avoid contractions: "I can't go" will sound like "I can not go" · "He likes ham'n eggs" will sound like "He likes ham and eggs".</div><div class="pt">Evitar contração soa formal demais e não natural.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you pause in the wrong place: "I don't know Joan" will sound like "I don't know, Joan".</div><div class="pt">Pausa no lugar errado muda o sentido: "não conheço a Joan" vira "não sei, Joan".</div></div>
+<div class="i"><div class="en">I am late again. → <i>I'm</i> late again.</div><div class="pt">Estou atrasado de novo.</div></div>
+<div class="i"><div class="en">Mary does not know. → Mary <i>doesn't</i> know. · You are next in line. → <i>You're</i> next in line.</div><div class="pt">A Mary não sabe. · Você é o próximo da fila.</div></div>
+<div class="i"><div class="en">We have already met. → <i>We've</i> already met. · That is right! → <i>That's</i> right!</div><div class="pt">A gente já se conheceu. · Isso mesmo!</div></div>
+<div class="i"><div class="en">They will not sing. → They <i>won't</i> sing. · Steve has not eaten. → Steve <i>hasn't</i> eaten.</div><div class="pt">Eles não vão cantar. · O Steve não comeu.</div></div>
+<div class="i"><div class="en">He is very nice. → <i>He's</i> very nice. · Please do not yell. → Please <i>don't</i> yell. · We will be there. → <i>We'll</i> be there.</div><div class="pt">Ele é muito legal. · Por favor, não grite. · A gente vai estar lá.</div></div>
+<div class="i"><span class="tag">blending</span><div class="en">"How are you?" → <i>Howaryou?</i> · "Do it now!" → <i>Doitnow!</i></div><div class="pt">Na conversa, as palavras se colam como se fossem uma só.</div><div class="def">Isso acontece <b>só na fala</b> — nunca se escreve assim.</div></div>
+<div class="i"><span class="tag">blending</span><div class="en">"I miss Sam" → <i>I misam</i> · "Don't take it" → <i>Don'take it</i></div><div class="pt">Sons somem completamente na junção das palavras.</div></div>
+<div class="i"><span class="tag">redução</span><div class="en"><i>cream'n sugar</i> (cream and sugar) · <i>bread'n butter</i> (bread and butter) · <i>ham'n cheese</i> (ham and cheese)</div><div class="pt">creme e açúcar · pão com manteiga · presunto com queijo</div><div class="def">O <b>and</b> vira só um /n/.</div></div>
+<div class="i"><span class="tag">redução</span><div class="en"><i>pieceapie</i> (piece of pie) · <i>He had a cupacoffee</i> (a cup of coffee)</div><div class="pt">um pedaço de torta · Ele tomou uma xícara de café</div><div class="def">O <b>of</b> vira só um /ə/.</div></div>
+<div class="i"><span class="tag">redução</span><div class="en"><i>I gota school</i> (I go to school) · <i>I wanna takeabreak</i> (I want to take a break)</div><div class="pt">Eu vou para a escola · Quero dar uma pausa</div></div>
+<div class="i"><span class="tag">redução</span><div class="en"><i>Seeyalater</i> (See you later) · <i>Leavmealone</i> (Leave me alone) · <i>Whatimeisit?</i> (What time is it?)</div><div class="pt">Até mais · Me deixa em paz · Que horas são?</div></div>
+<div class="i"><span class="tag">linking</span><div class="en">Linking is connecting the last sound of one word to the first sound of the next.</div><div class="pt">Ligação é conectar o último som de uma palavra ao primeiro som da seguinte.</div><div class="def">É o que faz o inglês soar contínuo em vez de picotado.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Lição 22 · entonação</div>
+<h2>Quando a voz sobe e quando desce</h2>
+<p class="sdesc">Descer no fim = <b>afirmação, confiança</b>. Subir = <b>pergunta de sim/não, dúvida</b>. Voz parada no meio = soa entediado ou como se a frase não tivesse acabado.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If your voice rises when it should fall: "That's Bill's car" will sound like "That's Bill's car?"</div><div class="pt">Subir onde deveria descer transforma afirmação em pergunta — ou soa duvidoso e irritado.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If your voice stays level: "I went home" will sound like "I went home... and...".</div><div class="pt">Voz parada soa entediada e faz o ouvinte achar que você não terminou.</div></div>
+<div class="i"><span class="tag">desce ↘</span><div class="en">Linda is my sister. ↘ · He is not going. ↘</div><div class="pt">A Linda é minha irmã. · Ele não vai.</div><div class="def">Frase declarativa termina com a voz caindo.</div></div>
+<div class="i"><span class="tag">desce ↘</span><div class="en">Where is my book? ↘ · When did he leave? ↘</div><div class="pt">Cadê meu livro? · Quando ele saiu?</div><div class="def">Pergunta com <b>who, what, when, why, where, which, how</b> também desce.</div></div>
+<div class="i"><span class="tag">desce ↘</span><div class="en">I have four brothers. ↘ · He is not my friend. ↘ · We like ice cream. ↘</div><div class="pt">Tenho quatro irmãos. · Ele não é meu amigo. · A gente gosta de sorvete.</div></div>
+<div class="i"><span class="tag">desce ↘</span><div class="en">What is your name? ↘ · How is your family? ↘ · Who will drive you home? ↘ · Why did he leave? ↘</div><div class="pt">Qual é o seu nome? · Como vai sua família? · Quem vai te levar em casa? · Por que ele foi embora?</div></div>
+<div class="i"><span class="tag">sobe ↗</span><div class="en">Will you stay? ↗ (No, I can't. ↘) · Do you like school? ↗ (Yes, I do. ↘)</div><div class="pt">Você vai ficar? (Não, não posso.) · Você gosta da escola? (Gosto.)</div><div class="def">Pergunta de sim/não sobe; a resposta desce.</div></div>
+<div class="i"><span class="tag">sobe ↗</span><div class="en">Can you see? ↗ · Does he play golf? ↗ · May I borrow it? ↗ · Did he arrive? ↗</div><div class="pt">Está enxergando? · Ele joga golfe? · Posso pegar emprestado? · Ele chegou?</div><div class="def">Perguntas com can, do, will, would, may e is.</div></div>
+<div class="i"><span class="tag">sobe ↗</span><div class="en">I'm not positive. ↗ · I think he's coming. ↗</div><div class="pt">Não tenho certeza. · Acho que ele vem.</div><div class="def">Afirmação que expressa dúvida também sobe.</div></div>
+<div class="i"><span class="tag">confiança</span><div class="en">They have twenty children. ↘ (afirmando um fato) × They have twenty children. ↗ (com dúvida ou espanto)</div><div class="pt">Eles têm vinte filhos.</div><div class="def">A mesma frase: descendo você soa seguro; subindo, incrédulo.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Lições 24–25 · /s/ × /z/</div>
+<h2>O <i>z</i> que o brasileiro apaga — e o <i>e</i> que ele inventa</h2>
+<p class="sdesc">Dois problemas de uma vez: pôr um <b>e</b> antes do s inicial (<i>estate</i> em vez de <i>state</i>) e não vibrar as cordas vocais no /z/, transformando <i>eyes</i> em <i>ice</i>.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you produce /ɛ/ before /s/: <i>state</i> will sound like <i>estate</i>.</div><div class="pt">Se você puser um "e" antes do s, "estado" vira "propriedade".</div><div class="def">É o erro mais audível do brasileiro em inglês: <b>e</b>sport, <b>e</b>special, <b>e</b>student.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʃ/ instead of /s/: <i>sip</i> will sound like <i>ship</i>.</div><div class="pt">Se você disser /ʃ/ no lugar de /s/, "gole" vira "navio".</div><div class="def">Mantenha o ar firme, como o chiado de uma cobra: ssssssss.</div></div>
+<div class="i"><span class="tag">/s/</span><div class="en">skip · snake · sky · lesson · castle · custom · history · basket · bus · face · course · makes</div><div class="pt">O /s/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /s/ instead of /z/: <i>zoo</i> will sound like <i>Sue</i> · <i>eyes</i> will sound like <i>ice</i>.</div><div class="pt">"Zoológico" vira "Sue"; "olhos" vira "gelo".</div><div class="def">/z/ é <b>sonoro</b> — as cordas vocais TÊM de vibrar. Pense no zumbido da abelha: bzzzzz.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /dʒ/ instead of /z/: <i>zest</i> will sound like <i>jest</i>.</div><div class="pt">Se você disser /dʒ/ no lugar de /z/, "entusiasmo" vira "gracejo".</div></div>
+<div class="i"><div class="en">We finally won the (<i>race</i> / <i>raise</i>).</div><div class="pt">Finalmente ganhamos a corrida. / Finalmente conseguimos o aumento.</div></div>
+<div class="i"><div class="en">I know that (<i>face</i> / <i>phase</i>).</div><div class="pt">Conheço esse rosto. / Conheço essa fase.</div></div>
+<div class="i"><div class="en">He gave me a good (<i>price</i> / <i>prize</i>).</div><div class="pt">Ele me deu um bom preço. / Ele me deu um bom prêmio.</div></div>
+<div class="i"><div class="en">Look at her small (<i>niece</i> / <i>knees</i>).</div><div class="pt">Olha a sobrinha pequena dela. / Olha os joelhos pequenos dela.</div></div>
+<div class="i"><div class="en">We must accept the (<i>loss</i> / <i>laws</i>).</div><div class="pt">Temos de aceitar a perda. / Temos de aceitar as leis.</div></div>
+<div class="i"><div class="en">The sheep have (<i>fleece</i> / <i>fleas</i>).</div><div class="pt">As ovelhas têm lã. / As ovelhas têm pulgas.</div></div>
+<div class="i"><div class="en">Did you hear the (<i>bus</i> / <i>buzz</i>)?</div><div class="pt">Você ouviu o ônibus? / Você ouviu o zumbido?</div></div>
+<div class="i"><div class="en">His dog has a large (<i>muscle</i> / <i>muzzle</i>).</div><div class="pt">O cachorro dele tem um músculo grande. / O cachorro dele tem um focinho grande.</div></div>
+<div class="i"><div class="en">How much is the (<i>sink</i> / <i>zinc</i>)?</div><div class="pt">Quanto custa a pia? / Quanto custa o zinco?</div></div>
+<div class="i"><div class="en">I can identify the (<i>spice</i> / <i>spies</i>).</div><div class="pt">Consigo identificar o tempero. / Consigo identificar os espiões.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Lições 26–27 · /t/ e /d/</div>
+<h2>A aspiração do <i>t</i> e o final sonoro do <i>d</i></h2>
+<p class="sdesc">Duas coisas que o português não faz: o /t/ inicial sai com <b>sopro de ar</b>, e o /d/ final precisa de <b>voz</b>. Sem sopro, <i>two</i> vira <i>do</i>; sem voz, <i>bed</i> vira <i>bet</i>. E a ponta da língua vai na <b>gengiva</b>, nunca nos dentes.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /d/ instead of /t/: <i>two</i> will sound like <i>do</i>.</div><div class="pt">Sem aspiração, "dois" vira "fazer".</div><div class="def">Teste: segure um lenço de papel solto na frente da boca. Se o /t/ estiver certo, o papel treme.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ts/ instead of /t/: <i>tune</i> will sound like <i>tsune</i>. · If you say /tʃ/ instead of /t/: <i>tease</i> will sound like <i>cheese</i>.</div><div class="pt">O "tchi" brasileiro antes de i e u destrói o /t/ inglês.</div><div class="def">Erro clássico de quem fala português: <b>ti</b> virando <b>tchi</b>.</div></div>
+<div class="i"><div class="en">The tongue tip should touch the <i>upper gum ridge</i>, NOT the back of your upper front teeth.</div><div class="pt">A ponta da língua toca a gengiva acima dos dentes — não os dentes.</div></div>
+<div class="i"><span class="tag">/t/</span><div class="en">time · to · talk · between · until · attend · it · went</div><div class="pt">O /t/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ð/ instead of /d/: <i>ladder</i> will sound like <i>lather</i> · <i>breeding</i> will sound like <i>breathing</i>.</div><div class="pt">"Escada" vira "espuma"; "reprodução" vira "respiração".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /t/ instead of /d/: <i>card</i> will sound like <i>cart</i> · <i>bed</i> will sound like <i>bet</i>.</div><div class="pt">"Cartão" vira "carrinho"; "cama" vira "aposta".</div><div class="def">No fim da palavra, muita gente esquece de vibrar as cordas vocais.</div></div>
+<div class="i"><span class="tag">/d/</span><div class="en">day · body · pudding · food · bad · bed</div><div class="pt">O /d/ no começo, no meio e no fim.</div></div>
+<div class="i"><div class="en">I can't find the (<i>belt</i> / <i>bell</i>).</div><div class="pt">Não acho o cinto. / Não acho o sino.</div></div>
+<div class="i"><div class="en">My son is (<i>five</i> / <i>fine</i>). · I think he's (<i>dead</i> / <i>deaf</i>).</div><div class="pt">Meu filho tem cinco anos. / Meu filho está bem. · Acho que ele está morto. / Acho que ele é surdo.</div></div>
+<div class="i"><div class="en">Tim bought another (<i>car</i> / <i>card</i>).</div><div class="pt">O Tim comprou outro carro. / O Tim comprou outro cartão.</div><div class="def">A consoante final <b>existe</b> em inglês. Em português ela some — e aí some o sentido.</div></div>
+<div class="i"><div class="en">The (<i>pack</i> / <i>pact</i>) · There's a (<i>lake</i> / <i>lane</i>) · The (<i>den</i> / <i>dent</i>) · The (<i>coal</i> / <i>colt</i>)</div><div class="pt">pacote × pacto · lago × faixa · toca × amassado · carvão × potro</div></div>
+<div class="i"><div class="en">The men cut the (<i>tree</i> / <i>trees</i>). · He repaired the (<i>watch</i> / <i>watches</i>).</div><div class="pt">Os homens cortaram a árvore. / …as árvores. · Ele consertou o relógio. / …os relógios.</div><div class="def">O plural também depende de uma consoante final que o brasileiro tende a comer.</div></div>
+<div class="i"><div class="en">Did they finally make (<i>peace</i> / <i>peas</i>)? · Did you see the little (<i>cups</i> / <i>cubs</i>)?</div><div class="pt">Eles finalmente fizeram as pazes? / Eles finalmente fizeram ervilhas? · Você viu as xicrinhas? / Você viu os filhotinhos?</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Lição 28 · /θ/</div>
+<h2>O <i>th</i> surdo — <i>think</i>, não <i>sink</i></h2>
+<p class="sdesc">Som que não existe em português. A língua vai <b>entre os dentes</b> e o ar sai contínuo. Quatro substituições possíveis, quatro palavras diferentes.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /s/ instead of /θ/: <i>thank</i> will sound like <i>sank</i>.</div><div class="pt">"Agradecer" vira "afundou".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʃ/ instead of /θ/: <i>thin</i> will sound like <i>shin</i>.</div><div class="pt">"Magro" vira "canela (da perna)".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /f/ instead of /θ/: <i>Ruth</i> will sound like <i>roof</i>.</div><div class="pt">"Ruth" vira "telhado".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /t/ instead of /θ/: <i>path</i> will sound like <i>pat</i>.</div><div class="pt">"Trilha" vira "tapinha".</div><div class="def">Esse é o mais comum entre brasileiros.</div></div>
+<div class="i"><div class="en">Concentrate on placing your tongue <i>between your teeth</i>. Look in a mirror, and keep the airstream continuous.</div><div class="pt">Ponha a língua entre os dentes. Olhe no espelho e mantenha o ar saindo sem parar.</div></div>
+<div class="i"><span class="tag">/θ/</span><div class="en">think · theory · theme · thaw · truth</div><div class="pt">O /θ/ no começo da palavra.</div></div>
+<div class="i"><span class="tag">/θ/</span><div class="en">anything · healthy · wealthy · bathtub</div><div class="pt">No meio da palavra.</div></div>
+<div class="i"><span class="tag">/θ/</span><div class="en">teeth · bath · mouth · truth · path</div><div class="pt">No fim da palavra.</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">thank × sank · thin × shin · Ruth × roof · path × pat · thought × sought · both × boat</div><div class="pt">A grade completa de confusão do th surdo.</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Lição 29 · /ð/</div>
+<h2>O <i>th</i> sonoro — <i>they</i>, não <i>day</i></h2>
+<p class="sdesc">Mesma posição de língua do /θ/, mas <b>com voz</b>. É o som de <i>the</i>, <i>this</i>, <i>that</i> — as palavras mais frequentes da língua.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /d/ instead of /ð/: <i>they</i> will sound like <i>day</i>.</div><div class="pt">"Eles" vira "dia".</div><div class="def">Substituição mais comum de todas.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /z/ instead of /ð/: <i>bathe</i> will sound like <i>bays</i>.</div><div class="pt">"Banhar-se" vira "baías".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /dʒ/ instead of /ð/: <i>than</i> will sound like <i>Jan</i>.</div><div class="pt">"Do que" vira "Jan".</div></div>
+<div class="i"><div class="en">Look in the mirror as you pronounce /ð/. Make sure you can <i>see the tip of your tongue</i>.</div><div class="pt">Olhe no espelho: você tem de conseguir ver a ponta da própria língua.</div><div class="def">Assim não sobra problema com <b>these, them</b> e <b>those</b>.</div></div>
+<div class="i"><span class="tag">/ð/</span><div class="en">the · that · there · they · this · those · them · these</div><div class="pt">O /ð/ no começo — as palavras mais usadas do inglês.</div></div>
+<div class="i"><span class="tag">/ð/</span><div class="en">other · leather · gather · father · mother · weather</div><div class="pt">No meio da palavra.</div></div>
+<div class="i"><span class="tag">/ð/</span><div class="en">bathe · smooth · breathe · with</div><div class="pt">No fim da palavra.</div></div>
+<div class="i"><div class="en">I loathe this wet (<i>weather</i> / <i>whether</i>).</div><div class="pt">Detesto esse tempo úmido. / Detesto esse "se".</div></div>
+<div class="i"><div class="en">The family will be (<i>there</i> / <i>their</i>). · Mother told (<i>they</i> / <i>them</i>).</div><div class="pt">A família vai estar lá. / A família vai ser deles. · A mãe contou para eles.</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">they × day · bathe × bays · than × Jan · breathe × breed · with × wit</div><div class="pt">A grade completa de confusão do th sonoro.</div></div>
+</div>
+</section>
+
+<section id="s16">
+<div class="snum">Lições 30–31 · /ʃ/ × /tʃ/</div>
+<h2><i>she</i> × <i>see</i> × <i>chew</i></h2>
+<p class="sdesc">No /ʃ/ a língua <b>não toca</b> o céu da boca — é um chiado contínuo. No /tʃ/ ela <b>encosta na gengiva</b> e solta de uma vez, como um espirro.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /s/ instead of /ʃ/: <i>she</i> will sound like <i>see</i>.</div><div class="pt">"Ela" vira "ver".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /tʃ/ instead of /ʃ/: <i>shoe</i> will sound like <i>chew</i>.</div><div class="pt">"Sapato" vira "mastigar".</div><div class="def">Não deixe a língua tocar os dentes nem a gengiva, ou sai /tʃ/ por engano.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʃ/ instead of /tʃ/: <i>chair</i> will sound like <i>share</i> · <i>which</i> will sound like <i>wish</i>.</div><div class="pt">"Cadeira" vira "compartilhar"; "qual" vira "desejo".</div><div class="def">Comece o /tʃ/ com a língua na mesma posição do /t/. É um som explosivo — pense em "atchim".</div></div>
+<div class="i"><span class="tag">/ʃ/</span><div class="en">shy · shoe · shop · shape · official · nation · sugar · ocean · foolish · dish · rush</div><div class="pt">O /ʃ/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag">/tʃ/</span><div class="en">chew · chest · chicken · butcher · question · itch · reach</div><div class="pt">O /tʃ/ no começo, no meio e no fim.</div></div>
+<div class="i"><div class="en">I didn't see the (<i>dish</i> / <i>ditch</i>).</div><div class="pt">Não vi o prato. / Não vi a vala.</div></div>
+<div class="i"><div class="en">He hurt his (<i>shin</i> / <i>chin</i>).</div><div class="pt">Ele machucou a canela. / Ele machucou o queixo.</div></div>
+<div class="i"><div class="en">Did you hear that (<i>shatter</i> / <i>chatter</i>)?</div><div class="pt">Você ouviu aquilo estilhaçar? / Você ouviu aquela tagarelice?</div></div>
+<div class="i"><div class="en">It's a silly (<i>wish</i> / <i>witch</i>).</div><div class="pt">É um desejo bobo. / É uma bruxa boba.</div></div>
+<div class="i"><div class="en">She brought me the (<i>wash</i> / <i>watch</i>).</div><div class="pt">Ela me trouxe a roupa lavada. / Ela me trouxe o relógio.</div></div>
+<div class="i"><div class="en">You have a large (<i>share</i> / <i>chair</i>).</div><div class="pt">Você tem uma parte grande. / Você tem uma cadeira grande.</div></div>
+<div class="i"><div class="en">We must fix the (<i>ship</i> / <i>chip</i>).</div><div class="pt">Temos de consertar o navio. / Temos de consertar o chip.</div></div>
+<div class="i"><div class="en">Does she have a new (<i>crush</i> / <i>crutch</i>)?</div><div class="pt">Ela está de paixão nova? / Ela tem uma muleta nova?</div></div>
+<div class="i"><div class="en">You completed the (<i>shore</i> / <i>chore</i>).</div><div class="pt">Você terminou a orla. / Você terminou a tarefa.</div></div>
+</div>
+</section>
+
+<section id="s17">
+<div class="snum">Lições 32–33 · /ʒ/ /dʒ/ /j/</div>
+<h2><i>vision</i>, <i>jam</i> e <i>yes</i> — os três que se cruzam</h2>
+<p class="sdesc">O /ʒ/ é o nosso "j" de <i>já</i>. O /dʒ/ começa como /d/ e explode. O /j/ é o "i" de <i>ioga</i> — e some com facilidade na boca de quem fala português.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʃ/ instead of /ʒ/: <i>vision</i> will sound like <i>vishion</i>. · If you say /dʒ/: <i>pleasure</i> will sound like <i>pledger</i>.</div><div class="pt">O /ʒ/ é sonoro: ponha a mão na garganta e sinta a vibração.</div></div>
+<div class="i"><span class="tag">/ʒ/</span><div class="en">measure · pleasure · vision · division · usual · Asia · decision · occasion · television</div><div class="pt">O /ʒ/ no meio da palavra.</div></div>
+<div class="i"><span class="tag">/ʒ/</span><div class="en">rouge · garage · prestige · beige · corsage · camouflage</div><div class="pt">No fim da palavra — quase sempre em palavra de origem francesa.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /j/ instead of /dʒ/: <i>Jell-O</i> will sound like <i>yellow</i>.</div><div class="pt">"Gelatina" vira "amarelo".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʒ/ instead of /dʒ/: <i>legion</i> will sound like <i>lesion</i>. · If you say /tʃ/: <i>badge</i> will sound like <i>batch</i>.</div><div class="pt">"Legião" vira "lesão"; "crachá" vira "lote".</div><div class="def">Comece o /dʒ/ com a língua na posição do /d/, pressionada na gengiva, e com as cordas vibrando.</div></div>
+<div class="i"><span class="tag">/dʒ/</span><div class="en">jam · jar · agent · adjust · enjoy · angel · magic · age · edge · cage</div><div class="pt">O /dʒ/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /dʒ/ instead of /j/: <i>yet</i> will sound like <i>jet</i>. · If you omit /j/: <i>year</i> will sound like <i>ear</i>.</div><div class="pt">"Ainda" vira "jato"; "ano" vira "orelha".</div><div class="def">No /j/ a ponta da língua fica atrás dos dentes <b>inferiores</b> e NÃO toca o céu da boca.</div></div>
+<div class="i"><span class="tag">/j/</span><div class="en">you · yes · yell · young · use · youth · year · yesterday</div><div class="pt">O /j/ no começo da palavra.</div></div>
+<div class="i"><span class="tag">/j/</span><div class="en">onion · beyond · backyard · canyon · values · formula</div><div class="pt">No meio da palavra.</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">Jell-O × yellow · yet × jet · year × ear · legion × lesion · badge × batch</div><div class="pt">A grade de confusão entre os três.</div></div>
+</div>
+</section>
+
+<section id="s18">
+<div class="snum">Lições 36–37 · /p/ × /b/</div>
+<h2>A explosão do <i>p</i> e a voz do <i>b</i></h2>
+<p class="sdesc">O /p/ inglês é <b>muito mais explosivo</b> que o português. Sem o sopro, <i>pear</i> vira <i>bear</i>. E o /b/ final precisa de voz, senão <i>robe</i> vira <i>rope</i>.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you forget to aspirate /p/: <i>pear</i> will sound like <i>bear</i> · <i>pat</i> will sound like <i>bat</i>.</div><div class="pt">"Pera" vira "urso"; "tapinha" vira "morcego".</div><div class="def">Teste do lenço de papel de novo: se o /p/ estiver certo, o papel treme.</div></div>
+<div class="i"><div class="en">When <i>p</i> follows <i>s</i> (spot, spend, spy), it is <i>NOT</i> aspirated.</div><div class="pt">Depois de s, o p não é aspirado.</div><div class="def">Mesma regra do /k/: <i>sky, skin, skate</i>.</div></div>
+<div class="i"><span class="tag">/p/</span><div class="en">pain · pay · pen · pipe · happy · open · supper · top · map</div><div class="pt">O /p/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /v/ instead of /b/: <i>boat</i> will sound like <i>vote</i>.</div><div class="pt">"Barco" vira "voto".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /p/ instead of /b/: <i>robe</i> will sound like <i>rope</i> · <i>cab</i> will sound like <i>cap</i>.</div><div class="pt">"Roupão" vira "corda"; "táxi" vira "boné".</div><div class="def">No fim da palavra, faça as cordas vibrarem e pressione bem os lábios.</div></div>
+<div class="i"><span class="tag">/b/</span><div class="en">boat · best · be · obey · label · rubber · rib · cab</div><div class="pt">O /b/ no começo, no meio e no fim.</div></div>
+<div class="i"><div class="en">I like rye (<i>bread</i> / <i>bred</i>). · Don't walk in your (<i>bear</i> / <i>bare</i>).</div><div class="pt">Gosto de pão de centeio. / Gosto de centeio criado. · Não ande de urso. / Não ande descalço.</div></div>
+<div class="i"><div class="en">Bob has (<i>been</i> / <i>bin</i>). · Please store the beans in the (<i>been</i> / <i>bin</i>).</div><div class="pt">O Bob esteve. / O Bob tem uma caixa. · Guarde os feijões na caixa.</div></div>
+<div class="i"><div class="en">The wind (<i>blew</i> / <i>blue</i>). · Betty's (<i>blue</i> / <i>blew</i>).</div><div class="pt">O vento soprou. / O vento azul. · A Betty está triste. / A Betty soprou.</div></div>
+<div class="i"><div class="en">The dog will (<i>berry</i> / <i>bury</i>).</div><div class="pt">O cachorro vai enterrar.</div></div>
+<div class="i"><div class="en">My brother watches baseball when he's (<i>bored</i> / <i>board</i>). · The builder needs a bigger (<i>bored</i> / <i>board</i>).</div><div class="pt">Meu irmão vê beisebol quando está entediado. · O construtor precisa de uma tábua maior.</div></div>
+</div>
+</section>
+
+<section id="s19">
+<div class="snum">Lições 38–39 · /f/ × /v/ × /b/</div>
+<h2><i>very</i> × <i>berry</i> — o <i>v</i> que vira <i>b</i></h2>
+<p class="sdesc">Os dentes de cima têm de <b>tocar o lábio de baixo</b>. Trocar /v/ por /b/ é, segundo o livro, o erro que mais confunde o ouvinte americano.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /b/ instead of /v/: <i>very</i> will sound like <i>berry</i> · <i>vest</i> will sound like <i>best</i>.</div><div class="pt">"Muito" vira "frutinha"; "colete" vira "melhor".</div><div class="def">"This can greatly confuse the listener!" — o alerta é do próprio livro.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /f/ instead of /v/: <i>save</i> will sound like <i>safe</i> · <i>leave</i> will sound like <i>leaf</i>.</div><div class="pt">"Salvar" vira "seguro"; "partir" vira "folha".</div><div class="def">No fim da palavra, é o esquecimento da voz que faz o /v/ virar /f/.</div></div>
+<div class="i"><div class="en">Look in the mirror as you practice /v/: place your <i>upper teeth over your bottom lip</i> and make your vocal cords vibrate.</div><div class="pt">No espelho: dentes de cima sobre o lábio de baixo, cordas vocais vibrando.</div></div>
+<div class="i"><span class="tag">/v/</span><div class="en">very · valley · vest · cover · movie · of · move · save · leave</div><div class="pt">O /v/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /h/ instead of /f/: <i>fat</i> will sound like <i>hat</i>. · If you say /p/ instead of /f/: <i>cuff</i> will sound like <i>cup</i>.</div><div class="pt">"Gordo" vira "chapéu"; "punho" vira "xícara".</div><div class="def">Alguns deixam os lábios abertos (sai /h/); outros fecham demais (sai /p/).</div></div>
+<div class="i"><span class="tag">/f/</span><div class="en">for · fast · five · from · face · before · awful · sofa · offer · if · leaf · laugh</div><div class="pt">O /f/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">very × berry · vest × best · boat × vote · save × safe · leave × leaf · fat × hat · cuff × cup</div><div class="pt">A grade completa de /f/, /v/ e /b/.</div></div>
+</div>
+</section>
+
+<section id="s20">
+<div class="snum">Lições 40–41 · /h/ e /w/</div>
+<h2>O <i>h</i> que não pode sumir e o <i>w</i> que não é <i>v</i></h2>
+<p class="sdesc">Em português o h é mudo — e o hábito faz o brasileiro apagá-lo em inglês. Já o /w/ pede lábios <b>redondos</b>, sem encostar nos dentes.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you omit /h/: <i>hat</i> will sound like <i>at</i> · <i>hand</i> will sound like <i>and</i>.</div><div class="pt">"Chapéu" vira "em"; "mão" vira "e".</div><div class="def">Relaxe a garganta e a língua e solte um sopro de ar, como um suspiro.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /f/ instead of /h/: <i>Hugh</i> will sound like <i>few</i>.</div><div class="pt">"Hugh" vira "poucos".</div></div>
+<div class="i"><span class="tag">/h/</span><div class="en">he · here · home · how · heat · hello · heart · ahead · inhale · perhaps · behind · anyhow · inherit</div><div class="pt">O /h/ no começo e no meio da palavra.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /v/ instead of /w/: <i>went</i> will sound like <i>vent</i> · <i>wheel</i> will sound like <i>veal</i>.</div><div class="pt">"Foi" vira "respiradouro"; "roda" vira "vitela".</div><div class="def">Isso muda completamente o sentido da palavra.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you omit /w/: <i>wool</i> will sound like <i>ool</i> · <i>wood</i> will sound like <i>ood</i>.</div><div class="pt">Alguns falantes apagam o /w/ antes de /u/ e /ʊ/.</div></div>
+<div class="i"><div class="en">Round your lips as for /uː/. Be sure your <i>lower lip does NOT touch your upper teeth</i>, or you'll make a /v/.</div><div class="pt">Arredonde os lábios como no /uː/ e não deixe o lábio de baixo tocar os dentes de cima.</div></div>
+<div class="i"><span class="tag">/w/</span><div class="en">we · word · work · wool · away · anyway · someone</div><div class="pt">O /w/ no começo e no meio da palavra.</div></div>
+<div class="i"><span class="tag">par mínimo</span><div class="en">hat × at · hand × and · Hugh × few · went × vent · wheel × veal</div><div class="pt">A grade de /h/ e /w/.</div></div>
+</div>
+</section>
+
+<section id="s21">
+<div class="snum">Lições 42–43 · /l/ × /r/</div>
+<h2><i>rice</i> × <i>lice</i> — a língua não pode encostar</h2>
+<p class="sdesc">O /r/ do português é feito tocando o céu da boca — e é exatamente isso que <b>não</b> pode acontecer no inglês. A ponta da língua se curva para cima <b>sem tocar</b> em nada. Se tocar, sai /l/.</p>
+<div class="items">
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /r/ instead of /l/: <i>flight</i> will sound like <i>fright</i> · <i>late</i> will sound like <i>rate</i>.</div><div class="pt">"Voo" vira "susto"; "atrasado" vira "taxa".</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /l/ instead of /r/: <i>berry</i> will sound like <i>belly</i> · <i>rice</i> will sound like <i>lice</i>.</div><div class="pt">"Frutinha" vira "barriga"; "arroz" vira "piolhos".</div><div class="def">Acontece porque o r de muitas línguas é uma mistura de /r/ e /l/, feita tocando o céu da boca.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /w/ instead of /r/: <i>red</i> will sound like <i>wed</i> · <i>right</i> will sound like <i>white</i>.</div><div class="pt">"Vermelho" vira "casar"; "certo" vira "branco".</div></div>
+<div class="i"><div class="en">Make sure the tip of your tongue <i>never touches your upper gum ridge</i> but curls upward toward the roof of your mouth.</div><div class="pt">A ponta da língua nunca toca a gengiva — ela se curva para cima, para o céu da boca.</div></div>
+<div class="i"><span class="tag">/r/</span><div class="en">red · right · sorry · orange · rice · very</div><div class="pt">O /r/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag">/l/</span><div class="en">leg · long · let · leave · asleep · only · alone · hello · all · call · able</div><div class="pt">O /l/ no começo, no meio e no fim.</div><div class="def">No fim da palavra, a parte de trás da língua sobe mais do que no começo.</div></div>
+<div class="i"><div class="en">Don't step on the (<i>glass</i> / <i>grass</i>).</div><div class="pt">Não pise no vidro. / Não pise na grama.</div></div>
+<div class="i"><div class="en">Please put this on your (<i>list</i> / <i>wrist</i>).</div><div class="pt">Ponha isto na sua lista. / Ponha isto no seu pulso.</div></div>
+<div class="i"><div class="en">The entire family is (<i>pleasant</i> / <i>present</i>).</div><div class="pt">A família inteira é agradável. / A família inteira está presente.</div></div>
+<div class="i"><div class="en">It was a terrible (<i>climb</i> / <i>crime</i>).</div><div class="pt">Foi uma escalada terrível. / Foi um crime terrível.</div></div>
+<div class="i"><div class="en">Look at the bright red (<i>flame</i> / <i>frame</i>).</div><div class="pt">Olha a chama vermelha viva. / Olha a moldura vermelha viva.</div></div>
+<div class="i"><div class="en">He likes black (<i>clothes</i> / <i>crows</i>).</div><div class="pt">Ele gosta de roupa preta. / Ele gosta de corvos pretos.</div></div>
+<div class="i"><div class="en">She has the (<i>blues</i> / <i>bruise</i>).</div><div class="pt">Ela está deprimida. / Ela está com um hematoma.</div></div>
+<div class="i"><div class="en">That's a new (<i>bloom</i> / <i>broom</i>). · I lost the (<i>lock</i> / <i>rock</i>). · We need new (<i>tiles</i> / <i>tires</i>).</div><div class="pt">É uma flor nova. / É uma vassoura nova. · Perdi o cadeado. / Perdi a pedra. · Precisamos de azulejos novos. / …de pneus novos.</div></div>
+</div>
+</section>
+
+<section id="s22">
+<div class="snum">Lições 44–47 · /k/ /g/ /m/ /n/ /ŋ/</div>
+<h2>Oclusivas finais e as três nasais</h2>
+<p class="sdesc">O /k/ inicial é explosivo; o /g/ final precisa de voz. E as três nasais se embolam justamente onde o português as apaga: <b>no fim da palavra</b>.</p>
+<div class="items">
+<div class="i"><div class="en">/k/ is very explosive in English. When it begins a word it must be said with strong aspiration. When <i>k</i> follows <i>s</i> (sky, skin, skate) it is <i>NOT</i> aspirated.</div><div class="pt">O /k/ inicial sai com sopro forte; depois de s, não.</div></div>
+<div class="i"><span class="tag">/k/</span><div class="en">come · can · car · key · quick · clock · walking · cookie · become · because · mechanic · like · make · took</div><div class="pt">O /k/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /k/ instead of /g/: <i>bag</i> will sound like <i>back</i>. · If you say /ŋ/ instead of /g/: <i>rug</i> will sound like <i>rung</i>.</div><div class="pt">"Bolsa" vira "costas"; "tapete" vira "tocou (sino)".</div><div class="def">Sempre faça as cordas vibrarem no /g/ final.</div></div>
+<div class="i"><span class="tag">/g/</span><div class="en">go · guess · get · green · bigger · cigar · hungry · agree · beg · dog · pig</div><div class="pt">O /g/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /n/ instead of /m/: <i>some</i> will sound like <i>sun</i>. · If you say /ŋ/ instead of /m/: <i>swim</i> will sound like <i>swing</i>.</div><div class="pt">"Algum" vira "sol"; "nadar" vira "balanço".</div><div class="def">No /m/, os lábios se juntam na posição de cantarolar: mmmmm.</div></div>
+<div class="i"><span class="tag">/m/</span><div class="en">me · mean · may · month · summer · army · hammer · among · am · time · him · room</div><div class="pt">O /m/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /m/ instead of /n/: <i>sun</i> will sound like <i>some</i>. · If you say /ŋ/ instead of /n/: <i>ran</i> will sound like <i>rang</i>.</div><div class="pt">"Sol" vira "algum"; "correu" vira "tocou".</div><div class="def">Pressione SEMPRE a ponta da língua na gengiva atrás dos dentes de cima, principalmente no fim da palavra.</div></div>
+<div class="i"><span class="tag">/n/</span><div class="en">nail · no · neck · new · dinner · any · many · tennis · in · fine · begin</div><div class="pt">O /n/ no começo, no meio e no fim.</div></div>
+<div class="i"><span class="tag err">o erro</span><div class="en">If you say /n/ instead of /ŋ/: <i>sung</i> will sound like <i>son/sun</i> · <i>rang</i> will sound like <i>ran</i>.</div><div class="pt">"Cantado" vira "filho/sol"; "tocou" vira "correu".</div><div class="def">A chave do /ŋ/ é levantar a parte <b>de trás</b> da língua — não a ponta.</div></div>
+<div class="i"><span class="tag">/ŋ/</span><div class="en">sting · running · anger · youngest · single · tongue · strong</div><div class="pt">O /ŋ/ no meio e no fim da palavra.</div></div>
+<div class="i"><div class="en">I'll call (<i>them</i> / <i>then</i>). · That (<i>bun</i> / <i>bum</i>). · We got (<i>some</i> / <i>sun</i>).</div><div class="pt">Vou ligar para eles. / Vou ligar depois. · Aquele pãozinho. / Aquele vagabundo. · A gente conseguiu um pouco. / A gente pegou sol.</div></div>
+<div class="i"><div class="en">I heard a (<i>bam</i> / <i>bang</i>). · You shouldn't (<i>sing</i> / <i>sin</i>).</div><div class="pt">Ouvi um baque. / Ouvi um estrondo. · Você não devia cantar. / Você não devia pecar.</div></div>
+<div class="i"><div class="en">The children like (<i>swinging</i> / <i>swimming</i>). · It's a small (<i>ping</i> / <i>pin</i>).</div><div class="pt">As crianças gostam de balanço. / As crianças gostam de nadar. · É um tinido pequeno. / É um alfinete pequeno.</div></div>
+<div class="i"><div class="en">Get rid of the (<i>gum</i> / <i>gun</i>). · Buy another (<i>hammer</i> / <i>hanger</i>).</div><div class="pt">Jogue fora o chiclete. / Jogue fora a arma. · Compre outro martelo. / Compre outro cabide.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 13 V02 · Livro 05 · English Pronunciation Made Simple &mdash; inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' — '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

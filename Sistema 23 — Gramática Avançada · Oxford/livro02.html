@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 02 · English Vocabulary in Use — Advanced — Sistema 23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#F59E0B;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 23</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 23 · Livro 02 · C1–C2</div>
+<h1 class="title">English <em>Vocabulary in Use</em> · Advanced</h1>
+<p class="lead">Michael McCarthy &amp; Felicity O'Dell · Cambridge · edição em <b>100 unidades</b>. O Sistema 22 já traz o painel da <b>3ª edição</b> deste mesmo livro — e lá o recorte foi o <b>meta-vocabulário</b>: colocação, conotação, registro, idioms gerais, britânico × americano. Para não repetir, <b>este painel pega o que aquele deixou de fora</b>: as unidades temáticas. Trabalho e rotina de escritório, carreira e promoção, o vocabulário real de negócios, dinheiro pessoal, os adjetivos que descrevem gente de verdade, a escala do desejo e da aversão, aparência e expressão facial, os prefixos que criam sentido novo, e os idioms de <i>quando dá certo</i> e <i>quando dá errado</i>. Inglês britânico.</p>
+
+<div class="metrics">
+  <div class="metric"><b>18</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>C1–C2</b><span>nível</span></div>
+  <div class="metric"><b>GB</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: flexi-time, glass ceiling, broke, aloof, shambles…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+<section id="s01">
+<div class="snum">Trabalho · colegas</div>
+<h2>O escritório e quem trabalha nele</h2>
+<p class="sdesc">O vocabulário que descreve <b>a relação com o colega</b> — e que quase nunca aparece no curso de inglês geral.</p>
+<div class="items">
+<div class="i"><div class="en">Philip is my <i>opposite number</i> in the company's New York office.</div><div class="pt">O Philip é meu equivalente no escritório de Nova York.</div><div class="def"><b>Opposite number</b>: quem ocupa o mesmo cargo em outra unidade.</div></div>
+<div class="i"><div class="en">He and I have a good <i>working relationship</i>.</div><div class="pt">Eu e ele nos damos bem no trabalho.</div><div class="def"><b>Working relationship</b> é como vocês se comunicam e trabalham juntos — não é amizade.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">I do socialise with my <i>workmates</i>, but we try not to <i>talk shop</i>.</div><div class="pt">Eu saio com os colegas, mas a gente tenta não falar de trabalho.</div><div class="def"><b>Talk shop</b> (informal): falar de trabalho fora do expediente. <b>Workmate</b> é informal — em profissão de escritório usa-se <b>colleague</b>.</div></div>
+<div class="i"><div class="en">The company is generally very <i>hierarchical</i>. /ˌhaɪəˈrɑːkɪkəl/</div><div class="pt">A empresa é bem hierárquica.</div><div class="def">A pronúncia costuma trair: o acento vai na <b>terceira</b> sílaba.</div></div>
+<div class="i"><div class="en">We <i>job-share</i> — it suits us both, as we each have children to look after.</div><div class="pt">A gente divide o cargo — funciona para nós dois, porque os dois temos filhos para cuidar.</div><div class="def"><b>Job-share</b>: duas pessoas dividindo o mesmo posto.</div></div>
+<div class="i"><div class="en">She has to <i>clock in</i> and <i>clock out</i>.</div><div class="pt">Ela tem que bater o ponto na entrada e na saída.</div></div>
+<div class="i"><div class="en">She works fixed hours; she has a <i>nine-to-five job</i>.</div><div class="pt">Ela tem horário fixo; é um emprego das nove às cinco.</div></div>
+<div class="i"><div class="en">He <i>works flexi-time</i>, but his <i>core hours</i> are 10.00 to 12.00.</div><div class="pt">Ele tem horário flexível, mas o horário obrigatório é das 10h às 12h.</div><div class="def"><b>Core hours</b>: a faixa em que a presença é obrigatória.</div></div>
+<div class="i"><div class="en">He works from home with his computer; he's a <i>teleworker</i>.</div><div class="pt">Ele trabalha de casa no computador; é teletrabalhador.</div></div>
+<div class="i"><div class="en">Every third week he works nights; he <i>does shift work</i>.</div><div class="pt">A cada três semanas ele faz turno da noite; ele trabalha por turnos.</div></div>
+<div class="i"><div class="en">He's <i>self-employed</i>. · She's <i>freelance</i> / she <i>works freelance</i>.</div><div class="pt">Ele é autônomo. · Ela é freelancer.</div><div class="def"><b>Self-employed</b> é ter o próprio negócio; <b>freelance</b> é prestar serviço a várias empresas.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Trabalho · o dia</div>
+<h2>Como se descreve um dia de trabalho — bom e ruim</h2>
+<p class="sdesc">Aqui está o par que interessa: o vocabulário do trabalho <b>que se admira</b> e o do trabalho <b>de que não se escapa</b>.</p>
+<div class="items">
+<div class="i"><div class="en">Most of the day I do <i>routine tasks</i>, but occasionally I have to <i>meet a deadline</i>.</div><div class="pt">Na maior parte do dia faço tarefas de rotina, mas às vezes tenho que cumprir um prazo.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">At certain times of the year I have a very <i>heavy workload</i>.</div><div class="pt">Em certas épocas do ano tenho uma carga de trabalho muito pesada.</div><div class="def">O par é <b>heavy</b> × <b>light workload</b> — nunca <s>big workload</s>.</div></div>
+<div class="i"><div class="en">I have a <i>glamorous job</i>. I'm a pilot.</div><div class="pt">Tenho um emprego glamouroso. Sou piloto.</div><div class="def"><b>Glamorous</b>: muito empolgante, que todo mundo admira.</div></div>
+<div class="i"><div class="en">The hours are <i>irregular</i> and <i>antisocial</i>.</div><div class="pt">O horário é irregular e antissocial.</div><div class="def"><b>Antisocial hours</b>: horário que impede ter vida social normal. É o termo fixo.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">I'm not <i>stuck behind a desk</i> and there's a lot of variety.</div><div class="pt">Não fico preso atrás de uma mesa e tem bastante variedade.</div></div>
+<div class="i"><div class="en">I feel sorry for people who are <i>stuck in a rut</i>.</div><div class="pt">Tenho pena de quem está preso numa rotina sem saída.</div><div class="def"><b>Rut</b> é o sulco que a roda cava na estrada — a metáfora é não conseguir sair dele.</div></div>
+<div class="i"><div class="en">…or working in <i>dead-end jobs</i>.</div><div class="pt">…ou trabalhando em empregos sem futuro.</div><div class="def"><b>Dead-end job</b>: sem nenhuma perspectiva de promoção.</div></div>
+<div class="i"><div class="en">The job's very <i>mechanical</i> and <i>repetitive</i>.</div><div class="pt">O trabalho é muito mecânico e repetitivo.</div><div class="def"><b>Mechanical</b> aqui é: você não precisa pensar no que está fazendo.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">All I ever think about is <i>knocking off</i> at three.</div><div class="pt">Só penso em largar o serviço às três.</div></div>
+<div class="i"><div class="en">The job's a bit <i>monotonous</i>.</div><div class="pt">O trabalho é meio monótono.</div><div class="def"><b>Monotonous</b>: chato porque nunca muda.</div></div>
+<div class="i"><div class="en">I have a lot of <i>paperwork</i> to do. · My father did <i>manual work</i> all his life.</div><div class="pt">Tenho muita papelada para fazer. · Meu pai fez trabalho braçal a vida toda.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Carreira · promoção</div>
+<h2>O anúncio de emprego e o que vem depois dele</h2>
+<p class="sdesc">O anúncio de vaga em inglês tem <b>vocabulário próprio</b>. E o que acontece depois de contratado tem outro.</p>
+<div class="items">
+<div class="i"><div class="en">We are looking for <i>ambitious, dynamic</i> sales professionals with the talent and <i>drive</i> to develop a <i>rewarding</i> career.</div><div class="pt">Procuramos profissionais de vendas ambiciosos e dinâmicos, com talento e garra para construir uma carreira gratificante.</div><div class="def"><b>Drive</b> = motivação forte. <b>Rewarding</b> = que devolve muito a você.</div></div>
+<div class="i"><div class="en">You will work in <i>close-knit</i> teams with a <i>diverse</i> range of clients.</div><div class="pt">Você vai trabalhar em equipes muito unidas, com uma carteira variada de clientes.</div><div class="def">O oposto de <b>close-knit</b> é <b>loosely organised</b>.</div></div>
+<div class="i"><div class="en">Up to &pound;30k <i>basic</i>.</div><div class="pt">Até 30 mil libras de salário-base.</div><div class="def"><b>Basic</b>: o mínimo garantido, sem hora extra nem bônus.</div></div>
+<div class="i"><div class="en">If you <i>fit this description</i> and are <i>seeking</i> a <i>lucrative</i> career…</div><div class="pt">Se você tem esse perfil e busca uma carreira rentável…</div><div class="def"><b>Lucrative</b>: que dá muito dinheiro.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">…<i>looking to work</i> in a fast-moving industry.</div><div class="pt">…querendo trabalhar num setor de ritmo acelerado.</div><div class="def">Atenção: <b>look to</b> é <i>considerar / esperar</i> — não é <s>look for</s>.</div></div>
+<div class="i"><div class="en">Women are allowed <i>maternity leave</i> and men <i>paternity leave</i>.</div><div class="pt">As mulheres têm licença-maternidade e os homens licença-paternidade.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">What <i>perks</i> do you get? · What extra <i>benefits</i> do you get?</div><div class="pt">Que regalias você tem no emprego?</div><div class="def"><b>Perks</b> é informal; <b>benefits</b> é o formal. Mesmo sentido.</div></div>
+<div class="i"><div class="en">How important is <i>job satisfaction</i> to you?</div><div class="pt">Quanto vale para você a realização no trabalho?</div></div>
+<div class="i"><div class="en">What's your <i>holiday entitlement</i>?</div><div class="pt">Quantos dias de férias você tem direito?</div><div class="def"><b>Entitlement</b>: aquilo a que se tem direito.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">Do you get regular <i>salary increments</i>?</div><div class="pt">Você tem aumentos periódicos?</div><div class="def"><b>Increment</b> é formal; no dia a dia se diz <b>rise</b> (GB) / <b>raise</b> (US).</div></div>
+<div class="i"><div class="en">Most people don't want to <i>hit a glass ceiling</i>.</div><div class="pt">Ninguém quer bater no teto de vidro.</div><div class="def"><b>Glass ceiling</b>: o nível a partir do qual não há mais promoção, mesmo merecida.</div></div>
+<div class="i"><div class="en">We're all <i>overworked and underpaid</i>.</div><div class="pt">Todos nós trabalhamos demais e ganhamos de menos.</div><div class="def">Expressão fixa, dita em tom de piada — as duas metades andam sempre juntas.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Negócios · vender</div>
+<h2>Vender: as técnicas e os nomes que elas têm</h2>
+<p class="sdesc">Cada técnica de venda tem um nome próprio em inglês — e vários deles carregam <b>julgamento</b>.</p>
+<div class="items">
+<div class="i"><div class="en">He took a job in <i>telesales</i>.</div><div class="pt">Ele arrumou emprego em televendas.</div><div class="def">Vender bens ou serviços por telefone.</div></div>
+<div class="i"><div class="en">Most of the people he phoned hated <i>cold calling</i>.</div><div class="pt">Quase todo mundo que ele ligava detestava a ligação não solicitada.</div><div class="def"><b>Cold calling</b>: ligar para quem não pediu contato.</div></div>
+<div class="i"><div class="en">…and put the phone down when he tried the <i>hard sell</i>.</div><div class="pt">…e desligava quando ele partia para a venda agressiva.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">The company made money through <i>inertia selling</i> and <i>confusion marketing</i>.</div><div class="pt">A empresa ganhava dinheiro com venda por inércia e marketing de confusão.</div><div class="def"><b>Inertia selling</b>: a empresa age como se você tivesse aceitado, só porque você não recusou. <b>Confusion marketing</b>: empacotar produtos de modo a impedir a comparação de preço.</div></div>
+<div class="i"><div class="en">Supermarkets sell an item very cheaply as a <i>loss leader</i>.</div><div class="pt">Supermercados vendem um item muito barato como chamariz.</div><div class="def">Vende no prejuízo para atrair gente que vai comprar o resto.</div></div>
+<div class="i"><div class="en">If a company finds a <i>niche market</i>…</div><div class="pt">Se a empresa encontra um nicho de mercado…</div></div>
+<div class="i"><div class="en">People make a purchasing decision based on <i>brand loyalty</i>.</div><div class="pt">As pessoas decidem a compra por fidelidade à marca.</div></div>
+<div class="i"><div class="en">If you <i>shop around</i>, you try different shops to see which offers best value.</div><div class="pt">Se você pesquisa preço, testa várias lojas para ver qual compensa mais.</div></div>
+<div class="i"><div class="en">If you buy something <i>on approval</i>, you have the right to return it.</div><div class="pt">Se você compra em condicional, tem direito de devolver.</div></div>
+<div class="i"><div class="en">If you have <i>first refusal</i> on something…</div><div class="pt">Se você tem preferência de compra…</div><div class="def">O vendedor promete oferecer a você antes de qualquer outro.</div></div>
+<div class="i"><div class="en">The painting will <i>go under the hammer</i> next week.</div><div class="pt">O quadro vai a leilão semana que vem.</div><div class="def"><b>Under the hammer</b> = no martelo do leiloeiro.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Negócios · a empresa</div>
+<h2>Fusão, aquisição e a burocracia no meio</h2>
+<p class="sdesc">A história de um negócio que cresce, é comprado e vira dinheiro no bolso — com o termo exato de cada etapa.</p>
+<div class="items">
+<div class="i"><div class="en">Sally started her own catering business and it turned out to be very <i>lucrative</i>.</div><div class="pt">A Sally abriu a própria empresa de bufê, e deu muito dinheiro.</div></div>
+<div class="i"><div class="en">She got increasingly irritated by all the <i>red tape</i>.</div><div class="pt">Ela foi ficando cada vez mais irritada com a burocracia.</div><div class="def"><b>Red tape</b> é sempre negativo — é a burocracia que atrapalha.</div></div>
+<div class="i"><div class="en">A larger company suggested <i>merging</i>.</div><div class="pt">Uma empresa maior propôs uma fusão.</div><div class="def"><b>Merge</b>: juntar-se para formar uma empresa nova.</div></div>
+<div class="i"><div class="en">They did not agree on all the details of the <i>takeover</i>.</div><div class="pt">Elas não concordaram em todos os detalhes da aquisição.</div><div class="def"><b>Takeover</b>: ser comprada por uma maior — tem leve carga negativa.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">They managed to <i>reach a compromise</i>.</div><div class="pt">Conseguiram chegar a um meio-termo.</div><div class="def"><b>Compromise</b> não é «compromisso» — é <b>concessão mútua</b>. Falso amigo clássico.</div></div>
+<div class="i"><div class="en">…and <i>hammer out a deal</i> without too much difficulty.</div><div class="pt">…e fechar um acordo sem muita dificuldade.</div><div class="def"><b>Hammer out</b>: negociar em detalhe até chegar ao acordo.</div></div>
+<div class="i"><div class="en">Her company had been <i>swallowed up</i>.</div><div class="pt">A empresa dela tinha sido engolida.</div></div>
+<div class="i"><div class="en">She's glad to be free of the <i>hassles</i> of <i>entrepreneurship</i>.</div><div class="pt">Ela está aliviada de se livrar do estresse de empreender.</div><div class="def"><b>Entrepreneurship</b>: envolver-se em negócio e assumir risco financeiro.</div></div>
+<div class="i"><div class="en">She used the money raised by the sale of her <i>capital assets</i>.</div><div class="pt">Ela usou o dinheiro da venda dos bens de capital.</div><div class="def"><b>Capital assets</b>: prédios e máquinas que a empresa possui.</div></div>
+<div class="i"><div class="en">They <i>submitted a tender</i> for the contract.</div><div class="pt">Eles apresentaram uma proposta para o contrato.</div></div>
+<div class="i"><div class="en">The client <i>defaulted on a payment</i>.</div><div class="pt">O cliente ficou inadimplente.</div><div class="def"><b>Default on</b>: deixar de pagar o que devia.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Dinheiro pessoal</div>
+<h2>Sem dinheiro, com dinheiro — e os cartões</h2>
+<p class="sdesc">A escala inteira, do <i>skint</i> ao <i>rolling in it</i>, com a marca de registro de cada um.</p>
+<div class="items">
+<div class="i"><span class="tag">informal</span><div class="en">I was <i>broke</i> / <i>skint</i> at the end of last month.</div><div class="pt">Fiquei duro no fim do mês passado.</div><div class="def"><b>Broke</b> é informal; <b>skint</b> é <b>muito</b> informal e só britânico.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">I'm <i>rolling in it</i> this month.</div><div class="pt">Estou nadando em dinheiro este mês.</div></div>
+<div class="i"><div class="en">It's difficult to <i>make ends meet</i> with three children.</div><div class="pt">É difícil fechar as contas com três filhos.</div><div class="def"><b>Make ends meet</b>: sobreviver financeiramente.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">Things are a bit <i>tight</i> at the moment.</div><div class="pt">As coisas estão meio apertadas agora.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">I was <i>strapped for cash</i> and had to borrow from my parents.</div><div class="pt">Eu estava sem grana e tive que pedir emprestado aos meus pais.</div></div>
+<div class="i"><div class="en">She gave me a cheque but it <i>bounced</i>.</div><div class="pt">Ela me deu um cheque, mas ele voltou.</div><div class="def"><b>Bounce</b>: o banco recusou o pagamento.</div></div>
+<div class="i"><div class="en">Who shall I <i>make this cheque out to</i>?</div><div class="pt">Em nome de quem eu faço o cheque?</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">Shall we <i>stick this meal on</i> my credit card? · Could you <i>charge it to</i> my credit card, please?</div><div class="pt">Bota essa refeição no meu cartão? · Poderia lançar no meu cartão, por favor?</div><div class="def">A primeira é informal; a segunda é a fórmula formal. Mesmo ato.</div></div>
+<div class="i"><div class="en">My card <i>expires</i> 05/04.</div><div class="pt">Meu cartão vence em 05/04.</div></div>
+<div class="i"><div class="en">It's a <i>store card</i>. · It's a <i>charge card</i>.</div><div class="pt">É um cartão da loja. · É um cartão de pagamento integral.</div><div class="def"><b>Charge card</b>: você tem que quitar todo o saldo todo mês — diferente do <b>credit card</b>.</div></div>
+<div class="i"><div class="en">Victims will receive <i>lump sum</i> compensation payments.</div><div class="pt">As vítimas vão receber indenização em parcela única.</div></div>
+<div class="i"><div class="en">A <i>golden handshake</i> of one million pounds was paid to the boss.</div><div class="pt">Pagaram um milhão de libras de indenização de saída ao chefe.</div><div class="def"><b>Golden handshake</b>: o pagamento alto a quem deixa o cargo.</div></div>
+<div class="i"><div class="en">The thieves stole their <i>life-savings</i>.</div><div class="pt">Os ladrões levaram as economias de uma vida.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Pessoas · caráter</div>
+<h2>Os adjetivos de caráter que o inglês tem e o português não</h2>
+<p class="sdesc">Nesse nível o problema não é achar «bom» e «ruim» — é achar a palavra <b>exata</b> entre vinte parecidas.</p>
+<div class="items">
+<div class="i"><div class="en">He's so <i>impetuous</i>; I wish he would consider things first.</div><div class="pt">Ele é tão impulsivo; queria que ele pensasse antes.</div><div class="def"><b>Impetuous</b>: age numa ideia súbita, sem pensar. Em geral negativo.</div></div>
+<div class="i"><div class="en">His <i>impulsive</i> generosity led him to give away most of his money.</div><div class="pt">A generosidade impulsiva dele o levou a doar quase todo o dinheiro.</div><div class="def"><b>Impulsive</b> é parecido com <b>impetuous</b>, mas <b>pode ser positivo</b> — essa é a diferença.</div></div>
+<div class="i"><div class="en">She always gives you such an <i>effusive</i> welcome.</div><div class="pt">Ela sempre te recebe com um entusiasmo exagerado.</div><div class="def"><b>Effusive</b>: expressa prazer, elogio ou gratidão de forma exagerada.</div></div>
+<div class="i"><div class="en">He's a very <i>excitable</i> child; he needs to calm down.</div><div class="pt">É uma criança muito agitada; precisa se acalmar.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">She's so <i>pushy</i>.</div><div class="pt">Ela é muito atirada.</div><div class="def"><b>Pushy</b> (informal): promove os próprios interesses de forma egoísta.</div></div>
+<div class="i"><div class="en">Freddie's so <i>garrulous</i>; it's impossible to get any work done.</div><div class="pt">O Freddie fala tanto que é impossível trabalhar.</div><div class="def"><b>Garrulous</b>: fala demais, sobretudo de coisa sem importância.</div></div>
+<div class="i"><div class="en">I thought he was rather <i>taciturn</i>. He hardly spoke.</div><div class="pt">Achei ele bem calado. Quase não falou.</div><div class="def"><b>Taciturn</b> é o oposto de <b>garrulous</b> — e também costuma ser negativo.</div></div>
+<div class="i"><div class="en">Joss is a somewhat <i>naive</i> person. /naɪˈiːv/</div><div class="pt">O Joss é meio ingênuo.</div><div class="def">A pronúncia surpreende: o acento cai no <b>segundo</b> sílaba, e o <i>ai</i> soa /aɪ/.</div></div>
+<div class="i"><div class="en">He's <i>diligent</i>, <i>placid</i> and independent. · She's <i>shrewd</i> and <i>sagacious</i>.</div><div class="pt">Ele é aplicado, tranquilo e independente. · Ela é astuta e sagaz.</div><div class="def"><b>Placid</b>: não se irrita nem se exalta com facilidade.</div></div>
+<div class="i"><div class="en">He tends to <i>get carried away</i>. · She's inclined to <i>procrastinate</i>.</div><div class="pt">Ele tende a se empolgar demais. · Ela tende a procrastinar.</div></div>
+<div class="i"><div class="en">He can be <i>tactless</i> at times. · She's rather <i>stubborn</i> and <i>rebellious</i>.</div><div class="pt">Ele às vezes é sem tato. · Ela é bem teimosa e rebelde.</div><div class="def"><b>Tactless</b>: fala coisas que magoam ou ofendem, sem perceber.</div></div>
+<div class="i"><div class="en">She's <i>conscientious</i> and <i>methodical</i>, but a bit <i>opportunistic</i>.</div><div class="pt">Ela é conscienciosa e metódica, mas um pouco oportunista.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Pessoas · sociabilidade</div>
+<h2>Do introvertido ao arrogante — a escala completa</h2>
+<p class="sdesc">Seis maneiras de ser pouco sociável em inglês, e cada uma diz <b>uma coisa diferente</b> sobre a pessoa.</p>
+<div class="items">
+<div class="i"><div class="en">Jean's such an <i>introvert</i>, and her brother is such an <i>extrovert</i>.</div><div class="pt">A Jean é super introvertida, e o irmão dela é super extrovertido.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Mr Rogers is such a <i>diffident</i> man.</div><div class="pt">O sr. Rogers é um homem muito inseguro.</div><div class="def"><b>Diffident</b>: falta de confiança, opinião baixa de si mesmo. <b>Não</b> é indiferença.</div></div>
+<div class="i"><div class="en">English people are traditionally thought of as rather <i>reserved</i>.</div><div class="pt">Os ingleses têm fama de ser bem reservados.</div><div class="def"><b>Reserved</b>: não se abre rápido. É o mais neutro da lista.</div></div>
+<div class="i"><div class="en">Barbara tends to be rather <i>aloof</i>.</div><div class="pt">A Barbara costuma ser bem distante.</div><div class="def"><b>Aloof</b>: não sociável e um tanto fria — já carrega julgamento.</div></div>
+<div class="i"><div class="en">My aunt can be very <i>haughty</i> and <i>disdainful</i> at times.</div><div class="pt">Minha tia às vezes é muito arrogante e desdenhosa.</div><div class="def"><b>Haughty</b>: se acha melhor que os outros. <b>Disdainful</b>: acha que os outros não merecem respeito.</div></div>
+<div class="i"><div class="en">I've always found Professor Mactoft very <i>unapproachable</i>, but Dr O'Daly is very <i>approachable</i>.</div><div class="pt">Sempre achei o professor Mactoft inacessível, mas a dra. O'Daly é muito acessível.</div></div>
+<div class="i"><div class="en">Nancy is so <i>conceited</i> and <i>self-important</i>, but Flora is such a <i>modest</i> person.</div><div class="pt">A Nancy é tão convencida e cheia de si, e a Flora é tão modesta.</div></div>
+<div class="i"><div class="en">My boss is such a <i>flirt</i>, though I would never call her that <i>to her face</i>.</div><div class="pt">Minha chefe é uma paqueradora, mas eu nunca diria isso na cara dela.</div></div>
+<div class="i"><div class="en">He was <i>off-hand</i> with me. · The clerk was rather <i>officious</i>.</div><div class="pt">Ele foi seco comigo. · O funcionário foi meio abusado.</div><div class="def"><b>Off-hand</b>: rude por falta de interesse. <b>Officious</b>: ansioso demais para mandar nos outros.</div></div>
+<div class="i"><div class="en">Their house is very <i>ostentatious</i>. · Her clothes are a bit <i>brash</i>.</div><div class="pt">A casa deles é bem ostensiva. · As roupas dela são meio berrantes.</div><div class="def"><b>Brash</b>: confiante demais, ou chamativo demais.</div></div>
+<div class="i"><div class="en">He's <i>gullible</i>. · She's rather <i>dowdy</i>.</div><div class="pt">Ele engole qualquer coisa. · Ela se veste sem graça.</div><div class="def"><b>Gullible</b>: acredita em tudo. <b>Dowdy</b>: aparência apagada, sem estilo.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Relações · o que dá certo</div>
+<h2>Amor e amizade — as expressões fixas</h2>
+<p class="sdesc">Quase tudo aqui é <b>expressão feita</b>: não se monta a partir das palavras, se aprende inteira.</p>
+<div class="items">
+<div class="i"><div class="en">When Tom met Lily it was <i>love at first sight</i>.</div><div class="pt">Quando o Tom conheceu a Lily foi amor à primeira vista.</div></div>
+<div class="i"><div class="en">She fell <i>head over heels</i> in love with him.</div><div class="pt">Ela se apaixonou perdidamente por ele.</div></div>
+<div class="i"><div class="en">Nick <i>only has eyes for</i> Diana.</div><div class="pt">O Nick só tem olhos para a Diana.</div></div>
+<div class="i"><div class="en">It's purely a <i>platonic relationship</i>.</div><div class="pt">É uma relação puramente platônica.</div></div>
+<div class="i"><div class="en">Nora was <i>infatuated with</i> Brian — she was completely <i>besotted with</i> him.</div><div class="pt">A Nora era obcecada pelo Brian — estava completamente caidinha por ele.</div><div class="def">A escala sobe: <b>infatuated</b> (obcecado romanticamente) → <b>besotted</b> (apaixonado a ponto de perder o juízo).</div></div>
+<div class="i"><div class="en">Anona and I <i>hit it off</i> immediately.</div><div class="pt">Eu e a Anona nos demos bem na hora.</div></div>
+<div class="i"><div class="en">We're true <i>soulmates</i>. · We've always been <i>kindred spirits</i>.</div><div class="pt">Somos almas gêmeas de verdade. · Sempre fomos almas parecidas.</div></div>
+<div class="i"><div class="en">The moment I met Rob I could see he was <i>a man after my own heart</i>.</div><div class="pt">Assim que conheci o Rob, vi que ele era gente da minha laia.</div><div class="def">Também <b>a woman after one's own heart</b>. É admiração por semelhança.</div></div>
+<div class="i"><div class="en">Charlie and I <i>get on like a house on fire</i>.</div><div class="pt">Eu e o Charlie nos damos maravilhosamente bem.</div></div>
+<div class="i"><div class="en">Jim and Tony have been <i>bosom friends</i> / <i>buddies</i> / <i>pals</i> for years.</div><div class="pt">O Jim e o Tony são amigos do peito há anos.</div></div>
+<div class="i"><div class="en">Patricia and Carmen are <i>inseparable</i>. · There's a close <i>bond</i> between them.</div><div class="pt">A Patricia e a Carmen são inseparáveis. · Existe um laço forte entre elas.</div></div>
+<div class="i"><div class="en">Such a <i>well-matched couple</i>! · <i>Family ties</i> in Spain are much stronger.</div><div class="pt">Que casal combinado! · Os laços de família na Espanha são bem mais fortes.</div></div>
+<div class="i"><div class="en">He never shows much <i>affection for</i> his children. · <i>Faithfulness</i> is the key to a good marriage.</div><div class="pt">Ele nunca demonstra muito carinho pelos filhos. · A fidelidade é a chave de um bom casamento.</div><div class="def">Repare a preposição: <b>affection for</b>, <b>fondness for</b>, <b>loyalty to</b>.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Relações · quando quebra</div>
+<h2>Deslealdade, rusga e ruptura</h2>
+<p class="sdesc">O inglês tem palavra específica para <b>cada estágio</b> de uma relação que se deteriora — e cada uma pede sua preposição.</p>
+<div class="items">
+<div class="i"><div class="en">A friend is not the same as a <i>casual acquaintance</i>.</div><div class="pt">Um amigo não é a mesma coisa que um conhecido.</div></div>
+<div class="i"><div class="en">They should not <i>talk behind our backs</i>.</div><div class="pt">Eles não deveriam falar mal da gente pelas costas.</div></div>
+<div class="i"><div class="en">Terry has been <i>disloyal to</i> me on a number of occasions.</div><div class="pt">O Terry foi desleal comigo várias vezes.</div><div class="def"><b>Disloyal to</b> — a preposição é <b>to</b>.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Jo's always very <i>critical of</i> her friends.</div><div class="pt">A Jo vive criticando as amigas.</div><div class="def"><b>Critical of</b> — nunca <s>critical to</s>.</div></div>
+<div class="i"><div class="en">OK, I was <i>dishonest with</i> you. I'm sorry.</div><div class="pt">Tá, eu fui desonesto com você. Desculpa.</div><div class="def"><b>Dishonest with</b> — outra preposição ainda.</div></div>
+<div class="i"><div class="en">Jim has always been <i>scrupulously honest</i> in his dealings with us.</div><div class="pt">O Jim sempre foi escrupulosamente honesto conosco.</div><div class="def">Colocação fixa: <b>scrupulously honest</b>.</div></div>
+<div class="i"><div class="en">I would never expect complete and <i>unswerving loyalty</i> from a friend.</div><div class="pt">Eu nunca esperaria lealdade absoluta e inabalável de um amigo.</div><div class="def"><b>Unswerving loyalty</b> — outra colocação que anda sempre junta.</div></div>
+<div class="i"><div class="en">Monica has always been my <i>staunchest ally</i> at work.</div><div class="pt">A Monica sempre foi minha aliada mais fiel no trabalho.</div></div>
+<div class="i"><div class="en">A <i>rift</i> can develop between two people.</div><div class="pt">Pode surgir um racha entre duas pessoas.</div><div class="def"><b>Rift</b>: desentendimento sério que divide.</div></div>
+<div class="i"><div class="en">There's been a lot of <i>discord</i> in the office lately.</div><div class="pt">Tem havido muita discórdia no escritório ultimamente.</div></div>
+<div class="i"><div class="en">My father and I don't <i>see eye to eye</i> on most things.</div><div class="pt">Eu e meu pai não concordamos em quase nada.</div></div>
+<div class="i"><div class="en">His love affair with Anna has <i>turned sour</i>. I think they'll <i>split up</i>.</div><div class="pt">O caso dele com a Anna azedou. Acho que vão se separar.</div></div>
+<div class="i"><div class="en">Our marriage has had its <i>ups and downs</i>. · It's a <i>bumpy relationship</i>.</div><div class="pt">Nosso casamento teve altos e baixos. · É uma relação turbulenta.</div></div>
+<div class="i"><div class="en">a <i>broken home</i> · a <i>family feud</i> /fjuːd/</div><div class="pt">um lar desfeito · uma rixa de família</div><div class="def"><b>Feud</b>: briga de família que envenena o clima por anos.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Emoções · desejo</div>
+<h2>Querer o que não se pode ter</h2>
+<p class="sdesc">Cinco verbos de desejo intenso — e o que separa um do outro é <b>se a coisa é alcançável</b>.</p>
+<div class="items">
+<div class="i"><div class="en">Pregnant women <i>crave</i> / <i>have a craving for</i> strange things.</div><div class="pt">Grávidas têm desejo de coisas estranhas.</div></div>
+<div class="i"><div class="en">I still <i>hanker after</i> a bright red sports car.</div><div class="pt">Ainda sonho com um carro esporte vermelho.</div><div class="def"><b>Hanker after</b> se usa sobretudo para o que você <b>não pode</b> ter.</div></div>
+<div class="i"><div class="en">Young children <i>thirst for</i> knowledge.</div><div class="pt">Criança pequena tem sede de conhecimento.</div><div class="def"><b>Hunger for</b> funciona igual.</div></div>
+<div class="i"><div class="en">My cousin just <i>yearns to</i> be on her own.</div><div class="pt">Minha prima só anseia por ficar sozinha.</div><div class="def"><b>Yearn</b>: querer o que não se tem e, muitas vezes, nunca se terá.</div></div>
+<div class="i"><div class="en">An Olympic gold is probably the most <i>coveted</i> sporting prize.</div><div class="pt">O ouro olímpico é provavelmente o prêmio mais cobiçado do esporte.</div></div>
+<div class="i"><div class="en">Everyone <i>rejoiced at</i> the news of her recovery.</div><div class="pt">Todos se alegraram com a notícia da recuperação dela.</div></div>
+<div class="i"><div class="en">Sarah was in an <i>exultant</i> mood for weeks.</div><div class="pt">A Sarah ficou exultante por semanas.</div></div>
+<div class="i"><div class="en">There were <i>jubilant</i> shouts as the results were announced.</div><div class="pt">Houve gritos de festa quando anunciaram o resultado.</div><div class="def"><b>Jubilant</b>: felicidade de <b>vitória</b>, especificamente.</div></div>
+<div class="i"><div class="en">He listened to the opera with an expression of pure <i>rapture</i>.</div><div class="pt">Ele ouviu a ópera com uma expressão de puro arrebatamento.</div></div>
+<div class="i"><div class="en">They are <i>blissfully happy</i> even though they're poor.</div><div class="pt">Eles são perfeitamente felizes mesmo sendo pobres.</div><div class="def"><b>Blissfully</b> gruda em três palavras: <b>happy</b>, <b>ignorant</b>, <b>unaware</b>.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">You look <i>full of the joys of spring</i> today! · We're <i>thrilled to bits</i>.</div><div class="pt">Você está radiante hoje! · Estamos felicíssimos.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Emoções · acalmar</div>
+<h2>Quatro maneiras de acalmar alguém — e uma delas é crítica</h2>
+<p class="sdesc"><i>Defuse</i>, <i>placate</i>, <i>conciliate</i> e <i>appease</i> traduzem todos por «acalmar». Em inglês são <b>quatro atos diferentes</b>.</p>
+<div class="items">
+<div class="i"><div class="en">Jane tried to <i>defuse</i> the tension by changing the subject.</div><div class="pt">A Jane tentou aliviar a tensão mudando de assunto.</div><div class="def"><b>Defuse</b> é desarmar a bomba: torna calma uma situação <b>perigosa ou tensa</b>.</div></div>
+<div class="i"><div class="en">It took all her charm to <i>placate</i> him.</div><div class="pt">Ela precisou de todo o charme para acalmá-lo.</div><div class="def"><b>Placate</b>: fazer alguém <b>parar de sentir raiva</b>.</div></div>
+<div class="i"><div class="en">An independent advisor was brought in to <i>conciliate</i> between the unions and the employer.</div><div class="pt">Trouxeram um consultor independente para conciliar sindicatos e patrão.</div><div class="def"><b>Conciliate</b>: encerrar uma disputa agindo com simpatia pelos <b>dois</b> lados.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">Although <i>appeasing</i> the enemy postponed the war, it did not prevent it.</div><div class="pt">Apesar de apaziguar o inimigo ter adiado a guerra, não a impediu.</div><div class="def"><b>Appease</b>: ceder o que o outro exige — quase sempre dito <b>em tom de reprovação</b>.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">I cannot understand the <i>implacable</i> hatred he feels for his old rival.</div><div class="pt">Não entendo o ódio implacável que ele sente pelo velho rival.</div><div class="def">De <b>placate</b> vem <b>implacable</b> — sentimento que não se muda. Atenção: <s>placable</s> não existe.</div></div>
+<div class="i"><div class="en"><i>Antipathy</i> towards the government has increased.</div><div class="pt">A antipatia pelo governo aumentou.</div></div>
+<div class="i"><span class="tag">err</span><div class="en">a <i>hostile</i> crowd of protesters · an <i>unsympathetic</i> remark</div><div class="pt">uma multidão hostil de manifestantes · um comentário insensível</div><div class="def">O adjetivo de <b>antipathy</b> não é <s>antipathetic</s> — é <b>hostile</b> ou <b>unsympathetic</b>.</div></div>
+<div class="i"><div class="en">I felt an instant <i>aversion to</i> the new manager.</div><div class="pt">Senti uma aversão imediata ao novo gerente.</div></div>
+<div class="i"><div class="en">Arrogance has always been my <i>pet aversion</i>.</div><div class="pt">Arrogância sempre foi o que eu mais detesto.</div></div>
+<div class="i"><div class="en">I'm <i>not averse to</i> a good night out.</div><div class="pt">Não sou nada contra uma boa noitada.</div><div class="def"><b>Averse to</b> aparece quase sempre <b>na negativa</b> — e o efeito é de compreensão irônica.</div></div>
+<div class="i"><div class="en"><i>loathing</i> / <i>loathe</i> · <i>abhorrence</i> / <i>abhor</i> · <i>revulsion</i> / <i>revolting</i> · <i>repulsion</i> / <i>repulsive</i></div><div class="pt">ódio intenso · repugnância · nojo forte · repulsa</div><div class="def">A família completa: substantivo, verbo e adjetivo de cada um.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Aparência · corpo e rosto</div>
+<h2>Descrever gente sem ofender — e sabendo quando ofende</h2>
+<p class="sdesc">Cada adjetivo de corpo em inglês vem com uma <b>etiqueta social</b>: de quem se pode dizer, e em que tom.</p>
+<div class="items">
+<div class="i"><div class="en">He was too <i>scrawny</i> to be a football player.</div><div class="pt">Ele era magro demais para ser jogador.</div><div class="def"><b>Scrawny</b>: magro e ossudo de um jeito feio. É insulto.</div></div>
+<div class="i"><div class="en">A <i>lanky</i> teenager walked in.</div><div class="pt">Entrou um adolescente magrelo e comprido.</div></div>
+<div class="i"><div class="en">A <i>gangling</i> / <i>gangly</i> youth approached him.</div><div class="pt">Um rapaz desengonçado se aproximou.</div><div class="def">Braços e pernas longos e finos, movimento desajeitado. Usado sobretudo para homens e meninos.</div></div>
+<div class="i"><div class="en">A <i>portly</i> figure stood near the ticket desk.</div><div class="pt">Uma figura corpulenta estava perto da bilheteria.</div><div class="def"><b>Portly</b>: barrigudo — em geral dito com humor, sobre homens mais velhos.</div></div>
+<div class="i"><div class="en">She's the <i>stout</i> woman wearing glasses.</div><div class="pt">É aquela senhora encorpada de óculos.</div><div class="def"><b>Stout</b> serve para homem e mulher — é o mais neutro dos gordos.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">She introduced me to a rather <i>corpulent</i> gentleman.</div><div class="pt">Ela me apresentou a um senhor bastante corpulento.</div><div class="def"><b>Corpulent</b> é formal e literário.</div></div>
+<div class="i"><div class="en">He's getting a <i>double chin</i>. His hair always looks so <i>unkempt</i>.</div><div class="pt">Ele está criando papada. O cabelo dele vive desarrumado.</div></div>
+<div class="i"><div class="en">His sister is the opposite: <i>never a hair out of place</i>.</div><div class="pt">A irmã dele é o oposto: nunca um fio fora do lugar.</div></div>
+<div class="i"><div class="en">He often looks <i>haggard</i> and exhausted. · His skin is <i>sallow</i>.</div><div class="pt">Ele quase sempre parece abatido e exausto. · A pele dele é amarelada.</div><div class="def"><b>Haggard</b>: o rosto mostra cansaço e idade, com a pele caída.</div></div>
+<div class="i"><div class="en">Look at those models <i>pouting</i> for the photographers!</div><div class="pt">Olha as modelos fazendo biquinho para os fotógrafos!</div><div class="def">O mesmo <b>pout</b> serve para sedução <b>e</b> para emburrar — o contexto decide.</div></div>
+<div class="i"><div class="en">You don't have to <i>grimace</i> every time I eat raw garlic.</div><div class="pt">Você não precisa fazer careta toda vez que eu como alho cru.</div></div>
+<div class="i"><div class="en">I arrived late and she just <i>scowled</i> at me.</div><div class="pt">Cheguei atrasado e ela só me olhou feio.</div></div>
+<div class="i"><div class="en">He was <i>leering</i> at us. I felt very uncomfortable.</div><div class="pt">Ele ficava olhando pra gente com aquela cara. Me senti péssima.</div><div class="def"><b>Leer</b>: olhar de forma desagradável e sexualmente insinuante.</div></div>
+<div class="i"><div class="en">I asked him for advice but he just <i>shrugged his shoulders</i>.</div><div class="pt">Pedi conselho e ele só deu de ombros.</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Formação · prefixos</div>
+<h2>Os prefixos que criam sentido novo</h2>
+<p class="sdesc"><i>Over-</i> e <i>under-</i> não têm <b>um</b> sentido cada: têm três. Saber qual está em jogo muda a leitura da frase.</p>
+<div class="items">
+<div class="i"><div class="en">That film was <i>overrated</i> in my view.</div><div class="pt">Aquele filme foi superestimado, na minha opinião.</div><div class="def"><b>Over- (a) EXCESSO</b>: mais do que deveria.</div></div>
+<div class="i"><div class="en">It was a bad restaurant, with an <i>overpriced</i> menu.</div><div class="pt">Restaurante ruim, com cardápio caro demais.</div><div class="def"><b>Over- (a) EXCESSO</b>.</div></div>
+<div class="i"><div class="en">You can choose to <i>overwrite</i> the existing file.</div><div class="pt">Você pode escolher sobrescrever o arquivo.</div><div class="def"><b>Over- (b) COBRIR</b>: o novo cobre e substitui o velho.</div></div>
+<div class="i"><div class="en">Our garden is <i>overshadowed</i> by the block of flats next door.</div><div class="pt">Nosso jardim fica na sombra do prédio ao lado.</div><div class="def"><b>Over- (b) COBRIR</b>, literal.</div></div>
+<div class="i"><div class="en">She always felt <i>overshadowed</i> by her more successful sister.</div><div class="pt">Ela sempre se sentiu ofuscada pela irmã mais bem-sucedida.</div><div class="def">O mesmo verbo, agora <b>metafórico</b>: sentir-se menos importante.</div></div>
+<div class="i"><div class="en">He <i>overstepped the mark</i> when he said that.</div><div class="pt">Ele passou dos limites quando disse aquilo.</div><div class="def"><b>Over- (c) ATRAVESSAR</b> uma barreira — aqui, a do aceitável.</div></div>
+<div class="i"><div class="en">Will you be staying <i>overnight</i>?</div><div class="pt">Você vai passar a noite?</div><div class="def"><b>Over- (c) ATRAVESSAR</b>: de um dia para o outro.</div></div>
+<div class="i"><div class="en">Don't <i>underestimate</i> the time it will take.</div><div class="pt">Não subestime o tempo que isso vai levar.</div><div class="def"><b>Under- (a) MENOS</b> do que a realidade.</div></div>
+<div class="i"><div class="en">The company is seriously <i>understaffed</i>.</div><div class="pt">A empresa está com falta grave de pessoal.</div><div class="def"><b>Under- (a) MENOS</b>.</div></div>
+<div class="i"><div class="en">It's quite wet <i>underfoot</i>. · The <i>underlying</i> question is a difficult one.</div><div class="pt">O chão está bem molhado. · A questão de fundo é difícil.</div><div class="def"><b>Under- (b) ABAIXO</b> — literal no primeiro, figurado no segundo.</div></div>
+<div class="i"><div class="en">I wish you would not <i>undermine</i> everything I do.</div><div class="pt">Queria que você não minasse tudo o que eu faço.</div><div class="def"><b>Under- (c) NEGATIVO</b>: atacar, enfraquecer.</div></div>
+<div class="i"><div class="en">He did it in a very <i>underhand</i> way.</div><div class="pt">Ele fez isso de um jeito bem escuso.</div><div class="def"><b>Under- (c) NEGATIVO</b>: às escondidas, talvez desonesto.</div></div>
+<div class="i"><div class="en">The airline <i>upgraded</i> me to business class. · There has been an <i>upturn</i> in the economy.</div><div class="pt">A companhia me passou para a executiva. · Houve uma virada positiva na economia.</div><div class="def"><b>Up-</b> sugere mudança, quase sempre <b>para melhor</b>.</div></div>
+<div class="i"><div class="en"><i>Cross-border</i> cooperation has led to a number of arrests. · <i>Cross-cultural</i> misunderstandings often happen.</div><div class="pt">A cooperação transfronteiriça levou a várias prisões. · Mal-entendidos interculturais são frequentes.</div><div class="def"><b>Cross-</b> liga duas coisas separadas.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">They were <i>ejected</i> from the restaurant. · The machine <i>emitted</i> a loud noise.</div><div class="pt">Eles foram expulsos do restaurante. · A máquina emitiu um ruído alto.</div><div class="def"><b>E-</b> dá a ideia de algo <b>saindo</b> de algo. Ambos formais.</div></div>
+<div class="i"><div class="en">The building is <i>adjacent to</i> the hotel. · She gave me an <i>annotated</i> edition.</div><div class="pt">O prédio fica ao lado do hotel. · Ela me deu uma edição anotada.</div><div class="def"><b>A(d)-</b>: acrescentar ou conectar. Às vezes o «d» vira a consoante seguinte dobrada.</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Idioms · deu certo</div>
+<h2>Quando tudo funciona</h2>
+<p class="sdesc">Seis maneiras de dizer que o plano <b>deu certo</b> — e não são intercambiáveis.</p>
+<div class="items">
+<div class="i"><div class="en">It <i>worked like a dream</i>.</div><div class="pt">Funcionou perfeitamente.</div><div class="def">O plano deu absolutamente certo.</div></div>
+<div class="i"><div class="en">Everything <i>went according to plan</i>.</div><div class="pt">Tudo saiu conforme o planejado.</div></div>
+<div class="i"><div class="en">The evening <i>went like clockwork</i>.</div><div class="pt">A noite correu como um relógio.</div><div class="def"><b>Like clockwork</b>: sem nenhuma dificuldade.</div></div>
+<div class="i"><div class="en">The new system <i>is up and running</i>.</div><div class="pt">O novo sistema já está no ar.</div><div class="def">Começou a funcionar como planejado.</div></div>
+<div class="i"><div class="en">Things <i>are falling into place</i>.</div><div class="pt">As coisas estão se encaixando.</div><div class="def">Estão no ponto de começar a funcionar bem — ainda não funcionam.</div></div>
+<div class="i"><div class="en">Things <i>are looking up</i>.</div><div class="pt">As coisas estão melhorando.</div></div>
+<div class="i"><div class="en">That was a <i>close call</i> / a <i>close thing</i>.</div><div class="pt">Foi por pouco.</div><div class="def">Quase foi um desastre, mas acabou dando certo.</div></div>
+<div class="i"><div class="en">We solved the problem <i>at the eleventh hour</i>.</div><div class="pt">Resolvemos o problema no último minuto.</div><div class="def"><b>At the eleventh hour</b>: no instante final antes do desastre.</div></div>
+<div class="i"><div class="en">It would <i>make life easier</i> if you delayed it till next week.</div><div class="pt">Facilitaria as coisas se você adiasse para semana que vem.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">It's nothing; it's just a <i>storm in a teacup</i>.</div><div class="pt">Não é nada; é tempestade em copo d'água.</div><div class="def">Em inglês americano: <b>a tempest in a teapot</b>.</div></div>
+</div>
+</section>
+
+<section id="s16">
+<div class="snum">Idioms · deu errado</div>
+<h2>Quando desanda — e quando ninguém entende nada</h2>
+<p class="sdesc">A reação pronta para cada tipo de má notícia, e o vocabulário da <b>confusão</b>.</p>
+<div class="items">
+<div class="i"><div class="en">Oh no! <i>That's all we needed!</i></div><div class="pt">Ah, não! Era só o que faltava!</div><div class="def">Resposta a notícia que piora um problema que já existia.</div></div>
+<div class="i"><div class="en"><i>That's the last thing I wanted to hear!</i></div><div class="pt">Era a última coisa que eu queria ouvir!</div><div class="def">Resposta à notícia que confirma o seu pior medo.</div></div>
+<div class="i"><div class="en"><i>This is like a bad dream!</i></div><div class="pt">Isso parece um pesadelo!</div><div class="def">Quando uma coisa ruim vem atrás da outra, em sequência rápida.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">It's a real <i>nightmare</i>. · <i>What a pain!</i></div><div class="pt">É um pesadelo mesmo. · Que saco!</div><div class="def">Os dois mais genéricos — servem para trânsito, computador, qualquer coisa.</div></div>
+<div class="i"><div class="en">It's the <i>calm before the storm</i>.</div><div class="pt">É a calmaria antes da tempestade.</div></div>
+<div class="i"><div class="en">When she said her name was Bloor it <i>threw me</i> completely.</div><div class="pt">Quando ela disse que se chamava Bloor, me desmontou.</div><div class="def"><b>Throw somebody</b>: deixar sem saber como responder.</div></div>
+<div class="i"><div class="en">The meeting was a complete <i>shambles</i>.</div><div class="pt">A reunião foi uma bagunça total.</div><div class="def">Evento totalmente desorganizado e caótico.</div></div>
+<div class="i"><div class="en">We must have <i>got our wires crossed</i>.</div><div class="pt">A gente deve ter se desencontrado.</div><div class="def">Houve um mal-entendido de comunicação.</div></div>
+<div class="i"><span class="tag">err</span><div class="en"><i>It's as clear as mud.</i></div><div class="pt">Ficou clarííssimo.</div><div class="def">Irônico: resposta a uma explicação que só confundiu mais.</div></div>
+<div class="i"><div class="en"><i>Let's not muddy the waters.</i></div><div class="pt">Não vamos complicar as coisas.</div><div class="def">Não confundir o assunto trazendo o que é irrelevante.</div></div>
+<div class="i"><div class="en"><i>I'm not with you.</i> / <i>You've lost me there.</i></div><div class="pt">Não te acompanhei. / Aí você me perdeu.</div></div>
+<div class="i"><span class="tag">reg</span><div class="en">We <i>can't see the wood for the trees</i>.</div><div class="pt">A gente não enxerga a floresta de tanta árvore.</div><div class="def">Detalhe demais impede ver o quadro geral. Em inglês americano: <b>the forest for the trees</b>.</div></div>
+<div class="i"><div class="en">It was all just <i>brushed under the carpet</i>.</div><div class="pt">Foi tudo varrido para debaixo do tapete.</div><div class="def">Oficialmente esquecido, nunca resolvido, nunca mais mencionado.</div></div>
+</div>
+</section>
+
+<section id="s17">
+<div class="snum">Phrasal verbs · stand</div>
+<h2>Um verbo, oito sentidos — o método do <i>ripple diagram</i></h2>
+<p class="sdesc">O livro ensina a estudar phrasal verb <b>por verbo-base</b>, não por lista alfabética. <i>Stand</i> é o exemplo dele.</p>
+<div class="items">
+<div class="i"><div class="en">Ron waited an hour for Alice, then realised he had been <i>stood up</i>.</div><div class="pt">O Ron esperou uma hora pela Alice, aí percebeu que tinha levado um bolo.</div></div>
+<div class="i"><div class="en">You should always <i>stand by</i> your friends when they are in trouble.</div><div class="pt">A gente tem que apoiar os amigos quando eles estão em apuros.</div></div>
+<div class="i"><div class="en">You should <i>stand up for</i> your principles, even if it makes you unpopular.</div><div class="pt">Você deve defender seus princípios, mesmo que isso te torne impopular.</div></div>
+<div class="i"><div class="en">The house <i>stands back from</i> the road.</div><div class="pt">A casa fica recuada da rua.</div></div>
+<div class="i"><div class="en">There are three people <i>standing for</i> election in this constituency.</div><div class="pt">Há três candidatos concorrendo nesse distrito.</div></div>
+<div class="i"><div class="en">The party I support <i>stands for</i> equality and improved social services.</div><div class="pt">O partido que eu apoio defende a igualdade e a melhoria dos serviços sociais.</div><div class="def">Mesmo phrasal verb, <b>dois sentidos</b>: concorrer a eleição e representar um valor.</div></div>
+<div class="i"><div class="en">I often had to <i>stand in for</i> other teachers who were absent.</div><div class="pt">Eu tinha que substituir outros professores que faltavam.</div></div>
+<div class="i"><div class="en">After ten years as Mayor, he decided it was time to <i>stand down</i>.</div><div class="pt">Depois de dez anos como prefeito, ele decidiu que era hora de renunciar.</div></div>
+<div class="i"><div class="en">The police asked people to <i>stand back</i>.</div><div class="pt">A polícia pediu que as pessoas se afastassem.</div></div>
+</div>
+</section>
+
+<section id="s18">
+<div class="snum">Phrasal verbs · o método</div>
+<h2>Por que <i>take off</i> tem quatro sentidos — e o que fazer com isso</h2>
+<p class="sdesc">A observação mais útil do livro sobre phrasal verbs: <b>entender vem antes de usar</b>, e quase sempre existe um sinônimo de uma palavra só.</p>
+<div class="items">
+<div class="i"><div class="en">A plane <i>takes off</i>.</div><div class="pt">O avião decola.</div></div>
+<div class="i"><div class="en">You can <i>take off</i> a coat / glasses / make-up.</div><div class="pt">Você pode tirar o casaco / os óculos / a maquiagem.</div></div>
+<div class="i"><div class="en">A burglar may <i>take off</i> if he hears someone coming.</div><div class="pt">O ladrão pode dar no pé se ouvir alguém chegando.</div><div class="def">Aqui existe sinônimo: <b>the burglar left hurriedly</b>.</div></div>
+<div class="i"><div class="en">10% was <i>taken off</i> the bill.</div><div class="pt">Tiraram 10% da conta.</div><div class="def">Sinônimo: <b>10% was deducted from the bill</b>.</div></div>
+<div class="i"><div class="en">Uma mesma combinação verbo + partícula pode ter <i>vários</i> sentidos sem relação entre si.</div><div class="def">Por isso o livro insiste: anote o phrasal verb <b>dentro de uma frase inteira</b>, nunca solto numa lista.</div></div>
+<div class="i"><div class="en">Nem sempre há alternativa: <i>the plane took off</i> e <i>take off your coat</i> não têm sinônimo de uma palavra.</div><div class="def">É a razão pela qual esses dois <b>precisam</b> ser aprendidos como phrasal verb.</div></div>
+<div class="i"><div class="en">He tends to <i>miss out on</i> the best opportunities.</div><div class="pt">Ele costuma perder as melhores oportunidades.</div></div>
+<div class="i"><div class="en">The company decided to <i>branch out</i> into publishing.</div><div class="pt">A empresa resolveu se expandir para o setor editorial.</div></div>
+<div class="i"><div class="en">She was <i>bubbling over with</i> excitement.</div><div class="pt">Ela estava transbordando de empolgação.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">He's been <i>slogging away</i> at that report all week.</div><div class="pt">Ele está se matando naquele relatório a semana toda.</div></div>
+<div class="i"><span class="tag">informal</span><div class="en">It was <i>pelting down</i> when we left. · He <i>bottled out</i> at the last minute.</div><div class="pt">Estava chovendo canivete quando saímos. · Ele amarelou na última hora.</div></div>
+</div>
+</section>
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+
+</div>
+<footer>Sistema 23 · Livro 02 · English Vocabulary in Use Advanced (McCarthy &amp; O'Dell) · edição 100 unidades &mdash; inglês real tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' \u2014 '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

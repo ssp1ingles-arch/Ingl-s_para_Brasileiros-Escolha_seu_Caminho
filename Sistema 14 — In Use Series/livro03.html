@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 03 · English Pronunciation in Use Elementary — Sistema 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead a{color:var(--accent);}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 14</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 14 · Livro 03 · pronúncia</div>
+<h1 class="title">English <em>Pronunciation in Use</em> — Elementary</h1>
+<p class="lead">Jonathan Marks · Cambridge · 50 unidades. O livro vai <b>do som para a conversa</b>: primeiro os fonemas, depois a sílaba, o acento tônico, o ritmo e, no fim, a entonação. O mais útil aqui não são os sons isolados e sim o que vem depois deles — o <b>schwa</b> (a vogal fraca que domina o inglês falado), as <b>formas fortes e fracas</b> de pronomes, preposições e auxiliares, as <b>ligações</b> entre palavras e as regras exatas de quando <i>-s</i> e <i>-ed</i> viram sílaba. É isso que faz o inglês parecer "rápido demais" — e destravar isso é o que muda a compreensão auditiva. <b>Os símbolos de IPA foram recompostos:</b> o dump do PDF os havia corrompido (<i>/iz/</i> por <i>/iː/</i>, <i>/ae/</i> por <i>/æ/</i>, <i>/tJ/</i> por <i>/tʃ/</i> etc.). Modelo de pronúncia: <b>britânico padrão do sul</b> — o livro sinaliza onde americanos e nortistas da Inglaterra falam diferente. Ficaram de fora as instruções de faixa de CD, os diagramas de boca e os enunciados de exercício.</p>
+
+<div class="metrics">
+  <div class="metric"><b>15</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>50</b><span>unidades</span></div>
+  <div class="metric"><b>Reino Unido</b><span>modelo</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: schwa, linking, stress, weak form…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Units 2–3 · vogais longas e curtas</div>
+<h2><i>/iː/</i> × <i>/ɪ/</i> e <i>/uː/</i> × <i>/ʊ/</i></h2>
+<p class="sdesc">O primeiro par que o brasileiro precisa separar. Em português não existe vogal longa nem curta — em inglês, é a diferença entre <i>sheep</i> e <i>ship</i>. Os símbolos foram recompostos: o dump do PDF os havia quebrado.</p>
+<div class="items">
+<div class="i"><div class="en"><i>/uː/</i> é frequentemente escrito <b>oo, ou, oe, u, ue, ew</b>: group · shoe · blue · music · fruit · juice</div><div class="pt">O som /uː/ (u longo) aparece nessas grafias.</div></div>
+<div class="i"><div class="en">Quando a grafia é <b>u</b> ou <b>ew</b>, costuma haver um <i>/j/</i> antes do <i>/uː/</i>: m<i>u</i>sic, n<i>ew</i></div><div class="pt">Nessas grafias, ouve-se "iu" e não só "u".</div></div>
+<div class="i"><div class="en">Me too. · Work in groups. · New shoes. · Red and blue. · Listen to the music. · Forty-two. · Fruit juice.</div><div class="pt">Eu também. · Trabalhem em grupos. · Sapatos novos. · Vermelho e azul. · Escute a música. · Quarenta e dois. · Suco de fruta.</div></div>
+<div class="i"><div class="en"><i>/juː/</i> é o nome da letra <b>U</b> no alfabeto.</div><div class="pt">O nome da letra U em inglês é o próprio som /juː/.</div></div>
+<div class="i"><div class="en"><i>/ʊ/</i> é um som curto — a língua não vai tão para trás quanto no <i>/uː/</i>: full · sugar · book · foot · would · woman</div><div class="pt">O /ʊ/ é curto e mais relaxado que o /uː/.</div></div>
+<div class="i"><div class="en">My bag's full. · Where's my book? · My left foot. · A kilo of sugar. · Who's that woman?</div><div class="pt">Minha bolsa está cheia. · Cadê meu livro? · Meu pé esquerdo. · Um quilo de açúcar. · Quem é aquela mulher?</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Units 4–7 · vogais abertas</div>
+<h2><i>/ɑː/</i>, <i>/ʌ/</i>, <i>/ɒ/</i> e <i>/ɔː/</i></h2>
+<p class="sdesc">Quatro sons que o ouvido brasileiro tende a juntar num "a" e num "ó" só. O livro os separa por grafia e por frase de treino.</p>
+<div class="items">
+<div class="i"><div class="en"><i>/ɑː/</i> é longo — abra bem a boca. Grafia habitual: <b>a</b> ou <b>ar</b>.</div><div class="pt">Som longo e aberto, com a língua baixa e recuada.</div></div>
+<div class="i"><div class="en">class · can't · dance · after · bath · bathroom · afternoon · answer · fast · father · glass · tomato</div><div class="pt">Palavras com /ɑː/ escritas com "a".</div></div>
+<div class="i"><div class="en">card · park · star · start · heart · half · laugh · aunt <span class="def">o l de half é mudo</span></div><div class="pt">Palavras com /ɑː/ escritas com "ar" ou com grafia irregular.</div></div>
+<div class="i"><div class="en">How far's the car park? · We went to a large bar full of film stars. · We're starting in half an hour.</div><div class="pt">Quão longe fica o estacionamento? · Fomos a um bar grande cheio de estrelas de cinema. · Vamos começar daqui a meia hora.</div></div>
+<div class="i"><div class="en">Em palavras com <b>r</b> depois do <i>/ɑː/</i>, quase todo americano e alguns britânicos <b>pronunciam o r</b>.</div><div class="pt">É a diferença entre o sotaque rótico (americano) e o não rótico (britânico padrão).</div></div>
+<div class="i"><div class="en">No norte da Inglaterra, muita gente diz <i>/æ/</i> em vez de <i>/ɑː/</i>: after, ask, bath, class, dance, laugh.</div><div class="pt">É a maior divisão de sotaque dentro da própria Inglaterra.</div></div>
+<div class="i"><div class="en">See you tomorrow afternoon. · I'll ask my aunt. · We were laughing and dancing in the classroom. · I left my glasses in the bathroom.</div><div class="pt">Até amanhã à tarde. · Vou perguntar à minha tia. · Estávamos rindo e dançando na sala de aula. · Esqueci meus óculos no banheiro.</div></div>
+<div class="i"><div class="en"><i>/ʌ/</i> é curto, com a boca bem aberta e os lábios relaxados. Grafia habitual: <b>u</b>, às vezes <b>ou</b> ou <b>o</b>.</div><div class="pt">Som curto e central, escrito quase sempre com "u".</div></div>
+<div class="i"><div class="en">Monday · luck · month · front · London · colour · come · mother · much · nothing · study · uncle · number · under</div><div class="pt">Palavras com /ʌ/.</div></div>
+<div class="i"><div class="en"><i>son</i> e <i>sun</i> têm a mesma pronúncia. O número <i>one</i> se pronuncia <i>/wʌn/</i>.</div><div class="pt">"Filho" e "sol" soam igual; "one" começa com som de w.</div></div>
+<div class="i"><div class="en">Good luck with your exam next month! · Take the number one bus. · I said 'Come on Monday', not 'Come on Sunday'. · My brother's studying in London.</div><div class="pt">Boa sorte na sua prova no mês que vem! · Pegue o ônibus número um. · Eu disse "venha na segunda", não "venha no domingo". · Meu irmão está estudando em Londres.</div></div>
+<div class="i"><div class="en"><i>/ɒ/</i> é curto, com os lábios um pouco arredondados. Grafia habitual: <b>o</b>, às vezes <b>a</b>.</div><div class="pt">Som curto e arredondado, o "ó" breve do inglês britânico.</div></div>
+<div class="i"><div class="en">bottle · box · chocolate · coffee · doctor · clock · copy · cross · cost · gone · hospital · holiday · lock · lost · long · often · shop</div><div class="pt">Palavras com /ɒ/.</div></div>
+<div class="i"><div class="en">possible · song · stop · sorry · wrong · quality · wash · watch · want · wasn't · what</div><div class="pt">Mais palavras com /ɒ/ — incluindo as escritas com "a" depois de w.</div></div>
+<div class="i"><div class="en">A palavra <i>cough</i> se pronuncia <i>/kɒf/</i>. A palavra <i>was</i> às vezes tem <i>/ɒ/</i>.</div><div class="pt">"Cough" rima com "off", não com "ow".</div></div>
+<div class="i"><div class="en">Have you got a lot of shopping?</div><div class="pt">Você tem muita compra para levar?</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Unit 28 · sílabas</div>
+<h2>Contar sílabas — pelo som, não pela letra</h2>
+<p class="sdesc">Regra que resolve metade dos erros de ritmo: o número de sílabas é o número de <b>sons</b> vocálicos, não de letras vogais. <i>Worked</i> tem duas letras vogais e uma sílaba só.</p>
+<div class="items">
+<div class="i"><div class="en">3 sílabas: in-ter-net · un-der-line · al-pha-bet · con-so-nant</div><div class="pt">Palavras de três sílabas.</div></div>
+<div class="i"><div class="en">2 sílabas: six-ty · un-der · u-nit · hou-ses · go-ing</div><div class="pt">Palavras de duas sílabas.</div></div>
+<div class="i"><div class="en">1 sílaba: line · lines · house · goes</div><div class="pt">Palavras de uma sílaba.</div></div>
+<div class="i"><div class="en"><i>television</i> tem quatro sílabas; <i>geographical</i> tem cinco.</div><div class="pt">Televisão tem quatro sílabas; geographical tem cinco.</div></div>
+<div class="i"><div class="en">Ooh, that's nice! · Ooh, thank you very much! <span class="def">a sílaba mais simples é só uma vogal: /uː/</span></div><div class="pt">Ooh, que legal! · Ooh, muitíssimo obrigado!</div></div>
+<div class="i"><div class="en"><i>/s/ + /uː/ = /suː/</i> — este é o nome <b>Sue</b>.</div><div class="pt">Uma consoante antes da vogal já forma sílaba.</div></div>
+<div class="i"><div class="en"><i>/iː/ + /t/ = /iːt/</i> eat · <i>/iː/ + /st/ = /iːst/</i> east</div><div class="pt">Uma ou mais consoantes depois da vogal.</div></div>
+<div class="i"><div class="en"><i>/nj/ + /uː/ + /z/ = /njuːz/</i> news · <i>/str/ + /iː/ + /t/ = /striːt/</i> street</div><div class="pt">Consoantes antes e depois da vogal.</div></div>
+<div class="i"><div class="en"><b>worked</b> — 2 letras vogais, mas só 1 som vocálico <i>/wɜːkt/</i>: <b>1 sílaba</b>.</div><div class="pt">"Worked" tem uma sílaba só.</div></div>
+<div class="i"><div class="en"><b>different</b> — 3 letras vogais, mas só 2 sons <i>/ˈdɪfrənt/</i>: <b>2 sílabas</b>.</div><div class="pt">"Different" tem duas sílabas.</div></div>
+<div class="i"><div class="en"><b>interesting</b> — 4 letras vogais, mas só 3 sons <i>/ˈɪntrəstɪŋ/</i>: <b>3 sílabas</b>.</div><div class="pt">"Interesting" tem três sílabas.</div></div>
+<div class="i"><div class="en">Às vezes o <i>/l/</i> forma sílaba sozinho: bottle <i>/ˈbɒ.tl̩/</i> · syllable <i>/ˈsɪ.lə.bl̩/</i></div><div class="pt">O "l" pode ser silábico, sem vogal nenhuma.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Unit 29 · schwa</div>
+<h2>Vogais fortes e fracas — o som <i>/ə/</i></h2>
+<p class="sdesc">O som mais frequente do inglês não tem letra própria. É o <b>schwa</b>: a vogal fraca das sílabas átonas. Reconhecê-lo é o que faz a compreensão auditiva destravar.</p>
+<div class="items">
+<div class="i"><div class="en"><b>London</b> <i>/ˈlʌndən/</i> — os dois <i>o</i> são escritos igual, mas o primeiro é forte e o segundo é fraco.</div><div class="pt">Mesma letra, sons completamente diferentes.</div></div>
+<div class="i"><div class="en"><b>banana</b> <i>/bəˈnɑːnə/</i> — o segundo <i>a</i> é forte; o primeiro e o terceiro são fracos.</div><div class="pt">Só a sílaba tônica tem vogal clara.</div></div>
+<div class="i"><div class="en">Sílabas tônicas têm vogal forte; sílabas átonas costumam ter <i>/ə/</i>.</div><div class="pt">É essa alternância que dá o ritmo do inglês.</div></div>
+<div class="i"><div class="en">I have to go to London tomorrow. <span class="def">have · go · Lon · morr são fortes; o resto é fraco</span></div><div class="pt">Tenho que ir a Londres amanhã.</div></div>
+<div class="i"><div class="en">Would you like a banana? <span class="def">like · na são fortes; o resto é fraco</span></div><div class="pt">Você quer uma banana?</div></div>
+<div class="i"><div class="en">Falando inglês, você não precisa reduzir tanto — mas precisa fazer <b>diferença clara</b> entre sílaba forte e fraca.</div><div class="pt">O essencial é o contraste, não a redução extrema.</div></div>
+<div class="i"><div class="en">Where's the <i>waiter</i>? · Is this the <i>way to</i> the school? · Can you <i>wait a</i> minute?</div><div class="pt">Cadê o garçom? · É por aqui para a escola? · Você pode esperar um minuto?</div></div>
+<div class="i"><div class="en"><i>waiter</i>, <i>way to</i> e <i>wait a</i> soam exatamente iguais: <i>/ˈweɪtə/</i>.</div><div class="pt">Três coisas diferentes com o mesmo som — por causa da vogal fraca.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Units 30–31 · acento tônico</div>
+<h2>Onde cai a força da palavra</h2>
+<p class="sdesc">Toda palavra tem uma sílaba tônica. Errar a tônica compromete a compreensão mais do que errar um fonema — e não há regra: se aprende palavra a palavra.</p>
+<div class="items">
+<div class="i"><div class="en">Tônica na <b>1ª</b> sílaba (padrão <i>Oo</i>): <i>an</i>swer · <i>fa</i>ther · <i>fin</i>ger · <i>fin</i>ish · <i>glass</i>es · <i>lis</i>ten</div><div class="pt">Palavras de duas sílabas com força na primeira.</div></div>
+<div class="i"><div class="en"><i>mo</i>ther · <i>num</i>ber · <i>but</i>ter · <i>bro</i>ther · <i>se</i>cond · <i>sis</i>ter · <i>wa</i>ter · <i>wo</i>man</div><div class="pt">Mais palavras com tônica na primeira sílaba.</div></div>
+<div class="i"><div class="en">Sem vogal na átona: <i>sim</i>ple · <i>ta</i>ble · <i>ap</i>ple · <i>peo</i>ple · <i>tra</i>vel</div><div class="pt">A segunda sílaba nem chega a ter vogal audível.</div></div>
+<div class="i"><div class="en">Tônica na <b>2ª</b> sílaba (padrão <i>oO</i>): a<i>rrive</i> · a<i>sleep</i> · a<i>lone</i> · a<i>gree</i> · a<i>wake</i> · be<i>cause</i></div><div class="pt">Palavras de duas sílabas com força na segunda.</div></div>
+<div class="i"><div class="en">be<i>gin</i> · be<i>hind</i> · com<i>plete</i> · de<i>cide</i> · ex<i>am</i> · ex<i>plain</i> · ex<i>press</i></div><div class="pt">Mais palavras com tônica na segunda sílaba.</div></div>
+<div class="i"><div class="en">per<i>haps</i> · pro<i>nounce</i> · re<i>peat</i> · re<i>turn</i></div><div class="pt">Mais palavras oxítonas de duas sílabas.</div></div>
+<div class="i"><div class="en">answer <i>/ˈɑːnsə/</i> · again <i>/əˈɡen/</i> <span class="def">o dicionário marca a tônica com ˈ antes da sílaba</span></div><div class="pt">O sinal ˈ no dicionário vem antes da sílaba tônica.</div></div>
+<div class="i"><div class="en">There are three syllables in the word <i>exercise</i>. · <i>Computer</i> is an example of a three-syllable word.</div><div class="pt">A palavra "exercise" tem três sílabas. · "Computer" é um exemplo de palavra de três sílabas.</div></div>
+<div class="i"><div class="en">I can't understand Japanese. · Do you like small shops or supermarkets?</div><div class="pt">Não consigo entender japonês. · Você gosta de lojinhas ou de supermercados?</div></div>
+<div class="i"><div class="en">Are you interested in photography? · I'd like some information about mathematics courses.</div><div class="pt">Você se interessa por fotografia? · Eu gostaria de informações sobre cursos de matemática.</div></div>
+<div class="i"><div class="en">Will you help me with my vocabulary? · Which university did you go to? · Email is very helpful for communication.</div><div class="pt">Você me ajuda com meu vocabulário? · Em que universidade você estudou? · O e-mail ajuda muito na comunicação.</div></div>
+<div class="i"><div class="en">A tônica costuma <b>ficar no lugar</b>: begin → beginning · decide → decided · possible → impossible · interest → interesting</div><div class="pt">Ao acrescentar sílabas, a força geralmente não se move.</div></div>
+<div class="i"><div class="en">Mas às vezes <b>muda</b>: e<i>lec</i>tric → elec<i>tri</i>city · pro<i>nounce</i> → pronunci<i>a</i>tion · <i>pho</i>tograph → pho<i>tog</i>raphy · ex<i>plain</i> → expla<i>na</i>tion</div><div class="pt">Nestes casos a tônica se desloca com o sufixo.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Unit 32 · compostos</div>
+<h2>Palavras compostas: onde bate a força</h2>
+<p class="sdesc">Regra prática: no substantivo composto, a força vai na <b>primeira</b> parte. Nas exceções — material, lugar e adjetivo composto — as duas partes ficam fortes.</p>
+<div class="items">
+<div class="i"><div class="en">class + room → <i>classroom</i> · car + park → <i>car park</i> · second + hand → <i>second-hand</i></div><div class="pt">Compostos podem virar uma palavra, duas ou levar hífen.</div></div>
+<div class="i"><div class="en">Força na 1ª parte: <b>air</b>port · <b>bath</b>room · <b>bus</b> stop · <b>car</b> park · <b>class</b>room · <b>foot</b>ball · <b>girl</b>friend</div><div class="pt">Substantivos compostos com força na primeira parte.</div></div>
+<div class="i"><div class="en"><b>bus</b> station · <b>di</b>ning room · <b>hair</b>dresser · <b>news</b>paper · <b>post</b> office · <b>sun</b>glasses</div><div class="pt">Mais compostos com força na primeira parte.</div></div>
+<div class="i"><div class="en"><b>pho</b>tocopy · <b>rail</b>way station · <b>shop</b> assistant · <b>po</b>lice station · com<b>pu</b>ter programme</div><div class="pt">Compostos mais longos, mesma regra.</div></div>
+<div class="i"><div class="en">Adjetivo + substantivo → força nos dois: <b>single</b> <b>room</b></div><div class="pt">Quando a primeira parte é adjetivo, as duas partes ficam fortes.</div></div>
+<div class="i"><div class="en">Material → força nos dois: <b>glass</b> <b>jar</b> · <b>plastic</b> <b>bag</b> · <b>tomato</b> <b>soup</b></div><div class="pt">Quando a primeira parte diz do que a segunda é feita.</div></div>
+<div class="i"><div class="en">Lugar → força nos dois: <b>car</b> <b>door</b> · <b>front</b> <b>door</b> · <b>ground</b> <b>floor</b> · <b>city</b> <b>centre</b> · <b>kitchen</b> <b>window</b></div><div class="pt">Quando a primeira parte diz onde fica a segunda.</div></div>
+<div class="i"><div class="en">Adjetivo composto → força nos dois: <b>first</b>-<b>class</b> · <b>half</b>-<b>price</b> · <b>home</b>-<b>made</b> · <b>second</b>-<b>hand</b></div><div class="pt">Compostos adjetivos levam força nas duas partes.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Unit 33 · leitura em voz alta</div>
+<h2>Frases e pausas</h2>
+<p class="sdesc">A descoberta que muda tudo para quem acha o inglês "rápido demais": nativo <b>não</b> fala sem parar. Fala em blocos curtos com pausas — e pausar mais é melhor, não pior.</p>
+<div class="items">
+<div class="i"><div class="en">Lots of people get arrested for dangerous driving, of course.</div><div class="pt">Muita gente é presa por dirigir perigosamente, claro.</div></div>
+<div class="i"><div class="en">But how old is the oldest? Who's the world record holder?</div><div class="pt">Mas qual é a idade do mais velho? Quem é o recordista mundial?</div></div>
+<div class="i"><div class="en">Well, I read about a man who was a hundred and four!</div><div class="pt">Bom, eu li sobre um homem de cento e quatro anos!</div></div>
+<div class="i"><div class="en">He went through red lights, crashed into parked cars and drove along the pavement.</div><div class="pt">Ele passou em sinal vermelho, bateu em carros estacionados e dirigiu pela calçada.</div></div>
+<div class="i"><div class="en">And how old was his car? Only thirty.</div><div class="pt">E qual era a idade do carro dele? Só trinta anos.</div></div>
+<div class="i"><div class="en">Pausar mais é bom — dá mais tempo de pensar no que dizer e facilita para quem ouve.</div><div class="pt">Mais pausas favorecem tanto quem fala quanto quem escuta.</div></div>
+<div class="i"><div class="en">Também é importante <b>acentuar as palavras mais importantes</b>.</div><div class="pt">Dentro de cada bloco, uma ou duas palavras carregam a força.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Units 34–35 · linking</div>
+<h2>Emendar as palavras</h2>
+<p class="sdesc">Na escrita há espaço entre as palavras; na fala, não. Consoante final gruda na vogal seguinte, e entre duas vogais surge um <i>/j/</i> ou um <i>/w/</i> de ligação.</p>
+<div class="items">
+<div class="i"><div class="en">Look‿at that! Breakfast‿in bed!</div><div class="pt">Olha só isso! Café da manhã na cama!</div></div>
+<div class="i"><div class="en">A: Bought‿it? B: No, caught‿it!</div><div class="pt">A: Comprou? B: Não, peguei!</div></div>
+<div class="i"><div class="en">That's‿enough! Switch‿it‿off!</div><div class="pt">Já chega! Desliga isso!</div></div>
+<div class="i"><div class="en">Speak‿it · Write‿it · Read‿it · You know you really need‿it!</div><div class="pt">Fale · Escreva · Leia · Você sabe que precisa mesmo disso!</div></div>
+<div class="i"><div class="en">Work‿all day · Run‿away · Boss‿and me · Can't‿agree</div><div class="pt">Trabalhar o dia todo · Fugir · O chefe e eu · Não conseguimos concordar</div></div>
+<div class="i"><div class="en">Fill‿a cup · Drink‿it‿up · Walk‿a mile · Don't be late!</div><div class="pt">Encha uma xícara · Beba tudo · Ande um quilômetro e meio · Não se atrase!</div></div>
+<div class="i"><div class="en">First you'd lose‿it, then you lock‿it, and put the key back‿in your pocket.</div><div class="pt">Primeiro você perde, aí você tranca e põe a chave de volta no bolso.</div></div>
+<div class="i"><div class="en">O <b>h</b> de <i>he, his, her, him</i> muitas vezes não é pronunciado — então essas palavras começam com vogal.</div><div class="pt">É por isso que "seen her" soa "seen‿er".</div></div>
+<div class="i"><div class="en">Can we go back? My husband's forgotten (h)is passport.</div><div class="pt">A gente pode voltar? Meu marido esqueceu o passaporte dele.</div></div>
+<div class="i"><div class="en">A: Where's the boss? B: I don't know, I haven't seen‿(h)er.</div><div class="pt">A: Cadê o chefe? B: Não sei, não a vi.</div></div>
+<div class="i"><div class="en">Vogal <i>/ɪ/</i> ou <i>/iː/</i> + vogal → surge <i>/j/</i>: me‿ʲand you · three‿ʲor four · the‿ʲend</div><div class="pt">Entre essas vogais aparece um "i" de ligação.</div></div>
+<div class="i"><div class="en">Vogal <i>/əʊ/</i> ou <i>/uː/</i> + vogal → surge <i>/w/</i>: you‿ʷand me · two‿ʷor three · go‿ʷoutside</div><div class="pt">Entre essas vogais aparece um "u" de ligação.</div></div>
+<div class="i"><div class="en">Go‿ʷout of the building. Go‿ʷalong the street. Go‿ʷover the bridge. Go‿ʷacross the street.</div><div class="pt">Saia do prédio. Siga pela rua. Atravesse a ponte. Atravesse a rua.</div></div>
+<div class="i"><div class="en">Go‿ʷup the hill. Take the‿ʲeighth street on your left. And the‿ʲeleventh on your right.</div><div class="pt">Suba o morro. Pegue a oitava rua à esquerda. E a décima primeira à direita.</div></div>
+<div class="i"><div class="en">I'll do‿ʷone for you. I'll give you‿ʷone too — a nice one, a new‿ʷone, a yellow‿ʷand blue‿ʷone.</div><div class="pt">Faço um para você. Te dou um também — um bonito, um novo, um amarelo e azul.</div></div>
+<div class="i"><div class="en">Se a mesma consoante termina uma palavra e começa a seguinte, você ouve <b>uma vez só</b>, mas mais longa.</div><div class="pt">"ten nights", "this summer", "some money" — a consoante não se repete.</div></div>
+<div class="i"><div class="en">ten‿nights · this‿summer · some‿money · enough‿food · stop‿playing · a good‿day · a black‿cat · call‿later</div><div class="pt">Exemplos de consoante repetida que soa uma só vez.</div></div>
+<div class="i"><div class="en">Às vezes a consoante <b>muda</b>: ten boys (n soa /m/) · ten girls (n soa /ŋ/) · goodbye (d soa /b/) · good goal (d soa /ɡ/)</div><div class="pt">A consoante se assimila ao som seguinte.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Unit 36 · ritmo</div>
+<h2>O ritmo da frase</h2>
+<p class="sdesc">Frases têm ritmo igual ao das palavras. Treinar frases inteiras com o mesmo padrão de tônicas é o exercício que mais aproxima do som real.</p>
+<div class="items">
+<div class="i"><div class="en">Padrão <b>Ooo</b>: <i>in</i>terview · <i>te</i>lephone · <i>talk</i> to me · <i>told</i> you so · <i>does</i>n't it?</div><div class="pt">Força na primeira de três.</div></div>
+<div class="i"><div class="en">Padrão <b>oOo</b>: im<i>por</i>tant · dis<i>cus</i>sion · I <i>told</i> you · I'd <i>like</i> to · pro<i>nounce</i> it</div><div class="pt">Força no meio.</div></div>
+<div class="i"><div class="en">Padrão <b>ooOo</b>: photo<i>gra</i>phic · infor<i>ma</i>tion · forty-<i>se</i>ven · what a<i>bout</i> it? · never <i>tried</i> it</div><div class="pt">Força na terceira de quatro.</div></div>
+<div class="i"><div class="en">Padrão <b>OooO</b>: <i>time</i> to get <i>up</i> · <i>ma</i>king mis<i>takes</i> · <i>tell</i> me a<i>gain</i> · <i>give</i> me your <i>hand</i> · <i>twen</i>ty years <i>old</i></div><div class="pt">Força na primeira e na última.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Unit 37 · formas fracas 1</div>
+<h2>Pronomes: forma forte × forma fraca</h2>
+<p class="sdesc">Quase todo pronome tem duas pronúncias. A fraca é a normal; a forte só aparece quando a palavra é o ponto importante ou marca contraste. Este é o coração da compreensão auditiva.</p>
+<div class="items">
+<div class="i"><div class="en">you <i>/jə/</i> fraca · <i>/juː/</i> forte &nbsp;·&nbsp; me <i>/mɪ/</i> · <i>/miː/</i> &nbsp;·&nbsp; he <i>/i/</i> · <i>/hiː/</i></div><div class="pt">As duas pronúncias de cada pronome.</div></div>
+<div class="i"><div class="en">him <i>/ɪm/</i> · <i>/hɪm/</i> &nbsp;·&nbsp; her <i>/ə/</i> · <i>/hɜː/</i> &nbsp;·&nbsp; we <i>/wɪ/</i> · <i>/wiː/</i> &nbsp;·&nbsp; them <i>/ðəm/</i> · <i>/ðem/</i></div><div class="pt">Mais pares de forma fraca e forte.</div></div>
+<div class="i"><div class="en">A: Will <i>you</i> be at the meeting on Friday? <span class="def">you fraco</span> B: Yes. Will <b>you</b> be there? <span class="def">you forte</span></div><div class="pt">A: Você vai estar na reunião na sexta? B: Vou. E <b>você</b> vai?</div></div>
+<div class="i"><div class="en">Can you help <i>me</i> carry this suitcase? <span class="def">fraco</span> · Hey, wait for <b>me</b>! <span class="def">forte</span></div><div class="pt">Você me ajuda a carregar esta mala? · Ei, espera por <b>mim</b>!</div></div>
+<div class="i"><div class="en">A: Is <i>he</i> there? B: Who? A: The boss. B: No. Everybody else is working, but <b>he's</b> gone home!</div><div class="pt">A: Ele está aí? B: Quem? A: O chefe. B: Não. Todo mundo está trabalhando, mas <b>ele</b> foi para casa!</div></div>
+<div class="i"><div class="en">A: <b>She</b> doesn't smoke or drink! <span class="def">forte</span> B: Ah, that's what <i>she</i> told you! <span class="def">fraco</span></div><div class="pt">A: <b>Ela</b> não fuma nem bebe! B: Ah, foi isso que ela te contou!</div></div>
+<div class="i"><div class="en">A: Look — it's <b>him</b>! B: Where? I can't see <i>him</i>.</div><div class="pt">A: Olha — é <b>ele</b>! B: Onde? Não estou vendo ele.</div></div>
+<div class="i"><div class="en">A: Do you know that woman? B: <b>Her</b>? No, I don't recognise <i>her</i>.</div><div class="pt">A: Você conhece aquela mulher? B: <b>Ela</b>? Não, não reconheço.</div></div>
+<div class="i"><div class="en">A: I'm afraid <i>we</i> can't stay any longer. B: What do you mean, '<b>we</b>'? I've got plenty of time.</div><div class="pt">A: Infelizmente não podemos ficar mais. B: Como assim, "<b>nós</b>"? Eu tenho tempo de sobra.</div></div>
+<div class="i"><div class="en">A: They told <i>us</i> to go this way. B: Well, they didn't tell <b>us</b>!</div><div class="pt">A: Disseram para irmos por aqui. B: Pois a <b>gente</b> não foi avisada!</div></div>
+<div class="i"><div class="en">When I said 'Give <i>them</i> a drink', I didn't mean <b>them</b>, I meant the people.</div><div class="pt">Quando eu disse "dá uma bebida a eles", eu não quis dizer <b>aqueles</b>, quis dizer as pessoas.</div></div>
+<div class="i"><div class="en">Give her‿a chance. <span class="def">o r de her se pronuncia antes de vogal</span></div><div class="pt">Dê uma chance a ela.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Units 38–39 · formas fracas 2 e 3</div>
+<h2>Possessivos, conjunções, preposições, artigos</h2>
+<p class="sdesc">O mesmo mecanismo se aplica a <i>your</i>, <i>and</i>, <i>but</i>, <i>at</i>, <i>from</i>, <i>to</i>, <i>a</i>, <i>than</i>, <i>as</i> e <i>there</i>. É o que faz "want to" virar "wanna" no ouvido.</p>
+<div class="items">
+<div class="i"><div class="en">your <i>/jə/</i> · <i>/jɔː/</i> &nbsp;·&nbsp; his <i>/ɪz/</i> · <i>/hɪz/</i> &nbsp;·&nbsp; their <i>/ðə/</i> · <i>/ðeə/</i></div><div class="pt">Possessivos: forma fraca e forte.</div></div>
+<div class="i"><div class="en">and <i>/ən/</i> · <i>/ænd/</i> &nbsp;·&nbsp; but <i>/bət/</i> · <i>/bʌt/</i> &nbsp;·&nbsp; some <i>/səm/</i> · <i>/sʌm/</i> &nbsp;·&nbsp; that <i>/ðət/</i> · <i>/ðæt/</i></div><div class="pt">Conjunções e determinantes: fraca e forte.</div></div>
+<div class="i"><div class="en">at <i>/ət/</i> · <i>/æt/</i> &nbsp;·&nbsp; for <i>/fə/</i> · <i>/fɔː/</i> &nbsp;·&nbsp; from <i>/frəm/</i> · <i>/frɒm/</i> &nbsp;·&nbsp; of <i>/əv/</i> · <i>/ɒv/</i> &nbsp;·&nbsp; to <i>/tə/</i> · <i>/tuː/</i></div><div class="pt">Preposições: fraca e forte. "to" vira /tu/ antes de vogal.</div></div>
+<div class="i"><div class="en">What's your‿address? · What was their‿answer? · Come in for‿a minute. · to‿a party</div><div class="pt">Qual é o seu endereço? · Qual foi a resposta deles? · Entre um minuto. · para uma festa</div></div>
+<div class="i"><div class="en">Give me <i>your</i> hand! <span class="def">fraco</span> · A: <b>Your</b> turn! B: No, it's <b>your</b> turn! <span class="def">forte</span></div><div class="pt">Me dá a mão! · A: Sua vez! B: Não, a vez é <b>sua</b>!</div></div>
+<div class="i"><div class="en">A: That's our new neighbour. B: And what's <i>his</i> name? A: No, <b>her</b>! B: Oh, sorry. What's <b>her</b> name?</div><div class="pt">A: Aquele é nosso vizinho novo. B: E qual é o nome dele? A: Não, <b>dela</b>! B: Ah, desculpa. Qual é o nome <b>dela</b>?</div></div>
+<div class="i"><div class="en">A: She must be rich — look at <i>her</i> car! B: I think that's <b>his</b> car, actually!</div><div class="pt">A: Ela deve ser rica — olha o carro dela! B: Na verdade acho que o carro é <b>dele</b>!</div></div>
+<div class="i"><div class="en">A: They've sold <i>their</i> old house, I see. B: They've sold <b>their</b> house, yes, but they haven't bought another one yet.</div><div class="pt">A: Vejo que venderam a casa velha deles. B: Venderam a casa <b>deles</b>, sim, mas ainda não compraram outra.</div></div>
+<div class="i"><div class="en">The shop's closed <i>from</i> one <i>to</i> two. · There's a bus <b>to</b> the village at six, but there's no bus back <b>from</b> there tonight.</div><div class="pt">A loja fecha da uma às duas. · Tem ônibus <b>para</b> o vilarejo às seis, mas não tem ônibus <b>de volta</b> hoje à noite.</div></div>
+<div class="i"><div class="en"><i>a</i> <i>/ə/</i> antes de consoante · <i>an</i> <i>/ən/</i> antes de vogal</div><div class="pt">A escolha entre a e an é pelo <b>som</b>, não pela letra.</div></div>
+<div class="i"><div class="en">a cup of coffee, please · a piece of cake, please · a lot of visitors · a Thursday morning in November</div><div class="pt">Uma xícara de café, por favor · Um pedaço de bolo, por favor · Muitos visitantes · Uma manhã de quinta em novembro</div></div>
+<div class="i"><div class="en">an invitation to a party · an umbrella in the rain</div><div class="pt">Um convite para uma festa · Um guarda-chuva na chuva</div></div>
+<div class="i"><div class="en">Mas: <b>a</b> university · <b>a</b> useful present <span class="def">começam com o som consonantal /j/</span></div><div class="pt">Apesar do "u", o som inicial é de consoante.</div></div>
+<div class="i"><div class="en">The new computer's better <i>than</i> the old one. · The old computer wasn't <i>as</i> good <i>as</i> the new one.</div><div class="pt">O computador novo é melhor que o antigo. · O antigo não era tão bom quanto o novo.</div></div>
+<div class="i"><div class="en">There's a bridge over the river. · There are ten millimetres in a centimetre. <span class="def">there fraco: /ðə/</span></div><div class="pt">Tem uma ponte sobre o rio. · Um centímetro tem dez milímetros.</div></div>
+<div class="i"><div class="en">A: Where are my glasses? B: Over <b>there</b>! <span class="def">there forte: /ðeə/ — aqui é lugar</span></div><div class="pt">A: Cadê meus óculos? B: Ali!</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Units 40–41 · auxiliares e contrações</div>
+<h2>Verbos auxiliares e as contrações</h2>
+<p class="sdesc">Auxiliar átono some quase por completo; auxiliar tônico reaparece inteiro. E a contração escrita é exatamente o registro dessa forma fraca.</p>
+<div class="items">
+<div class="i"><div class="en">I'm ready. · It's raining again. · Are you coming? · You're coming, aren't you?</div><div class="pt">Estou pronto. · Está chovendo de novo. · Você vem? · Você vem, não vem?</div></div>
+<div class="i"><div class="en">Who was that? · The shops were all closed. · What have you got in your hand?</div><div class="pt">Quem era? · As lojas estavam todas fechadas. · O que você tem na mão?</div></div>
+<div class="i"><div class="en">Has the programme started? · What do you want for Christmas? · Where does your sister live?</div><div class="pt">O programa já começou? · O que você quer de Natal? · Onde sua irmã mora?</div></div>
+<div class="i"><div class="en">You can stay here if you like. · Could you spell your name for me, please?</div><div class="pt">Você pode ficar aqui se quiser. · Você poderia soletrar seu nome para mim, por favor?</div></div>
+<div class="i"><div class="en">A: Are you ready? B: Yes, I <b>am</b>. · A: It isn't raining, is it? B: Yes, it <b>is</b>.</div><div class="pt">A: Está pronto? B: Estou. · A: Não está chovendo, está? B: Está sim.</div></div>
+<div class="i"><div class="en">A: I'm not very good at English. B: Of course you <b>are</b>!</div><div class="pt">A: Não sou muito bom em inglês. B: Claro que é!</div></div>
+<div class="i"><div class="en">A: Is your father a teacher? B: He <b>was</b>, but he's retired now.</div><div class="pt">A: Seu pai é professor? B: Era, mas já se aposentou.</div></div>
+<div class="i"><div class="en">A: How many people are there in your class… ten? B: There <b>were</b> ten, but one left last week.</div><div class="pt">A: Quantas pessoas tem na sua turma… dez? B: Eram dez, mas uma saiu semana passada.</div></div>
+<div class="i"><div class="en">A: Have we met before? B: I don't think we <b>have</b>. · A: Has it started? B: Yes, come on, it <b>has</b>!</div><div class="pt">A: A gente já se conheceu? B: Acho que não. · A: Já começou? B: Já, vem logo!</div></div>
+<div class="i"><div class="en">A: I don't like this music. B: Oh, I <b>do</b>. · A: Does the supermarket open on Sundays? B: I think it <b>does</b>.</div><div class="pt">A: Não gosto desta música. B: Ah, eu gosto. · A: O supermercado abre aos domingos? B: Acho que abre.</div></div>
+<div class="i"><div class="en">A: I can't open this door. B: Let me try. Maybe I <b>can</b>. · A: Can you play tennis? B: Not now. I <b>could</b> when I was younger.</div><div class="pt">A: Não consigo abrir esta porta. B: Deixa eu tentar. Talvez eu consiga. · A: Você joga tênis? B: Agora não. Eu jogava quando era mais novo.</div></div>
+<div class="i"><div class="en">It's raining again! <span class="def">contração — is átono</span> · Yes, it <b>is</b>! <span class="def">forma plena — is tônico</span></div><div class="pt">Está chovendo de novo! · Está sim!</div></div>
+<div class="i"><div class="en">They're here! <span class="def">contração</span> · They <b>are</b>! <span class="def">forma plena</span></div><div class="pt">Eles chegaram! · Chegaram sim!</div></div>
+<div class="i"><div class="en">O <b>'s</b> serve para <i>is</i> e para <i>has</i>: It's raining (= is) · Where's he gone? (= has)</div><div class="pt">O mesmo 's tem dois valores.</div></div>
+<div class="i"><div class="en">They can't be — it's only ten to three!</div><div class="pt">Não pode ser — são só dez para as três!</div></div>
+<div class="i"><div class="en">Em quadrinhos e música aparecem outras contrações: <i>gonna</i> (going to) · <i>wanna</i> (want to) · <i>innit</i> (isn't it?) · <i>dontcha</i> (don't you?) · <i>d'you</i> (do you) · <i>'cos</i> (because)</div><div class="pt">Contrações de registro muito informal.</div></div>
+<div class="i"><div class="en">One of these days I'm gonna leave this town. · I just wanna have a good time.</div><div class="pt">Um dia desses eu vou embora desta cidade. · Só quero me divertir.</div></div>
+<div class="i"><div class="en">Nice place this, innit? · A: Why dontcha wanna come with us? B: 'Cos I hate shopping!</div><div class="pt">Lugar legal este, né? · A: Por que você não quer vir com a gente? B: Porque odeio fazer compras!</div></div>
+<div class="i"><div class="en">Rock 'n' roll will never die. · Tell 'im to come now! · A: Can you see 'em? B: Not yet.</div><div class="pt">O rock nunca vai morrer. · Diz a ele para vir agora! · A: Consegue ver eles? B: Ainda não.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Unit 42 · terminações -s</div>
+<h2>Quando o <i>-s</i> vira sílaba</h2>
+<p class="sdesc">A terminação <i>-s</i> aparece em quatro funções e quase sempre <b>não</b> acrescenta sílaba. Só acrescenta depois de seis sons específicos — e essa é a regra inteira.</p>
+<div class="items">
+<div class="i"><div class="en">Plural: Why have you got three phones on your desk?</div><div class="pt">Por que você tem três telefones na sua mesa?</div></div>
+<div class="i"><div class="en">Verbo: She phones him every day. · Possessivo: Have you got Maria's phone number?</div><div class="pt">Ela liga para ele todo dia. · Você tem o telefone da Maria?</div></div>
+<div class="i"><div class="en">Contração: The phone's ringing. The film's started.</div><div class="pt">O telefone está tocando. O filme começou.</div></div>
+<div class="i"><div class="en">day (1 sílaba) → days (1 sílaba): I'm staying for two days.</div><div class="pt">O -s não acrescenta sílaba aqui.</div></div>
+<div class="i"><div class="en">match (1 sílaba) → matches (2 sílabas): Have you got any matches?</div><div class="pt">Aqui o -es acrescenta uma sílaba.</div></div>
+<div class="i"><div class="en">go → goes: Hit the ball and watch where it goes. <span class="def">1 sílaba</span></div><div class="pt">Bata na bola e veja para onde ela vai.</div></div>
+<div class="i"><div class="en">finish → finishes: Do you know when the course finishes? <span class="def">3 sílabas</span></div><div class="pt">Você sabe quando o curso termina?</div></div>
+<div class="i"><div class="en">George → George's: It's George's birthday. <span class="def">2 sílabas</span></div><div class="pt">É aniversário do George.</div></div>
+<div class="i"><div class="en">train → train's: The train's late again. <span class="def">1 sílaba</span></div><div class="pt">O trem está atrasado de novo.</div></div>
+<div class="i"><div class="en">box → boxes: Open the boxes. · boss → boss's: That's the boss's office. <span class="def">2 sílabas</span></div><div class="pt">Abra as caixas. · Aquele é o escritório do chefe.</div></div>
+<div class="i"><div class="en">glove → gloves: Are these your gloves? <span class="def">1 sílaba</span> · page → pages: This book's got 120 pages. <span class="def">2 sílabas</span></div><div class="pt">Estas luvas são suas? · Este livro tem 120 páginas.</div></div>
+<div class="i"><div class="en"><b>Regra:</b> acrescenta sílaba se o último som for <i>/s/ /z/ /ʃ/ /ʒ/ /tʃ/ /dʒ/</i>. Nos outros casos, não.</div><div class="pt">Só esses seis sons pedem sílaba extra.</div></div>
+<div class="i"><div class="en">Não se contrai <i>is</i> nem <i>has</i> depois desses sons: The food's good. <b>mas</b> The service <b>is</b> good.</div><div class="pt">A comida está boa. · O serviço está bom.</div></div>
+<div class="i"><div class="en">The game's started. <b>mas</b> The match <b>has</b> started.</div><div class="pt">O jogo começou. · A partida começou.</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Unit 43 · terminações -ed</div>
+<h2>Quando o <i>-ed</i> vira sílaba</h2>
+<p class="sdesc">Mesma lógica do <i>-s</i>: normalmente o passado regular <b>não</b> ganha sílaba. Só ganha depois de <i>/t/</i> ou <i>/d/</i>. Dizer "look-ed" é o erro mais audível do brasileiro.</p>
+<div class="items">
+<div class="i"><div class="en">look (1 sílaba) → looked (1 sílaba): Look at this! · I looked everywhere.</div><div class="pt">Olha isso! · Procurei em todo lugar.</div></div>
+<div class="i"><div class="en">explain (2 sílabas) → explained (2 sílabas): Can you explain this for me, please? · I explained it but they didn't understand.</div><div class="pt">Você pode me explicar isso, por favor? · Eu expliquei, mas eles não entenderam.</div></div>
+<div class="i"><div class="en">live (1 sílaba) → lived (1 sílaba): Where do you live? · We lived in the country.</div><div class="pt">Onde você mora? · Morávamos no interior.</div></div>
+<div class="i"><div class="en">Truque do livro: imagine que o <b>-ed</b> começa a palavra seguinte. <i>I look‿ted everywhere</i> · <i>I explain‿did</i></div><div class="pt">Assim a terminação não vira sílaba solta.</div></div>
+<div class="i"><div class="en">Se o infinitivo termina em <i>/d/</i> ou <i>/t/</i>, aí <b>sim</b> vira sílaba: wait → waited · hate → hated</div><div class="pt">Só depois de /d/ e /t/ o -ed ganha sílaba.</div></div>
+<div class="i"><div class="en">Wait here, please. · We waited half an hour. · I hate waiting. · I hated school.</div><div class="pt">Espere aqui, por favor. · Esperamos meia hora. · Odeio esperar. · Eu odiava a escola.</div></div>
+<div class="i"><div class="en">Às vezes o <b>-ed</b> quase some, quando a palavra seguinte começa com consoante: I look(ed) there. · We liv(ed) near the park.</div><div class="pt">Procurei lá. · Morávamos perto do parque.</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Units 44–46 · entonação</div>
+<h2>Entonação: informação velha e nova</h2>
+<p class="sdesc">A melodia da frase carrega significado. Informação já conhecida e informação nova recebem contornos diferentes — e é isso que o ouvido brasileiro raramente registra.</p>
+<div class="items">
+<div class="i"><div class="en">A: What time are we meeting? Did you say half past two? B: No, not half past <i>two</i> — half past <b>three</b>.</div><div class="pt">A: A que horas a gente se encontra? Você disse duas e meia? B: Não, não duas e meia — três e meia.</div></div>
+<div class="i"><div class="en">A: Edinburgh's one of my favourite places in England. B: But Edinburgh isn't in England, it's in <b>Scotland</b>!</div><div class="pt">A: Edimburgo é um dos meus lugares favoritos na Inglaterra. B: Mas Edimburgo não fica na Inglaterra, fica na Escócia!</div></div>
+<div class="i"><div class="en">A: Look — that wine costs £100! B: Yes, it's expensive, but everything in this shop's expensive!</div><div class="pt">A: Olha — esse vinho custa 100 libras! B: Sim, é caro, mas tudo nesta loja é caro!</div></div>
+<div class="i"><div class="en">A: I thought that film was really good. B: Well, I thought the <b>music</b> was good.</div><div class="pt">A: Achei aquele filme muito bom. B: Bom, eu achei a <b>música</b> boa.</div></div>
+<div class="i"><div class="en">Ao contar história, usa-se <b>past continuous</b> para o pano de fundo e <b>past simple</b> para o acontecimento — com entonações diferentes.</div><div class="pt">A gramática e a melodia trabalham juntas na narrativa.</div></div>
+<div class="i"><div class="en">I was walking along the street one day, and I saw a wallet on the pavement.</div><div class="pt">Eu estava andando pela rua um dia e vi uma carteira na calçada.</div></div>
+<div class="i"><div class="en">I was waiting for the bus yesterday, and I heard an explosion.</div><div class="pt">Eu estava esperando o ônibus ontem e ouvi uma explosão.</div></div>
+<div class="i"><div class="en">I was lying in bed last night, and I heard a knock at the door.</div><div class="pt">Eu estava deitado na cama ontem à noite e ouvi uma batida na porta.</div></div>
+<div class="i"><div class="en">I was watching the news one night, and I saw myself in the shopping centre.</div><div class="pt">Eu estava vendo o noticiário uma noite e me vi no shopping.</div></div>
+<div class="i"><div class="en">Complementos de fundo com a mesma entonação: <i>on Tuesday, I think</i> · <i>as usual</i> · <i>and suddenly</i> · <i>round about midnight</i></div><div class="pt">Na terça, eu acho · como sempre · e de repente · lá pela meia-noite</div></div>
+<div class="i"><div class="en">I was walking along the street one day, <i>on Tuesday, I think</i>, and I saw a wallet on the pavement.</div><div class="pt">Eu estava andando pela rua um dia, numa terça, eu acho, e vi uma carteira na calçada.</div></div>
+<div class="i"><div class="en">I was waiting for the bus yesterday, <i>as usual</i>, and <i>suddenly</i> I heard an explosion.</div><div class="pt">Eu estava esperando o ônibus ontem, como sempre, e de repente ouvi uma explosão.</div></div>
+<div class="i"><div class="en">I was lying in bed last night, <i>round about midnight</i>, and I heard a knock at the door.</div><div class="pt">Eu estava deitado na cama ontem à noite, lá pela meia-noite, e ouvi uma batida na porta.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 14 V07 · Livro 03 · English Pronunciation in Use Elementary — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' se\u00e7\u00f5es.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'se\u00e7\u00e3o':'se\u00e7\u00f5es')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

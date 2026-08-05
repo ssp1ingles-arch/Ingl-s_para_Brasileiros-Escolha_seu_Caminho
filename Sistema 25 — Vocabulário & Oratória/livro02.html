@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talk Like TED — Sistema 25 · Livro 02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar</a>
+<div class="wrap">
+
+<div class="eyebrow">SISTEMA 25 · LIVRO 02</div>
+<h1 class="title">Talk Like <em>TED</em></h1>
+<p class="lead">Carmine Gallo analisou centenas de palestras TED para achar o que as melhores têm em comum. Este painel traz o <i>inglês real</i> desse estudo: as falas dos palestrantes, as frases que abrem e viram uma apresentação, e o vocabulário de quem fala em público — não a teoria sobre falar bem.</p>
+
+<div class="metrics">
+  <div class="metric"><b>12</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>B2–C1</b><span>nível</span></div>
+  <div class="metric"><b>US</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar frase, palestrante ou tradução…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Paixão</div>
+<h2>Segredo 1 — <i>Unleash the master within</i></h2>
+<p class="sdesc">O primeiro segredo do livro: ninguém convence sobre um assunto que não o move. Aqui, como os palestrantes falam da própria paixão.</p>
+<div class="items">
+<div class="i"><div class="en">I'm a learning machine and this is the place to learn.</div><div class="pt">Sou uma máquina de aprender, e este é o lugar para aprender.</div></div>
+<div class="i"><div class="en">What business am I really in? What am I truly passionate about?</div><div class="pt">Em que ramo eu realmente estou? Pelo que eu sou de fato apaixonado?</div><div class="def">As duas perguntas que o livro manda responder antes de escrever a palestra.</div></div>
+<div class="i"><div class="en">I'm the CEO of the California Strawberry Commission. I'm passionate about promoting California strawberries.</div><div class="pt">Sou o CEO da Comissão do Morango da Califórnia. Sou apaixonado por promover o morango da Califórnia.</div><div class="def">Exemplo do livro de paixão declarada sem rodeio.</div></div>
+<div class="i"><div class="en">When you are passionate about something you can't help yourself from thinking about it, acting on it, and talking about it.</div><div class="pt">Quando você é apaixonado por algo, não consegue evitar pensar nisso, agir nisso e falar sobre isso.</div></div>
+<div class="i"><div class="en">People who are genuinely passionate about their topic make better speakers.</div><div class="pt">Quem é genuinamente apaixonado pelo próprio tema fala melhor.</div></div>
+<div class="i"><div class="en">A positive, intense feeling that you experience for something that is profoundly meaningful for you as an individual.</div><div class="pt">Um sentimento positivo e intenso por algo que é profundamente significativo para você como indivíduo.</div><div class="def">A definição de paixão que o livro adota.</div></div>
+<div class="i"><div class="en">Nothing great has ever been achieved without enthusiasm.</div><div class="pt">Nada de grande jamais foi conquistado sem entusiasmo.</div></div>
+<div class="i"><div class="en">Only passions, great passions, can elevate the soul to great things.</div><div class="pt">Só as paixões, as grandes paixões, elevam a alma às grandes coisas.</div></div>
+<div class="i"><div class="en">Do what you love. Well, it's true.</div><div class="pt">Faça o que você ama. Pois é — é verdade mesmo.</div></div>
+<div class="i"><div class="en">Find and use your passion and you'll have a great career. Don't do it and you won't.</div><div class="pt">Ache e use a sua paixão e você terá uma grande carreira. Não faça isso e não terá.</div></div>
+<div class="i"><div class="en">Wasted talent is a waste I cannot stand.</div><div class="pt">Talento desperdiçado é um desperdício que eu não suporto.</div></div>
+<div class="i"><div class="en">When you're surrounded by people who share a collective passion around a common purpose, anything is possible.</div><div class="pt">Quando você está cercado de gente que divide uma paixão coletiva em torno de um propósito comum, tudo é possível.</div></div>
+<div class="i"><div class="en">It is our experience that the very best executives are the ones who are the most passionate about what they do.</div><div class="pt">Nossa experiência é que os melhores executivos são os mais apaixonados pelo que fazem.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">História</div>
+<h2>Segredo 2 — <i>Master the art of storytelling</i></h2>
+<p class="sdesc">A palestra que gruda é a que conta uma história. Trechos reais de narrativa usados no palco.</p>
+<div class="items">
+<div class="i"><div class="en">The great truths of the world have often been couched in fascinating stories.</div><div class="pt">As grandes verdades do mundo quase sempre vieram embrulhadas em histórias fascinantes.</div></div>
+<div class="i"><div class="en">Somebody gets into trouble; gets out of it again. People love that story. They never get sick of it!</div><div class="pt">Alguém se mete numa encrenca; sai dela. As pessoas amam essa história. Nunca enjoam dela!</div><div class="def">A estrutura narrativa mais reaproveitada que existe.</div></div>
+<div class="i"><div class="en">Let's start with a little girl. Her mother has died. Her father has remarried a vile-tempered ugly woman with two nasty daughters.</div><div class="pt">Vamos começar com uma menininha. A mãe dela morreu. O pai se casou de novo com uma mulher feia e de gênio horrível, com duas filhas detestáveis.</div></div>
+<div class="i"><div class="en">There's a party at the palace that night and she can't go.</div><div class="pt">Tem uma festa no palácio naquela noite e ela não pode ir.</div></div>
+<div class="i"><div class="en">Give the reader at least one character he or she can root for.</div><div class="pt">Dê ao leitor pelo menos um personagem para torcer.</div></div>
+<div class="i"><div class="en">Nice people with common sense do not make interesting characters.</div><div class="pt">Gente boa e de bom senso não dá personagem interessante.</div></div>
+<div class="i"><div class="en">The most basic way to get someone's attention is this: break a pattern.</div><div class="pt">O jeito mais básico de conseguir a atenção de alguém é este: quebre um padrão.</div></div>
+<div class="i"><div class="en">The listener's brain responses mirrored the speaker's brain responses.</div><div class="pt">As respostas cerebrais do ouvinte espelhavam as do palestrante.</div><div class="def">O achado neurológico que o livro usa para justificar a narrativa.</div></div>
+<div class="i"><div class="en">Close your eyes. We're going to tell you a story about a foreign country.</div><div class="pt">Feche os olhos. Vamos contar uma história sobre um país estrangeiro.</div></div>
+<div class="i"><div class="en">Let's forget the slides for a moment. Tell me about your personal connection to this.</div><div class="pt">Vamos esquecer os slides por um instante. Me conte qual é a sua ligação pessoal com isso.</div></div>
+<div class="i"><div class="en">I'm proud of the man I've become. I'm proud of what they taught me.</div><div class="pt">Tenho orgulho do homem em que me tornei. Tenho orgulho do que eles me ensinaram.</div></div>
+<div class="i"><div class="en">For too long the business world has ignored or belittled the power of oral narrative.</div><div class="pt">Por tempo demais o mundo dos negócios ignorou ou menosprezou o poder da narrativa oral.</div></div>
+<div class="i"><div class="en">The ability to tell a purposeful story that can truly be heard is rare.</div><div class="pt">A capacidade de contar uma história com propósito, que seja de fato ouvida, é rara.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Conversa</div>
+<h2>Segredo 3 — <i>Have a conversation</i></h2>
+<p class="sdesc">Ensaiar até soar como conversa, não como recitação. O que os palestrantes dizem sobre o próprio preparo.</p>
+<div class="items">
+<div class="i"><div class="en">Public speaking doesn't come naturally to me like it does to other people.</div><div class="pt">Falar em público não me sai natural como sai para outras pessoas.</div></div>
+<div class="i"><div class="en">But I'm speaking the way I always talk in casual conversations.</div><div class="pt">Mas estou falando do jeito que sempre falo numa conversa informal.</div></div>
+<div class="i"><div class="en">This isn't a casual conversation.</div><div class="pt">Isto aqui não é uma conversa informal.</div></div>
+<div class="i"><div class="en">We all get better at what we do if we do it repeatedly.</div><div class="pt">Todos ficamos melhores no que fazemos se fizermos repetidamente.</div></div>
+<div class="i"><div class="en">I slaved over the talk, writing and re-writing and timing and re-timing and tweaking.</div><div class="pt">Eu me matei na palestra, escrevendo e reescrevendo, cronometrando e recronometrando, ajustando.</div></div>
+<div class="i"><div class="en">Did I build an animation on this slide? What's the next one? Why isn't the clicker working?</div><div class="pt">Será que coloquei animação neste slide? Qual é o próximo? Por que o controle não funciona?</div><div class="def">O ruído mental de quem não ensaiou o bastante.</div></div>
+<div class="i"><div class="en">What story did I plan to tell now?</div><div class="pt">Que história mesmo eu ia contar agora?</div></div>
+<div class="i"><div class="en">If I'd done this alone it probably would not have been a good talk.</div><div class="pt">Se eu tivesse feito isso sozinho, provavelmente não teria sido uma boa palestra.</div></div>
+<div class="i"><div class="en">All these people made it a brilliant talk.</div><div class="pt">Todas essas pessoas fizeram dela uma palestra brilhante.</div></div>
+<div class="i"><div class="en">When I hear great music my body automatically starts moving to the beat.</div><div class="pt">Quando ouço uma música boa, meu corpo começa a se mexer no ritmo automaticamente.</div></div>
+<div class="i"><div class="en">At parties, I'm the center of attention.</div><div class="pt">Em festas, eu sou o centro das atenções.</div></div>
+<div class="i"><div class="en">I am passionate about the job I do.</div><div class="pt">Sou apaixonado pelo trabalho que faço.</div></div>
+<div class="i"><div class="en">Individuals who are rated high on charisma tend to express more positive emotions in their written and spoken communications.</div><div class="pt">Quem pontua alto em carisma tende a expressar mais emoções positivas na comunicação escrita e falada.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Corpo</div>
+<h2>Linguagem corporal — <i>our bodies change our minds</i></h2>
+<p class="sdesc">O bloco de Amy Cuddy e dos interrogadores: postura, olhar e voz como parte do argumento.</p>
+<div class="items">
+<div class="i"><div class="en">Our bodies change our minds and our minds can change our behavior, and our behavior can change our outcomes.</div><div class="pt">Nosso corpo muda nossa mente, nossa mente muda nosso comportamento, e nosso comportamento muda nossos resultados.</div></div>
+<div class="i"><div class="en">So it seems that our nonverbals do govern how we think and feel about ourselves.</div><div class="pt">Parece então que o não verbal governa mesmo como pensamos e sentimos sobre nós.</div></div>
+<div class="i"><div class="en">Don't fake it till you make it. Fake it till you become it.</div><div class="pt">Não finja até conseguir. Finja até se tornar.</div><div class="def">A frase final da palestra de Amy Cuddy.</div></div>
+<div class="i"><div class="en">Body language makes a world of difference. It helps identify the difference between deception and truthfulness.</div><div class="pt">A linguagem corporal faz toda a diferença. Ela ajuda a distinguir mentira de verdade.</div></div>
+<div class="i"><div class="en">When I watch someone give a presentation, I evaluate them the same way as I did during interrogations.</div><div class="pt">Quando vejo alguém apresentar, avalio a pessoa do mesmo jeito que fazia em interrogatórios.</div></div>
+<div class="i"><div class="en">As an officer you can invite trouble if you slouch, avoid eye contact, use vague, imprecise language.</div><div class="pt">Como oficial, você atrai problema se se curva, evita contato visual e usa linguagem vaga e imprecisa.</div></div>
+<div class="i"><div class="en">Great leaders have an air of confidence.</div><div class="pt">Grandes líderes têm um ar de confiança.</div></div>
+<div class="i"><div class="en">What role does body language play in the development of a leader?</div><div class="pt">Que papel a linguagem corporal tem na formação de um líder?</div></div>
+<div class="i"><div class="en">Image is powerful, but also image is superficial.</div><div class="pt">A imagem é poderosa, mas a imagem também é superficial.</div></div>
+<div class="i"><div class="en">I just totally transformed what you thought of me in six seconds.</div><div class="pt">Eu acabei de transformar completamente o que você pensava de mim em seis segundos.</div></div>
+<div class="i"><div class="en">An eager nonverbal style will serve you better.</div><div class="pt">Um estilo não verbal entusiasmado vai te servir melhor.</div></div>
+<div class="i"><div class="en">Effective leaders have the ability to move themselves and others to action.</div><div class="pt">Líderes eficazes têm a capacidade de mover a si e aos outros para a ação.</div></div>
+<div class="i"><div class="en">They understand the invisible forces that shape us.</div><div class="pt">Eles entendem as forças invisíveis que nos moldam.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Ensinar</div>
+<h2>Segredo 4 — <i>Teach me something new</i></h2>
+<p class="sdesc">O cérebro presta atenção ao que é novo. As falas em que o palestrante entrega uma informação que ninguém esperava.</p>
+<div class="items">
+<div class="i"><div class="en">Only that which is truly unique and unexpected can stand out.</div><div class="pt">Só o que é de fato único e inesperado se destaca.</div></div>
+<div class="i"><div class="en">You're telling me that one third of Americans crave extra-chunky spaghetti sauce and yet no one is servicing their needs?</div><div class="pt">Você está me dizendo que um terço dos americanos quer molho de tomate bem pedaçudo e ninguém atende a essa necessidade?</div></div>
+<div class="i"><div class="en">There are fourteen different kinds of mustards and seventy-one different kinds of olive oil.</div><div class="pt">Existem catorze tipos diferentes de mostarda e setenta e um tipos diferentes de azeite.</div></div>
+<div class="i"><div class="en">What do you want in a spaghetti sauce?</div><div class="pt">O que você quer num molho de macarrão?</div></div>
+<div class="i"><div class="en">In embracing the diversity of human beings, we will find a surer way to true happiness.</div><div class="pt">Ao abraçar a diversidade dos seres humanos, encontraremos um caminho mais seguro para a felicidade verdadeira.</div></div>
+<div class="i"><div class="en">DryBath is the world's first and only bath-substituting skin gel.</div><div class="pt">O DryBath é o primeiro e único gel de pele do mundo que substitui o banho.</div></div>
+<div class="i"><div class="en">You apply it to your skin and you don't need to bathe.</div><div class="pt">Você aplica na pele e não precisa tomar banho.</div></div>
+<div class="i"><div class="en">DryBath is a rich man's convenience and a poor man's lifesaver.</div><div class="pt">O DryBath é a conveniência do rico e a salvação do pobre.</div><div class="def">Contraste em uma frase — o formato que o livro recomenda para a ideia central.</div></div>
+<div class="i"><div class="en">All you have to do to prevent being infected with trachoma is wash your face.</div><div class="pt">Tudo o que você precisa fazer para não pegar tracoma é lavar o rosto.</div></div>
+<div class="i"><div class="en">It's the intersection of technology and liberal arts that makes our hearts sing.</div><div class="pt">É o cruzamento entre tecnologia e humanidades que faz nosso coração cantar.</div></div>
+<div class="i"><div class="en">We don't call half of Hollywood disabled.</div><div class="pt">A gente não chama metade de Hollywood de deficiente.</div></div>
+<div class="i"><div class="en">Access to information and knowledge that past masters could only dream about.</div><div class="pt">Acesso a informação e conhecimento com que os mestres do passado só podiam sonhar.</div></div>
+<div class="i"><div class="en">TED is where brilliant people go to hear other brilliant people share their ideas.</div><div class="pt">O TED é onde gente brilhante vai ouvir outra gente brilhante dividir ideias.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Arrepio</div>
+<h2>Segredo 5 — <i>Deliver jaw-dropping moments</i></h2>
+<p class="sdesc">O momento que a plateia leva para casa. Trechos das falas que causaram o efeito.</p>
+<div class="items">
+<div class="i"><div class="en">I remember thinking, there's no way I would ever be able to squeeze the enormousness of myself back into this tiny little body.</div><div class="pt">Lembro de pensar: não tem jeito de eu conseguir espremer a imensidão de mim de volta neste corpinho minúsculo.</div></div>
+<div class="i"><div class="en">Come on, Bryan. You and I are going to have a talk.</div><div class="pt">Vem cá, Bryan. Eu e você vamos ter uma conversa.</div></div>
+<div class="i"><div class="en">I want you to know I've been watching you.</div><div class="pt">Quero que você saiba que eu tenho observado você.</div></div>
+<div class="i"><div class="en">I think you can do anything you want to do.</div><div class="pt">Eu acho que você pode fazer qualquer coisa que quiser.</div></div>
+<div class="i"><div class="en">I just need you to promise me three things.</div><div class="pt">Só preciso que você me prometa três coisas.</div><div class="def">Estrutura de três — o livro insiste que a plateia retém três.</div></div>
+<div class="i"><div class="en">The first thing I want you to promise me is that you'll always love your mom.</div><div class="pt">A primeira coisa que quero que você me prometa é que sempre vai amar a sua mãe.</div></div>
+<div class="i"><div class="en">The second thing I want you to promise me is that you'll always do the right thing even when the right thing is the hard thing.</div><div class="pt">A segunda é que você sempre vai fazer a coisa certa, mesmo quando a coisa certa for a difícil.</div></div>
+<div class="i"><div class="en">The third thing I want you to promise me is that you'll never drink alcohol.</div><div class="pt">A terceira é que você nunca vai beber álcool.</div></div>
+<div class="i"><div class="en">You have to get folks to trust you.</div><div class="pt">Você tem que fazer as pessoas confiarem em você.</div></div>
+<div class="i"><div class="en">I came into this courtroom to tell this young man, keep your eyes on the prize, hold on.</div><div class="pt">Entrei neste tribunal para dizer a este rapaz: não tire os olhos do objetivo, aguente firme.</div></div>
+<div class="i"><div class="en">Your time is limited, so don't waste it living someone else's life.</div><div class="pt">Seu tempo é limitado, então não o desperdice vivendo a vida de outra pessoa.</div></div>
+<div class="i"><div class="en">Don't be trapped by dogma — which is living with the results of other people's thinking.</div><div class="pt">Não seja prisioneiro do dogma — que é viver com o resultado do pensamento dos outros.</div></div>
+<div class="i"><div class="en">Stories are such a powerful driver of emotional value.</div><div class="pt">Histórias são um motor tão poderoso de valor emocional.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Humor</div>
+<h2>Segredo 6 — <i>Lighten up</i></h2>
+<p class="sdesc">Rir baixa a guarda da plateia. O humor no palco, como ele aparece de fato nas falas.</p>
+<div class="items">
+<div class="i"><div class="en">Yes, that's why we have no agriculture here.</div><div class="pt">Pois é, é por isso que a gente não tem agricultura aqui.</div><div class="def">Resposta seca — o humor do livro raramente é piada, é timing.</div></div>
+<div class="i"><div class="en">Nice people with common sense only make good former spouses.</div><div class="pt">Gente boa e de bom senso só dá bom ex-cônjuge.</div></div>
+<div class="i"><div class="en">You never asked.</div><div class="pt">Vocês nunca perguntaram.</div></div>
+<div class="i"><div class="en">Why didn't you tell us?</div><div class="pt">Por que vocês não nos disseram?</div></div>
+<div class="i"><div class="en">Every single project that we set up in Africa failed.</div><div class="pt">Absolutamente todo projeto que montamos na África fracassou.</div></div>
+<div class="i"><div class="en">You never arrive in a community with any ideas.</div><div class="pt">Você nunca chega numa comunidade já cheio de ideias.</div></div>
+<div class="i"><div class="en">Ten banks, then twenty banks — you'd think he'd get the message.</div><div class="pt">Dez bancos, depois vinte bancos — você acharia que ele pegaria o recado.</div></div>
+<div class="i"><div class="en">He didn't get bitter or quit doing his best.</div><div class="pt">Ele não ficou amargurado nem parou de dar o melhor de si.</div></div>
+<div class="i"><div class="en">You might be in a no right now, but favor is coming.</div><div class="pt">Você pode estar num não agora, mas o sim está a caminho.</div></div>
+<div class="i"><div class="en">They failed to realize that they were a few no's away from seeing their business succeed.</div><div class="pt">Não perceberam que estavam a alguns nãos de ver o negócio dar certo.</div></div>
+<div class="i"><div class="en">The truthful, inside story of almost any man's life is most entertaining.</div><div class="pt">A história verdadeira, de dentro, da vida de quase qualquer pessoa é muito divertida.</div></div>
+<div class="i"><div class="en">If told modestly and without offending egotism.</div><div class="pt">Desde que contada com modéstia e sem egoísmo ofensivo.</div></div>
+<div class="i"><div class="en">Every time it's retold, someone makes another million dollars.</div><div class="pt">Toda vez que é recontada, alguém ganha mais um milhão de dólares.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">18 minutos</div>
+<h2>Segredo 7 — a regra dos <i>18 minutos</i></h2>
+<p class="sdesc">O limite duro do TED e o que ele força: cortar, escolher, ordenar.</p>
+<div class="items">
+<div class="i"><div class="en">It's four days of learning, passion, and inspiration.</div><div class="pt">São quatro dias de aprendizado, paixão e inspiração.</div></div>
+<div class="i"><div class="en">Stimulating intellectually, but I never thought the ideas I heard would move me.</div><div class="pt">Estimulante intelectualmente, mas eu nunca pensei que as ideias que ouvi fossem me comover.</div></div>
+<div class="i"><div class="en">TED literally was the launch pad to the next decade of my life's exploration.</div><div class="pt">O TED foi literalmente a plataforma de lançamento da década seguinte da minha exploração de vida.</div></div>
+<div class="i"><div class="en">Why You Will Fail to Have a Great Career.</div><div class="pt">Por que você vai falhar em ter uma grande carreira.</div><div class="def">Título de palestra — o livro elogia títulos que provocam.</div></div>
+<div class="i"><div class="en">We Need to Talk about an Injustice.</div><div class="pt">Precisamos falar sobre uma injustiça.</div></div>
+<div class="i"><div class="en">Choice, Happiness, and Spaghetti Sauce.</div><div class="pt">Escolha, felicidade e molho de macarrão.</div></div>
+<div class="i"><div class="en">The most basic way to get attention is to break a pattern.</div><div class="pt">O jeito mais básico de conseguir atenção é quebrar um padrão.</div></div>
+<div class="i"><div class="en">Your subject is sensitive, controversial, and complex.</div><div class="pt">Seu assunto é sensível, controverso e complexo.</div></div>
+<div class="i"><div class="en">How much of your success do you owe to the effective communication of your story?</div><div class="pt">Quanto do seu sucesso você deve à comunicação eficaz da sua história?</div></div>
+<div class="i"><div class="en">These same audiences, when inspired, are willing and able to spread their favorite messages.</div><div class="pt">Essas mesmas plateias, quando inspiradas, querem e conseguem espalhar as mensagens de que gostaram.</div></div>
+<div class="i"><div class="en">Creating a massive viral effect for the speaker.</div><div class="pt">Criando um efeito viral enorme para o palestrante.</div></div>
+<div class="i"><div class="en">But as the noise level of modern life has become a cacophony, the ability to be heard is rare.</div><div class="pt">Mas como o nível de ruído da vida moderna virou uma cacofonia, ser ouvido virou coisa rara.</div></div>
+<div class="i"><div class="en">I am very happy to share ideas, but as an individual I have nothing to lose or to gain.</div><div class="pt">Fico muito feliz em dividir ideias, mas como indivíduo não tenho nada a perder nem a ganhar.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Imagem</div>
+<h2>Segredo 8 — <i>paint a mental picture</i></h2>
+<p class="sdesc">Fazer a plateia ver, ouvir e sentir. Metáfora, número comparado e detalhe concreto.</p>
+<div class="items">
+<div class="i"><div class="en">An evocative metaphor or an emotional exchange between characters.</div><div class="pt">Uma metáfora evocativa ou uma troca emocional entre personagens.</div></div>
+<div class="i"><div class="en">Excessive activity in his brain's left prefrontal cortex compared to its right counterpart.</div><div class="pt">Atividade excessiva no córtex pré-frontal esquerdo em comparação com o direito.</div></div>
+<div class="i"><div class="en">Giving him an abnormally large capacity for happiness.</div><div class="pt">Dando a ele uma capacidade anormalmente grande de felicidade.</div></div>
+<div class="i"><div class="en">In truth, anyone can find happiness if he or she looks for it in the right place.</div><div class="pt">Na verdade, qualquer um encontra felicidade se procurar no lugar certo.</div></div>
+<div class="i"><div class="en">Entrepreneurial passion catalyzes full-blown emotional experiences.</div><div class="pt">A paixão empreendedora catalisa experiências emocionais completas.</div></div>
+<div class="i"><div class="en">Complete with engagement of brain and body responses.</div><div class="pt">Com o envolvimento das respostas do cérebro e do corpo.</div></div>
+<div class="i"><div class="en">Building a third place between work and home.</div><div class="pt">Construir um terceiro lugar entre o trabalho e a casa.</div><div class="def">A metáfora fundadora da Starbucks, citada no livro.</div></div>
+<div class="i"><div class="en">A place where employees would be treated with respect.</div><div class="pt">Um lugar onde os funcionários seriam tratados com respeito.</div></div>
+<div class="i"><div class="en">I'm empowered to deliver a great customer experience.</div><div class="pt">Eu tenho autonomia para entregar uma ótima experiência ao cliente.</div></div>
+<div class="i"><div class="en">The shocking part about it is how simple the solution is.</div><div class="pt">O chocante nisso é como a solução é simples.</div></div>
+<div class="i"><div class="en">His position now is many levels higher than that old supervisor position.</div><div class="pt">O cargo dele agora é vários níveis acima daquela antiga posição de supervisor.</div></div>
+<div class="i"><div class="en">Their effect on any given object's subjective value can actually be measured.</div><div class="pt">O efeito delas sobre o valor subjetivo de um objeto pode de fato ser medido.</div></div>
+<div class="i"><div class="en">Exhibited joint, temporally coupled response patterns.</div><div class="pt">Exibiram padrões de resposta conjuntos e acoplados no tempo.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Autenticidade</div>
+<h2>Segredo 9 — <i>stay in your lane</i></h2>
+<p class="sdesc">Não imitar outro palestrante. As falas sobre ser o que se é no palco.</p>
+<div class="items">
+<div class="i"><div class="en">You're afraid to pursue your passion. You're afraid to look ridiculous.</div><div class="pt">Você tem medo de perseguir sua paixão. Tem medo de parecer ridículo.</div></div>
+<div class="i"><div class="en">You're afraid to try. You're afraid you may fail.</div><div class="pt">Você tem medo de tentar. Tem medo de fracassar.</div></div>
+<div class="i"><div class="en">When I was at Harvard, I was the one winning the awards.</div><div class="pt">Quando eu estava em Harvard, eu era quem ganhava os prêmios.</div></div>
+<div class="i"><div class="en">You are not quitting, because I took a gamble on you.</div><div class="pt">Você não vai desistir, porque eu apostei em você.</div></div>
+<div class="i"><div class="en">I'm really struggling with how to write about you on the little flier.</div><div class="pt">Estou penando para saber como escrever sobre você no folhetinho.</div></div>
+<div class="i"><div class="en">The thing I liked about your talk is you're a storyteller.</div><div class="pt">O que eu gostei na sua palestra é que você é um contador de histórias.</div></div>
+<div class="i"><div class="en">So I think what I'll do is just call you a storyteller.</div><div class="pt">Então acho que vou simplesmente te chamar de contador de histórias.</div></div>
+<div class="i"><div class="en">My students want to create technology. I want them to be passionate about what they build.</div><div class="pt">Meus alunos querem criar tecnologia. Eu quero que eles sejam apaixonados pelo que constroem.</div></div>
+<div class="i"><div class="en">No matter how many people tell you to pursue your dreams, you will decide not to do it.</div><div class="pt">Não importa quantas pessoas mandem você perseguir seus sonhos, você vai decidir não fazer isso.</div></div>
+<div class="i"><div class="en">TEDsters do it for love; they don't do it for money.</div><div class="pt">O pessoal do TED faz por amor, não por dinheiro.</div></div>
+<div class="i"><div class="en">If you're starting a company in an area you don't enjoy, it will show.</div><div class="pt">Se você está abrindo uma empresa numa área de que não gosta, isso vai aparecer.</div></div>
+<div class="i"><div class="en">After six months it was time to go home.</div><div class="pt">Depois de seis meses, era hora de voltar para casa.</div></div>
+<div class="i"><div class="en">The CEO is passionate about the company.</div><div class="pt">O CEO é apaixonado pela empresa.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Abertura</div>
+<h2>Frases de abertura e de virada</h2>
+<p class="sdesc">As estruturas que abrem uma apresentação, mudam de assunto e conduzem a plateia — prontas para copiar.</p>
+<div class="items">
+<div class="i"><div class="en">Let's start with a little girl.</div><div class="pt">Vamos começar com uma menininha.</div><div class="def">Abrir com personagem, não com agenda.</div></div>
+<div class="i"><div class="en">Close your eyes.</div><div class="pt">Feche os olhos.</div></div>
+<div class="i"><div class="en">Let's forget the slides for a moment.</div><div class="pt">Vamos esquecer os slides por um instante.</div></div>
+<div class="i"><div class="en">I want you to know something.</div><div class="pt">Quero que você saiba de uma coisa.</div></div>
+<div class="i"><div class="en">I just need you to promise me three things.</div><div class="pt">Só preciso que você me prometa três coisas.</div></div>
+<div class="i"><div class="en">The first thing is …  The second thing is …  The third thing is …</div><div class="pt">A primeira coisa é… A segunda coisa é… A terceira coisa é…</div><div class="def">A régua de três que estrutura a fala.</div></div>
+<div class="i"><div class="en">You're telling me that …?</div><div class="pt">Você está me dizendo que…?</div><div class="def">Reformular como pergunta para criar espanto.</div></div>
+<div class="i"><div class="en">What business am I really in?</div><div class="pt">Em que ramo eu realmente estou?</div></div>
+<div class="i"><div class="en">How much of your success do you owe to …?</div><div class="pt">Quanto do seu sucesso você deve a…?</div></div>
+<div class="i"><div class="en">The most basic way to get attention is this:</div><div class="pt">O jeito mais básico de conseguir atenção é este:</div></div>
+<div class="i"><div class="en">Here's the shocking part.</div><div class="pt">Aqui está a parte chocante.</div></div>
+<div class="i"><div class="en">And so I want to say to you …</div><div class="pt">E então eu quero te dizer…</div></div>
+<div class="i"><div class="en">It's the intersection of X and Y that makes our hearts sing.</div><div class="pt">É o cruzamento entre X e Y que faz nosso coração cantar.</div><div class="def">Molde de frase-síntese.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Vocabulário</div>
+<h2>Vocabulário de quem fala em público</h2>
+<p class="sdesc">As palavras que aparecem o tempo todo no livro, em frase de uso — não em lista.</p>
+<div class="items">
+<div class="i"><div class="en">A <i>commencement address</i> is the speech given at a graduation.</div><div class="pt">Um commencement address é o discurso de formatura.</div></div>
+<div class="i"><div class="en">A <i>talk</i> is what TED calls a presentation.</div><div class="pt">Talk é como o TED chama uma apresentação.</div></div>
+<div class="i"><div class="en">To <i>deliver</i> a talk is to give it in front of an audience.</div><div class="pt">Deliver a talk é apresentá-la diante de uma plateia.</div></div>
+<div class="i"><div class="en">The <i>audience</i> is everyone listening to you.</div><div class="pt">Audience é todo mundo que está te ouvindo.</div></div>
+<div class="i"><div class="en">A <i>clicker</i> is the remote you use to change slides.</div><div class="pt">Clicker é o controle remoto que troca os slides.</div></div>
+<div class="i"><div class="en">To <i>slouch</i> is to stand or sit with a drooping posture.</div><div class="pt">Slouch é ficar de pé ou sentado com a postura caída.</div></div>
+<div class="i"><div class="en"><i>Eye contact</i> is looking directly at the people you address.</div><div class="pt">Eye contact é olhar diretamente para quem você fala.</div></div>
+<div class="i"><div class="en">To <i>root for</i> someone is to want them to succeed.</div><div class="pt">Root for alguém é torcer para essa pessoa dar certo.</div></div>
+<div class="i"><div class="en">To <i>stand out</i> is to be noticed among many.</div><div class="pt">Stand out é se destacar no meio de muitos.</div></div>
+<div class="i"><div class="en">To <i>break a pattern</i> is to do the unexpected.</div><div class="pt">Break a pattern é fazer o inesperado.</div></div>
+<div class="i"><div class="en">A <i>jaw-dropping moment</i> leaves the audience stunned.</div><div class="pt">Um jaw-dropping moment deixa a plateia de queixo caído.</div></div>
+<div class="i"><div class="en">To <i>lighten up</i> is to become less serious.</div><div class="pt">Lighten up é ficar menos sério.</div></div>
+<div class="i"><div class="en">To <i>take a gamble on</i> someone is to bet on them.</div><div class="pt">Take a gamble on alguém é apostar nessa pessoa.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 25 · Livro 02 — Talk Like TED (Carmine Gallo)</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' — '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

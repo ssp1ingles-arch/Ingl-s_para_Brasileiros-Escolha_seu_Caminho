@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 06 · Close-up C2 — Sistema 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 11</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 11 · Livro 06 · C2</div>
+<h1 class="title">Close-up <em>C2</em></h1>
+<p class="lead">National Geographic Learning / Cengage · nível de proficiência. O último degrau da série — e o mais específico. Como o <a href="livro05.html" style="color:var(--accent)">livro 05 (C1)</a> já cobre inversão, cleft e modais perfeitos, aqui foi extraído justamente <b>o que só existe no C2</b>: os condicionais invertidos (<i>Had I known…</i>), <code>but for</code>, <code>would rather</code> com passado irreal, <code>it's time we paid</code>, adjetivos graduáveis e não graduáveis, os dois sentidos de <code>quite</code>, os adjetivos que <b>mudam de significado conforme a posição</b>, e a tabela completa de verbos de relato. Mais as <b>140 expressões idiomáticas</b>, os <b>50 phrasal verbs</b> definidos e a linguagem de redação da <b>Writing Reference</b>.</p>
+
+<div class="metrics">
+  <div class="metric"><b>22</b><span>seções</span></div>
+  <div class="metric"><b id="m-total">&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>C2</b><span>nível</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: had I known, but for, quite, redação…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Estruturas</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Grammar 5.6</div>
+<h2>Condicionais invertidos — a forma sem <i>if</i></h2>
+<p class="sdesc">A construção mais formal (e mais elegante) do inglês: tira-se o <code>if</code> e inverte-se o auxiliar. Três formas: <code>Should you…</code>, <code>Were he to…</code>, <code>Had they…</code>.</p>
+<div class="items">
+<div class="i"><div class="en">Should you have any questions, feel free to email me.</div><div class="pt">Caso o senhor tenha alguma dúvida, fique à vontade para me escrever.</div></div>
+<div class="i"><div class="en">Were he to find out the truth, he would be heartbroken.</div><div class="pt">Se ele viesse a descobrir a verdade, ficaria com o coração partido.</div></div>
+<div class="i"><div class="en">Had they suspected the young man, they would have turned him in.</div><div class="pt">Se tivessem suspeitado do rapaz, o teriam entregado.</div></div>
+<div class="i"><div class="en">Had we not acted, the consequences might have been even worse than they were.</div><div class="pt">Se não tivéssemos agido, as consequências poderiam ter sido ainda piores.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Com <i>if</i></th><th>Invertido (formal)</th></tr></thead>
+<tbody>
+<tr><td class="w">If you have any questions…</td><td class="ok"><b>Should you</b> have any questions…</td></tr>
+<tr><td class="w">If he found out… / If he were to find out…</td><td class="ok"><b>Were he to</b> find out…</td></tr>
+<tr><td class="w">If they had suspected…</td><td class="ok"><b>Had they</b> suspected…</td></tr>
+<tr><td class="w">If we hadn't acted…</td><td class="ok"><b>Had we not</b> acted…</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s02">
+<div class="snum">Grammar 5.5</div>
+<h2>Condicionar sem dizer <i>if</i></h2>
+<p class="sdesc">Sete substitutos — com destaque para <code>but for</code> e <code>if it weren't for</code>, que condensam uma oração inteira num sintagma.</p>
+<div class="items">
+<div class="i"><div class="en">Provided that he behaves himself, the convict may be released early.</div><div class="pt">Desde que se comporte, o detento pode ser solto mais cedo.</div></div>
+<div class="i"><div class="en">As long as there is high unemployment, there will be social problems.</div><div class="pt">Enquanto houver desemprego alto, haverá problemas sociais.</div></div>
+<div class="i"><div class="en">You won't be able to get a job unless you finish school.</div><div class="pt">Você não vai conseguir emprego a menos que termine os estudos.</div></div>
+<div class="i"><div class="en">You need an impressive CV. Otherwise, your job application will be rejected.</div><div class="pt">Você precisa de um currículo impressionante. Senão, sua candidatura será rejeitada.</div></div>
+<div class="i"><div class="en">Supposing you could work anywhere, where would you go?</div><div class="pt">Supondo que você pudesse trabalhar em qualquer lugar, para onde iria?</div></div>
+<div class="i"><div class="en">Call me later and I'll let you know the details.</div><div class="pt">Me ligue mais tarde que eu te passo os detalhes.</div></div>
+<div class="i"><div class="en">If it weren't for her dog, she would be very lonely.</div><div class="pt">Se não fosse pelo cachorro dela, ela seria muito solitária.</div></div>
+<div class="i"><div class="en">If it hadn't been for his laziness, he might have kept the job.</div><div class="pt">Se não fosse pela preguiça dele, talvez tivesse mantido o emprego.</div></div>
+<div class="i"><div class="en">But for his connections, he wouldn't be working in the company.</div><div class="pt">Não fossem os contatos dele, não estaria trabalhando na empresa.</div></div>
+<div class="i"><div class="en">But for his parents' help, he wouldn't have been able to afford the car.</div><div class="pt">Não fosse a ajuda dos pais, ele não teria tido como pagar o carro.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Grammar 5.7 – 5.10</div>
+<h2>Condicionais mistos, contínuos e com modais</h2>
+<p class="sdesc">O que acontece quando o <code>if</code> encontra duração, intenção, polidez, boa vontade — e raiva.</p>
+<div class="items">
+<div class="i"><div class="en">If they hadn't fallen out over money, the brothers might still be friends.</div><div class="pt">Se não tivessem brigado por dinheiro, os irmãos talvez ainda fossem amigos.</div></div>
+<div class="i"><div class="en">If she weren't so scared of being alone, she would have walked out years ago.</div><div class="pt">Se ela não tivesse tanto medo de ficar sozinha, teria ido embora anos atrás.</div></div>
+<div class="i"><div class="en">If you're making tea, will you bring me a cup?</div><div class="pt">Se você está fazendo chá, me traz uma xícara?</div></div>
+<div class="i"><div class="en">If she had been paying attention, she would have noticed the warning signs.</div><div class="pt">Se ela estivesse prestando atenção, teria notado os sinais de alerta.</div></div>
+<div class="i"><div class="en">If you are going to have a party, please warn the neighbours first.</div><div class="pt">Se você vai dar uma festa, avise os vizinhos antes.</div></div>
+<div class="i"><div class="en">If it is going to rain, we will have to cancel the family picnic.</div><div class="pt">Se for chover, a gente vai ter que cancelar o piquenique.</div></div>
+<div class="i"><div class="en">If you would wait a moment, I will call the manager, sir.</div><div class="pt">Se o senhor puder aguardar um instante, eu chamo o gerente. <i>(polidez)</i></div></div>
+<div class="i"><div class="en">If you would like to follow me, I'll show you to the office.</div><div class="pt">Se quiser me acompanhar, eu levo o senhor até o escritório.</div></div>
+<div class="i"><div class="en">If she will accept the invitation, we will make arrangements immediately.</div><div class="pt">Se ela estiver disposta a aceitar o convite, providenciamos tudo imediatamente.</div></div>
+<div class="i"><div class="en">If she won't change her behaviour, we will have to take action.</div><div class="pt">Se ela não quiser mudar de comportamento, vamos ter que tomar providências.</div></div>
+<div class="i"><div class="en">If you would just listen for once, you might understand what he is saying!</div><div class="pt">Se você ao menos escutasse uma vez, talvez entendesse o que ele está dizendo!</div></div>
+<div class="i"><div class="en">If you must listen to that music, at least put your headphones on!</div><div class="pt">Se você faz questão de ouvir essa música, pelo menos coloque o fone!</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Grammar 6.1</div>
+<h2>Inversão para ênfase — repertório completo</h2>
+<p class="sdesc">O recurso mais característico do C2. Repare que <code>so</code> e <code>such</code> também podem abrir a frase e provocar inversão.</p>
+<div class="items">
+<div class="i"><div class="en">Not since 1985 had the pound sunk so low.</div><div class="pt">Não desde 1985 a libra havia caído tanto.</div></div>
+<div class="i"><div class="en">Not only did the bank charge interest, but it also rose every year.</div><div class="pt">O banco não só cobrava juros como eles ainda subiam todo ano.</div></div>
+<div class="i"><div class="en">Under no circumstances should you invest without sound financial advice.</div><div class="pt">Em hipótese alguma você deve investir sem uma boa assessoria financeira.</div></div>
+<div class="i"><div class="en">At no time did they imagine that they would only be allowed limited withdrawals.</div><div class="pt">Em momento algum imaginaram que só teriam direito a saques limitados.</div></div>
+<div class="i"><div class="en">Little did they suspect that their aunt would leave them all her estate.</div><div class="pt">Mal suspeitavam que a tia deixaria todo o patrimônio para eles.</div></div>
+<div class="i"><div class="en">Rarely do prices go down.</div><div class="pt">Raramente os preços caem.</div></div>
+<div class="i"><div class="en">She is so stingy, not once did she offer to pay for a shared meal.</div><div class="pt">Ela é tão pão-dura que nem uma vez se ofereceu para pagar uma refeição dividida.</div></div>
+<div class="i"><div class="en">I was about to pay for a gift. Only then did I realise I had left my credit card at home.</div><div class="pt">Eu ia pagar um presente. Só então percebi que tinha deixado o cartão em casa.</div></div>
+<div class="i"><div class="en">So little faith did the old lady have in the bank that she kept her life savings at home.</div><div class="pt">Tão pouca confiança a senhora tinha no banco que guardava as economias de uma vida em casa.</div></div>
+<div class="i"><div class="en">No sooner had they received their pension than they had spent it on essentials.</div><div class="pt">Mal recebiam a aposentadoria e já a tinham gasto com o essencial.</div></div>
+<div class="i"><div class="en">Hardly had they paid off one bill when another arrived.</div><div class="pt">Mal tinham quitado uma conta e já chegava outra.</div></div>
+<div class="i"><div class="en">Nowhere can you find a better rate for foreign exchange than at this bank.</div><div class="pt">Em lugar nenhum você acha uma taxa de câmbio melhor do que neste banco.</div></div>
+<div class="i"><div class="en">Only after they had saved for months did they get married.</div><div class="pt">Só depois de economizar durante meses é que eles se casaram.</div></div>
+<div class="i"><div class="en">So great was the debt that it could never be repaid.</div><div class="pt">Tão grande era a dívida que nunca poderia ser paga.</div></div>
+<div class="i"><div class="en">Such was the fear of a major financial crisis that the government intervened.</div><div class="pt">Tamanho era o medo de uma grande crise financeira que o governo interveio.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Grammar 6.4</div>
+<h2><i>would rather</i> e <i>would prefer</i></h2>
+<p class="sdesc">A regra que quase ninguém domina: se o sujeito muda, <code>would rather</code> pede <b>passado irreal</b>; se não muda, pede forma base. E <code>would prefer</code> pede infinitivo com <i>to</i>.</p>
+<div class="items">
+<div class="i"><div class="en">He would rather you didn't waste your money.</div><div class="pt">Ele preferiria que você não desperdiçasse seu dinheiro.</div></div>
+<div class="i"><div class="en">He would rather you hadn't wasted your money.</div><div class="pt">Ele preferiria que você não tivesse desperdiçado seu dinheiro.</div></div>
+<div class="i"><div class="en">He would rather not waste his own money.</div><div class="pt">Ele preferiria não desperdiçar o próprio dinheiro.</div></div>
+<div class="i"><div class="en">He would rather not have wasted his own money.</div><div class="pt">Ele preferiria não ter desperdiçado o próprio dinheiro.</div></div>
+<div class="i"><div class="en">He would prefer you not to waste your money.</div><div class="pt">Ele preferiria que você não desperdiçasse seu dinheiro.</div></div>
+<div class="i"><div class="en">He would prefer not to waste his own money.</div><div class="pt">Ele preferiria não desperdiçar o próprio dinheiro.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Grammar 6.5</div>
+<h2><i>had better</i> e <i>it's time</i></h2>
+<p class="sdesc">Duas formas de dizer "já passou da hora". Com <code>it's time</code> + sujeito, o verbo vai para o <b>passado irreal</b> — nunca presente.</p>
+<div class="items">
+<div class="i"><div class="en">He's old enough to know better; it's time he learnt to manage his money.</div><div class="pt">Ele já tem idade para saber; está na hora de aprender a cuidar do próprio dinheiro.</div></div>
+<div class="i"><div class="en">We've just received the final demand, so it's time we paid the bill!</div><div class="pt">Acabou de chegar o aviso final, então já passou da hora de pagarmos a conta!</div></div>
+<div class="i"><div class="en">It's time to ask for a pay rise.</div><div class="pt">É a hora certa de pedir aumento.</div></div>
+<div class="i"><div class="en">It's time we asked for a pay rise.</div><div class="pt">Já esperamos tempo demais para pedir aumento.</div></div>
+<div class="i"><div class="en">Our rent is late, we had better pay it.</div><div class="pt">Nosso aluguel está atrasado, é melhor a gente pagar.</div></div>
+<div class="i"><div class="en">Our rent is late, it's time we paid it.</div><div class="pt">Nosso aluguel está atrasado, já passou da hora de pagarmos.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Grammar 6.3</div>
+<h2><i>wish</i> e <i>if only</i> no registro C2</h2>
+<p class="sdesc">O mesmo mecanismo dos níveis anteriores, agora com <code>be able to</code>, <code>could</code> e o passado irreal formal (<i>I wish I were…</i>).</p>
+<div class="items">
+<div class="i"><div class="en">I wish I were paid more.</div><div class="pt">Eu queria ganhar mais.</div></div>
+<div class="i"><div class="en">If only they could award him a pay rise.</div><div class="pt">Se ao menos pudessem lhe dar um aumento.</div></div>
+<div class="i"><div class="en">I wish we were able to make ends meet.</div><div class="pt">Eu queria que a gente conseguisse fechar as contas no fim do mês.</div></div>
+<div class="i"><div class="en">If only she had invested her money more wisely.</div><div class="pt">Se ao menos ela tivesse investido o dinheiro com mais sabedoria.</div></div>
+<div class="i"><div class="en">I wish the landlord wouldn't call me all the time about the rent arrears.</div><div class="pt">Eu queria que o locador não ficasse me ligando o tempo todo por causa do aluguel atrasado.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Grammar 7.1</div>
+<h2>Adjetivos graduáveis e não graduáveis</h2>
+<p class="sdesc">A regra que impede <span class="x">very astonished</span>: adjetivo forte e adjetivo absoluto pedem <code>absolutely</code>, <code>totally</code>, <code>completely</code> — não <code>very</code>.</p>
+<div class="items">
+<div class="i"><div class="en">We were slightly surprised at the climate change figures.</div><div class="pt">A gente ficou levemente surpreso com os números da mudança climática. <i>(graduável fraco)</i></div></div>
+<div class="i"><div class="en">We were absolutely astonished at the climate change figures.</div><div class="pt">A gente ficou absolutamente pasmo com os números da mudança climática. <i>(graduável forte)</i></div></div>
+<div class="i"><div class="en">The climate change figures were absolutely unbelievable.</div><div class="pt">Os números da mudança climática eram absolutamente inacreditáveis. <i>(não graduável)</i></div></div>
+<div class="i"><div class="en">The efforts to reduce waste were an utter disaster.</div><div class="pt">Os esforços para reduzir o lixo foram um desastre completo.</div></div>
+<div class="i"><div class="en">The recycling campaign was utterly useless.</div><div class="pt">A campanha de reciclagem foi completamente inútil.</div></div>
+<div class="i"><div class="en">The demands to cut carbon emissions seem strangely familiar.</div><div class="pt">As exigências de cortar emissões de carbono parecem estranhamente familiares.</div></div>
+<div class="i"><div class="en">Our inability to act on climate change is astonishingly shortsighted.</div><div class="pt">Nossa incapacidade de agir sobre a mudança climática é espantosamente míope.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Tipo de adjetivo</th><th>Intensificadores</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>graduável fraco</td><td class="w">fairly, very, rather, slightly, quite</td><td>very <b>surprised</b></td></tr>
+<tr><td>graduável forte</td><td class="ok">absolutely, totally, completely, quite</td><td>absolutely <b>astonished</b></td></tr>
+<tr><td>não graduável</td><td class="ok">absolutely, totally, completely</td><td>absolutely <b>unbelievable</b></td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s09">
+<div class="snum">Grammar 7.2 – 7.3</div>
+<h2><i>quite</i>, <i>too</i>, <i>only too</i>, <i>none too</i></h2>
+<p class="sdesc"><code>quite</code> muda de sentido conforme o adjetivo que acompanha: com adjetivo fraco é "razoavelmente", com adjetivo forte é "extremamente".</p>
+<div class="items">
+<div class="i"><div class="en">We were quite surprised at the climate change figures.</div><div class="pt">A gente ficou bem surpreso com os números. <i>(quite = razoavelmente)</i></div></div>
+<div class="i"><div class="en">We were quite astonished at the climate change figures.</div><div class="pt">A gente ficou absolutamente pasmo com os números. <i>(quite = extremamente)</i></div></div>
+<div class="i"><div class="en">The hunters went too far when they wiped out the species.</div><div class="pt">Os caçadores foram longe demais quando exterminaram a espécie.</div></div>
+<div class="i"><div class="en">Saving the species was too difficult and they failed.</div><div class="pt">Salvar a espécie era difícil demais e eles fracassaram.</div></div>
+<div class="i"><div class="en">Saving the species was very difficult, but they succeeded.</div><div class="pt">Salvar a espécie foi muito difícil, mas eles conseguiram.</div></div>
+<div class="i"><div class="en">I would be only too happy to help with the environmental initiative.</div><div class="pt">Eu ficaria mais que feliz em ajudar na iniciativa ambiental.</div></div>
+<div class="i"><div class="en">We know only too well the consequences of illegal dumping.</div><div class="pt">Nós sabemos muito bem quais são as consequências do descarte ilegal.</div></div>
+<div class="i"><div class="en">I was none too sure where to recycle the plastic bags.</div><div class="pt">Eu não tinha a menor certeza de onde reciclar as sacolas plásticas.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Grammar 7.5</div>
+<h2><i>hardly, barely, scarcely</i> x <i>almost, virtually, practically</i></h2>
+<p class="sdesc">Os três primeiros já são negativos por si só; os três últimos precisam de uma negativa ao lado. Trocar um pelo outro inverte o sentido da frase.</p>
+<div class="items">
+<div class="i"><div class="en">The species barely managed to survive.</div><div class="pt">A espécie mal conseguiu sobreviver.</div></div>
+<div class="i"><div class="en">They scarcely had enough water to survive.</div><div class="pt">Eles mal tinham água suficiente para sobreviver.</div></div>
+<div class="i"><div class="en">The elephant almost died at the hands of the poachers.</div><div class="pt">O elefante quase morreu nas mãos dos caçadores ilegais.</div></div>
+<div class="i"><div class="en">The elephant almost didn't survive the attack.</div><div class="pt">O elefante quase não sobreviveu ao ataque.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Grammar 7.6</div>
+<h2>Posição de adjetivos — os que só vêm depois do verbo</h2>
+<p class="sdesc">Um grupo pequeno mas traiçoeiro: <code>alone</code>, <code>alive</code>, <code>asleep</code>, <code>afraid</code>, <code>ill</code> e <code>well</code> <b>nunca</b> vêm antes do substantivo.</p>
+<div class="items">
+<div class="i"><div class="en">The sick bird was taken to the wildlife sanctuary.</div><div class="pt">O pássaro doente foi levado ao santuário de vida selvagem.</div></div>
+<div class="i"><div class="en">The bird was rescued because it was ill.</div><div class="pt">O pássaro foi resgatado porque estava doente. <i>(ill só depois do verbo)</i></div></div>
+<div class="i"><div class="en">Please do not wake the sleeping lion.</div><div class="pt">Por favor, não acorde o leão adormecido.</div></div>
+<div class="i"><div class="en">The lion was asleep under a tree.</div><div class="pt">O leão estava dormindo debaixo de uma árvore. <i>(asleep só depois do verbo)</i></div></div>
+<div class="i"><div class="en">There was someone new presenting the wildlife documentary.</div><div class="pt">Tinha alguém novo apresentando o documentário sobre vida selvagem.</div></div>
+<div class="i"><div class="en">Going on safari was something completely different from her usual trips.</div><div class="pt">Fazer um safári foi algo completamente diferente das viagens de sempre dela.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Grammar 7.7</div>
+<h2>Adjetivos que mudam de sentido conforme a posição</h2>
+<p class="sdesc">A sutileza mais sofisticada do livro: o <b>mesmo adjetivo</b> antes ou depois do substantivo quer dizer coisas diferentes.</p>
+<div class="items">
+<div class="i"><div class="en">The concerned residents campaigned against the rubbish dump.</div><div class="pt">Os moradores <b>preocupados</b> fizeram campanha contra o lixão.</div></div>
+<div class="i"><div class="en">The residents concerned should attend the meeting.</div><div class="pt">Os moradores <b>envolvidos no assunto</b> devem comparecer à reunião.</div></div>
+<div class="i"><div class="en">The article was rather involved and longwinded.</div><div class="pt">O artigo era bastante <b>complicado</b> e prolixo.</div></div>
+<div class="i"><div class="en">The article involved was published widely.</div><div class="pt">O artigo <b>em questão</b> foi amplamente publicado.</div></div>
+<div class="i"><div class="en">Present company excepted, people here don't value the environment enough.</div><div class="pt">Excetuando os <b>presentes</b>, as pessoas daqui não valorizam o meio ambiente o bastante.</div></div>
+<div class="i"><div class="en">There were plenty of residents present at the village meeting.</div><div class="pt">Havia muitos moradores <b>presentes</b> na reunião do vilarejo.</div></div>
+<div class="i"><div class="en">What is the proper way to dispose of cooking oil?</div><div class="pt">Qual é a maneira <b>correta</b> de descartar óleo de cozinha?</div></div>
+<div class="i"><div class="en">Today is when they'll set up the equipment; filming proper starts tomorrow.</div><div class="pt">Hoje eles montam o equipamento; a filmagem <b>propriamente dita</b> começa amanhã.</div></div>
+<div class="i"><div class="en">Man is responsible for changing the face of the Earth.</div><div class="pt">O homem é <b>o culpado</b> por mudar a face da Terra.</div></div>
+<div class="i"><div class="en">A responsible company would try to minimise its environmental impact.</div><div class="pt">Uma empresa <b>séria</b> tentaria minimizar seu impacto ambiental.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Grammar 8.3</div>
+<h2>Verbos de relato — a tabela completa</h2>
+<p class="sdesc">Vinte e cinco verbos organizados pelo que vem depois deles. É a diferença entre escrever <i>He said that…</i> vinte vezes e escrever como um nativo.</p>
+<div class="items">
+<div class="i"><div class="en">"Yes, I'll take the class," he said. → He agreed to take the class.</div><div class="pt">"Sim, eu assumo a turma." → Ele concordou em assumir a turma.</div></div>
+<div class="i"><div class="en">"I think I'll drop out of university," he said. → He decided to drop out of university.</div><div class="pt">"Acho que vou largar a faculdade." → Ele decidiu largar a faculdade.</div></div>
+<div class="i"><div class="en">"I won't do the homework," he said. → He refused to do the homework.</div><div class="pt">"Não vou fazer a lição." → Ele se recusou a fazer a lição.</div></div>
+<div class="i"><div class="en">"Shall I help with the assignment?" he said. → He offered to help with the assignment.</div><div class="pt">"Quer que eu ajude com o trabalho?" → Ele se ofereceu para ajudar com o trabalho.</div></div>
+<div class="i"><div class="en">"Don't worry, I'll explain it," he said. → He promised to explain the maths problem.</div><div class="pt">"Fica tranquilo, eu explico." → Ele prometeu explicar o problema de matemática.</div></div>
+<div class="i"><div class="en">"If I were you, I'd study chemistry," he said. → He advised me to study chemistry.</div><div class="pt">"Se eu fosse você, estudaria química." → Ele me aconselhou a estudar química.</div></div>
+<div class="i"><div class="en">"Make an effort and you'll do well," he said. → He encouraged me to make an effort.</div><div class="pt">"Se esforce e você vai bem." → Ele me incentivou a me esforçar.</div></div>
+<div class="i"><div class="en">"Stop writing!" he said. → He ordered them to stop writing.</div><div class="pt">"Parem de escrever!" → Ele ordenou que parassem de escrever.</div></div>
+<div class="i"><div class="en">"You should work hard or you'll be thrown out," he said. → He persuaded me to work hard.</div><div class="pt">"Estude com afinco ou vai ser expulso." → Ele me convenceu a estudar com afinco.</div></div>
+<div class="i"><div class="en">"Don't forget to write your name," he said. → He reminded the children to write their names.</div><div class="pt">"Não esqueçam de escrever o nome." → Ele lembrou as crianças de escreverem o nome.</div></div>
+<div class="i"><div class="en">"Don't waste your time," he said. → He warned me not to waste my time.</div><div class="pt">"Não perca seu tempo." → Ele me avisou para não perder tempo.</div></div>
+<div class="i"><div class="en">"Do not take mobiles into the exam room!" → He forbade them to take mobiles into the exam room.</div><div class="pt">"Não levem celular para a sala de prova!" → Ele os proibiu de levar celular para a sala de prova.</div></div>
+<div class="i"><div class="en">"I didn't do the essay," he said. → He admitted not doing the essay.</div><div class="pt">"Eu não fiz a redação." → Ele admitiu não ter feito a redação.</div></div>
+<div class="i"><div class="en">"I didn't cheat," he said. → He denied cheating.</div><div class="pt">"Eu não colei." → Ele negou ter colado.</div></div>
+<div class="i"><div class="en">"You should buy this book," he said. → He recommended buying that book.</div><div class="pt">"Você devia comprar este livro." → Ele recomendou comprar aquele livro.</div></div>
+<div class="i"><div class="en">"Let's look it up on the internet," he said. → He suggested looking it up on the internet.</div><div class="pt">"Vamos procurar na internet." → Ele sugeriu procurar na internet.</div></div>
+<div class="i"><div class="en">"I'm sorry I lost your essay," he said. → He apologised for losing my essay.</div><div class="pt">"Desculpe ter perdido sua redação." → Ele se desculpou por ter perdido minha redação.</div></div>
+<div class="i"><div class="en">"You must let me help you," he said. → He insisted on helping me with the maths.</div><div class="pt">"Deixe eu te ajudar." → Ele insistiu em me ajudar com a matemática.</div></div>
+<div class="i"><div class="en">"I'm sure you cheated in the test," he said. → He accused me of cheating in the test.</div><div class="pt">"Tenho certeza de que você colou na prova." → Ele me acusou de colar na prova.</div></div>
+<div class="i"><div class="en">"You passed the exam! Well done!" → He congratulated me on passing the exam.</div><div class="pt">"Você passou na prova! Parabéns!" → Ele me parabenizou por ter passado.</div></div>
+<div class="i"><div class="en">"I'm going to study engineering," he said. → He announced that he was going to study engineering.</div><div class="pt">"Vou estudar engenharia." → Ele anunciou que ia estudar engenharia.</div></div>
+<div class="i"><div class="en">"Term starts on September 4th," she said. → She informed me that term started on September 4th.</div><div class="pt">"O semestre começa em 4 de setembro." → Ela me informou que o semestre começava em 4 de setembro.</div></div>
+<div class="i"><div class="en">"She really must rewrite the essay," he said. → He insisted that she should rewrite the essay.</div><div class="pt">"Ela tem mesmo que refazer a redação." → Ele insistiu que ela refizesse a redação.</div></div>
+<div class="i"><div class="en">"The student should be suspended," she said. → She recommended that the student be suspended.</div><div class="pt">"O aluno deveria ser suspenso." → Ela recomendou que o aluno fosse suspenso.</div></div>
+<div class="i"><div class="en">"Help me revise for the exam," he said. → He demanded that I should help him revise.</div><div class="pt">"Me ajude a revisar para a prova." → Ele exigiu que eu o ajudasse a revisar.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Padrão</th><th>Verbos</th></tr></thead>
+<tbody>
+<tr><td><b>verbo + infinitivo</b></td><td class="w">agree, claim, decide, refuse, offer, promise</td></tr>
+<tr><td><b>verbo + objeto + infinitivo</b></td><td class="w">advise, encourage, order, persuade, remind, warn, forbid</td></tr>
+<tr><td><b>verbo + gerúndio</b></td><td class="w">admit, deny, recommend, suggest, mention, describe</td></tr>
+<tr><td><b>verbo + preposição + gerúndio</b></td><td class="w">apologise for, complain of, insist on, admit to, accuse sb of, congratulate sb on</td></tr>
+<tr><td><b>verbo + that</b></td><td class="w">announce, complain, mention</td></tr>
+<tr><td><b>verbo + objeto + that</b></td><td class="w">inform, warn, assure</td></tr>
+<tr><td><b>verbo + that + (should) + base</b></td><td class="w">insist, propose, recommend, demand, urge</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s14">
+<div class="snum">Grammar 8.4</div>
+<h2>Perguntas relatadas</h2>
+<p class="sdesc">Sem ponto de interrogação, sem inversão — e com <code>whether</code> quando há duas possibilidades em jogo.</p>
+<div class="items">
+<div class="i"><div class="en">"When did you decide to do a degree?" he asked. → He asked when I had decided to do a degree.</div><div class="pt">"Quando você decidiu fazer faculdade?" → Ele me perguntou quando eu tinha decidido fazer faculdade.</div></div>
+<div class="i"><div class="en">"Are the science facilities good?" he asked. → He asked if the science facilities were good.</div><div class="pt">"Os laboratórios de ciências são bons?" → Ele perguntou se os laboratórios eram bons.</div></div>
+<div class="i"><div class="en">"Did they pass the exam or not?" he asked. → He asked whether or not they had passed the exam.</div><div class="pt">"Eles passaram na prova ou não?" → Ele perguntou se eles tinham passado ou não.</div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Discurso direto</th><th>Discurso indireto</th></tr></thead>
+<tbody>
+<tr><td class="w">now</td><td class="ok">then</td></tr>
+<tr><td class="w">today</td><td class="ok">that day</td></tr>
+<tr><td class="w">tonight</td><td class="ok">that night</td></tr>
+<tr><td class="w">yesterday</td><td class="ok">the previous day / the day before</td></tr>
+<tr><td class="w">last week</td><td class="ok">the previous week / the week before</td></tr>
+<tr><td class="w">tomorrow</td><td class="ok">the next day / the following day</td></tr>
+<tr><td class="w">next month</td><td class="ok">the following month</td></tr>
+<tr><td class="w">two days ago</td><td class="ok">two days before</td></tr>
+<tr><td class="w">this / here</td><td class="ok">that / there</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s15">
+<div class="snum">Grammar 9.5 – 9.6</div>
+<h2>Relativas com quantificadores e orações participiais</h2>
+<p class="sdesc">Duas construções que compactam o texto: <code>all of whom</code>, <code>five of whom</code>, e o particípio substituindo relativa, condicional ou simultaneidade.</p>
+<div class="items">
+<div class="i"><div class="en">The students, all of whom are eighteen, voted in the election.</div><div class="pt">Os alunos, todos com dezoito anos, votaram na eleição.</div></div>
+<div class="i"><div class="en">The students, of whom five are graduating this year, are firm friends.</div><div class="pt">Os alunos, cinco dos quais se formam este ano, são amigos inseparáveis.</div></div>
+<div class="i"><div class="en">The students, five of whom are graduating this year, are firm friends.</div><div class="pt">Os alunos, cinco deles se formando este ano, são amigos inseparáveis.</div></div>
+<div class="i"><div class="en">Before moving in, I had the flat painted.</div><div class="pt">Antes de me mudar, mandei pintar o apartamento.</div></div>
+<div class="i"><div class="en">Asked to recommend a driving school, he suggested the oldest one.</div><div class="pt">Ao ser chamado a recomendar uma autoescola, ele sugeriu a mais antiga.</div></div>
+<div class="i"><div class="en">The driving instructor hired recently is excellent.</div><div class="pt">O instrutor contratado recentemente é excelente.</div></div>
+<div class="i"><div class="en">The tenant wanting her deposit back took the landlord to court.</div><div class="pt">A inquilina que queria o depósito de volta processou o locador.</div></div>
+<div class="i"><div class="en">Given the opportunity, he would go to university.</div><div class="pt">Se tivesse a oportunidade, ele faria faculdade.</div></div>
+<div class="i"><div class="en">After finding the perfect flat, she soon moved in.</div><div class="pt">Depois de achar o apartamento perfeito, ela logo se mudou.</div></div>
+<div class="i"><div class="en">Glancing at her watch, she realised she was late.</div><div class="pt">Olhando o relógio, ela percebeu que estava atrasada.</div></div>
+<div class="i"><div class="en">The dorm in which he lives is over there.</div><div class="pt">O alojamento no qual ele mora é ali. <i>(formal)</i></div></div>
+<div class="i"><div class="en">The tenants to whom we let our property didn't take care of it.</div><div class="pt">Os inquilinos aos quais alugamos o imóvel não cuidaram dele. <i>(formal)</i></div></div>
+</div>
+</section>
+
+<section id="s16">
+<div class="snum">Apêndice · Idioms</div>
+<h2>Expressões idiomáticas — dinheiro e trabalho</h2>
+<p class="sdesc">Do apêndice <i>Collocations &amp; Expressions</i> do C2, incluindo as gírias britânicas de estar sem dinheiro (<i>skint</i>, <i>flat broke</i>) e de estar cheio dele (<i>minted</i>, <i>rolling in it</i>).</p>
+<div class="items">
+<div class="i"><div class="en">a nest egg</div><div class="pt">uma reserva financeira guardada</div></div>
+<div class="i"><div class="en">a safe bet</div><div class="pt">aposta segura</div></div>
+<div class="i"><div class="en">in the red</div><div class="pt">no vermelho, com saldo negativo</div></div>
+<div class="i"><div class="en">flat broke / skint</div><div class="pt">duro, sem um tostão</div></div>
+<div class="i"><div class="en">strapped for cash</div><div class="pt">apertado de dinheiro</div></div>
+<div class="i"><div class="en">minted / rolling in it / flush</div><div class="pt">podre de rico / nadando em dinheiro / com dinheiro sobrando</div></div>
+<div class="i"><div class="en">affluent / indigent</div><div class="pt">abastado / indigente</div></div>
+<div class="i"><div class="en">make money on the side</div><div class="pt">ganhar um dinheiro por fora</div></div>
+<div class="i"><div class="en">life in the fast lane</div><div class="pt">vida de luxo e velocidade</div></div>
+<div class="i"><div class="en">be in a tight corner</div><div class="pt">estar numa situação apertada</div></div>
+<div class="i"><div class="en">as a last resort</div><div class="pt">como último recurso</div></div>
+<div class="i"><div class="en">the bottom line</div><div class="pt">o que realmente importa; o resultado final</div></div>
+<div class="i"><div class="en">know the ropes</div><div class="pt">saber como as coisas funcionam</div></div>
+<div class="i"><div class="en">learn the hard way</div><div class="pt">aprender na marra</div></div>
+<div class="i"><div class="en">be thrown in at the deep end</div><div class="pt">ser jogado no fundo do poço sem preparo</div></div>
+<div class="i"><div class="en">be wet behind the ears</div><div class="pt">ser inexperiente, novato</div></div>
+<div class="i"><div class="en">pull your weight</div><div class="pt">fazer a sua parte no trabalho</div></div>
+<div class="i"><div class="en">fend for yourself</div><div class="pt">se virar sozinho</div></div>
+<div class="i"><div class="en">strike out on your own</div><div class="pt">seguir por conta própria</div></div>
+<div class="i"><div class="en">give someone a free hand</div><div class="pt">dar carta branca a alguém</div></div>
+<div class="i"><div class="en">leave someone to their own devices</div><div class="pt">deixar alguém se virar sozinho</div></div>
+<div class="i"><div class="en">burn the midnight oil</div><div class="pt">virar a noite trabalhando ou estudando</div></div>
+<div class="i"><div class="en">hit the books</div><div class="pt">estudar com afinco</div></div>
+<div class="i"><div class="en">by the book</div><div class="pt">seguindo as regras à risca</div></div>
+<div class="i"><div class="en">hands down</div><div class="pt">disparado, sem sombra de dúvida</div></div>
+<div class="i"><div class="en">saved by the bell</div><div class="pt">salvo pelo gongo</div></div>
+<div class="i"><div class="en">on the same page</div><div class="pt">na mesma sintonia</div></div>
+<div class="i"><div class="en">keep me in the loop</div><div class="pt">me mantenha informado</div></div>
+<div class="i"><div class="en">touch base with someone</div><div class="pt">dar um alô, retomar contato</div></div>
+<div class="i"><div class="en">get in touch with someone / get hold of someone</div><div class="pt">entrar em contato / conseguir falar com alguém</div></div>
+<div class="i"><div class="en">put me in touch with someone</div><div class="pt">me colocar em contato com alguém</div></div>
+</div>
+</section>
+
+<section id="s17">
+<div class="snum">Apêndice · Idioms</div>
+<h2>Expressões idiomáticas — relações e conflito</h2>
+<p class="sdesc">O grupo das relações humanas: falar demais, falar pelas costas, engolir a resposta, cortar relações.</p>
+<div class="items">
+<div class="i"><div class="en">bite your tongue</div><div class="pt">morder a língua, segurar o que ia dizer</div></div>
+<div class="i"><div class="en">put your foot in it</div><div class="pt">dar uma mancada, falar o que não devia</div></div>
+<div class="i"><div class="en">get something off your chest</div><div class="pt">desabafar</div></div>
+<div class="i"><div class="en">do something behind someone's back</div><div class="pt">fazer algo pelas costas de alguém</div></div>
+<div class="i"><div class="en">be a pain in the neck</div><div class="pt">ser um pé no saco</div></div>
+<div class="i"><div class="en">have a chip on your shoulder</div><div class="pt">carregar um ressentimento</div></div>
+<div class="i"><div class="en">a slap in the face</div><div class="pt">um tapa na cara, uma ofensa</div></div>
+<div class="i"><div class="en">give someone the elbow</div><div class="pt">dar o fora em alguém</div></div>
+<div class="i"><div class="en">keep someone at arm's length</div><div class="pt">manter alguém a distância</div></div>
+<div class="i"><div class="en">keep a cool head</div><div class="pt">manter a cabeça fria</div></div>
+<div class="i"><div class="en">a leopard doesn't change its spots</div><div class="pt">pau que nasce torto morre torto</div></div>
+<div class="i"><div class="en">bury your head in the sand</div><div class="pt">enterrar a cabeça na areia, fingir que não vê</div></div>
+<div class="i"><div class="en">fall on deaf ears</div><div class="pt">cair em ouvidos moucos</div></div>
+<div class="i"><div class="en">turn your back on someone</div><div class="pt">virar as costas para alguém</div></div>
+<div class="i"><div class="en">come to the rescue</div><div class="pt">vir em socorro</div></div>
+<div class="i"><div class="en">bring out the best in someone</div><div class="pt">tirar o melhor de alguém</div></div>
+<div class="i"><div class="en">get behind a cause</div><div class="pt">abraçar uma causa</div></div>
+<div class="i"><div class="en">band together / join forces / close ranks</div><div class="pt">se unir / juntar forças / fechar fileiras</div></div>
+<div class="i"><div class="en">spare no effort</div><div class="pt">não medir esforços</div></div>
+<div class="i"><div class="en">jump on the bandwagon</div><div class="pt">entrar na onda, aderir ao que está na moda</div></div>
+<div class="i"><div class="en">hold fast / sit tight / stay put</div><div class="pt">se manter firme / esperar sem se mexer / ficar onde está</div></div>
+<div class="i"><div class="en">pluck up the courage</div><div class="pt">criar coragem</div></div>
+<div class="i"><div class="en">put yourself down / big yourself up</div><div class="pt">se diminuir / se gabar</div></div>
+<div class="i"><div class="en">get your act together / sort your life out</div><div class="pt">se organizar / arrumar a vida</div></div>
+<div class="i"><div class="en">turn over a new leaf</div><div class="pt">virar a página, começar de novo</div></div>
+<div class="i"><div class="en">make a real go of something</div><div class="pt">se dedicar de verdade a algo</div></div>
+<div class="i"><div class="en">pick up the pieces</div><div class="pt">juntar os cacos depois de um baque</div></div>
+<div class="i"><div class="en">stand a chance / blow your chances</div><div class="pt">ter chance / estragar suas chances</div></div>
+<div class="i"><div class="en">fall short of / not hold out much hope of</div><div class="pt">ficar aquém de / não ter muita esperança de</div></div>
+<div class="i"><div class="en">go down the drain</div><div class="pt">ir por água abaixo</div></div>
+<div class="i"><div class="en">be sucked in by</div><div class="pt">cair no papo de, ser enganado por</div></div>
+</div>
+</section>
+
+<section id="s18">
+<div class="snum">Apêndice · Idioms</div>
+<h2>Expressões idiomáticas — fama, tempo e lugar</h2>
+<p class="sdesc">O bloco final: as expressões de sucesso e visibilidade, mais as de tempo e distância que aparecem em qualquer texto de nível C2.</p>
+<div class="items">
+<div class="i"><div class="en">hit the big time / make a splash</div><div class="pt">estourar, fazer sucesso / causar impacto</div></div>
+<div class="i"><div class="en">be destined for stardom / reach the peak of stardom</div><div class="pt">estar destinado ao estrelato / chegar ao auge da fama</div></div>
+<div class="i"><div class="en">steal the limelight</div><div class="pt">roubar a cena</div></div>
+<div class="i"><div class="en">be a legend in your own lifetime</div><div class="pt">ser uma lenda ainda em vida</div></div>
+<div class="i"><div class="en">fifteen minutes of fame</div><div class="pt">quinze minutos de fama</div></div>
+<div class="i"><div class="en">hit the headlines / seek publicity</div><div class="pt">virar manchete / buscar publicidade</div></div>
+<div class="i"><div class="en">put someone on the map</div><div class="pt">colocar alguém no mapa, dar visibilidade</div></div>
+<div class="i"><div class="en">make a comeback</div><div class="pt">dar a volta por cima, voltar aos palcos</div></div>
+<div class="i"><div class="en">have a string of hits / be dropped by a record label</div><div class="pt">emendar uma série de sucessos / ser dispensado por uma gravadora</div></div>
+<div class="i"><div class="en">an invasion of privacy</div><div class="pt">uma invasão de privacidade</div></div>
+<div class="i"><div class="en">a drop in the ocean</div><div class="pt">uma gota no oceano</div></div>
+<div class="i"><div class="en">the tip of the iceberg</div><div class="pt">a ponta do iceberg</div></div>
+<div class="i"><div class="en">a stone's throw away</div><div class="pt">a dois passos daqui</div></div>
+<div class="i"><div class="en">a riot of colour</div><div class="pt">uma explosão de cores</div></div>
+<div class="i"><div class="en">at the top of my bucket list</div><div class="pt">no topo da minha lista de coisas para fazer antes de morrer</div></div>
+<div class="i"><div class="en">on a whim / on the spur of the moment</div><div class="pt">por capricho / de supetão, sem planejar</div></div>
+<div class="i"><div class="en">play it by ear</div><div class="pt">deixar rolar, decidir na hora</div></div>
+<div class="i"><div class="en">back and forth / back to front</div><div class="pt">de um lado para o outro / de trás para frente</div></div>
+<div class="i"><div class="en">little by little / more or less</div><div class="pt">pouco a pouco / mais ou menos</div></div>
+<div class="i"><div class="en">time after time</div><div class="pt">vez após vez</div></div>
+<div class="i"><div class="en">safe and sound</div><div class="pt">são e salvo</div></div>
+<div class="i"><div class="en">touch and go</div><div class="pt">incerto, por um triz</div></div>
+<div class="i"><div class="en">wear and tear</div><div class="pt">desgaste natural pelo uso</div></div>
+<div class="i"><div class="en">reading between the lines</div><div class="pt">ler nas entrelinhas</div></div>
+<div class="i"><div class="en">drop the subject</div><div class="pt">mudar de assunto, deixar pra lá</div></div>
+<div class="i"><div class="en">conduct research · cite sources · compile a bibliography</div><div class="pt">fazer pesquisa · citar fontes · montar uma bibliografia</div></div>
+<div class="i"><div class="en">attend a lecture / seminar · submission date · chosen topic</div><div class="pt">assistir a uma palestra / seminário · data de entrega · tema escolhido</div></div>
+</div>
+</section>
+
+<section id="s19">
+<div class="snum">Apêndice · Phrasal verbs</div>
+<h2>Phrasal verbs C2 com o sentido do livro</h2>
+<p class="sdesc">Os phrasal verbs do apêndice, cada um com a definição que o próprio <i>Close-up</i> dá — traduzida.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Phrasal verb</th><th>Sentido</th></tr></thead>
+<tbody>
+<tr><td><b>band together</b></td><td class="w">se unir, formar um grupo</td></tr>
+<tr><td><b>be laid off</b></td><td class="w">ser demitido por corte de pessoal</td></tr>
+<tr><td><b>be sucked in by</b></td><td class="w">ser enganado ou ludibriado por alguém</td></tr>
+<tr><td><b>catch on</b></td><td class="w">sacar, entender algo</td></tr>
+<tr><td><b>catch up</b></td><td class="w">colocar a conversa em dia</td></tr>
+<tr><td><b>catch up with</b></td><td class="w">começar a ter efeito prejudicial</td></tr>
+<tr><td><b>chill someone out</b></td><td class="w">acalmar alguém</td></tr>
+<tr><td><b>come between</b></td><td class="w">atrapalhar, se meter entre</td></tr>
+<tr><td><b>come by</b></td><td class="w">conseguir, encontrar</td></tr>
+<tr><td><b>come down hard on</b></td><td class="w">criticar ou punir com severidade</td></tr>
+<tr><td><b>come down to</b></td><td class="w">depender de, se resumir a</td></tr>
+<tr><td><b>come out of</b></td><td class="w">surgir como resultado de</td></tr>
+<tr><td><b>come round</b></td><td class="w">acabar aceitando ou concordando</td></tr>
+<tr><td><b>count towards</b></td><td class="w">contar como um dos fatores que dão direito a algo</td></tr>
+<tr><td><b>crack down on</b></td><td class="w">endurecer contra comportamento ilegal</td></tr>
+<tr><td><b>cut back on</b></td><td class="w">reduzir</td></tr>
+<tr><td><b>dawn on someone</b></td><td class="w">finalmente cair a ficha</td></tr>
+<tr><td><b>do away with</b></td><td class="w">acabar com, abolir</td></tr>
+<tr><td><b>do someone's head in</b></td><td class="w">deixar alguém extremamente irritado</td></tr>
+<tr><td><b>dole out</b></td><td class="w">distribuir aos poucos</td></tr>
+<tr><td><b>drift apart</b></td><td class="w">ir se afastando de alguém aos poucos</td></tr>
+<tr><td><b>drive out</b></td><td class="w">expulsar de um lugar</td></tr>
+<tr><td><b>drop in</b></td><td class="w">dar uma passada na casa de alguém</td></tr>
+<tr><td><b>egg someone on</b></td><td class="w">incentivar alguém a fazer besteira</td></tr>
+<tr><td><b>face up to</b></td><td class="w">encarar e lidar com</td></tr>
+<tr><td><b>fall back on</b></td><td class="w">recorrer a algo como apoio</td></tr>
+<tr><td><b>fall behind with</b></td><td class="w">ficar atrasado com algo</td></tr>
+<tr><td><b>fall in with</b></td><td class="w">fazer amizade com</td></tr>
+<tr><td><b>fall out with</b></td><td class="w">brigar e romper amizade com alguém</td></tr>
+<tr><td><b>fit in with</b></td><td class="w">se enturmar, se encaixar socialmente</td></tr>
+<tr><td><b>flick through</b></td><td class="w">folhear rapidamente</td></tr>
+<tr><td><b>get away with</b></td><td class="w">escapar das consequências</td></tr>
+<tr><td><b>get behind</b></td><td class="w">apoiar alguém ou algo</td></tr>
+<tr><td><b>get caught up in</b></td><td class="w">se envolver sem querer</td></tr>
+<tr><td><b>get in with</b></td><td class="w">se aproximar de, ficar amigo de</td></tr>
+<tr><td><b>get something out of something</b></td><td class="w">tirar proveito de algo</td></tr>
+<tr><td><b>go back years</b></td><td class="w">se conhecer há muitos anos</td></tr>
+<tr><td><b>go through with</b></td><td class="w">levar adiante o que já foi combinado</td></tr>
+<tr><td><b>go without</b></td><td class="w">abrir mão de algo</td></tr>
+<tr><td><b>grow up</b></td><td class="w">agir como adulto, amadurecer</td></tr>
+<tr><td><b>head off</b></td><td class="w">partir, começar uma viagem</td></tr>
+<tr><td><b>hold someone back</b></td><td class="w">impedir alguém de progredir</td></tr>
+<tr><td><b>keep at something</b></td><td class="w">continuar se dedicando a algo</td></tr>
+<tr><td><b>lead someone on</b></td><td class="w">iludir alguém, sobretudo no amor</td></tr>
+<tr><td><b>lean on someone</b></td><td class="w">contar com alguém, se apoiar</td></tr>
+<tr><td><b>leap at</b></td><td class="w">aceitar com entusiasmo</td></tr>
+<tr><td><b>let someone down</b></td><td class="w">decepcionar, deixar alguém na mão</td></tr>
+<tr><td><b>meet up</b></td><td class="w">se encontrar em hora e lugar combinados</td></tr>
+<tr><td><b>mount up</b></td><td class="w">ir aumentando em número ou quantidade</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s20">
+<div class="snum">Writing Reference</div>
+<h2>Redação — abrir, argumentar e concluir</h2>
+<p class="sdesc">A linguagem de redação dissertativa: como apresentar uma tese, apoiar com exemplo, apresentar o outro lado e fechar.</p>
+<div class="items">
+<div class="i"><div class="en">There is no doubt that…</div><div class="pt">Não há dúvida de que…</div></div>
+<div class="i"><div class="en">It can be argued that…</div><div class="pt">Pode-se argumentar que…</div></div>
+<div class="i"><div class="en">Generally speaking, …</div><div class="pt">De modo geral,…</div></div>
+<div class="i"><div class="en">It is a well-known fact that…</div><div class="pt">É sabido que…</div></div>
+<div class="i"><div class="en">It is widely believed that…</div><div class="pt">Acredita-se amplamente que…</div></div>
+<div class="i"><div class="en">One point of view is…</div><div class="pt">Um ponto de vista é…</div></div>
+<div class="i"><div class="en">For one thing, … Moreover, … As a result, …</div><div class="pt">Em primeiro lugar,… Além disso,… Como resultado,…</div></div>
+<div class="i"><div class="en">It would not be unreasonable to…</div><div class="pt">Não seria absurdo…</div></div>
+<div class="i"><div class="en">It is plain to see…</div><div class="pt">É evidente…</div></div>
+<div class="i"><div class="en">There are those who believe that…</div><div class="pt">Há quem acredite que…</div></div>
+<div class="i"><div class="en">In contrast with… / Contrary to the above ideas, …</div><div class="pt">Em contraste com… / Ao contrário das ideias acima,…</div></div>
+<div class="i"><div class="en">On the contrary, … / Others argue that…</div><div class="pt">Pelo contrário,… / Outros argumentam que…</div></div>
+<div class="i"><div class="en">However, … Consequently, … For instance, …</div><div class="pt">No entanto,… Consequentemente,… Por exemplo,…</div></div>
+<div class="i"><div class="en">All in all, … / On the whole, …</div><div class="pt">No fim das contas,… / De modo geral,…</div></div>
+<div class="i"><div class="en">In conclusion, … / To conclude, … / To sum up, …</div><div class="pt">Concluindo,… / Para concluir,… / Resumindo,…</div></div>
+<div class="i"><div class="en">I strongly believe…</div><div class="pt">Eu acredito firmemente que…</div></div>
+</div>
+</section>
+
+<section id="s21">
+<div class="snum">Writing Reference</div>
+<h2>Resenha, artigo e relatório</h2>
+<p class="sdesc">A linguagem específica de cada gênero — elogiar, criticar, recomendar, abrir um artigo com gancho e propor solução num relatório.</p>
+<div class="items">
+<div class="i"><div class="en">What I liked most was… / The highlight for me was…</div><div class="pt">O que eu mais gostei foi… / O ponto alto para mim foi…</div></div>
+<div class="i"><div class="en">It combines… with…</div><div class="pt">Ele combina… com…</div></div>
+<div class="i"><div class="en">I was disappointed by… / The… was a real let-down.</div><div class="pt">Eu me decepcionei com… / O… foi uma verdadeira decepção.</div></div>
+<div class="i"><div class="en">I wasn't impressed by…</div><div class="pt">Não fiquei impressionado com…</div></div>
+<div class="i"><div class="en">I highly recommend… / I can't recommend it highly enough.</div><div class="pt">Eu recomendo muito… / Não tenho como recomendar o suficiente.</div></div>
+<div class="i"><div class="en">…would appeal to… / …should not be missed.</div><div class="pt">…agradaria a… / …não pode ser perdido.</div></div>
+<div class="i"><div class="en">You should probably give it a miss.</div><div class="pt">É melhor você deixar passar essa.</div></div>
+<div class="i"><div class="en">Have you ever wondered…?</div><div class="pt">Você já se perguntou…?</div></div>
+<div class="i"><div class="en">Can you imagine…? / What would happen if…?</div><div class="pt">Você consegue imaginar…? / O que aconteceria se…?</div></div>
+<div class="i"><div class="en">When was the last time you…?</div><div class="pt">Quando foi a última vez que você…?</div></div>
+<div class="i"><div class="en">If you ask me, … / As far as I'm concerned, …</div><div class="pt">Se quer saber,… / No que me diz respeito,…</div></div>
+<div class="i"><div class="en">By far the best thing was… / Without a doubt, … was the best…</div><div class="pt">De longe a melhor coisa foi… / Sem dúvida,… foi o melhor…</div></div>
+<div class="i"><div class="en">On the down side, … / …could have been better.</div><div class="pt">Por outro lado,… / …poderia ter sido melhor.</div></div>
+<div class="i"><div class="en">There's room for improvement.</div><div class="pt">Há espaço para melhorias.</div></div>
+<div class="i"><div class="en">I would therefore suggest… / An effective solution would be…</div><div class="pt">Portanto, eu sugeriria… / Uma solução eficaz seria…</div></div>
+<div class="i"><div class="en">The problem can be easily addressed by…</div><div class="pt">O problema pode ser resolvido facilmente com…</div></div>
+</div>
+</section>
+
+<section id="s22">
+<div class="snum">Writing Reference</div>
+<h2>Carta e e-mail formais</h2>
+<p class="sdesc">Da saudação ao fecho. A regra do fecho é fixa: <code>Yours faithfully</code> quando não se sabe o nome, <code>Yours sincerely</code> quando se sabe.</p>
+<div class="items">
+<div class="i"><div class="en">Dear Sir/Madam, / Dear Mr Smith,</div><div class="pt">Prezado(a) Senhor(a), / Prezado Sr. Smith,</div></div>
+<div class="i"><div class="en">Firstly, regarding… / In addition, …</div><div class="pt">Primeiramente, quanto a… / Além disso,…</div></div>
+<div class="i"><div class="en">I would like to know whether…</div><div class="pt">Eu gostaria de saber se…</div></div>
+<div class="i"><div class="en">I would be grateful if you could tell me…</div><div class="pt">Eu ficaria grato se o senhor pudesse me informar…</div></div>
+<div class="i"><div class="en">Please let me know… / I was wondering if…</div><div class="pt">Por favor, me avise… / Eu queria saber se…</div></div>
+<div class="i"><div class="en">It would be better to… / One solution would be to…</div><div class="pt">Seria melhor… / Uma solução seria…</div></div>
+<div class="i"><div class="en">An alternative idea might be to…</div><div class="pt">Uma ideia alternativa seria…</div></div>
+<div class="i"><div class="en">Have you considered…?</div><div class="pt">Você já pensou em…?</div></div>
+<div class="i"><div class="en">I think you'd really enjoy… because…</div><div class="pt">Acho que você ia gostar muito de… porque…</div></div>
+<div class="i"><div class="en">It's by far the best… No other place can match it.</div><div class="pt">É de longe o melhor… Nenhum outro lugar se compara.</div></div>
+<div class="i"><div class="en">Given the above, it is my opinion that…</div><div class="pt">Diante do exposto, minha opinião é que…</div></div>
+<div class="i"><div class="en">Thank you in advance for… / I would appreciate it if you could reply soon.</div><div class="pt">Agradeço desde já por… / Eu agradeceria se pudesse responder em breve.</div></div>
+<div class="i"><div class="en">I look forward to hearing from you.</div><div class="pt">Fico no aguardo do seu retorno.</div></div>
+<div class="i"><div class="en">Yours faithfully, <i>(quando não se sabe o nome)</i></div><div class="pt">Atenciosamente, <i>(fecho formal padrão)</i></div></div>
+<div class="i"><div class="en">Yours sincerely, <i>(quando se sabe o nome)</i></div><div class="pt">Atenciosamente, <i>(fecho formal com destinatário nomeado)</i></div></div>
+<div class="i"><div class="en">Best wishes, / Kind regards, / Take care,</div><div class="pt">Abraços, / Cordialmente, / Se cuida,</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 11 V03 · Livro 06 · Close-up C2 — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' seções.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'seção':'seções')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

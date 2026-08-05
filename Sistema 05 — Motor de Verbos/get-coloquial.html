@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GET coloquial — Sistema 05</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#6366F1;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead b{color:var(--text);font-weight:600;}
+.lead i{color:var(--accent);font-style:normal;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc i{color:var(--accent);font-style:normal;}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.en s{color:var(--dim);text-decoration-color:#f87171;}
+.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.def b{color:var(--muted);font-weight:600;font-style:normal;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+.tag.reg{color:#fcd34d;border-color:#5f4a1e;}
+.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="index.html" class="back">&#8592; Voltar ao Sistema 05</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 05 · motor de verbos · GET coloquial</div>
+<h1 class="title">GET <em>coloquial</em></h1>
+<p class="lead">Ninguém fala <i>I understand</i>. As pessoas falam <i>I got it</i>. Este painel pega o GET que não está no dicionário de verbos: o da rua, o que vira <i>gotta</i>, o que serve de resposta inteira. Cada item traz o que significa de verdade, a frase de uso e <i>quando</i> se diz aquilo.</p>
+
+<div class="metrics">
+  <div class="metric"><b>12</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>A2–B2</b><span>nível</span></div>
+  <div class="metric"><b>US</b><span>padrão</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar expressão ou tradução — ex.: gotta, got it, se vira…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">I got it</div>
+<h2><i>I got it</i> — o "entendi" de verdade</h2>
+<p class="sdesc">O ponto de partida do material de origem: no lugar de <i>I understand</i>, a rua usa <i>I got it</i>.</p>
+<div class="items">
+<div class="i"><span class="tag reg">em vez de I understand</span><div class="en"><i>I got it.</i></div><div class="pt">Entendi. / Peguei. / Saquei.</div><div class="def">Quando: alguém acabou de te explicar algo e você entendeu.</div></div>
+<div class="i"><div class="en"><i>Okay, I got it.</i></div><div class="pt">Beleza, entendi.</div><div class="def">A forma mais comum de encerrar uma explicação.</div></div>
+<div class="i"><div class="en"><i>Got it?</i> — <i>Got it.</i></div><div class="pt">Entendeu? — Entendi.</div><div class="def">Pergunta e resposta com a mesma palavra.</div></div>
+<div class="i"><div class="en"><i>I don't get it.</i></div><div class="pt">Não entendi. / Não saquei.</div><div class="def">O negativo usa <i>get</i>, não <i>got</i>.</div></div>
+<div class="i"><div class="en"><i>Do you get what I'm saying?</i></div><div class="pt">Você está entendendo o que eu digo?</div></div>
+<div class="i"><div class="en"><i>I get it now.</i></div><div class="pt">Agora eu entendi.</div><div class="def">Quando a ficha cai depois de um tempo.</div></div>
+<div class="i"><div class="en"><i>You got it.</i></div><div class="pt">Isso mesmo. / Pode deixar.</div><div class="def">Dois sentidos: confirmar que a pessoa acertou, ou aceitar um pedido.</div></div>
+<div class="i"><div class="en"><i>Can you bring me a coffee?</i> — <i>You got it.</i></div><div class="pt">Pode me trazer um café? — Pode deixar.</div></div>
+<div class="i"><div class="en"><i>I got it wrong.</i></div><div class="pt">Eu entendi errado.</div></div>
+<div class="i"><div class="en"><i>Let me get this straight.</i></div><div class="pt">Deixa eu ver se entendi direito.</div><div class="def">Quando: antes de repetir o que a pessoa disse, para confirmar.</div></div>
+<div class="i"><div class="en"><i>I didn't get that. Can you repeat?</i></div><div class="pt">Não peguei. Pode repetir?</div><div class="def">Mais natural que <i>I didn't understand</i>.</div></div>
+<div class="i"><div class="en"><i>Got it, thanks.</i></div><div class="pt">Entendi, obrigado.</div></div>
+<div class="i"><div class="en"><i>I understand</i> is not wrong — it's just formal.</div><div class="pt">I understand não é errado — é só formal.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">gotta</div>
+<h2><i>Gotta</i> — a obrigação da rua</h2>
+<p class="sdesc"><i>Have got to</i> encolhe para <i>gotta</i>. É o jeito mais comum de dizer "tenho que" em conversa.</p>
+<div class="items">
+<div class="i"><span class="tag reg">em vez de I have to go</span><div class="en"><i>I gotta go.</i></div><div class="pt">Tenho que ir.</div><div class="def">Quando: encerrando uma conversa, saindo de um lugar.</div></div>
+<div class="i"><div class="en"><i>Well, I gotta go.</i></div><div class="pt">Bom, tenho que ir.</div></div>
+<div class="i"><div class="en"><i>I gotta study.</i></div><div class="pt">Tenho que estudar.</div></div>
+<div class="i"><div class="en"><i>I gotta eat.</i></div><div class="pt">Tenho que comer.</div></div>
+<div class="i"><div class="en"><i>You gotta try this.</i></div><div class="pt">Você tem que experimentar isso.</div><div class="def">Quando: recomendando algo com entusiasmo.</div></div>
+<div class="i"><div class="en"><i>We gotta talk.</i></div><div class="pt">A gente precisa conversar.</div></div>
+<div class="i"><div class="en"><i>I gotta run.</i></div><div class="pt">Tenho que correr. / Preciso ir voando.</div><div class="def">Mais informal ainda que <i>I gotta go</i>.</div></div>
+<div class="i"><div class="en"><i>Do I gotta?</i> — better: <i>Do I have to?</i></div><div class="pt">Tenho mesmo que fazer isso?</div><div class="def">Em pergunta, prefira <i>have to</i>. Gotta funciona melhor na afirmativa.</div></div>
+<div class="i"><div class="en"><i>Gotta</i> comes from <i>got to</i>, which comes from <i>have got to</i>.</div><div class="pt">Gotta vem de got to, que vem de have got to.</div><div class="def">A cadeia inteira da redução.</div></div>
+<div class="i"><div class="en"><i>I've got to go</i> → <i>I got to go</i> → <i>I gotta go</i>.</div><div class="pt">A redução em três passos.</div></div>
+<div class="i"><div class="en">Write <i>have to</i>. Say <i>gotta</i>.</div><div class="pt">Escreva have to. Fale gotta.</div><div class="def">A regra prática: gotta é fala, não escrita formal.</div></div>
+<div class="i"><div class="en"><i>I gotta get going.</i></div><div class="pt">Preciso ir andando.</div><div class="def">Duas formas de get na mesma frase.</div></div>
+<div class="i"><div class="en"><i>You've gotta be kidding me.</i></div><div class="pt">Você só pode estar brincando.</div><div class="def">Quando: espanto ou irritação.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">I got this</div>
+<h2><i>I got this</i> — deixa comigo</h2>
+<p class="sdesc">Não é entender: é dar conta. Serve para assumir uma tarefa e para encorajar alguém.</p>
+<div class="items">
+<div class="i"><span class="tag reg">em vez de I can do this</span><div class="en"><i>I got this.</i></div><div class="pt">Deixa comigo. / Eu dou conta.</div><div class="def">Quando: você assume a tarefa e quer tranquilizar quem está junto.</div></div>
+<div class="i"><div class="en"><i>Don't worry, I got this.</i></div><div class="pt">Não se preocupa, deixa comigo.</div></div>
+<div class="i"><div class="en"><i>You got this!</i></div><div class="pt">Você consegue! / Vai dar certo!</div><div class="def">Quando: alguém vai encarar algo difícil e você está torcendo.</div></div>
+<div class="i"><div class="en"><i>But you got this.</i></div><div class="pt">Mas você dá conta.</div><div class="def">Usado para virar o jogo depois de uma preocupação.</div></div>
+<div class="i"><div class="en"><i>We got this.</i></div><div class="pt">A gente dá conta.</div></div>
+<div class="i"><div class="en"><i>I've got this covered.</i></div><div class="pt">Já está resolvido comigo.</div></div>
+<div class="i"><div class="en"><i>Can you send me the file tomorrow?</i> — <i>You got it.</i></div><div class="pt">Pode me mandar o arquivo amanhã? — Pode deixar.</div><div class="def">Quando: combinar algo. Vira quase um "combinado".</div></div>
+<div class="i"><div class="en"><i>I'll handle it. I got this.</i></div><div class="pt">Eu resolvo. Deixa comigo.</div></div>
+<div class="i"><div class="en"><i>You got this, I promise.</i></div><div class="pt">Você consegue, eu garanto.</div></div>
+<div class="i"><div class="en"><i>I got this one.</i></div><div class="pt">Essa é comigo.</div><div class="def">Quando: dividir tarefas, ou pagar a conta.</div></div>
+<div class="i"><div class="en"><i>I got the check.</i></div><div class="pt">A conta é minha.</div><div class="def">No restaurante — get também é pagar.</div></div>
+<div class="i"><div class="en"><i>Next round's on me — I got it.</i></div><div class="pt">A próxima rodada é por minha conta.</div></div>
+<div class="i"><div class="en"><i>I can do this</i> is correct, but films say <i>I got this</i>.</div><div class="pt">I can do this está certo, mas nos filmes é I got this.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">have got</div>
+<h2><i>Have got</i> — o ter do dia a dia</h2>
+<p class="sdesc">No inglês falado, <i>have got</i> substitui <i>have</i> o tempo todo. E depois encolhe.</p>
+<div class="items">
+<div class="i"><div class="en"><i>I've got a car.</i></div><div class="pt">Eu tenho um carro.</div><div class="def">Mesmo sentido de <i>I have a car</i>, mais falado.</div></div>
+<div class="i"><div class="en"><i>I've got two brothers.</i></div><div class="pt">Eu tenho dois irmãos.</div></div>
+<div class="i"><div class="en"><i>She's got long hair.</i></div><div class="pt">Ela tem cabelo comprido.</div></div>
+<div class="i"><div class="en"><i>Have you got a minute?</i></div><div class="pt">Você tem um minuto?</div><div class="def">Quando: pedir a atenção de alguém.</div></div>
+<div class="i"><div class="en"><i>I've got no idea.</i></div><div class="pt">Não faço ideia.</div></div>
+<div class="i"><div class="en"><i>We've got a problem.</i></div><div class="pt">Temos um problema.</div></div>
+<div class="i"><div class="en"><i>You've got mail.</i></div><div class="pt">Você tem correspondência.</div></div>
+<div class="i"><div class="en"><i>I got a text from her.</i></div><div class="pt">Recebi uma mensagem dela.</div><div class="def">Aqui get é receber, não ter.</div></div>
+<div class="i"><div class="en"><i>Did you get my email?</i></div><div class="pt">Você recebeu meu e-mail?</div></div>
+<div class="i"><div class="en"><i>I got a call from the bank.</i></div><div class="pt">Recebi uma ligação do banco.</div></div>
+<div class="i"><div class="en"><i>What did you get for your birthday?</i></div><div class="pt">O que você ganhou de aniversário?</div><div class="def">Get também é ganhar.</div></div>
+<div class="i"><div class="en"><i>I got a new job.</i></div><div class="pt">Consegui um emprego novo.</div><div class="def">E também conseguir.</div></div>
+<div class="i"><div class="en"><i>Where did you get that?</i></div><div class="pt">Onde você conseguiu isso?</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">get + lugar</div>
+<h2><i>Get</i> de chegar e de sair</h2>
+<p class="sdesc">Com lugar, <i>get</i> vira movimento — chegar, ir, sair. É o verbo mais usado para isso na fala.</p>
+<div class="items">
+<div class="i"><div class="en"><i>What time did you get here?</i></div><div class="pt">Que horas você chegou aqui?</div><div class="def">Get here = chegar.</div></div>
+<div class="i"><div class="en"><i>I got home late.</i></div><div class="pt">Cheguei em casa tarde.</div><div class="def">Sem preposição antes de <i>home</i>.</div></div>
+<div class="i"><div class="en"><i>How do I get to the station?</i></div><div class="pt">Como eu chego na estação?</div><div class="def">Quando: pedindo direção na rua.</div></div>
+<div class="i"><div class="en"><i>I'll get there around six.</i></div><div class="pt">Chego lá por volta das seis.</div></div>
+<div class="i"><div class="en"><i>Get in the car.</i></div><div class="pt">Entra no carro.</div><div class="def">Carro pequeno: get in. Ônibus e trem: get on.</div></div>
+<div class="i"><div class="en"><i>Get on the bus.</i></div><div class="pt">Suba no ônibus.</div></div>
+<div class="i"><div class="en"><i>Get off at the next stop.</i></div><div class="pt">Desça no próximo ponto.</div></div>
+<div class="i"><div class="en"><i>Get out of the car.</i></div><div class="pt">Sai do carro.</div></div>
+<div class="i"><div class="en"><i>Get out of here!</i></div><div class="pt">Sai daqui! / Para com isso, não acredito!</div><div class="def">Dois sentidos: mandar sair, ou espanto de brincadeira.</div></div>
+<div class="i"><div class="en"><i>You won the lottery? Get out of here!</i></div><div class="pt">Você ganhou na loteria? Não acredito!</div><div class="def">Aqui é espanto, não expulsão — o tom decide.</div></div>
+<div class="i"><div class="en"><i>I gotta get going.</i></div><div class="pt">Preciso ir andando.</div><div class="def">Get going = pôr-se a caminho.</div></div>
+<div class="i"><div class="en"><i>Let's get going.</i></div><div class="pt">Vamos indo.</div></div>
+<div class="i"><div class="en"><i>We got back yesterday.</i></div><div class="pt">A gente voltou ontem.</div><div class="def">Get back = voltar.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">get + estado</div>
+<h2><i>Get</i> de virar, ficar, tornar-se</h2>
+<p class="sdesc">Com adjetivo, <i>get</i> significa mudança de estado. Onde o português usa "ficar", o inglês usa get.</p>
+<div class="items">
+<div class="i"><div class="en"><i>It's getting late.</i></div><div class="pt">Está ficando tarde.</div><div class="def">Quando: sinalizando que é hora de ir.</div></div>
+<div class="i"><div class="en"><i>I'm getting tired.</i></div><div class="pt">Estou ficando cansado.</div></div>
+<div class="i"><div class="en"><i>Don't get angry.</i></div><div class="pt">Não fique bravo.</div></div>
+<div class="i"><div class="en"><i>It gets cold at night.</i></div><div class="pt">Fica frio à noite.</div></div>
+<div class="i"><div class="en"><i>She got sick last week.</i></div><div class="pt">Ela ficou doente semana passada.</div></div>
+<div class="i"><div class="en"><i>I got lost.</i></div><div class="pt">Eu me perdi.</div></div>
+<div class="i"><div class="en"><i>They got married in June.</i></div><div class="pt">Eles se casaram em junho.</div></div>
+<div class="i"><div class="en"><i>He's getting better.</i></div><div class="pt">Ele está melhorando.</div></div>
+<div class="i"><div class="en"><i>It's getting worse.</i></div><div class="pt">Está piorando.</div></div>
+<div class="i"><div class="en"><i>Get ready. We're leaving.</i></div><div class="pt">Se apronta. A gente vai sair.</div></div>
+<div class="i"><div class="en"><i>I need to get some sleep.</i></div><div class="pt">Preciso dormir um pouco.</div></div>
+<div class="i"><div class="en"><i>Get well soon.</i></div><div class="pt">Melhoras.</div><div class="def">O que se escreve num cartão para quem está doente.</div></div>
+<div class="i"><div class="en"><i>Getting old is not for the weak.</i></div><div class="pt">Envelhecer não é para os fracos.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">get over</div>
+<h2><i>Get over it</i> e a família do superar</h2>
+<p class="sdesc">Os phrasal verbs de GET que aparecem em conversa emocional — término, briga, decepção.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Get over it.</i></div><div class="pt">Supera. / Deixa isso pra lá.</div><div class="def">Quando: alguém está remoendo algo. Pode soar duro — cuidado com o tom.</div></div>
+<div class="i"><div class="en"><i>She's still getting over the breakup.</i></div><div class="pt">Ela ainda está superando o término.</div></div>
+<div class="i"><div class="en"><i>I got over the flu.</i></div><div class="pt">Me recuperei da gripe.</div><div class="def">Também serve para doença.</div></div>
+<div class="i"><div class="en"><i>Get it together.</i></div><div class="pt">Se organiza. / Se recompõe.</div><div class="def">Quando: alguém está desmontado ou fazendo bobagem.</div></div>
+<div class="i"><div class="en"><i>I need to get my life together.</i></div><div class="pt">Preciso organizar minha vida.</div></div>
+<div class="i"><div class="en"><i>Get through this.</i></div><div class="pt">Atravessar isso.</div><div class="def">Get through = aguentar até o fim.</div></div>
+<div class="i"><div class="en"><i>We'll get through it together.</i></div><div class="pt">A gente vai superar isso junto.</div></div>
+<div class="i"><div class="en"><i>Get along with someone.</i></div><div class="pt">Se dar bem com alguém.</div><div class="def">Quando: falando de relação com colega, família, vizinho.</div></div>
+<div class="i"><div class="en"><i>I get along with my sister.</i></div><div class="pt">Eu me dou bem com minha irmã.</div></div>
+<div class="i"><div class="en"><i>Get rid of it.</i></div><div class="pt">Se livra disso.</div><div class="def">Quando: descartar coisa ou situação.</div></div>
+<div class="i"><div class="en"><i>I got rid of my old phone.</i></div><div class="pt">Me livrei do meu celular velho.</div></div>
+<div class="i"><div class="en"><i>Don't let it get to you.</i></div><div class="pt">Não deixa isso te afetar.</div><div class="def">Get to someone = abalar alguém.</div></div>
+<div class="i"><div class="en"><i>That song really gets to me.</i></div><div class="pt">Essa música me pega de verdade.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">get + pessoa</div>
+<h2><i>Get</i> com pessoas</h2>
+<p class="sdesc">Buscar, chamar, conseguir para alguém — GET resolve tudo isso sem verbo específico.</p>
+<div class="items">
+<div class="i"><div class="en"><i>I'll get you a coffee.</i></div><div class="pt">Vou te buscar um café.</div><div class="def">Get = pegar/trazer para alguém.</div></div>
+<div class="i"><div class="en"><i>Can you get me the salt?</i></div><div class="pt">Você pode me passar o sal?</div></div>
+<div class="i"><div class="en"><i>Go get him.</i></div><div class="pt">Vai chamar ele.</div><div class="def">Go get, sem <i>and</i>, é o padrão falado.</div></div>
+<div class="i"><div class="en"><i>I'll get the door.</i></div><div class="pt">Eu atendo a porta.</div><div class="def">Quando: a campainha toca.</div></div>
+<div class="i"><div class="en"><i>I'll get the phone.</i></div><div class="pt">Eu atendo o telefone.</div></div>
+<div class="i"><div class="en"><i>Get someone to do it.</i></div><div class="pt">Pedir para alguém fazer.</div><div class="def">Get + pessoa + to + verbo.</div></div>
+<div class="i"><div class="en"><i>I got my brother to help me.</i></div><div class="pt">Convenci meu irmão a me ajudar.</div></div>
+<div class="i"><div class="en"><i>Get your hair cut.</i></div><div class="pt">Corte o cabelo.</div><div class="def">Get + coisa + particípio = mandar fazer.</div></div>
+<div class="i"><div class="en"><i>I need to get my car fixed.</i></div><div class="pt">Preciso mandar consertar meu carro.</div></div>
+<div class="i"><div class="en"><i>She got her nails done.</i></div><div class="pt">Ela fez as unhas.</div></div>
+<div class="i"><div class="en"><i>Don't get me wrong.</i></div><div class="pt">Não me leve a mal.</div><div class="def">Quando: antes de dizer algo que pode soar crítico.</div></div>
+<div class="i"><div class="en"><i>You're getting on my nerves.</i></div><div class="pt">Você está me irritando.</div></div>
+<div class="i"><div class="en"><i>I'll get back to you.</i></div><div class="pt">Eu te retorno.</div><div class="def">Quando: prometer resposta depois. Muito usado em trabalho.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">respostas</div>
+<h2>GET como resposta inteira</h2>
+<p class="sdesc">Expressões de GET que funcionam sozinhas, sem completar a frase. São as mais rápidas de usar.</p>
+<div class="items">
+<div class="i"><div class="en"><i>Got it.</i></div><div class="pt">Entendi.</div></div>
+<div class="i"><div class="en"><i>You got it.</i></div><div class="pt">Pode deixar. / Isso mesmo.</div></div>
+<div class="i"><div class="en"><i>I got this.</i></div><div class="pt">Deixa comigo.</div></div>
+<div class="i"><div class="en"><i>You got this.</i></div><div class="pt">Você consegue.</div></div>
+<div class="i"><div class="en"><i>Get out of here!</i></div><div class="pt">Não acredito!</div></div>
+<div class="i"><div class="en"><i>Get real.</i></div><div class="pt">Cai na real.</div></div>
+<div class="i"><div class="en"><i>Get lost.</i></div><div class="pt">Se manda.</div><div class="def">Rude — saiba reconhecer, use com cuidado.</div></div>
+<div class="i"><div class="en"><i>Get well soon.</i></div><div class="pt">Melhoras.</div></div>
+<div class="i"><div class="en"><i>Get going.</i></div><div class="pt">Vamos indo.</div></div>
+<div class="i"><div class="en"><i>Get ready.</i></div><div class="pt">Se prepara.</div></div>
+<div class="i"><div class="en"><i>Get over it.</i></div><div class="pt">Supera.</div></div>
+<div class="i"><div class="en"><i>Get it together.</i></div><div class="pt">Se recompõe.</div></div>
+<div class="i"><div class="en"><i>Don't get me wrong.</i></div><div class="pt">Não me leve a mal.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">contexto</div>
+<h2>O mesmo GET, contextos diferentes</h2>
+<p class="sdesc">A regra que o material de origem deixa clara: tudo depende da situação. O verbo é o mesmo e o sentido muda.</p>
+<div class="items">
+<div class="i"><div class="en"><i>I got it</i> — after an explanation: entendi.</div><div class="pt">Depois de uma explicação: entendi.</div></div>
+<div class="i"><div class="en"><i>I got it</i> — reaching for something: pode deixar que eu pego.</div><div class="pt">Estendendo a mão para pegar algo: deixa que eu pego.</div></div>
+<div class="i"><div class="en"><i>I got it</i> — at the restaurant: a conta é minha.</div><div class="pt">No restaurante: a conta é minha.</div></div>
+<div class="i"><div class="en"><i>I got it</i> — the phone rings: eu atendo.</div><div class="pt">O telefone toca: eu atendo.</div></div>
+<div class="i"><div class="en"><i>You got it</i> — confirming: isso mesmo.</div><div class="pt">Confirmando: isso mesmo.</div></div>
+<div class="i"><div class="en"><i>You got it</i> — accepting a request: pode deixar.</div><div class="pt">Aceitando um pedido: pode deixar.</div></div>
+<div class="i"><div class="en"><i>Get out of here</i> — angry: sai daqui.</div><div class="pt">Com raiva: sai daqui.</div></div>
+<div class="i"><div class="en"><i>Get out of here</i> — surprised: não acredito!</div><div class="pt">Surpreso: não acredito!</div></div>
+<div class="i"><div class="en"><i>Get</i> with a place = arrive.</div><div class="pt">Get com lugar = chegar.</div></div>
+<div class="i"><div class="en"><i>Get</i> with an adjective = become.</div><div class="pt">Get com adjetivo = ficar.</div></div>
+<div class="i"><div class="en"><i>Get</i> with an object = receive or obtain.</div><div class="pt">Get com objeto = receber ou conseguir.</div></div>
+<div class="i"><div class="en"><i>Get</i> with a person = fetch or persuade.</div><div class="pt">Get com pessoa = buscar ou convencer.</div></div>
+<div class="i"><div class="en">One verb, six jobs. The situation decides.</div><div class="pt">Um verbo, seis funções. A situação decide.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">escrita × fala</div>
+<h2>O que escrever e o que falar</h2>
+<p class="sdesc">Nem todo GET coloquial cabe em e-mail de trabalho. Esta é a linha divisória.</p>
+<div class="items">
+<div class="i"><span class="tag">fala</span><div class="en"><i>I gotta go.</i></div><div class="pt">Tenho que ir.</div><div class="def">Só fala e mensagem informal.</div></div>
+<div class="i"><span class="tag reg">escrita</span><div class="en"><i>I have to go.</i></div><div class="pt">Tenho que ir.</div><div class="def">Serve em qualquer contexto.</div></div>
+<div class="i"><span class="tag">fala</span><div class="en"><i>I got it.</i></div><div class="pt">Entendi.</div><div class="def">Conversa, reunião informal.</div></div>
+<div class="i"><span class="tag reg">escrita</span><div class="en"><i>Understood.</i></div><div class="pt">Entendido.</div><div class="def">E-mail, mensagem de trabalho.</div></div>
+<div class="i"><span class="tag">fala</span><div class="en"><i>You got it.</i></div><div class="pt">Pode deixar.</div></div>
+<div class="i"><span class="tag reg">escrita</span><div class="en"><i>Will do.</i></div><div class="pt">Farei isso.</div><div class="def">Equivalente profissional, ainda leve.</div></div>
+<div class="i"><span class="tag">fala</span><div class="en"><i>I'll get back to you.</i></div><div class="pt">Eu te retorno.</div><div class="def">Este funciona nos dois — é o mais seguro do painel.</div></div>
+<div class="i"><span class="tag">fala</span><div class="en"><i>Get lost.</i></div><div class="pt">Se manda.</div><div class="def">Nunca no trabalho.</div></div>
+<div class="i"><span class="tag">fala</span><div class="en"><i>Get real.</i></div><div class="pt">Cai na real.</div><div class="def">Só entre amigos.</div></div>
+<div class="i"><div class="en"><i>Have got</i> is more British; <i>have</i> is more American.</div><div class="pt">Have got é mais britânico; have é mais americano.</div></div>
+<div class="i"><div class="en"><i>Gotta</i> is never written in formal English.</div><div class="pt">Gotta nunca se escreve em inglês formal.</div></div>
+<div class="i"><div class="en">But you will read it in songs, films and messages.</div><div class="pt">Mas você vai ler em música, filme e mensagem.</div></div>
+<div class="i"><div class="en">Understand it always. Use it when the room is casual.</div><div class="pt">Entenda sempre. Use quando o ambiente for informal.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">treino</div>
+<h2>Trocar o formal pelo real</h2>
+<p class="sdesc">O exercício do material de origem: pegue a frase de livro e diga a de rua.</p>
+<div class="items">
+<div class="i"><div class="en"><i>I understand</i> → <i>I got it.</i></div><div class="pt">Entendi.</div></div>
+<div class="i"><div class="en"><i>I have to go</i> → <i>I gotta go.</i></div><div class="pt">Tenho que ir.</div></div>
+<div class="i"><div class="en"><i>I can do this</i> → <i>I got this.</i></div><div class="pt">Eu dou conta.</div></div>
+<div class="i"><div class="en"><i>You can do it</i> → <i>You got this.</i></div><div class="pt">Você consegue.</div></div>
+<div class="i"><div class="en"><i>I have a car</i> → <i>I've got a car.</i></div><div class="pt">Tenho um carro.</div></div>
+<div class="i"><div class="en"><i>I will answer the phone</i> → <i>I'll get it.</i></div><div class="pt">Eu atendo.</div></div>
+<div class="i"><div class="en"><i>I arrived home late</i> → <i>I got home late.</i></div><div class="pt">Cheguei tarde em casa.</div></div>
+<div class="i"><div class="en"><i>It is becoming late</i> → <i>It's getting late.</i></div><div class="pt">Está ficando tarde.</div></div>
+<div class="i"><div class="en"><i>I received your message</i> → <i>I got your message.</i></div><div class="pt">Recebi sua mensagem.</div></div>
+<div class="i"><div class="en"><i>Please leave</i> → <i>Get out.</i></div><div class="pt">Sai.</div></div>
+<div class="i"><div class="en"><i>I will respond later</i> → <i>I'll get back to you.</i></div><div class="pt">Eu te retorno.</div></div>
+<div class="i"><div class="en"><i>We must depart</i> → <i>We gotta get going.</i></div><div class="pt">A gente tem que ir andando.</div></div>
+<div class="i"><div class="en"><i>Get</i> can save your English — it all depends on the situation.</div><div class="pt">O get pode salvar o seu inglês — tudo depende da situação.</div><div class="def">A frase que fecha o material de origem.</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+</div>
+
+<footer>Sistema 05 · Motor de Verbos por Sentido — GET coloquial</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=s.querySelector('.snum').textContent+' — '+s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

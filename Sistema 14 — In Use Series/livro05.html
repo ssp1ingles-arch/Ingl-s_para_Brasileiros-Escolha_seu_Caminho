@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 05 · PMP English Vocabulary for Beginning ESL — Sistema 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead a{color:var(--accent);}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 14</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 14 · Livro 05 · vocabulário do começo · EUA</div>
+<h1 class="title"><em>PMP</em> — English Vocabulary for Beginning ESL Learners</h1>
+<p class="lead">Jean Yates · McGraw-Hill · Practice Makes Perfect · edição Premium. É o livro que resolve a primeira pergunta de quem começa: <b>quais palavras eu preciso mesmo saber?</b> Ele monta o vocabulário por tema — gente, lugares, comida, roupa, adjetivos, verbos e advérbios — e, sempre que a palavra tem irmãs parecidas, mostra a <b>diferença exata</b> entre elas: <i>guy</i>, <i>kid</i>, <i>dude</i>, <i>lady</i>; <i>house</i>, <i>cottage</i>, <i>townhouse</i>, <i>rambler</i>; <i>street</i>, <i>avenue</i>, <i>freeway</i>, <i>beltway</i>. Cada uma vem numa frase completa de exemplo. Daqui saíram também o <i>there is</i> × <i>there are</i>, as quantidades (<i>a few</i>, <i>a little</i>, <i>too many</i>, <i>too much</i>), as embalagens (<i>a can of</i>, <i>a slice of</i>), os comparativos e superlativos, os verbos de cada situação (casa, escritório, loja, banco, cozinha) e os advérbios com <i>in / on / at</i>. Ficaram de fora os enunciados de exercício e o gabarito.</p>
+
+<div class="metrics">
+  <div class="metric"><b>19</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>16</b><span>unidades</span></div>
+  <div class="metric"><b>EUA</b><span>variante</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: there is, a little, guy, freeway, quantidade…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Unit 1 · gente</div>
+<h2>Família, quem é quem e o corpo</h2>
+<p class="sdesc">O primeiro bloco de palavras: parentesco (e o truque do <code>-in-law</code>), as categorias de pessoa por idade, os nomes de profissão e as partes do corpo — com as frases que o próprio livro usa para definir cada uma.</p>
+<div class="items">
+<div class="i"><div class="en">mother · father · daughter · son · sister · brother · wife · husband</div><div class="pt">mãe · pai · filha · filho · irmã · irmão · esposa · marido</div></div>
+<div class="i"><div class="en">grandmother · grandfather · granddaughter · grandson · aunt · uncle · cousin · niece · nephew</div><div class="pt">avó · avô · neta · neto · tia · tio · primo(a) · sobrinha · sobrinho</div></div>
+<div class="i"><div class="en">A man's mother-in-law is his wife's mother. <span class="def">acrescente <b>-in-law</b> para a família do marido ou da esposa</span></div><div class="pt">A sogra de um homem é a mãe da esposa dele.</div></div>
+<div class="i"><div class="en">mother-in-law · father-in-law · daughter-in-law · son-in-law · sister-in-law · brother-in-law</div><div class="pt">sogra · sogro · nora · genro · cunhada · cunhado</div></div>
+<div class="i"><div class="en">baby <span class="def">a person under the age of two</span> · child <span class="def">a person under the age of thirteen</span> · teenager <span class="def">a person between the ages of thirteen and nineteen</span></div><div class="pt">bebê (menos de dois anos) · criança (menos de treze) · adolescente (entre treze e dezenove)</div></div>
+<div class="i"><div class="en">boy <span class="def">a young male</span> · girl <span class="def">a young female</span> · man <span class="def">a grown-up male</span> · woman <span class="def">a grown-up female</span></div><div class="pt">menino · menina · homem adulto · mulher adulta</div></div>
+<div class="i"><div class="en">friend <span class="def">someone you know well and like</span> · neighbor <span class="def">a person who lives or works near where you live or work</span> · acquaintance</div><div class="pt">amigo (alguém que você conhece bem e de quem gosta) · vizinho (mora ou trabalha perto de você) · conhecido</div></div>
+<div class="i"><div class="en">guest · host · hostess · visitor</div><div class="pt">convidado · anfitrião · anfitriã · visitante</div></div>
+<div class="i"><div class="en">doctor · dentist · nurse · pharmacist · lawyer · accountant · engineer · architect · teacher · professor · student · pupil</div><div class="pt">médico · dentista · enfermeiro(a) · farmacêutico · advogado · contador · engenheiro · arquiteto · professor(a) · professor universitário · estudante · aluno</div></div>
+<div class="i"><div class="en">police officer · firefighter · military officer · mail carrier · janitor · cleaner · mechanic · carpenter · driver · pilot · technician · programmer</div><div class="pt">policial · bombeiro · militar · carteiro · zelador · faxineiro · mecânico · carpinteiro · motorista · piloto · técnico · programador</div></div>
+<div class="i"><div class="en">boss · employer · manager · adviser · customer · patient · sales assistant · guide · cook · beautician</div><div class="pt">chefe · empregador · gerente · assessor · cliente · paciente · atendente de loja · guia · cozinheiro · esteticista</div></div>
+<div class="i"><div class="en">actor · actress · artist · dancer · singer · pianist · painter · designer · photographer · writer · journalist · reporter · director · football player</div><div class="pt">ator · atriz · artista · dançarino(a) · cantor(a) · pianista · pintor · designer · fotógrafo · escritor · jornalista · repórter · diretor · jogador de futebol americano</div></div>
+<div class="i"><div class="en">When I am sick I see a doctor. · If I have a toothache, I see a dentist.</div><div class="pt">Quando estou doente eu vou ao médico. · Se estou com dor de dente, vou ao dentista.</div></div>
+<div class="i"><div class="en">The person who gives traffic tickets is a police officer. · Medicines are prepared at the drugstore by a pharmacist.</div><div class="pt">Quem dá multa de trânsito é o policial. · Os remédios são preparados na farmácia pelo farmacêutico.</div></div>
+<div class="i"><div class="en">The person who lives near my house is my neighbor.</div><div class="pt">A pessoa que mora perto da minha casa é meu vizinho.</div></div>
+<div class="i"><div class="en">head · hair · face · eyes · ears · nose · mouth · lips · cheeks · chin · neck</div><div class="pt">cabeça · cabelo · rosto · olhos · orelhas · nariz · boca · lábios · bochechas · queixo · pescoço</div></div>
+<div class="i"><div class="en">shoulders · chest · stomach · waist · hip · arm · elbow · wrist · hand · fingers · thumb</div><div class="pt">ombros · peito · estômago (barriga) · cintura · quadril · braço · cotovelo · pulso · mão · dedos da mão · polegar</div></div>
+<div class="i"><div class="en">leg · knee · ankle · foot · heel · toes</div><div class="pt">perna · joelho · tornozelo · pé · calcanhar · dedos do pé</div></div>
+<div class="i"><div class="en">The elbow is in the middle of the arm. · The knee is in the middle of the leg.</div><div class="pt">O cotovelo fica no meio do braço. · O joelho fica no meio da perna.</div></div>
+<div class="i"><div class="en">The wrist is between the hand and the arm. · The ankle is between the foot and the leg.</div><div class="pt">O pulso fica entre a mão e o braço. · O tornozelo fica entre o pé e a perna.</div></div>
+<div class="i"><div class="en">The foot has five toes; the hand has four fingers and one thumb.</div><div class="pt">O pé tem cinco dedos; a mão tem quatro dedos e um polegar.</div></div>
+<div class="i"><div class="en">The shoulders are between the neck and the arm. · The waist is above the stomach and below the chest.</div><div class="pt">Os ombros ficam entre o pescoço e o braço. · A cintura fica acima do estômago e abaixo do peito.</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Unit 1 · lugares</div>
+<h2>Da rua ao cômodo da casa</h2>
+<p class="sdesc">Os lugares que aparecem no dia a dia — o que fica <b>fora</b> e o que fica <b>dentro</b> — e as coisas que moram em cada cômodo.</p>
+<div class="items">
+<div class="i"><div class="en">street · corner · sidewalk · traffic light · bus stop · highway · road · area · neighborhood · suburb · city · town · country</div><div class="pt">rua · esquina · calçada · semáforo · ponto de ônibus · rodovia · estrada · área · bairro · subúrbio · cidade grande · cidade pequena · campo / país</div></div>
+<div class="i"><div class="en">bank · post office · library · school · church · hospital · drugstore · grocery store · barbershop · florist · gas station · shopping center · shops · hotel</div><div class="pt">banco · correio · biblioteca · escola · igreja · hospital · farmácia · mercado · barbearia · floricultura · posto de gasolina · shopping · lojas · hotel</div></div>
+<div class="i"><div class="en">airport · train station · railroad · bus stop · building · apartment · house · farm · yard · garden · park</div><div class="pt">aeroporto · estação de trem · ferrovia · ponto de ônibus · prédio · apartamento · casa · fazenda · quintal · jardim · parque</div></div>
+<div class="i"><div class="en">beach · ocean · river · hill · mountain · land · grass · tree · sun · moon</div><div class="pt">praia · oceano · rio · colina · montanha · terra · grama · árvore · sol · lua</div></div>
+<div class="i"><div class="en">living room · dining room · kitchen · bedroom · bathroom · laundry room · office · classroom · hall · basement · attic</div><div class="pt">sala de estar · sala de jantar · cozinha · quarto · banheiro · lavanderia · escritório · sala de aula · corredor · porão · sótão</div></div>
+<div class="i"><div class="en">front door · back door · window · wall · floor · ceiling · corner · stairway · first floor · second floor</div><div class="pt">porta da frente · porta dos fundos · janela · parede · piso · teto · canto · escada · térreo · segundo andar</div></div>
+<div class="i"><div class="en">bathroom: bathtub · shower · sink · toilet · soap · towel · facecloth</div><div class="pt">banheiro: banheira · chuveiro · pia · vaso sanitário · sabonete · toalha · toalhinha de rosto</div></div>
+<div class="i"><div class="en">bedroom: bed · bedspread · blanket · sheet · pillow · pillowcase · dresser · night table · closet · lamp</div><div class="pt">quarto: cama · colcha · cobertor · lençol · travesseiro · fronha · cômoda · criado-mudo · armário · abajur</div></div>
+<div class="i"><div class="en">kitchen: stove · oven · microwave oven · refrigerator · dishwasher · sink · counter · toaster · coffeemaker · pan · garbage disposer · detergent · tea towel</div><div class="pt">cozinha: fogão · forno · micro-ondas · geladeira · lava-louças · pia · bancada · torradeira · cafeteira · panela · triturador de lixo · detergente · pano de prato</div></div>
+<div class="i"><div class="en">table: plate · dish · bowl · cup · saucer · glass · fork · knife · spoon · napkin</div><div class="pt">mesa: prato · louça · tigela · xícara · pires · copo · garfo · faca · colher · guardanapo</div></div>
+<div class="i"><div class="en">office: desk · computer · printer · copier · fax machine · filing cabinet · telephone · notebook · paper · pen · pencil</div><div class="pt">escritório: mesa de trabalho · computador · impressora · copiadora · aparelho de fax · arquivo · telefone · caderno · papel · caneta · lápis</div></div>
+<div class="i"><div class="en">classroom: blackboard · bulletin board · bookshelf · book · desk · chair</div><div class="pt">sala de aula: quadro-negro · mural · estante · livro · carteira · cadeira</div></div>
+<div class="i"><div class="en">laundry room: washing machine · dryer · detergent · iron</div><div class="pt">lavanderia: máquina de lavar · secadora · sabão em pó · ferro de passar</div></div>
+<div class="i"><div class="en">department store: elevator · escalator · counter · TV set · sofa · coffee table · fireplace</div><div class="pt">loja de departamentos: elevador · escada rolante · balcão · aparelho de TV · sofá · mesa de centro · lareira</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Unit 2 · contáveis</div>
+<h2>Um, dois, muitos — e o <i>there is</i> × <i>there are</i></h2>
+<p class="sdesc">A base numérica do inglês: <code>a / an</code> para um, <code>one</code> para responder <i>how many</i>, o plural com todas as suas exceções, e as duas formas de dizer que algo existe.</p>
+<div class="items">
+<div class="i"><div class="en">"What do you do?" "I'm a secretary." / "I'm an actor." <span class="def">a antes de som de consoante, an antes de som de vogal</span></div><div class="pt">"O que você faz?" "Sou secretária." / "Sou ator."</div></div>
+<div class="i"><div class="en">"What is it?" "It's a banana." / "It's an apple." · "What do you want?" "I want a house." / "I want an apartment."</div><div class="pt">"O que é isso?" "É uma banana." / "É uma maçã." · "O que você quer?" "Quero uma casa." / "Quero um apartamento."</div></div>
+<div class="i"><div class="en">"How many cars do you have?" "We have one car." · "How many English classes are there?" "There is one class."</div><div class="pt">"Quantos carros você tem?" "Temos um carro." · "Quantas aulas de inglês tem?" "Tem uma aula."</div></div>
+<div class="i"><div class="en">There is an accountant in my family. · There is a library on the corner. · There is only one bus stop on this street.</div><div class="pt">Tem um contador na minha família. · Tem uma biblioteca na esquina. · Só tem um ponto de ônibus nesta rua.</div></div>
+<div class="i"><div class="en">Are there any cars in your driveway? · How many cars are there? · How many pages are there in this book?</div><div class="pt">Tem algum carro na sua garagem? · Quantos carros tem? · Quantas páginas tem este livro?</div></div>
+<div class="i"><div class="en">There are two cars in the driveway. · There are ten houses on this street.</div><div class="pt">Tem dois carros na garagem. · Tem dez casas nesta rua.</div></div>
+<div class="i"><div class="en">There are no cars in the driveway. <b>ou</b> There aren't any cars in the driveway. <span class="def">no e not any dizem a mesma coisa: zero</span></div><div class="pt">Não tem nenhum carro na garagem.</div></div>
+<div class="i"><div class="en">one tree → three trees · one word → four words · one sister → two sisters</div><div class="pt">plural simples: só o <b>-s</b></div></div>
+<div class="i"><div class="en">-es: one beach → two beaches · one dish → four dishes · one dress → two dresses · one fax → three faxes</div><div class="pt">terminações em -ch, -sh, -ss e -x levam <b>-es</b></div></div>
+<div class="i"><div class="en">-es: one tomato → four tomatoes · one potato → two potatoes · one hero → four heroes · one mosquito → three mosquitoes · one echo → two echoes · one tornado → two tornadoes</div><div class="pt">alguns terminados em -o levam <b>-es</b></div></div>
+<div class="i"><div class="en">-ies: one city → two cities · one country → four countries · one family → two families · one puppy → six puppies</div><div class="pt">consoante + -y vira <b>-ies</b></div></div>
+<div class="i"><div class="en">-ves: one knife → five knives · one leaf → three leaves · one half → two halves · one calf → two calves</div><div class="pt">-f e -fe viram <b>-ves</b></div></div>
+<div class="i"><div class="en">one child → two children · one person → three people · one man → four men · one woman → three women · one tooth → four teeth · one foot → two feet · one mouse → three mice</div><div class="pt">os irregulares que você vai usar todo dia</div></div>
+<div class="i"><div class="en">one deer → three deer · one sheep → four sheep · one fish → two fish <span class="def">não mudam</span></div><div class="pt">veado · ovelha · peixe — singular e plural iguais</div></div>
+<div class="i"><div class="en">A group of people who take a course together is a class. · A group of people who sing together is a choir or a chorus.</div><div class="pt">Um grupo de pessoas que faz um curso junto é uma turma. · Um grupo que canta junto é um coral.</div></div>
+<div class="i"><div class="en">A group of people who play musical instruments together can be a band or an orchestra. · A group of people who form a business is a company.</div><div class="pt">Um grupo que toca instrumentos junto pode ser uma banda ou uma orquestra. · Um grupo que forma um negócio é uma empresa.</div></div>
+<div class="i"><div class="en">People who are related by blood are a family. · A group of people who play together to win a game is a team.</div><div class="pt">Pessoas ligadas por sangue são uma família. · Um grupo que joga junto para ganhar é um time.</div></div>
+<div class="i"><div class="en">A group of people who control public policy in a country is a government. · A group of people who make plans for a larger group is called a committee.</div><div class="pt">O grupo que controla a política pública de um país é o governo. · O grupo que faz planos para um grupo maior é um comitê.</div></div>
+<div class="i"><div class="en">I have some tickets for the ball game. · There are a few seats in the front row.</div><div class="pt">Tenho alguns ingressos para o jogo. · Tem alguns lugares na primeira fila.</div></div>
+<div class="i"><div class="en">A lot of people are going to the game. · There are not many seats. · There are too many people here.</div><div class="pt">Muita gente vai ao jogo. · Não tem muitos lugares. · Tem gente demais aqui.</div></div>
+<div class="i"><div class="en">some <span class="def">more than one</span> · a few <span class="def">three or four</span> · a lot of / lots of / many <span class="def">a large number of</span> · not many <span class="def">a small number of</span> · too many <span class="def">more than is good or necessary</span></div><div class="pt">alguns · uns poucos · muitos · poucos · demais — a escala das quantidades <b>contáveis</b></div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Unit 2 · incontáveis</div>
+<h2>O que não se conta: comida, quantidade e embalagem</h2>
+<p class="sdesc">O outro lado da moeda. Com incontável não se usa <code>a</code>, <code>one</code> nem número: usa-se <code>how much</code>, <code>a little</code>, <code>too much</code> — e, quando você precisa ser exato, o nome da <b>embalagem</b>.</p>
+<div class="items">
+<div class="i"><div class="en">bread · cereal · flour · rice · toast · sugar · salt · pepper</div><div class="pt">pão · cereal · farinha · arroz · torrada · açúcar · sal · pimenta</div></div>
+<div class="i"><div class="en">butter · cheese · cream · ice cream · milk · yogurt</div><div class="pt">manteiga · queijo · creme · sorvete · leite · iogurte</div></div>
+<div class="i"><div class="en">beef · bacon · chicken · fish · meat · pork</div><div class="pt">carne bovina · bacon · frango · peixe · carne · porco</div></div>
+<div class="i"><div class="en">broccoli · cauliflower · corn · eggplant · lettuce · spinach · squash</div><div class="pt">brócolis · couve-flor · milho · berinjela · alface · espinafre · abóbora</div></div>
+<div class="i"><div class="en">coffee · tea · juice · water · beer · wine · soup · gravy · sauce</div><div class="pt">café · chá · suco · água · cerveja · vinho · sopa · molho de carne · molho</div></div>
+<div class="i"><div class="en">cake · candy · fruit · jam · jelly · pie · popcorn</div><div class="pt">bolo · bala/doce · fruta · geleia · geleia · torta · pipoca</div></div>
+<div class="i"><div class="en">apple · banana · orange · pear · grape · cherry · nut · avocado</div><div class="pt">maçã · banana · laranja · pera · uva · cereja · castanha · abacate</div></div>
+<div class="i"><div class="en">bean · carrot · pea · potato · tomato · vegetable · salad</div><div class="pt">feijão · cenoura · ervilha · batata · tomate · legume/verdura · salada</div></div>
+<div class="i"><div class="en">hamburger · hot dog · sandwich · steak · egg · doughnut · potato chip · snack · meal · drink · soda</div><div class="pt">hambúrguer · cachorro-quente · sanduíche · bife · ovo · rosquinha · batata frita de pacote · lanche · refeição · bebida · refrigerante</div></div>
+<div class="i"><div class="en">soap · shampoo · conditioner · toothpaste · lotion · cream · perfume · shaving cream · aftershave lotion · bath gel · fingernail polish · fingernail polish remover</div><div class="pt">sabonete · xampu · condicionador · pasta de dente · loção · creme · perfume · creme de barbear · loção pós-barba · gel de banho · esmalte · removedor de esmalte</div></div>
+<div class="i"><div class="en">Is there any rice in the cupboard? · Is there any fruit in the refrigerator? · Is there any soap in the bathroom?</div><div class="pt">Tem arroz no armário? · Tem fruta na geladeira? · Tem sabonete no banheiro?</div></div>
+<div class="i"><div class="en">How much ice cream is there? · How much cereal is there? · How much water is there?</div><div class="pt">Quanto sorvete tem? · Quanto cereal tem? · Quanta água tem?</div></div>
+<div class="i"><div class="en">There is some ice cream in the freezer. · There is a lot of fruit in the bowl. · There is a little cereal in the box.</div><div class="pt">Tem um pouco de sorvete no congelador. · Tem muita fruta na tigela. · Tem um pouquinho de cereal na caixa.</div></div>
+<div class="i"><div class="en">There is not much shampoo. · There is no water. <b>ou</b> There isn't any water.</div><div class="pt">Não tem muito xampu. · Não tem água nenhuma.</div></div>
+<div class="i"><div class="en">a can of soup → three cans of soup · a cup of coffee → two cups of coffee · a glass of milk → four glasses of milk</div><div class="pt">uma lata de sopa · uma xícara de café · um copo de leite</div></div>
+<div class="i"><div class="en">a bowl of cereal · one spoonful of sugar → two spoonfuls of sugar · one serving of spinach → three servings of spinach</div><div class="pt">uma tigela de cereal · uma colherada de açúcar · uma porção de espinafre</div></div>
+<div class="i"><div class="en">a piece of meat → two pieces of meat · a tube of toothpaste → two tubes of toothpaste · a slice of bread · a bite · a sip</div><div class="pt">um pedaço de carne · um tubo de pasta de dente · uma fatia de pão · uma mordida · um gole</div></div>
+<div class="i"><div class="en">bag · bar · bottle · bowl · box · case · cup · glass · jar · package · plate · tube</div><div class="pt">saco · barra · garrafa · tigela · caixa · engradado · xícara · copo · pote · pacote · prato · tubo</div></div>
+<div class="i"><div class="en">gallon · quart · pint · ounce · pound · drop · tablespoon · teaspoon</div><div class="pt">galão · quarto de galão · pint · onça · libra · gota · colher de sopa · colher de chá</div></div>
+<div class="i"><div class="en">There is some furniture. → There are three chairs. · You have a little mail. → You have two letters and a postcard.</div><div class="pt">Tem alguns móveis. → Tem três cadeiras. · Você tem um pouco de correspondência. → Você tem duas cartas e um cartão-postal.</div></div>
+<div class="i"><div class="en">She has a lot of jewelry. → She has five necklaces, four bracelets, and twenty pairs of earrings.</div><div class="pt">Ela tem muitas joias. → Ela tem cinco colares, quatro pulseiras e vinte pares de brincos.</div></div>
+<div class="i"><div class="en">He has a little money. → He has a ten, a five, and three quarters. · We got some information. → We got a brochure and two reports.</div><div class="pt">Ele tem pouco dinheiro. → Ele tem uma nota de dez, uma de cinco e três moedas de 25 centavos. · Recebemos algumas informações. → Recebemos um folheto e dois relatórios.</div></div>
+<div class="i"><div class="en">There is too much trash. → There are boxes, old clothes, broken toys, worn-out tires, and broken dishes.</div><div class="pt">Tem lixo demais. → Tem caixas, roupa velha, brinquedo quebrado, pneu careca e louça quebrada.</div></div>
+<div class="i"><div class="en">There is some housework to do. · There is a lot of news. · There is a little snow in the mountains.</div><div class="pt">Tem serviço de casa para fazer. · Tem muita notícia. · Tem um pouco de neve na montanha.</div></div>
+<div class="i"><div class="en">There is not much heat in the house. · There is too much rain.</div><div class="pt">Não tem muito aquecimento na casa. · Chove demais.</div></div>
+<div class="i"><div class="en">advice · help · homework · housework · work · news · information · money · furniture · mail · jewelry · trash <span class="def">todos incontáveis — nunca "an advice", nunca "informations"</span></div><div class="pt">conselho · ajuda · lição de casa · serviço doméstico · trabalho · notícia · informação · dinheiro · móveis · correspondência · joias · lixo</div></div>
+<div class="i"><div class="en">air · beauty · courage · darkness · health · heat · intelligence · kindness · light · pollution · poverty · rain · sickness · snow · strength · wealth</div><div class="pt">ar · beleza · coragem · escuridão · saúde · calor · inteligência · gentileza · luz · poluição · pobreza · chuva · doença · neve · força · riqueza</div></div>
+<div class="i"><div class="en">Usually for women: blouse · dress · skirt · nightgown · handbag/purse/pocketbook · necklace · bracelet · earring · ring · chain</div><div class="pt">geralmente feminino: blusa · vestido · saia · camisola · bolsa · colar · pulseira · brinco · anel · corrente</div></div>
+<div class="i"><div class="en">For men and women: belt · cap · hat · coat · jacket · raincoat · robe · scarf · shirt · suit · sweater · sweatshirt · T-shirt · umbrella · wallet · watch</div><div class="pt">unissex: cinto · boné · chapéu · casaco · jaqueta · capa de chuva · roupão · cachecol · camisa · terno · suéter · moletom · camiseta · guarda-chuva · carteira · relógio</div></div>
+<div class="i"><div class="en">Usually for men: necktie / bow tie · tuxedo</div><div class="pt">geralmente masculino: gravata / gravata-borboleta · smoking</div></div>
+<div class="i"><div class="en">A pair of shoes is two shoes, one for the left foot and one for the right. A pair of pants is one item, with two legs.</div><div class="pt">Um par de sapatos são dois sapatos, um para cada pé. Uma calça (<i>a pair of pants</i>) é uma peça só, com duas pernas.</div></div>
+<div class="i"><div class="en">pants · jeans · shorts · sweatpants · pajamas · gloves · glasses · sunglasses · socks · stockings · tights</div><div class="pt">calça · jeans · bermuda · calça de moletom · pijama · luvas · óculos · óculos de sol · meias · meias-calças finas · meia-calça</div></div>
+<div class="i"><div class="en">shoes · boots · flats · sandals · high heels · slippers</div><div class="pt">sapatos · botas · sapatilhas · sandálias · saltos altos · chinelos/pantufas</div></div>
+<div class="i"><div class="en">some <span class="def">more than nothing</span> · a lot of <span class="def">a large amount of</span> · a little <span class="def">a small amount of</span> · not much <span class="def">a very small amount of</span> · no / not any <span class="def">nothing</span></div><div class="pt">um pouco · muito · pouquinho · pouco · nenhum — a escala das quantidades <b>incontáveis</b></div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Units 2, 4, 5, 6 · artigos</div>
+<h2><i>a / an</i>, <i>the</i>, <i>this / that</i> e o dono da coisa</h2>
+<p class="sdesc">Quando a coisa aparece pela primeira vez, é <code>a</code>; quando os dois já sabem qual é, é <code>the</code>. Mais os demonstrativos, os possessivos e o verbo virando substantivo com <code>-ing</code>.</p>
+<div class="items">
+<div class="i"><div class="en">A clock is an instrument that marks time. · A watch is a clock that you wear on your wrist. <span class="def">qualquer um da espécie</span></div><div class="pt">Relógio é um instrumento que marca o tempo. · Relógio de pulso é um relógio que você usa no pulso.</div></div>
+<div class="i"><div class="en">I have a clock that is 150 years old. · Her boyfriend gave her a watch for her birthday. <span class="def">primeira menção</span></div><div class="pt">Tenho um relógio de 150 anos. · O namorado dela deu um relógio de aniversário para ela.</div></div>
+<div class="i"><div class="en">Clocks are instruments that mark time. · Mail includes anything that can be delivered by the post office. <span class="def">plural e incontável em geral: sem artigo</span></div><div class="pt">Relógios são instrumentos que marcam o tempo. · Correspondência é tudo que os correios entregam.</div></div>
+<div class="i"><div class="en">Her boyfriend brings her flowers every week. · You got mail this morning.</div><div class="pt">O namorado dela traz flores toda semana. · Chegou correspondência para você hoje de manhã.</div></div>
+<div class="i"><div class="en">She showed me the watch her boyfriend gave her for her birthday. · The flowers he sent her were beautiful. · The furniture I bought was cheap.</div><div class="pt">Ela me mostrou o relógio que o namorado deu de aniversário. · As flores que ele mandou eram lindas. · Os móveis que comprei eram baratos.</div></div>
+<div class="i"><div class="en">I left my keys in the car. <span class="def">o carro que eu dirijo</span> · Please put the bags in the kitchen. <span class="def">a única cozinha da casa</span> · Please feed the dog. <span class="def">o cachorro que é nosso</span></div><div class="pt">Deixei minhas chaves no carro. · Põe as sacolas na cozinha, por favor. · Dá comida para o cachorro, por favor.</div></div>
+<div class="i"><div class="en">This watch is the one I like. · These watches are very expensive. · This jewelry is very expensive. <span class="def">perto — dá para tocar</span></div><div class="pt">Este relógio é o que eu gosto. · Estes relógios são caríssimos. · Estas joias são caríssimas.</div></div>
+<div class="i"><div class="en">Do you like that dress in the store window? · Those dresses in front are very pretty. · That information about the prices is not correct. <span class="def">longe</span></div><div class="pt">Você gosta daquele vestido na vitrine? · Aqueles vestidos da frente são muito bonitos. · Aquela informação sobre os preços não está certa.</div></div>
+<div class="i"><div class="en">Emily's dress · Bill's shoes · Susan's ice cream · the teacher's desk · the man's glasses · a friend's mail</div><div class="pt">o vestido da Emily · os sapatos do Bill · o sorvete da Susan · a mesa do professor · os óculos do homem · a correspondência de um amigo</div></div>
+<div class="i"><div class="en">the teachers' party · the students' books · my friends' health <span class="def">plural terminado em -s: só o apóstrofo</span></div><div class="pt">a festa dos professores · os livros dos alunos · a saúde dos meus amigos</div></div>
+<div class="i"><div class="en">the men's cars · the children's class · the people's money <span class="def">plural sem -s: leva -'s</span></div><div class="pt">os carros dos homens · a turma das crianças · o dinheiro do povo</div></div>
+<div class="i"><div class="en">I drive my car to work. · Do you have your driver's license? · Bob gave me his telephone number.</div><div class="pt">Vou de carro para o trabalho. · Você está com sua carteira de motorista? · O Bob me deu o telefone dele.</div></div>
+<div class="i"><div class="en">Jane doesn't have her ticket. · Susan and I bought our supplies. · Do you and Sam have your books?</div><div class="pt">A Jane não está com o ingresso dela. · A Susan e eu compramos nosso material. · Você e o Sam estão com os livros de vocês?</div></div>
+<div class="i"><div class="en">Walking is good exercise. · Eating well is important. · Working here is interesting. · Playing with other children makes her happy.</div><div class="pt">Caminhar é um bom exercício. · Comer bem é importante. · Trabalhar aqui é interessante. · Brincar com outras crianças deixa ela feliz.</div></div>
+<div class="i"><div class="en">We enjoy walking. · I like eating at this restaurant. · She is tired of working here. · He talks about playing with other children.</div><div class="pt">Gostamos de caminhar. · Gosto de comer neste restaurante. · Ela está cansada de trabalhar aqui. · Ele fala em brincar com outras crianças.</div></div>
+<div class="i"><div class="en">Proper nouns: Betty · John Clark · Oak Street · Capitol Hill · Ireland · Monday · February · French · The Daily Mirror · Planning Committee</div><div class="pt">nomes próprios — pessoa, rua, país, dia, mês, idioma, jornal e grupo sempre com <b>maiúscula</b></div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Unit 7 · gente exata</div>
+<h2>A palavra certa para gente: <i>guy</i>, <i>kid</i>, <i>dude</i>, <i>colleague</i></h2>
+<p class="sdesc">Aqui o livro fica bom: em vez de repetir <i>man</i> e <i>friend</i>, ele mostra a palavra <b>exata</b> — com o registro (formal, informal, gíria) e uma frase de uso para cada.</p>
+<div class="items">
+<div class="i"><div class="en">guy — That guy who works at the drugstore is very helpful. <span class="def">a boy or man (informal)</span></div><div class="pt">cara — Aquele cara que trabalha na farmácia é muito prestativo.</div></div>
+<div class="i"><div class="en">kid — There are a lot of kids in that family. <span class="def">a male or female child (informal)</span></div><div class="pt">criança / moleque — Tem um monte de criança naquela família.</div></div>
+<div class="i"><div class="en">dude — "Dude, we're having a party; come on over." <span class="def">form of address to a friend (slang)</span></div><div class="pt">cara / mano — "Mano, a gente vai dar uma festa; aparece lá."</div></div>
+<div class="i"><div class="en">dude — I was walking down the street and that dude started talking to me. <span class="def">a stranger (slang)</span></div><div class="pt">cara — Eu estava andando na rua e aquele cara começou a falar comigo.</div></div>
+<div class="i"><div class="en">gentleman — Your brother is a perfect gentleman. <span class="def">a man with good manners</span></div><div class="pt">cavalheiro — Seu irmão é um perfeito cavalheiro.</div></div>
+<div class="i"><div class="en">lady — The lady who lives across the street is a teacher. <span class="def">a woman with good manners</span></div><div class="pt">senhora — A senhora que mora do outro lado da rua é professora.</div></div>
+<div class="i"><div class="en">young lady — The girls have grown up and are now charming young ladies. <span class="def">a young woman with good manners</span></div><div class="pt">moça — As meninas cresceram e agora são moças encantadoras.</div></div>
+<div class="i"><div class="en">tomboy — When I was ten years old I was a real tomboy. <span class="def">a girl who likes to play boys' games</span></div><div class="pt">menina-moleque — Quando eu tinha dez anos eu era uma menina-moleque de verdade.</div></div>
+<div class="i"><div class="en">bum — She says her neighbor is a lazy bum. <span class="def">a person who makes no effort to succeed</span></div><div class="pt">vagabundo — Ela diz que o vizinho é um vagabundo preguiçoso.</div></div>
+<div class="i"><div class="en">youth — One of the youths at the convention gave a good speech. · The youth of today have many opportunities. <span class="def">a young man / young people</span></div><div class="pt">jovem / a juventude — Um dos jovens na convenção fez um bom discurso. · A juventude de hoje tem muitas oportunidades.</div></div>
+<div class="i"><div class="en">boy — My sister has three children, two boys and a girl. <span class="def">a male child from birth to age eighteen</span></div><div class="pt">menino — Minha irmã tem três filhos, dois meninos e uma menina.</div></div>
+<div class="i"><div class="en">girl — Your daughter is a lovely girl. · Our neighbor is a girl who is in law school. <span class="def">criança até 18 · e também moça solteira</span></div><div class="pt">menina / moça — Sua filha é uma menina adorável. · Nossa vizinha é uma moça que estuda direito.</div></div>
+<div class="i"><div class="en">man — There are six men in the study group. · woman — I met an interesting woman at the meeting.</div><div class="pt">homem — Tem seis homens no grupo de estudo. · mulher — Conheci uma mulher interessante na reunião.</div></div>
+<div class="i"><div class="en">acquaintance — An acquaintance of mine works in your office. <span class="def">a person you have met but don't know very well</span></div><div class="pt">conhecido — Um conhecido meu trabalha no seu escritório.</div></div>
+<div class="i"><div class="en">friend — She has a lot of friends here. <span class="def">a person you know and like</span></div><div class="pt">amigo — Ela tem muitos amigos aqui.</div></div>
+<div class="i"><div class="en">boyfriend — Are you bringing your boyfriend to the party? · girlfriend — I can't bring my girlfriend, because she lives in another city.</div><div class="pt">namorado — Você vai levar seu namorado à festa? · namorada — Não posso levar minha namorada porque ela mora em outra cidade.</div></div>
+<div class="i"><div class="en">fiancé — He gave her a diamond ring, so now he's her fiancé. · fiancée — She has been his fiancée for five years.</div><div class="pt">noivo — Ele deu um anel de diamante para ela, então agora ele é o noivo dela. · noiva — Ela é noiva dele há cinco anos.</div></div>
+<div class="i"><div class="en">classmate — The school is so big, I don't even know all of my classmates. <span class="def">a person who is in the same class with someone</span></div><div class="pt">colega de turma — A escola é tão grande que nem conheço todos os meus colegas de turma.</div></div>
+<div class="i"><div class="en">colleague — All of my colleagues agree with the new plan. <span class="def">a person someone works with professionally</span></div><div class="pt">colega de profissão — Todos os meus colegas concordam com o novo plano.</div></div>
+<div class="i"><div class="en">coworker — She cannot get along with any of her coworkers. <span class="def">a person who works in the same place</span></div><div class="pt">colega de trabalho — Ela não se dá bem com nenhum colega de trabalho.</div></div>
+<div class="i"><div class="en">roommate — We have a big room at college, so I have two roommates.</div><div class="pt">colega de quarto — Nosso quarto na faculdade é grande, então tenho dois colegas de quarto.</div></div>
+<div class="i"><div class="en">companion — They are good companions; they go everywhere together. · partner — Her partner works at the local nursery.</div><div class="pt">companheiro — Eles são bons companheiros; vão a todo lugar juntos. · parceiro(a) — O parceiro dela trabalha no viveiro de plantas do bairro.</div></div>
+<div class="i"><div class="en">partner — My doctor is out of town, but his partner will see me. <span class="def">a person who co-owns a business with someone</span></div><div class="pt">sócio — Meu médico está viajando, mas o sócio dele vai me atender.</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Unit 7 · saúde e arte</div>
+<h2>Médicos, artistas, música e dança</h2>
+<p class="sdesc">Duas famílias de palavras que aparecem o tempo todo na vida real: para quem você liga quando algo dói, e como se chama o que você ouve e dança.</p>
+<div class="items">
+<div class="i"><div class="en">doctor / M.D. — When you are sick, you should go to the doctor. · G.P. (general practitioner) — Our G.P. takes care of the whole family in one visit.</div><div class="pt">médico — Quando você está doente, deve ir ao médico. · clínico geral — Nosso clínico geral cuida da família toda numa consulta.</div></div>
+<div class="i"><div class="en">specialist — Our G.P. recommended that we take our child to a specialist. · surgeon — The surgeon was in the operating room for four hours.</div><div class="pt">especialista — Nosso clínico recomendou levar nosso filho a um especialista. · cirurgião — O cirurgião ficou quatro horas na sala de operação.</div></div>
+<div class="i"><div class="en">dentist — It's a good idea to see a dentist at least once a year. · orthodontist — The orthodontist fixed her crooked teeth, and now she has a beautiful smile.</div><div class="pt">dentista — É bom ir ao dentista pelo menos uma vez por ano. · ortodontista — O ortodontista corrigiu os dentes tortos dela, e agora ela tem um belo sorriso.</div></div>
+<div class="i"><div class="en">periodontist — The periodontist was able to help prevent gum recession in most patients.</div><div class="pt">periodontista — O periodontista conseguiu evitar a retração da gengiva na maioria dos pacientes.</div></div>
+<div class="i"><div class="en">dermatologist — A dermatologist can help you with your allergies. · ophthalmologist / eye doctor — The ophthalmologist prescribed glasses for our son.</div><div class="pt">dermatologista — Um dermatologista pode ajudar com suas alergias. · oftalmologista — O oftalmologista receitou óculos para o nosso filho.</div></div>
+<div class="i"><div class="en">E.N.T. (ear, nose, and throat doctor) — She sees an E.N.T. for her sinusitis. · gastroenterologist — He is seeing a gastroenterologist to help cure his digestive problems.</div><div class="pt">otorrinolaringologista — Ela consulta um otorrino por causa da sinusite. · gastroenterologista — Ele está se tratando com um gastro para curar os problemas digestivos.</div></div>
+<div class="i"><div class="en">pediatrician — As soon as the baby was born he was examined by a pediatrician. · obstetrician — As soon as she suspected she was pregnant, she went to see an obstetrician.</div><div class="pt">pediatra — Assim que o bebê nasceu foi examinado por um pediatra. · obstetra — Assim que desconfiou que estava grávida, ela foi ao obstetra.</div></div>
+<div class="i"><div class="en">gynecologist — Many women are checked by a gynecologist once a year. · orthopedist — When he broke his leg, the orthopedist put it in a cast. · podiatrist — The podiatrist told her not to wear high-heeled shoes.</div><div class="pt">ginecologista — Muitas mulheres se consultam com o ginecologista uma vez por ano. · ortopedista — Quando ele quebrou a perna, o ortopedista engessou. · podólogo — O podólogo disse a ela para não usar salto alto.</div></div>
+<div class="i"><div class="en">actor — Which actor plays the main character in that film? · actress — She is an actress who is able to play many different roles.</div><div class="pt">ator — Que ator faz o personagem principal daquele filme? · atriz — Ela é uma atriz capaz de fazer muitos papéis diferentes.</div></div>
+<div class="i"><div class="en">painter — The president's portrait was done by a famous painter. · sculptor — This sculptor prefers to work with marble.</div><div class="pt">pintor — O retrato do presidente foi feito por um pintor famoso. · escultor — Este escultor prefere trabalhar com mármore.</div></div>
+<div class="i"><div class="en">photographer — We need a good photographer to capture the emotion of the celebration. · designer — She wears dresses only by her favorite designer.</div><div class="pt">fotógrafo — Precisamos de um bom fotógrafo para capturar a emoção da festa. · estilista — Ela só usa vestidos do estilista favorito dela.</div></div>
+<div class="i"><div class="en">writer — My favorite writer makes me feel that I am in the place he is describing. · poet — The poet's words made me feel both happy and sad.</div><div class="pt">escritor — Meu escritor favorito me faz sentir que estou no lugar que ele descreve. · poeta — As palavras do poeta me deixaram feliz e triste ao mesmo tempo.</div></div>
+<div class="i"><div class="en">musician — He is an accomplished musician who writes all the songs he sings.</div><div class="pt">músico — Ele é um músico completo, que compõe todas as canções que canta.</div></div>
+<div class="i"><div class="en">guitar → guitarist · piano → pianist · violin → violinist · cello → cellist · drums → drummer · trumpet → trumpeter · saxophone → saxophonist · trombone → trombonist · clarinet → clarinetist · keyboard → keyboardist</div><div class="pt">o instrumento e quem toca ele</div></div>
+<div class="i"><div class="en">soprano <span class="def">a female singer with a high voice</span> · alto <span class="def">a female singer with a low voice</span> · tenor <span class="def">a male singer with a high voice</span> · bass <span class="def">a male singer with a low voice</span> · conductor <span class="def">someone who directs a band or an orchestra</span></div><div class="pt">soprano · contralto · tenor · baixo · maestro</div></div>
+<div class="i"><div class="en">blues — I love to listen to the blues when I'm lonely. · jazz — Jazz is popular in many parts of the world.</div><div class="pt">blues — Adoro ouvir blues quando estou sozinho. · jazz — O jazz é popular em muitas partes do mundo.</div></div>
+<div class="i"><div class="en">classical — Classical music is often performed by the city's symphony orchestra. · country — A lot of country musicians live and work in Nashville, Tennessee.</div><div class="pt">clássica — A música clássica costuma ser tocada pela orquestra sinfônica da cidade. · country — Muitos músicos de country moram e trabalham em Nashville, Tennessee.</div></div>
+<div class="i"><div class="en">rock — Rock concerts are very popular among young people. · rap — Rap is for listening, not dancing. · oldies — Her favorite oldies are from the 1950s and 1960s.</div><div class="pt">rock — Shows de rock são muito populares entre os jovens. · rap — Rap é para ouvir, não para dançar. · oldies — As músicas antigas favoritas dela são dos anos 1950 e 1960.</div></div>
+<div class="i"><div class="en">folk — Folk music was very popular in the United States in the 1960s. · rhythm and blues — Rhythm and blues is great for swing dancing. · popular — That radio station plays only popular music.</div><div class="pt">folk — A música folk foi muito popular nos EUA nos anos 1960. · rhythm and blues — R&amp;B é ótimo para dançar swing. · pop — Aquela rádio só toca música popular.</div></div>
+<div class="i"><div class="en">ballet — She has been dancing ballet since she was a child. · We went to the ballet last night.</div><div class="pt">balé — Ela dança balé desde criança. · Fomos ao balé ontem à noite.</div></div>
+<div class="i"><div class="en">ballroom — I'm learning the waltz from my neighbor who teaches ballroom dancing. · Latin — He is a good swing dancer, but what he really likes is Latin dancing.</div><div class="pt">dança de salão — Estou aprendendo valsa com meu vizinho, que dá aula de dança de salão. · dança latina — Ele dança bem swing, mas o que ele gosta mesmo é de dança latina.</div></div>
+<div class="i"><div class="en">line dancing — One good thing about line dancing is that you don't need a partner. · tap — She is good at both ballet and tap.</div><div class="pt">line dance — Uma coisa boa do line dance é que você não precisa de par. · sapateado — Ela é boa tanto em balé quanto em sapateado.</div></div>
+<div class="i"><div class="en">dance — Dance is a good way to exercise and relax at the same time. · Are you going to the dance on Saturday night?</div><div class="pt">dança / baile — Dançar é um bom jeito de se exercitar e relaxar ao mesmo tempo. · Você vai ao baile no sábado à noite?</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Unit 7 · lugares</div>
+<h2>Parques, lojas e escolas — o nome exato do lugar</h2>
+<p class="sdesc">Nos EUA cada tipo de parque, de loja e de escola tem nome próprio, e a diferença é real: <i>public school</i> não é escola particular, e <i>college</i> não é colégio.</p>
+<div class="items">
+<div class="i"><div class="en">park — We had a picnic in the park. · playground — The kids were tired after an afternoon at the playground.</div><div class="pt">parque — Fizemos um piquenique no parque. · parquinho — As crianças ficaram cansadas depois de uma tarde no parquinho.</div></div>
+<div class="i"><div class="en">amusement park — All of the children wanted to go on the rides at the amusement park. · theme park — We saw a lot of movie and TV characters at the theme park.</div><div class="pt">parque de diversões — Todas as crianças queriam ir nos brinquedos do parque de diversões. · parque temático — Vimos muitos personagens de cinema e TV no parque temático.</div></div>
+<div class="i"><div class="en">botanical garden — There was a beautiful display of orchids at the botanical garden. · zoo — The children loved seeing the giraffes at the zoo.</div><div class="pt">jardim botânico — Tinha uma exposição linda de orquídeas no jardim botânico. · zoológico — As crianças adoraram ver as girafas no zoológico.</div></div>
+<div class="i"><div class="en">national park — You can get a lot of information from the government about visiting the national parks.</div><div class="pt">parque nacional — Dá para conseguir bastante informação do governo sobre visitar os parques nacionais.</div></div>
+<div class="i"><div class="en">department store — It is very convenient to shop at a department store where you can find things for the whole family as well as household goods.</div><div class="pt">loja de departamentos — É muito prático comprar numa loja de departamentos, onde você acha coisas para a família toda e artigos para casa.</div></div>
+<div class="i"><div class="en">chain store — With so many chain stores, our cities are becoming more alike. · mall store — My friend loves to shop at her favorite mall stores.</div><div class="pt">loja de rede — Com tanta loja de rede, nossas cidades estão ficando parecidas. · loja de shopping — Minha amiga adora comprar nas lojas favoritas dela no shopping.</div></div>
+<div class="i"><div class="en">discount store — You can save a lot of money by buying at a discount store, but you don't get any help in selecting your purchases.</div><div class="pt">loja de descontos — Dá para economizar muito comprando numa loja de descontos, mas você não tem ajuda para escolher.</div></div>
+<div class="i"><div class="en">outlet — Outlets are often grouped together in malls on the outskirts of cities. · boutique — Her sister has individual style and shops only at boutiques.</div><div class="pt">outlet — Os outlets costumam ficar juntos em centros comerciais na saída das cidades. · butique — A irmã dela tem estilo próprio e só compra em butiques.</div></div>
+<div class="i"><div class="en">box store — If you need hardware for a project, you can go to a local hardware store or to a big box store.</div><div class="pt">megaloja — Se você precisa de material para uma obra, pode ir numa loja de ferragens do bairro ou numa megaloja.</div></div>
+<div class="i"><div class="en">preschool — Preschool is a good introduction to school for small children. · kindergarten — Many children learn to read in kindergarten.</div><div class="pt">pré-escola — A pré-escola é uma boa introdução à escola para crianças pequenas. · jardim de infância — Muitas crianças aprendem a ler no jardim de infância.</div></div>
+<div class="i"><div class="en">elementary school — Most children go to an elementary school near where they live. · middle school — Middle school students are usually in the beginning stages of adolescence.</div><div class="pt">ensino fundamental I — A maioria das crianças estuda numa escola perto de casa. · ensino fundamental II — Os alunos dessa fase costumam estar no começo da adolescência.</div></div>
+<div class="i"><div class="en">high school — Graduation from high school is a requirement for admission to a college or university, and for many jobs.</div><div class="pt">ensino médio — Concluir o ensino médio é exigência para entrar numa faculdade ou universidade e para muitos empregos.</div></div>
+<div class="i"><div class="en">college — Her mother made sure that she would be able to go to college. · university — Some students prefer to get a bachelor's degree from a small college and then go to a large university for a master's degree.</div><div class="pt">faculdade — A mãe dela garantiu que ela pudesse ir para a faculdade. · universidade — Alguns alunos preferem se formar numa faculdade pequena e depois ir para uma universidade grande fazer mestrado.</div></div>
+<div class="i"><div class="en">graduate school — Many students have full-time jobs and go to graduate school classes in the evening.</div><div class="pt">pós-graduação — Muitos alunos trabalham em tempo integral e fazem as aulas da pós à noite.</div></div>
+<div class="i"><div class="en">public school — All of their children go to public school. · private school — Most private schools require the students to wear uniforms. · academy — He was educated at a very expensive academy.</div><div class="pt">escola pública — Todos os filhos deles estudam em escola pública. · escola particular — A maioria das escolas particulares exige uniforme. · academia (colégio particular) — Ele estudou num colégio particular caríssimo.</div></div>
+<div class="i"><div class="en">school — He is going to open a cooking school in the city.</div><div class="pt">escola — Ele vai abrir uma escola de culinária na cidade.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Unit 7 · coisas e eventos</div>
+<h2>Casas, ruas, carros, sapatos, festas e tempestades</h2>
+<p class="sdesc">A parte mais americana do livro: cada tipo de casa, de via, de veículo, de sapato, de festa e de tempestade tem um nome — e usar o genérico deixa a frase vaga.</p>
+<div class="items">
+<div class="i"><div class="en">house — They are expecting a baby and want to move to a bigger house. · apartment — They will rent an apartment until they have enough money to buy a house.</div><div class="pt">casa — Eles estão esperando um bebê e querem se mudar para uma casa maior. · apartamento — Vão alugar um apartamento até ter dinheiro para comprar uma casa.</div></div>
+<div class="i"><div class="en">condominium — As soon as he graduated he bought a condominium in the city. <span class="def">apartamento próprio, não alugado</span></div><div class="pt">apartamento próprio — Assim que se formou, ele comprou um apartamento na cidade.</div></div>
+<div class="i"><div class="en">cottage — His family has a cottage at the beach, where they go every summer. · cabin — The family likes to stay in a cabin in the mountains in the summer.</div><div class="pt">casinha de um andar — A família dele tem uma casinha na praia, onde vão todo verão. · cabana — A família gosta de ficar numa cabana na montanha no verão.</div></div>
+<div class="i"><div class="en">townhouse — Townhouses usually have a lot of steps. · rambler — They are looking for a rambler, because her mother can't climb steps.</div><div class="pt">sobrado geminado — Sobrados geminados costumam ter muita escada. · casa térrea ampla — Eles procuram uma casa térrea porque a mãe dela não consegue subir escada.</div></div>
+<div class="i"><div class="en">mansion — The mayor's official residence is a beautiful mansion. · hut — The children made a hut in the woods.</div><div class="pt">mansão — A residência oficial do prefeito é uma bela mansão. · cabana simples — As crianças fizeram uma cabana no mato.</div></div>
+<div class="i"><div class="en">street — What street do you live on? · road — The road that leads to our cabin is not paved.</div><div class="pt">rua — Em que rua você mora? · estrada — A estrada que leva à nossa cabana não é asfaltada.</div></div>
+<div class="i"><div class="en">avenue — The avenues in the city are wide and elegant. · highway — The highway is usually crowded.</div><div class="pt">avenida — As avenidas da cidade são largas e elegantes. · rodovia — A rodovia costuma estar cheia.</div></div>
+<div class="i"><div class="en">freeway — There are always a lot of trucks on the freeway. <span class="def">várias faixas, sem semáforo, entra e sai por rampas</span></div><div class="pt">via expressa — Sempre tem muito caminhão na via expressa.</div></div>
+<div class="i"><div class="en">beltway — Traffic is fast on the beltway, and you have to be careful. · toll road — We took the toll road and got there much faster, but it cost ten dollars in tolls.</div><div class="pt">anel viário — O trânsito no anel viário é rápido, e você tem que ter cuidado. · via com pedágio — Pegamos a via com pedágio e chegamos bem mais rápido, mas gastamos dez dólares.</div></div>
+<div class="i"><div class="en">car / automobile — Our neighbors just bought a new car. · Many families have more than one automobile.</div><div class="pt">carro / automóvel — Nossos vizinhos acabaram de comprar um carro novo. · Muitas famílias têm mais de um automóvel.</div></div>
+<div class="i"><div class="en">sedan — The sedan is a popular car style. · convertible — It's very pleasant to ride in a convertible in nice weather.</div><div class="pt">sedã — O sedã é um modelo popular. · conversível — É muito gostoso andar de conversível com tempo bom.</div></div>
+<div class="i"><div class="en">SUV — There are lots of SUVs on the streets, especially in the suburbs. · van — Many people who have small children buy either an SUV or a van.</div><div class="pt">utilitário esportivo — Tem muito SUV nas ruas, principalmente nos subúrbios. · van — Muita gente com filhos pequenos compra um SUV ou uma van.</div></div>
+<div class="i"><div class="en">vehicle — Bicycles, motorcycles, cars, and sleds are all vehicles.</div><div class="pt">veículo — Bicicletas, motos, carros e trenós são todos veículos.</div></div>
+<div class="i"><div class="en">sneakers — People of all ages wear sneakers. · boots — You need boots for walking in the snow. · sandals — Sandals are great in the summertime.</div><div class="pt">tênis — Gente de todas as idades usa tênis. · botas — Você precisa de botas para andar na neve. · sandálias — Sandálias são ótimas no verão.</div></div>
+<div class="i"><div class="en">high heels — Many women like to get dressed up in high heels. · flats — Flats are more comfortable for walking. · pumps — Pumps can be worn almost anywhere.</div><div class="pt">saltos altos — Muitas mulheres gostam de se arrumar com salto alto. · sapatilhas — Sapatilhas são mais confortáveis para caminhar. · scarpins — Scarpins servem para quase qualquer ocasião.</div></div>
+<div class="i"><div class="en">loafers — Loafers are more casual than oxfords, but they are dressier than sneakers. · oxfords — Some private schools require the students to wear oxfords as part of the school uniform.</div><div class="pt">mocassins — Mocassins são mais casuais que os oxfords, mas mais formais que tênis. · oxfords — Algumas escolas particulares exigem oxfords como parte do uniforme.</div></div>
+<div class="i"><div class="en">lace-ups — Children usually get their first lace-ups when they are learning to walk. · moccasins — Moccasins are especially pretty when they have decorative beading. · wedges — Wedges seem to go in and out of style.</div><div class="pt">sapatos de cadarço — As crianças ganham o primeiro sapato de cadarço quando estão aprendendo a andar. · mocassim indígena — Ficam especialmente bonitos com bordado de miçanga. · anabelas — As anabelas entram e saem de moda.</div></div>
+<div class="i"><div class="en">party — I'm always ready for a party. · The restaurant is reserving a table for a party of six people.</div><div class="pt">festa / grupo — Estou sempre pronto para uma festa. · O restaurante está reservando mesa para um grupo de seis pessoas.</div></div>
+<div class="i"><div class="en">get-together — Our group of friends has a get-together every month or so. · open house — We were invited to an open house on New Year's Day.</div><div class="pt">encontro informal — Nosso grupo de amigos faz um encontro mais ou menos todo mês. · casa aberta — Fomos convidados para uma casa aberta no dia de Ano-Novo.</div></div>
+<div class="i"><div class="en">brunch — Brunches are popular on Sunday mornings. · luncheon — Her mother invited all of the wedding party to a luncheon.</div><div class="pt">brunch — Brunches são populares nas manhãs de domingo. · almoço formal — A mãe dela convidou todo o cortejo do casamento para um almoço.</div></div>
+<div class="i"><div class="en">cocktail party — Cocktail parties are good places to meet new people. · dinner party — She has very elegant dinner parties and always invites interesting people.</div><div class="pt">coquetel — Coquetéis são bons lugares para conhecer gente nova. · jantar — Ela dá jantares muito elegantes e sempre convida gente interessante.</div></div>
+<div class="i"><div class="en">engagement party — Her sister is having an engagement party for them. · shower — Our office is planning a shower for our assistant, who is expecting a baby in January.</div><div class="pt">festa de noivado — A irmã dela vai dar uma festa de noivado para eles. · chá de bebê — Nosso escritório está organizando um chá de bebê para a assistente, que espera um filho em janeiro.</div></div>
+<div class="i"><div class="en">reception — The company invited me to a reception to meet the new vice president. · wedding — Were you invited to the wedding?</div><div class="pt">recepção — A empresa me convidou para uma recepção para conhecer o novo vice-presidente. · casamento — Você foi convidado para o casamento?</div></div>
+<div class="i"><div class="en">movie — What movies are playing in our neighborhood? · concert — The university students were excited about the concert given by their favorite band.</div><div class="pt">filme — Que filmes estão em cartaz aqui no bairro? · show — Os universitários estavam animados com o show da banda favorita deles.</div></div>
+<div class="i"><div class="en">comedy — The play was a comedy about the humor in family life. · drama — The play was a drama about serious issues in family life.</div><div class="pt">comédia — A peça era uma comédia sobre o humor da vida em família. · drama — A peça era um drama sobre problemas sérios da vida em família.</div></div>
+<div class="i"><div class="en">play — The high school seniors put on a play at the end of the year. · opera — We went to the opera when we were in Italy.</div><div class="pt">peça — Os formandos do ensino médio montaram uma peça no fim do ano. · ópera — Fomos à ópera quando estávamos na Itália.</div></div>
+<div class="i"><div class="en">soap opera — If you start watching a soap opera, it is hard to stop. · reality show — A reality show can be funny or sad. · game show — She was on that game show and won a new car.</div><div class="pt">novela — Se você começa a ver uma novela, é difícil parar. · reality — Um reality pode ser engraçado ou triste. · programa de auditório — Ela participou daquele programa e ganhou um carro novo.</div></div>
+<div class="i"><div class="en">fashion show — It's exciting to see the fashion shows in New York, Milan, and Paris. · TV show — He doesn't want to stay home and watch TV shows.</div><div class="pt">desfile de moda — É empolgante ver os desfiles em Nova York, Milão e Paris. · programa de TV — Ele não quer ficar em casa vendo programa de TV.</div></div>
+<div class="i"><div class="en">board game — Board games are fun for children and adults. · card game — There are card games for children and for adults.</div><div class="pt">jogo de tabuleiro — Jogos de tabuleiro são divertidos para crianças e adultos. · jogo de cartas — Tem jogo de cartas para criança e para adulto.</div></div>
+<div class="i"><div class="en">hide-and-seek — Hide-and-seek is a game played everywhere. · tag — Tag is a game played by children of all ages. · parlor game — Charades is a popular parlor game.</div><div class="pt">esconde-esconde — Esconde-esconde é jogado no mundo todo. · pega-pega — Pega-pega é brincadeira de criança de todas as idades. · jogo de salão — Mímica é um jogo de salão popular.</div></div>
+<div class="i"><div class="en">match — I'd love to go to the movies, but I have a tennis match this afternoon. · game — Would you like to play a game with me?</div><div class="pt">partida — Eu adoraria ir ao cinema, mas tenho uma partida de tênis hoje à tarde. · jogo — Você quer jogar comigo?</div></div>
+<div class="i"><div class="en">storm — They had to stop driving because of the storm. · gale — We'd better stay home. It looks like a gale outside. <span class="def">vento de 50 a 100 km/h</span></div><div class="pt">tempestade — Tiveram que parar de dirigir por causa da tempestade. · ventania — Melhor ficar em casa. Parece ventania lá fora.</div></div>
+<div class="i"><div class="en">hurricane — The hurricane took the roof off our neighbor's house. · tornado — Everyone must seek shelter; there is a tornado warning for the area.</div><div class="pt">furacão — O furacão arrancou o telhado da casa do vizinho. · tornado — Todos devem procurar abrigo; há alerta de tornado para a região.</div></div>
+<div class="i"><div class="en">cyclone — They changed their vacation plans because of the cyclone warning. · sandstorm — During the sandstorm there were clouds of sand in the air.</div><div class="pt">ciclone — Mudaram os planos de férias por causa do alerta de ciclone. · tempestade de areia — Durante a tempestade de areia havia nuvens de areia no ar.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Unit 8 · adjetivos</div>
+<h2>Descrever gente: antônimos, prefixos e sufixos</h2>
+<p class="sdesc">O adjetivo em inglês não muda com o substantivo — mas vem antes dele, ou depois do <code>be</code>. E metade do vocabulário sai de graça: quem sabe <i>patient</i> já sabe <i>impatient</i>.</p>
+<div class="items">
+<div class="i"><div class="en">This is good food. · He's a nice man. · She has an expensive car. · I got cheap tickets. <span class="def">adjetivo antes do substantivo</span></div><div class="pt">Isto é comida boa. · Ele é um homem legal. · Ela tem um carro caro. · Comprei ingressos baratos.</div></div>
+<div class="i"><div class="en">The food is good. · That man is nice. · Her car is expensive. · The tickets were cheap. <span class="def">separado pelo verbo be</span></div><div class="pt">A comida está boa. · Aquele homem é legal. · O carro dela é caro. · Os ingressos estavam baratos.</div></div>
+<div class="i"><div class="en">Her car is big and expensive. · Her car is big, comfortable, and expensive. <span class="def">dois ligados por and; três ou mais, vírgula</span></div><div class="pt">O carro dela é grande e caro. · O carro dela é grande, confortável e caro.</div></div>
+<div class="i"><div class="en">able · aggressive · brave · charming · friendly · funny · generous · nice · proud · quiet · responsible · smart · strict · sweet</div><div class="pt">capaz · agressivo · corajoso · charmoso · amigável · engraçado · generoso · legal · orgulhoso · quieto · responsável · esperto · rígido · doce</div></div>
+<div class="i"><div class="en">beautiful · handsome · pretty · big · large · tall · fat · fast · lazy · mean · old · rich · silly · unhappy · weak · interesting</div><div class="pt">linda · bonito · bonita · grande · grande · alto · gordo · rápido · preguiçoso · malvado · velho · rico · bobo · infeliz · fraco · interessante</div></div>
+<div class="i"><div class="en">able × incapable · aggressive × easygoing · big × small · brave × cowardly · beautiful × ugly · fast × slow · fat × thin · friendly × unfriendly · generous × stingy</div><div class="pt">os pares de opostos que o livro treina</div></div>
+<div class="i"><div class="en">good × bad · interesting × boring · large × small · lazy × energetic · mean × kind · old × young · pretty × plain · proud × humble · quiet × noisy</div><div class="pt">mais pares de opostos</div></div>
+<div class="i"><div class="en">rich × poor · silly × serious · smart × dumb · strict × easygoing · sweet × bitter · tall × short · unhappy × happy · weak × strong</div><div class="pt">e os últimos pares</div></div>
+<div class="i"><div class="en">in-: capable → incapable · competent → incompetent · considerate → inconsiderate · efficient → inefficient · secure → insecure · sincere → insincere · tolerant → intolerant</div><div class="pt">o prefixo <b>in-</b> significa "não"</div></div>
+<div class="i"><div class="en">im-: mature → immature · modest → immodest · patient → impatient · polite → impolite · proper → improper</div><div class="pt">antes de <b>m</b> e <b>p</b>, o prefixo vira <b>im-</b></div></div>
+<div class="i"><div class="en">ir-: responsible → irresponsible · resistible → irresistible · reverent → irreverent</div><div class="pt">antes de <b>r</b>, o prefixo vira <b>ir-</b></div></div>
+<div class="i"><div class="en">un-: friendly → unfriendly · happy → unhappy · healthy → unhealthy · kind → unkind · pleasant → unpleasant · popular → unpopular · reasonable → unreasonable</div><div class="pt">o prefixo <b>un-</b> — o mais comum de todos</div></div>
+<div class="i"><div class="en">un-: balanced → unbalanced · civilized → uncivilized · disciplined → undisciplined · faithful → unfaithful · fortunate → unfortunate · selfish → unselfish · successful → unsuccessful · truthful → untruthful</div><div class="pt">mais pares com <b>un-</b></div></div>
+<div class="i"><div class="en">-ful: care → careful · cheer → cheerful · harm → harmful · skill → skillful · tact → tactful · success → successful · truth → truthful</div><div class="pt">substantivo + <b>-ful</b> = "cheio de"</div></div>
+<div class="i"><div class="en">-ful × -less: careful × careless · harmful × harmless · tactful × tactless</div><div class="pt"><b>-less</b> = "sem" — mas cuidado: nem todo <i>-ful</i> tem <i>-less</i></div></div>
+<div class="i"><div class="en">-ent: intelligent · independent · insistent · persistent · A person who is smart is intelligent. · Someone who persists doesn't stop trying; that person is persistent.</div><div class="pt">inteligente · independente · insistente · persistente</div></div>
+<div class="i"><div class="en">-able / -ible: adorable · hospitable · likable · responsible · flexible · gullible · People who welcome you to their home are hospitable.</div><div class="pt">adorável · hospitaleiro · simpático · responsável · flexível · ingênuo</div></div>
+<div class="i"><div class="en">-ic: athletic · idealistic · materialistic · optimistic · pessimistic · People who expect a good future are optimistic. · People who expect a bad future are pessimistic.</div><div class="pt">atlético · idealista · materialista · otimista · pessimista</div></div>
+<div class="i"><div class="en">-ly: friendly · lively · lovely · lonely · cowardly · A person who has a beautiful personality is lovely. · A person who has no friends is probably lonely.</div><div class="pt">amigável · animado · adorável · solitário · covarde</div></div>
+<div class="i"><div class="en">-ive: aggressive · appreciative · creative · imaginative · manipulative · persuasive · Creative people have new ideas; they are imaginative.</div><div class="pt">agressivo · grato · criativo · imaginativo · manipulador · persuasivo</div></div>
+<div class="i"><div class="en">their responsible student · those aggressive lawyers · my adorable friend · our athletic neighbor <span class="def">determinante + adjetivo + substantivo</span></div><div class="pt">o aluno responsável deles · aqueles advogados agressivos · minha amiga adorável · nosso vizinho atlético</div></div>
+<div class="i"><div class="en">a creative child · an independent woman <span class="def">a/an segue o som do adjetivo, não do substantivo</span></div><div class="pt">uma criança criativa · uma mulher independente</div></div>
+<div class="i"><div class="en">African · African-American · Asian · Australian · Canadian · Caribbean · Central American · Christian · European · Japanese · Jewish · Mexican · Muslim · Native American · North American · South American · Western</div><div class="pt">adjetivos próprios — origem e grupo, sempre com <b>maiúscula</b></div></div>
+<div class="i"><div class="en">busy · calm · cold · confused · dirty · fine · glad · happy · hungry · lost · nervous · ready · satisfied · scared · sick · so-so · thirsty · tired · upset · warm · worried</div><div class="pt">como você <b>está</b>: ocupado · calmo · com frio · confuso · sujo · bem · contente · feliz · com fome · perdido · nervoso · pronto · satisfeito · com medo · doente · mais ou menos · com sede · cansado · chateado · com calor · preocupado</div></div>
+<div class="i"><div class="en">calm × nervous · cold × hot · dead × alive · dirty × clean · happy × sad · hungry × full · satisfied × dissatisfied · sick × well · tired × rested · warm × cool</div><div class="pt">os opostos de estado</div></div>
+<div class="i"><div class="en">I had to eat something because I was so hungry. · If you are thirsty, get a drink from the refrigerator. · If you are too cold, put on a sweater.</div><div class="pt">Tive que comer alguma coisa porque estava com muita fome. · Se estiver com sede, pegue uma bebida na geladeira. · Se estiver com muito frio, vista um suéter.</div></div>
+<div class="i"><div class="en">We are leaving at 6:00 tomorrow morning. Please be ready. · We're sorry you are upset and hope you feel better soon.</div><div class="pt">Vamos sair às 6 da manhã amanhã. Esteja pronto, por favor. · Sentimos que você esteja chateado e esperamos que melhore logo.</div></div>
+<div class="i"><div class="en">I'm fine but tired. · She is sick but comfortable. · They are hungry but happy. · We're nervous but ready. <span class="def">but marca contraste</span></div><div class="pt">Estou bem, mas cansado. · Ela está doente, mas confortável. · Estão com fome, mas felizes. · Estamos nervosos, mas prontos.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Unit 8 · coisas e lugares</div>
+<h2>Descrever coisas, lugares e o tempo</h2>
+<p class="sdesc">Tamanho, forma, cor, qualidade e estado das coisas; e os adjetivos que se usam para um lugar e para o clima — os mesmos que aparecem em anúncio de imóvel e em previsão do tempo.</p>
+<div class="items">
+<div class="i"><div class="en">tiny · little / small · medium-sized · average-sized · big / large · huge / enormous</div><div class="pt">minúsculo · pequeno · médio · de tamanho normal · grande · enorme</div></div>
+<div class="i"><div class="en">narrow × wide · short × long · light × heavy · of medium width · of medium length · of medium weight</div><div class="pt">estreito × largo · curto × comprido · leve × pesado · de largura média · de comprimento médio · de peso médio</div></div>
+<div class="i"><div class="en">round · square · rectangular · triangular · diamond-shaped</div><div class="pt">redondo · quadrado · retangular · triangular · em forma de losango</div></div>
+<div class="i"><div class="en">black · white · gray · brown · red · orange · yellow · green · blue · purple · pink</div><div class="pt">preto · branco · cinza · marrom · vermelho · laranja · amarelo · verde · azul · roxo · rosa</div></div>
+<div class="i"><div class="en">light blue · light green · dark red · dark purple <span class="def">com branco = light; com preto = dark</span> · rose · lilac · turquoise · tomato · avocado · chocolate</div><div class="pt">azul-claro · verde-claro · vermelho-escuro · roxo-escuro · e as cores de moda: rosa · lilás · turquesa · tomate · abacate · chocolate</div></div>
+<div class="i"><div class="en">acceptable × unacceptable · cheap × expensive · comfortable × uncomfortable · convenient × inconvenient · delicious × inedible · effective × ineffective</div><div class="pt">aceitável · barato · confortável · prático · delicioso · eficaz — e seus opostos</div></div>
+<div class="i"><div class="en">excellent × terrible · special × unimportant · sturdy × wobbly · superior × inferior · useful × useless · well-made × shoddy · efficient × inefficient</div><div class="pt">excelente · especial · firme · superior · útil · bem-feito · eficiente — e seus opostos</div></div>
+<div class="i"><div class="en">cozy · favorite · fresh · new · like-new · clean · neat · tidy · fixed · full</div><div class="pt">aconchegante · favorito · fresco · novo · seminovo · limpo · arrumado · organizado · consertado · cheio</div></div>
+<div class="i"><div class="en">broken · dirty · dusty · empty · messy · old · patched · ragged · ruined · spoiled / rotten · torn · worn</div><div class="pt">quebrado · sujo · empoeirado · vazio · bagunçado · velho · remendado · esfarrapado · arruinado · estragado / podre · rasgado · gasto</div></div>
+<div class="i"><div class="en">airy · light · open · spacious · private · safe · dry · modern · furnished · well-built · well-designed · well-located · well-maintained</div><div class="pt">arejado · claro · aberto · espaçoso · reservado · seguro · seco · moderno · mobiliado · bem construído · bem projetado · bem localizado · bem conservado</div></div>
+<div class="i"><div class="en">cramped · crowded · dark · damp · dangerous · rundown · unfurnished · badly designed · badly located · old-fashioned</div><div class="pt">apertado · lotado · escuro · úmido · perigoso · caindo aos pedaços · sem mobília · mal projetado · mal localizado · antiquado</div></div>
+<div class="i"><div class="en">sunny · clear · warm · nice · pleasant · breezy · cool · dry</div><div class="pt">tempo bom: ensolarado · limpo · quente · bom · agradável · com brisa · fresco · seco</div></div>
+<div class="i"><div class="en">rainy · stormy · cloudy · foggy · humid · windy · chilly · cold · freezing · icy · hot · unpleasant</div><div class="pt">tempo ruim: chuvoso · com tempestade · nublado · com neblina · úmido · com vento · friozinho · frio · congelante · com gelo · quente demais · desagradável</div></div>
+<div class="i"><div class="en">I don't like to go out on a rainy day. · It's good to have an umbrella on a rainy day. · A hat can blow off if it is windy.</div><div class="pt">Não gosto de sair em dia de chuva. · É bom ter guarda-chuva em dia de chuva. · O chapéu pode voar se estiver ventando.</div></div>
+<div class="i"><div class="en">People often go swimming when it is hot. · It is dangerous to drive when it is icy. · You need a light jacket when it is cool.</div><div class="pt">As pessoas costumam nadar quando está quente. · É perigoso dirigir quando tem gelo na pista. · Você precisa de um casaco leve quando está fresco.</div></div>
+<div class="i"><div class="en">a cardboard box <span class="def">a box made of cardboard</span> · a glass table · a gold necklace · a silver bracelet · a silk blouse · a wool skirt · a cotton blanket · an oak floor · a dirt road</div><div class="pt">o substantivo virando adjetivo de <b>material</b>: caixa de papelão · mesa de vidro · colar de ouro · pulseira de prata · blusa de seda · saia de lã · cobertor de algodão · piso de carvalho · estrada de terra</div></div>
+<div class="i"><div class="en">a mailbox <span class="def">a box for mail</span> · a bookcase · a jewelry box · an ashtray · a trash can · a lunchbox · a key ring · a grocery bag</div><div class="pt">o que a coisa <b>guarda</b>: caixa de correio · estante · porta-joias · cinzeiro · lata de lixo · lancheira · chaveiro · sacola de compras</div></div>
+<div class="i"><div class="en">A potato peeler is used for peeling potatoes. · A dishwasher is used for washing dishes. · a can opener · a hair dryer · a pencil sharpener · a fire extinguisher</div><div class="pt">a <b>função</b>: descascador de batata · lava-louças · abridor de lata · secador de cabelo · apontador · extintor de incêndio</div></div>
+<div class="i"><div class="en">a shoe store <span class="def">a store where shoes are sold</span> · a grocery store · a motorcycle <span class="def">a cycle with a motor</span> · schoolwork · homework · a bicycle lock · a student desk</div><div class="pt">o que a loja <b>vende</b> e o <b>tipo</b> da coisa: sapataria · mercado · motocicleta · trabalho escolar · lição de casa · cadeado de bicicleta · carteira de estudante</div></div>
+<div class="i"><div class="en">a three-legged stool · a redheaded woodpecker · a brown-eyed girl</div><div class="pt">substantivo + <b>-ed</b>: banquinho de três pernas · pica-pau de cabeça vermelha · menina de olhos castanhos</div></div>
+<div class="i"><div class="en">evenhanded <span class="def">fair, just</span> · hardheaded / hard-nosed <span class="def">stubborn</span> · hotheaded <span class="def">temperamental</span> · levelheaded <span class="def">sensible</span> · long-winded <span class="def">gives long, boring speeches</span> · single-minded <span class="def">focused on one goal</span> · sure-footed <span class="def">cautious, secure</span></div><div class="pt">imparcial · teimoso · esquentado · equilibrado · prolixo · focado · firme no passo</div></div>
+<div class="i"><div class="en">a twenty-dollar ticket <span class="def">a ticket that costs twenty dollars</span> · a ten-foot pole · a two-year lease · a five-year plan · a two-week vacation · an all-night party</div><div class="pt">o número fica no <b>singular</b>: ingresso de vinte dólares · vara de três metros · contrato de dois anos · plano de cinco anos · férias de duas semanas · festa que varou a noite</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Unit 9 · comparação</div>
+<h2>De <i>not at all</i> a <i>extremely</i>: força, comparativo e superlativo</h2>
+<p class="sdesc">A escala completa da intensidade, o <code>too</code> que sempre traz consequência ruim, e as três formas de comparar: <code>-er than</code>, <code>more … than</code> e <code>not as … as</code>.</p>
+<div class="items">
+<div class="i"><div class="en">not at all &lt; not very &lt; a little &lt; somewhat &lt; rather &lt; pretty &lt; very &lt; extremely</div><div class="pt">a escala da intensidade, do zero ao máximo</div></div>
+<div class="i"><div class="en">The tickets are not at all cheap. · That area is not very safe. · The car is a little expensive.</div><div class="pt">Os ingressos não são nada baratos. · Aquela região não é muito segura. · O carro é um pouco caro.</div></div>
+<div class="i"><div class="en">The food is somewhat spicy. · It's a rather large class. · It's a pretty long trip.</div><div class="pt">A comida é meio apimentada. · É uma turma bem grande. · É uma viagem bem longa.</div></div>
+<div class="i"><div class="en">They're very good books. · It's an extremely hard course.</div><div class="pt">São livros muito bons. · É um curso extremamente difícil.</div></div>
+<div class="i"><div class="en">That car is too expensive. <span class="def">I can't buy it.</span> · He is too rich. <span class="def">He values money over people.</span></div><div class="pt">Aquele carro é caro demais. (não consigo comprar) · Ele é rico demais. (valoriza dinheiro mais que gente)</div></div>
+<div class="i"><div class="en">They were too tired. <span class="def">They couldn't work.</span> · The party was too noisy. <span class="def">The police came and sent everybody home.</span></div><div class="pt">Estavam cansados demais. (não conseguiram trabalhar) · A festa estava barulhenta demais. (a polícia veio e mandou todo mundo para casa)</div></div>
+<div class="i"><div class="en">She is taller than her sister. · He is faster than the other runner. · These tickets were cheaper than those. · It is colder in the north than in the south.</div><div class="pt">Ela é mais alta que a irmã. · Ele é mais rápido que o outro corredor. · Estes ingressos foram mais baratos que aqueles. · É mais frio no norte que no sul.</div></div>
+<div class="i"><div class="en">He is nicer than his brother. · They are cuter than they were before. <span class="def">terminado em -e: só -r</span></div><div class="pt">Ele é mais legal que o irmão. · Estão mais fofos do que eram antes.</div></div>
+<div class="i"><div class="en">She is bigger than he is. · I think she's thinner than she was before. <span class="def">consoante-vogal-consoante: dobra a consoante</span></div><div class="pt">Ela é maior que ele. · Acho que ela está mais magra do que era antes.</div></div>
+<div class="i"><div class="en">low → lower · new → newer · slow → slower · gray → grayer <span class="def">-w, -x e -y de uma sílaba só levam -er</span></div><div class="pt">baixo · novo · lento · cinza</div></div>
+<div class="i"><div class="en">That was a good movie, but this one is better. · She had bad luck, and now it is worse. <span class="def">os dois irregulares</span></div><div class="pt">Aquele filme era bom, mas este é melhor. · Ela teve azar, e agora está pior.</div></div>
+<div class="i"><div class="en">He is happier now. · I hope it will be sunnier tomorrow. · That movie is funnier than the last one we saw. <span class="def">duas sílabas em -y: -ier</span></div><div class="pt">Ele está mais feliz agora. · Espero que amanhã faça mais sol. · Aquele filme é mais engraçado que o último que vimos.</div></div>
+<div class="i"><div class="en">This street is narrower than that one. · This exercise is simpler than the other one. <span class="def">cruel, gentle, little, narrow, quiet, simple</span></div><div class="pt">Esta rua é mais estreita que aquela. · Este exercício é mais simples que o outro.</div></div>
+<div class="i"><div class="en">more modern · more responsible · more dangerous · more wonderful · more famous · more imaginative <span class="def">duas sílabas ou mais: more</span></div><div class="pt">mais moderno · mais responsável · mais perigoso · mais maravilhoso · mais famoso · mais imaginativo</div></div>
+<div class="i"><div class="en">This apple is not as good as the other one. · Those dresses are not as pretty as these. · These shoes are not as comfortable as my old ones.</div><div class="pt">Esta maçã não é tão boa quanto a outra. · Aqueles vestidos não são tão bonitos quanto estes. · Estes sapatos não são tão confortáveis quanto os meus velhos.</div></div>
+<div class="i"><div class="en">This desk is sturdier than that one. · That chair is not as comfortable as this one. <span class="def">mais forte pede than; mais fraco pede as</span></div><div class="pt">Esta mesa é mais firme que aquela. · Aquela cadeira não é tão confortável quanto esta.</div></div>
+<div class="i"><div class="en">John is tall. James is taller than John. Bill is taller than John and James. Bill is the tallest in the class.</div><div class="pt">O John é alto. O James é mais alto que o John. O Bill é mais alto que o John e o James. O Bill é o mais alto da turma.</div></div>
+<div class="i"><div class="en">bigger → biggest · cooler → coolest · nicer → nicest · quieter → quietest · sillier → silliest · simpler → simplest</div><div class="pt">quem faz comparativo em <b>-er</b> faz superlativo em <b>-est</b></div></div>
+<div class="i"><div class="en">good → better → best · bad → worse → worst</div><div class="pt">bom → melhor → o melhor · ruim → pior → o pior</div></div>
+<div class="i"><div class="en">more responsible → most responsible · more difficult → most difficult · more modern → most modern · more appreciative → most appreciative</div><div class="pt">quem usa <b>more</b> usa <b>most</b></div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Units 10–11 · particípios</div>
+<h2><i>-ing</i> × <i>-ed</i>: o particípio como adjetivo, e a ordem deles</h2>
+<p class="sdesc">O erro clássico do brasileiro: dizer <i>I am boring</i> quando queria dizer <i>I am bored</i>. O <code>-ing</code> descreve <b>a causa</b>; o <code>-ed</code> descreve <b>quem sentiu</b>.</p>
+<div class="items">
+<div class="i"><div class="en">It is surprising news. · You have an exciting job. · That is a boring program.</div><div class="pt">É uma notícia surpreendente. · Você tem um trabalho empolgante. · Aquele é um programa chato.</div></div>
+<div class="i"><div class="en">A caring mother = a mother who cares for her children. · A boring movie = a movie that bores the audience. · A threatening storm = a storm that threatens to begin soon.</div><div class="pt">Mãe carinhosa = mãe que cuida dos filhos. · Filme chato = filme que entedia a plateia. · Tempestade ameaçadora = tempestade que ameaça começar.</div></div>
+<div class="i"><div class="en">boring · captivating · caring · confusing · daring · exciting · fascinating · frustrating · gratifying · inspiring · interesting · satisfying · surprising · terrifying · threatening</div><div class="pt">chato · cativante · carinhoso · confuso · ousado · empolgante · fascinante · frustrante · gratificante · inspirador · interessante · satisfatório · surpreendente · aterrorizante · ameaçador</div></div>
+<div class="i"><div class="en">She is excited about her trip. · The toy is broken. · We were surprised to hear the news. · The child is lost.</div><div class="pt">Ela está animada com a viagem. · O brinquedo está quebrado. · Ficamos surpresos ao saber da notícia. · A criança está perdida.</div></div>
+<div class="i"><div class="en">The information was surprising. → We were surprised. · The game was exciting. → The fans were excited. · The girl is fascinating. → The man is fascinated.</div><div class="pt">A informação era surpreendente. → Ficamos surpresos. · O jogo estava empolgante. → Os torcedores ficaram empolgados. · A garota é fascinante. → O homem está fascinado.</div></div>
+<div class="i"><div class="en">broken · confused · excited · forgotten · frustrated · hidden · interested · lost · married · satisfied · stolen · surprised · terrified · torn · upset · withdrawn · worn · wounded · written</div><div class="pt">quebrado · confuso · animado · esquecido · frustrado · escondido · interessado · perdido · casado · satisfeito · roubado · surpreso · apavorado · rasgado · chateado · retraído · gasto · ferido · escrito</div></div>
+<div class="i"><div class="en">She needed glasses to read the written words. · He couldn't hear the spoken words. · Police detectives are searching for the stolen painting.</div><div class="pt">Ela precisou de óculos para ler as palavras escritas. · Ele não conseguiu ouvir as palavras faladas. · Os detetives procuram o quadro roubado.</div></div>
+<div class="i"><div class="en">It is very dangerous to drive if you are drunk. · The wounded soldiers were taken to a hospital. · He used his torn T-shirt for a rag.</div><div class="pt">É muito perigoso dirigir bêbado. · Os soldados feridos foram levados ao hospital. · Ele usou a camiseta rasgada como pano.</div></div>
+<div class="i"><div class="en">Our new neighbor doesn't talk very much; she is shy and withdrawn. · The people could not read that book because it was on the king's list of forbidden books.</div><div class="pt">Nossa vizinha nova não fala muito; é tímida e retraída. · O povo não podia ler aquele livro porque estava na lista de livros proibidos do rei.</div></div>
+<div class="i"><div class="en">1 quality · 2 condition · 3 size · 4 age · 5 shape · 6 color · 7 origin · 8 material · 9 type</div><div class="pt">a <b>ordem</b> dos adjetivos quando vêm dois ou três juntos</div></div>
+<div class="i"><div class="en">a beautiful old house <span class="def">quality, age</span> · a nice clean white uniform <span class="def">quality, condition, color</span> · a shiny new red bicycle <span class="def">condition, age, color</span></div><div class="pt">uma bela casa antiga · um uniforme branco limpinho e bonito · uma bicicleta vermelha novinha e brilhante</div></div>
+<div class="i"><div class="en">a long black silk skirt · new Italian leather shoes · beautiful Mexican silver earrings · a rich three-layer birthday cake · a heavy round antique mirror</div><div class="pt">uma saia longa preta de seda · sapatos italianos novos de couro · lindos brincos mexicanos de prata · um bolo de aniversário encorpado de três camadas · um espelho antigo pesado e redondo</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Units 12–13 · verbos</div>
+<h2><i>Be</i> e os outros verbos: presente, passado, negativa e pergunta</h2>
+<p class="sdesc">O <code>be</code> anda sozinho: inverte para perguntar, leva <code>not</code> direto para negar. Todos os outros verbos precisam de <code>do</code>, <code>does</code> ou <code>did</code> — e é aí que mora o erro.</p>
+<div class="items">
+<div class="i"><div class="en">I am tall. · You are my friend. · He is sick. · She is a smart girl. · It is a mistake. · We are at home. · They are from South America.</div><div class="pt">Sou alto. · Você é meu amigo. · Ele está doente. · Ela é uma menina esperta. · É um erro. · Estamos em casa. · Eles são da América do Sul.</div></div>
+<div class="i"><div class="en">Am I …? · Are you …? · Is he …? · Is she …? · Is it …? · Are we …? · Are they …? <span class="def">pergunta com be: inverte sujeito e verbo</span></div><div class="pt">as perguntas com <i>be</i> — nada de <i>do</i></div></div>
+<div class="i"><div class="en">I am not tired. · You are not smiling. · He is not sitting in the park. · She is not at home. · We are not working.</div><div class="pt">Não estou cansado. · Você não está sorrindo. · Ele não está sentado no parque. · Ela não está em casa. · Não estamos trabalhando.</div></div>
+<div class="i"><div class="en">I'm not · you aren't · he isn't · she isn't · it isn't · we aren't · they aren't</div><div class="pt">as contrações negativas do <i>be</i></div></div>
+<div class="i"><div class="en">I was in the city. · You were shy. · He was sick. · We were very happy. · They were broken. · It was good.</div><div class="pt">Eu estava na cidade. · Você era tímido. · Ele estava doente. · Estávamos muito felizes. · Estavam quebrados. · Estava bom.</div></div>
+<div class="i"><div class="en">appear · become · feel · look · look like · resemble · seem · smell · sound <span class="def">verbos com sentido próximo de be</span></div><div class="pt">parecer · tornar-se · sentir · parecer (aparência) · parecer com · ser parecido com · parecer · cheirar · soar</div></div>
+<div class="i"><div class="en">I look tired. · You look sick. · We look silly. · They look beautiful. · He looks good. · She looks better. · It looks dirty.</div><div class="pt">Pareço cansado. · Você parece doente. · Parecemos bobos. · Estão lindos. · Ele está bem. · Ela está melhor. · Está sujo.</div></div>
+<div class="i"><div class="en">She resembles her mother. · They seem happy. · I feel sick. · It smells bad. · It sounds good. · He appears angry. · It becomes boring. · He looks like me.</div><div class="pt">Ela é parecida com a mãe. · Parecem felizes. · Estou me sentindo mal. · Está com cheiro ruim. · Parece bom. · Ele parece bravo. · Fica chato. · Ele é parecido comigo.</div></div>
+<div class="i"><div class="en">He goes. · She does. · He watches. · She washes. · He cries. · She tries. · He has a cold. · She has the flu.</div><div class="pt">as mudanças de grafia na terceira pessoa</div></div>
+<div class="i"><div class="en">appear → appeared · look → looked · seem → seemed · sound → sounded · change → changed · beg → begged · hop → hopped · cry → cried · study → studied</div><div class="pt">o passado regular e suas mudanças de grafia</div></div>
+<div class="i"><div class="en">They appeared tired. · She looked pretty. · He seemed nice. · It sounded good.</div><div class="pt">Pareciam cansados. · Ela estava bonita. · Ele pareceu simpático. · Soou bem.</div></div>
+<div class="i"><div class="en">come/came · drink/drank · drive/drove · eat/ate · get/got · go/went · lie/lay · make/made · put/put · read/read · ride/rode</div><div class="pt">os irregulares do dia a dia (1)</div></div>
+<div class="i"><div class="en">sit/sat · sleep/slept · stand/stood · take/took · think/thought · wake/woke · teach/taught · write/wrote · buy/bought · pay/paid · sweep/swept</div><div class="pt">os irregulares do dia a dia (2)</div></div>
+<div class="i"><div class="en">I don't weed the garden. · You don't rest. · He doesn't exercise. · She doesn't smile. · We don't sleep late. · They don't clean up the yard.</div><div class="pt">Não capino o jardim. · Você não descansa. · Ele não se exercita. · Ela não sorri. · Não dormimos até tarde. · Não limpam o quintal.</div></div>
+<div class="i"><div class="en">I didn't comb my hair. · You didn't wash the windows. · He didn't call me. · She didn't work. · We didn't cook. · They didn't eat dinner.</div><div class="pt">Não penteei o cabelo. · Você não lavou as janelas. · Ele não me ligou. · Ela não trabalhou. · Não cozinhamos. · Não jantaram.</div></div>
+<div class="i"><div class="en">Do you study at night? · Do they correct their work? · Does she go to this school? · Does the computer work?</div><div class="pt">Você estuda à noite? · Eles corrigem o trabalho? · Ela estuda nesta escola? · O computador funciona?</div></div>
+<div class="i"><div class="en">who · what · when · where · why · how · how much <span class="def">question word + do/does + sujeito + verbo</span></div><div class="pt">quem · o que · quando · onde · por que · como · quanto</div></div>
+<div class="i"><div class="en">Who do you like? · What does he do? · When do we take our coffee break? · Where do you all go after work? · Why do they have so many meetings?</div><div class="pt">De quem você gosta? · O que ele faz? · Quando é nossa pausa para o café? · Aonde vocês vão depois do trabalho? · Por que eles têm tantas reuniões?</div></div>
+<div class="i"><div class="en">How do I turn on this computer? · How much time do you have?</div><div class="pt">Como eu ligo este computador? · Quanto tempo você tem?</div></div>
+<div class="i"><div class="en">Who works here? · What goes in this file? <span class="def">pergunta sobre o sujeito não usa do</span></div><div class="pt">Quem trabalha aqui? · O que vai neste arquivo?</div></div>
+<div class="i"><div class="en">Did you fill out the forms? · Did he take the test? · Did they send you a fax? · Where did you eat lunch? · When did she go on vacation?</div><div class="pt">Você preencheu os formulários? · Ele fez a prova? · Eles te mandaram um fax? · Onde você almoçou? · Quando ela saiu de férias?</div></div>
+<div class="i"><div class="en">Who wrote this letter? · What helped you learn? <span class="def">também sem did, porque a resposta é o sujeito</span></div><div class="pt">Quem escreveu esta carta? · O que te ajudou a aprender?</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Unit 13 · verbos por situação</div>
+<h2>Casa, sala de aula, escritório, loja e banco</h2>
+<p class="sdesc">O livro agrupa os verbos por <b>onde</b> você os usa. É a lista que resolve as situações práticas: arrumar a casa, estudar, trabalhar, comprar e resolver o banco.</p>
+<div class="items">
+<div class="i"><div class="en">brush (your teeth) · comb (your hair) · wash (your hands) · take (a bath) · take (a shower) · get (dressed) · put (on your clothes) · take (off your clothes)</div><div class="pt">escovar os dentes · pentear o cabelo · lavar as mãos · tomar banho de banheira · tomar banho de chuveiro · se vestir · vestir a roupa · tirar a roupa</div></div>
+<div class="i"><div class="en">get (up) · wake (up) · go (to bed) · sleep · lie (down) · sit (down) · stand (up) · come (home) · make (the bed)</div><div class="pt">levantar · acordar · ir dormir · dormir · deitar · sentar · levantar-se · voltar para casa · arrumar a cama</div></div>
+<div class="i"><div class="en">eat/have (breakfast) · eat/have (lunch) · eat/have (dinner) · drink (water) · cook · read · think · drive · ride</div><div class="pt">tomar café da manhã · almoçar · jantar · beber água · cozinhar · ler · pensar · dirigir · andar (de bicicleta, cavalo)</div></div>
+<div class="i"><div class="en">clean (the house) · clean (up the mess) · do (laundry) · iron (clothes) · scrub (floors) · sweep (the floor) · vacuum · dust (the furniture) · wash (the windows)</div><div class="pt">limpar a casa · arrumar a bagunça · lavar roupa · passar roupa · esfregar o chão · varrer o chão · aspirar · tirar o pó dos móveis · lavar as janelas</div></div>
+<div class="i"><div class="en">load (the dishwasher) · empty (the dishwasher) · put (the groceries away) · take (out the trash) · pay (bills) · make (appointments) · make (repairs) · do (the shopping)</div><div class="pt">encher a lava-louças · esvaziar a lava-louças · guardar as compras · levar o lixo para fora · pagar as contas · marcar consultas · fazer consertos · fazer as compras</div></div>
+<div class="i"><div class="en">mow (the lawn) · water (plants) · weed (the garden) · clean (up the yard)</div><div class="pt">cortar a grama · regar as plantas · capinar o jardim · limpar o quintal</div></div>
+<div class="i"><div class="en">She uses a broom to sweep the floor. · I use the iron to iron clothes. · He takes out his checkbook to pay bills. · He uses a screwdriver to make repairs.</div><div class="pt">Ela usa a vassoura para varrer o chão. · Uso o ferro para passar roupa. · Ele pega o talão de cheques para pagar as contas. · Ele usa a chave de fenda para fazer consertos.</div></div>
+<div class="i"><div class="en">answer · ask (questions) · correct (mistakes) · do (exercises) · draw (a picture) · erase · help (someone) · learn · listen (to someone)</div><div class="pt">responder · fazer perguntas · corrigir erros · fazer exercícios · desenhar · apagar · ajudar alguém · aprender · ouvir alguém</div></div>
+<div class="i"><div class="en">read · solve (a problem) · spell · study · take (a test) · take (turns) · teach · play</div><div class="pt">ler · resolver um problema · soletrar · estudar · fazer uma prova · revezar · ensinar · brincar/jogar</div></div>
+<div class="i"><div class="en">My mother taught me to read and write. · We took a hard test this morning. · They drew pictures in class. · She read us a wonderful story.</div><div class="pt">Minha mãe me ensinou a ler e escrever. · Fizemos uma prova difícil hoje de manhã. · Desenharam na aula. · Ela leu uma história maravilhosa para nós.</div></div>
+<div class="i"><div class="en">He wrote her an e-mail last week. · You made only one mistake. · They did all of the exercises. · My friend and I took turns with the computer.</div><div class="pt">Ele escreveu um e-mail para ela semana passada. · Você errou só uma vez. · Fizeram todos os exercícios. · Meu amigo e eu revezamos o computador.</div></div>
+<div class="i"><div class="en">answer (e-mail) · answer (letters) · answer (the telephone) · check (e-mail) · make (phone calls) · send (a fax) · type (on the keyboard) · use (the computer)</div><div class="pt">responder e-mail · responder cartas · atender o telefone · checar e-mail · fazer ligações · enviar um fax · digitar · usar o computador</div></div>
+<div class="i"><div class="en">attend (meetings) · participate (in discussions) · plan (projects) · organize files · fill (out forms) · search (the Internet) · write (letters) · write (reports) · take (coffee breaks)</div><div class="pt">participar de reuniões · participar de discussões · planejar projetos · organizar arquivos · preencher formulários · pesquisar na internet · escrever cartas · escrever relatórios · fazer pausa para o café</div></div>
+<div class="i"><div class="en">look (at) · look (for) · examine · try (on clothes) · push (a cart) · wait (in line) · ask (for help) · ask (for advice) · read (labels)</div><div class="pt">olhar · procurar · examinar · experimentar roupa · empurrar o carrinho · esperar na fila · pedir ajuda · pedir conselho · ler os rótulos</div></div>
+<div class="i"><div class="en">buy · pay · pay (with cash) · use (a credit card) · write (a check) · sign · spend (money) · save (money) · cost · get (a bargain) · get (a receipt)</div><div class="pt">comprar · pagar · pagar em dinheiro · usar cartão de crédito · preencher um cheque · assinar · gastar dinheiro · economizar · custar · fazer uma pechincha · pegar o recibo</div></div>
+<div class="i"><div class="en">return · sell · send · show · hang · hold · find · give (money to) · thank (the salesclerk) · talk (to the manager) · wear</div><div class="pt">devolver · vender · enviar · mostrar · pendurar · segurar · encontrar · dar dinheiro a · agradecer ao vendedor · falar com o gerente · usar (roupa)</div></div>
+<div class="i"><div class="en">Yes, I return clothes that don't fit. · No, she doesn't always use her credit card. · No, we don't want these shirts. · No, he doesn't like to go shopping.</div><div class="pt">Sim, eu devolvo roupa que não serve. · Não, ela nem sempre usa o cartão de crédito. · Não, não queremos estas camisas. · Não, ele não gosta de fazer compras.</div></div>
+<div class="i"><div class="en">Yes, she bought a new dress. · Yes, he forgot to give me a receipt. · No, we didn't try on a lot of clothes. · No, I didn't buy anything.</div><div class="pt">Sim, ela comprou um vestido novo. · Sim, ele esqueceu de me dar o recibo. · Não, não experimentamos muita roupa. · Não, não comprei nada.</div></div>
+<div class="i"><div class="en">She always gets a bargain. · We waited in line for thirty minutes. · They spent a lot of money at that store. · He always thanks the salesclerk. · It cost a hundred dollars.</div><div class="pt">Ela sempre faz uma pechincha. · Esperamos trinta minutos na fila. · Gastaram muito dinheiro naquela loja. · Ele sempre agradece ao vendedor. · Custou cem dólares.</div></div>
+<div class="i"><div class="en">open (an account) · close (an account) · make (a deposit) · withdraw (cash) · get (cash) · transfer (funds) · order (checks) · pay (an installment)</div><div class="pt">abrir uma conta · encerrar uma conta · fazer um depósito · sacar dinheiro · pegar dinheiro · transferir fundos · pedir talão de cheques · pagar uma parcela</div></div>
+<div class="i"><div class="en">apply (for a loan) · borrow (money) · speak (to the loan officer) · bring (documents) · earn (interest) · make (an investment) · buy (a CD) · save (money)</div><div class="pt">pedir um empréstimo · pegar dinheiro emprestado · falar com o gerente de crédito · levar documentos · render juros · fazer um investimento · comprar um CDB · poupar dinheiro</div></div>
+<div class="i"><div class="en">get (an ATM card) · get (a PIN) · remember (your PIN) · use (the ATM) · drive (up to the drive-up window) · wait (in line) · lose · forget</div><div class="pt">pegar o cartão do caixa eletrônico · pegar a senha · lembrar a senha · usar o caixa eletrônico · usar o atendimento pela janela do carro · esperar na fila · perder · esquecer</div></div>
+<div class="i"><div class="en">I had to order checks because I lost my checkbook. · She was in a hurry, so she drove up to the drive-up window.</div><div class="pt">Tive que pedir talão porque perdi meu talão de cheques. · Ela estava com pressa, então usou o atendimento pela janela do carro.</div></div>
+<div class="i"><div class="en">We brought cash because we wanted to make a deposit. · I used my ATM card to withdraw cash. · A good way to save money is to buy a CD.</div><div class="pt">Levamos dinheiro porque queríamos fazer um depósito. · Usei meu cartão para sacar dinheiro. · Um bom jeito de poupar é comprar um CDB.</div></div>
+</div>
+</section>
+
+<section id="s16">
+<div class="snum">Unit 13 · rua, lazer e cozinha</div>
+<h2>Na rua, em lugar público, no lazer e na cozinha</h2>
+<p class="sdesc">Os verbos das situações em que você está <b>fora de casa</b> — pegar ônibus, atravessar, pedir a conta, jogar, cozinhar — mais as ordens, que em inglês são o verbo puro.</p>
+<div class="items">
+<div class="i"><div class="en">take (a walk) · go (jogging) · run · ride (a bicycle) · stroll (in the city) · cross (the street) · turn (left) · turn (right) · go (straight ahead) · ask (directions)</div><div class="pt">dar uma caminhada · ir correr · correr · andar de bicicleta · passear pela cidade · atravessar a rua · virar à esquerda · virar à direita · seguir reto · pedir informação</div></div>
+<div class="i"><div class="en">get (on a bus) · get (off the bus) · get (in a car) · get (out of the car) · drive (a car) · wait (at a red light) · wait (at a stop sign)</div><div class="pt">entrar no ônibus · descer do ônibus · entrar no carro · sair do carro · dirigir · esperar no sinal vermelho · parar na placa de PARE</div></div>
+<div class="i"><div class="en">sit (in the park) · lie (in the sun) · have (a picnic) · take (photographs) · buy (an ice cream) · mail (a letter) · visit (the zoo) · stop (in an outdoor café)</div><div class="pt">sentar no parque · pegar sol · fazer um piquenique · tirar fotos · comprar um sorvete · postar uma carta · visitar o zoológico · parar num café ao ar livre</div></div>
+<div class="i"><div class="en">grow (flowers) · work (in the garden) · build · hear (airplanes) · see (an accident)</div><div class="pt">plantar flores · trabalhar no jardim · construir · ouvir aviões · ver um acidente</div></div>
+<div class="i"><div class="en">We had a picnic in the park. · They get off the bus here. · Yes, he took a lot of photographs. · Yes, she lay in the sun for an hour. · He always buys an ice cream.</div><div class="pt">Fizemos um piquenique no parque. · Eles descem do ônibus aqui. · Sim, ele tirou muitas fotos. · Sim, ela ficou uma hora pegando sol. · Ele sempre compra um sorvete.</div></div>
+<div class="i"><div class="en">enter (a building) · leave (a building) · go (through revolving doors) · get (on the elevator) · get (off the elevator) · ride (on the escalator) · push (the button) · use (the restroom)</div><div class="pt">entrar num prédio · sair de um prédio · passar pela porta giratória · entrar no elevador · sair do elevador · andar na escada rolante · apertar o botão · usar o banheiro</div></div>
+<div class="i"><div class="en">enter (a restaurant) · look (at the menu) · order (your meal) · enjoy (your meal) · ask (for the check) · pay (the waiter) · leave (a tip)</div><div class="pt">entrar num restaurante · ver o cardápio · pedir a refeição · aproveitar a refeição · pedir a conta · pagar o garçom · deixar gorjeta</div></div>
+<div class="i"><div class="en">enter (a train or metro station) · leave (the station) · drink (from a water fountain) · buy (something from a street vendor) · talk (on your cell phone)</div><div class="pt">entrar na estação de trem ou metrô · sair da estação · beber no bebedouro · comprar de um vendedor de rua · falar no celular</div></div>
+<div class="i"><div class="en">go (for a walk) · go (to the movies) · go (to a concert) · go (to the theater) · see (a movie) · watch (TV) · watch (a game) · listen (to music) · listen (to the radio) · dance · sing</div><div class="pt">dar uma volta · ir ao cinema · ir a um show · ir ao teatro · ver um filme · ver TV · assistir a um jogo · ouvir música · ouvir rádio · dançar · cantar</div></div>
+<div class="i"><div class="en">have (a party) · have (dinner) · have (lunch) · have (coffee with someone) · have (a drink with someone) · play (a game) · play (an instrument)</div><div class="pt">dar uma festa · jantar · almoçar · tomar café com alguém · tomar um drinque com alguém · jogar · tocar um instrumento</div></div>
+<div class="i"><div class="en">begin (the game) · start (the game) · compete · participate (in a sport) · hit (the ball) · kick (the ball) · throw (the ball) · catch (the ball) · swim · win the game · lose (the game)</div><div class="pt">começar o jogo · iniciar o jogo · competir · praticar um esporte · rebater a bola · chutar a bola · arremessar a bola · pegar a bola · nadar · ganhar o jogo · perder o jogo</div></div>
+<div class="i"><div class="en">buy (ingredients) · peel · chop · dice · slice · cut (into pieces) · separate (an egg) · break (an egg) · beat · whip · blend · mix · stir · strain · process</div><div class="pt">comprar os ingredientes · descascar · picar · cortar em cubinhos · fatiar · cortar em pedaços · separar o ovo · quebrar o ovo · bater · bater em chantili · misturar no liquidificador · misturar · mexer · coar · processar</div></div>
+<div class="i"><div class="en">bake · boil · barbecue · broil · fry · grill · microwave · sauté · simmer · cook · marinate · pour · add · spread · sprinkle</div><div class="pt">assar · ferver · fazer churrasco · gratinar · fritar · grelhar · fazer no micro-ondas · refogar · cozinhar em fogo baixo · cozinhar · marinar · despejar · acrescentar · espalhar · salpicar</div></div>
+<div class="i"><div class="en">chill · freeze · refrigerate · remove (from oven) · remove (from pan) · arrange · decorate · garnish · frost (a cake) · ice (a cake)</div><div class="pt">gelar · congelar · refrigerar · tirar do forno · tirar da panela · arrumar no prato · decorar · enfeitar · cobrir o bolo · glaçar o bolo</div></div>
+<div class="i"><div class="en">Slice the tomatoes. · Ice the cake. · Remove the pan from the oven. · Spread butter on the bread.</div><div class="pt">Fatie os tomates. · Cubra o bolo. · Tire a forma do forno. · Passe manteiga no pão.</div></div>
+<div class="i"><div class="en">Chill the champagne. · Break the eggs into the bowl. · Bake a loaf of bread. · Boil water for the tea.</div><div class="pt">Gele o champanhe. · Quebre os ovos na tigela. · Asse um pão. · Ferva água para o chá.</div></div>
+<div class="i"><div class="en">Come here. · Bring me a drink. · Go away. · Turn on the light. <span class="def">ordem = verbo puro</span></div><div class="pt">Vem cá. · Me traz uma bebida. · Vai embora. · Acende a luz.</div></div>
+<div class="i"><div class="en">Don't come. · Don't bring me anything. · Don't go. · Don't turn on the light. <span class="def">ordem negativa = don't + verbo</span></div><div class="pt">Não venha. · Não me traga nada. · Não vá. · Não acenda a luz.</div></div>
+<div class="i"><div class="en">I add tomatoes to the sauce. · She ices and decorates the cakes in the morning. · He whips the cream. · We grill the fish outside.</div><div class="pt">Acrescento tomate ao molho. · Ela cobre e decora os bolos de manhã. · Ele bate o creme. · Grelhamos o peixe lá fora.</div></div>
+</div>
+</section>
+
+<section id="s17">
+<div class="snum">Unit 13 · tempos compostos</div>
+<h2>Progressivo e present perfect</h2>
+<p class="sdesc">O <code>-ing</code> serve para o que acontece <b>agora</b> e também para o que já está <b>marcado</b> para breve. O present perfect entra quando você está no meio de uma lista de coisas a fazer.</p>
+<div class="items">
+<div class="i"><div class="en">at present · currently · this week · this month · this year <span class="def">as expressões que pedem o progressivo com sentido de agora</span></div><div class="pt">no momento · atualmente · esta semana · este mês · este ano</div></div>
+<div class="i"><div class="en">dream → dreaming · laugh → laughing · dance → dancing · exercise → exercising · tie → tying · lie → lying · sit → sitting · stop → stopping</div><div class="pt">como se forma o <b>-ing</b>, com todas as mudanças de grafia</div></div>
+<div class="i"><div class="en">I am sitting down. · You are listening to good music. · He is sleeping. · She is writing a letter. · We are watching TV. · They are talking on the phone.</div><div class="pt">Estou me sentando. · Você está ouvindo uma música boa. · Ele está dormindo. · Ela está escrevendo uma carta. · Estamos vendo TV. · Estão falando ao telefone.</div></div>
+<div class="i"><div class="en">I am leaving tomorrow. · We are watching TV tonight. · You are working this afternoon. · He is going home at 6:00. · She is calling him soon.</div><div class="pt">Vou embora amanhã. · Vamos ver TV hoje à noite. · Você vai trabalhar hoje à tarde. · Ele vai para casa às 6. · Ela vai ligar para ele daqui a pouco.</div></div>
+<div class="i"><div class="en">You (all) are taking the test next week. · They are playing the game in October. <span class="def">progressivo para plano já marcado</span></div><div class="pt">Vocês vão fazer a prova semana que vem. · Eles vão jogar a partida em outubro.</div></div>
+<div class="i"><div class="en">tonight · tomorrow · this afternoon · this evening · later · soon · next week · next month · next year · on Monday · in August · at 4:00</div><div class="pt">as marcações de tempo do plano futuro</div></div>
+<div class="i"><div class="en">cross → crossed · enter → entered · mail → mailed · walk → walked <span class="def">particípio regular = passado</span></div><div class="pt">o particípio regular é igual ao passado</div></div>
+<div class="i"><div class="en">become/became/become · come/came/come · cost/cost/cost · put/put/put · run/ran/run <span class="def">particípio igual ao verbo básico</span></div><div class="pt">grupo 1: o particípio volta a ser o verbo original</div></div>
+<div class="i"><div class="en">bring/brought/brought · buy/bought/bought · find/found/found · have/had/had · leave/left/left · make/made/made · pay/paid/paid · sit/sat/sat · teach/taught/taught · think/thought/thought</div><div class="pt">grupo 2: o particípio é igual ao passado</div></div>
+<div class="i"><div class="en">be/was-were/been · do/did/done · drink/drank/drunk · drive/drove/driven · eat/ate/eaten · get/got/gotten · give/gave/given · go/went/gone · write/wrote/written</div><div class="pt">grupo 3: as três formas diferentes</div></div>
+<div class="i"><div class="en">forget/forgot/forgotten · grow/grew/grown · ride/rode/ridden · speak/spoke/spoken · take/took/taken · wear/wore/worn · withdraw/withdrew/withdrawn · draw/drew/drawn</div><div class="pt">mais irregulares com três formas</div></div>
+<div class="i"><div class="en">I have worked three hours. · We have eaten lunch. · You have made one telephone call. · He has gone home. · She has written two letters. · They have bought their tickets.</div><div class="pt">Já trabalhei três horas. · Já almoçamos. · Você já deu um telefonema. · Ele já foi para casa. · Ela já escreveu duas cartas. · Já compraram os ingressos.</div></div>
+<div class="i"><div class="en">I haven't finished the project. · You haven't done your homework. · He hasn't watched this movie. · She hasn't come in yet. · They haven't paid the bill.</div><div class="pt">Não terminei o projeto. · Você não fez a lição. · Ele não viu este filme. · Ela ainda não chegou. · Não pagaram a conta.</div></div>
+<div class="i"><div class="en">Have you seen the play? · Has he played yet? · Has she gone for a walk? · Have they won the game? · Have you (all) eaten?</div><div class="pt">Você viu a peça? · Ele já jogou? · Ela saiu para caminhar? · Ganharam o jogo? · Vocês já comeram?</div></div>
+<div class="i"><div class="en">He has hit the ball. · I have seen that movie. · She has had lunch with him. · We have sung that song. · They have danced together before.</div><div class="pt">Ele rebateu a bola. · Eu já vi esse filme. · Ela já almoçou com ele. · Já cantamos essa música. · Já dançaram juntos antes.</div></div>
+</div>
+</section>
+
+<section id="s18">
+<div class="snum">Unit 14 · advérbios</div>
+<h2>Onde, quando e com que frequência — <i>in / on / at</i></h2>
+<p class="sdesc">A tabela que resolve a preposição na base do uso, não da regra: <code>in a car</code> mas <code>on a bus</code>; <code>in the morning</code> mas <code>on Tuesday</code> e <code>at noon</code>.</p>
+<div class="items">
+<div class="i"><div class="en">here × there · in × out · inside × outside · up × down · upstairs × downstairs · close by/nearby × far away · everywhere × nowhere · away</div><div class="pt">aqui × ali · dentro × fora · no interior × do lado de fora · em cima × embaixo · lá em cima × lá embaixo · perto × longe · em todo lugar × em lugar nenhum · longe daqui</div></div>
+<div class="i"><div class="en">We are here. · The girls are inside. · Springfield is nearby. · The books are upstairs.</div><div class="pt">Estamos aqui. · As meninas estão lá dentro. · Springfield é aqui perto. · Os livros estão lá em cima.</div></div>
+<div class="i"><div class="en">in a car · in a house · in a room · in an office · in bed · in the kitchen · in the garden · in the water · in the mountains · in the country · in town · in a city · in jail · in the hospital · in a small boat</div><div class="pt">os lugares que pedem <b>in</b></div></div>
+<div class="i"><div class="en">on a bus · on a train · on a bicycle · on a motorcycle · on a horse · on a ship · on foot · on the floor · on a street · on a corner (outside) · on the fourth floor · on the left side · on a patio</div><div class="pt">os lugares que pedem <b>on</b></div></div>
+<div class="i"><div class="en">at home · at work · at school · at church · at the office · at the airport · at the beach · at the library · at the zoo · at a restaurant · at an address</div><div class="pt">os lugares que pedem <b>at</b></div></div>
+<div class="i"><div class="en">Toronto is in the north of North America. · Canada is north of the United States. · We are going north for our summer vacation.</div><div class="pt">Toronto fica no norte da América do Norte. · O Canadá fica ao norte dos Estados Unidos. · Vamos para o norte nas férias de verão.</div></div>
+<div class="i"><div class="en">Miami is in the south of Florida. · Florida is south of Georgia. · The birds fly south in the winter.</div><div class="pt">Miami fica no sul da Flórida. · A Flórida fica ao sul da Geórgia. · Os pássaros voam para o sul no inverno.</div></div>
+<div class="i"><div class="en">Washington, D.C., is in the east of the United States. · Texas is west of Louisiana. · The pioneers moved west.</div><div class="pt">Washington fica no leste dos Estados Unidos. · O Texas fica a oeste da Louisiana. · Os pioneiros foram para o oeste.</div></div>
+<div class="i"><div class="en">yesterday · last night · last week · last month · last year · a few days ago · a week ago · ten years ago · before · then · recently</div><div class="pt">o passado: ontem · ontem à noite · semana passada · mês passado · ano passado · alguns dias atrás · uma semana atrás · dez anos atrás · antes · naquela época · recentemente</div></div>
+<div class="i"><div class="en">now · today · this morning · this afternoon · this evening · tonight · already · still · not yet · no longer</div><div class="pt">o presente: agora · hoje · hoje de manhã · hoje à tarde · hoje à noitinha · hoje à noite · já · ainda · ainda não · não mais</div></div>
+<div class="i"><div class="en">tomorrow · tomorrow morning · later · afterward · soon · next week · next month · next year · next Thursday · this Friday</div><div class="pt">o futuro: amanhã · amanhã de manhã · mais tarde · depois · logo · semana que vem · mês que vem · ano que vem · quinta que vem · esta sexta</div></div>
+<div class="i"><div class="en">in the morning · in the afternoon · in the evening · in March · in 1995 · in ten minutes · in five years · in the middle of the day</div><div class="pt">os tempos que pedem <b>in</b></div></div>
+<div class="i"><div class="en">on Tuesday · on Tuesdays · on weekends · on weekdays · on holidays · on July 15 · on my birthday</div><div class="pt">os tempos que pedem <b>on</b></div></div>
+<div class="i"><div class="en">at 10:00 · at 3:30 · at 5:45 P.M. · at noon · at midnight · at night</div><div class="pt">os tempos que pedem <b>at</b></div></div>
+<div class="i"><div class="en">My appointment is at 3:00. It is before 4:00. · I get off work at 5:00. It is after 4:00. · Tuesday is before Wednesday. Thursday is after Wednesday.</div><div class="pt">Minha consulta é às 3. É antes das 4. · Saio do trabalho às 5. É depois das 4. · Terça é antes de quarta. Quinta é depois de quarta.</div></div>
+<div class="i"><div class="en">Class begins at 6:00 A.M. It is early in the morning. · I get home at 10:00 P.M. It is late in the evening.</div><div class="pt">A aula começa às 6 da manhã. É cedo. · Chego em casa às 10 da noite. É tarde.</div></div>
+<div class="i"><div class="en">Class begins at 9:00. If you come at 8:30, you are early. If you come at 9:30, you are late.</div><div class="pt">A aula começa às 9. Se você chega às 8h30, está adiantado. Se chega às 9h30, está atrasado.</div></div>
+<div class="i"><div class="en">always · usually · often · frequently · sometimes · occasionally · seldom · rarely · hardly ever · never <span class="def">vêm antes do verbo</span></div><div class="pt">sempre · geralmente · com frequência · frequentemente · às vezes · de vez em quando · raramente · raramente · quase nunca · nunca</div></div>
+<div class="i"><div class="en">all the time · every day · every so often · once a week · twice a month · three times a year <span class="def">vêm depois do verbo</span></div><div class="pt">o tempo todo · todo dia · de vez em quando · uma vez por semana · duas vezes por mês · três vezes por ano</div></div>
+<div class="i"><div class="en">I never watch TV. · She rarely calls her friends. · Sometimes he rests in the afternoon. · They always smile.</div><div class="pt">Nunca vejo TV. · Ela raramente liga para os amigos. · Às vezes ele descansa à tarde. · Eles sempre sorriem.</div></div>
+<div class="i"><div class="en">We often play together. · You (all) laugh a lot. · They work every day.</div><div class="pt">Brincamos juntos com frequência. · Vocês riem muito. · Eles trabalham todo dia.</div></div>
+</div>
+</section>
+
+<section id="s19">
+<div class="snum">Units 15–16 · modo</div>
+<h2>Como se faz: advérbios de modo e intensidade</h2>
+<p class="sdesc">O adjetivo descreve a pessoa; o advérbio descreve <b>como ela faz</b>. Mais os intensificadores que mudam a força de um adjetivo ou de outro advérbio.</p>
+<div class="items">
+<div class="i"><div class="en">glad → gladly · honest → honestly · nice → nicely · easy → easily · happy → happily · noisy → noisily</div><div class="pt">adjetivo + <b>-ly</b>; e o <b>-y</b> vira <b>-i</b></div></div>
+<div class="i"><div class="en">enthusiastic → enthusiastically · tragic → tragically · comfortable → comfortably · humble → humbly</div><div class="pt">-ic vira <b>-ally</b>; -ble vira <b>-bly</b></div></div>
+<div class="i"><div class="en">early → early · fast → fast · hard → hard · late → late · good → well <span class="def">os que não mudam — e o irregular</span></div><div class="pt">cedo · rápido · duro · tarde · bem</div></div>
+<div class="i"><div class="en">He went into the burning house and saved the child. He acted bravely.</div><div class="pt">Ele entrou na casa em chamas e salvou a criança. Agiu com coragem.</div></div>
+<div class="i"><div class="en">She always came to work and completed her assignments on time. She acted responsibly. · He solved all the math problems right away. He solved them easily.</div><div class="pt">Ela sempre vinha trabalhar e entregava as tarefas no prazo. Agiu com responsabilidade. · Ele resolveu todos os problemas de matemática na hora. Resolveu com facilidade.</div></div>
+<div class="i"><div class="en">Fortunately, nobody was injured in the accident. · That store is great; it always accepts returned items cheerfully.</div><div class="pt">Felizmente, ninguém se feriu no acidente. · Aquela loja é ótima; sempre aceita devoluções com um sorriso.</div></div>
+<div class="i"><div class="en">The customs agent carefully examined all the packages so as not to do any damage. · She gladly accepted the invitation.</div><div class="pt">O agente da alfândega examinou os pacotes com cuidado para não estragar nada. · Ela aceitou o convite com prazer.</div></div>
+<div class="i"><div class="en">He failed the course because his papers were written very badly. · She's an artist; everything she does is done creatively.</div><div class="pt">Ele foi reprovado porque os trabalhos dele eram muito mal escritos. · Ela é artista; tudo o que faz é feito com criatividade.</div></div>
+<div class="i"><div class="en">He's a wonderful teacher who answers all your questions very patiently.</div><div class="pt">Ele é um professor maravilhoso, que responde a todas as perguntas com muita paciência.</div></div>
+<div class="i"><div class="en">He argues more aggressively than the other lawyer. · She writes more creatively than the other students.</div><div class="pt">Ele argumenta de forma mais agressiva que o outro advogado. · Ela escreve com mais criatividade que os outros alunos.</div></div>
+<div class="i"><div class="en">badly → worse than · early → earlier than · fast → faster than · hard → harder than · late → later than · well → better than</div><div class="pt">os advérbios com comparativo próprio</div></div>
+<div class="i"><div class="en">We don't play as skillfully as the other team. · She doesn't play the piano as well as you. · He doesn't run as fast as his brother.</div><div class="pt">Não jogamos com tanta habilidade quanto o outro time. · Ela não toca piano tão bem quanto você. · Ele não corre tão rápido quanto o irmão.</div></div>
+<div class="i"><div class="en">My car hardly runs. · She scarcely visits us. · The machine really helps. <span class="def">hardly, scarcely e really vêm antes do verbo</span></div><div class="pt">Meu carro mal anda. · Ela quase não nos visita. · A máquina ajuda de verdade.</div></div>
+<div class="i"><div class="en">She sings a little. · He plays well enough. · They dance well. <span class="def">a little, well enough e well vêm depois do verbo</span></div><div class="pt">Ela canta um pouco. · Ele joga razoavelmente bem. · Eles dançam bem.</div></div>
+<div class="i"><div class="en">not at all &lt; fairly &lt; pretty &lt; rather / quite &lt; very &lt; extremely &lt; too</div><div class="pt">a escala que dá força a um adjetivo</div></div>
+<div class="i"><div class="en">He is not at all shy. <span class="def">He's the opposite of shy.</span> · He is fairly nice. <span class="def">He's a little bit nice.</span></div><div class="pt">Ele não é nada tímido. · Ele é razoavelmente legal.</div></div>
+<div class="i"><div class="en">She is pretty strict. <span class="def">She's not a dictator but she maintains discipline.</span> · We are rather tired. <span class="def">We need a rest.</span></div><div class="pt">Ela é bem rígida. · Estamos bem cansados.</div></div>
+<div class="i"><div class="en">They are very expensive. <span class="def">They cost more than I would like to pay.</span> · They are too expensive. <span class="def">They cost so much that I will not buy them.</span></div><div class="pt">São muito caros. · São caros demais. (aí eu não compro)</div></div>
+<div class="i"><div class="en">He is much taller than I am. · She is much quieter than she was before. · This movie is much better than the other one. · She's feeling much worse.</div><div class="pt">Ele é bem mais alto que eu. · Ela está bem mais quieta do que era antes. · Este filme é bem melhor que o outro. · Ela está se sentindo bem pior.</div></div>
+<div class="i"><div class="en">She is much more aggressive than her sister. <span class="def">much reforça o comparativo</span></div><div class="pt">Ela é bem mais agressiva que a irmã.</div></div>
+<div class="i"><div class="en">I walk fairly fast. · She reads pretty well. · He works rather slowly. · He drives very carefully. · They work extremely hard. · She speaks too softly. <span class="def">Nobody can hear her.</span></div><div class="pt">Ando bem rápido. · Ela lê bastante bem. · Ele trabalha meio devagar. · Ele dirige com muito cuidado. · Trabalham demais. · Ela fala baixo demais. (ninguém consegue ouvir)</div></div>
+</div>
+</section>
+
+</main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 14 V07 · Livro 05 · PMP English Vocabulary for Beginning ESL Learners (Jean Yates) — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' seções.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'seção':'seções')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

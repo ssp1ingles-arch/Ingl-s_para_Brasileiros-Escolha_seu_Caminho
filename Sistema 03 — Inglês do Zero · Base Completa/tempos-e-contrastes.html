@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema 03 · Tempos verbais e contrastes de uso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#64DFDF;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;line-height:1.45;font-style:italic;}
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="index.html" class="back">&#8592; Voltar ao Sistema 03</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 03 · base · tempos e contrastes</div>
+<h1 class="title">Tempos verbais e <em>contrastes</em> de uso</h1>
+<p class="lead">As três colunas que sustentam o inglês — <b>passado, presente e futuro</b> — na forma mais direta possível: o verbo modelo, a lista dos irregulares mais usados e a diferença entre <i>present simple</i> e <i>present continuous</i>. Fecham o bloco os pares que confundem no dia a dia (<i>rather</i> × <i>quite</i>, <i>want</i> × <i>crave</i>) e o vocabulário exato para descrever a chuva.</p>
+
+<div class="metrics">
+  <div class="metric"><b>5</b><span>blocos</span></div>
+  <div class="metric"><b id="m-total">&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>EN/PT</b><span>com tradução</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: went, quite, chuva, present simple…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">be · have · do</div>
+<h2>Os três verbos-base nas três colunas</h2>
+<p class="sdesc">Antes de qualquer tempo composto, é preciso ter <code>be</code>, <code>have</code> e <code>do</code> automáticos em passado, presente e futuro. Esta é a tabela inteira.</p>
+<div class="items">
+<div class="i"><div class="en">I <i>am</i> · I <i>was</i> · I <i>will be</i></div><div class="pt">eu sou/estou · eu era/estava · eu serei/estarei</div></div>
+<div class="i"><div class="en">You <i>are</i> · you <i>were</i> · you <i>will be</i> · We <i>are</i> · we <i>were</i> · we <i>will be</i> · They <i>are</i> · they <i>were</i> · they <i>will be</i></div><div class="pt">as pessoas que usam <b>are</b> no presente e <b>were</b> no passado</div></div>
+<div class="i"><div class="en">He / she / it <i>is</i> · he / she / it <i>was</i> · he / she / it <i>will be</i></div><div class="pt">a terceira pessoa é a única que muda: <b>is</b> e <b>was</b></div></div>
+<div class="i"><div class="en">I <i>have</i> · I <i>had</i> · I <i>will have</i> · He <i>has</i> · he <i>had</i> · he <i>will have</i></div><div class="pt">eu tenho · eu tinha · eu terei — a terceira pessoa faz <b>has</b></div></div>
+<div class="i"><div class="en">I <i>do</i> · I <i>did</i> · I <i>will do</i> · He <i>does</i> · he <i>did</i> · he <i>will do</i></div><div class="pt">eu faço · eu fiz · eu farei — a terceira pessoa faz <b>does</b></div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">irregulares</div>
+<h2>Presente, passado e futuro dos verbos mais usados</h2>
+<p class="sdesc">A lista que resolve a maior parte das frases do dia a dia. O futuro é sempre <code>will</code> + a forma base — só o passado precisa ser decorado.</p>
+<div class="items">
+<div class="i"><div class="en">I go — I went — I will go · I come — I came — I will come</div><div class="pt">ir · vir</div></div>
+<div class="i"><div class="en">I eat — I ate — I will eat · I drink — I drank — I will drink</div><div class="pt">comer · beber</div></div>
+<div class="i"><div class="en">I take — I took — I will take · I give — I gave — I will give</div><div class="pt">pegar/levar · dar</div></div>
+<div class="i"><div class="en">I see — I saw — I will see · I write — I wrote — I will write</div><div class="pt">ver · escrever</div></div>
+<div class="i"><div class="en">I speak — I spoke — I will speak · I read — I read — I will read <span class="def">(a grafia não muda; a pronúncia sim)</span></div><div class="pt">falar · ler</div></div>
+<div class="i"><div class="en">I run — I ran — I will run · I drive — I drove — I will drive</div><div class="pt">correr · dirigir</div></div>
+<div class="i"><div class="en">I break — I broke — I will break · I choose — I chose — I will choose</div><div class="pt">quebrar · escolher</div></div>
+<div class="i"><div class="en">I begin — I began — I will begin · I fly — I flew — I will fly</div><div class="pt">começar · voar</div></div>
+<div class="i"><div class="en">I forget — I forgot — I will forget · I know — I knew — I will know</div><div class="pt">esquecer · saber/conhecer</div></div>
+<div class="i"><div class="en">I get — I got — I will get · I have — I had — I will have</div><div class="pt">conseguir/receber · ter</div></div>
+<div class="i"><div class="en">I make — I made — I will make · I buy — I bought — I will buy</div><div class="pt">fazer/produzir · comprar</div></div>
+<div class="i"><div class="en">I wear — I wore — I will wear · I sing — I sang — I will sing</div><div class="pt">vestir/usar · cantar</div></div>
+<div class="i"><div class="en">I catch — I caught — I will catch · I feel — I felt — I will feel</div><div class="pt">pegar (no ar) · sentir</div></div>
+<div class="i"><div class="en">I find — I found — I will find · I hold — I held — I will hold</div><div class="pt">achar · segurar</div></div>
+<div class="i"><div class="en">I meet — I met — I will meet · I stand — I stood — I will stand</div><div class="pt">encontrar/conhecer · ficar em pé</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">present simple × continuous</div>
+<h2>O que é sempre × o que é agora</h2>
+<p class="sdesc">A regra mais rentável do nível básico: <b>simple</b> = o de sempre, o geral; <b>continuous</b> = agora, ou temporário.</p>
+<div class="items">
+<div class="i"><div class="en">Present simple — habits, routines and facts: I work every day.</div><div class="pt">Presente simples — hábitos, rotinas e fatos: Eu trabalho todo dia.</div></div>
+<div class="i"><div class="en">Present continuous — happening now or temporary: I am working now.</div><div class="pt">Presente contínuo — agora ou temporário: Estou trabalhando agora.</div></div>
+<div class="i"><div class="en">Easy rule: present simple = usual or general. Present continuous = happening now.</div><div class="pt">Regra fácil: presente simples = o de sempre ou o geral. Presente contínuo = acontecendo agora.</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">pares que confundem</div>
+<h2><i>Rather</i> × <i>quite</i>, <i>want</i> × <i>crave</i></h2>
+<p class="sdesc">Duas palavras podem traduzir igual em português e carregar <b>intenções diferentes</b> em inglês. Estas duas duplas aparecem toda hora.</p>
+<div class="items">
+<div class="i"><div class="en">Quite — neutro e suave: The room is quite small, but it is comfortable.</div><div class="pt"><i>Quite</i> é neutro: O quarto é bem pequeno, mas é confortável.</div></div>
+<div class="i"><div class="en">Rather — um pouco negativo ou surpreso: The room is rather small. I expected more space.</div><div class="pt"><i>Rather</i> puxa para o negativo: O quarto é meio pequeno. Eu esperava mais espaço.</div></div>
+<div class="i"><div class="en">Want — desejo comum, do dia a dia: I want a new phone.</div><div class="pt"><i>Want</i> é o querer normal: Quero um celular novo.</div></div>
+<div class="i"><div class="en">Crave — desejo forte e intenso, quase sempre comida ou vício: He craved chocolate after dinner.</div><div class="pt"><i>Crave</i> é vontade intensa: Ele estava doido por chocolate depois do jantar.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">vocabulário exato</div>
+<h2>Descrever a chuva · e a palavra formal de "emprego"</h2>
+<p class="sdesc">Onde o português usa "chovendo muito", o inglês tem três palavras distintas. E <code>occupation</code> não é sinônimo livre de <i>job</i>: é a palavra de formulário.</p>
+<div class="items">
+<div class="i"><div class="en">Drizzling — raining very lightly, fine drops: It's drizzling outside.</div><div class="pt">Chuviscando, gotas finas: Está chuviscando lá fora.</div></div>
+<div class="i"><div class="en">Pouring — raining heavily: It started pouring suddenly.</div><div class="pt">Chovendo forte: Começou a cair um toró de repente.</div></div>
+<div class="i"><div class="en">Torrential — raining extremely heavily, very intense: We got caught in a torrential rainstorm.</div><div class="pt">Chuva torrencial, muito intensa: Fomos pegos por um temporal torrencial.</div></div>
+<div class="i"><div class="en">Occupation — the formal word for your job, the one you see on forms and official documents. <span class="def">Occupation: Teacher</span></div><div class="pt">Ocupação — a palavra formal para o seu trabalho, a que aparece em formulário e documento oficial.</div></div>
+<div class="i"><div class="en">Please state your occupation on this form. <span class="def">You go to your job, but you write your occupation on a form.</span></div><div class="pt">Informe sua ocupação neste formulário. (Você vai para o seu <i>job</i>, mas escreve sua <i>occupation</i> no formulário.)</div></div>
+</div>
+</section>
+
+</main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens.</div>
+</div>
+
+<footer>Sistema 03 · Inglês do Zero · Base Completa — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+  const units=[];
+  secs.forEach(s=>{s.querySelectorAll('.i').forEach(el=>{units.push({el, sec:s, txt:el.textContent.toLowerCase()});});});
+  document.getElementById('m-total').textContent=units.length;
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0; const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));}});
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

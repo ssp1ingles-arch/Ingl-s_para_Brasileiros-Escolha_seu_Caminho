@@ -1,8 +1,62 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-05 (T4) — ver bloco 0v (Sistema 24 ABANDONADO por fonte inadequada: PDFs e MDs removidos, pasta vazia, fora do sistemas.json). S25 livro02 segue como placeholder no hub.**
-> Anteriores: 0u (Sistema 25 com 2 de 3 painéis), 0t (Sistema 26 completo), 0s (Sistema 08 reformatado), 0r (S20 l03, l04 e l07), 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+> **Atualização mais recente: 2026-08-05 (T5) — ver bloco 0w (REORGANIZAÇÃO GERAL: 25 Sistemas renumerados por nível A1→C2). ATENÇÃO: todos os números de Sistema nos blocos 0v e anteriores usam o esquema ANTIGO — a chave de conversão está no bloco 0w.**
+> Anteriores: 0v (S24 abandonado), 0u (Sistema 25 com 2 de 3 painéis), 0t (Sistema 26 completo), 0s (Sistema 08 reformatado), 0r (S20 l03, l04 e l07), 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+
+## 0w. Atualização 2026-08-05 (T5) — **reorganização geral por nível A1→C2**
+
+Os 25 Sistemas foram renumerados e reordenados por dificuldade pedagógica. **Todos
+os números de Sistema citados nos blocos anteriores deste arquivo (0v e abaixo)
+referem-se ao esquema ANTIGO** — a tabela abaixo é a chave de leitura.
+
+| Antes | Agora | Título novo |
+|---|---|---|
+| 23 | **01** | Crianças · Kids Box |
+| 07 | **02** | Crianças · Desenho Animado |
+| 01 | **03** | Inglês do Zero · Base Completa |
+| 19 | **04** | Gramática Básica |
+| 04 | **05** | Motor de Verbos |
+| 06 | **06** | Situar a Frase *(não mudou)* |
+| 05 | **07** | Conectar Frases |
+| 10 | **08** | Conversação & Frases |
+| 13 | **09** | English for Everyone |
+| 03 | **10** | Reduções e Pronúncia |
+| 12 | **11** | American English File |
+| 15 | **12** | Exercícios e Vocabulário |
+| 11 | **13** | Gramática em Uso |
+| 16 | **14** | In Use Series |
+| 02 | **15** | Dúvidas Pontuais |
+| 09 | **16** | Prática Completa · 4 Pilares |
+| 08 | **17** | Transcrições e Canais |
+| 17 | **18** | Accent Training |
+| 14 | **19** | Business & Avançado |
+| 18 | **20** | B2 First |
+| 25 | **21** | Pronúncia & Conversação |
+| 20 | **22** | Gramática Avançada · Proficiency |
+| 21 | **23** | Gramática Avançada · Oxford |
+| 22 | **24** | Gramática Avançada · Cambridge |
+| 26 | **25** | Vocabulário & Oratória |
+
+**Duas correções feitas durante a execução**, ambas necessárias para o mapa fechar:
+
+1. O mapa recebido dizia que a origem do novo S21 era a pasta
+   `Sistema 25 — Pronúncia & Conversação`. Essa pasta **não existia** — o disco
+   tinha `Sistema 25 — Baseado em Livros V15` (só o *título* no `sistemas.json`
+   havia sido mudado, a pasta nunca). Corrigido antes de renomear; sem isso o
+   rename teria pulado o sistema em silêncio e o S21 não existiria.
+2. A pasta vazia `Sistema 24 — Baseado em Livros V14` (o S24 abandonado, bloco 0v)
+   estava fora do mapa e teria sobrevivido, criando **dois "Sistema 24"** e
+   **dois "Sistema 25"** no estado final. Removida antes do rename.
+
+**Defeito legado encontrado:** os cabeçalhos dos `REGRAS.md` já estavam com
+numeração defasada *antes* desta reorganização — o do Motor de Verbos dizia
+"Sistema 03", o de Situar a Frase dizia "05", o de Dúvidas Pontuais dizia "09".
+Como as referências cruzadas internas seguiam esse esquema velho, remapeá-las por
+número teria produzido lixo; foram corrigidas **por rótulo semântico** ("Verbos por
+sentido → S05", "Reduções da fala → S10", "Preposições → S06").
+
+---
 
 ## 0v. Atualização 2026-08-05 (T4) — **Sistema 24 ABANDONADO** por fonte inadequada
 

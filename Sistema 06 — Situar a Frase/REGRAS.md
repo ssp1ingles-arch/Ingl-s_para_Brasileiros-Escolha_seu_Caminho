@@ -1,4 +1,4 @@
-# REGRAS — Sistema 05 · Situar a Frase
+# REGRAS — Sistema 06 · Situar a Frase
 
 > Leia também o `REGRAS_GERAIS.md` na raiz.
 
@@ -12,9 +12,9 @@
 - Modo autoteste sobre esses pontos.
 
 ## 3. O que NÃO pertence aqui
-- Conectivos e discourse markers → **Sistema 04**.
-- Verbos por sentido → **Sistema 03**.
-- Gramática-base geral → **Sistema 01**.
+- Conectivos e discourse markers → **Sistema 07**.
+- Verbos por sentido → **Sistema 05**.
+- Gramática-base geral → **Sistema 03**.
 
 ## 4. Formato padrão do painel
 Painel dark em módulos (preposições / quantificadores / estruturas fixas) + modo autoteste. Cada estrutura com uso e exemplo. Botão "← Voltar ao início" → `../index.html`.
