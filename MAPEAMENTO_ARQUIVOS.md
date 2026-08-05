@@ -1,8 +1,66 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-05 (T3) — ver bloco 0u (Sistema 25 com 2 de 3 painéis: 24 blocos, 312 itens; sistemas.json vai a 25 entradas). Pendentes de reconversão do OCR: S25 livro02 e os três livros do S24.**
-> Anteriores: 0t (Sistema 26 completo), 0s (Sistema 08 reformatado), 0r (S20 l03, l04 e l07), 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+> **Atualização mais recente: 2026-08-05 (T4) — ver bloco 0v (Sistema 24 ABANDONADO por fonte inadequada: PDFs e MDs removidos, pasta vazia, fora do sistemas.json). S25 livro02 segue como placeholder no hub.**
+> Anteriores: 0u (Sistema 25 com 2 de 3 painéis), 0t (Sistema 26 completo), 0s (Sistema 08 reformatado), 0r (S20 l03, l04 e l07), 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+
+## 0v. Atualização 2026-08-05 (T4) — **Sistema 24 ABANDONADO** por fonte inadequada
+
+O Sistema 24 (Baseado em Livros V14 — pronúncia) foi **abandonado**. Os três PDFs
+e os três `.md` foram removidos; a pasta ficou vazia. O S24 **nunca chegou a entrar
+no `sistemas.json`** e continua fora — a raiz segue com 25 entradas.
+
+### Motivo: não há IPA recuperável em nenhuma das fontes
+
+Diagnóstico feito com PyMuPDF sobre os PDFs originais, contando apenas codepoints
+que não existem no alfabeto latino:
+
+| Fonte | Camada de texto | IPA real no PDF | Natureza | Resolução |
+|---|---|---|---|---|
+| Ship or Sheep | 300.301 chars | **0** | scan com camada OCR corrompida | — |
+| Tree or Three | **0 chars** | **0** | imagem pura (1 JPEG/página) | ~145 DPI |
+| Clear Speech | **0 chars** | **0** | imagem pura (1 JPEG/página) | **~400 DPI** |
+| *(S25)* Pronunciation in Use | **0 chars** | **0** | imagem pura (1 JPEG/página) | ~108 DPI |
+
+**Ship or Sheep** tem camada de texto, mas ela já *é* o OCR corrompido: `rrlektrrk`
+(para `electric`, que deveria ser `/ɪˈlektrɪk/`) aparece tanto no PDF quanto no
+`.md`, e os dois têm 84% de similaridade. Reextrair devolveria o mesmo lixo — a
+destruição do IPA aconteceu antes deste PDF existir. Outros exemplos da mesma
+corrupção: `electricity` → `/l,lekrtrrseti/`, `/æ/ man` → `lllnl man`,
+`/e/ and /æ/` → `lel and la'l`.
+
+**Tree or Three e Clear Speech** não têm texto nenhum — `get_text()` devolve string
+vazia nas 138 e 194 páginas. São digitalizações puras.
+
+> **Correção de um detalhe da decisão:** a justificativa original dizia que Tree or
+> Three *e Clear Speech* estavam abaixo de 300 DPI. Isso vale para o Tree or Three
+> (~145 DPI), mas **Clear Speech está a ~400 DPI** — acima do limiar. O abandono
+> dele se sustenta por outro motivo: zero texto extraível e nenhuma engine de OCR
+> com suporte a IPA disponível no ambiente. Se um dia houver OCR com modelo
+> fonético, **Clear Speech é o único dos três que não precisa ser redigitalizado.**
+
+### Caminho de OCR também bloqueado
+
+`pytesseract` ausente e binário `tesseract` fora do PATH. Além disso, o Tesseract
+padrão não reconhece símbolos IPA — precisa de modelo treinado para fonética. E a
+145/108 DPI o diacrítico de IPA, que é traço pequeno, não sobrevive ao
+reconhecimento.
+
+### S25 livro02 — PDF apagado, MD mantido
+
+`English Pronunciation in Use Intermediate` (Cambridge): o PDF foi removido pelo
+mesmo motivo (imagem pura, ~108 DPI, zero IPA), mas o **`.md` foi mantido** — tem
+312 KB de texto que pode servir para conteúdo não-fonético no futuro. O
+**placeholder no hub do S25 permanece** (`<div class="hub-card soon">`, sem href,
+com o selo "Em breve — aguardando reconversão do OCR").
+
+### O que destravaria
+
+Só uma fonte melhor, não uma conversão melhor: **PDF digital original com texto
+embutido** dessas obras. Com texto real, a extração PyMuPDF entrega o IPA intacto.
+Sem isso, o conteúdo de pronúncia é inutilizável e o S24 não volta.
+
+---
 
 ## 0u. Atualização 2026-08-05 (T3) — Sistema 25 (Pronúncia & Conversação) · **2 de 3 livros**
 
