@@ -1,8 +1,69 @@
 # Mapeamento de Arquivos — o que ainda NÃO foi implementado nos painéis
 
 > Scan de S01–S10 em 2026-07-21. Ordem: do mais valioso ao menos.
-> **Atualização mais recente: 2026-08-04 — ver bloco 0r (S20 l03, l04 e l07 ampliados; os 15 painéis avançados agora acima do mínimo).**
-> Anteriores: 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+> **Atualização mais recente: 2026-08-05 — ver bloco 0s (Sistema 08 · Transcrições e Canais reformatado; 45 episódios, 13 painéis quebrados recuperados). Pendência de fonte aberta: Luke's ep. 959.**
+> Anteriores: 0r (S20 l03, l04 e l07), 0q (S21 l01 e S20 l06), 0p (Sistemas 21 e 22), 0o (Sistema 20), 0n (Sistema 11), 0m (Sistema 14), 0l (Sistema 16), 0k (Sistema 15), 0i (Sistema 13) e 0h (Sistema 12).
+
+## 0s. Atualização 2026-08-05 — Sistema 08 (Transcrições e Canais) · **reformatado, 45 episódios**
+
+> Não confundir com o "Sistema 08" citado nos blocos 0b e 0 abaixo: aqueles são da
+> **numeração antiga** (pasta de PDFs/livros, hoje renumerada). Este bloco é sobre o
+> **Sistema 08 — Transcrições e Canais** atual.
+
+Os 45 episódios dos 16 canais foram reprocessados a partir dos `.docx` de origem e
+passaram a ter três blocos por episódio, com o rótulo do primeiro bloco escolhido
+pela **natureza real da fala** do vídeo:
+
+| Rótulo | Quando | Episódios |
+|---|---|---|
+| 🎙️ Diálogo — troca real entre falantes (`A:`/`B:`) | dois falantes identificáveis | 11 |
+| 🎙️ Diálogo — trechos de conversa (sem rótulo de falante) | coletânea roteirizada sem pontuação na fonte | 5 |
+| 🎙️ Fala contínua | um apresentador só | 12 |
+| 🔁 Treino de repetição | drill / lista | 16 |
+| 💬 Expressões · 📌 Frases que você pode usar amanhã | conforme o episódio | 18 · 43 |
+
+**O que estava errado e foi corrigido:**
+
+- **13 episódios em `<p>` único** (até 271 KB de texto corrido dentro de uma caixa
+  com `max-height:52vh`). Reprocessados da fonte. O achatamento tinha acontecido na
+  geração do HTML, não no `.docx`: as fontes tinham de 1.641 a 4.014 linhas.
+- **Expressões de lista fixa.** As 231 "expressões em contexto" vinham de um
+  *lookup* de 52 chunks aplicado a todos os episódios — `want to` (21×), `you know`
+  (19×), `kind of` (15×) apareciam como expressão idiomática, inclusive em lições de
+  preposição. Agora são **137**, extraídas do texto de cada episódio; quem não tem
+  expressão ensinada ficou **sem o bloco** em vez de receber preenchimento genérico.
+- **Frases prontas por corte cego.** Eram sempre exatamente 40, as primeiras do
+  episódio, com lixo de timestamp (`7 segundos I'm protecting myself.`). Agora são
+  **663** selecionadas.
+- **Timestamps incrustados na fala** (`N segundos`, `3:02:56`) — na fonte são
+  parágrafos separados e tinham sido fundidos ao texto. Removidos na extração.
+- **Comentário pedagógico tratado como diálogo real** (Chad, Kayla), que violava o
+  `REGRAS.md` §5. Passou a 🎙️ Fala contínua.
+- **`REGRAS.md` com numeração defasada em 1** nos dois Sistemas: o do S08 se
+  identificava como "Sistema 07" e o do S07 como "Sistema 06". Corrigidos, junto das
+  referências cruzadas internas.
+- **Cards do index genéricos** — os 16 repetiam a mesma frase. Individualizados
+  conforme a natureza do canal.
+
+### ⚠️ Pendência de fonte — Luke's English Podcast, episódio 959
+
+Os dois `.docx` do canal têm **praticamente o mesmo conteúdo**:
+
+| Arquivo | Texto extraído |
+|---|---|
+| `Luke_s English Podcast _ (x) 872. The Birthday Party (Learn English with a Short Story).docx` | 40.237 chars |
+| `Luke_s English Podcast _ How to Learn English with my podcast 🎧 [959].docx` | 40.178 chars |
+
+O `.docx` do **959** carrega a transcrição do **872** (o conto "The Birthday
+Party"), não o conteúdo do próprio episódio 959. Por isso os dois painéis do canal
+exibem o mesmo texto e quase as mesmas expressões.
+
+**A duplicação está na fonte, não na geração** — nenhum reprocessamento resolve.
+Para corrigir é preciso substituir o `.docx` do 959 pela transcrição correta e
+rodar de novo o build do canal. Enquanto isso, o canal conta como 2 episódios mas
+entrega 1 conteúdo distinto.
+
+---
 
 ## 0r. Atualização 2026-08-04 (T3) — S20 livros 03, 04 e 07 · **os três Sistemas avançados fechados**
 
