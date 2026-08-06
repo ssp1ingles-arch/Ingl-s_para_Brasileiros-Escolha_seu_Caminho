@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nível 3 · B1 — Intermediário — Inglês para Brasileiros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0a; --surface:#141414; --surface2:#1b1b1b;
+  --border:#242424; --text:#e5e5e5; --muted:#8a8a8a; --dim:#5a5a5a;
+  --s01-accent:#64DFDF; --s02-accent:#F59E0B; --s03-accent:#6366F1;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;}
+
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-15%;left:8%;width:45%;height:55%;background:radial-gradient(ellipse,rgba(100,223,223,.05) 0%,transparent 70%);border-radius:50%;}
+.bg-glow::after{content:'';position:absolute;bottom:-10%;right:6%;width:45%;height:55%;background:radial-gradient(ellipse,rgba(99,102,241,.05) 0%,transparent 70%);border-radius:50%;}
+
+.painel-header{position:relative;z-index:1;text-align:center;padding:72px 24px 40px;}
+.marca{font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.02em;color:var(--muted);display:inline-flex;align-items:center;gap:.5rem;margin-bottom:2.5rem;}
+.marca span{color:var(--s01-accent);font-size:1rem;}
+.painel-header h1{font-size:clamp(2.5rem,6vw,5rem);font-family:'Space Grotesk',sans-serif;font-weight:800;line-height:1.05;letter-spacing:-.02em;margin:16px 0;}
+.painel-header em{font-style:normal;background:linear-gradient(120deg,var(--s01-accent),var(--s02-accent),var(--s03-accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.painel-header .sub{font-size:1.05rem;color:var(--muted);max-width:560px;margin:1rem auto 0;line-height:1.6;}
+
+/* voltar (paginas de nivel) */
+.back{position:relative;z-index:2;display:inline-flex;align-items:center;gap:.5rem;margin:28px 0 0 28px;padding:9px 16px;font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;color:var(--muted);text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:9px;transition:color .2s,border-color .2s,transform .2s;}
+.back:hover{color:var(--text);border-color:var(--border-h,#3a3a3a);transform:translateX(-3px);}
+
+.portais-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1080px;margin:0 auto;padding:24px 24px 40px;width:100%;}
+
+.portal-card{--accent:var(--muted);display:flex;flex-direction:column;gap:12px;padding:30px;background:var(--surface);border:1px solid var(--border);border-radius:16px;text-decoration:none;color:var(--text);position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;}
+.portal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:.7;}
+.portal-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.45);}
+.portal-top{display:flex;align-items:center;justify-content:space-between;}
+.portal-num{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+.portal-icon{font-size:2rem;line-height:1;}
+.portal-title{font-size:1.4rem;font-family:'Space Grotesk',sans-serif;font-weight:800;margin:6px 0 0;line-height:1.15;}
+.portal-desc{font-size:.9rem;color:var(--muted);line-height:1.55;flex:1;}
+.portal-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+.portal-meta span{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:4px 10px;border-radius:6px;}
+.portal-cta{font-family:'Space Grotesk',sans-serif;font-size:.86rem;font-weight:700;color:var(--accent);margin-top:8px;display:flex;align-items:center;gap:.35rem;transition:gap .2s;}
+.portal-card:hover .portal-cta{gap:.65rem;}
+
+/* camada 1: cards de nivel, um pouco maiores */
+.niveis-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));max-width:1080px;}
+.niveis-grid .portal-card{padding:34px 30px;}
+.niveis-grid .portal-title{font-size:1.5rem;}
+
+.painel-footer{position:relative;z-index:1;margin-top:auto;text-align:center;padding:28px 24px 40px;}
+.painel-footer p{font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:600;color:var(--dim);letter-spacing:.04em;}
+
+@media(max-width:560px){
+  .painel-header{padding:40px 20px 24px;}
+  .portal-card{padding:24px;}
+  .back{margin:20px 0 0 20px;}
+}
+@media (max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  img{max-width:100%;height:auto;}
+}
+</style></head>
+<body>
+
+<div class="bg-glow"></div>
+
+<a href="index.html" class="back">← Voltar aos níveis</a>
+
+<header class="painel-header">
+  <div class="marca"><span>📘</span> Inglês para Brasileiros</div>
+  <h1><em>Nível 3 · B1 — Intermediário</em></h1>
+  <p class="sub">7 sistemas · Gramática, vocabulário, pronúncia</p>
+</header>
+
+<main class="portais-grid">
+      <a href="Sistema%2010%20%E2%80%94%20Redu%C3%A7%C3%B5es%20e%20Pron%C3%BAncia/index.html" class="portal-card" style="--accent:#F59E0B">
+        <div class="portal-top">
+          <div class="portal-num">10</div>
+          <div class="portal-icon">🎙️</div>
+        </div>
+        <h2 class="portal-title">Reduções e Pronúncia</h2>
+        <p class="portal-desc">O inglês que nativos falam — não o que ensinam. Wanna, gonna, gotta e as reduções do dia a dia, com músicas, filmes e treino de ouvido. Mais o livro Rachel&#x27;s English em 2 painéis: fala ligada (208 itens) e o sistema de sons — vogais, ditongos, consoantes, encontros e tônica (183 itens), tudo com fonética. E o painel Livro x Rua: 118 itens com a frase do livro ao lado da que o nativo realmente fala, respostas curtas automáticas e as siglas da internet.</p>
+        <div class="portal-meta"><span>3 módulos + 2 livros + 1 painel</span><span>B1–B2</span><span>Reduções + IPA</span></div>
+        <div class="portal-cta">Entrar →</div>
+      </a>
+      <a href="Sistema%2011%20%E2%80%94%20American%20English%20File/index.html" class="portal-card" style="--accent:#22D3EE">
+        <div class="portal-top">
+          <div class="portal-num">11</div>
+          <div class="portal-icon">🇺🇸</div>
+        </div>
+        <h2 class="portal-title">American English File</h2>
+        <p class="portal-desc">O curso American English File (Oxford), 3ª edição, do nível 1 ao 4 — a coleção completa e nada além dela, do iniciante (A1–A2) ao intermediário-avançado (B2). Quatro livros, quatro painéis: diálogos do dia a dia, frases e vocabulário reais em uso, nível a nível. Os dois Close-up Workbooks (C1 e C2), que não pertencem a esta série, foram para o Sistema 23.</p>
+        <div class="portal-meta"><span>4 livros</span><span>4 disponíveis</span><span>Curso completo</span></div>
+        <div class="portal-cta">Entrar →</div>
+      </a>
+      <a href="Sistema%2012%20%E2%80%94%20Exerc%C3%ADcios%20e%20Vocabul%C3%A1rio/index.html" class="portal-card" style="--accent:#FBBF24">
+        <div class="portal-top">
+          <div class="portal-num">12</div>
+          <div class="portal-icon">✍️</div>
+        </div>
+        <h2 class="portal-title">Exercícios e Vocabulário</h2>
+        <p class="portal-desc">Prática de gramática e vocabulário: Grammar in Use Supplementary, Basic Grammar in Use, Collocations in Use, Phrasal Verbs in Use e Practice Makes Perfect English Conversation. Supplementary já disponível: 16 estruturas, 123 frases com tradução.</p>
+        <div class="portal-meta"><span>6 livros</span><span>6 disponíveis</span><span>Gramática + Vocab</span></div>
+        <div class="portal-cta">Entrar →</div>
+      </a>
+      <a href="Sistema%2013%20%E2%80%94%20Gram%C3%A1tica%20em%20Uso/index.html" class="portal-card" style="--accent:#4A9EFF">
+        <div class="portal-top">
+          <div class="portal-num">13</div>
+          <div class="portal-icon">📐</div>
+        </div>
+        <h2 class="portal-title">Gramática em Uso</h2>
+        <p class="portal-desc">Cinco livros de gramática e pronúncia em painéis de exemplos reais: English Grammar in Use (Murphy), Grammar Practice for Intermediate Students, o Oxford Guide to English Grammar, o Essential Grammar in Use e o English Pronunciation Made Simple. Do A1 ao B2 — da gramática essencial à referência britânica de Eastwood, passando pela pronúncia americana por pares mínimos. O Reactivate C1/C2 foi para o Sistema 22.</p>
+        <div class="portal-meta"><span>5 livros</span><span>5 disponíveis</span><span>Intermediário+</span></div>
+        <div class="portal-cta">Entrar →</div>
+      </a>
+      <a href="Sistema%2014%20%E2%80%94%20In%20Use%20Series/index.html" class="portal-card" style="--accent:#A3E635">
+        <div class="portal-top">
+          <div class="portal-num">14</div>
+          <div class="portal-icon">🔤</div>
+        </div>
+        <h2 class="portal-title">In Use Series</h2>
+        <p class="portal-desc">A série &#x27;in Use&#x27; da Cambridge (vocabulário, pronúncia e gramática) ao lado da série Practice Makes Perfect (McGraw-Hill). Vocabulary in Use Elementary já disponível: 58 unidades, 431 itens em contexto com tradução.</p>
+        <div class="portal-meta"><span>6 livros</span><span>6 disponíveis</span><span>Vocab + Pronúncia</span></div>
+        <div class="portal-cta">Entrar →</div>
+      </a>
+      <a href="Sistema%2015%20%E2%80%94%20D%C3%BAvidas%20Pontuais/index.html" class="portal-card" style="--accent:#F97316">
+        <div class="portal-top">
+          <div class="portal-num">15</div>
+          <div class="portal-icon">🎯</div>
+        </div>
+        <h2 class="portal-title">Dúvidas Pontuais</h2>
+        <p class="portal-desc">Gramática sob medida — os pontos específicos que você quis dominar. DID, WENT e mais, cada um num card de referência rápida. Mais o painel Falar Melhor: 168 itens com a mesma ideia dita em básico, avançado, profissional e natural, e o inglês pronto de hotel, restaurante, perguntas do dia a dia e apresentação em entrevista.</p>
+        <div class="portal-meta"><span>DID, WENT + Falar Melhor</span><span>A1</span><span>Referência</span></div>
+        <div class="portal-cta">Entrar →</div>
+      </a>
+      <a href="Sistema%2021%20%E2%80%94%20Pron%C3%BAncia%20%26%20Conversa%C3%A7%C3%A3o/index.html" class="portal-card" style="--accent:#8B5CF6">
+        <div class="portal-top">
+          <div class="portal-num">21</div>
+          <div class="portal-icon">🗣️</div>
+        </div>
+        <h2 class="portal-title">Pronúncia &amp; Conversação</h2>
+        <p class="portal-desc">A frase pronta para a situação inteira. Speak English: 30 Days to Better English organiza a conversação em trinta dias temáticos — apresentar-se, pedir ajuda na rua, comer fora, telefonar. Everyday Dialogues traz trinta diálogos completos do cotidiano, do cumprimento formal ao pronto-socorro. E o Pronouncing American English trabalha pares mínimos em frase inteira. Três painéis prontos de quatro livros: o English Pronunciation in Use Intermediate depende de transcrição fonética e aguarda reconversão do OCR.</p>
+        <div class="portal-meta"><span>pronúncia</span><span>conversação</span><span>diálogo real</span></div>
+        <div class="portal-cta">Entrar →</div>
+      </a>
+</main>
+
+<footer class="painel-footer">
+  <p>Plataforma completa · Do zero à fluência · Sem mensalidade</p>
+</footer>
+
+</body>
+</html>
