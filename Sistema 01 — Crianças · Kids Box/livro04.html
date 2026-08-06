@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livro 04 · Junior Beginner's Course — Sistema 01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 22px;}
+.back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
+.back:hover{color:var(--accent);border-color:var(--accent);}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
+h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
+h1.title em{font-style:normal;color:var(--accent);}
+.lead{color:var(--muted);max-width:760px;line-height:1.6;}
+.lead a{color:var(--accent);}
+.metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
+.metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
+.metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
+
+/* BUSCA */
+.searchbar{position:sticky;top:0;z-index:900;margin:26px 0 6px;padding:12px 0;background:linear-gradient(to bottom,var(--bg) 72%,transparent);}
+.searchbox{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 15px;transition:border-color .2s;}
+.searchbox:focus-within{border-color:var(--accent);}
+.searchbox svg{flex:none;width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;}
+.searchbox input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Inter',sans-serif;font-size:.97rem;min-width:0;}
+.searchbox input::placeholder{color:var(--dim);}
+.searchbox button{flex:none;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:7px;padding:4px 10px;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;cursor:pointer;display:none;}
+.searchbox button:hover{color:var(--accent);border-color:var(--accent);}
+.searchbox.has-q button{display:block;}
+.searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
+.searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:6px;}
+.toc h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.toc a{display:block;color:var(--muted);text-decoration:none;font-size:.85rem;padding:5px 0 5px 11px;border-left:2px solid var(--border);line-height:1.35;transition:color .15s,border-color .15s;}
+.toc a:hover,.toc a.on{color:var(--accent);border-left-color:var(--accent);}
+.toc::-webkit-scrollbar{width:5px;}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* SECOES */
+section{margin:0 0 46px;scroll-margin-top:86px;}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;}
+section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
+.sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
+.sdesc b{color:var(--text);font-weight:600;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
+
+.items{display:flex;flex-direction:column;gap:9px;}
+.i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
+.i:hover{border-left-color:var(--accent);}
+.en{font-size:1rem;font-weight:500;line-height:1.5;}
+.en i{color:var(--accent);font-style:normal;font-weight:600;}
+.pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
+.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
+.tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
+.empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
+footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.74rem;padding:44px 20px 40px;letter-spacing:.04em;}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:20px;}
+  .toc{position:static;max-height:none;border-bottom:1px solid var(--border);padding-bottom:14px;}
+  .toc-list{display:flex;flex-wrap:wrap;gap:5px;}
+  .toc a{border-left:none;border:1px solid var(--border);border-radius:7px;padding:5px 10px;font-size:.79rem;}
+  .toc a.on{border-color:var(--accent);}
+}
+@media(max-width:600px){
+  html,body{overflow-x:hidden;max-width:100vw;}
+  body{font-size:16px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<a href="./index.html" class="back">&#8592; Voltar ao Sistema 01</a>
+<div class="wrap">
+
+<div class="eyebrow">Sistema 01 · Livro 04 · A1 (do zero)</div>
+<h1 class="title">English for Everyone Junior — <em>Beginner's Course</em></h1>
+<p class="lead">DK · série <i>English for Everyone Junior</i>. É um curso feito para criança — e por isso mesmo é o material mais honesto para o adulto que está começando do zero: <b>frases curtas, uma estrutura por vez e repetição deliberada</b>. Daqui saiu o inglês real das 22 unidades: as frases-modelo de cada bloco <i>Listen and read</i>, as <b>12 canções</b> do curso (que repetem a estrutura da unidade quatro ou cinco vezes seguidas), o <b>Grammar guide</b> inteiro — as cinco tabelas de conjugação, as nove palavras interrogativas com pergunta e resposta, plurais irregulares, pronomes e preposições — mais os verbos comuns com frase e as expressões úteis. Ficaram de fora as ilustrações, os exercícios de marcar figura, o guia de caligrafia e o gabarito.</p>
+
+<div class="metrics">
+  <div class="metric"><b>18</b><span>blocos</span></div>
+  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>12</b><span>canções</span></div>
+  <div class="metric"><b>A1</b><span>nível</span></div>
+</div>
+
+<div class="searchbar">
+  <div class="searchbox" id="sbox">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: who's this, there's, fazenda, cores…" autocomplete="off" spellcheck="false">
+    <button type="button" id="clr">limpar</button>
+  </div>
+  <div class="searchinfo" id="info"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc"><h3>Unidades</h3><div class="toc-list" id="toclist"></div></nav>
+  <main class="article" id="art">
+
+<section id="s01">
+<div class="snum">Unidades 1 – 3</div>
+<h2>Dizer olá e perguntar o nome</h2>
+<p class="sdesc">As primeiras frases do curso. São curtas de propósito — e é exatamente por isso que servem para o adulto que está começando do zero.</p>
+<div class="items">
+<div class="i"><div class="en">Hello. / Hi!</div><div class="pt">Olá. / Oi!</div></div>
+<div class="i"><div class="en">Good morning.</div><div class="pt">Bom dia.</div></div>
+<div class="i"><div class="en">What's your name?</div><div class="pt">Qual é o seu nome?</div></div>
+<div class="i"><div class="en">My name's Ben.</div><div class="pt">Meu nome é Ben.</div></div>
+<div class="i"><div class="en">What's his name? — His name's Hugo.</div><div class="pt">Qual é o nome dele? — O nome dele é Hugo.</div></div>
+<div class="i"><div class="en">What's her name?</div><div class="pt">Qual é o nome dela?</div></div>
+<div class="i"><div class="en">How are you?</div><div class="pt">Como você está?</div></div>
+<div class="i"><div class="en">Let's play a game.</div><div class="pt">Vamos jogar um jogo.</div></div>
+<div class="i"><div class="en">Let's count! / Let's read! / Let's draw! / Let's write!</div><div class="pt">Vamos contar! / Vamos ler! / Vamos desenhar! / Vamos escrever!</div></div>
+<div class="i"><div class="en">Goodbye. / Bye! / See you!</div><div class="pt">Tchau. / Falou! / Até mais!</div></div>
+</div>
+</section>
+
+<section id="s02">
+<div class="snum">Unidades 4 – 5</div>
+<h2>Coisas e animais — <i>What's that? What are these?</i></h2>
+<p class="sdesc">A pergunta que resolve qualquer situação em que falta a palavra. Repare na diferença entre <code>this</code> (perto) e <code>that</code> (longe).</p>
+<div class="items">
+<div class="i"><div class="en">What are these? — They're pencils.</div><div class="pt">O que são estes? — São lápis.</div></div>
+<div class="i"><div class="en">What are these? — They're crayons. / rulers. / erasers. / notepads.</div><div class="pt">O que são estes? — São giz de cera. / réguas. / borrachas. / blocos de anotação.</div></div>
+<div class="i"><div class="en">Red, yellow, green, and blue! Black, white, and orange, too!</div><div class="pt">Vermelho, amarelo, verde e azul! Preto, branco e laranja também!</div></div>
+<div class="i"><div class="en">What's that? — It's a lion!</div><div class="pt">O que é aquilo? — É um leão!</div></div>
+<div class="i"><div class="en">What's that? — It's a lizard. / It's a frog.</div><div class="pt">O que é aquilo? — É um lagarto. / É um sapo.</div></div>
+<div class="i"><div class="en">Animals, animals everywhere!</div><div class="pt">Animais, animais por toda parte!</div></div>
+<div class="i"><div class="en">A lion, a giraffe, and a polar bear.</div><div class="pt">Um leão, uma girafa e um urso polar.</div></div>
+<div class="i"><div class="en">A whale and a penguin, a tiger and a snake.</div><div class="pt">Uma baleia e um pinguim, um tigre e uma cobra.</div></div>
+<div class="i"><div class="en">This dog / These dogs — That dog / Those dogs</div><div class="pt">Este cachorro / Estes cachorros — Aquele cachorro / Aqueles cachorros</div></div>
+<div class="i"><div class="en">Which animal is big? — The dog is big.</div><div class="pt">Qual animal é grande? — O cachorro é grande.</div></div>
+</div>
+</section>
+
+<section id="s03">
+<div class="snum">Unidade 6</div>
+<h2>A família — <i>Who's this?</i></h2>
+<p class="sdesc">Apresentar parentes e perguntar quem é quem. Aqui entram <code>He's</code> e <code>She's</code>, e a pergunta com <code>Is he…?</code> / <code>Is she…?</code>.</p>
+<div class="items">
+<div class="i"><div class="en">Who's this? — He's my brother.</div><div class="pt">Quem é este? — É o meu irmão.</div></div>
+<div class="i"><div class="en">Who's that? — She's my aunt.</div><div class="pt">Quem é aquela? — É a minha tia.</div></div>
+<div class="i"><div class="en">She's my mother. / He's my grandfather. / She's my sister.</div><div class="pt">É a minha mãe. / É o meu avô. / É a minha irmã.</div></div>
+<div class="i"><div class="en">Is she your sister? — Yes, she is!</div><div class="pt">Ela é sua irmã? — É sim!</div></div>
+<div class="i"><div class="en">Is he your dad? — No, he isn't. He's my uncle.</div><div class="pt">Ele é seu pai? — Não é não. É meu tio.</div></div>
+<div class="i"><div class="en">Is she your mom? — Yes, she is.</div><div class="pt">Ela é sua mãe? — É sim.</div></div>
+<div class="i"><div class="en">Is she your cousin? — No, she isn't.</div><div class="pt">Ela é sua prima? — Não é não.</div></div>
+<div class="i"><div class="en">My dad is a teacher, my mom is a vet.</div><div class="pt">Meu pai é professor, minha mãe é veterinária.</div></div>
+<div class="i"><div class="en">Grandpa's a doctor, and Grandma's a chef!</div><div class="pt">O vovô é médico e a vovó é chef!</div></div>
+</div>
+</section>
+
+<section id="s04">
+<div class="snum">Unidades 7 – 8</div>
+<h2>Meu quarto, meus brinquedos e eu</h2>
+<p class="sdesc">A unidade de revisão do curso é um autorretrato inteiro em sete frases — o molde perfeito para a primeira apresentação de qualquer iniciante.</p>
+<div class="items">
+<div class="i"><div class="en">This is my room.</div><div class="pt">Este é o meu quarto.</div></div>
+<div class="i"><div class="en">These are my toys.</div><div class="pt">Estes são os meus brinquedos.</div></div>
+<div class="i"><div class="en">This is my toy box and these are my toys.</div><div class="pt">Esta é a minha caixa de brinquedos e estes são os meus brinquedos.</div></div>
+<div class="i"><div class="en">I have a ball and a skateboard, too.</div><div class="pt">Eu tenho uma bola e um skate também.</div></div>
+<div class="i"><div class="en">Toys are fantastic! Toys are cool!</div><div class="pt">Brinquedo é fantástico! Brinquedo é legal!</div></div>
+<div class="i"><div class="en">My name's Ben. I'm eight years old.</div><div class="pt">Meu nome é Ben. Eu tenho oito anos.</div></div>
+<div class="i"><div class="en">My favorite animal is a penguin.</div><div class="pt">Meu animal favorito é o pinguim.</div></div>
+<div class="i"><div class="en">My favorite color is green.</div><div class="pt">Minha cor favorita é verde.</div></div>
+<div class="i"><div class="en">I have a tennis racket. I don't have a baseball bat.</div><div class="pt">Eu tenho uma raquete de tênis. Eu não tenho um taco de beisebol.</div></div>
+<div class="i"><div class="en">This is my family.</div><div class="pt">Esta é a minha família.</div></div>
+</div>
+</section>
+
+<section id="s05">
+<div class="snum">Unidade 9</div>
+<h2>Como você está se sentindo</h2>
+<p class="sdesc">Adjetivos de estado com <code>We're</code> e <code>They're</code> — e a resposta curta que confirma ou nega.</p>
+<div class="items">
+<div class="i"><div class="en">Are you happy? — Yes, we are!</div><div class="pt">Vocês estão felizes? — Estamos sim!</div></div>
+<div class="i"><div class="en">Are you tired? — No, we aren't.</div><div class="pt">Vocês estão cansados? — Não estamos.</div></div>
+<div class="i"><div class="en">We are at the fair.</div><div class="pt">A gente está no parque de diversões.</div></div>
+<div class="i"><div class="en">We aren't tired or scared!</div><div class="pt">A gente não está cansado nem com medo!</div></div>
+<div class="i"><div class="en">We're happy!</div><div class="pt">A gente está feliz!</div></div>
+<div class="i"><div class="en">They're very scared.</div><div class="pt">Eles estão com muito medo.</div></div>
+</div>
+</section>
+
+<section id="s06">
+<div class="snum">Unidade 10</div>
+<h2>Ter um bicho de estimação — <i>have</i> e <i>has</i></h2>
+<p class="sdesc">A hora em que aparece o <code>has</code> da terceira pessoa. A canção da unidade repete a estrutura quatro vezes seguidas — é o jeito mais fácil de fixar.</p>
+<div class="items">
+<div class="i"><div class="en">I have a cat, she's black and small.</div><div class="pt">Eu tenho uma gata, ela é preta e pequena.</div></div>
+<div class="i"><div class="en">She likes to run and play with a ball.</div><div class="pt">Ela gosta de correr e brincar com uma bola.</div></div>
+<div class="i"><div class="en">Maria has a tortoise, his name is Socks.</div><div class="pt">A Maria tem um jabuti, o nome dele é Socks.</div></div>
+<div class="i"><div class="en">He's old and green and he's in this box.</div><div class="pt">Ele é velho e verde e está nesta caixa.</div></div>
+<div class="i"><div class="en">Ben has a cat.</div><div class="pt">O Ben tem um gato.</div></div>
+<div class="i"><div class="en">Look! Ben has a cat!</div><div class="pt">Olha! O Ben tem um gato!</div></div>
+<div class="i"><div class="en">Sara has a fish!</div><div class="pt">A Sara tem um peixe!</div></div>
+</div>
+</section>
+
+<section id="s07">
+<div class="snum">Unidade 11</div>
+<h2>O corpo e os comandos</h2>
+<p class="sdesc">Imperativos em sequência — a estrutura mais simples do inglês e a mais útil para dar instrução.</p>
+<div class="items">
+<div class="i"><div class="en">Clap your hands, touch your nose.</div><div class="pt">Bata palmas, toque o nariz.</div></div>
+<div class="i"><div class="en">Move your feet, point your toes!</div><div class="pt">Mexa os pés, aponte os dedos do pé!</div></div>
+<div class="i"><div class="en">Point one finger, move your head.</div><div class="pt">Aponte um dedo, mexa a cabeça.</div></div>
+<div class="i"><div class="en">Wave your arms, touch one leg!</div><div class="pt">Balance os braços, toque uma perna!</div></div>
+<div class="i"><div class="en">Stand up.</div><div class="pt">Fique de pé.</div></div>
+</div>
+</section>
+
+<section id="s08">
+<div class="snum">Unidades 12 – 13</div>
+<h2>Minha cidade e minha casa — <i>there is / there are</i></h2>
+<p class="sdesc">A estrutura para dizer o que existe num lugar, na afirmativa, na pergunta e na negativa.</p>
+<div class="items">
+<div class="i"><div class="en">This is my town, there's a park and a zoo.</div><div class="pt">Esta é a minha cidade, tem um parque e um zoológico.</div></div>
+<div class="i"><div class="en">There's an airport, a lake, and a fire station, too.</div><div class="pt">Tem um aeroporto, um lago e um quartel de bombeiros também.</div></div>
+<div class="i"><div class="en">This is my town, there are cars and a school.</div><div class="pt">Esta é a minha cidade, tem carros e uma escola.</div></div>
+<div class="i"><div class="en">This is my town, I love it, it's cool.</div><div class="pt">Esta é a minha cidade, eu amo, ela é legal.</div></div>
+<div class="i"><div class="en">In our town there's a park.</div><div class="pt">Na nossa cidade tem um parque.</div></div>
+<div class="i"><div class="en">There are two bookstores.</div><div class="pt">Tem duas livrarias.</div></div>
+<div class="i"><div class="en">Is there a TV in the living room? — Yes, there is.</div><div class="pt">Tem uma TV na sala? — Tem sim.</div></div>
+<div class="i"><div class="en">Is there a bookcase? — No, there isn't.</div><div class="pt">Tem uma estante? — Não tem.</div></div>
+<div class="i"><div class="en">The TV's in the living room, the mat is in the hall.</div><div class="pt">A TV está na sala, o tapete está no corredor.</div></div>
+<div class="i"><div class="en">Where's the clock? — It's on my bedroom wall.</div><div class="pt">Onde está o relógio? — Está na parede do meu quarto.</div></div>
+</div>
+</section>
+
+<section id="s09">
+<div class="snum">Unidade 15</div>
+<h2>Na fazenda — <i>Where are…?</i></h2>
+<p class="sdesc">Perguntar onde as coisas estão, no plural — e responder com preposição de lugar.</p>
+<div class="items">
+<div class="i"><div class="en">Where are the ducks? — They're in the pond!</div><div class="pt">Onde estão os patos? — Estão no lago!</div></div>
+<div class="i"><div class="en">Where are the goats? — They're in the field!</div><div class="pt">Onde estão as cabras? — Estão no pasto!</div></div>
+<div class="i"><div class="en">Where are the cows? — They're in the barn!</div><div class="pt">Onde estão as vacas? — Estão no celeiro!</div></div>
+<div class="i"><div class="en">Where are the animals? — They're on my farm!</div><div class="pt">Onde estão os animais? — Estão na minha fazenda!</div></div>
+<div class="i"><div class="en">Look! The cows are in the field.</div><div class="pt">Olha! As vacas estão no pasto.</div></div>
+<div class="i"><div class="en">The goat's next to the tree.</div><div class="pt">A cabra está ao lado da árvore.</div></div>
+<div class="i"><div class="en">How many ducks are there? — There are five.</div><div class="pt">Quantos patos tem? — Tem cinco.</div></div>
+</div>
+</section>
+
+<section id="s10">
+<div class="snum">Unidades 17 – 18</div>
+<h2>Gostar e não gostar — <i>like / don't like</i></h2>
+<p class="sdesc">O ponto em que aparece o contraste com <code>but</code> e a terceira pessoa <code>doesn't like</code>. É a base de qualquer conversa sobre preferência.</p>
+<div class="items">
+<div class="i"><div class="en">Apples and oranges, pears and mangoes, too.</div><div class="pt">Maçãs e laranjas, peras e mangas também.</div></div>
+<div class="i"><div class="en">Here are nice potatoes, and meat and fish for you.</div><div class="pt">Aqui tem batatas boas, e carne e peixe para você.</div></div>
+<div class="i"><div class="en">I like oranges and pears.</div><div class="pt">Eu gosto de laranja e pera.</div></div>
+<div class="i"><div class="en">I don't like bananas or watermelons.</div><div class="pt">Eu não gosto de banana nem de melancia.</div></div>
+<div class="i"><div class="en">I like oranges and bananas.</div><div class="pt">Eu gosto de laranja e banana.</div></div>
+<div class="i"><div class="en">I like oranges but I don't like bananas.</div><div class="pt">Eu gosto de laranja mas não gosto de banana.</div></div>
+<div class="i"><div class="en">I don't like oranges or bananas.</div><div class="pt">Eu não gosto de laranja nem de banana.</div></div>
+<div class="i"><div class="en">Maria likes dolls, but she doesn't like puppets.</div><div class="pt">A Maria gosta de boneca, mas não gosta de fantoche.</div></div>
+<div class="i"><div class="en">Andy likes cars, but he doesn't like rockets.</div><div class="pt">O Andy gosta de carrinho, mas não gosta de foguete.</div></div>
+<div class="i"><div class="en">I like trains and video games, and my favorite toy is my monster!</div><div class="pt">Eu gosto de trem e videogame, e meu brinquedo favorito é o meu monstro!</div></div>
+<div class="i"><div class="en">I like monsters. — Me too! / I don't.</div><div class="pt">Eu gosto de monstro. — Eu também! / Eu não.</div></div>
+</div>
+</section>
+
+<section id="s11">
+<div class="snum">Unidade 19</div>
+<h2>Hobbies — <i>Do you like + verbo -ing?</i></h2>
+<p class="sdesc">A estrutura de perguntar do que a pessoa gosta de fazer. Repare que depois de <code>like</code> e <code>love</code> vem sempre o verbo com <code>-ing</code>.</p>
+<div class="items">
+<div class="i"><div class="en">Do you have hobbies? — Yes, I do.</div><div class="pt">Você tem hobbies? — Tenho sim.</div></div>
+<div class="i"><div class="en">I love reading books and skateboarding, too.</div><div class="pt">Eu adoro ler livros e andar de skate também.</div></div>
+<div class="i"><div class="en">Do you like playing tennis? — Yes, I do.</div><div class="pt">Você gosta de jogar tênis? — Gosto sim.</div></div>
+<div class="i"><div class="en">I love playing tennis and playing soccer, too.</div><div class="pt">Eu adoro jogar tênis e jogar futebol também.</div></div>
+<div class="i"><div class="en">Do you like singing? — Yes, I do. / No, I don't.</div><div class="pt">Você gosta de cantar? — Gosto. / Não gosto.</div></div>
+<div class="i"><div class="en">Do you like playing the guitar?</div><div class="pt">Você gosta de tocar violão?</div></div>
+<div class="i"><div class="en">Do you like dancing?</div><div class="pt">Você gosta de dançar?</div></div>
+<div class="i"><div class="en">Do you enjoy singing? — Yes, I do. I love singing songs.</div><div class="pt">Você curte cantar? — Curto sim. Eu adoro cantar músicas.</div></div>
+</div>
+</section>
+
+<section id="s12">
+<div class="snum">Unidade 21</div>
+<h2>Roupa e festa — present continuous</h2>
+<p class="sdesc">O que está acontecendo agora, com o verbo <code>wear</code> — a estrutura mais visual para apresentar o <code>-ing</code>.</p>
+<div class="items">
+<div class="i"><div class="en">We're at a party, so let's all dance and play.</div><div class="pt">A gente está numa festa, então vamos todos dançar e brincar.</div></div>
+<div class="i"><div class="en">What a fun party for Ben's birthday!</div><div class="pt">Que festa divertida para o aniversário do Ben!</div></div>
+<div class="i"><div class="en">Andy's wearing his favorite t-shirt.</div><div class="pt">O Andy está usando a camiseta favorita dele.</div></div>
+<div class="i"><div class="en">Sara has a beautiful skirt.</div><div class="pt">A Sara está com uma saia linda.</div></div>
+<div class="i"><div class="en">It's my party! I'm wearing a hat.</div><div class="pt">É a minha festa! Eu estou de chapéu.</div></div>
+<div class="i"><div class="en">I'm wearing shorts.</div><div class="pt">Eu estou de bermuda.</div></div>
+</div>
+</section>
+
+<section id="s13">
+<div class="snum">Grammar guide · G14</div>
+<h2>Expressões úteis do dia a dia</h2>
+<p class="sdesc">O bloco final do livro reúne o que serve para cumprimentar, se despedir, ser educado, pedir informação e demonstrar alegria.</p>
+<div class="items">
+<div class="i"><div class="en">Do you know Ben? — No, I don't.</div><div class="pt">Você conhece o Ben? — Não conheço.</div></div>
+<div class="i"><div class="en">Hello, Ben.</div><div class="pt">Olá, Ben.</div></div>
+<div class="i"><div class="en">What time does the class start? — Nine o'clock.</div><div class="pt">A que horas começa a aula? — Nove horas.</div></div>
+<div class="i"><div class="en">What's for lunch, Dad?</div><div class="pt">O que tem para o almoço, pai?</div></div>
+<div class="i"><div class="en">Oh dear! I'm sorry. — Don't worry.</div><div class="pt">Ai, meu Deus! Me desculpe. — Não esquenta.</div></div>
+<div class="i"><div class="en">Pardon? Can you say that again?</div><div class="pt">Como? Pode repetir?</div></div>
+<div class="i"><div class="en">Do you want to go to the beach? — Yes, please! Hooray!</div><div class="pt">Você quer ir à praia? — Quero sim! Oba!</div></div>
+<div class="i"><div class="en">Cool! I love the beach.</div><div class="pt">Legal! Eu adoro praia.</div></div>
+<div class="i"><div class="en">Excuse me. Is the store open? — No, it's closed.</div><div class="pt">Com licença. A loja está aberta? — Não, está fechada.</div></div>
+<div class="i"><div class="en">Fantastic!</div><div class="pt">Fantástico!</div></div>
+</div>
+</section>
+
+<section id="s14">
+<div class="snum">Grammar guide · G12</div>
+<h2>Verbos comuns com frase de exemplo</h2>
+<p class="sdesc">O livro escolhe nove verbos básicos e dá para cada um uma frase inteira — não uma tradução solta.</p>
+<div class="items">
+<div class="i"><div class="en">Please <i>give</i> me that book.</div><div class="pt">Por favor, me dá aquele livro.</div></div>
+<div class="i"><div class="en">My baby brother can't <i>hold</i> a pen.</div><div class="pt">Meu irmãozinho não consegue segurar uma caneta.</div></div>
+<div class="i"><div class="en">I <i>put</i> my toys in my toy box.</div><div class="pt">Eu coloco meus brinquedos na caixa de brinquedos.</div></div>
+<div class="i"><div class="en">I can <i>see</i> an airplane in the sky!</div><div class="pt">Eu consigo ver um avião no céu!</div></div>
+<div class="i"><div class="en">Where does this train <i>stop</i>?</div><div class="pt">Onde este trem para?</div></div>
+<div class="i"><div class="en">I <i>talk</i> to my friends at school.</div><div class="pt">Eu converso com meus amigos na escola.</div></div>
+<div class="i"><div class="en">Can you <i>tell</i> me where the park is?</div><div class="pt">Você pode me dizer onde fica o parque?</div></div>
+<div class="i"><div class="en">I <i>try</i> to speak English every day.</div><div class="pt">Eu tento falar inglês todo dia.</div></div>
+</div>
+</section>
+
+<section id="s15">
+<div class="snum">Grammar guide · G1 – G5</div>
+<h2>As cinco tabelas de conjugação</h2>
+<p class="sdesc">Todo o esqueleto verbal do curso numa página: <i>to be</i>, <i>have</i>, <i>can</i>, presente simples e presente contínuo, cada um na afirmativa e na negativa.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Pessoa</th><th>to be</th><th>have</th><th>can</th><th>present simple</th><th>present continuous</th></tr></thead>
+<tbody>
+<tr><td>I</td><td>I'm · I'm not</td><td>I have · I don't have</td><td>I can · I can't</td><td>I like · I don't like</td><td>I'm walking · I'm not walking</td></tr>
+<tr><td>You</td><td>You're · You aren't</td><td>You have · You don't have</td><td>You can · You can't</td><td>You like · You don't like</td><td>You're walking · You aren't walking</td></tr>
+<tr><td>He</td><td>He's · He isn't</td><td>He <b>has</b> · He <b>doesn't</b> have</td><td>He can · He can't</td><td>He <b>likes</b> · He <b>doesn't</b> like</td><td>He's walking · He isn't walking</td></tr>
+<tr><td>She</td><td>She's · She isn't</td><td>She <b>has</b> · She <b>doesn't</b> have</td><td>She can · She can't</td><td>She <b>likes</b> · She <b>doesn't</b> like</td><td>She's walking · She isn't walking</td></tr>
+<tr><td>It</td><td>It's · It isn't</td><td>It <b>has</b> · It <b>doesn't</b> have</td><td>It can · It can't</td><td>It <b>likes</b> · It <b>doesn't</b> like</td><td>It's walking · It isn't walking</td></tr>
+<tr><td>We</td><td>We're · We aren't</td><td>We have · We don't have</td><td>We can · We can't</td><td>We like · We don't like</td><td>We're walking · We aren't walking</td></tr>
+<tr><td>They</td><td>They're · They aren't</td><td>They have · They don't have</td><td>They can · They can't</td><td>They like · They don't like</td><td>They're walking · They aren't walking</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s16">
+<div class="snum">Grammar guide · G6</div>
+<h2>Palavras interrogativas com pergunta e resposta</h2>
+<p class="sdesc">Nove palavras de pergunta, cada uma com um exemplo completo — pergunta <b>e</b> resposta.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Palavra</th><th>Pergunta</th><th>Resposta</th></tr></thead>
+<tbody>
+<tr><td><b>What</b></td><td>What's that?</td><td>It's a crocodile.</td></tr>
+<tr><td><b>Which</b></td><td>Which animal is big?</td><td>The dog is big.</td></tr>
+<tr><td><b>Who</b></td><td>Who's that?</td><td>It's Ben.</td></tr>
+<tr><td><b>Whose</b></td><td>Whose camera is this?</td><td>It's mine.</td></tr>
+<tr><td><b>When</b></td><td>When do you go to school?</td><td>I go to school in the morning.</td></tr>
+<tr><td><b>Where</b></td><td>Where's the cat?</td><td>It's under the table.</td></tr>
+<tr><td><b>How</b></td><td>How old are you?</td><td>I'm nine years old.</td></tr>
+<tr><td><b>How many</b></td><td>How many ducks are there?</td><td>There are five.</td></tr>
+<tr><td><b>Why</b></td><td>Why do you like soccer?</td><td>It's fun!</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="s17">
+<div class="snum">Grammar guide · G7 – G10</div>
+<h2>Plurais irregulares, preposições e pronomes</h2>
+<p class="sdesc">As três tabelas de referência que o iniciante mais consulta.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Singular</th><th>Plural irregular</th></tr></thead>
+<tbody>
+<tr><td>mouse</td><td class="ok">mice</td></tr>
+<tr><td>tooth</td><td class="ok">teeth</td></tr>
+<tr><td>foot</td><td class="ok">feet</td></tr>
+<tr><td>child</td><td class="ok">children</td></tr>
+<tr><td>woman</td><td class="ok">women</td></tr>
+<tr><td>man</td><td class="ok">men</td></tr>
+<tr><td>person</td><td class="ok">people</td></tr>
+<tr><td>sheep</td><td class="ok">sheep <i>(não muda)</i></td></tr>
+<tr><td>fish</td><td class="ok">fish <i>(não muda)</i></td></tr>
+</tbody>
+</table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Sujeito</th><th>Objeto</th><th>Adjetivo possessivo</th><th>Pronome possessivo</th></tr></thead>
+<tbody>
+<tr><td>I</td><td>me</td><td>my</td><td><b>mine</b></td></tr>
+<tr><td>you</td><td>you</td><td>your</td><td><b>yours</b></td></tr>
+<tr><td>he</td><td>him</td><td>his</td><td><b>his</b></td></tr>
+<tr><td>she</td><td>her</td><td>her</td><td><b>hers</b></td></tr>
+<tr><td>it</td><td>it</td><td>its</td><td class="w">&mdash;</td></tr>
+<tr><td>we</td><td>us</td><td>our</td><td><b>ours</b></td></tr>
+<tr><td>they</td><td>them</td><td>their</td><td><b>theirs</b></td></tr>
+</tbody>
+</table></div>
+<div class="items">
+<div class="i"><div class="en">in · on · under · behind · next to · in front of · between</div><div class="pt">dentro · em cima · embaixo · atrás · ao lado de · na frente de · entre</div></div>
+<div class="i"><div class="en">Is she happy? <i>(pronome sujeito)</i></div><div class="pt">Ela está feliz?</div></div>
+<div class="i"><div class="en">I like him. <i>(pronome objeto)</i></div><div class="pt">Eu gosto dele.</div></div>
+<div class="i"><div class="en">It's my book. <i>(adjetivo possessivo)</i></div><div class="pt">É o meu livro.</div></div>
+<div class="i"><div class="en">It's theirs. <i>(pronome possessivo)</i></div><div class="pt">É deles.</div></div>
+</div>
+</section>
+
+<section id="s18">
+<div class="snum">Grammar guide · G13</div>
+<h2>As palavras que aparecem nos enunciados</h2>
+<p class="sdesc">Um detalhe que o livro acerta: ensinar as palavras dos <b>comandos</b>. Sem elas o aluno erra a questão mesmo sabendo o conteúdo.</p>
+<div class="items">
+<div class="i"><div class="en">listen · repeat · read · look at</div><div class="pt">ouça · repita · leia · olhe para</div></div>
+<div class="i"><div class="en">write · match · circle · cross out</div><div class="pt">escreva · ligue · circule · risque</div></div>
+<div class="i"><div class="en">count · color in · point</div><div class="pt">conte · pinte · aponte</div></div>
+<div class="i"><div class="en">picture · word · page · song</div><div class="pt">figura · palavra · página · canção</div></div>
+<div class="i"><div class="en">line · order · space · example</div><div class="pt">linha · ordem · espaço · exemplo</div></div>
+<div class="i"><div class="en">question · answer · beginning · end</div><div class="pt">pergunta · resposta · começo · fim</div></div>
+</div>
+</section>
+
+  </main>
+</div>
+
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
+</div>
+
+<footer>Sistema 01 V04 · Livro 04 · Junior Beginner's Course — inglês real, tirado da fonte</footer>
+
+<script>
+(function(){
+  const art=document.getElementById('art'), q=document.getElementById('q'), sbox=document.getElementById('sbox'),
+        clr=document.getElementById('clr'), info=document.getElementById('info'), empty=document.getElementById('empty'),
+        toclist=document.getElementById('toclist');
+  const secs=[...art.querySelectorAll('section')];
+
+  secs.forEach(s=>{
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
+    toclist.appendChild(a);
+  });
+  const links=[...toclist.querySelectorAll('a')];
+
+  const units=[];
+  secs.forEach(s=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
+      units.push({el, sec:s, txt:el.textContent.toLowerCase()});
+    });
+  });
+  document.getElementById('m-total').textContent=units.length;
+
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  units.forEach(u=>u.norm=norm(u.txt));
+
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
+
+  function run(){
+    const raw=q.value.trim();
+    sbox.classList.toggle('has-q', raw.length>0);
+    if(!raw){
+      units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
+      secs.forEach(s=>s.style.display='');
+      empty.style.display='none';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' se\u00e7\u00f5es.';
+      return;
+    }
+    const needle=norm(raw);
+    let hits=0;
+    const live=new Set();
+    units.forEach(u=>{
+      const on=u.norm.includes(needle);
+      u.el.style.display=on?'':'none';
+      if(on){hits++;live.add(u.sec);}
+    });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
+    secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
+    empty.style.display=hits?'none':'block';
+    info.innerHTML=hits
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'se\u00e7\u00e3o':'se\u00e7\u00f5es')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
+  }
+  q.addEventListener('input',run);
+  clr.addEventListener('click',()=>{q.value='';run();q.focus();});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
+  run();
+
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-80px 0px -70% 0px'});
+  secs.forEach(s=>obs.observe(s));
+})();
+</script>
+</body>
+</html>

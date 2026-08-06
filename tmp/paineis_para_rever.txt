@@ -1,0 +1,15 @@
+PASSO E — PAINEIS ORFAOS APOS A REDISTRIBUICAO (2026-08-06)
+================================================================================
+
+Os movimentos levaram MD + painel JUNTOS, entao nenhum painel perdeu
+seu MD-fonte por causa desta redistribuicao.
+
+Paineis sem MD com prefixo NN_ correspondente (condicao PRE-EXISTENTE):
+
+  Sistema 10 — Reduções e Pronúncia/livro01.html
+  Sistema 10 — Reduções e Pronúncia/livro02.html
+
+  S10: os 2 paineis nascem de "Sistema 02 — Reducoes do Ingles Real_v01.md",
+       que nao usa o prefixo NN_. Nao e orfao de fato.
+
+NENHUM painel precisa ser reconstruido por causa desta sessao.

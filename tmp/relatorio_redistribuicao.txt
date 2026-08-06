@@ -1,0 +1,768 @@
+RELATORIO DE REDISTRIBUICAO POR NIVEL — Passos B e C
+==============================================================================================================
+
+caminho_atual | classificacao | faixa_destino | decisao
+--------------------------------------------------------------------------------------------------------------
+Sistema 01 — Crianças · Kids Box/01_Kid's Box New Generation Level 3 Student's Book with eBook American English.md
+   classificacao: kids | faixa: S01/S02
+   decisao: OK, sem movimento
+   justificativa: Kid's Box L3 — curso infantil Cambridge; greetings, cores, brinquedos
+
+Sistema 01 — Crianças · Kids Box/02_Kid's Box American English 4 - Student's Book - Updated Second Edition.md
+   classificacao: kids | faixa: S01/S02
+   decisao: OK, sem movimento
+   justificativa: Kid's Box L4 — infantil; passado, relativas com who/where
+
+Sistema 03 — Inglês do Zero · Base Completa/SanAmericano_Resumo_Tecnico_Completo.md
+   classificacao: processo | faixa: (documento de processo)
+   decisao: INDEFINIDO
+   justificativa: Resumo tecnico do projeto — NAO e conteudo de ensino
+
+Sistema 03 — Inglês do Zero · Base Completa/jornada_completa.md
+   classificacao: meta | faixa: (meta-aprendizagem)
+   decisao: INDEFINIDO
+   justificativa: Trilha de 120 etapas — documento de sequenciamento
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema10_conteudo.md
+   classificacao: misto | faixa: (cobre varios niveis)
+   decisao: INDEFINIDO
+   justificativa: Teste de nivel A1 ATE C2 — cobre todos os niveis por definicao
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema11_conteudo.md
+   classificacao: meta | faixa: (meta-aprendizagem)
+   decisao: INDEFINIDO
+   justificativa: Como Aprender Ingles — metodo de estudo, nao conteudo de lingua
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema12_conteudo.md
+   classificacao: a1 | faixa: S03/S04
+   decisao: OK, sem movimento
+   justificativa: Rotina da Noite — Q&A curtas para iniciantes
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema13_conteudo.md
+   classificacao: a1 | faixa: S03/S04
+   decisao: OK, sem movimento
+   justificativa: Vocabulario A1 — 300+ palavras em frases simples
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema14_conteudo.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S05-S09
+   justificativa: Vida Saudavel — Q&A cotidianas
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema15_conteudo.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S16-S20
+   justificativa: Expressoes idiomaticas de podcast nativo — registro informal avancado
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema16_conteudo.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S10-S15
+   justificativa: Frases nativas de filmes — funcional
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema17_conteudo.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S10-S15
+   justificativa: Super Sentences — expansao progressiva A2 a C1
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema18_conteudo.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S10-S15
+   justificativa: How Was Your Day — 30 respostas autenticas
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema19_conteudo.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S05-S09
+   justificativa: Conversacao diaria 200+ pares
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema20_conteudo.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S10-S15
+   justificativa: Conversas reais + USED TO
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema21_conteudo.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S21-S25
+   justificativa: Conto literario de 1946 — vocabulario rico e narrativo
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema22_conteudo.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S05-S09
+   justificativa: 27 situacoes praticas — frases prontas de sobrevivencia
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema23_conteudo.md
+   classificacao: a1 | faixa: S03/S04
+   decisao: OK, sem movimento
+   justificativa: Ingles do Zero A1-A2 — verbos com pronomes
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema24_conteudo.md
+   classificacao: meta | faixa: (meta-aprendizagem)
+   decisao: INDEFINIDO
+   justificativa: Pense em Ingles — estrategias de fluencia
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema25_conteudo.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S10-S15
+   justificativa: Super Sentences Vol.2 — 11 historias progressivas
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema26_conteudo.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S05-S09
+   justificativa: 12 dialogos situacionais
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema27_conteudo.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S16-S20
+   justificativa: Shadowing — 7 textos de mentalidade, vocabulario avancado
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema2_conteudo.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S05-S09
+   justificativa: Frases crescentes em 20 situacoes — camadas do simples ao medio
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema3_conteudo.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S05-S09
+   justificativa: Gramatica Viva — os 12 tempos com formula e uso
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema4_conteudo.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S05-S09
+   justificativa: Ingles em Cena (Top Notch) — dialogos de apresentacao/profissoes
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema5_conteudo.md
+   classificacao: a1 | faixa: S03/S04
+   decisao: OK, sem movimento
+   justificativa: 150 frases relampago — I need/I want/I have
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema6_conteudo.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S05-S09
+   justificativa: 14 conversas Q&A do cotidiano
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema7_conteudo.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S10-S15
+   justificativa: 100 colocacoes naturais MAKE/DO/TAKE/GET
+
+Sistema 03 — Inglês do Zero · Base Completa/sistema9_conteudo.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 03 — Inglês (a1) -> S10-S15
+   justificativa: WENT x HAVE GONE — present perfect vs passado simples
+
+Sistema 04 — Gramática Básica/01_Basic English Grammar Workbook For Dummies.md
+   classificacao: a1 | faixa: S03/S04
+   decisao: OK, sem movimento
+   justificativa: Gramatica basica ESL — to be, tempos simples
+
+Sistema 04 — Gramática Básica/02_Everything You Need to Ace English Language Arts in One Big Fat Notebook, 2nd Edition.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: MOVER: Sistema 04 — Gramáti(a1) -> S16-S20
+   justificativa: Language Arts de escola americana (NATIVO) — literatura, redacao, analise textual
+
+Sistema 04 — Gramática Básica/03_English Grammar For Dummies.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 04 — Gramáti(a1) -> S05-S09
+   justificativa: Gramatica elementar/intermediaria em linguagem acessivel
+
+Sistema 04 — Gramática Básica/04_nglish Grammar A Resource Book for Students.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: MOVER: Sistema 04 — Gramáti(a1) -> S21-S25
+   justificativa: Routledge Eng. Language Introductions — LINGUISTICA universitaria, metalinguagem e analise sintatica
+
+Sistema 04 — Gramática Básica/05_Grammar For Young Learners.md
+   classificacao: kids | faixa: S01/S02
+   decisao: MOVER: Sistema 04 — Gramáti(a1) -> S01/S02
+   justificativa: Oxford — ensinar gramatica a CRIANCAS (young learners); jogos e atividades infantis
+
+Sistema 04 — Gramática Básica/06_Grammar And Usage For Better Writing.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: MOVER: Sistema 04 — Gramáti(a1) -> S16-S20
+   justificativa: Amsco — redacao para escola americana (nativo), estilo e usage
+
+Sistema 04 — Gramática Básica/07_The Infographic Guide to Grammar.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 04 — Gramáti(a1) -> S05-S09
+   justificativa: Gramatica visual elementar
+
+Sistema 08 — Conversação & Frases/LIVRO_01_1000 melhores dicas para aprender inglês.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: OK, sem movimento
+   justificativa: Dicas de estudo em PT; frases de sobrevivencia
+
+Sistema 08 — Conversação & Frases/LIVRO_02_Livro Inglês Conversação para viagem-Michaelis tour Completo.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: OK, sem movimento
+   justificativa: Conversacao de viagem — frases prontas de sobrevivencia
+
+Sistema 08 — Conversação & Frases/LIVRO_03_120 frases para uma conversa em inglês (LM10-Livro digital).md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 08 — Convers(a2) -> S10-S15
+   justificativa: Frases com used to, question tags, passado — funcional intermediario
+
+Sistema 08 — Conversação & Frases/LIVRO_04_Segredo da Fluência - Como aprender Inglês com Música - Leonardo de Mello (2016).md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 08 — Convers(a2) -> S10-S15
+   justificativa: Musica + metodo; letras reais
+
+Sistema 08 — Conversação & Frases/LIVRO_05_Livro Memorização para aprender idiomas - Marcos da Costa Gois-1.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: OK, sem movimento
+   justificativa: Metodo de memorizacao (PT) — meta-aprendizagem
+
+Sistema 08 — Conversação & Frases/LIVRO_06_Como não aprender Inglês ( PDFDrive.com ).md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 08 — Convers(a2) -> S10-S15
+   justificativa: Falsos cognatos e erros do brasileiro — exige base
+
+Sistema 09 — English for Everyone/01_English for Everyone English Grammar Guide A Comprehensive Visual Reference.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: OK, sem movimento
+   justificativa: Referencia visual abrangente A1-B1
+
+Sistema 09 — English for Everyone/02_English for Everyone English Vocabulary Builder (DK English for Everyone) (English Edition).md
+   classificacao: a2 | faixa: S05-S09
+   decisao: OK, sem movimento
+   justificativa: Vocabulario tematico ilustrado
+
+Sistema 09 — English for Everyone/03_English for Everyone Junior Beginner's Course.md
+   classificacao: kids | faixa: S01/S02
+   decisao: MOVER: Sistema 09 — English(a2) -> S01/S02
+   justificativa: JUNIOR — curso para CRIANCAS (Susannah Reed, Primary ELT)
+
+Sistema 09 — English for Everyone/04_English for Everyone Practice Book Level 1 Beginner A Complete Self-Study Program.md
+   classificacao: a1 | faixa: S03/S04
+   decisao: MOVER: Sistema 09 — English(a2) -> S03/S04
+   justificativa: Level 1 Beginner — saudacoes, numeros, to be
+
+Sistema 09 — English for Everyone/05_English for Everyone Practice Book Level 2 Beginner A Complete Self-Study Program.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: OK, sem movimento
+   justificativa: Level 2 — presente/passado simples
+
+Sistema 09 — English for Everyone/06_Pronouncing American English.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 09 — English(a2) -> S10-S15
+   justificativa: Sons, stress e entonacao — fonetica sistematica
+
+Sistema 10 — Reduções e Pronúncia/Sistema 02 — Reduções do Inglês Real_v01.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: Contracoes, weak forms, elisoes — fala natural
+
+Sistema 11 — American English File/01_American English File 1 - Student Book Pk - 03Edition.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 11 — America(b1) -> S05-S09
+   justificativa: AEF 1 — verb be, numeros, in/on/under, plural
+
+Sistema 11 — American English File/02_American English File 2 - Student Book With Online Practice - Third Edition.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 11 — America(b1) -> S05-S09
+   justificativa: AEF 2 — simple past, be going to, prep. de tempo
+
+Sistema 11 — American English File/03_American English File 3 - Student Book With Online Practice - Third .md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: AEF 3 — present perfect + for/since, formas de futuro
+
+Sistema 11 — American English File/04_American English File 4 - Student Book With Online Practice - Third Edition D30.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: MOVER: Sistema 11 — America(b1) -> S16-S20
+   justificativa: AEF 4 — auxiliares enfaticos, adjetivos como substantivos
+
+Sistema 11 — American English File/05_Close-up - 2nd - C1 Workbook.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: MOVER: Sistema 11 — America(b1) -> S21-S25
+   justificativa: Close-up C1 — word formation, future in the past, idioms
+
+Sistema 11 — American English File/06_Close-up - 1st - C2 Workbook.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: MOVER: Sistema 11 — America(b1) -> S21-S25
+   justificativa: Close-up C2 — passiva, transitividade, cloze avancado
+
+Sistema 12 — Exercícios e Vocabulário/01_English Grammar in Use Supplementary Exercises Book Fifth Edition.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: Complemento do EGiU intermediario
+
+Sistema 12 — Exercícios e Vocabulário/02_Grammar - Grammar -Basic Grammar in Use Student's Book with Answers.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 12 — Exercíc(b1) -> S05-S09
+   justificativa: BASIC Grammar in Use — nivel elementar
+
+Sistema 12 — Exercícios e Vocabulário/03_English Collocations in Use Intermediate Book.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: Colocacoes intermediarias
+
+Sistema 12 — Exercícios e Vocabulário/04_Basic Grammar in Use Student's Book.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 12 — Exercíc(b1) -> S05-S09
+   justificativa: BASIC Grammar in Use — nivel elementar
+
+Sistema 12 — Exercícios e Vocabulário/05_English Phrasal Verbs in Use Intermediate Sb With Answers 2Ed.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: Phrasal verbs intermediarios
+
+Sistema 12 — Exercícios e Vocabulário/06_Practice Makes Perfect English Conversation, Premium Fourth Edition.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: Conversacao funcional intermediaria
+
+Sistema 13 — Gramática em Uso/01_English Grammar in Use Book with Answers A Self-Study Reference and Practice Book for Intermediate Learners.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: EGiU — explicitamente 'for intermediate learners'
+
+Sistema 13 — Gramática em Uso/02_Grammar Practice for Intermediate Students.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: Titulo declara intermediario
+
+Sistema 13 — Gramática em Uso/03_Oxford-Guide-to-English-Grammar.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: Referencia abrangente B1-C1
+
+Sistema 13 — Gramática em Uso/04_Essential Grammar in Use com respostas Gramática básica da língua inglesa.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 13 — Gramáti(b1) -> S05-S09
+   justificativa: ESSENTIAL Grammar in Use — elementar (am/is/are, present simple)
+
+Sistema 13 — Gramática em Uso/05_English Pronunciation Made Simple.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: Pronuncia por pares minimos
+
+Sistema 13 — Gramática em Uso/06_Reactivate Your Grammar And Vocabulary C1C2 - Exams.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: MOVER: Sistema 13 — Gramáti(b1) -> S21-S25
+   justificativa: O proprio titulo declara C1/C2
+
+Sistema 14 — In Use Series/01_Practice Makes Perfect Complete English All-in-One for ESL Learners.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: All-in-One — cobertura ampla A2-B2
+
+Sistema 14 — In Use Series/02_English Vocabulary in Use. Elementary. 3rd Edition.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 14 — In Use (b1) -> S05-S09
+   justificativa: ELEMENTARY — declarado no titulo
+
+Sistema 14 — In Use Series/03_English Pronunciation in Use Elementary.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 14 — In Use (b1) -> S05-S09
+   justificativa: ELEMENTARY — declarado no titulo
+
+Sistema 14 — In Use Series/04_Grammar - Grammar in Use Intermediate Student's.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: OK, sem movimento
+   justificativa: INTERMEDIATE — declarado no titulo
+
+Sistema 14 — In Use Series/05_Practice Makes Perfect English Vocabulary for Beginning ESL Learners, Premium Fourth Edition.md
+   classificacao: a1 | faixa: S03/S04
+   decisao: MOVER: Sistema 14 — In Use (b1) -> S03/S04
+   justificativa: BEGINNING ESL — vocabulario de sobrevivencia
+
+Sistema 14 — In Use Series/06_Practise Makes Perfect_ English Verbs 3rd Edition.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 14 — In Use (b1) -> S05-S09
+   justificativa: Conjugacao verbal elementar/intermediaria
+
+Sistema 18 — Accent Training/01_American Accent Training.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: OK, sem movimento
+   justificativa: Entonacao, ligacoes, T americano
+
+Sistema 18 — Accent Training/02_Mastering the American Accent (Lisa Mojsin) (z-lib.org).md
+   classificacao: b2 | faixa: S16-S20
+   decisao: OK, sem movimento
+   justificativa: Vogais dificeis, consoantes problematicas
+
+Sistema 18 — Accent Training/03_English Vocabulary in Use Upper-Intermediate.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: OK, sem movimento
+   justificativa: UPPER-INTERMEDIATE — declarado no titulo
+
+Sistema 19 — Business & Avançado/01_English for Everyone Business English Course Book Level 1 Beginner A Complete Self-Study Program.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 19 — Busines(b2) -> S05-S09
+   justificativa: Business Level 1 BEGINNER — alfabeto, apresentacoes, saudacoes
+
+Sistema 19 — Business & Avançado/02_English for Everyone Business English Course Book Level 2 A Complete Self-Study Programme.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 19 — Busines(b2) -> S10-S15
+   justificativa: Business Level 2 — funcional intermediario
+
+Sistema 19 — Business & Avançado/03_English for Everyone Course Book Level 3 Intermediate A Complete Self-Study Programme.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 19 — Busines(b2) -> S10-S15
+   justificativa: Level 3 INTERMEDIATE — declarado no titulo
+
+Sistema 19 — Business & Avançado/04_English for Everyone Practice Book Level 4 Advanced A Complete Self-Study Programme.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: OK, sem movimento
+   justificativa: Level 4 Advanced — question tags, tempos compostos
+
+Sistema 19 — Business & Avançado/05_Perfecting your english pronunciation Susan Cameron.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: MOVER: Sistema 19 — Busines(b2) -> S21-S25
+   justificativa: Coaching de fala para atores — dominio fonetico
+
+Sistema 19 — Business & Avançado/06_4000 Essential English Words  Book 6.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: MOVER: Sistema 19 — Busines(b2) -> S21-S25
+   justificativa: Book 6 = faixa mais alta da serie; vocabulario academico
+
+Sistema 20 — B2 First/01_B2-First 1 With Answers.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: OK, sem movimento
+   justificativa: Cambridge B2 First — exame oficial B2
+
+Sistema 20 — B2 First/02_B2-First 2 With Answers.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: OK, sem movimento
+   justificativa: Cambridge B2 First — exame oficial B2
+
+Sistema 20 — B2 First/03_B2-First 3 With Answers.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: OK, sem movimento
+   justificativa: Cambridge B2 First — 'is at Level B2' no proprio texto
+
+Sistema 20 — B2 First/04_B2-First 4 With Answers For Schools.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: OK, sem movimento
+   justificativa: Cambridge B2 First for Schools
+
+Sistema 20 — B2 First/05_B2 First 5 Student's Book with Answers.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: OK, sem movimento
+   justificativa: Cambridge B2 First — exame oficial B2
+
+Sistema 21 — Pronúncia & Conversação/01_Speak English 30 Days to Better English.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 21 — Pronúnc(c1c2) -> S05-S09
+   justificativa: Day 1 'Say hello!', Day 2 'Give basic information', Day 3 familia — ELEMENTAR
+
+Sistema 21 — Pronúncia & Conversação/02_Cambridge - English Pronunciation in Use Intermediate.md
+   classificacao: b1 | faixa: S10-S15
+   decisao: MOVER: Sistema 21 — Pronúnc(c1c2) -> S10-S15
+   justificativa: INTERMEDIATE — declarado no titulo
+
+Sistema 21 — Pronúncia & Conversação/03_b_dialogues_everyday_conversations_english_lo_0.md
+   classificacao: a2 | faixa: S05-S09
+   decisao: MOVER: Sistema 21 — Pronúnc(c1c2) -> S05-S09
+   justificativa: Everyday Conversations (US State Dept) — dialogos basicos do cotidiano
+
+Sistema 22 — Gramática Avançada · Proficiency/01_Objective Proficiency Student's Book with Answers with Downloadable Software.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: Objective PROFICIENCY — C2
+
+Sistema 22 — Gramática Avançada · Proficiency/02_Grammar - Advanced Grammar in Use Book with Answers and eBook and Online Test.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: 'for advanced learners' — C1
+
+Sistema 22 — Gramática Avançada · Proficiency/03_Grammar and Vocabulary for Advanced Book with Answers.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: Cambridge Advanced (CAE) — C1
+
+Sistema 22 — Gramática Avançada · Proficiency/04_Advanced Language Practice with Key - MIchael Vince.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: Advanced Language Practice — C1
+
+Sistema 22 — Gramática Avançada · Proficiency/05_Complete Advanced Student's Book with Answers with Digital Pack.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: Complete Advanced (CAE) — C1
+
+Sistema 22 — Gramática Avançada · Proficiency/06_English Vocabulary in Use Advanced 3rd Edition.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: EVU ADVANCED — C1/C2
+
+Sistema 22 — Gramática Avançada · Proficiency/07_English Pronunciation in Use. Advanced.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: EPiU ADVANCED — clusters, variedades de sotaque
+
+Sistema 23 — Gramática Avançada · Oxford/01_Oxford English Grammar Course Advanced with Key (includes e-book).md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: Swan & Walter ADVANCED — C1
+
+Sistema 23 — Gramática Avançada · Oxford/02_English Vocabulary in Use Advanced 100 units of vocabulary reference and practice.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: EVU Advanced — registro, metafora, conotacao
+
+Sistema 23 — Gramática Avançada · Oxford/03_English Vocabulary in Use Upper-intermediate With answers.md
+   classificacao: b2 | faixa: S16-S20
+   decisao: MOVER: Sistema 23 — Gramáti(c1c2) -> S16-S20
+   justificativa: UPPER-INTERMEDIATE — declarado no titulo
+
+Sistema 23 — Gramática Avançada · Oxford/04_Grammar and Vocabulary for Cambridge Advanced and Proficiency.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: CAE + CPE — C1/C2
+
+Sistema 23 — Gramática Avançada · Oxford/05_New English File - Advanced Level. Student's Book.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: ADVANCED — narrative tenses, usos irreais do passado
+
+Sistema 24 — Gramática Avançada · Cambridge/01_Advancing Vocabulary Skills - By Sherrie L. Nist.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: Vocabulario academico de nivel alto (college dev.)
+
+Sistema 24 — Gramática Avançada · Cambridge/02_English Advancing A Bridge to Success.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: Ponte para nivel avancado
+
+Sistema 24 — Gramática Avançada · Cambridge/03_New Cambridge Advanced English Student's book.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: New Cambridge ADVANCED — C1
+
+Sistema 25 — Vocabulário & Oratória/01_The Most Effective Vocabulary Builder in the English Language (Norman-Lewis).md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: Norman Lewis — raizes greco-latinas, ingles culto
+
+Sistema 25 — Vocabulário & Oratória/02_Talk Like TED The 9 Public-Speaking Secrets of the Worlds Top Minds (Carmine Gallo) (z-lib.org).md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: Oratoria — falas reais de palestrantes
+
+Sistema 25 — Vocabulário & Oratória/03_The Art Of Public Speaking.md
+   classificacao: c1c2 | faixa: S21-S25
+   decisao: OK, sem movimento
+   justificativa: Classico de 1915 — enfase, ritmo, pausa; ingles literario
+
+
+==============================================================================================================
+PASSO C — VALIDACAO
+==============================================================================================================
+
+MDs de conteudo inventariados .......... 133
+Conteudos unicos (por sha256) ......... 108
+Copias duplicadas exatas .............. 25
+Unicos classificados .................. 108
+  OK, sem movimento ................... 51
+  MOVER ............................... 52
+  INDEFINIDO (misto/meta/processo) .... 5
+
+-- DUPLICATAS EXATAS (manter canonico, remover copia) --
+  COPIA: Sistema 03 — Inglês do Zero · Base Completa/_admin/jornada_completa.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/jornada_completa.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema12_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema12_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema13_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema13_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema14_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema14_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema16_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema16_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema17_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema17_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema18_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema18_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema19_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema19_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema20_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema20_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema22_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema22_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema23_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema23_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema3_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema3_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema4_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema4_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema5_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema5_conteudo.md
+
+  COPIA: Sistema 05 — Motor de Verbos/sistema7_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema7_conteudo.md
+
+  COPIA: Sistema 06 — Situar a Frase/sistema10_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema10_conteudo.md
+
+  COPIA: Sistema 06 — Situar a Frase/sistema23_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema23_conteudo.md
+
+  COPIA: Sistema 06 — Situar a Frase/sistema2_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema2_conteudo.md
+
+  COPIA: Sistema 06 — Situar a Frase/sistema9_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema9_conteudo.md
+
+  COPIA: Sistema 07 — Conectar Frases/sistema15_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema15_conteudo.md
+
+  COPIA: Sistema 07 — Conectar Frases/sistema6_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema6_conteudo.md
+
+  COPIA: Sistema 07 — Conectar Frases/sistema7_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema7_conteudo.md
+
+  COPIA: Sistema 10 — Reduções e Pronúncia/sistema2_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema2_conteudo.md
+
+  COPIA: Sistema 15 — Dúvidas Pontuais/sistema13_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema13_conteudo.md
+
+  COPIA: Sistema 15 — Dúvidas Pontuais/sistema21_conteudo.md
+  CANON: Sistema 03 — Inglês do Zero · Base Completa/sistema21_conteudo.md
+
+
+-- MOVIMENTOS PLANEJADOS, POR FAIXA DE DESTINO --
+
+  >> destino KIDS (S01/S02) — 2 arquivo(s)
+     [de a1] Sistema 04 — Gramática Básica/05_Grammar For Young Learners.md
+     [de a2] Sistema 09 — English for Everyone/03_English for Everyone Junior Beginner's Course.md
+
+  >> destino A1 (S03/S04) — 2 arquivo(s)
+     [de a2] Sistema 09 — English for Everyone/04_English for Everyone Practice Book Level 1 Beginner A Complete Self-Study Program.md
+     [de b1] Sistema 14 — In Use Series/05_Practice Makes Perfect English Vocabulary for Beginning ESL Learners, Premium Fourth Edition.md
+
+  >> destino A2 (S05-S09) — 21 arquivo(s)
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema14_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema19_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema22_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema26_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema2_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema3_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema4_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema6_conteudo.md
+     [de a1] Sistema 04 — Gramática Básica/03_English Grammar For Dummies.md
+     [de a1] Sistema 04 — Gramática Básica/07_The Infographic Guide to Grammar.md
+     [de b1] Sistema 11 — American English File/01_American English File 1 - Student Book Pk - 03Edition.md
+     [de b1] Sistema 11 — American English File/02_American English File 2 - Student Book With Online Practice - Third Edition.md
+     [de b1] Sistema 12 — Exercícios e Vocabulário/02_Grammar - Grammar -Basic Grammar in Use Student's Book with Answers.md
+     [de b1] Sistema 12 — Exercícios e Vocabulário/04_Basic Grammar in Use Student's Book.md
+     [de b1] Sistema 13 — Gramática em Uso/04_Essential Grammar in Use com respostas Gramática básica da língua inglesa.md
+     [de b1] Sistema 14 — In Use Series/02_English Vocabulary in Use. Elementary. 3rd Edition.md
+     [de b1] Sistema 14 — In Use Series/03_English Pronunciation in Use Elementary.md
+     [de b1] Sistema 14 — In Use Series/06_Practise Makes Perfect_ English Verbs 3rd Edition.md
+     [de b2] Sistema 19 — Business & Avançado/01_English for Everyone Business English Course Book Level 1 Beginner A Complete Self-Study Program.md
+     [de c1c2] Sistema 21 — Pronúncia & Conversação/01_Speak English 30 Days to Better English.md
+     [de c1c2] Sistema 21 — Pronúncia & Conversação/03_b_dialogues_everyday_conversations_english_lo_0.md
+
+  >> destino B1 (S10-S15) — 14 arquivo(s)
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema16_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema17_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema18_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema20_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema25_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema7_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema9_conteudo.md
+     [de a2] Sistema 08 — Conversação & Frases/LIVRO_03_120 frases para uma conversa em inglês (LM10-Livro digital).md
+     [de a2] Sistema 08 — Conversação & Frases/LIVRO_04_Segredo da Fluência - Como aprender Inglês com Música - Leonardo de Mello (2016).md
+     [de a2] Sistema 08 — Conversação & Frases/LIVRO_06_Como não aprender Inglês ( PDFDrive.com ).md
+     [de a2] Sistema 09 — English for Everyone/06_Pronouncing American English.md
+     [de b2] Sistema 19 — Business & Avançado/02_English for Everyone Business English Course Book Level 2 A Complete Self-Study Programme.md
+     [de b2] Sistema 19 — Business & Avançado/03_English for Everyone Course Book Level 3 Intermediate A Complete Self-Study Programme.md
+     [de c1c2] Sistema 21 — Pronúncia & Conversação/02_Cambridge - English Pronunciation in Use Intermediate.md
+
+  >> destino B2 (S16-S20) — 6 arquivo(s)
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema15_conteudo.md
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema27_conteudo.md
+     [de a1] Sistema 04 — Gramática Básica/02_Everything You Need to Ace English Language Arts in One Big Fat Notebook, 2nd Edition.md
+     [de a1] Sistema 04 — Gramática Básica/06_Grammar And Usage For Better Writing.md
+     [de b1] Sistema 11 — American English File/04_American English File 4 - Student Book With Online Practice - Third Edition D30.md
+     [de c1c2] Sistema 23 — Gramática Avançada · Oxford/03_English Vocabulary in Use Upper-intermediate With answers.md
+
+  >> destino C1C2 (S21-S25) — 7 arquivo(s)
+     [de a1] Sistema 03 — Inglês do Zero · Base Completa/sistema21_conteudo.md
+     [de a1] Sistema 04 — Gramática Básica/04_nglish Grammar A Resource Book for Students.md
+     [de b1] Sistema 11 — American English File/05_Close-up - 2nd - C1 Workbook.md
+     [de b1] Sistema 11 — American English File/06_Close-up - 1st - C2 Workbook.md
+     [de b1] Sistema 13 — Gramática em Uso/06_Reactivate Your Grammar And Vocabulary C1C2 - Exams.md
+     [de b2] Sistema 19 — Business & Avançado/05_Perfecting your english pronunciation Susan Cameron.md
+     [de b2] Sistema 19 — Business & Avançado/06_4000 Essential English Words  Book 6.md
+
+-- NAO CLASSIFICADOS COM CERTEZA --
+  Sistema 03 — Inglês do Zero · Base Completa/SanAmericano_Resumo_Tecnico_Completo.md
+     processo — Resumo tecnico do projeto — NAO e conteudo de ensino
+  Sistema 03 — Inglês do Zero · Base Completa/jornada_completa.md
+     meta — Trilha de 120 etapas — documento de sequenciamento
+  Sistema 03 — Inglês do Zero · Base Completa/sistema10_conteudo.md
+     misto — Teste de nivel A1 ATE C2 — cobre todos os niveis por definicao
+  Sistema 03 — Inglês do Zero · Base Completa/sistema11_conteudo.md
+     meta — Como Aprender Ingles — metodo de estudo, nao conteudo de lingua
+  Sistema 03 — Inglês do Zero · Base Completa/sistema24_conteudo.md
+     meta — Pense em Ingles — estrategias de fluencia
+
+-- SISTEMAS SEM NENHUM MD (pre-existente) --
+  Sistema 02 — nenhum MD de conteudo (paineis construidos direto em HTML)
+  Sistema 16 — nenhum MD de conteudo (paineis construidos direto em HTML)
+  Sistema 17 — nenhum MD de conteudo (paineis construidos direto em HTML)
+
+
+==============================================================================================================
+PASSO D — O QUE FOI DE FATO EXECUTADO (2026-08-06)
+==============================================================================================================
+
+DECISAO DO USUARIO: mover MD + painel JUNTOS (nada fica orfao) e reclassificar
+S21 de C1/C2 para B1.
+
+EXECUTADOS — 10 pares (MD + livroNN.html), com renumeracao no destino:
+  S04/05 Grammar For Young Learners            -> S01/03   (kids)
+  S09/03 EfE Junior Beginner's Course          -> S01/04   (kids)
+  S09/06 Pronouncing American English          -> S21/04   (b1)
+  S04/04 Eng.Grammar A Resource Book Students  -> S24/04   (c1c2)
+  S11/05 Close-up C1 Workbook                  -> S23/05   (c1c2)
+  S11/06 Close-up C2 Workbook                  -> S23/06   (c1c2)
+  S13/06 Reactivate Grammar+Vocabulary C1C2    -> S22/08   (c1c2)
+  S19/05 Perfecting your English Pronunciation -> S22/09   (c1c2)
+  S19/06 4000 Essential English Words Book 6   -> S25/04   (c1c2)
+  S23/03 EVU Upper-intermediate                -> S18/04   (b2)
+
+Lacunas fechadas: S04 06->04,07->05 | S09 04->03,05->04 | S23 04->03,05->04
+Paineis orfaos gerados: 0 (verificado)
+Links internos quebrados: 0 de 186 (verificado)
+
+NAO EXECUTADOS — e por que
+--------------------------------------------------------------------------------------------------------------
+Os demais movimentos da classificacao NAO foram feitos porque nao existe
+destino tematicamente valido na faixa de nivel correta. Duas causas:
+
+(1) LIVROS DE COLECAO GRADUADA. Um curso graduado abrange varios niveis POR
+    DEFINICAO — e essa e a razao de existir da pasta. Separar por nivel
+    destruiria a colecao:
+      S11 American English File 1(A2) 2(A2) 3(B1) 4(B2) — a colecao Oxford
+      S09 EfE Practice Book Level 1(A1) / Level 2(A2)   — a colecao DK
+      S19 EfE Business Level 1(A2) 2(B1) / Course L3(B1) 4(B2)
+      S01 Kid's Box Level 3 / Level 4
+      S20 B2 First 1..5 (todos B2 — ja coerente)
+
+(2) NAO HA SISTEMA HOSPEDEIRO NA FAIXA. Os livros elementares de gramatica
+    Cambridge (Basic Grammar in Use x2, Essential Grammar in Use, EVU
+    Elementary, EPiU Elementary, PMP English Verbs, PMP Vocabulary Beginning)
+    classificam como A1/A2, mas a faixa A2 (S05-S09) so tem dois sistemas que
+    hospedam livros — S08 (Conversacao, livros em PT) e S09 (colecao DK).
+    Colocar Cambridge elementar em qualquer um dos dois seria pior que deixar.
+    RECOMENDACAO: criar um sistema "Gramatica Elementar · Cambridge" na faixa
+    A2, ou aceitar que S12/S13/S14 sao organizados por EDITORA/SERIE e ajustar
+    o rotulo de nivel de cada um para a faixa que a serie realmente cobre.
+
+DUPLICATAS: as 25 copias exatas NAO foram removidas (a opcao escolhida foi a
+de mover pares, nao a de deduplicar). Continuam listadas acima para decisao.

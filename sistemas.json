@@ -7,7 +7,7 @@
     "cor": "#FB7185",
     "icone": "🧸",
     "tags": [
-      "2 livros",
+      "4 livros",
       "631 frases",
       "Kids"
     ],
@@ -49,7 +49,7 @@
     "cor": "#22C55E",
     "icone": "🧱",
     "tags": [
-      "7 livros",
+      "5 livros",
       "158 estruturas",
       "A1–B1"
     ],
@@ -119,8 +119,8 @@
     "cor": "#818CF8",
     "icone": "🧩",
     "tags": [
-      "6 livros",
-      "1 disponível",
+      "4 livros",
+      "4 disponíveis",
       "Gramática visual"
     ],
     "pasta": "Sistema 09 — English for Everyone"
@@ -147,8 +147,8 @@
     "cor": "#22D3EE",
     "icone": "🇺🇸",
     "tags": [
-      "6 livros",
-      "1 disponível",
+      "4 livros",
+      "4 disponíveis",
       "Curso completo"
     ],
     "pasta": "Sistema 11 — American English File"
@@ -162,7 +162,7 @@
     "icone": "✍️",
     "tags": [
       "6 livros",
-      "1 disponível",
+      "6 disponíveis",
       "Gramática + Vocab"
     ],
     "pasta": "Sistema 12 — Exercícios e Vocabulário"
@@ -175,8 +175,8 @@
     "cor": "#4A9EFF",
     "icone": "📐",
     "tags": [
-      "6 livros",
-      "6 disponíveis",
+      "5 livros",
+      "5 disponíveis",
       "Intermediário+"
     ],
     "pasta": "Sistema 13 — Gramática em Uso"
@@ -190,7 +190,7 @@
     "icone": "🔤",
     "tags": [
       "6 livros",
-      "1 disponível",
+      "6 disponíveis",
       "Vocab + Pronúncia"
     ],
     "pasta": "Sistema 14 — In Use Series"
@@ -245,7 +245,7 @@
     "cor": "#F472B6",
     "icone": "🗣️",
     "tags": [
-      "3 livros",
+      "4 livros",
       "Sotaque + Vocab",
       "37 seções"
     ],
@@ -259,7 +259,7 @@
     "cor": "#34D399",
     "icone": "💼",
     "tags": [
-      "6 livros",
+      "4 livros",
       "Business + C1",
       "2.984 itens"
     ],
@@ -275,13 +275,13 @@
     "tags": [
       "5 livros",
       "B2",
-      "6 disponíveis"
+      "5 disponíveis"
     ],
     "pasta": "Sistema 20 — B2 First"
   },
   {
     "numero": "21",
-    "nivel": "n5",
+    "nivel": "n3",
     "titulo": "Pronúncia & Conversação",
     "descricao": "A frase pronta para a situação inteira. Speak English: 30 Days to Better English organiza a conversação em trinta dias temáticos — apresentar-se, pedir ajuda na rua, comprar, comer fora, telefonar, contar o passado, dar opinião. Everyday Dialogues traz trinta diálogos completos do cotidiano, com quem fala e o que responde: do cumprimento formal ao pronto-socorro, do correio ao pet shop. Dois painéis prontos, 312 itens. O terceiro livro, English Pronunciation in Use (Cambridge), depende de transcrição fonética e aguarda reconversão do OCR.",
     "cor": "#8B5CF6",
@@ -301,7 +301,7 @@
     "cor": "#F59E0B",
     "icone": "🏆",
     "tags": [
-      "7 livros",
+      "9 livros",
       "C1–C2",
       "Avançado"
     ],
@@ -315,7 +315,7 @@
     "cor": "#F59E0B",
     "icone": "🎖️",
     "tags": [
-      "5 livros",
+      "6 livros",
       "C1–C2",
       "Avançado"
     ],
@@ -329,7 +329,7 @@
     "cor": "#F59E0B",
     "icone": "📜",
     "tags": [
-      "3 livros",
+      "4 livros",
       "C1–C2",
       "Avançado"
     ],

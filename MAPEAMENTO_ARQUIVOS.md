@@ -1227,3 +1227,38 @@ Instagram, `IMG_6520`–`IMG_6714`). Todo o conteúdo dele virou **6 painéis no
 (S05, 76) e `preposicoes-mapas` (S06, 173). Ver o `README.md` da pasta do lote,
 inclusive o motivo de o lote ter sido arquivado inteiro em vez de dividido pelos
 `_fontes/` de cada Sistema.
+
+---
+
+## 2026-08-06 — Redistribuição por nível real de conteúdo
+
+Varredura completa dos 133 MDs de conteúdo das 25 pastas, classificados por
+nível CEFR real (kids/A1/A2/B1/B2/C1-C2) a partir do conteúdo, não da pasta.
+Relatório completo em `tmp/relatorio_redistribuicao.txt`.
+
+**Regra aplicada:** o prefixo `NN_` é posicional — casa com `livroNN.html` da
+mesma pasta. Por isso cada movimento levou **o par MD + painel junto**, com
+renumeração no destino e fechamento da lacuna na origem. Nenhum painel ficou órfão.
+
+| Livro | De | Para | Motivo |
+|---|---|---|---|
+| `Grammar For Young Learners` | S04 · Livro 05 | **S01 · Livro 03** | Oxford, ensinar gramática a crianças → KIDS |
+| `EfE Junior Beginner's Course` | S09 · Livro 03 | **S01 · Livro 04** | curso infantil (Primary ELT) → KIDS |
+| `Pronouncing American English` | S09 · Livro 06 | **S21 · Livro 04** | fonética sistemática → B1 |
+| `English Grammar: A Resource Book for Students` | S04 · Livro 04 | **S24 · Livro 04** | linguística universitária → C1/C2 |
+| `Close-up 2nd C1 Workbook` | S11 · Livro 05 | **S23 · Livro 05** | série Cengage C1, estranha à coleção AEF |
+| `Close-up 1st C2 Workbook` | S11 · Livro 06 | **S23 · Livro 06** | série Cengage C2, estranha à coleção AEF |
+| `Reactivate Your Grammar and Vocabulary C1C2` | S13 · Livro 06 | **S22 · Livro 08** | o próprio título declara C1/C2 |
+| `Perfecting your English Pronunciation` | S19 · Livro 05 | **S22 · Livro 09** | domínio fonético C1 |
+| `4000 Essential English Words Book 6` | S19 · Livro 06 | **S25 · Livro 04** | vocabulário acadêmico C1 |
+| `English Vocabulary in Use Upper-intermediate` | S23 · Livro 03 | **S18 · Livro 04** | B2 (S18 já hospeda o mesmo título) |
+
+**Renumeração para fechar lacunas na origem:**
+S04 06→04, 07→05 · S09 04→03, 05→04 · S23 04→03, 05→04
+
+**Também nesta passagem:** S21 reclassificado de C1/C2 para **B1** — seus livros
+são A2/B1 (`Speak English: 30 Days`, `Pronunciation in Use Intermediate`,
+`Everyday Conversations`), não avançados.
+
+> ⚠️ As tabelas das seções anteriores usam a numeração de sistema **anterior**
+> à reorganização A1→C2 (commit c2f7e15) e são mantidas como registro histórico.

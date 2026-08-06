@@ -1,0 +1,135 @@
+caminho_atual | nome_arquivo | sistema_atual | bytes
+========================================================================================================================
+Sistema 01 — Crianças · Kids Box/01_Kid's Box New Generation Level 3 Student's Book with eBook American English.md | 01_Kid's Box New Generation Level 3 Student's Book with eBook American English.md | Sistema 01 — Crianças · Kids Box | 50770
+Sistema 01 — Crianças · Kids Box/02_Kid's Box American English 4 - Student's Book - Updated Second Edition.md | 02_Kid's Box American English 4 - Student's Book - Updated Second Edition.md | Sistema 01 — Crianças · Kids Box | 71138
+Sistema 03 — Inglês do Zero · Base Completa/SanAmericano_Resumo_Tecnico_Completo.md | SanAmericano_Resumo_Tecnico_Completo.md | Sistema 03 — Inglês do Zero · Base Completa | 27880
+Sistema 03 — Inglês do Zero · Base Completa/jornada_completa.md | jornada_completa.md | Sistema 03 — Inglês do Zero · Base Completa | 29790
+Sistema 03 — Inglês do Zero · Base Completa/sistema10_conteudo.md | sistema10_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 26789
+Sistema 03 — Inglês do Zero · Base Completa/sistema11_conteudo.md | sistema11_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 27971
+Sistema 03 — Inglês do Zero · Base Completa/sistema12_conteudo.md | sistema12_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 13185
+Sistema 03 — Inglês do Zero · Base Completa/sistema13_conteudo.md | sistema13_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 10378
+Sistema 03 — Inglês do Zero · Base Completa/sistema14_conteudo.md | sistema14_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 12772
+Sistema 03 — Inglês do Zero · Base Completa/sistema15_conteudo.md | sistema15_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 14875
+Sistema 03 — Inglês do Zero · Base Completa/sistema16_conteudo.md | sistema16_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 14093
+Sistema 03 — Inglês do Zero · Base Completa/sistema17_conteudo.md | sistema17_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 13153
+Sistema 03 — Inglês do Zero · Base Completa/sistema18_conteudo.md | sistema18_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 12373
+Sistema 03 — Inglês do Zero · Base Completa/sistema19_conteudo.md | sistema19_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 12535
+Sistema 03 — Inglês do Zero · Base Completa/sistema20_conteudo.md | sistema20_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 12413
+Sistema 03 — Inglês do Zero · Base Completa/sistema21_conteudo.md | sistema21_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 13173
+Sistema 03 — Inglês do Zero · Base Completa/sistema22_conteudo.md | sistema22_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 26687
+Sistema 03 — Inglês do Zero · Base Completa/sistema23_conteudo.md | sistema23_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 16426
+Sistema 03 — Inglês do Zero · Base Completa/sistema24_conteudo.md | sistema24_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 18204
+Sistema 03 — Inglês do Zero · Base Completa/sistema25_conteudo.md | sistema25_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 36134
+Sistema 03 — Inglês do Zero · Base Completa/sistema26_conteudo.md | sistema26_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 24614
+Sistema 03 — Inglês do Zero · Base Completa/sistema27_conteudo.md | sistema27_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 25561
+Sistema 03 — Inglês do Zero · Base Completa/sistema2_conteudo.md | sistema2_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 110540
+Sistema 03 — Inglês do Zero · Base Completa/sistema3_conteudo.md | sistema3_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 34488
+Sistema 03 — Inglês do Zero · Base Completa/sistema4_conteudo.md | sistema4_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 67220
+Sistema 03 — Inglês do Zero · Base Completa/sistema5_conteudo.md | sistema5_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 28656
+Sistema 03 — Inglês do Zero · Base Completa/sistema6_conteudo.md | sistema6_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 41020
+Sistema 03 — Inglês do Zero · Base Completa/sistema7_conteudo.md | sistema7_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 65624
+Sistema 03 — Inglês do Zero · Base Completa/sistema9_conteudo.md | sistema9_conteudo.md | Sistema 03 — Inglês do Zero · Base Completa | 15234
+Sistema 03 — Inglês do Zero · Base Completa/_admin/jornada_completa.md | jornada_completa.md | Sistema 03 — Inglês do Zero · Base Completa | 29790
+Sistema 04 — Gramática Básica/01_Basic English Grammar Workbook For Dummies.md | 01_Basic English Grammar Workbook For Dummies.md | Sistema 04 — Gramática Básica | 646013
+Sistema 04 — Gramática Básica/02_Everything You Need to Ace English Language Arts in One Big Fat Notebook, 2nd Edition.md | 02_Everything You Need to Ace English Language Arts in One Big Fat Notebook, 2nd Edition.md | Sistema 04 — Gramática Básica | 456323
+Sistema 04 — Gramática Básica/03_English Grammar For Dummies.md | 03_English Grammar For Dummies.md | Sistema 04 — Gramática Básica | 626989
+Sistema 04 — Gramática Básica/04_nglish Grammar A Resource Book for Students.md | 04_nglish Grammar A Resource Book for Students.md | Sistema 04 — Gramática Básica | 638681
+Sistema 04 — Gramática Básica/05_Grammar For Young Learners.md | 05_Grammar For Young Learners.md | Sistema 04 — Gramática Básica | 237139
+Sistema 04 — Gramática Básica/06_Grammar And Usage For Better Writing.md | 06_Grammar And Usage For Better Writing.md | Sistema 04 — Gramática Básica | 306799
+Sistema 04 — Gramática Básica/07_The Infographic Guide to Grammar.md | 07_The Infographic Guide to Grammar.md | Sistema 04 — Gramática Básica | 78448
+Sistema 05 — Motor de Verbos/sistema12_conteudo.md | sistema12_conteudo.md | Sistema 05 — Motor de Verbos | 13185
+Sistema 05 — Motor de Verbos/sistema13_conteudo.md | sistema13_conteudo.md | Sistema 05 — Motor de Verbos | 10378
+Sistema 05 — Motor de Verbos/sistema14_conteudo.md | sistema14_conteudo.md | Sistema 05 — Motor de Verbos | 12772
+Sistema 05 — Motor de Verbos/sistema16_conteudo.md | sistema16_conteudo.md | Sistema 05 — Motor de Verbos | 14093
+Sistema 05 — Motor de Verbos/sistema17_conteudo.md | sistema17_conteudo.md | Sistema 05 — Motor de Verbos | 13153
+Sistema 05 — Motor de Verbos/sistema18_conteudo.md | sistema18_conteudo.md | Sistema 05 — Motor de Verbos | 12373
+Sistema 05 — Motor de Verbos/sistema19_conteudo.md | sistema19_conteudo.md | Sistema 05 — Motor de Verbos | 12535
+Sistema 05 — Motor de Verbos/sistema20_conteudo.md | sistema20_conteudo.md | Sistema 05 — Motor de Verbos | 12413
+Sistema 05 — Motor de Verbos/sistema22_conteudo.md | sistema22_conteudo.md | Sistema 05 — Motor de Verbos | 26687
+Sistema 05 — Motor de Verbos/sistema23_conteudo.md | sistema23_conteudo.md | Sistema 05 — Motor de Verbos | 16426
+Sistema 05 — Motor de Verbos/sistema3_conteudo.md | sistema3_conteudo.md | Sistema 05 — Motor de Verbos | 34488
+Sistema 05 — Motor de Verbos/sistema4_conteudo.md | sistema4_conteudo.md | Sistema 05 — Motor de Verbos | 67220
+Sistema 05 — Motor de Verbos/sistema5_conteudo.md | sistema5_conteudo.md | Sistema 05 — Motor de Verbos | 28656
+Sistema 05 — Motor de Verbos/sistema7_conteudo.md | sistema7_conteudo.md | Sistema 05 — Motor de Verbos | 65624
+Sistema 06 — Situar a Frase/sistema10_conteudo.md | sistema10_conteudo.md | Sistema 06 — Situar a Frase | 26789
+Sistema 06 — Situar a Frase/sistema23_conteudo.md | sistema23_conteudo.md | Sistema 06 — Situar a Frase | 16426
+Sistema 06 — Situar a Frase/sistema2_conteudo.md | sistema2_conteudo.md | Sistema 06 — Situar a Frase | 110540
+Sistema 06 — Situar a Frase/sistema9_conteudo.md | sistema9_conteudo.md | Sistema 06 — Situar a Frase | 15234
+Sistema 07 — Conectar Frases/sistema15_conteudo.md | sistema15_conteudo.md | Sistema 07 — Conectar Frases | 14875
+Sistema 07 — Conectar Frases/sistema6_conteudo.md | sistema6_conteudo.md | Sistema 07 — Conectar Frases | 41020
+Sistema 07 — Conectar Frases/sistema7_conteudo.md | sistema7_conteudo.md | Sistema 07 — Conectar Frases | 65624
+Sistema 08 — Conversação & Frases/LIVRO_01_1000 melhores dicas para aprender inglês.md | LIVRO_01_1000 melhores dicas para aprender inglês.md | Sistema 08 — Conversação & Frases | 363347
+Sistema 08 — Conversação & Frases/LIVRO_02_Livro Inglês Conversação para viagem-Michaelis tour Completo.md | LIVRO_02_Livro Inglês Conversação para viagem-Michaelis tour Completo.md | Sistema 08 — Conversação & Frases | 125499
+Sistema 08 — Conversação & Frases/LIVRO_03_120 frases para uma conversa em inglês (LM10-Livro digital).md | LIVRO_03_120 frases para uma conversa em inglês (LM10-Livro digital).md | Sistema 08 — Conversação & Frases | 18103
+Sistema 08 — Conversação & Frases/LIVRO_04_Segredo da Fluência - Como aprender Inglês com Música - Leonardo de Mello (2016).md | LIVRO_04_Segredo da Fluência - Como aprender Inglês com Música - Leonardo de Mello (2016).md | Sistema 08 — Conversação & Frases | 183990
+Sistema 08 — Conversação & Frases/LIVRO_05_Livro Memorização para aprender idiomas - Marcos da Costa Gois-1.md | LIVRO_05_Livro Memorização para aprender idiomas - Marcos da Costa Gois-1.md | Sistema 08 — Conversação & Frases | 193585
+Sistema 08 — Conversação & Frases/LIVRO_06_Como não aprender Inglês ( PDFDrive.com ).md | LIVRO_06_Como não aprender Inglês ( PDFDrive.com ).md | Sistema 08 — Conversação & Frases | 535472
+Sistema 09 — English for Everyone/01_English for Everyone English Grammar Guide A Comprehensive Visual Reference.md | 01_English for Everyone English Grammar Guide A Comprehensive Visual Reference.md | Sistema 09 — English for Everyone | 422999
+Sistema 09 — English for Everyone/02_English for Everyone English Vocabulary Builder (DK English for Everyone) (English Edition).md | 02_English for Everyone English Vocabulary Builder (DK English for Everyone) (English Edition).md | Sistema 09 — English for Everyone | 244775
+Sistema 09 — English for Everyone/03_English for Everyone Junior Beginner's Course.md | 03_English for Everyone Junior Beginner's Course.md | Sistema 09 — English for Everyone | 100122
+Sistema 09 — English for Everyone/04_English for Everyone Practice Book Level 1 Beginner A Complete Self-Study Program.md | 04_English for Everyone Practice Book Level 1 Beginner A Complete Self-Study Program.md | Sistema 09 — English for Everyone | 183603
+Sistema 09 — English for Everyone/05_English for Everyone Practice Book Level 2 Beginner A Complete Self-Study Program.md | 05_English for Everyone Practice Book Level 2 Beginner A Complete Self-Study Program.md | Sistema 09 — English for Everyone | 192896
+Sistema 09 — English for Everyone/06_Pronouncing American English.md | 06_Pronouncing American English.md | Sistema 09 — English for Everyone | 349952
+Sistema 10 — Reduções e Pronúncia/Sistema 02 — Reduções do Inglês Real_v01.md | Sistema 02 — Reduções do Inglês Real_v01.md | Sistema 10 — Reduções e Pronúncia | 6801
+Sistema 10 — Reduções e Pronúncia/sistema2_conteudo.md | sistema2_conteudo.md | Sistema 10 — Reduções e Pronúncia | 110540
+Sistema 11 — American English File/01_American English File 1 - Student Book Pk - 03Edition.md | 01_American English File 1 - Student Book Pk - 03Edition.md | Sistema 11 — American English File | 382371
+Sistema 11 — American English File/02_American English File 2 - Student Book With Online Practice - Third Edition.md | 02_American English File 2 - Student Book With Online Practice - Third Edition.md | Sistema 11 — American English File | 439819
+Sistema 11 — American English File/03_American English File 3 - Student Book With Online Practice - Third .md | 03_American English File 3 - Student Book With Online Practice - Third .md | Sistema 11 — American English File | 491737
+Sistema 11 — American English File/04_American English File 4 - Student Book With Online Practice - Third Edition D30.md | 04_American English File 4 - Student Book With Online Practice - Third Edition D30.md | Sistema 11 — American English File | 595838
+Sistema 11 — American English File/05_Close-up - 2nd - C1 Workbook.md | 05_Close-up - 2nd - C1 Workbook.md | Sistema 11 — American English File | 517556
+Sistema 11 — American English File/06_Close-up - 1st - C2 Workbook.md | 06_Close-up - 1st - C2 Workbook.md | Sistema 11 — American English File | 588102
+Sistema 12 — Exercícios e Vocabulário/01_English Grammar in Use Supplementary Exercises Book Fifth Edition.md | 01_English Grammar in Use Supplementary Exercises Book Fifth Edition.md | Sistema 12 — Exercícios e Vocabulário | 263855
+Sistema 12 — Exercícios e Vocabulário/02_Grammar - Grammar -Basic Grammar in Use Student's Book with Answers.md | 02_Grammar - Grammar -Basic Grammar in Use Student's Book with Answers.md | Sistema 12 — Exercícios e Vocabulário | 533327
+Sistema 12 — Exercícios e Vocabulário/03_English Collocations in Use Intermediate Book.md | 03_English Collocations in Use Intermediate Book.md | Sistema 12 — Exercícios e Vocabulário | 503143
+Sistema 12 — Exercícios e Vocabulário/04_Basic Grammar in Use Student's Book.md | 04_Basic Grammar in Use Student's Book.md | Sistema 12 — Exercícios e Vocabulário | 427476
+Sistema 12 — Exercícios e Vocabulário/05_English Phrasal Verbs in Use Intermediate Sb With Answers 2Ed.md | 05_English Phrasal Verbs in Use Intermediate Sb With Answers 2Ed.md | Sistema 12 — Exercícios e Vocabulário | 457164
+Sistema 12 — Exercícios e Vocabulário/06_Practice Makes Perfect English Conversation, Premium Fourth Edition.md | 06_Practice Makes Perfect English Conversation, Premium Fourth Edition.md | Sistema 12 — Exercícios e Vocabulário | 248935
+Sistema 13 — Gramática em Uso/01_English Grammar in Use Book with Answers A Self-Study Reference and Practice Book for Intermediate Learners.md | 01_English Grammar in Use Book with Answers A Self-Study Reference and Practice Book for Intermediate Learners.md | Sistema 13 — Gramática em Uso | 957087
+Sistema 13 — Gramática em Uso/02_Grammar Practice for Intermediate Students.md | 02_Grammar Practice for Intermediate Students.md | Sistema 13 — Gramática em Uso | 231562
+Sistema 13 — Gramática em Uso/03_Oxford-Guide-to-English-Grammar.md | 03_Oxford-Guide-to-English-Grammar.md | Sistema 13 — Gramática em Uso | 900055
+Sistema 13 — Gramática em Uso/04_Essential Grammar in Use com respostas Gramática básica da língua inglesa.md | 04_Essential Grammar in Use com respostas Gramática básica da língua inglesa.md | Sistema 13 — Gramática em Uso | 630757
+Sistema 13 — Gramática em Uso/05_English Pronunciation Made Simple.md | 05_English Pronunciation Made Simple.md | Sistema 13 — Gramática em Uso | 407707
+Sistema 13 — Gramática em Uso/06_Reactivate Your Grammar And Vocabulary C1C2 - Exams.md | 06_Reactivate Your Grammar And Vocabulary C1C2 - Exams.md | Sistema 13 — Gramática em Uso | 574638
+Sistema 14 — In Use Series/01_Practice Makes Perfect Complete English All-in-One for ESL Learners.md | 01_Practice Makes Perfect Complete English All-in-One for ESL Learners.md | Sistema 14 — In Use Series | 1042489
+Sistema 14 — In Use Series/02_English Vocabulary in Use. Elementary. 3rd Edition.md | 02_English Vocabulary in Use. Elementary. 3rd Edition.md | Sistema 14 — In Use Series | 279803
+Sistema 14 — In Use Series/03_English Pronunciation in Use Elementary.md | 03_English Pronunciation in Use Elementary.md | Sistema 14 — In Use Series | 243401
+Sistema 14 — In Use Series/04_Grammar - Grammar in Use Intermediate Student's.md | 04_Grammar - Grammar in Use Intermediate Student's.md | Sistema 14 — In Use Series | 866734
+Sistema 14 — In Use Series/05_Practice Makes Perfect English Vocabulary for Beginning ESL Learners, Premium Fourth Edition.md | 05_Practice Makes Perfect English Vocabulary for Beginning ESL Learners, Premium Fourth Edition.md | Sistema 14 — In Use Series | 187654
+Sistema 14 — In Use Series/06_Practise Makes Perfect_ English Verbs 3rd Edition.md | 06_Practise Makes Perfect_ English Verbs 3rd Edition.md | Sistema 14 — In Use Series | 244875
+Sistema 15 — Dúvidas Pontuais/sistema13_conteudo.md | sistema13_conteudo.md | Sistema 15 — Dúvidas Pontuais | 10378
+Sistema 15 — Dúvidas Pontuais/sistema21_conteudo.md | sistema21_conteudo.md | Sistema 15 — Dúvidas Pontuais | 13173
+Sistema 18 — Accent Training/01_American Accent Training.md | 01_American Accent Training.md | Sistema 18 — Accent Training | 410633
+Sistema 18 — Accent Training/02_Mastering the American Accent (Lisa Mojsin) (z-lib.org).md | 02_Mastering the American Accent (Lisa Mojsin) (z-lib.org).md | Sistema 18 — Accent Training | 312019
+Sistema 18 — Accent Training/03_English Vocabulary in Use Upper-Intermediate.md | 03_English Vocabulary in Use Upper-Intermediate.md | Sistema 18 — Accent Training | 693103
+Sistema 19 — Business & Avançado/01_English for Everyone Business English Course Book Level 1 Beginner A Complete Self-Study Program.md | 01_English for Everyone Business English Course Book Level 1 Beginner A Complete Self-Study Program.md | Sistema 19 — Business & Avançado | 246521
+Sistema 19 — Business & Avançado/02_English for Everyone Business English Course Book Level 2 A Complete Self-Study Programme.md | 02_English for Everyone Business English Course Book Level 2 A Complete Self-Study Programme.md | Sistema 19 — Business & Avançado | 251158
+Sistema 19 — Business & Avançado/03_English for Everyone Course Book Level 3 Intermediate A Complete Self-Study Programme.md | 03_English for Everyone Course Book Level 3 Intermediate A Complete Self-Study Programme.md | Sistema 19 — Business & Avançado | 348308
+Sistema 19 — Business & Avançado/04_English for Everyone Practice Book Level 4 Advanced A Complete Self-Study Programme.md | 04_English for Everyone Practice Book Level 4 Advanced A Complete Self-Study Programme.md | Sistema 19 — Business & Avançado | 450769
+Sistema 19 — Business & Avançado/05_Perfecting your english pronunciation Susan Cameron.md | 05_Perfecting your english pronunciation Susan Cameron.md | Sistema 19 — Business & Avançado | 287361
+Sistema 19 — Business & Avançado/06_4000 Essential English Words  Book 6.md | 06_4000 Essential English Words  Book 6.md | Sistema 19 — Business & Avançado | 251768
+Sistema 20 — B2 First/01_B2-First 1 With Answers.md | 01_B2-First 1 With Answers.md | Sistema 20 — B2 First | 230474
+Sistema 20 — B2 First/02_B2-First 2 With Answers.md | 02_B2-First 2 With Answers.md | Sistema 20 — B2 First | 199479
+Sistema 20 — B2 First/03_B2-First 3 With Answers.md | 03_B2-First 3 With Answers.md | Sistema 20 — B2 First | 237132
+Sistema 20 — B2 First/04_B2-First 4 With Answers For Schools.md | 04_B2-First 4 With Answers For Schools.md | Sistema 20 — B2 First | 209557
+Sistema 20 — B2 First/05_B2 First 5 Student's Book with Answers.md | 05_B2 First 5 Student's Book with Answers.md | Sistema 20 — B2 First | 230861
+Sistema 21 — Pronúncia & Conversação/01_Speak English 30 Days to Better English.md | 01_Speak English 30 Days to Better English.md | Sistema 21 — Pronúncia & Conversação | 260340
+Sistema 21 — Pronúncia & Conversação/02_Cambridge - English Pronunciation in Use Intermediate.md | 02_Cambridge - English Pronunciation in Use Intermediate.md | Sistema 21 — Pronúncia & Conversação | 312560
+Sistema 21 — Pronúncia & Conversação/03_b_dialogues_everyday_conversations_english_lo_0.md | 03_b_dialogues_everyday_conversations_english_lo_0.md | Sistema 21 — Pronúncia & Conversação | 49081
+Sistema 22 — Gramática Avançada · Proficiency/01_Objective Proficiency Student's Book with Answers with Downloadable Software.md | 01_Objective Proficiency Student's Book with Answers with Downloadable Software.md | Sistema 22 — Gramática Avançada · Proficiency | 903907
+Sistema 22 — Gramática Avançada · Proficiency/02_Grammar - Advanced Grammar in Use Book with Answers and eBook and Online Test.md | 02_Grammar - Advanced Grammar in Use Book with Answers and eBook and Online Test.md | Sistema 22 — Gramática Avançada · Proficiency | 910587
+Sistema 22 — Gramática Avançada · Proficiency/03_Grammar and Vocabulary for Advanced Book with Answers.md | 03_Grammar and Vocabulary for Advanced Book with Answers.md | Sistema 22 — Gramática Avançada · Proficiency | 625677
+Sistema 22 — Gramática Avançada · Proficiency/04_Advanced Language Practice with Key - MIchael Vince.md | 04_Advanced Language Practice with Key - MIchael Vince.md | Sistema 22 — Gramática Avançada · Proficiency | 556663
+Sistema 22 — Gramática Avançada · Proficiency/05_Complete Advanced Student's Book with Answers with Digital Pack.md | 05_Complete Advanced Student's Book with Answers with Digital Pack.md | Sistema 22 — Gramática Avançada · Proficiency | 743259
+Sistema 22 — Gramática Avançada · Proficiency/06_English Vocabulary in Use Advanced 3rd Edition.md | 06_English Vocabulary in Use Advanced 3rd Edition.md | Sistema 22 — Gramática Avançada · Proficiency | 827991
+Sistema 22 — Gramática Avançada · Proficiency/07_English Pronunciation in Use. Advanced.md | 07_English Pronunciation in Use. Advanced.md | Sistema 22 — Gramática Avançada · Proficiency | 431594
+Sistema 23 — Gramática Avançada · Oxford/01_Oxford English Grammar Course Advanced with Key (includes e-book).md | 01_Oxford English Grammar Course Advanced with Key (includes e-book).md | Sistema 23 — Gramática Avançada · Oxford | 866241
+Sistema 23 — Gramática Avançada · Oxford/02_English Vocabulary in Use Advanced 100 units of vocabulary reference and practice.md | 02_English Vocabulary in Use Advanced 100 units of vocabulary reference and practice.md | Sistema 23 — Gramática Avançada · Oxford | 691570
+Sistema 23 — Gramática Avançada · Oxford/03_English Vocabulary in Use Upper-intermediate With answers.md | 03_English Vocabulary in Use Upper-intermediate With answers.md | Sistema 23 — Gramática Avançada · Oxford | 646659
+Sistema 23 — Gramática Avançada · Oxford/04_Grammar and Vocabulary for Cambridge Advanced and Proficiency.md | 04_Grammar and Vocabulary for Cambridge Advanced and Proficiency.md | Sistema 23 — Gramática Avançada · Oxford | 944981
+Sistema 23 — Gramática Avançada · Oxford/05_New English File - Advanced Level. Student's Book.md | 05_New English File - Advanced Level. Student's Book.md | Sistema 23 — Gramática Avançada · Oxford | 637365
+Sistema 24 — Gramática Avançada · Cambridge/01_Advancing Vocabulary Skills - By Sherrie L. Nist.md | 01_Advancing Vocabulary Skills - By Sherrie L. Nist.md | Sistema 24 — Gramática Avançada · Cambridge | 431544
+Sistema 24 — Gramática Avançada · Cambridge/02_English Advancing A Bridge to Success.md | 02_English Advancing A Bridge to Success.md | Sistema 24 — Gramática Avançada · Cambridge | 324214
+Sistema 24 — Gramática Avançada · Cambridge/03_New Cambridge Advanced English Student's book.md | 03_New Cambridge Advanced English Student's book.md | Sistema 24 — Gramática Avançada · Cambridge | 416268
+Sistema 25 — Vocabulário & Oratória/01_The Most Effective Vocabulary Builder in the English Language (Norman-Lewis).md | 01_The Most Effective Vocabulary Builder in the English Language (Norman-Lewis).md | Sistema 25 — Vocabulário & Oratória | 710842
+Sistema 25 — Vocabulário & Oratória/02_Talk Like TED The 9 Public-Speaking Secrets of the Worlds Top Minds (Carmine Gallo) (z-lib.org).md | 02_Talk Like TED The 9 Public-Speaking Secrets of the Worlds Top Minds (Carmine Gallo) (z-lib.org).md | Sistema 25 — Vocabulário & Oratória | 468223
+Sistema 25 — Vocabulário & Oratória/03_The Art Of Public Speaking.md | 03_The Art Of Public Speaking.md | Sistema 25 — Vocabulário & Oratória | 951949

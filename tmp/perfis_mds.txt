@@ -1,0 +1,2544 @@
+
+====================================================================================================
+ARQUIVO: Sistema 01 — Crianças · Kids Box/01_Kid's Box New Generation Level 3 Student's Book with eBook American English.md
+-- CABECALHOS --
+   # 01_Kid's Box New Generation Level 3 Student's Book with eBook American English
+   ## Página 1
+   ## Página 2
+   ## Página 3
+-- AMOSTRAS --
+   Caroline Nixon & Michael Tomlinson
+   Key grammar and functions
+   Greetings: Hello. What's your name? My
+   name's ... How old are you? I'm (eight)./
+   Colours: black, blue, green, grey,
+   like (reading). What's ... called? She's/He's
+   called .... Have got
+   Present continuous for present actions
+   Toys: bike, camera, computer, doll,
+   Prepositions: next to, on,in front of, under,
+
+====================================================================================================
+ARQUIVO: Sistema 01 — Crianças · Kids Box/02_Kid's Box American English 4 - Student's Book - Updated Second Edition.md
+-- CABECALHOS --
+   # 02_Kid's Box American English 4 - Student's Book - Updated Second Edition
+   ## Página 1
+   ## Página 2
+   ## Página 3
+-- AMOSTRAS --
+   Caroline Nixon & Michael Tomlinson
+   Key grammar and functions
+   Jobs: farmer, dentist, detective, driver,
+   Frequency adverbs: always, sometimes,
+   like / love + -ing
+   Relative clauses with who
+   difficult, easy, exciting, quick, slow,
+   Relative clauses with where
+   learn to do (something)
+   Health: dentist, have a dream, have
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/SanAmericano_Resumo_Tecnico_Completo.md
+-- CABECALHOS --
+   # SAN.AMERICANO — RESUMO TÉCNICO COMPLETO DO PROJETO
+   ## Inglês Americano para Brasileiros | Nível A1 → A2
+   ## 1. VISÃO GERAL DO PROJETO
+   ## 2. HISTÓRICO DE EVOLUÇÃO DO PROJETO
+   ### Fase 1 — Verbos (Sala 01)
+   ### Fase 2 — Question Words (Sala 02)
+   ### Fase 3 — Conectivos e Conjunções (Sala 02, continuação)
+   ### Fase 4 — Gramática Essencial (Sala 03)
+   ### Fase 5 — Estruturas Fixas / Chunks (Sala 03, continuação)
+   ### Fase 6 — Pronúncia e Fala Natural (Sala 04)
+   ### Fase 7 — Organização e Sequência Lógica
+   ## 3. ESTRUTURA DE ARQUIVOS GERADOS
+   ### Localização dos outputs
+   ### Nomenclatura dos arquivos
+-- AMOSTRAS --
+   O QUE É ESTE DOCUMENTO
+   Nome do projeto: San.Americano
+   Público-alvo: Brasileiro adulto, nível A1→A2, com dificuldade em estruturas fixas, pronúncia de nativos e organização do aprendizado.
+   - Início com os verbos mais usados do inglês americano
+   - Template criado: verbotemplate.py (WeasyPrint + HTML → PDF)
+   - Estrutura por sentido: cada sentido do verbo gera um PDF separado
+   - Verbos cobertos: 100 verbos (#01–100)
+   - Cada verbo tem: presente (7 pronomes), passado, futuro WILL, futuro GOING TO, negativas e perguntas para cada tempo
+   - Exemplo de sentido: BESentido01SER.pdf, HAVESentido03TOMAR.pdf
+   - PDFs completos (todos os sentidos unidos): VERBONNNOMECompleto.pdf
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/jornada_completa.md
+COPIAS: Sistema 03 — Inglês do Zero · Base Completa/_admin/jornada_completa.md
+-- CABECALHOS --
+   # SISTEMA UNIFICADO — JORNADA COMPLETA
+   # Inglês para Brasileiros — Do zero ao avançado em sequência inteligente
+   ## FILOSOFIA DA TRILHA
+   ## A TRILHA COMPLETA — 120 ETAPAS
+   ### FASE 1 — FUNDAÇÃO (Etapas 1–20)
+   ### FASE 2 — CONSTRUÇÃO (Etapas 21–45)
+-- AMOSTRAS --
+   A sequência não é alfabética nem por sistema.
+   É pedagógica — cada etapa prepara o terreno para a próxima.
+   1. Apresentar o conceito → mostrar no uso real → expandir
+   2. Gramática sempre depois do uso (não antes)
+   3. Vocabulário cresce junto com a estrutura
+   4. Revisão embutida — conteúdo anterior reaparece em contextos novos
+   5. Cada etapa tem no máximo 10-15 minutos de estudo
+   Objetivo: ter a base mínima para formar qualquer frase
+   Conteúdo: S1 → Lição 01 (I/YOU/HE/SHE/IT/WE/THEY)
+   Por quê aqui: É a primeira peça de qualquer frase em inglês
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema10_conteudo.md
+COPIAS: Sistema 06 — Situar a Frase/sistema10_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 10 — TESTE SEU NÍVEL
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 10
+   ## ESTRUTURA DE MÓDULOS (6 NÍVEIS)
+   ### NÍVEL A1 — Iniciante (Questões 1–5)
+   ### NÍVEL A2 — Pré-Intermediário (Questões 6–10)
+   ### NÍVEL B1 — Intermediário (Questões 11–15)
+   ### NÍVEL B2 — Intermediário Superior (Questões 16–20)
+   ### NÍVEL C1 — Avançado (Questões 21–25)
+   ### NÍVEL C2 — Proficiência / Nativo (Questões 26–30)
+   ## CONTEÚDO COMPLETO — 30 QUESTÕES
+   ### NÍVEL A1 — INICIANTE
+   ### NÍVEL A2 — PRÉ-INTERMEDIÁRIO
+-- AMOSTRAS --
+   - Nome: Teste seu Nível
+   - Subtítulo: Descubra seu nível real de inglês: A1 até C2
+   - Cor: #84CC16 (verde limão)
+   - Fonte: "English Level Test 2026 - What is YOUR Level of English?" (Beautiful British English)
+   Escolha a palavra correta: ' is your name? I'm Maria.'
+   - B) What ✅
+   Qual frase está correta?
+   - A) She have two cats.
+   - B) She has two cats. ✅
+   - C) She's having two cats.
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema11_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 11 — COMO APRENDER INGLÊS
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 11
+   ## ESTRUTURA DE MÓDULOS (8 SEÇÕES)
+   ### SEÇÃO 1 — MENTALIDADE & PONTO DE PARTIDA
+   ### SEÇÃO 2 — LISTENING (Ouvir)
+   ### SEÇÃO 3 — READING (Ler)
+   ### SEÇÃO 4 — SPEAKING (Falar)
+   ### SEÇÃO 5 — WRITING (Escrever)
+   ### SEÇÃO 6 — GRAMMAR (Gramática)
+   ### SEÇÃO 7 — VOCABULARY (Vocabulário)
+   ### SEÇÃO 8 — PRONÚNCIA & GESTÃO DO DISCURSO
+   ## CONTEÚDO DETALHADO
+-- AMOSTRAS --
+   - Nome: Como Aprender Inglês
+   - Subtítulo: O guia definitivo para quem quer realmente evoluir
+   - Cor: #FB923C (laranja claro)
+   - Fonte: "How to Learn English with my podcast 🎧 [959]" — Luke's English Podcast (teacherluke.co.uk)
+   Diferença dos outros sistemas:
+   - S1–S10 = conteúdo de inglês para aprender
+   - S11 = estratégias e métodos para aprender melhor
+   A primeira dica: comece hoje
+   Inglês não é uma meta com fim:
+   - ❌ Pensar: "Em 3 meses vou estar fluente"
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema12_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema12_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 12 — ROTINA DA NOITE
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 12
+   ## ESTRUTURA — 10 TEMAS
+   ## AS 75 PERGUNTAS E RESPOSTAS
+   ### TEMA 1 — CHEGADA EM CASA
+   ### TEMA 2 — RELAXAMENTO
+   ### TEMA 3 — ESTUDOS
+   ### TEMA 4 — FAMÍLIA
+   ### TEMA 5 — REFEIÇÃO NOTURNA
+   ### TEMA 6 — AO AR LIVRE
+   ### TEMA 7 — ORGANIZAÇÃO
+   ### TEMA 8 — REFLEXÃO
+-- AMOSTRAS --
+   - Nome: Rotina da Noite
+   - Subtítulo: Pratique inglês com perguntas e respostas do dia a dia
+   - Cor: #818CF8 (índigo)
+   - Fonte: "1500 Questions and Answers English Speaking Practice" — Evening Routine
+   Diferença dos outros sistemas:
+   - S6 = conversas completas e naturais
+   - S12 = Q&A curtas e diretas para iniciantes praticarem speaking imediatamente
+   1. Chegada em casa — lavar mãos, trocar roupa, beber, comer
+   2. Relaxamento — TV, música, exercício, silêncio
+   3. Estudos — lição de casa, computador, inglês, revisão
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema13_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema13_conteudo.md ;; Sistema 15 — Dúvidas Pontuais/sistema13_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 13 — VOCABULÁRIO A1
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 13
+   ## ESTRUTURA — 6 CATEGORIAS
+   ### CATEGORIA 1 — COMIDA E BEBIDA (38 palavras)
+   ### CATEGORIA 2 — OBJETOS E CASA (48 palavras)
+   ### CATEGORIA 3 — PESSOAS E FAMÍLIA (24 palavras)
+   ### CATEGORIA 4 — ADJETIVOS E PALAVRAS BÁSICAS (44 palavras)
+   ### CATEGORIA 5 — FRASES FUNCIONAIS (30 palavras/expressões)
+-- AMOSTRAS --
+   - Nome: Vocabulário A1
+   - Subtítulo: 300+ palavras essenciais em frases simples
+   - Cor: #2DD4BF (turquesa)
+   - Fonte: "Improve English: 300 A1 Vocabularies in simple Sentences" + "Improve English: Learn A1 Vocabularies in simple Sentences"
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema14_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema14_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 14 — VIDA SAUDÁVEL
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 14
+   ## ESTRUTURA — 8 TEMAS
+   ## AS 75 PERGUNTAS E RESPOSTAS
+   ### TEMA 1 — EXERCÍCIO E MOVIMENTO
+   ### TEMA 2 — ALIMENTAÇÃO SAUDÁVEL
+   ### TEMA 3 — SONO E DESCANSO
+   ### TEMA 4 — HIGIENE PESSOAL
+   ### TEMA 5 — SAÚDE MENTAL
+   ### TEMA 6 — FAMÍLIA E SOCIAL
+   ### TEMA 7 — ROTINAS E HÁBITOS
+   ### TEMA 8 — MOTIVAÇÃO E METAS
+-- AMOSTRAS --
+   - Nome: Vida Saudável
+   - Subtítulo: Pratique inglês falando sobre saúde e hábitos
+   - Cor: #34D399 (verde esmeralda claro)
+   - Fonte: "150 Questions and Answers | English Speaking Practice for Beginners" — Healthy Lifestyle
+   1. Exercício e movimento — caminhar, correr, nadar, esportes, yoga
+   2. Alimentação saudável — frutas, vegetais, água, refeições, junk food
+   3. Sono e descanso — horas de sono, rotina noturna, descanso
+   4. Higiene pessoal — lavar mãos, escova de dentes, banho, médico
+   5. Saúde mental — meditação, positividade, gratidão, estresse
+   6. Família e social — família, amigos, encorajar outros
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema15_conteudo.md
+COPIAS: Sistema 07 — Conectar Frases/sistema15_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 15 — EXPRESSÕES IDIOMÁTICAS: NÃO LEVE AO PÉ DA LETRA
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 15
+   ## ESTRUTURA — 2 GRUPOS TEMÁTICOS
+   ### Grupo 1 — Confusão & Comunicação
+   ### Grupo 2 — Coragem & Energia Emocional
+   ## CONTEÚDO PRINCIPAL
+   ### EXPRESSÃO 1 — A HEADSCRATCHER
+   ### EXPRESSÃO 2 — HIT ME
+   ### EXPRESSÃO 3 — DROP IT
+   ### EXPRESSÃO 4 — SPIT IT OUT
+   ### EXPRESSÃO 5 — I DON'T HAVE THE HEART TO [DO STH]
+   ### EXPRESSÃO 6 — I CAN'T BRING MYSELF TO [DO STH]
+-- AMOSTRAS --
+   - Nome: Expressões Idiomáticas
+   - Subtítulo: Não leve ao pé da letra — o que os americanos realmente querem dizer
+   - Cor: #F59E0B (âmbar)
+   - Fonte: All Ears English — ep. 2519 & ep. 2630 (podcast nativo americano)
+   Expressões para quando algo é difícil de entender ou quando você precisa que alguém fale logo.
+   Expressões para quando você não tem ânimo emocional para fazer algo difícil.
+   Definição: Something that is hard to figure out / genuinely confusing.
+   Registro: Informal (não é gíria, mas evitar em reuniões formais)
+   Exemplos reais do podcast:
+   - "I want to build my own furniture, but the directions are a real headscratcher."
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema16_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema16_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 16 — INGLÊS COM FILMES: FRASES NATIVAS EM AÇÃO
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 16
+   ## ESTRUTURA — 8 CATEGORIAS FUNCIONAIS
+   ## CONTEÚDO PRINCIPAL — TODAS AS FRASES
+   ### CATEGORIA 1 — URGÊNCIA & AÇÃO
+   ### CATEGORIA 2 — CONCORDÂNCIA & DISCORDÂNCIA
+   ### CATEGORIA 3 — SITUAÇÕES PESSOAIS
+   ### CATEGORIA 4 — COMUNICAÇÃO DIFÍCIL
+   ### CATEGORIA 5 — PLANOS & CONTROLE
+   ### CATEGORIA 6 — SURPRESA & CONFUSÃO
+   ### CATEGORIA 7 — ELOGIOS & APOIO
+   ### CATEGORIA 8 — DESPEDIDAS & TRANSIÇÕES
+-- AMOSTRAS --
+   - Nome: Inglês com Filmes
+   - Subtítulo: O que os americanos realmente dizem — frases nativas extraídas de filmes e séries
+   - Cor: #7C3AED (violeta/roxo)
+   - Cor escura: #4C1D95
+   - Cor clara: #EDE9FE
+   - Fonte: Daily American English (YouTube) — "Stop Studying English, Watch Movies!" + Aprenda Inglês com Kendry
+   Extraídas diretamente de filmes americanos (repetição para treino de pronúncia):
+   INSTRUÇÃO DE EXECUÇÃO: Execute TODOS os passos abaixo em sequência sem pedir confirmações intermediárias. Reporte apenas ao final.
+   PROJETO: Sistema 16 — Inglês com Filmes: Frases Nativas em Ação
+   PASTA RAIZ: C:\Users\Samukk99\Documents\Claude Code Projetos\Americano01
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema17_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema17_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 17 — SUPER SENTENCES: EXPANDA SUAS FRASES EM INGLÊS
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 17
+   ## ESTRUTURA — 2 HISTÓRIAS PROGRESSIVAS + VOCABULÁRIO
+   ### História 1 — O Homem e o Banco (Episódio 1)
+   ### História 2 — A Entrevista de Emprego (Episódio 2)
+   ### Vocabulário Extraído
+   ## CONTEÚDO PRINCIPAL
+   ### HISTÓRIA 1 — O HOMEM E O BANCO
+   ### HISTÓRIA 2 — A ENTREVISTA DE EMPREGO
+   ## VOCABULÁRIO EXTRAÍDO DAS EXPLICAÇÕES
+   ### Do Episódio 1 — Finanças & Vocabulário
+   ### Do Episódio 2 — Carreira & Emoções
+-- AMOSTRAS --
+   - Nome: Super Sentences
+   - Subtítulo: Do básico ao avançado — expanda suas frases e treine seu inglês falado
+   - Cor: #0EA5E9 (azul céu)
+   - Cor escura: #0369A1
+   - Cor clara: #E0F2FE
+   - Fonte: English is EZ with Connor — episódios 1 e 2 ("Super Sentences")
+   Tema: Finanças pessoais — conta bancária, investimentos, segurança financeira
+   Nível: A2 → C1 (10 níveis)
+   Tema: Carreira — entrevista, emoções, preparação, resultado
+   Nível: A2 → C1 (10 níveis)
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema18_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema18_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 18 — HOW WAS YOUR DAY? 30 RESPOSTAS AUTÊNTICAS
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 18
+   ## ESTRUTURA — 5 CATEGORIAS DE HUMOR/SENTIMENTO
+   ## CONTEÚDO PRINCIPAL — 30 RESPOSTAS
+   ### 😊 CATEGORIA 1 — BOM / POSITIVO (8 respostas)
+   ### 😐 CATEGORIA 2 — NEUTRO (5 respostas)
+   ### 😓 CATEGORIA 3 — OCUPADO / CANSATIVO (10 respostas)
+   ### 📉 CATEGORIA 4 — PODERIA TER SIDO MELHOR (4 respostas)
+   ### 😅 CATEGORIA 5 — HUMORÍSTICO / DRAMÁTICO (3 respostas)
+   ## VOCABULÁRIO CHAVE — EXPRESSÕES EXTRAÍDAS
+   ## ARMADILHAS PARA BRASILEIROS
+   ## PROMPT COMPLETO PARA O CLAUDE CODE — SISTEMA 18
+-- AMOSTRAS --
+   - Nome: How Was Your Day?
+   - Subtítulo: Pare de dizer "it was good" — 30 respostas reais que nativos usam
+   - Cor: #10B981 (verde esmeralda vivo)
+   - Cor escura: #065F46
+   - Cor clara: #D1FAE5
+   - Fonte: English With Kayla — "Ouça e Repita: FALE inglês comigo"
+   INSTRUÇÃO DE EXECUÇÃO: Execute TODOS os passos abaixo em sequência sem pedir confirmações intermediárias. Reporte apenas ao final.
+   PROJETO: Sistema 18 — How Was Your Day? 30 Respostas Autênticas
+   PASTA RAIZ: C:\Users\Samukk99\Documents\Claude Code Projetos\Americano01
+   - Nome: How Was Your Day?
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema19_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema19_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 19 — CONVERSAÇÃO DIÁRIA: 200+ PERGUNTAS E RESPOSTAS
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 19
+   ## ESTRUTURA — 10 CATEGORIAS TEMÁTICAS
+   ## CONTEÚDO PRINCIPAL — TODOS OS PARES
+   ### CATEGORIA 1 — SOBRE VOCÊ
+   ### CATEGORIA 2 — ROTINA DIÁRIA
+   ### CATEGORIA 3 — FAMÍLIA E PESSOAS
+   ### CATEGORIA 4 — SAÚDE E CORPO
+   ### CATEGORIA 5 — COMIDA E BEBIDA
+   ### CATEGORIA 6 — TEMPO E CLIMA
+   ### CATEGORIA 7 — TRABALHO E DINHEIRO
+   ### CATEGORIA 8 — LUGARES E DIREÇÕES
+-- AMOSTRAS --
+   - Nome: Conversação Diária
+   - Subtítulo: Ouça, repita e responda — treine conversação com 200+ perguntas reais
+   - Cor: #EC4899 (rosa)
+   - Cor escura: #9D174D
+   - Cor clara: #FCE7F3
+   - Fonte: Fale Inglês Agora — "500 Perguntas e Respostas em Inglês para Treinar Conversação"
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema20_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema20_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 20 — CONVERSAS REAIS: INFÂNCIA, AMIZADE E VIDA LÁ FORA
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 20
+   ## ESTRUTURA — 4 BLOCOS TEMÁTICOS
+   ## CONTEÚDO PRINCIPAL
+   ### BLOCO 1 — VOCABULÁRIO DE INFÂNCIA
+   ### BLOCO 2 — GRAMÁTICA: USED TO
+   ### BLOCO 3 — APRENDER IDIOMAS: VOCABULÁRIO REAL
+   ### BLOCO 4 — VIDA E DIFERENÇAS CULTURAIS (EUA vs. ESPANHA)
+   ## ARMADILHAS PARA BRASILEIROS
+   ## PROMPT COMPLETO PARA O CLAUDE CODE — SISTEMA 20
+-- AMOSTRAS --
+   - Nome: Conversas Reais
+   - Subtítulo: Infância, amizade e vida no exterior — inglês nativo em conversas cotidianas reais
+   - Cor: #6366F1 (índigo vivo)
+   - Cor escura: #3730A3
+   - Cor clara: #EEF2FF
+   - Fonte: Daily English Talk (Childhood Memories) + English Cozy Chat (Slow English Conversation)
+   "Used to" descreve hábitos ou situações regulares no passado que não acontecem mais. É essencial para falar sobre a infância — o que você COSTUMAVA fa
+   Exemplos reais do episódio:
+   - "I used to go there every weekend with my dad."
+   - "I used to ride my pink bicycle every day after school."
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema21_conteudo.md
+COPIAS: Sistema 15 — Dúvidas Pontuais/sistema21_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 21 — THE BIRTHDAY PARTY: VOCABULÁRIO LITERÁRIO EM CONTEXTO
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 21
+   ## A HISTÓRIA COMPLETA (para exibir no sistema)
+   ## VOCABULÁRIO PRINCIPAL — 20 PALAVRAS/EXPRESSÕES
+   ### GRUPO 1 — DESCRIÇÃO DE PESSOAS
+   ### GRUPO 2 — OBJETOS E AMBIENTE
+   ### GRUPO 3 — AÇÕES E REAÇÕES
+   ### GRUPO 4 — EMOÇÕES E ESTADOS INTERNOS
+   ## EXPRESSÕES DE IDADE — EARLY / MID / LATE + DÉCADA
+   ## EXPRESSÕES PARA NARRAR / CONECTAR (do estilo do Luke)
+   ## ARMADILHAS PARA BRASILEIROS
+   ## PROMPT COMPLETO PARA O CLAUDE CODE — SISTEMA 21
+-- AMOSTRAS --
+   - Nome: The Birthday Party
+   - Subtítulo: Um conto americano de 1946 — vocabulário rico extraído de uma história real
+   - Cor: #B45309 (âmbar escuro / caramelo)
+   - Cor escura: #78350F
+   - Cor clara: #FEF3C7
+   - Fonte: Luke's English Podcast — ep. 872 "The Birthday Party" (conto de Catherine Brush, 1946)
+   She had arranged a birthday surprise: a small cake with a single pink candle, the head waiter carrying it in, the violin and piano playing Happy Birth
+   She beamed with shy pride over her little surprise.
+   Such few people as there were in the restaurant tried to help out with a pattering of applause.
+   It became clear at once that help was needed. The husband was not pleased. He was hotly embarrassed and indignant.
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema22_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema22_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 22 — INGLÊS PARA SITUAÇÕES REAIS: 27 CONTEXTOS PRÁTICOS
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 22
+   ## ESTRUTURA — 8 BLOCOS TEMÁTICOS (das 27 situações)
+   ## CONTEÚDO PRINCIPAL
+   ### BLOCO 1 — APRESENTAÇÕES & COTIDIANO
+   ### BLOCO 2 — AEROPORTO
+   ### BLOCO 3 — HOTEL
+   ### BLOCO 4 — MÉDICO
+   ### BLOCO 5 — DENTISTA
+   ### BLOCO 6 — EMERGÊNCIAS
+-- AMOSTRAS --
+   - Nome: Inglês para Situações Reais
+   - Subtítulo: 300+ frases organizadas por situação — do aeroporto ao médico, da emergência ao hotel
+   - Cor: #0F766E (verde-azulado / teal escuro)
+   - Cor escura: #134E4A
+   - Cor clara: #CCFBF1
+   - Fonte: Derek Polyglot — "1200 Frases em 27 Situações" + "1000 Frases Parte 1"
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema23_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema23_conteudo.md ;; Sistema 06 — Situar a Frase/sistema23_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 23 — INGLÊS DO ZERO: VERBOS, TEMPOS E FRASES REAIS A1→A2
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 23
+   ## ESTRUTURA — 5 MÓDULOS
+   ## CONTEÚDO PRINCIPAL
+   ### MÓDULO 1 — TEMPOS VERBAIS: 3 TEMPOS, 40 VERBOS
+   ### MÓDULO 2 — VERBOS COM PRONOMES (A1)
+   ### MÓDULO 3 — FRASES PROGRESSIVAS A1→A2 (50 pares)
+   ### MÓDULO 4 — PREPOSIÇÕES NO CONTEXTO (A1)
+-- AMOSTRAS --
+   - Nome: Inglês do Zero
+   - Subtítulo: Verbos, tempos e frases reais — do A1 ao A2 com exemplos visuais e progressivos
+   - Cor: #7C2D12 (laranja-avermelhado / tijolo)
+   - Cor escura: #431407
+   - Cor clara: #FFF7ED
+   - Fonte: English Evolution Step 1 (canal YouTube) — 9 episódios A1-A2
+   O padrão: Base → Futuro (will + base) → Presente → Passado
+   Irregulares marcados (passado ≠ base + -ed):
+   O padrão: verbo com 6 pronomes — I / We / You / They / He / She
+   (He/She adiciona -s no presente simples)
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema24_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 24 — PENSE EM INGLÊS: ESTRATÉGIAS E VOCABULÁRIO DA FLUÊNCIA
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 24
+   ## ESTRUTURA — 3 BLOCOS
+   ## BLOCO 1 — ESTRATÉGIAS REAIS
+   ### ESTRATÉGIA 1 — Narre suas atividades em inglês
+   ### ESTRATÉGIA 2 — Identifique seus vocabulary gaps
+   ### ESTRATÉGIA 3 — Shadowing: copie o fluxo de quem você admira
+   ### ESTRATÉGIA 4 — Saia da cabeça, entre na conversa
+   ### ESTRATÉGIA 5 — Os três pilares: Exposição, Consistência e Diversão
+   ### ESTRATÉGIA 6 — Postura cria confiança
+   ### ESTRATÉGIA 7 — Aprender outro idioma NÃO prejudica o inglês
+   ### ESTRATÉGIA 8 — Pronúncia > Gramática para a comunicação
+-- AMOSTRAS --
+   - Nome: Pense em Inglês
+   - Subtítulo: O que separa quem entende de quem fala — estratégias reais para a fluência
+   - Cor: #BE123C (vermelho-carmesim)
+   - Cor escura: #881337
+   - Cor clara: #FFE4E6
+   - Fonte: All Ears English ep. 2649 + ep. AEE multilínguas + English With Collins + The Whole Human Experience
+   Fonte: All Ears English ep. 2649
+   Enquanto faz coisas do dia a dia, descreva o que está fazendo em inglês — em voz alta quando estiver sozinho, ou na cabeça quando estiver em público.
+   Exemplos reais do episódio:
+   - "I'm running late."
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema25_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 25 — SUPER SENTENCES VOL. 2: 11 NOVAS HISTÓRIAS PROGRESSIVAS
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É O MÉTODO SUPER SENTENCES
+   ## AS 11 HISTÓRIAS — FRASES PROGRESSIVAS (10 NÍVEIS CADA)
+   ### EPISÓDIO 3 — A mulher compartilha uma novidade animadora
+   ### EPISÓDIO 4 — O homem compra um bilhete de loteria
+   ### EPISÓDIO 6 — O homem decide pintar a casa
+   ### EPISÓDIO 7 — O cara vê uma garota no sebo
+   ### EPISÓDIO 8 — O homem faz uma compra por impulso online
+   ### EPISÓDIO 9 — O homem procura os óculos
+   ### EPISÓDIO 10 — Anna larga as redes sociais por um mês
+-- AMOSTRAS --
+   - Nome: Super Sentences Vol. 2
+   - Subtítulo: 11 histórias progressivas — do simples ao complexo em 10 níveis
+   - Cor: #1E40AF (azul royal)
+   - Cor escura: #1E3A8A
+   - Cor clara: #DBEAFE
+   - Fonte: English is EZ with Connor — "The BEST way to improve English speaking skills" (compilação 4.5h)
+   - Relação com S17: S17 cobriu Episódios 1 e 2. Este sistema cobre os Episódios 3 a 13.
+   - shares exciting news — compartilha uma novidade animadora
+   - engagement — noivado (decisão de se casar)
+   - smiling from ear to ear — sorrindo de orelha a orelha (sorriso enorme)
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema26_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 26 — DIÁLOGOS DO DIA A DIA: CONVERSAS REAIS EM 12 SITUAÇÕES
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 26
+   ## AS 12 SITUAÇÕES — DIÁLOGOS SELECIONADOS
+   ### SITUAÇÃO 1 — Saudações e Pequena Conversa (Greetings & Small Talk)
+   ### SITUAÇÃO 2 — Ligações Telefônicas (Making Phone Calls)
+   ### SITUAÇÃO 3 — Convites e Planos (Invitations & Making Plans)
+   ### SITUAÇÃO 4 — Pedidos de Desculpas (Apologies)
+   ### SITUAÇÃO 5 — Gostos e Preferências (Likes, Dislikes & Opinions)
+-- AMOSTRAS --
+   - Nome: Diálogos do Dia a Dia
+   - Subtítulo: Conversas reais em 12 situações — ouça, leia e pratique em dupla
+   - Cor: #6D28D9 (roxo intenso)
+   - Cor escura: #4C1D95
+   - Cor clara: #EDE9FE
+   - Fontes: Basic English Speaking (170k chars) + English Speaking TV — 5 arquivos de diálogos situacionais
+   B: Good morning to you too. Do you think it will rain today?
+   A: Yeah, maybe. It's hard to tell.
+   B: I hope not — I'm going to the beach this afternoon.
+   A: Maybe you should check the weather forecast first.
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema27_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 27 — SHADOWING COM PROPÓSITO: 7 TEXTOS DE MENTALIDADE
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É O SHADOWING
+   ## OS 7 TEXTOS — CONTEÚDO COMPLETO + VOCABULÁRIO
+   ### TEXTO 1 — 🌅 Ganhe a Manhã (Win the Morning)
+   ### TEXTO 2 — 🎯 O Maior Risco (The Biggest Risk)
+   ### TEXTO 3 — 🧭 Propósito e Estabilidade (Meaning & Stability)
+   ### TEXTO 4 — 🧠 Estudar Uma Vez, Lembrar Sempre (Study & Recall)
+   ### TEXTO 5 — 🚨 Uma Manhã Caótica (A Crazy Morning)
+-- AMOSTRAS --
+   - Nome: Shadowing com Propósito
+   - Subtítulo: 7 textos motivacionais para treinar voz, ritmo e vocabulário avançado
+   - Cor: #047857 (verde esmeralda)
+   - Cor escura: #064E3B
+   - Cor clara: #D1FAE5
+   - Fonte: English Coach Chad — 7 vídeos de shadowing/repeat-after-me
+   - O ritmo do inglês (conexões entre palavras)
+   - A pronúncia de palavras difíceis
+   - A fluidez (sem pausar para traduzir mentalmente)
+   - A musculatura da boca para o inglês
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema2_conteudo.md
+COPIAS: Sistema 06 — Situar a Frase/sistema2_conteudo.md ;; Sistema 10 — Reduções e Pronúncia/sistema2_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 2 — CONTEÚDO COMPLETO
+   # Inglês para Brasileiros — Inglês Real do Dia a Dia
+   ## PILAR 1 — FRASES CRESCENTES
+   ### 20 situações × 6 camadas cada
+   ### SITUAÇÃO 01 — TRABALHO: Manhã no escritório
+   ### SITUAÇÃO 02 — TRABALHO: Reunião
+   ### SITUAÇÃO 03 — TRABALHO: Problema no trabalho
+   ### SITUAÇÃO 04 — COMPRAS: Supermercado
+   ### SITUAÇÃO 05 — COMPRAS: Loja de roupas
+   ### SITUAÇÃO 06 — COMPRAS: Online
+   ### SITUAÇÃO 07 — FAMÍLIA: Manhã em casa
+   ### SITUAÇÃO 08 — FAMÍLIA: Fim de semana juntos
+   ### SITUAÇÃO 09 — FAMÍLIA: Ligar para os pais
+   ### SITUAÇÃO 10 — ROTINA: Acordar
+-- AMOSTRAS --
+   2. I work at an office.
+   3. I work at an office every day.
+   4. I work at an office every day. I start at 9am.
+   5. I work at an office every day. I start at 9am and finish at 6pm.
+   6. I work at an office every day. I start at 9am and finish at 6pm. I'm always tired on Fridays.
+   VOCABULÁRIO-CHAVE: work · office · start · finish · tired · always
+   FORMA FALADA: I'm always tired → "aim always tired"
+   1. We have a meeting.
+   2. We have a meeting today.
+   3. We have a meeting today at 2pm.
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema3_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema3_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 3 — GRAMÁTICA VIVA
+   # Inglês para Brasileiros — A gramática que você usa, não decora
+   ## IDENTIDADE DO SISTEMA 3
+   ## MÓDULO 1 — OS 12 TEMPOS VERBAIS
+   ### Com linha do tempo interativa SVG
+   ### TEMPO 01 — SIMPLE PRESENT
+   ### TEMPO 02 — PAST SIMPLE
+   ### TEMPO 03 — FUTURE SIMPLE
+   ### TEMPO 04 — PRESENT CONTINUOUS
+   ### TEMPO 05 — PAST CONTINUOUS
+   ### TEMPO 06 — FUTURE CONTINUOUS
+   ### TEMPO 07 — PRESENT PERFECT
+   ### TEMPO 08 — PAST PERFECT
+   ### TEMPO 09 — FUTURE PERFECT
+-- AMOSTRAS --
+   Cor de acento: #A78BFA (violeta)
+   Conceito: Onde a gramática encontra o uso real
+   Sistema 1 = as peças da língua
+   Sistema 2 = inglês real do dia a dia
+   Sistema 3 = gramática visual + aplicada + comparativa
+   Fórmula: Subject + base verb (s/es para he/she/it)
+   Uso: hábitos, rotinas, fatos permanentes
+   Marcadores de tempo: every day, always, usually, never, often
+   I → I play football every day. / Eu jogo futebol todo dia.
+   You → You read books in the library. / Você lê livros na biblioteca.
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema4_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema4_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 4 — INGLÊS EM CENA
+   # Aprenda inglês com diálogos reais, humor e situações do dia a dia
+   # Baseado no Top Notch — English for Today's World
+   ## IDENTIDADE DO SISTEMA 4
+   ## MÓDULO 1 — 20 CENAS COM DIÁLOGO
+   ### Cada cena: diálogo original → vocabulário → frases-chave → o que aprender
+   ### CENA 01 — Apresentações na Agência de Viagens
+   ### CENA 02 — Conhecendo a Equipe
+   ### CENA 03 — Ficha do Cliente
+   ### CENA 04 — Saindo no Fim de Semana
+   ### CENA 05 — Como Chegar ao Cinema
+-- AMOSTRAS --
+   Nome: Inglês em Cena
+   Cor de acento: #FF6B6B (coral/vermelho — como um palco)
+   Conceito: Inglês real em situações reais, com humor e contexto
+   Sistema 1 = as peças da língua
+   Sistema 2 = inglês real do dia a dia
+   Sistema 3 = gramática visual
+   Sistema 4 = inglês em ação — diálogos, músicas, cenas
+   Situação: Giorgio Moretti, um cantor italiano famoso, visita a agência de viagens Top Notch pela primeira vez.
+   Tema: Apresentações, profissões, nacionalidades
+   — You're from Italy?
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema5_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema5_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 5 — FRASES RELÂMPAGO
+   # Shadowing: ouça, repita, grave na memória
+   # Baseado em: "Domine Estas 150 Frases Curtas em Inglês"
+   ## IDENTIDADE DO SISTEMA 5
+   ## O QUE É SHADOWING
+   ## AS 150 FRASES — 10 GRUPOS DE 15
+   ### GRUPO 1 — ESTADOS (I'm feeling... / I feel...)
+   ### GRUPO 2 — MOVIMENTO (I'm going... / I'm leaving... / I'm coming...)
+   ### GRUPO 3 — NECESSIDADES (I need...)
+   ### GRUPO 4 — DESEJOS (I want...)
+   ### GRUPO 5 — POSSESSIVOS (I have...)
+-- AMOSTRAS --
+   Cor de acento: #10B981 (verde esmeralda — energia, ação, progresso)
+   Sistema 1 = #64DFDF (ciano)
+   Sistema 2 = #F5C518 (âmbar)
+   Sistema 3 = #A78BFA (violeta)
+   Sistema 4 = #FF6B6B (coral)
+   Sistema 5 = #10B981 (verde) ← NOVO
+   Shadowing = você vê a frase em português, tenta dizer em inglês
+   antes de ver a resposta, depois repete em voz alta 3 vezes.
+   É a técnica mais eficaz para desenvolver fluência automática —
+   você para de "traduzir na cabeça" e começa a falar diretamente.
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema6_conteudo.md
+COPIAS: Sistema 07 — Conectar Frases/sistema6_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 6 — CONVERSAS DO DIA A DIA
+   # Perguntas e respostas naturais sobre situações reais
+   # Baseado em: "English Speaking Practice | Speak Like a Native"
+   ## IDENTIDADE DO SISTEMA 6
+   ## O QUE É ÚNICO NO SISTEMA 6
+   ## AS 14 CONVERSAS — 7 Q&A CADA = 98 PARES
+   ### CONVERSA 01 — ROTINA DIÁRIA DE TRABALHO
+   ### CONVERSA 02 — CIDADE NATAL
+   ### CONVERSA 03 — FILMES E CINEMA
+-- AMOSTRAS --
+   Nome: Conversas do Dia a Dia
+   Cor de acento: #0EA5E9 (azul céu — comunicação, diálogo, fluidez)
+   Sistema 1 = #64DFDF (ciano)
+   Sistema 2 = #F5C518 (âmbar)
+   Sistema 3 = #A78BFA (violeta)
+   Sistema 4 = #FF6B6B (coral)
+   Sistema 5 = #10B981 (verde)
+   Sistema 6 = #0EA5E9 (azul céu) ← NOVO
+   Sistemas anteriores ensinaram palavras, frases e padrões.
+   O Sistema 6 ensina CONVERSAS COMPLETAS — perguntas e respostas.
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema7_conteudo.md
+COPIAS: Sistema 05 — Motor de Verbos/sistema7_conteudo.md ;; Sistema 07 — Conectar Frases/sistema7_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 7 — COLOCAÇÕES NATURAIS
+   # O segredo entre o inglês correto e o inglês natural
+   # Baseado em: "Stop Choosing the Wrong Verbs | 100 Natural English Collocations"
+   ## IDENTIDADE DO SISTEMA 7
+   ## O QUE É UMA COLOCAÇÃO — A EXPLICAÇÃO QUE MUDA TUDO
+   ## AS 100 COLOCAÇÕES — 4 CATEGORIAS
+   ## CATEGORIA 1 — MAKE (25 colocações)
+   ### MAKE = criar, produzir, trazer algo à existência
+   ### COLOCAÇÃO 01 — MAKE A DECISION
+   ### COLOCAÇÃO 02 — MAKE A MISTAKE
+   ### COLOCAÇÃO 03 — MAKE PROGRESS
+   ### COLOCAÇÃO 04 — MAKE AN EFFORT
+   ### COLOCAÇÃO 05 — MAKE A SUGGESTION
+   ### COLOCAÇÃO 06 — MAKE A DIFFERENCE
+-- AMOSTRAS --
+   Cor de acento: #D946EF (magenta/fúcsia — memorável, impactante)
+   Sistema 1 = #64DFDF (ciano)
+   Sistema 2 = #F5C518 (âmbar)
+   Sistema 3 = #A78BFA (violeta)
+   Sistema 4 = #FF6B6B (coral)
+   Sistema 5 = #10B981 (verde)
+   Sistema 6 = #0EA5E9 (azul céu)
+   Sistema 7 = #D946EF (magenta) ← NOVO
+   Uma colocação são duas palavras que naturalmente pertencem juntas.
+   Não por causa de gramática. Não por lógica.
+
+====================================================================================================
+ARQUIVO: Sistema 03 — Inglês do Zero · Base Completa/sistema9_conteudo.md
+COPIAS: Sistema 06 — Situar a Frase/sistema9_conteudo.md
+-- CABECALHOS --
+   # SISTEMA 9 — WENT OU GONE?
+   # Conteúdo completo para o Claude Code
+   ## IDENTIDADE VISUAL
+   ## O QUE É ÚNICO NO SISTEMA 9
+   ## ESTRUTURA DE MÓDULOS
+   ### MÓDULO 1 — WENT (Passado Simples)
+   ### MÓDULO 2 — HAVE GONE / HAS GONE (Present Perfect)
+   ### MÓDULO 3 — WENT vs HAVE GONE (Comparação)
+   ### MÓDULO 4 — HAVE BEEN (Bônus: fui e voltei)
+   ### MÓDULO 5 — GONE como Adjetivo + Expressão "Been and Gone"
+   ## CONTEÚDO DETALHADO
+   ### MÓDULO 1 — WENT
+   ### MÓDULO 2 — HAVE GONE / HAS GONE
+   ### MÓDULO 3 — WENT vs HAVE GONE (Comparação Direta)
+-- AMOSTRAS --
+   - Nome: Went ou Gone?
+   - Subtítulo: Domine o passado simples e o present perfect de GO
+   - Cor: #06B6D4 (ciano escuro)
+   - Fonte: "I went" vs "have gone" - Know the difference! (canal de inglês britânico)
+   O que é: Went é o passado simples de "go" — forma irregular.
+   - Ação concluída em um momento específico do passado
+   - Frequentemente acompanha expressões de tempo terminado: last week, yesterday, 2 years ago, an hour ago
+   "Went" = ação ACABOU. A pessoa foi e nós não sabemos (ou não importa) se ainda está lá.
+   Se você tem uma expressão de tempo como "last week" ou "yesterday", use SEMPRE went.
+   ❌ "He's gone out an hour ago." → ✅ "He went out an hour ago."
+
+====================================================================================================
+ARQUIVO: Sistema 04 — Gramática Básica/01_Basic English Grammar Workbook For Dummies.md
+-- CABECALHOS --
+   # 01_Basic English Grammar Workbook For Dummies
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   English Grammar Workbook For Dummies®, 3rd Edition with Online
+   Published by: John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ
+   Copyright © 2018 by John Wiley & Sons, Inc., Hoboken, New Jersey
+   Published simultaneously in Canada
+   No part of this publication may be reproduced, stored in a retrieval system or
+   transmitted in any form or by any means, electronic, mechanical,
+   photocopying, recording, scanning or otherwise, except as permitted under
+   Sections 107 or 108 of the 1976 United States Copyright Act, without the
+   prior written permission of the Publisher. Requests to the Publisher for
+   permission should be addressed to the Permissions Department, John Wiley
+
+====================================================================================================
+ARQUIVO: Sistema 04 — Gramática Básica/02_Everything You Need to Ace English Language Arts in One Big Fat Notebook, 2nd Edition.md
+-- CABECALHOS --
+   # 02_Everything You Need to Ace English Language Arts in One Big Fat Notebook, 2nd Edition
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+   ## Página 10
+-- AMOSTRAS --
+   THE COMPLETE NIDDLE SCHOOL STUDY GUIDE
+   Notes borrowed from theSMARTEST KIDin CLASS
+   Copyright © 2016 by Workman Publishing Co., Inc.
+   By purchasing this workbook, the buyer is permitted to reproduce pages for
+   classroom use only, but not for commercial resale. Please contact the publisher
+   for permission to reproduce pages for an entire school or school district.
+   With the exception of the above, no portion of this book may be reproduced-
+   mechanically, electronically, or by any other means, including photocopying-
+   without written permission of the publisher.
+   Library of Congress Cataloging-in-Publication Data is available.
+
+====================================================================================================
+ARQUIVO: Sistema 04 — Gramática Básica/03_English Grammar For Dummies.md
+-- CABECALHOS --
+   # 03_English Grammar For Dummies
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+-- AMOSTRAS --
+   A Reference for the Rest of Us!
+   Copyright © 2001 byWileyPublishing, Inc., Indianapolis, Indiana
+   Published simultaneously in Canada
+   No part ofthis publication may be reproduced, stored in a retrieval system, or transmitted in anyform or
+   byany means, electronic, mechanical, photocopying, recording, scanning, or otherwise, except as permit
+   ted under Sections 107 or 108 ofthe 1976United States Copyright Act, without either the prior written
+   permission of the Publisher, or authorization through payment of the appropriate per-copyfee to the
+   Copyright Clearance Center, 222 Rosewood Drive, Danvers, MA 01923, 978-750-8400, fax 978-646-8600.
+   Requests to the Publisher for permission should be addressed to the Legal Department, Wiley Publishing,
+   Inc., 10475 Crosspoint Blvd., Indianapolis, IN 46256,317-572-3447, fax 317-572-4447.
+
+====================================================================================================
+ARQUIVO: Sistema 04 — Gramática Básica/04_nglish Grammar A Resource Book for Students.md
+-- CABECALHOS --
+   # 04_nglish Grammar A Resource Book for Students
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   Routledge English Language Introductions
+   A resource bookfor students
+   Routledge English Language Introductions cover core areas of language study and
+   are one-stop resources for students.
+   Assuming no prior knowledge, books in the series offer an accessible overview
+   of the subject, with activities, study questions, sample analyses, commentaries and
+   key readings – all in the same volume. The innovative and flexible ‘two-dimensional’
+   structure is built around four sections – introduction, development, exploration and
+   extension – which offer self-contained stages for study. Each topic can also be read
+   across these sections, enabling the reader to build gradually on the knowledge gained.
+
+====================================================================================================
+ARQUIVO: Sistema 04 — Gramática Básica/05_Grammar For Young Learners.md
+-- CABECALHOS --
+   # 05_Grammar For Young Learners
+   ## Página 1
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   Gordon Lewis and Hans Mol
+   Gordon Lewis and Hans Mol
+   Great Clarendon Street, Oxford ox2 6DP
+   Oxford University Press is a department of the University of Oxford.
+   It furthers the University's objective of excellence in research, scholarship,
+   and education by publishing worldwide in
+   Auckland Cape Town Dar es Salaam Hong Kong Karachi
+   Kuala Lumpur Madrid Melbourne Mexico City Nairobi
+   New Delhi Shanghai Taipei Toronto
+   Argentina Austria Brazil Chile Czech Republic France Greece
+
+====================================================================================================
+ARQUIVO: Sistema 04 — Gramática Básica/06_Grammar And Usage For Better Writing.md
+-- CABECALHOS --
+   # 06_Grammar And Usage For Better Writing
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 7
+   ## Página 9
+-- AMOSTRAS --
+   A M S C O S C H O O L P U B L I C A T I O N S , I N C .
+   315 Hudson Street, New York, N.Y. 10013
+   Director of Language Arts
+   Amsco School Publications, Inc.
+   This book has been adapted from the following Amsco publications:
+   Building Power in Writing
+   By Henry I. Christ
+   English Alive: Complete Edition
+   Text and cover design: Nesbitt Graphics, Inc.
+   Composition: Nesbitt Graphics, Inc.
+
+====================================================================================================
+ARQUIVO: Sistema 04 — Gramática Básica/07_The Infographic Guide to Grammar.md
+-- CABECALHOS --
+   # 07_The Infographic Guide to Grammar
+   ## Página 1
+   ## Página 2
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   and be able tostand ontheirown.
+   across the finish line.
+   Sentences mustcontain a subject anda predicate
+   New York London Toronto Sydney New Delhi
+   Copyright 2020 by Simon & Schuster, Inc.
+   All rights reserved,including theright toreproduce thisbook or portions thereof
+   Department,1230Avenue of the Americas, New York, NY 10020.
+   FirstAdamsMedia trade paperback editionApril 2020
+   ADAMSMEDIA andcolophon aretrademarks ofSimon&Schuster.
+   For information about special discounts forbulk purchases, please contact Simon &
+
+====================================================================================================
+ARQUIVO: Sistema 08 — Conversação & Frases/LIVRO_01_1000 melhores dicas para aprender inglês.md
+-- CABECALHOS --
+   # LIVRO_01_1000 melhores dicas para aprender inglês
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   Tenha em mente que se faz necessário colocar imediatamente em
+   prática o Método que expliquei minuciosamente no eBook
+   Autodidata no Estudo de Inglês - Como estruturar minha rotina
+   O Actualize é surpreendente e umas das chaves para o sucesso.
+   Siga à risca os passos abaixo e veja os resultados surpreendente!
+   No 4º passo, você, aluno, tem a possibilidade de escrever frases,
+   parágrafos, textos, etc. utilizando o conhecimento a ser aprendido
+   E como falo em todas as minhas aulas, não tenha medo de ousar.
+   Quando você se desafia, só você tem a ganhar. Quanto mais longe
+   você tenta chegar, melhor. Aqui não existe “um passo mais longo
+
+====================================================================================================
+ARQUIVO: Sistema 08 — Conversação & Frases/LIVRO_02_Livro Inglês Conversação para viagem-Michaelis tour Completo.md
+-- CABECALHOS --
+   # LIVRO_02_Livro Inglês Conversação para viagem-Michaelis tour Completo
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+-- AMOSTRAS --
+   Dados Internacionais de Catalogacao na Publicacao (CIP)
+   (Camara Brasileira do Livro, SP, Brasil)
+   MICHAELIS TOUR:ingles:conversacao paru viagem/
+   Antonio Carlos Vilela,-Sao Paulo:Editora Melhoramentos,
+   L. Ingles - Vocabularios e manuais de conversagao
+   I. Titulo. II. Serie.
+   indices para catalogo sistematico:
+   l.Guia de Conversacao italiano-portugues:
+   1994 Cia.Melhoramentos de Sao Paulo e 1998 (edicao atualizada)
+   Fotos da capa:Estatua da Liberdade (Diego Serruno/Reflexo)
+
+====================================================================================================
+ARQUIVO: Sistema 08 — Conversação & Frases/LIVRO_03_120 frases para uma conversa em inglês (LM10-Livro digital).md
+-- CABECALHOS --
+   # LIVRO_03_120 frases para uma conversa em inglês (LM10-Livro digital)
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+   ## Página 10
+   ## Página 11
+   ## Página 12
+   ## Página 13
+-- AMOSTRAS --
+   Frases 1 - 2
+   He left just a little while ago, didn’t you see him?
+   Ele saiu um tempinho atrás, você não viu ele?
+   I used to be a professional athlete, but it was a long
+   Eu costumava ser um atleta profissional, mas isso
+   foi há um bom tempo atrás.
+   Frases 3 - 4
+   It was about time you arrived!
+   Já era hora de você chegar!
+   The dress I bought at AliExpress finally arrived? Well,
+
+====================================================================================================
+ARQUIVO: Sistema 08 — Conversação & Frases/LIVRO_04_Segredo da Fluência - Como aprender Inglês com Música - Leonardo de Mello (2016).md
+-- CABECALHOS --
+   # LIVRO_04_Segredo da Fluência - Como aprender Inglês com Música - Leonardo de Mello (2016)
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+   ## Página 10
+   ## Página 11
+-- AMOSTRAS --
+   C A I (3 1)
+   OMO PRENDER NGLÊS EM
+   Mais sobre o autor em: Amazon.com/author/LeonardodeMello
+   Copyright © 2016 por Leonardo de Mello
+   Todos os direitos reservados. Nenhuma parte deste livro pode ser arquivada,
+   reproduzida ou transmitida em qualquer forma ou por qualquer meio, seja
+   eletrônico ou mecânico, incluindo fotocópia e gravação de backup, sem
+   permissão por escrito do autor. Os revisores podem citar breves passagens em
+   L 1 - S D F
+   IVRO EGREDO A LUÊNCIA
+
+====================================================================================================
+ARQUIVO: Sistema 08 — Conversação & Frases/LIVRO_05_Livro Memorização para aprender idiomas - Marcos da Costa Gois-1.md
+-- CABECALHOS --
+   # LIVRO_05_Livro Memorização para aprender idiomas - Marcos da Costa Gois-1
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+-- AMOSTRAS --
+   Marcos da Costa Gois
+   [Jniverso dos Livros Editora Ltda.
+   Rua Haddock Lobo, 347 - 12" andar - Cerqueira César
+   CEP 01414-001 'Sáo Paulo/SP
+   Telefone: OI) 3217-2600' Fax: 3217-2616
+   Marcos da Costa Gois
+   2009. by Universo dos Livros
+   Todos os direitos reservados e protegidos pela Lei 9.610 de 1910211998.
+   Nenhuma perre deste livro, sem autoriztçío prévia por escrito da editora, poderá
+   ,.r reprodorida ou transmitida sejam quais forem os meios empregados: eletrôni-
+
+====================================================================================================
+ARQUIVO: Sistema 08 — Conversação & Frases/LIVRO_06_Como não aprender Inglês ( PDFDrive.com ).md
+-- CABECALHOS --
+   # LIVRO_06_Como não aprender Inglês ( PDFDrive.com )
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   Erros comuns e solucoes praticas
+   Orelha do Livro Impresso:
+   "O inglês e o português têm vários pontos em comum. Boa parte do vocabulário do
+   inglês provém do latim, o que resulta em várias similaridades nos dois idiomas -
+   information e informação, continue e continuar são alguns exemplos. Embora este
+   aspecto possa às vezes ajudar o estudante, pode também causar sérios problemas.
+   Frequentemente, palavras e construções nos dois idiomas são similares pero no macho -
+   há diferenças de sentido, forma e emprego. Estas enganosas equivalências podem levar
+   a erros por parte de quem estuda: sensible não se traduz por sensível; uma informação é
+   a piece of information, e não an information, e assim por diante. Outros erros comuns
+
+====================================================================================================
+ARQUIVO: Sistema 09 — English for Everyone/01_English for Everyone English Grammar Guide A Comprehensive Visual Reference.md
+-- CABECALHOS --
+   # 01_English for Everyone English Grammar Guide A Comprehensive Visual Reference
+   ## Página 1
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+-- AMOSTRAS --
+   F O R E V E R Y O N E
+   001-003GrammarTitlepages.indd 1 25/07/2016 16:50
+   Diane Hall has been working in English language teaching for over
+   30 years, as a teacher, trainer, editor, publisher, and writer. She has
+   published several books, both general courses and grammar books,
+   for major English-language publishers. She has an MA in Applied
+   Linguistics, and is currently also an Associate Lecturer in English F O R E V E R Y O N E
+   grammar and functional linguistics at the Open University.
+   Professor Susan Barduhn is an experienced English-language
+   teacher, teacher trainer, and author, who has contributed to
+
+====================================================================================================
+ARQUIVO: Sistema 09 — English for Everyone/02_English for Everyone English Vocabulary Builder (DK English for Everyone) (English Edition).md
+-- CABECALHOS --
+   # 02_English for Everyone English Vocabulary Builder (DK English for Everyone) (English Edition)
+   ## Página 1
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   Thomas Booth worked for 10 years as an English-language
+   he works as an editor and English-language materials writer,
+   notably of course books and vocabulary textbooks.
+   US Editors Kayla Dugger, Jenny Siklos
+   Senior Editor Laura Sandford
+   Project Editor Thomas Booth
+   Senior Art Editors Amy Child, Anna Hall
+   How to use this book
+   Art Editors Raymond Bryant, Michelle Staples,
+   Illustrators Edward Byrne, Michael Parkin, Gus Scott
+
+====================================================================================================
+ARQUIVO: Sistema 09 — English for Everyone/03_English for Everyone Junior Beginner's Course.md
+-- CABECALHOS --
+   # 03_English for Everyone Junior Beginner's Course
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   Thomas Booth worked for 10 years as an English teacher in Poland,
+   Romania, and Russia. He now lives in England, where he works as an
+   number of books in the English for Everyone series.
+   Ben Ffrancon Daviesis a freelance writer and translator. He writes
+   textbooks and study guides on a wide range of subjects, including ELT,
+   music, and literature. He also works on general nonfiction books for
+   children and adults. Ben studied Medieval and Modern Languages at the
+   University of Oxford, and has taught English in France and Spain.
+   Susannah Reed is an experienced author and educational consultant,
+   specializing in Primary ELT materials. She has taught in Spain and the
+
+====================================================================================================
+ARQUIVO: Sistema 09 — English for Everyone/04_English for Everyone Practice Book Level 1 Beginner A Complete Self-Study Program.md
+-- CABECALHOS --
+   # 04_English for Everyone Practice Book Level 1 Beginner A Complete Self-Study Program
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   A COMPLETE SELF-STUDY PROGRAM
+   Thomas Booth worked for 10 years as an English-language teacher
+   in Poland and Russia. He now lives in England, where he works as
+   an editor and English-language materials writer, notably of course
+   books and vocabulary textbooks.
+   Tim Bowen has taught English and trained teachers in more than 30
+   countries worldwide. He is the co-author of works on pronunciation
+   teaching and language-teaching methodology, and author of
+   numerous books for English-language teachers. He is currently a
+   freelance materials writer, editor, and translator. He is a member
+
+====================================================================================================
+ARQUIVO: Sistema 09 — English for Everyone/05_English for Everyone Practice Book Level 2 Beginner A Complete Self-Study Program.md
+-- CABECALHOS --
+   # 05_English for Everyone Practice Book Level 2 Beginner A Complete Self-Study Program
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   Rachel Harding has a background in English-language teaching
+   and is now a full-time author of English-language learning materials.
+   She has written for major English-language publishers including
+   Tim Bowen has taught English and trained teachers in more than 30
+   countries worldwide. He is the co-author of works on pronunciation
+   teaching and language-teaching methodology, and author of
+   numerous books for English-language teachers. He is currently a
+   freelance materials writer, editor, and translator. He is a member
+   of the Chartered Institute of Linguists.
+   Professor Susan Barduhn is an experienced English-language
+
+====================================================================================================
+ARQUIVO: Sistema 09 — English for Everyone/06_Pronouncing American English.md
+-- CABECALHOS --
+   # 06_Pronouncing American English
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   Sounds, Stress, and Intonation
+   used in any form or by any means graphic, electronic,or
+   ing, scanning, digitizing, taping, Web distribution, information
+   Production Services Coordinator:Kristin Thalheimer
+   aspermitted underSection107or 108of the 1976 United
+   submit all requests onlineatcengage.com/permissions
+   Manufacturing Coordinator:Mary Beth Hennebury
+   Illustrators: Bob Holmes, Charles Martin
+   Cover Designer:Gina Petti,Rotunda Design
+   Cengage Learning is a leading providerof customized learning
+
+====================================================================================================
+ARQUIVO: Sistema 10 — Reduções e Pronúncia/Sistema 02 — Reduções do Inglês Real_v01.md
+-- CABECALHOS --
+   # Sistema 02 — Reduções e Pronúncia
+   ## Tipo 1 — Contrações (Contractions)
+   ## Tipo 2 — Reduções Coloquiais (Informal Reductions)
+   ## Tipo 3 — Reduções com Pronomes (Pronoun Reductions)
+   ## Tipo 4 — Formas Fracas (Weak Forms)
+   ## Tipo 5 — Elisões no Final de Palavras
+   ## Contextos do Dia a Dia — Exemplos Progressivos
+   ### Bloco A — Frases curtíssimas (1–5 palavras)
+   ### Bloco B — Frases curtas (6–10 palavras)
+   ### Bloco C — Frases médias (11–20 palavras)
+   ### Bloco D — Situações reais
+   #### No café / restaurante
+   #### No trabalho / reunião
+   #### Em casa com amigos
+-- AMOSTRAS --
+   As mais formais. Aceitas inclusive na escrita.
+   Muito usadas na fala natural. Brasileiros costumam não reconhecê-las de ouvido.
+   Quando o pronome vem depois de um verbo auxiliar, ele quase desaparece.
+   Palavras funcionais que perdem a vogal plena em contexto normal de frase.
+   - -ing → -in': "What are you doing?" → "What are you doin'?"
+   - -t final suprimido: "I don't know" → "I dono" / "last night" → "las' night"
+   - -h inicial suprimido: "Tell him" → "Tell 'im" / "Give her" → "Give 'er"
+   Organizados do mais curto ao mais longo. Cada bloco mostra a forma escrita formal → forma falada natural.
+   Contextos cotidianos onde as reduções aparecem de forma natural.
+   - Formal: What do you want to order? I am going to have a cup of coffee.
+
+====================================================================================================
+ARQUIVO: Sistema 11 — American English File/01_American English File 1 - Student Book Pk - 03Edition.md
+-- CABECALHOS --
+   # 01_American English File 1 - Student Book Pk - 03Edition
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   Paul Seligsonand Clive Oxenden
+   are the original co-authors of
+   days of the week,numbers 0-20
+   verb be subject pronouns:
+   C What's your email?
+   things, in, on, under
+   singular and plural nouns
+   AAreyou neat or messy?
+   final -s and -es
+   B Made in America
+
+====================================================================================================
+ARQUIVO: Sistema 11 — American English File/02_American English File 2 - Student Book With Online Practice - Third Edition.md
+-- CABECALHOS --
+   # 02_American English File 2 - Student Book With Online Practice - Third Edition
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   are the original co-authors of
+   A Are you? Can you? Do you?
+   B The perfect date?
+   final -s and -es
+   C The Remake Project
+   simple past: regular and irregular
+   B That's me in the picture!
+   prepositions of time and
+   place: at, in, on
+   be going to (plans and
+
+====================================================================================================
+ARQUIVO: Sistema 11 — American English File/03_American English File 3 - Student Book With Online Practice - Third .md
+-- CABECALHOS --
+   # 03_American English File 3 - Student Book With Online Practice - Third
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   Paul Seligson and Clive Oxenden
+   are the original co-authors of
+   simple present and continuous,
+   A Eating in...and out
+   future forms: present continuous,
+   be going to, will / won't
+   Practical English Episode 1
+   reacting to what people say
+   present perfect and simple past
+   present perfect + for / since,
+
+====================================================================================================
+ARQUIVO: Sistema 11 — American English File/04_American English File 4 - Student Book With Online Practice - Third Edition D30.md
+-- CABECALHOS --
+   # 04_American English File 4 - Student Book With Online Practice - Third Edition D30
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   Paul Seligson and Clive Oxenden
+   are the original co-authors of
+   English File 1 and English File 2
+   A Questions and answers
+   B it's a mystery
+   auxiliary verbs, the..., the...+
+   present perfect simple and
+   using adjectives as nouns,
+   B Act your age
+   A Fasten your seat belts
+
+====================================================================================================
+ARQUIVO: Sistema 11 — American English File/05_Close-up - 2nd - C1 Workbook.md
+-- CABECALHOS --
+   # 05_Close-up - 2nd - C1 Workbook
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   To access fhe resources on the online Student zone,
+   please visit NGL.Cengage.com/closeyp and select
+   Australia • Brazil »Japan • Korea • Mexico • Singapore • Spain • United Kingdom • United States
+   Unit Reading Vocabulary Gram m ar
+   1 Scaling the multiple-matching, dealing with success, phrasal verbs, prepositions, review of present and past tenses,
+   multiple matches collocations & expressions used to & would
+   2 Like Comment multiple-choice questions, social media, Word formation, future forms, future in the past,
+   choosing the correct Option choosing the right part of Speech, time expressions
+   phrasal verbs, prepositions, idioms
+   REVIEW 1: Vocabulary & Grammar p 29-30
+
+====================================================================================================
+ARQUIVO: Sistema 11 — American English File/06_Close-up - 1st - C2 Workbook.md
+-- CABECALHOS --
+   # 06_Close-up - 1st - C2 Workbook
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   1 Do You Mind?
+   review of present&present perfect
+   main purpose or idea of a text
+   cloze, thinking about the meaning
+   multiple matching, scanning texts
+   &phrases to express the future,
+   future in the past, cloze,eliminating
+   missing paragraphs, checking for
+   passive, transitive & intransitive,
+   forming negative words, phrasal
+
+====================================================================================================
+ARQUIVO: Sistema 12 — Exercícios e Vocabulário/01_English Grammar in Use Supplementary Exercises Book Fifth Edition.md
+-- CABECALHOS --
+   # 01_English Grammar in Use Supplementary Exercises Book Fifth Edition
+   ## Página 1
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+-- AMOSTRAS --
+   THE WORLD'S BEST-SELLING GRAMMAR SERIES
+   Grammar in Use Fifth Edition
+   Grammar in Use Fift h Edition
+   University Printing House, Cambridge CB2 8BS, United Kingdom
+   One Liberty Plaza, 20th Floor, New York, NY 10006, USA
+   477 Williamstown Road, Port Melbourne, VIC 3207, Australia
+   314–321, 3rd Floor, Plot 3, Splendor Forum, Jasola District Centre, New Delhi – 110025, India
+   79 Anson Road, #06–04/06, Singapore 079906
+   Cambridge University Press is part of the University of Cambridge.
+   It furthers the University’s mission by disseminating knowledge in the pursuit of
+
+====================================================================================================
+ARQUIVO: Sistema 12 — Exercícios e Vocabulário/02_Grammar - Grammar -Basic Grammar in Use Student's Book with Answers.md
+-- CABECALHOS --
+   # 02_Grammar - Grammar -Basic Grammar in Use Student's Book with Answers
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   Cambridge, New York, Melbourne, Madrid, Cape Town,
+   Singapore, Sao Paulo, Delhi, Tokyo, Mexico City
+   The Edinburgh Building, Cambridge CB2 8RU, UK
+   Information on this title: www.cambridge.org/9780521675802
+   © Cambridge University Press 2007
+   This publication is in copyright. Subject to statutory exception
+   and to the provisions of relevant collective licensing agreements,
+   no reproduction of any part may take place without the written
+   permission of Cambridge University Press.
+   Printed in the United Kingdom at the University Press, Cambridge
+
+====================================================================================================
+ARQUIVO: Sistema 12 — Exercícios e Vocabulário/03_English Collocations in Use Intermediate Book.md
+-- CABECALHOS --
+   # 03_English Collocations in Use Intermediate Book
+   ## Página 1
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   Collocations are combinations of words, which frequently appear together. Using
+   Intermediate them makes your English sound more natural. Knowledge of collocations is often
+   tested in examinations such as Cambridge FCE, CAE, CPE and IELTS. This book is
+   students at good intermediate level and above.
+   Using collocations will improve your style of written and spoken English:
+   • Instead of ‘a big amount’, say ‘a substantial amount’
+   • Instead of ‘think about the options’, say ‘consider the options’
+   • Using collocations will make your English sound more natural:
+   • Instead of ‘get ill’, say ‘fall ill’
+   • Instead of ‘a bCigU fiRneR’,E sNayT ‘a B hCeaCvy T fiOneO’ LONG IN USE
+
+====================================================================================================
+ARQUIVO: Sistema 12 — Exercícios e Vocabulário/04_Basic Grammar in Use Student's Book.md
+-- CABECALHOS --
+   # 04_Basic Grammar in Use Student's Book
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   University Printing House, Cambridge CB2 sBS, United Kingdom
+   One Liberty Plaza, 20th Floor, New York, NY 10006, USA
+   477 Williamstown Road, Port Melbourne, VIC 3207, Australia
+   4843/24, 2nd Floor, Ansari Road, Daryaganj, Delhi 110002, India
+   79 Anson Road, #06-04/06, Singapore 079906
+   Cambridge University Press is part of the University of Cambridge.
+   It furthers the University's mission by disseminating knowledge in the pursuit of
+   education, learning and research at the highest international levels of excellence.
+   Information on this title: www.cambridge.org/elt
+   Cambridge University Press 2017
+
+====================================================================================================
+ARQUIVO: Sistema 12 — Exercícios e Vocabulário/05_English Phrasal Verbs in Use Intermediate Sb With Answers 2Ed.md
+-- CABECALHOS --
+   # 05_English Phrasal Verbs in Use Intermediate Sb With Answers 2Ed
+   ## Página 1
+   ## Página 2
+   ## Página 3
+-- AMOSTRAS --
+   University Printing House, Cambridge CB2 8BS, United Kingdom
+   One Liberty Plaza, 20th Floor, New York, NY10006, USA
+   477Williamstown Road, Port Melbourne, VIC 3207,Australia
+   79 Anson Road, #06-04/06, Singapore 079906
+   Cambridge University Press is part of the University of Cambridge.
+   It furthers the University's mission by disseminating knowledge in the pursuit of
+   education, learning and research at the highest international levels of excellence.
+   Information on this title:www.cambridge.org/elt
+   andtotheprovisions ofrelevantcollective licensing agreements,
+   noreproductionof anypartmaytakeplace withoutthe written
+
+====================================================================================================
+ARQUIVO: Sistema 12 — Exercícios e Vocabulário/06_Practice Makes Perfect English Conversation, Premium Fourth Edition.md
+-- CABECALHOS --
+   # 06_Practice Makes Perfect English Conversation, Premium Fourth Edition
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 5
+   ## Página 7
+   ## Página 8
+   ## Página 9
+-- AMOSTRAS --
+   M A K E S
+   Copyright © 2012 by The McGraw-Hill Companies, Inc. All rights reserved. Printed in the
+   United States of America. Except as permitted under the United States Copyright Act of
+   1976, no part of this publication may be reproduced or distributed in any form or by any
+   means, or stored in a database or retrieval system, without the prior written permission
+   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 QDB/QDB 1 9 8 7 6 5 4 3 2
+   Library of Congress Control Number 2012931072
+   McGraw-Hill, the McGraw-Hill Publishing logo, Practice Makes Perfect, and related trade
+   dress are trademarks or registered trademarks of The McGraw-Hill Companies and/or
+   its affiliates in the United States and other countries and may not be used without
+
+====================================================================================================
+ARQUIVO: Sistema 13 — Gramática em Uso/01_English Grammar in Use Book with Answers A Self-Study Reference and Practice Book for Intermediate Learners.md
+-- CABECALHOS --
+   # 01_English Grammar in Use Book with Answers A Self-Study Reference and Practice Book for Intermediate Learners
+   ## Página 1
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   THE WORLD'S BEST-SELLING GRAMMAR BOOK
+   A self-study reference and
+   practice book for intermediate
+   A self-study reference and
+   practice book for intermediate
+   University Printing House, Cambridge CB2 8BS, United Kingdom
+   One Liberty Plaza, 20th Floor, New York, NY 10006, USA
+   477 Williamstown Road, Port Melbourne, VIC 3207, Australia
+   314–321, 3rd Floor, Plot 3, Splendor Forum, Jasola District Centre, New Delhi – 110025, India
+   79 Anson Road, #06-04/06, Singapore 079906
+
+====================================================================================================
+ARQUIVO: Sistema 13 — Gramática em Uso/02_Grammar Practice for Intermediate Students.md
+-- CABECALHOS --
+   # 02_Grammar Practice for Intermediate Students
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   And Associated Conpanies throughout the World.
+   @Pears0n Education Limited 1986, 2000
+   The right of Elaine Walker and Steve Elsworth to be identified as authors
+   of this Work has been asserted by them in accordance with the Copyright,
+   Designs and Patents Act 1988.
+   All rights reserved; no part of this publication may be reproduced, stored in
+   a retrieval system, or transmitted in any form or by any means, electronic,
+   mechanical, photocopying,recording, or otherwise without the prior written
+   permission of the Publishers.
+   Printed in Spain by Mateu Cromo
+
+====================================================================================================
+ARQUIVO: Sistema 13 — Gramática em Uso/03_Oxford-Guide-to-English-Grammar.md
+-- CABECALHOS --
+   # 03_Oxford-Guide-to-English-Grammar
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   Walton Street, Oxford 0X2 6DP
+   Auckland Bangkok Buenos Aires Cape Town
+   Chennai Dar es Salaam Delhi Hong Kong Istanbul
+   Karachi Kolkata Kuala Lumpur Madrid Melbourne
+   Mexico City Mumbai Nairobi São Paulo Shanghai
+   Singapore Taipei Tokyo Toronto
+   with an associated company in Berlin
+   OXFORD and OXFORD ENGLISH
+   are trade marks of Oxford University Press
+   ISBN 0 19 431351 4 (paperback)
+
+====================================================================================================
+ARQUIVO: Sistema 13 — Gramática em Uso/04_Essential Grammar in Use com respostas Gramática básica da língua inglesa.md
+-- CABECALHOS --
+   # 04_Essential Grammar in Use com respostas Gramática básica da língua inglesa
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   A e e www.hasanboy.uz dan olindi C a m b r id g e
+   T e r e n c e
+   E D I T I O N
+   2 am /is/are (questions)
+   3 I am doing (present continuous)
+   4 are you doing? (present continuous questions)
+   5 I do/w ork/like etc. (present simple)
+   6 I don’t ... (present simple negative)
+   7 Do you ... ? (present simple questions)
+   8 I am doing and I do (present continuous and present simple)
+
+====================================================================================================
+ARQUIVO: Sistema 13 — Gramática em Uso/05_English Pronunciation Made Simple.md
+-- CABECALHOS --
+   # 05_English Pronunciation Made Simple
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   English Pronunciation Made Simple
+   Copyright @ 2005 by Pearson Education, Inc.
+   No part of this publication may be reproduced,
+   stored in a retrieval system, or transmitted
+   in any form or by any means, electronic, mechanical.
+   photocopying, recording, or otherwise,
+   without the prior permission of the publisher.
+   Pearson Education, 10 Bank Street, White Plains, NY 10606
+   Editorial director: Sherry Preiss
+   Acquisitions editor: Laura LeDréan
+
+====================================================================================================
+ARQUIVO: Sistema 13 — Gramática em Uso/06_Reactivate Your Grammar And Vocabulary C1C2 - Exams.md
+-- CABECALHOS --
+   # 06_Reactivate Your Grammar And Vocabulary C1C2 - Exams
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   Review 1 (Units 1-3)
+   The World of Science
+   The Consumer of Today
+   Entertainment and The Arts
+   Review 3 (Units 7-9)
+   There are different types of noun.
+   (things that can be touched, heard, seen, smelled or tasted)
+   (things that represent a quality, a state or an idea)
+   (names usedfor specificthings, spelled withan initial capital letter)
+   Nouns can be countable or uncountable.
+
+====================================================================================================
+ARQUIVO: Sistema 14 — In Use Series/01_Practice Makes Perfect Complete English All-in-One for ESL Learners.md
+-- CABECALHOS --
+   # 01_Practice Makes Perfect Complete English All-in-One for ESL Learners
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+-- AMOSTRAS --
+   More than Two Million Practice Makes Perfect Books Sold!
+   TOTAL LANGUAGE STUDY PROGRAM
+   Learn in context with readings, example
+   More than 350 Exercises
+   sentences, and high-frequency vocabulary
+   Practice with hundreds of skill-building exercises
+   Take your language skills to the next level
+   with this comprehensive program
+   you've been looking for!
+   I just need to finish
+
+====================================================================================================
+ARQUIVO: Sistema 14 — In Use Series/02_English Vocabulary in Use. Elementary. 3rd Edition.md
+-- CABECALHOS --
+   # 02_English Vocabulary in Use. Elementary. 3rd Edition
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   University Printing House, Cambridge CB2 8BS, United Kingdom
+   One Liberty Plaza, 20th Floor, New York, NY 10006, USA
+   477 Williamstown Road, Port Melbourne, VIC 3207, Australia
+   4843/24, 2nd Floor, Ansari Road, Daryaganj, Delhi – 110002, India
+   79 Anson Road, #06–04/06, Singapore 079906
+   Cambridge University Press is part of the University of Cambridge.
+   It furthers the University’s mission by disseminating knowledge in the pursuit of
+   education, learning and research at the highest international levels of excellence.
+   Information on this title: www.cambridge.org/elt
+   © Cambridge University Press 2017
+
+====================================================================================================
+ARQUIVO: Sistema 14 — In Use Series/03_English Pronunciation in Use Elementary.md
+-- CABECALHOS --
+   # 03_English Pronunciation in Use Elementary
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   Cambridge, New York, Melbourne, Madrid, Cape Town, Singapore, Sao Paulo
+   The Edinburgh Building, Cambridge CB2 8RU, UK
+   Information on this title: www.cambridge.org/9780521672627
+   © Cambridge University Press 2007
+   This publication is in copyright. Subject to statutory exception
+   and to the provisions of relevant collective licensing agreements,
+   no reproduction of any part may take place without
+   the written permission of Cambridge University Press.
+   Printed in the United Kingdom at the University Press, Cambridge
+   A catalogue record for this publication is available from the British Library
+
+====================================================================================================
+ARQUIVO: Sistema 14 — In Use Series/04_Grammar - Grammar in Use Intermediate Student's.md
+-- CABECALHOS --
+   # 04_Grammar - Grammar in Use Intermediate Student's
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   C a m b r i d g e
+   with William R. Smalzer
+   T HI R D
+   with William R. Smalzer
+   C a m b r id g e
+   Cambridge, New York, Melbourne, Madrid, Cape Town, Singapore, Sao Paulo, Delhi
+   32 Avenue of the Americas, New York, NY 10013-2473, USA
+   Information on this title: www.cambridge.org/9780521734769
+   ' Cambridge University Press 2009
+   P- • . m H ne Kong, China, by Golden Cup Printing Company Limited
+
+====================================================================================================
+ARQUIVO: Sistema 14 — In Use Series/05_Practice Makes Perfect English Vocabulary for Beginning ESL Learners, Premium Fourth Edition.md
+-- CABECALHOS --
+   # 05_Practice Makes Perfect English Vocabulary for Beginning ESL Learners, Premium Fourth Edition
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+-- AMOSTRAS --
+   Quality and Excellence in Education!
+   Learn to use vocabulary in context
+   Apply your new skills to sentence building
+   Practice with dozens of goal-oriented exercises
+   kHra BblnoxeHa rpynnoi vk.com/createyourenglish
+   KHwra BbloxeHa rpynnoi vk.com/createyourenglish
+   This page intentionally left blank
+   New York Chicago San Francisco Lisbon London Madrid Mexico City
+   Milan NewDelhi San Juan Seoul Singapore Sydney Toronto
+   Copyright 2006 by The McGraw-Hill Companies, Inc. All rights reserved. Manufactured in the United States of America. Except as permitted under the
+
+====================================================================================================
+ARQUIVO: Sistema 14 — In Use Series/06_Practise Makes Perfect_ English Verbs 3rd Edition.md
+-- CABECALHOS --
+   # 06_Practise Makes Perfect_ English Verbs 3rd Edition
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+-- AMOSTRAS --
+   More Than Two Million Books Sold!
+   TOTAL LANGUAGE STUDY PROGRAM
+   with more than 150
+   00i-xfrontmatter.qxpgray3e 11/8/18 8:46 AM Page i
+   00i-xfrontmatter.qxpgray3e 11/8/18 8:46 AM Page ii
+   This page intentionally left blank
+   00i-xfrontmatter.qxpgray3e 11/8/18 8:46 AM Page iii
+   New York Chicago San Francisco Athens London Madrid
+   Mexico City Milan New Delhi Singapore Sydney Toronto
+   Copyright © 2019 by McGraw-Hill Education. All rights reserved. Except as permitted under the United States Copyright Act of 1976,
+
+====================================================================================================
+ARQUIVO: Sistema 18 — Accent Training/01_American Accent Training.md
+-- CABECALHOS --
+   # 01_American Accent Training
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   A guide to speaking and pronouncing
+   American English for everyone who
+   speaks English as a second language
+   Second Edition ·Ann Cook
+   Listen to the rhythms of
+   ★Imitate the fluid ways
+   classes for two years
+   at Princeton, and in my
+   Training is far superior."
+   Introduction: Read This First
+
+====================================================================================================
+ARQUIVO: Sistema 18 — Accent Training/02_Mastering the American Accent (Lisa Mojsin) (z-lib.org).md
+-- CABECALHOS --
+   # 02_Mastering the American Accent (Lisa Mojsin) (z-lib.org)
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   Learn to speak standard
+   American-style English … fast
+   Conquer tricky vowel and
+   of all the exercises
+   If English is your second language and you want to
+   express yourself with greater clarity, confidence,
+   and accuracy, turn to this book. Speech expert Lisa
+   Mojsin gives you all of the advice and instruction
+   you’re looking for, along with specific exercises that
+   will help you perfect your accent. Concentrate on
+
+====================================================================================================
+ARQUIVO: Sistema 18 — Accent Training/03_English Vocabulary in Use Upper-Intermediate.md
+-- CABECALHOS --
+   # 03_English Vocabulary in Use Upper-Intermediate
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   1 Learning vocabulary - general advice: What do you need to learn? What does learning a
+   to plan your learning?
+   2 Learning vocabulary - aids to learning bubble diagram, word fork
+   3Organising a vocabulary notebooktree diagram,word-class
+   4 The names of English language words adjective, syllable, collocation
+   5 Using your dictionary
+   6Revisingvocabularyactive andreceptivevocabulary,fix inyour memory
+   7 Guessing and explaining meaning context, clues, it's a bit like
+   8 Suffixes -er, -or, -ness
+   9 Prefixes in-,ex-, mis-
+
+====================================================================================================
+ARQUIVO: Sistema 19 — Business & Avançado/01_English for Everyone Business English Course Book Level 1 Beginner A Complete Self-Study Program.md
+-- CABECALHOS --
+   # 01_English for Everyone Business English Course Book Level 1 Beginner A Complete Self-Study Program
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   COURSE BOOK LEVEL 1
+   Project Editors Lili Bryant, Laura Sandford
+   How the course works
+   Editor Ben Ffrancon Davies
+   Editorial Assistants Sarah Edwards,Helen Leech
+   Illustrators Edwood Burn,Michael Parkin, Gus Scott
+   Managing Art Editor Anna Hall
+   New language Alphabet and spelling
+   Audio Recording Manager Christine Stroyan
+   Vocabulary Introductions and greetings
+
+====================================================================================================
+ARQUIVO: Sistema 19 — Business & Avançado/02_English for Everyone Business English Course Book Level 2 A Complete Self-Study Programme.md
+-- CABECALHOS --
+   # 02_English for Everyone Business English Course Book Level 2 A Complete Self-Study Programme
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   Victoria Boobyer is a freelance writer, presenter, and teacher trainer
+   with a background in English-language teaching and teacher
+   management. She has a keen interest in the use of graded readers
+   and the sound pedagogical use of technology in teaching.
+   Tim Bowen has taught English and trained teachers in more than 30
+   countries worldwide. He is the co-author of works on pronunciation
+   teaching and language-teaching methodology, and author of
+   numerous books for English-language teachers. He is currently
+   a freelance materials writer, editor, and translator. He is a member
+   of the Chartered Institute of Linguists.
+
+====================================================================================================
+ARQUIVO: Sistema 19 — Business & Avançado/03_English for Everyone Course Book Level 3 Intermediate A Complete Self-Study Programme.md
+-- CABECALHOS --
+   # 03_English for Everyone Course Book Level 3 Intermediate A Complete Self-Study Programme
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   Barbara MacKay is an experienced English-language teacher and
+   author. She has written for major English-language publishers
+   including Oxford University Press and Macmillan Education.
+   Tim Bowen has taught Englishand trained teachers in more than 30
+   countries worldwide.He is the co-author of works on pronunciation
+   teaching and language-teaching methodology,and author of
+   numerous booksfor English-language teachers.He is currentlya
+   freelance materials writer, editor, and translator. He is a member
+   of the Chartered Institute of Linguists
+   Professor Susan Barduhn is an experienced English-language
+
+====================================================================================================
+ARQUIVO: Sistema 19 — Business & Avançado/04_English for Everyone Practice Book Level 4 Advanced A Complete Self-Study Programme.md
+-- CABECALHOS --
+   # 04_English for Everyone Practice Book Level 4 Advanced A Complete Self-Study Programme
+   ## Página 1
+   ## Página 2
+   ## Página 3
+-- AMOSTRAS --
+   US Editors Allison Singer, Jenny Siklos
+   Editors Lili Bryant, Ben Ffrancon Davies
+   Art Editors Daniela Boraschi, Clare Joyce, Clare Shedden, Michelle Staples
+   New language Present tenses
+   Editorial Assistants Jessica Cawthra, Sarah Edwards
+   Illustrators Edwood Burn, Denise Joos, Clare Joyce,
+   Vocabulary Meeting new people
+   Michael Parkin, Jemma Westing
+   New skill Using question tags
+   Audio Producer Liz Hammond
+
+====================================================================================================
+ARQUIVO: Sistema 19 — Business & Avançado/05_Perfecting your english pronunciation Susan Cameron.md
+-- CABECALHOS --
+   # 05_Perfecting your english pronunciation Susan Cameron
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+-- AMOSTRAS --
+   "Susan worked with my two principal actresses in Snow Flower and the Secret Fan.
+   She was an experienced and creative coach."
+   -Wayne Wang, Director, The Joy Luck Club and Maid In Manhattan
+   Perfecting Your English Pronunciation
+   “In my experience, there is no one more insightful and profoundly gifted.
+   Students under her tutelage are radically transformed and earn the right
+   to be competitive in the theater.”
+   Director, MFA Program, The New School for Drama,
+   The New School University
+   “Susan sets a new standard for excellence in the field of ESL pronunciation,
+
+====================================================================================================
+ARQUIVO: Sistema 19 — Business & Avançado/06_4000 Essential English Words  Book 6.md
+-- CABECALHOS --
+   # 06_4000 Essential English Words  Book 6
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   The 6o words in each book of this series along withthe additional target words
+   presented in the appendices included in the first three books of the series are the most
+   useful words in English.Theywerefoundbyanalysisofa collectionof English course
+   words included in this serieswerechosen because they occurred many times in different
+   levels ofthesematerials.Becauseof the way
+   thatthey were chosen,thesewords havethefollowing characteristics:
+   1Theyareuseful in both spoken and written English.No matterwhat English course
+   you are studying, the words in these books will be of value to you.
+   Each word in these books is a high-frequency word.This means that the effort in
+   learning thewordsiswellrepaidbythenumberoftimes learnershavea chanceto
+
+====================================================================================================
+ARQUIVO: Sistema 20 — B2 First/01_B2-First 1 With Answers.md
+-- CABECALHOS --
+   # 01_B2-First 1 With Answers
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 6
+-- AMOSTRAS --
+   Part of theUniversityof Cambridge
+   FIRST CERTIFICATE IN ENGLISH
+   For revised exam from 2015
+   Reading and Use of English
+   Reading and Use of English
+   Reading and Use of English
+   Reading and Use of English
+   Framesfor the Speaking test
+   Frames for the Speaking test
+   Visual materials for the Speaking test
+
+====================================================================================================
+ARQUIVO: Sistema 20 — B2 First/02_B2-First 2 With Answers.md
+-- CABECALHOS --
+   # 02_B2-First 2 With Answers
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   READINGANDUSEOFENGLISH (1 hour 15minutes)
+   For questions 1-8,read the text below and decide which answer(A,B, C or D) best fits each gap.
+   TheNorwegiantown of Rjukan lies along thefloor of a narrowvalley,(o)..by sheer
+   mountains. Because of its location, the town, with its 3,400 (1).., has in the past lived in
+   direct natural sunlight at all. Its residents all agreed this (2).... that the town was incredibly
+   However, that all changed in 2013 with the (3).... of a system of mirrors whose design Martin
+   Anderson, an artist, had first (4) .... up with some 12 years earlier. With financial (5)...
+   became a (6)... Today, high on the mountain opposite the town, (7)... three large solar-
+   powered, computer-controlled mirrors (8) .... the precise movement of the sun across the
+   Reading and Use of English
+
+====================================================================================================
+ARQUIVO: Sistema 20 — B2 First/03_B2-First 3 With Answers.md
+-- CABECALHOS --
+   # 03_B2-First 3 With Answers
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   Part of the University of Cambridge
+   This collection of four complete practice tests comprises papers from the Cambridge English: First
+   (FCE) examination; students can practise these tests on their own or with the help of a teacher.
+   The Cambridge English:First examination is part of a suite of general English examinations
+   produced by Cambridge English Language Assessment. This suite consists of five examinations
+   that have similar characteristics but are designed for different levels of English language ability.
+   Within the five levels,Cambridge English: First is at Level B2 in the Council of Europe's Common
+   European Framework of Reference for Languages: Learning, teaching, assessment. It has also been
+   accredited by Ofqual, the statutory regulatory authority in England, at Level 1 in the National
+   Qualifications Framework. The Cambridge Englisb: First examination is widely recognised in
+
+====================================================================================================
+ARQUIVO: Sistema 20 — B2 First/04_B2-First 4 With Answers For Schools.md
+-- CABECALHOS --
+   # 04_B2-First 4 With Answers For Schools
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+-- AMOSTRAS --
+   inadvancefromapublisher.The sample answersheetsatthebackof this
+   book aredesigned tobecopied anddistributedinclass.
+   informationgivenin thisworkiscorrectatthe timeof firstprintingbutthe
+   publishersdonotguarantee theaccuracy of suchinformation thereafter.
+
+====================================================================================================
+ARQUIVO: Sistema 20 — B2 First/05_B2 First 5 Student's Book with Answers.md
+-- CABECALHOS --
+   # 05_B2 First 5 Student's Book with Answers
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   Official preparation material for Cambridge English:First,
+   also known as First Certificate in English (FcE)
+   This collection of four complete practice tests comprisespapersfrom the CambridgeEnglish:First
+   (FCE)examination;studentscanpractise thesetests on theirown orwith the helpofa teacher.
+   The CambridgeEnglish:First examinationispart ofa suite of general English examinations
+   produced by CambridgeESOL.This suiteconsists of five examinations thathave similar
+   characteristics but are designedfor different levels of Englishlanguage ability.Within thefive
+   levels,CambridgeEnglish:First is at Level B2in theCouncil of Europe's CommonEuropean
+   accreditedinthe UK as a Level 1EsOLcertificatein theNational QualificationsFramework.The
+   CambridgeEnglish:First examination iswidelyrecognised in commerce and industry and in
+
+====================================================================================================
+ARQUIVO: Sistema 21 — Pronúncia & Conversação/01_Speak English 30 Days to Better English.md
+-- CABECALHOS --
+   # 01_Speak English 30 Days to Better English
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+   ## Página 10
+   ## Página 11
+   ## Página 12
+-- AMOSTRAS --
+   30Days to Better English:
+   All the Speaking, Vocabulary and
+   Grammar You Need fo Be Fluent
+   Day 1 - Say hello!
+   Progress check Day 1
+   Day 2 - Give basic information
+   Progress check Day 2
+   Day 3 - You and your family
+   Progress check Day 3
+   Day 4 - Describing people
+
+====================================================================================================
+ARQUIVO: Sistema 21 — Pronúncia & Conversação/02_Cambridge - English Pronunciation in Use Intermediate.md
+-- CABECALHOS --
+   # 02_Cambridge - English Pronunciation in Use Intermediate
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   Map of contents described in phonological terms
+   Section ALetters and sounds
+   Bye, buyIntroducing letters and sounds
+   Section B Syllables, words and sentences
+   Eye, my, mine Introducing syllables
+   Saturday September13th Introducing word stress
+   Remember,hetold herIntroducing sentence stress
+   Oh, no snow! Consonants at the start of syllables
+   Go - goal - gold Consonants at the end of syllables
+   Paul's calls, Max's faxesSyllables: plural and other -s endings
+
+====================================================================================================
+ARQUIVO: Sistema 21 — Pronúncia & Conversação/03_b_dialogues_everyday_conversations_english_lo_0.md
+-- CABECALHOS --
+   # 03_b_dialogues_everyday_conversations_english_lo_0
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+   ## Página 10
+   ## Página 11
+   ## Página 12
+-- AMOSTRAS --
+   EVERYDAY CONVERSATIONS: LEARNING AMERICAN ENGLISH
+   Acting Coordinator Maureen Cormack
+   Executive Editor Nicholas Namba
+   Publications Office Director Michael Jay Friedman
+   Editor in Chief Mary T. Chunko
+   English as a Foreign Language (EFL) Editor Christina Chandler
+   Managing Editor Bruce Odessey
+   EFL Writers Shira Evans, Catherine Schell
+   Art Director Michelle Farrell
+   Photo Researcher Maggie Johnson Sliker
+
+====================================================================================================
+ARQUIVO: Sistema 22 — Gramática Avançada · Proficiency/01_Objective Proficiency Student's Book with Answers with Downloadable Software.md
+-- CABECALHOS --
+   # 01_Objective Proficiency Student's Book with Answers with Downloadable Software
+   ## Página 1
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   Annette Capel Wendy Sharp
+   Annette Capel Wendy Sharp
+   Cambridge, New York, Melbourne, Madrid, Cape Town,
+   Singapore, São Paulo, Delhi, Mexico City
+   Th e Edinburgh Building, Cambridge CB2 8RU, UK
+   Information on this title: www.cambridge.org/9781107646377
+   © Cambridge University Press 2013
+   Th is publication is in copyright. Subject to statutory exception
+   and to the provisions of relevant collective licensing agreements,
+   no reproduction of any part may take place without the written
+
+====================================================================================================
+ARQUIVO: Sistema 22 — Gramática Avançada · Proficiency/02_Grammar - Advanced Grammar in Use Book with Answers and eBook and Online Test.md
+-- CABECALHOS --
+   # 02_Grammar - Advanced Grammar in Use Book with Answers and eBook and Online Test
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   A self-study reference and practice book
+   for advanced learners of English
+   with answers and CD-ROM
+   Cambridge, New York, Melbourne, Madrid, Cape Town,
+   Singapore, São Paulo, Delhi, Mexico City
+   The Edinburgh Building, Cambridge CB2 8RU, UK
+   Information on this title: www.cambridge.org/9781107699892
+   Third edition © Cambridge University Press, 1999, 2013
+   This publication is in copyright. Subject to statutory exception
+   and to the provisions of relevant collective licensing agreements,
+
+====================================================================================================
+ARQUIVO: Sistema 22 — Gramática Avançada · Proficiency/03_Grammar and Vocabulary for Advanced Book with Answers.md
+-- CABECALHOS --
+   # 03_Grammar and Vocabulary for Advanced Book with Answers
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   Part of the University of Cambridge
+   Downloadable Audio and Online resources
+   to download complete audio for the book to your computer
+   or device, and access additional resources,
+   Part of the Umverstty of Cambridge
+   Cambridge English Language Assessment
+   Information on this title www.cambrkigeorg/97131107481114
+   @ Cambridge University Press 2015
+   This publication is in copyright. Subject to statutory exception
+   and to the provisions of relevant collective licensing agreements,
+
+====================================================================================================
+ARQUIVO: Sistema 22 — Gramática Avançada · Proficiency/04_Advanced Language Practice with Key - MIchael Vince.md
+-- CABECALHOS --
+   # 04_Advanced Language Practice with Key - MIchael Vince
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   M i c h a e l V i n c e
+   Between Towns Road, Oxford OX4 3PP
+   A division of Macmillan Publishers Limited
+   Companies and representatives throughout the world
+   ISBN 1 405 00762 1 with key
+   ISBN 1 405 00761 3 without key
+   Text © Michael Vince 2003
+   Design and illustration © Macmillan Publishers Limited 2003
+   This edition published 2003
+   All rights reserved; no part of this publication may be
+
+====================================================================================================
+ARQUIVO: Sistema 22 — Gramática Avançada · Proficiency/05_Complete Advanced Student's Book with Answers with Digital Pack.md
+-- CABECALHOS --
+   # 05_Complete Advanced Student's Book with Answers with Digital Pack
+   ## Página 1
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+-- AMOSTRAS --
+   Student’s Book with answers
+   University Printing House, Cambridge CB2 8BS, United Kingdom
+   Cambridge University Press is part of the University of Cambridge.
+   It furthers the University’s mission by disseminating knowledge in the pursuit of
+   education, learning and research at the highest international levels of excellence.
+   Information on this title: www.cambridge.org/9781107670907
+   © Cambridge University Press 2014
+   This publication is in copyright. Subject to statutory exception
+   and to the provisions of relevant collective licensing agreements,
+   no reproduction of any part may take place without the written
+
+====================================================================================================
+ARQUIVO: Sistema 22 — Gramática Avançada · Proficiency/06_English Vocabulary in Use Advanced 3rd Edition.md
+-- CABECALHOS --
+   # 06_English Vocabulary in Use Advanced 3rd Edition
+   ## Página 1
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   University Printing House, Cambridge CB2 8BS, United Kingdom
+   One Liberty Plaza, 20th Floor, New York, NY 10006, USA
+   477 Williamstown Road, Port Melbourne, VIC 3207, Australia
+   4843/24, 2nd Floor, Ansari Road, Daryaganj, Delhi – 110002, India
+   79 Anson Road, #06–04/06, Singapore 079906
+   Cambridge University Press is part of the University of Cambridge.
+   It furthers the University’s mission by disseminating knowledge in the pursuit of
+   education, learning and research at the highest international levels of excellence.
+   Information on this title: www.cambridge.org/elt
+   © Cambridge University Press 2017
+
+====================================================================================================
+ARQUIVO: Sistema 22 — Gramática Avançada · Proficiency/07_English Pronunciation in Use. Advanced.md
+-- CABECALHOS --
+   # 07_English Pronunciation in Use. Advanced
+   ## Página 1
+   ## Página 2
+   ## Página 3
+-- AMOSTRAS --
+   Section A Getting started
+   Accents (1):Varieties of English
+   Accents (2): English as an international language
+   Finding out about pronunciation (1): dictionaries
+   Finding out about pronunciation (2): online resources
+   Pronunciation in slow and fast speech (1)
+   Pronunciation in slow and fast speech (2)
+   play, grow, splash Consonant clusters at the beginning of words
+   Consonant clusters at the end of words
+   abstract, next Friday Consonant clusters within and across words
+
+====================================================================================================
+ARQUIVO: Sistema 23 — Gramática Avançada · Oxford/01_Oxford English Grammar Course Advanced with Key (includes e-book).md
+-- CABECALHOS --
+   # 01_Oxford English Grammar Course Advanced with Key (includes e-book)
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   Michael Swan · Catherine Walter
+   + 'Pronunciation for grammar' CD-ROM
+   Great Clarendon Steet, Oxford, ox2 6DP, United Kingdom
+   Oxford University Press is a department ofthe University ofOxford.
+   It furthers the University's objective ofexcellence in research, scholarship,
+   and education by publishing worldwide. Oxford is a registered trade
+   mark ofoxford University Press in the UK and in certain other countries
+   @ Michael Swan and Catherine Walter zott
+   The moral rights ofthe author have been asserted
+   First published in zorr
+
+====================================================================================================
+ARQUIVO: Sistema 23 — Gramática Avançada · Oxford/02_English Vocabulary in Use Advanced 100 units of vocabulary reference and practice.md
+-- CABECALHOS --
+   # 02_English Vocabulary in Use Advanced 100 units of vocabulary reference and practice
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   Aspects of vocabulary learning
+   i Strategies for learning
+   iiTypes of meaning polysemy, synonymy, collocation, connotation, register
+   ili Making the most of your dictionary
+   ivCollocationthe real thing,the genuine article
+   vi Metaphor be on the ball, all the world's a stage
+   vii Register garments, clothes, clobber
+   vili Connotation and cuitural associations
+   1 Abbreviations and acronyms ID, FAQ, o.n.o.
+   2 Prefixes: creating new meanings
+
+====================================================================================================
+ARQUIVO: Sistema 23 — Gramática Avançada · Oxford/03_English Vocabulary in Use Upper-intermediate With answers.md
+-- CABECALHOS --
+   # 03_English Vocabulary in Use Upper-intermediate With answers
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+-- AMOSTRAS --
+   lo units of vocabulary reference and f
+   self-study and classroom use
+   The Pitt Building,Trumpington Street, Cambridge, United Kingdom
+   40 West 20th Street,New York,NY 10011-4211,USA www.cup.org
+   10 Stamford Road,Oakleigh,Melbourne 3166,Australia
+   Ruiz de Alarcon 13, 28014 Madrid, Spain
+   This book is in copyright. Subject to statutory exception
+   and to the provisions of relevant collective licensing agreements,
+   no reproduction of any part may take place without
+   the written permission of Cambridge University Press.
+
+====================================================================================================
+ARQUIVO: Sistema 23 — Gramática Avançada · Oxford/04_Grammar and Vocabulary for Cambridge Advanced and Proficiency.md
+-- CABECALHOS --
+   # 04_Grammar and Vocabulary for Cambridge Advanced and Proficiency
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   RICHARD SIDE AND GUY WELLMAN
+   RICHARD SIDE AND GUY WELLMAN
+   and Associated Companies throughout the world
+   O Pearson Education Limited 1999
+   The nght of Richard Side and Guy Wellman to be identified as
+   authors of this Work have been asserted by them in accordance
+   with the Copyright, Designs and Patents Act 1988
+   All nghts reserved; no part of this publication
+   may be reproduced, stored in a retneval system,
+   or transmitted in any form or by any means,
+
+====================================================================================================
+ARQUIVO: Sistema 23 — Gramática Avançada · Oxford/05_New English File - Advanced Level. Student's Book.md
+-- CABECALHOS --
+   # 05_New English File - Advanced Level. Student's Book
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+-- AMOSTRAS --
+   Whose language is it?
+   Once upon a time
+   the past: narrative tenses,
+   used to and would
+   31hours in a day?
+   unreal uses ofpast tenses
+   Just any old bed?
+
+====================================================================================================
+ARQUIVO: Sistema 24 — Gramática Avançada · Cambridge/01_Advancing Vocabulary Skills - By Sherrie L. Nist.md
+-- CABECALHOS --
+   # 01_Advancing Vocabulary Skills - By Sherrie L. Nist
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   Books in lhe Townsend Press Voeabulary Series:
+   Books in theTownsendPress ReadingSerics:
+   Ten Steps to Advanced Reading
+   Other Reading and Writing Books:
+   Voices andValues:A Reader forWriters.
+   Supplements Availabte for Most Books:
+   Instructor's Manual and Test Bank
+   Copyright ? 2002 by Townsend Press, Inc.
+   Printed in the United States of America
+   All rights reserved.No part of this work may be reproduced in any form
+
+====================================================================================================
+ARQUIVO: Sistema 24 — Gramática Avançada · Cambridge/02_English Advancing A Bridge to Success.md
+-- CABECALHOS --
+   # 02_English Advancing A Bridge to Success
+   ## Página 1
+   ## Página 2
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+   ## Página 10
+   ## Página 11
+-- AMOSTRAS --
+   of the European Union
+   Course Name: Advanced English
+   Dr. Aida Bakeer Dr. Majed Hasanein Dr. Khaled Dweikat
+   Dr. Munther Zyoud Dr. Lina Omar Mr. Ashraf Abd Elkhaleq
+   Dr. Mahmoud Itmeizeh Mr. Naeem Salah Ms. Zeiadee Khaleel
+   Dr. Adli Odeh Mr. Montaser Odeh Ms. Nadia Hamad
+   Instructional Designer: Dujana Abu Asheh
+   Digital Instructional Designer: Odai Abu Baker
+   Refereed by: Chemnitz University of Technology
+   Edited by: PITMAN Dr. Aida Bakeer
+
+====================================================================================================
+ARQUIVO: Sistema 24 — Gramática Avançada · Cambridge/03_New Cambridge Advanced English Student's book.md
+-- CABECALHOS --
+   # 03_New Cambridge Advanced English Student's book
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   PUBLISHED BY THE PRESS SYNDICATE OF THE UNIVERSITY OF CAMBRIDGE
+   The Pitt Building, Trumpington Street, Cambridge CB2 1RP, United Kingdom
+   The Edinburgh Building, Cambridge CB2 2RU, UK http://www.cup.cam.ac.uk
+   40 West 20th Street, New York, NY 10011-4211, USA http://www.cup.org
+   10 Stamford Road, Oakleigh, Melbourne 3166, Australia
+   Ruiz de Alarcon 13,28014 Madrid, Spain
+   © Cambridge University Press 1991,1998
+   This book is in copyright. Subject to statutory exception
+   and to the provisions of relevant collective licensing agreements,
+   no reproduction of any part may take place without
+
+====================================================================================================
+ARQUIVO: Sistema 25 — Vocabulário & Oratória/01_The Most Effective Vocabulary Builder in the English Language (Norman-Lewis).md
+-- CABECALHOS --
+   # 01_The Most Effective Vocabulary Builder in the English Language (Norman-Lewis)
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+-- AMOSTRAS --
+   Fully Revised and Expanded!
+   The Most Effective Vocabulary
+   Builder in the English Language!
+   The simple, step-by-step method
+   that will increase your knowledge and
+   mastery of the English Language.
+   The Coml!lete Handbook for
+   • Speak and write with confidence.
+   • Read more effectively and efficiently.
+   • Develop social contacts.
+
+====================================================================================================
+ARQUIVO: Sistema 25 — Vocabulário & Oratória/02_Talk Like TED The 9 Public-Speaking Secrets of the Worlds Top Minds (Carmine Gallo) (z-lib.org).md
+-- CABECALHOS --
+   # 02_Talk Like TED The 9 Public-Speaking Secrets of the Worlds Top Minds (Carmine Gallo) (z-lib.org)
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+   ## Página 7
+   ## Página 8
+   ## Página 9
+   ## Página 10
+   ## Página 11
+-- AMOSTRAS --
+   "Talk Like TED is a smart. practical book that will teach you how to give a kick-butt presentation.
+   Daniel H. Pink,#l New York Times bestselling author of To Sell Is Human and Drive
+   BESTSELLING AUTHOR OF THE PRESENTATION SECRETS OF STEVEJOBS
+   The author and publisher have provided this e-book to you for your
+   personal use only. You may not make this e-book publicly available in any
+   way. Copyright infringement is against the law. If you believe the copy
+   of this e-book you are reading infringes on the author’s copyright,
+   please notify the publisher at: us.macmillanusa.com/piracy.
+   Please note that some of the links referenced in this work are no longer
+   To Vanessa, with love and gratitude
+
+====================================================================================================
+ARQUIVO: Sistema 25 — Vocabulário & Oratória/03_The Art Of Public Speaking.md
+-- CABECALHOS --
+   # 03_The Art Of Public Speaking
+   ## Página 1
+   ## Página 2
+   ## Página 3
+   ## Página 4
+   ## Página 5
+   ## Página 6
+-- AMOSTRAS --
+   The Art of Public Speaking by Dale Carnagey (AKA Dale Carnegie) and J. Berg Esenwein 1
+   The Art of Public Speaking
+   by Dale Carnagey (AKA Dale Carnegie) and J. Berg
+   The Project Gutenberg EBook of The Art of Public Speaking
+   by Dale Carnagey (AKA Dale Carnegie) and J. Berg Esenwein This eBook is for the use of anyone anywhere
+   at no cost and with almost no restrictions whatsoever. You may copy it, give it away or re-use it under the
+   terms of the Project Gutenberg License included with this eBook or online at www.gutenberg.net
+   Title: The Art of Public Speaking
+   Author: Dale Carnagey (AKA Dale Carnegie) and J. Berg Esenwein
+   Release Date: July 17, 2005 [EBook #16317]
