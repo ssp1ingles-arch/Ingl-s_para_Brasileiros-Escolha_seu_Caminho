@@ -1,6 +1,7 @@
 [
   {
     "numero": "01",
+    "nivel": "kids",
     "titulo": "Crianças · Kids Box",
     "descricao": "Kid's Box (Cambridge), níveis 3 e 4 — inglês infantil garimpado para o adulto estudar. Level 3: 11 seções, 242 frases com tradução. Level 4: 10 seções, 389 frases — o passado completo (regular e irregular), orações com who, where, because e so, comparativos e superlativos longos, advérbios de modo e want someone to do something.",
     "cor": "#FB7185",
@@ -14,6 +15,7 @@
   },
   {
     "numero": "02",
+    "nivel": "kids",
     "titulo": "Crianças · Desenho Animado",
     "descricao": "Aprenda como uma criança aprende: cenas de desenho animado, das primeiras palavras às conversas reais. 7 níveis progressivos, do básico ao avançado.",
     "cor": "#A855F7",
@@ -27,6 +29,7 @@
   },
   {
     "numero": "03",
+    "nivel": "n1",
     "titulo": "Inglês do Zero · Base Completa",
     "descricao": "Do inglês de escola ao inglês que nativos falam. 25 sistemas do A1 ao C2 e uma jornada guiada de 120 passos — do zero à fluência. Mais o painel Gramática em Tabelas: 192 itens em 16 tabelas de consulta rápida — a concordância de be/have/do, os 12 tempos lado a lado, o TO BE nos nove tempos, irregulares, pronomes, determinantes, classes gramaticais, plural e opostos.",
     "cor": "#64DFDF",
@@ -40,6 +43,7 @@
   },
   {
     "numero": "04",
+    "nivel": "n1",
     "titulo": "Gramática Básica",
     "descricao": "A base em linguagem acessível. Basic English Grammar Workbook e English Grammar For Dummies, Big Fat Notebook, A Resource Book for Students, Grammar For Young Learners, Grammar And Usage For Better Writing e The Infographic Guide to Grammar. Só a frase-modelo de cada estrutura, em contexto — nunca enunciado, lacuna ou gabarito. Os sete painéis completos: 158 estruturas gramaticais, do verbo to be às inversões obrigatórias, cada uma ordenada da mais simples à mais avançada.",
     "cor": "#22C55E",
@@ -53,6 +57,7 @@
   },
   {
     "numero": "05",
+    "nivel": "n2",
     "titulo": "Motor de Verbos",
     "descricao": "100 verbos, 142 sentidos. Cada verbo no tempo certo — afirmativo, negativo e pergunta, do jeito que o brasileiro precisa ver. Mais o painel Famílias de Verbos: 211 itens com GO, BE, DO, GET, MAKE, LOVE e STOP em todas as formas lado a lado, o quarteto SAY/TELL/SPEAK/TALK, a família WOULD e a grade dos modais.",
     "cor": "#6366F1",
@@ -66,6 +71,7 @@
   },
   {
     "numero": "06",
+    "nivel": "n2",
     "titulo": "Situar a Frase",
     "descricao": "Preposições, quantificadores e estruturas fixas — onde, quando, quanto e como. Com modo autoteste. Mais o painel Preposições em Mapa: 173 itens com IN/ON/AT de lugar e de tempo, as posições no espaço, TO x FOR, as preposições fixas, contáveis e incontáveis e a família SOME.",
     "cor": "#EC4899",
@@ -79,6 +85,7 @@
   },
   {
     "numero": "07",
+    "nivel": "n2",
     "titulo": "Conectar Frases",
     "descricao": "Question words, conectivos e discourse markers — o que liga ideias e faz o inglês soar natural. Com construtor de frases. Mais o painel EVEN, SO e os Conectores: 76 itens com a família EVEN, os quatro intensificadores SO/SUCH/TOO/ENOUGH, a grade das conjunções e os conectores de texto do básico ao formal.",
     "cor": "#10B981",
@@ -92,6 +99,7 @@
   },
   {
     "numero": "08",
+    "nivel": "n2",
     "titulo": "Conversação & Frases",
     "descricao": "Seis livros virando painel de inglês real: 1.006 dicas, conversação para viagem, expressões idiomáticas, música (Queen), palavras/números/datas e os erros clássicos do brasileiro. 3.513 itens.",
     "cor": "#0EA5E9",
@@ -105,6 +113,7 @@
   },
   {
     "numero": "09",
+    "nivel": "n2",
     "titulo": "English for Everyone",
     "descricao": "A coleção visual English for Everyone (DK): guia de gramática, vocabulário, curso Junior e practice books iniciantes, mais o Pronouncing American English. Grammar Guide já disponível: 36 temas, 191 frases com tradução.",
     "cor": "#818CF8",
@@ -118,6 +127,7 @@
   },
   {
     "numero": "10",
+    "nivel": "n3",
     "titulo": "Reduções e Pronúncia",
     "descricao": "O inglês que nativos falam — não o que ensinam. Wanna, gonna, gotta e as reduções do dia a dia, com músicas, filmes e treino de ouvido. Mais o livro Rachel's English em 2 painéis: fala ligada (208 itens) e o sistema de sons — vogais, ditongos, consoantes, encontros e tônica (183 itens), tudo com fonética. E o painel Livro x Rua: 118 itens com a frase do livro ao lado da que o nativo realmente fala, respostas curtas automáticas e as siglas da internet.",
     "cor": "#F59E0B",
@@ -131,6 +141,7 @@
   },
   {
     "numero": "11",
+    "nivel": "n3",
     "titulo": "American English File",
     "descricao": "O curso American English File (Oxford), nível 1 a 4, mais os Close-up Workbooks C1 e C2. AEF 1 já disponível: 16 seções, 174 frases com tradução. Os demais em preparação.",
     "cor": "#22D3EE",
@@ -144,6 +155,7 @@
   },
   {
     "numero": "12",
+    "nivel": "n3",
     "titulo": "Exercícios e Vocabulário",
     "descricao": "Prática de gramática e vocabulário: Grammar in Use Supplementary, Basic Grammar in Use, Collocations in Use, Phrasal Verbs in Use e Practice Makes Perfect English Conversation. Supplementary já disponível: 16 estruturas, 123 frases com tradução.",
     "cor": "#FBBF24",
@@ -157,6 +169,7 @@
   },
   {
     "numero": "13",
+    "nivel": "n3",
     "titulo": "Gramática em Uso",
     "descricao": "Seis livros de gramática e pronúncia (English Grammar in Use, Grammar Practice, Oxford Guide, Essential Grammar, Pronunciation Made Simple, Reactivate C1/C2) em painéis de exemplos reais. Os seis já em painel: 4.750+ exemplos, do A1 ao C2 — do Essential Grammar in Use ao Reactivate C1/C2 (subjuntivo, inversão, clivadas), passando pelo Oxford Guide e pela pronúncia por pares mínimos.",
     "cor": "#4A9EFF",
@@ -170,6 +183,7 @@
   },
   {
     "numero": "14",
+    "nivel": "n3",
     "titulo": "In Use Series",
     "descricao": "A série 'in Use' da Cambridge (vocabulário, pronúncia e gramática) ao lado da série Practice Makes Perfect (McGraw-Hill). Vocabulary in Use Elementary já disponível: 58 unidades, 431 itens em contexto com tradução.",
     "cor": "#A3E635",
@@ -183,6 +197,7 @@
   },
   {
     "numero": "15",
+    "nivel": "n3",
     "titulo": "Dúvidas Pontuais",
     "descricao": "Gramática sob medida — os pontos específicos que você quis dominar. DID, WENT e mais, cada um num card de referência rápida. Mais o painel Falar Melhor: 168 itens com a mesma ideia dita em básico, avançado, profissional e natural, e o inglês pronto de hotel, restaurante, perguntas do dia a dia e apresentação em entrevista.",
     "cor": "#F97316",
@@ -196,6 +211,7 @@
   },
   {
     "numero": "16",
+    "nivel": "n4",
     "titulo": "Prática Completa · 4 Pilares",
     "descricao": "O treino que vira fala: frases que crescem camada a camada, 1.000 frases do inglês real, os padrões que desbloqueiam tudo e 150 textos com contexto visual.",
     "cor": "#14B8A6",
@@ -209,6 +225,7 @@
   },
   {
     "numero": "17",
+    "nivel": "n4",
     "titulo": "Transcrições e Canais",
     "descricao": "Transcrições de canais e podcasts reais — All Ears English, Luke's English Podcast e mais. Treine o ouvido com o inglês do dia a dia.",
     "cor": "#EF4444",
@@ -222,6 +239,7 @@
   },
   {
     "numero": "18",
+    "nivel": "n4",
     "titulo": "Accent Training",
     "descricao": "Os dois clássicos de sotaque americano (American Accent Training e Mastering the American Accent) mais o English Vocabulary in Use Upper-Intermediate. Entonação em escada, ligações, redução de vogais, o T americano, as 15 vogais e as consoantes problemáticas — e as 100 unidades de vocabulário médio-alto, dos tópicos do dia a dia aos idioms, phrasal verbs e variedades do inglês. Os três painéis completos: 37 seções publicadas.",
     "cor": "#F472B6",
@@ -235,6 +253,7 @@
   },
   {
     "numero": "19",
+    "nivel": "n4",
     "titulo": "Business & Avançado",
     "descricao": "English for Everyone (DK): Business English 1 e 2, curso intermediário nível 3 e practice avançado nível 4, mais pronúncia (Susan Cameron) e as 600 palavras do 4000 Essential English Words Book 6. Os seis livros em painel: 2.984 itens.",
     "cor": "#34D399",
@@ -248,6 +267,7 @@
   },
   {
     "numero": "20",
+    "nivel": "n4",
     "titulo": "B2 First",
     "descricao": "A série completa de B2 First (Cambridge English), cinco volumes com respostas. Aproveitamos o inglês real: textos, e-mails, resenhas e transcrições de áudio — nunca o enunciado nem o gabarito. Os cinco livros já estão em painel.",
     "cor": "#60A5FA",
@@ -261,6 +281,7 @@
   },
   {
     "numero": "21",
+    "nivel": "n5",
     "titulo": "Pronúncia & Conversação",
     "descricao": "A frase pronta para a situação inteira. Speak English: 30 Days to Better English organiza a conversação em trinta dias temáticos — apresentar-se, pedir ajuda na rua, comprar, comer fora, telefonar, contar o passado, dar opinião. Everyday Dialogues traz trinta diálogos completos do cotidiano, com quem fala e o que responde: do cumprimento formal ao pronto-socorro, do correio ao pet shop. Dois painéis prontos, 312 itens. O terceiro livro, English Pronunciation in Use (Cambridge), depende de transcrição fonética e aguarda reconversão do OCR.",
     "cor": "#8B5CF6",
@@ -274,6 +295,7 @@
   },
   {
     "numero": "22",
+    "nivel": "n5",
     "titulo": "Gramática Avançada · Proficiency",
     "descricao": "Nível avançado, para quem já tem base sólida. Objective Proficiency, Advanced Grammar in Use, Grammar and Vocabulary for Advanced, Michael Vince, Complete Advanced, EVU Advanced e Pronunciation in Use Advanced. Aqui a gramática vira nuance de uso. O Objective Proficiency já está em painel: 20 blocos, 232 itens de C2.",
     "cor": "#F59E0B",
@@ -287,6 +309,7 @@
   },
   {
     "numero": "23",
+    "nivel": "n5",
     "titulo": "Gramática Avançada · Oxford",
     "descricao": "Nível avançado, para quem já tem base sólida. Oxford English Grammar Course Advanced, English Vocabulary in Use (Advanced e Upper-intermediate), Grammar and Vocabulary for CAE/CPE e New English File Advanced. Em preparação.",
     "cor": "#F59E0B",
@@ -300,6 +323,7 @@
   },
   {
     "numero": "24",
+    "nivel": "n5",
     "titulo": "Gramática Avançada · Cambridge",
     "descricao": "Nível avançado, para quem já tem base sólida. Advancing Vocabulary Skills (Nist), English Advancing — A Bridge to Success e New Cambridge Advanced English. Vocabulário de nível alto em contexto estendido. Em preparação.",
     "cor": "#F59E0B",
@@ -313,6 +337,7 @@
   },
   {
     "numero": "25",
+    "nivel": "n5",
     "titulo": "Vocabulário & Oratória",
     "descricao": "Três livros para a palavra certa e o jeito de dizê-la. Vocabulary Builder (Norman Lewis) destrava o inglês culto por raiz grega e latina — aprenda ego e abra egoist, egotist, egomaniac. Talk Like TED traz as falas reais dos palestrantes e as frases que abrem e viram uma apresentação. The Art of Public Speaking, o clássico de 1915, ensina ênfase por contraste, mudança de tom, ritmo e pausa. Três painéis, 469 itens.",
     "cor": "#F59E0B",
