@@ -64,7 +64,17 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
   body{font-size:16px;}
   img{max-width:100%;height:auto;}
 }
-</style></head>
+</style>
+<style id="bc-css">
+.breadcrumb{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;line-height:1.6;color:#6b7280;}
+.breadcrumb a{color:#6b7280;text-decoration:none;transition:color .15s ease;}
+.breadcrumb a:hover{color:#e5e5e5;}
+.breadcrumb .sep{padding:0 .45em;color:#4b5563;}
+.breadcrumb .cur{color:#9ca3af;}
+.breadcrumb{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 24px 2px;}
+@media(max-width:560px){.breadcrumb{padding-left:20px;padding-right:20px;}}
+</style>
+</head>
 <body>
 
 <div class="bg-glow"></div>
@@ -76,6 +86,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
   <h1><em>Nível 2 · A2 — Básico</em></h1>
   <p class="sub">5 sistemas · Verbos, frases, conversação</p>
 </header>
+
+<nav class="breadcrumb" aria-label="Trilha"><a href="index.html">Inglês para Brasileiros</a><span class="sep">&rsaquo;</span><span class="cur">Nível 2 · A2</span></nav>
 
 <main class="portais-grid">
       <a href="Sistema%2005%20%E2%80%94%20Motor%20de%20Verbos/index.html" class="portal-card" style="--accent:#6366F1">
