@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English Pronunciation Made Simple · Gramática em Uso · Inglês para Brasileiros</title>
+<title>English Grammar &mdash; A Resource Book for Students · Gramática em Uso · Inglês para Brasileiros</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#4a9eff;}
+:root{--bg:#0a0a0a;--surface:#141414;--surface2:#1b1b1b;--border:#242424;--text:#e5e5e5;--muted:#8a8a8a;--dim:#5a5a5a;--accent:#22C55E;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;padding-top:58px;}
@@ -20,8 +20,6 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;line-height:1.08;margin:12px 0;}
 h1.title em{font-style:normal;color:var(--accent);}
 .lead{color:var(--muted);max-width:760px;line-height:1.6;}
-.lead b{color:var(--text);font-weight:600;}
-.lead i{color:var(--accent);font-style:normal;}
 .metrics{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 6px;}
 .metric b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;display:block;color:var(--text);}
 .metric span{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;}
@@ -38,6 +36,7 @@ h1.title em{font-style:normal;color:var(--accent);}
 .searchbox.has-q button{display:block;}
 .searchinfo{font-family:'Space Grotesk',sans-serif;font-size:.78rem;color:var(--dim);padding:8px 4px 0;min-height:20px;}
 .searchinfo b{color:var(--accent);}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--text);border-radius:3px;padding:0 2px;}
 
 /* LAYOUT */
 .layout{display:grid;grid-template-columns:250px 1fr;gap:38px;align-items:start;margin:14px 0 0;}
@@ -54,19 +53,27 @@ section{margin:0 0 46px;scroll-margin-top:86px;}
 section h2{font-family:'Space Grotesk',sans-serif;font-size:1.42rem;font-weight:800;margin:5px 0 8px;line-height:1.2;}
 .sdesc{color:var(--muted);font-size:.93rem;margin-bottom:16px;max-width:760px;}
 .sdesc b{color:var(--text);font-weight:600;}
-.sdesc i{color:var(--accent);font-style:normal;}
+.sdesc code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.86em;color:var(--accent);}
 
 .items{display:flex;flex-direction:column;gap:9px;}
 .i{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:0 10px 10px 0;padding:13px 16px;transition:border-left-color .15s;}
 .i:hover{border-left-color:var(--accent);}
 .en{font-size:1rem;font-weight:500;line-height:1.5;}
 .en i{color:var(--accent);font-style:normal;font-weight:600;}
-.en u{text-decoration:none;border-bottom:2px solid var(--accent);}
 .pt{color:var(--muted);font-size:.89rem;margin-top:4px;line-height:1.5;}
-.def{color:var(--dim);font-size:.83rem;margin-top:3px;line-height:1.45;font-style:italic;}
-.def b{color:var(--muted);font-weight:600;font-style:normal;}
 .tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;margin-bottom:6px;}
-.tag.err{color:#fca5a5;border-color:#5f1e1e;}
+
+/* TABELAS */
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:4px 0 12px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:400px;}
+th{background:var(--surface2);text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding:10px 13px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+td.w{color:var(--muted);}
+td b{font-weight:600;}
+.x{color:#f87171;}
+.ok{color:var(--accent);}
 
 .empty{display:none;text-align:center;color:var(--muted);padding:44px 20px;border:1px dashed var(--border);border-radius:14px;}
 .empty b{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:6px;}
@@ -84,6 +91,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
   body{font-size:16px;}
   .wrap{padding-left:15px;padding-right:15px;}
   .metrics{gap:14px 18px;}
+  table{font-size:.85rem;}
 }
 </style>
 <style id="bc-css">
@@ -94,459 +102,618 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
 .breadcrumb .cur{color:#9ca3af;}
 .breadcrumb{margin:4px 0 18px;}
 </style>
-</head>
+<style id="tb-css">
+.topbar{position:sticky;top:0;z-index:1000;background:#0a0a0a;border-bottom:1px solid #1f2937;}
+.topbar-in{display:flex;align-items:center;gap:.9rem;min-height:59px;max-width:1180px;margin:0 auto;padding:1rem 1.5rem;}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;flex:none;font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:600;color:#6b7280;text-decoration:none;padding:.4rem .75rem;border:1px solid #1f2937;border-radius:6px;white-space:nowrap;transition:color .15s,border-color .15s;}
+.back-btn:hover{color:#e5e7eb;border-color:#374151;}
+.topbar-t{min-width:0;font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.searchbar{top:60px;background:#0a0a0a;}
+.toc-wrap{top:60px;height:calc(100vh - 60px);}
+.search-wrap{position:sticky;top:60px;z-index:90;background:#0a0a0a;padding:10px 0 4px;}
+@media(max-width:560px){
+  .topbar-in{gap:.6rem;min-height:50px;padding:.7rem 1rem;}
+  .searchbar,.toc-wrap,.search-wrap{top:51px;}
+  .toc-wrap{height:calc(100vh - 51px);}
+}
+</style></head>
 <body>
 <div class="bg-glow"></div>
-<a href="./index.html" class="back">&#8592; Voltar ao Sistema 13</a>
+<div class="topbar"><div class="topbar-in"><a href="./index.html" class="back-btn">&#8592; Voltar ao Sistema 13</a><span class="topbar-t">English Grammar &mdash; A Resource Book for Students</span></div></div>
 <div class="wrap">
-<nav class="breadcrumb" aria-label="Trilha"><a href="../index.html">Inglês para Brasileiros</a><span class="sep">&rsaquo;</span><a href="../nivel-03.html">Nível 3 · B1</a><span class="sep">&rsaquo;</span><a href="./index.html">Gramática em Uso</a><span class="sep">&rsaquo;</span><span class="cur">English Pronunciation Made Simple</span></nav>
+<nav class="breadcrumb" aria-label="Trilha"><a href="../index.html">Inglês para Brasileiros</a><span class="sep">&rsaquo;</span><a href="../nivel-03.html">Nível 3 · B1</a><span class="sep">&rsaquo;</span><a href="./index.html">Gramática em Uso</a><span class="sep">&rsaquo;</span><span class="cur">English Grammar &mdash; A Resource Book for Students</span></nav>
 
-<div class="eyebrow">Sistema 13 · Livro 05 · pronúncia</div>
-<h1 class="title">English Pronunciation <em>Made Simple</em></h1>
-<p class="lead">Paulette Dale &amp; Lillian Poms · Longman/Pearson. Inglês <b>americano</b>. O que faz este livro diferente dos outros de pronúncia do projeto é o método: para cada som ele diz exatamente <b>qual som você vai pôr no lugar</b> e <b>que palavra vai sair</b> — <i>sheep</i> virando <i>ship</i>, <i>very</i> virando <i>berry</i>, <i>thank</i> virando <i>sank</i>. O painel foi montado sobre esse mapa de confusões: o par mínimo, a frase em que o erro muda o sentido e a instrução física da boca. Ficaram de fora os enunciados de exercício, os gabaritos e as faixas de CD.</p>
+<div class="eyebrow">Sistema 13 · V10 · Livro 04 · gramática descritiva A2–B1</div>
+<h1 class="title">English Grammar &#8212; <em>A Resource Book</em> for Students</h1>
+<p class="lead">Roger Berry · Routledge. Gramática <b>descritiva</b>: em vez de dizer o que é certo, mostra como a língua funciona de verdade, sempre com exemplo autêntico. Daqui saiu a Parte A inteira &mdash; substantivo, sintagma nominal, adjetivo, advérbio, preposição, verbo, auxiliares, negativa e interrogativa, elementos da oração, tipos de frase, subordinadas e ordem das palavras. Só a frase-modelo e a tabela; ficaram de fora atividade, gabarito e discussão teórica sem exemplo.</p>
 
 <div class="metrics">
-  <div class="metric"><b>22</b><span>blocos</span></div>
-  <div class="metric"><b id='m-total'>&mdash;</b><span>itens</span></div>
-  <div class="metric"><b>42</b><span>lições</span></div>
-  <div class="metric"><b>EUA</b><span>sotaque</span></div>
+  <div class="metric"><b>19</b><span>estruturas</span></div>
+  <div class="metric"><b id="m-total">&mdash;</b><span>itens</span></div>
+  <div class="metric"><b>26</b><span>tabelas</span></div>
+  <div class="metric"><b>A2–B1</b><span>nível</span></div>
 </div>
 
 <div class="searchbar">
   <div class="searchbox" id="sbox">
     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-    <input type="search" id="q" placeholder="Buscar som, palavra ou tradução — ex.: th, sheep, ritmo, entonação…" autocomplete="off" spellcheck="false">
+    <input type="search" id="q" placeholder="Buscar em inglês ou português — ex.: didn't, plural, vírgula, passado…" autocomplete="off" spellcheck="false">
     <button type="button" id="clr">limpar</button>
   </div>
   <div class="searchinfo" id="info"></div>
 </div>
 
 <div class="layout">
-  <nav class="toc"><h3>Blocos</h3><div class="toc-list" id="toclist"></div></nav>
+  <nav class="toc"><h3>Estruturas</h3><div class="toc-list" id="toclist"></div></nav>
   <main class="article" id="art">
 
 <section id="s01">
-<div class="snum">Lição 02 · /iː/ × /ɪ/</div>
-<h2><i>sheep</i> × <i>ship</i> — a confusão número um</h2>
-<p class="sdesc">O português tem um <b>i</b> só; o inglês tem dois. O /iː/ é <b>longo e tenso</b> (sorria, estique os lábios); o /ɪ/ é <b>curto e relaxado</b>. Trocar um pelo outro muda a palavra.</p>
+<div class="snum">Estrutura 01</div>
+<h2>Substantivo — singular, plural e os plurais que enganam</h2>
+<p class="sdesc">O plural é uma escolha <b>obrigatória</b> em inglês. Mas nem todo substantivo tem as duas formas, e há palavras que parecem plural e são singular — e vice-versa.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Grupo</th><th>Palavras</th><th>Detalhe</th></tr></thead>
+<tbody>
+<tr><td>Só existem no <b>plural</b></td><td>binoculars · clothes · glasses · jeans · scissors · shorts · trousers · underpants</td><td>não dá para tirar o -s; não se diz <i class='x'>two clothes</i>, mas <b>many clothes</b> e <b>a pair of scissors</b></td></tr>
+<tr><td>Outros só-plural</td><td>arms · authorities · congratulations · contents · goods · grounds · surroundings · thanks · troops</td><td>&nbsp;</td></tr>
+<tr><td>Parecem plural, são <b>singular</b></td><td>measles · news · mathematics</td><td><b>The news is very bad.</b></td></tr>
+<tr><td>Parecem singular, são <b>plural</b></td><td>cattle · police · people</td><td><b>The police have been informed.</b></td></tr>
+<tr><td><b>Coletivos</b> — vão de um jeito ou de outro</td><td>committee · enemy · family · government · team</td><td>conforme o grupo é visto como bloco ou como indivíduos</td></tr>
+</tbody></table></div>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɪ/ instead of /iː/: <i>sheep</i> will sound like <i>ship</i> · <i>eat</i> will sound like <i>it</i>.</div><div class="pt">Se você disser /ɪ/ no lugar de /iː/, "ovelha" vira "navio" e "comer" vira "isso".</div><div class="def">/iː/ é som <b>longo</b> — prolongue. Sinta a tensão nos lábios, na língua e no maxilar.</div></div>
-<div class="i"><span class="tag">/iː/</span><div class="en">each · eat · eager · eel · either · seal · mean · need · please · he · fee · she</div><div class="pt">Palavras com o i longo, no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">team × Tim · sleep × slip · green × grin · heel × hill · week × wick</div><div class="pt">time × Tim · dormir × escorregar · verde × sorriso largo · calcanhar × colina · semana × pavio</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">sheep × ship · leave × live · beaten × bitten · neat × knit · cheeks × chicks</div><div class="pt">ovelha × navio · partir × morar · batido × mordido · arrumado × tricotado · bochechas × pintinhos</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">heels × hills · beat × bit · beans × bins · heat × hit · wheel × will</div><div class="pt">saltos × colinas · batida × pedacinho · feijões × latas · calor × sucesso · roda × vontade</div></div>
-<div class="i"><div class="en">They cleaned the (<i>ship</i> / <i>sheep</i>).</div><div class="pt">Eles limparam o navio. / Eles limparam as ovelhas.</div><div class="def">Leia a frase duas vezes, uma com cada palavra — é assim que o livro treina.</div></div>
-<div class="i"><div class="en">Will he (<i>leave</i> / <i>live</i>)?</div><div class="pt">Ele vai embora? / Ele vai viver?</div></div>
-<div class="i"><div class="en">The boy was (<i>beaten</i> / <i>bitten</i>).</div><div class="pt">O menino apanhou. / O menino foi mordido.</div></div>
-<div class="i"><div class="en">His clothes are (<i>neat</i> / <i>knit</i>).</div><div class="pt">As roupas dele estão arrumadas. / As roupas dele são de tricô.</div></div>
-<div class="i"><div class="en">She has plump (<i>cheeks</i> / <i>chicks</i>).</div><div class="pt">Ela tem bochechas gordinhas. / Ela tem pintinhos gordinhos.</div></div>
-<div class="i"><div class="en">I like low (<i>heels</i> / <i>hills</i>).</div><div class="pt">Gosto de salto baixo. / Gosto de colinas baixas.</div></div>
-<div class="i"><div class="en">The children will (<i>sleep</i> / <i>slip</i>).</div><div class="pt">As crianças vão dormir. / As crianças vão escorregar.</div></div>
-<div class="i"><div class="en">I heard every (<i>beat</i> / <i>bit</i>).</div><div class="pt">Ouvi cada batida. / Ouvi cada pedacinho.</div></div>
-<div class="i"><div class="en">They stored the (<i>beans</i> / <i>bins</i>).</div><div class="pt">Guardaram os feijões. / Guardaram as caixas.</div></div>
-<div class="i"><div class="en">Everyone talks about the (<i>heat</i> / <i>hit</i>).</div><div class="pt">Todo mundo comenta o calor. / Todo mundo comenta o sucesso.</div></div>
-<div class="i"><span class="tag">diálogo</span><div class="en">Jim: Hi, Tina! Do you have a m<u>i</u>nute? — Tina: Yes, Jim. What <u>i</u>s <u>i</u>t?</div><div class="pt">Oi, Tina! Você tem um minuto? — Tenho, Jim. O que foi?</div><div class="def">Diálogo de treino: sublinhado = /ɪ/ curto.</div></div>
-<div class="i"><span class="tag">diálogo</span><div class="en">There is a f<i>i</i>ne s<i>ea</i>food place on F<i>i</i>fth Street. The f<i>i</i>sh is fr<i>e</i>sh, and the shr<i>i</i>mp is gr<i>ea</i>t. But <u>i</u>t <u>i</u>sn't ch<i>ea</i>p!</div><div class="pt">Tem um bom restaurante de frutos do mar na Rua Cinco. O peixe é fresco e o camarão é ótimo. Mas não é barato!</div></div>
-<div class="i"><span class="tag">diálogo</span><div class="en">That's OK. It will be "f<i>ea</i>st today, famine tomorrow"! I'll just have to <i>ea</i>t b<i>ea</i>ns the rest of the w<i>ee</i>k!</div><div class="pt">Tudo bem. Vai ser "banquete hoje, fome amanhã"! Vou ter de comer feijão o resto da semana!</div></div>
+<div class="i"><span class="tag">coletivo como bloco</span><div class="en">Her family has produced many politicians.</div><div class="pt">A família dela produziu muitos políticos.</div></div>
+<div class="i"><span class="tag">coletivo como indivíduos</span><div class="en">Her family have threatened to disown her.</div><div class="pt">A família dela ameaçou deserdá-la.</div></div>
+<div class="i"><span class="tag">time de futebol = plural</span><div class="en">Manchester United are coming to play here.</div><div class="pt">O Manchester United vem jogar aqui.</div></div>
+<div class="i"><span class="tag">plurais só na forma</span><div class="en">On arrival you will need to pass through immigration and customs.</div><div class="pt">Na chegada você vai ter que passar pela imigração e pela alfândega.</div></div>
+<div class="i"><div class="en">She took off her glasses and looked him straight in the eye.</div><div class="pt">Ela tirou os óculos e olhou bem nos olhos dele.</div></div>
+<div class="i"><div class="en">The house is surrounded by extensive grounds.</div><div class="pt">A casa é cercada por um terreno extenso.</div></div>
+<div class="i"><div class="en">You are always in our thoughts.</div><div class="pt">Você está sempre nos nossos pensamentos.</div></div>
 </div>
+<div class="tablewrap"><table>
+<thead><tr><th>Tipo de plural</th><th>Exemplos</th></tr></thead>
+<tbody>
+<tr><td><b>Regular</b> — escrita e pronúncia</td><td>cat/cats <span class='w'>/s/</span> · dog/dogs <span class='w'>/z/</span> · story/stories <span class='w'>/z/</span> · watch/watches <span class='w'>/ɪz/</span></td></tr>
+<tr><td><b>Irregular</b></td><td>child/children · foot/feet · man/men · mouse/mice · tooth/teeth · woman/women</td></tr>
+<tr><td>Plural <b>zero</b></td><td>sheep · deer</td></tr>
+<tr><td>-f / -fe → <b>-ves</b></td><td>knife · leaf · life · thief · wife · wolf</td></tr>
+<tr><td>De <b>outras línguas</b></td><td>criterion/criteria · crisis/crises · curriculum/curricula · stimulus/stimuli · chateau/chateaux</td></tr>
+<tr><td>Dois plurais possíveis</td><td>hoofs / hooves</td></tr>
+</tbody></table></div>
 </section>
 
 <section id="s02">
-<div class="snum">Lições 03–04 · /eɪ/ × /ɛ/</div>
-<h2><i>late</i> × <i>let</i> — o ditongo que o brasileiro achata</h2>
-<p class="sdesc">O /eɪ/ é <b>ditongo</b>: a língua desliza do meio da boca para perto do céu da boca. Se ele vira /ɛ/ puro, <i>late</i> vira <i>let</i>. E se o /ɛ/ abre demais, vira /æ/.</p>
+<div class="snum">Estrutura 02</div>
+<h2>O genitivo — <i>'s</i>, <i>s'</i> e a alternativa com <i>of</i></h2>
+<p class="sdesc">O genitivo (também chamado de possessivo) acrescenta <b>'s</b> ao singular e só o apóstrofo ao plural. Ele ocupa a mesma posição e função de um determinante dentro do sintagma nominal — e nem sempre significa posse.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Forma</th><th>Genitivo</th></tr></thead>
+<tbody>
+<tr><td>cat <span class='w'>(singular)</span></td><td>cat<b>'s</b></td></tr>
+<tr><td>cats <span class='w'>(plural)</span></td><td>cats<b>'</b></td></tr>
+</tbody></table></div>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɛ/ instead of /eɪ/: <i>late</i> will sound like <i>let</i> · <i>paper</i> will sound like <i>pepper</i>.</div><div class="pt">Se você disser /ɛ/ no lugar de /eɪ/, "atrasado" vira "deixar" e "papel" vira "pimenta".</div><div class="def">/eɪ/ é ditongo — dois sons colados. Lábios espalhados, sem arredondar.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /eɪ/ instead of /ɛ/: <i>pen</i> will sound like <i>pain</i>.</div><div class="pt">Se você disser /eɪ/ no lugar de /ɛ/, "caneta" vira "dor".</div><div class="def">No /ɛ/ abra a boca mais que no /eɪ/ — mas não tanto quanto no /æ/.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /æ/ instead of /ɛ/: <i>met</i> will sound like <i>mat</i>.</div><div class="pt">Se você disser /æ/ no lugar de /ɛ/, "encontrei" vira "capacho".</div></div>
-<div class="i"><span class="tag">/eɪ/</span><div class="en">ate · aim · ache · ale · ape · eight · age · April · able · apron</div><div class="pt">O ditongo no começo da palavra.</div></div>
-<div class="i"><span class="tag">/eɪ/</span><div class="en">same · lake · place · rain · date · break · came · table · paint · paper</div><div class="pt">No meio da palavra.</div></div>
-<div class="i"><span class="tag">/eɪ/</span><div class="en">lay · way · obey · say · May · day · they · stay · weigh</div><div class="pt">No fim da palavra.</div></div>
-<div class="i"><span class="tag">grafia</span><div class="en">a — late · ai — main, fail · ay — day · eigh — eight, weigh</div><div class="pt">As quatro grafias mais comuns do /eɪ/.</div><div class="def">O livro insiste: em inglês a grafia é o mapa mais confiável que você tem.</div></div>
-<div class="i"><span class="tag">/ɛ/</span><div class="en">any · edge · effort · end · else · error · egg</div><div class="pt">O /ɛ/ no começo da palavra.</div></div>
-<div class="i"><span class="tag">/ɛ/</span><div class="en">bed · rest · bread · bent · next · fence</div><div class="pt">No meio da palavra.</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">late × let · paper × pepper · pen × pain · met × mat · main × men</div><div class="pt">atrasado × deixar · papel × pimenta · caneta × dor · encontrei × capacho · principal × homens</div></div>
+<div class="i"><span class="tag">posição de determinante</span><div class="en">Where's the cat's blue bowl?</div><div class="pt">Cadê a tigela azul do gato?</div></div>
+<div class="i"><div class="en">Cats' paws suffer many injuries.</div><div class="pt">As patas dos gatos sofrem muitos ferimentos.</div></div>
+<div class="i"><span class="tag">com o núcleo omitido</span><div class="en">I'm going to the butcher's.</div><div class="pt">Vou ao açougue. <b>(<i>shop</i> nem é mencionado)</b></div></div>
+<div class="i"><span class="tag">plural de números</span><div class="en">I've got no 10's but two 20's.</div><div class="pt">Não tenho nenhuma nota de 10, mas tenho duas de 20.</div></div>
+<div class="i"><span class="tag">o -s vai no último substantivo</span><div class="en">the manager of the team's decision</div><div class="pt">a decisão do técnico do time <b>(a decisão é do técnico, não do time)</b></div></div>
+<div class="i"><div class="en">Will and Emma's car</div><div class="pt">o carro do Will e da Emma</div></div>
+<div class="i"><span class="tag">duplo genitivo</span><div class="en">He's a friend of John's.</div><div class="pt">Ele é um amigo do John. <b>(compare: <i>He is John's friend</i>)</b></div></div>
 </div>
+<div class="tablewrap"><table>
+<thead><tr><th>Relação que o genitivo expressa</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>quem sofre a ação</td><td>Roger Federer's defeat · the man's death</td></tr>
+<tr><td>parentesco</td><td>John's sister</td></tr>
+<tr><td>relação afetiva</td><td>Mary's lover</td></tr>
+<tr><td>atributo</td><td>the writer's reputation · the planet's atmosphere</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Prefere-se o genitivo</th><th>Prefere-se o <i>of</i></th></tr></thead>
+<tbody>
+<tr><td>com seres animados: <b>Peter's decision</b></td><td>com sintagmas longos: <b>the success of the youthful English cricket team</b></td></tr>
+<tr><td>tempo e lugar: <b>next year's fashions · London's attractions</b></td><td>quando o genitivo soaria estranho: <b>the start of the day</b> <span class='w'>(não <i class='x'>the day's start</i>)</span></td></tr>
+<tr><td>parte/todo: <b>the table's surface</b></td><td><b>John's car</b> <span class='w'>(aqui o <i>of</i> é que soa estranho: <i class='x'>the car of John</i>)</span></td></tr>
+</tbody></table></div>
 </section>
 
 <section id="s03">
-<div class="snum">Lições 05–06 · /æ/ × /ɑ/</div>
-<h2><i>hat</i> × <i>hot</i> — a vogal que não existe em português</h2>
-<p class="sdesc">O /æ/ não tem equivalente em português: lábios <b>espalhados</b> e boca <b>aberta</b>, mas não escancarada. Abrir demais produz /ɑ/, e <i>hat</i> vira <i>hot</i>.</p>
+<div class="snum">Estrutura 03</div>
+<h2>Contáveis e incontáveis</h2>
+<p class="sdesc">Um bom número de substantivos não aceita plural nem <b>a</b> — são os <b>noncount</b>. A lógica ajuda, mas não resolve tudo: há abstratos contáveis e concretos incontáveis. Para contá-los, usa-se uma expressão de contagem.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Grupo</th><th>Palavras</th></tr></thead>
+<tbody>
+<tr><td><b>Noncount</b> típicos</td><td>advice · air · fun · luck · milk · weather</td></tr>
+<tr><td>Abstratos, mas <b>contáveis</b></td><td>idea · statement · thought · description</td></tr>
+<tr><td>Concretos, mas <b>incontáveis</b></td><td>bread · butter · milk · money · sugar · furniture</td></tr>
+<tr><td>Inesperadamente incontáveis</td><td>advice · information · equipment · homework · progress · travel</td></tr>
+<tr><td>Expressões de contagem</td><td>a piece of advice · a loaf of bread · two items of furniture · a pair of scissors</td></tr>
+</tbody></table></div>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɑ/ instead of /æ/: <i>hat</i> will sound like <i>hot</i>.</div><div class="pt">Se você disser /ɑ/ no lugar de /æ/, "chapéu" vira "quente".</div><div class="def">Abra a boca — mas não demais, ou você cai no /ɑ/.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɛ/ instead of /æ/: <i>bad</i> will sound like <i>bed</i>.</div><div class="pt">Se você disser /ɛ/ no lugar de /æ/, "ruim" vira "cama".</div></div>
-<div class="i"><span class="tag">/æ/</span><div class="en">apple · angry · am · and · after · absent</div><div class="pt">O /æ/ no começo da palavra.</div></div>
-<div class="i"><span class="tag">/æ/</span><div class="en">back · cat · black · happy · map · last</div><div class="pt">No meio da palavra.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /oʊ/ instead of /ɑ/: <i>not</i> will sound like <i>note</i>.</div><div class="pt">Se você disser /oʊ/ no lugar de /ɑ/, "não" vira "bilhete".</div><div class="def">No /ɑ/ a boca abre <b>mais do que em qualquer outra vogal</b>.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʌ/ instead of /ɑ/: <i>not</i> will sound like <i>nut</i>.</div><div class="pt">Se você disser /ʌ/ no lugar de /ɑ/, "não" vira "noz".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɔ/ instead of /ɑ/: <i>cot</i> will sound like <i>caught</i>.</div><div class="pt">Se você disser /ɔ/ no lugar de /ɑ/, "catre" vira "pegou".</div></div>
-<div class="i"><span class="tag">/ɑ/</span><div class="en">on · honest · are · arch · option · top · shop · block · cot · pop</div><div class="pt">O /ɑ/ como em <i>arm, hot, father</i>.</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">hat × hot · bad × bed · cap × cop · pat × pot · ran × Ron</div><div class="pt">chapéu × quente · ruim × cama · boné × policial · tapinha × panela · correu × Ron</div></div>
+<div class="i"><span class="tag">o paradoxo do money</span><div class="en">You can count money but you can't count money.</div><div class="pt">Você pode contar dinheiro, mas não pode contar <i>money</i>. <b>(dá para contar notas, mas não se diz <i class='x'>one money, two moneys</i>)</b></div></div>
+<div class="i"><span class="tag">variação regional</span><div class="en">In some varieties, staff is a count noun: a staff. In standard English you would say a member of staff.</div><div class="pt">Em algumas variedades, <i>staff</i> é contável. No inglês padrão diz-se <b>a member of staff</b>.</div></div>
 </div>
 </section>
 
 <section id="s04">
-<div class="snum">Lições 09–11 · /ʌ/ × /oʊ/ × /ɔ/</div>
-<h2><i>come</i> × <i>comb</i> × <i>calm</i> — as três que se embolam</h2>
-<p class="sdesc">O /ʌ/ é <b>curto, rápido e sem tensão</b> — os lábios quase não se mexem. O /oʊ/ é <b>ditongo longo</b>, com lábios em O. O /ɔ/ pede lábios projetados e queixo baixo.</p>
+<div class="snum">Estrutura 04</div>
+<h2>Substantivos próprios — e quando eles viram comuns</h2>
+<p class="sdesc">Substantivos próprios são os nomes de pessoas, lugares, acidentes geográficos e organizações. Normalmente aparecem <b>sem determinante</b>. Mas quando ganham artigo, plural ou modificação, viraram substantivos comuns — mesmo mantendo a maiúscula.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Sem determinante</th><th>Com <i>the</i> obrigatório</th></tr></thead>
+<tbody>
+<tr><td>London · Leicester Square · Kilimanjaro · Microsoft · Congress · Fred Smith · India</td><td>rios: <b>the Thames</b> · cadeias de montanhas: <b>the Alps</b> · e alguns fixos: <b>The Hague</b> · <b>The Times</b></td></tr>
+</tbody></table></div>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɑ/ instead of /ʌ/: <i>color</i> will sound like <i>collar</i>.</div><div class="pt">Se você disser /ɑ/ no lugar de /ʌ/, "cor" vira "colarinho".</div><div class="def">O /ʌ/ é curto e sem tensão nenhuma. Relaxe.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /oʊ/ instead of /ʌ/: <i>come</i> will sound like <i>comb</i>.</div><div class="pt">Se você disser /oʊ/ no lugar de /ʌ/, "vir" vira "pente".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɔ/ instead of /ʌ/: <i>done</i> will sound like <i>dawn</i>.</div><div class="pt">Se você disser /ɔ/ no lugar de /ʌ/, "feito" vira "amanhecer".</div></div>
-<div class="i"><span class="tag">/ʌ/</span><div class="en">up · us · under · ugly · hug · much · onion · rough · won · must · but · come</div><div class="pt">O /ʌ/ como em <i>up, but, come</i>.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʌ/ instead of /oʊ/: <i>coat</i> will sound like <i>cut</i>.</div><div class="pt">Se você disser /ʌ/ no lugar de /oʊ/, "casaco" vira "corte".</div><div class="def">Arredonde os lábios na forma da letra O. O /oʊ/ é <b>longo</b>.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɔ/ instead of /oʊ/: <i>bold</i> will sound like <i>bald</i>.</div><div class="pt">Se você disser /ɔ/ no lugar de /oʊ/, "ousado" vira "careca".</div></div>
-<div class="i"><span class="tag">/oʊ/</span><div class="en">oval · odor · oat · boat · spoke · roam · loan · soul · go · sew · snow</div><div class="pt">O /oʊ/ como em <i>oh, no, boat</i>.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɑ/ instead of /ɔ/: <i>caller</i> will sound like <i>collar</i>.</div><div class="pt">Se você disser /ɑ/ no lugar de /ɔ/, "quem liga" vira "colarinho".</div><div class="def">Projete os lábios e baixe o queixo.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /oʊ/ instead of /ɔ/: <i>bought</i> will sound like <i>boat</i>. · If you say /ʌ/: <i>bought</i> will sound like <i>but</i>.</div><div class="pt">"Comprou" virando "barco" — ou virando "mas".</div></div>
-<div class="i"><span class="tag">/ɔ/</span><div class="en">all · awe · awful · always · often · wrong · boss · taught · flaw · thaw</div><div class="pt">O /ɔ/ como em <i>all, caught, boss</i>.</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">color × collar · come × comb · done × dawn · coat × cut · bold × bald · cot × caught · not × note × nut</div><div class="pt">A grade inteira de confusão entre as quatro vogais posteriores.</div></div>
+<div class="i"><span class="tag">virou comum — plural</span><div class="en">There are two Mark Browns in my class.</div><div class="pt">Tem dois Mark Browns na minha turma.</div></div>
+<div class="i"><span class="tag">virou comum — artigo</span><div class="en">They say he's the next Maradona.</div><div class="pt">Dizem que ele é o próximo Maradona.</div></div>
+<div class="i"><span class="tag">virou comum — modificação</span><div class="en">He remembered an England of green fields and endless summers.</div><div class="pt">Ele se lembrava de uma Inglaterra de campos verdes e verões sem fim.</div></div>
 </div>
 </section>
 
 <section id="s05">
-<div class="snum">Lição 08 · /uː/ × /ʊ/</div>
-<h2><i>pool</i> × <i>pull</i> — projetar os lábios</h2>
-<p class="sdesc">Mesma história do /iː/ × /ɪ/, agora atrás: o /uː/ é <b>longo</b> e pede lábios <b>projetados</b>; o /ʊ/ é curto e relaxado.</p>
+<div class="snum">Estrutura 05</div>
+<h2>O sintagma nominal — o que vem antes e o que vem depois do núcleo</h2>
+<p class="sdesc">Um <b>noun phrase</b> pode ser uma palavra só, mas normalmente tem um <b>núcleo</b> com modificadores antes (premodificação) e depois (pós-modificação). A pós-modificação mais comum é a frase preposicional.</p>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">When you substitute /ʊ/ for /uː/: <i>pool</i> becomes <i>pull</i> · <i>suit</i> becomes <i>soot</i>.</div><div class="pt">"Piscina" vira "puxar"; "terno" vira "fuligem".</div><div class="def">Projete os lábios no /uː/ e você nunca mais confunde <b>pull</b> com <b>pool</b>.</div></div>
-<div class="i"><span class="tag">/uː/</span><div class="en">food · suit · group · ruler · pool · truth · threw · flew · through</div><div class="pt">O /uː/ no meio da palavra.</div></div>
-<div class="i"><span class="tag">/uː/</span><div class="en">shoe · do · new · chew · you · too · rule</div><div class="pt">No fim da palavra.</div></div>
-<div class="i"><span class="tag">/ʊ/</span><div class="en">cook · put · pull · book · foot · good · would · wood · soot</div><div class="pt">O /ʊ/ curto, como em <i>cook</i> e <i>put</i>.</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">pool × pull · suit × soot · fool × full · Luke × look · who'd × hood</div><div class="pt">piscina × puxar · terno × fuligem · bobo × cheio · Luke × olhar · quem teria × capuz</div></div>
+<div class="i"><span class="tag">núcleo sozinho</span><div class="en">Money is bad for you.</div><div class="pt">Dinheiro faz mal para você.</div></div>
+<div class="i"><div class="en">People are strange.</div><div class="pt">As pessoas são estranhas.</div></div>
+<div class="i"><div class="en">London is a fantastic place.</div><div class="pt">Londres é um lugar fantástico.</div></div>
+<div class="i"><div class="en">She is my best friend.</div><div class="pt">Ela é minha melhor amiga.</div></div>
 </div>
+<div class="tablewrap"><table>
+<thead><tr><th>Tipo de pós-modificação</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>frase preposicional</td><td>the woman <b>in a long dress</b> · a friend <b>of the family</b></td></tr>
+<tr><td>sintagma adjetival</td><td>a man <b>capable of anything</b></td></tr>
+<tr><td>oração relativa</td><td>a decision <b>which was greeted with surprise</b></td></tr>
+<tr><td>oração não-finita</td><td>a memorial <b>dedicated to the victims</b></td></tr>
+<tr><td>advérbio</td><td>the first time <b>around</b> · a long way <b>back</b></td></tr>
+<tr><td>aposto</td><td>Malcolm Fox, <b>the boy's father</b>, was delighted.</td></tr>
+</tbody></table></div>
+<div class='sdesc' style='margin-top:16px'>Cada substantivo puxa a sua preposição — vale decorar o par:</div>
+<div class="items">
+<div class="i"><div class="en">I have great admiration for her.</div><div class="pt">Eu tenho grande admiração por ela.</div></div>
+<div class="i"><div class="en">This isn't the solution to our problem.</div><div class="pt">Essa não é a solução para o nosso problema.</div></div>
+<div class="i"><div class="en">It affected his relationship with his children.</div><div class="pt">Isso afetou a relação dele com os filhos.</div></div>
+<div class="i"><div class="en">They expressed surprise at the announcement.</div><div class="pt">Eles expressaram surpresa com o anúncio.</div></div>
+<div class="i"><div class="en">There is a widespread belief in reincarnation.</div><div class="pt">Há uma crença generalizada em reencarnação.</div></div>
+<div class="i"><div class="en">This is a widespread belief in government circles.</div><div class="pt">Essa é uma crença generalizada nos meios de governo. <b>(aqui <i>in</i> marca onde, não em quê)</b></div></div>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Premodificação — a diferença que ela faz</th></tr></thead>
+<tbody>
+<tr><td><b>business communication</b> <span class='w'>(comunicação de negócios)</span> × <b>modern communication</b> <span class='w'>(comunicação moderna)</span></td></tr>
+<tr><td><b>a summery dress</b> <span class='w'>(um vestido com cara de verão)</span> × <b>the summer term</b> <span class='w'>(o semestre de verão)</span></td></tr>
+<tr><td><b>a car driver</b> <span class='w'>(motorista de carro)</span> × <b>a brown paper bag</b> <span class='w'>(um saco de papel pardo)</span></td></tr>
+<tr><td><b>health food</b> <span class='w'>(comida natural, categoria de produto)</span> × <b>healthy food</b> <span class='w'>(comida que faz bem)</span></td></tr>
+</tbody></table></div>
 </section>
 
 <section id="s06">
-<div class="snum">Lições 13–14 · /ɝ/ · /ɚ/ · /ə/</div>
-<h2>O <i>r</i> vocálico e o schwa — as vogais fracas</h2>
-<p class="sdesc">Duas vogais que quase nenhuma outra língua tem. O <b>/ɝ/</b> de <i>turn</i> só aparece em sílaba <b>tônica</b> e é tenso. O <b>/ɚ/</b> de <i>father</i> é o mesmo som relaxado, e só aparece em sílaba <b>átona</b>. E o <b>/ə/</b> é a vogal em que quase toda sílaba átona do inglês se transforma.</p>
+<div class="snum">Estrutura 06</div>
+<h2>Determinantes e quantificadores</h2>
+<p class="sdesc">Determinantes abrem o sintagma nominal. Os quantificadores têm três marcas próprias: aceitam <b>comparação</b>, aceitam <b>modificação por advérbio</b> e podem aparecer como predicativos.</p>
 <div class="items">
-<div class="i"><div class="en">/ɝ/ always receives strong emphasis and is found only in <i>stressed</i> syllables.</div><div class="pt">O /ɝ/ sempre recebe ênfase forte e só aparece em sílaba tônica.</div><div class="def">Lábios levemente projetados, músculos da língua <b>tensos</b>.</div></div>
-<div class="i"><span class="tag">/ɝ/</span><div class="en">early · urge · urban · fur · curve · turn · learn · herb · word · verb · circus</div><div class="pt">O som de <i>turn, first, serve</i>.</div></div>
-<div class="i"><span class="tag">/ɝ/</span><div class="en">prefer · sir · stir · her</div><div class="pt">No fim da palavra.</div></div>
-<div class="i"><div class="en">The lips and jaw are the same as for /ɝ/, but the tongue muscles are <i>completely relaxed</i>. /ɚ/ never receives strong emphasis.</div><div class="pt">Lábios e queixo iguais aos do /ɝ/, mas a língua totalmente relaxada. O /ɚ/ nunca é tônico.</div></div>
-<div class="i"><span class="tag">/ɚ/</span><div class="en">baker · sooner · butter · teacher · mirror · mother · weather</div><div class="pt">O /ɚ/ no fim da palavra — o <i>-er</i> de todo dia.</div></div>
-<div class="i"><span class="tag">/ɚ/</span><div class="en">liberty · butterfly · flowerpot · perhaps · understood · surprise · deliver</div><div class="pt">No meio da palavra.</div></div>
-<div class="i"><div class="en">The vowel /ɚ/ does <i>not</i> occur at the beginning of words.</div><div class="pt">O /ɚ/ nunca aparece no começo de palavra.</div></div>
-<div class="i"><span class="tag">/ə/</span><div class="en">a · upon · soda · about · sofa · lesson · pencil</div><div class="pt">O schwa — a vogal átona mais comum do inglês.</div><div class="def">Emphasize /ə/ <b>less</b> than the other vowels in the word.</div></div>
+<div class="i"><div class="en">A third of the class was missing.</div><div class="pt">Um terço da turma faltou.</div></div>
+<div class="i"><div class="en">Some woman was looking for you.</div><div class="pt">Uma mulher qualquer estava procurando você.</div></div>
+<div class="i"><div class="en">All children have fears.</div><div class="pt">Todas as crianças têm medos.</div></div>
+<div class="i"><div class="en">Each child has fears. / Every child has fears.</div><div class="pt">Cada criança tem medos. / Toda criança tem medos.</div></div>
 </div>
+<div class="tablewrap"><table>
+<thead><tr><th>Marca do quantificador</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>comparação</td><td>fewer / fewest · less / least</td></tr>
+<tr><td>modificado por advérbio</td><td>very few · very many</td></tr>
+<tr><td>como predicativo</td><td>their excuses were many</td></tr>
+</tbody></table></div>
 </section>
 
 <section id="s07">
-<div class="snum">Lições 15–17 · /aʊ/ /aɪ/ /ɔɪ/</div>
-<h2>Os três ditongos — deslizar de verdade</h2>
-<p class="sdesc">Ditongo é dois sons colados. Se os lábios não deslizam de aberto para fechado, o ditongo vira vogal simples e a palavra muda.</p>
+<div class="snum">Estrutura 07</div>
+<h2>Adjetivo — as cinco marcas e as duas formas de comparação</h2>
+<p class="sdesc">Um adjetivo típico faz cinco coisas: vem antes do substantivo, vem depois de verbo de ligação, tem comparativo e superlativo, é gradável e aparece depois de pronome indefinido. Nem todo adjetivo faz todas.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Marca</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td><b>Atributivo</b> — antes do substantivo</td><td>a red car</td></tr>
+<tr><td><b>Predicativo</b> — depois do verbo de ligação</td><td>Her car is red. · I painted it red. · My husband is late.</td></tr>
+<tr><td><b>Comparativo / superlativo</b></td><td>happier / happiest</td></tr>
+<tr><td><b>Gradável</b></td><td>very happy · happy enough</td></tr>
+<tr><td><b>Pós-modificação</b></td><td>something red · a plan bound to fail</td></tr>
+<tr><td>Núcleo com <i>the</i></td><td>the poor</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Sílabas</th><th>Como comparar</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>uma sílaba</td><td>flexão com <b>-er / -est</b></td><td>tall · taller · tallest</td></tr>
+<tr><td>três ou mais</td><td>com <b>more / most</b></td><td>beautiful · more beautiful · most beautiful</td></tr>
+<tr><td>duas sílabas</td><td>variável — as terminadas em -y, -ow, -er, -ere, -ure aceitam flexão</td><td>happy · happier · happiest</td></tr>
+</tbody></table></div>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ɑ/ instead of /aʊ/: <i>pound</i> will sound like <i>pond</i> · <i>down</i> will sound like <i>Don</i>.</div><div class="pt">"Libra" vira "lago"; "para baixo" vira "Don".</div><div class="def">/aʊ/ = /ɑ/ + /ʊ/. Os lábios têm de sair de aberto para fechado.</div></div>
-<div class="i"><span class="tag">/aʊ/</span><div class="en">owl · ourselves · ounce · outside · outlet · loud · mouse · mountain · down · cow · allow</div><div class="pt">O som de <i>out, house, cow</i>.</div></div>
-<div class="i"><span class="tag">grafia</span><div class="en">/aʊ/ is always represented by the letter <i>o</i> followed by <i>u</i>, <i>w</i> or <i>ugh</i>.</div><div class="pt">O /aʊ/ é sempre escrito com o seguido de u, w ou ugh.</div><div class="def">Regra sem exceção prática — vale decorar.</div></div>
-<div class="i"><span class="tag">/aɪ/</span><div class="en">idea · item · ice · icon · aisle · bite/byte · fight · kind · five · eye/I · by/buy · lie/lye · sigh</div><div class="pt">O som de <i>I, my, pie</i>.</div><div class="def">Frequentemente escrito com <b>i</b> ou <b>y</b>. Cuidado só com a grafia irregular.</div></div>
-<div class="i"><span class="tag">/ɔɪ/</span><div class="en">oil · oyster · oink · ointment · oily · join · foil · noise · boil · coin · poison</div><div class="pt">O som de <i>oil, noise, boy</i>.</div></div>
-<div class="i"><span class="tag">/ɔɪ/</span><div class="en">toy · enjoy · destroy · boy · annoy</div><div class="pt">No fim da palavra.</div></div>
-<div class="i"><span class="tag">grafia</span><div class="en">English words with /ɔɪ/ are spelled <i>oy</i> or <i>oi</i>. There are virtually no exceptions.</div><div class="pt">O /ɔɪ/ se escreve oy ou oi — praticamente sem exceção.</div></div>
+<div class="i"><div class="en">She's taller than him, but I wouldn't say she's tall.</div><div class="pt">Ela é mais alta que ele, mas eu não diria que ela é alta.</div></div>
+<div class="i"><div class="en">He's the tallest in his class, but I wouldn't say he's tall.</div><div class="pt">Ele é o mais alto da turma dele, mas eu não diria que ele é alto.</div></div>
+<div class="i"><div class="en">She's happier than she has ever been.</div><div class="pt">Ela está mais feliz do que jamais esteve.</div></div>
+<div class="i"><div class="en">We're as happy as it's possible to be.</div><div class="pt">A gente está o mais feliz que dá para estar.</div></div>
+<div class="i"><div class="en">The difference is too small to worry about.</div><div class="pt">A diferença é pequena demais para se preocupar.</div></div>
+<div class="i"><div class="en">They're unable to come.</div><div class="pt">Eles não podem vir.</div></div>
+<div class="i"><span class="tag">pós-modificador</span><div class="en">a plan bound to fail = a plan which is bound to fail</div><div class="pt">um plano fadado ao fracasso</div></div>
 </div>
 </section>
 
 <section id="s08">
-<div class="snum">Lição 19 · acento da palavra</div>
-<h2>Onde cai a sílaba forte</h2>
-<p class="sdesc">O inglês <b>não tem acento gráfico</b> nem regra fixa — e errar a sílaba muda a palavra. Estas são as regularidades que o livro identifica.</p>
+<div class="snum">Estrutura 08</div>
+<h2>Advérbio e preposição</h2>
+<p class="sdesc">Advérbios modificam verbo, adjetivo ou outro advérbio. Nem todo advérbio termina em <b>-ly</b>, e nem toda palavra terminada em <b>-ly</b> é advérbio (<i>lovely</i> e <i>friendly</i> são adjetivos). Preposições ligam um sintagma nominal ao que vem antes.</p>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en"><i>desert</i> (região seca) will sound like <i>dessert</i> (doce) · <i>invalid</i> (pessoa doente) will sound like <i>invalid</i> (nulo).</div><div class="pt">Errar a sílaba tônica troca a palavra inteira.</div><div class="def">Em inglês <b>não há regra consistente</b> de acentuação — por isso é preciso ouvir e imitar.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you stress every vowel equally and forget to reduce the unaccented ones: <i>tomorrow</i> and <i>because</i> will sound wrong.</div><div class="pt">Se você pronunciar todas as vogais com o mesmo peso, sem reduzir as átonas, tudo soa errado.</div><div class="def">É exatamente o que o falante de português faz por hábito.</div></div>
-<div class="i"><span class="tag">1ª sílaba</span><div class="en">The majority of two-syllable words: <i>o</i>ven · <i>aw</i>ful · <i>ev</i>er · <i>bro</i>ther · <i>Tues</i>day · <i>win</i>dow</div><div class="pt">A maioria das palavras de duas sílabas é acentuada na primeira.</div></div>
-<div class="i"><span class="tag">1ª sílaba</span><div class="en">Compound nouns: <i>bed</i>room · <i>stop</i>light · <i>school</i>house · <i>book</i>store</div><div class="pt">Substantivo composto: acento na primeira parte.</div></div>
-<div class="i"><span class="tag">1ª sílaba</span><div class="en">Multiples of ten: <i>twen</i>ty · <i>thir</i>ty · <i>for</i>ty · <i>fif</i>ty · <i>six</i>ty · <i>sev</i>enty</div><div class="pt">Múltiplos de dez: acento na primeira sílaba.</div></div>
-<div class="i"><span class="tag">2ª sílaba</span><div class="en">Reflexive pronouns: my<i>self</i> · your<i>self</i> · him<i>self</i> · her<i>self</i> · our<i>selves</i></div><div class="pt">Pronome reflexivo: acento na segunda sílaba.</div></div>
-<div class="i"><span class="tag">2ª sílaba</span><div class="en">Compound verbs: out<i>do</i> · out<i>done</i> · out<i>run</i> · out<i>smart</i> · over<i>look</i></div><div class="pt">Verbo composto: acento na segunda ou na última sílaba.</div></div>
-<div class="i"><span class="tag">contraste</span><div class="en"><i>ap</i>ple × a<i>round</i> · <i>ta</i>ble × al<i>low</i> · <i>mo</i>ther × in<i>vite</i> · <i>tea</i>cher × com<i>plete</i></div><div class="pt">Coluna da esquerda: acento na primeira. Direita: na segunda.</div></div>
-<div class="i"><span class="tag">contraste</span><div class="en"><i>win</i>ter × sup<i>port</i> · <i>pa</i>per × be<i>lieve</i> · <i>base</i>ball × my<i>self</i> · <i>break</i>fast × out<i>run</i> · <i>six</i>ty × be<i>hind</i></div><div class="pt">Mais pares de treino do mesmo exercício.</div></div>
-<div class="i"><span class="tag">3 sílabas</span><div class="en">1ª: <i>ac</i>cident, <i>straw</i>berry, <i>sev</i>enty · 2ª: ac<i>cep</i>tance, va<i>nil</i>la, ex<i>am</i>ine · 3ª: after<i>noon</i>, abso<i>lute</i></div><div class="pt">Palavras de três sílabas têm os três padrões possíveis.</div></div>
+<div class="i"><span class="tag">advérbio de lugar</span><div class="en">Put your hands together.</div><div class="pt">Junta as mãos.</div></div>
+<div class="i"><div class="en">Put the money there.</div><div class="pt">Põe o dinheiro aí.</div></div>
+<div class="i"><span class="tag">advérbio de tempo</span><div class="en">I soon realised he wasn't coming.</div><div class="pt">Logo percebi que ele não vinha.</div></div>
+<div class="i"><div class="en">Have they arrived yet?</div><div class="pt">Eles já chegaram?</div></div>
+<div class="i"><span class="tag">intensificadores</span><div class="en">Even my mother likes her slightly.</div><div class="pt">Até a minha mãe gosta um pouquinho dela.</div></div>
+<div class="i"><div class="en">He's not quite ready.</div><div class="pt">Ele não está totalmente pronto.</div></div>
+<div class="i"><div class="en">I was only looking at it.</div><div class="pt">Eu só estava olhando.</div></div>
+<div class="i"><div class="en">I hardly know him.</div><div class="pt">Eu mal conheço ele.</div></div>
+<div class="i"><span class="tag">mesma forma para adjetivo e advérbio</span><div class="en">We arrived late. / We'll take the later ferry.</div><div class="pt">A gente chegou tarde. / A gente vai pegar a balsa mais tarde.</div></div>
+<div class="i"><div class="en">It's dead easy.</div><div class="pt">É facílimo.</div></div>
+<div class="i"><div class="en">He arrived later than expected.</div><div class="pt">Ele chegou mais tarde do que se esperava.</div></div>
+<div class="i"><div class="en">He works harder than anyone. / This is a harder problem than the others.</div><div class="pt">Ele trabalha mais duro que qualquer um. / Esse é um problema mais difícil que os outros.</div></div>
+<div class="i"><div class="en">Would you kindly leave the door open? / She has a kindly face.</div><div class="pt">Você poderia, por gentileza, deixar a porta aberta? / Ela tem um rosto bondoso.</div></div>
+<div class="i"><div class="en">She runs fast. / She's a fast runner.</div><div class="pt">Ela corre rápido. / Ela é uma corredora rápida.</div></div>
+<div class="i"><div class="en">He acted his part well. / I don't feel well.</div><div class="pt">Ele fez bem o papel dele. / Eu não estou me sentindo bem.</div></div>
+<div class="i"><span class="tag">comparação com more</span><div class="en">Otherwise comparison is formed using more and most: more politely.</div><div class="pt">Fora esses casos, compara-se com <i>more</i> e <i>most</i>: <b>more politely</b>.</div></div>
 </div>
+<div class="tablewrap"><table>
+<thead><tr><th>A preposição liga…</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>verbo + sintagma nominal</td><td>Look <b>at</b> the bus</td></tr>
+<tr><td>sintagma nominal dentro de outro</td><td>the man <b>in</b> the leather jacket</td></tr>
+<tr><td>adjetivo + sintagma nominal</td><td>afraid <b>of</b> snakes</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Preposição</th><th>Ideia</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td><b>on</b></td><td>superfície</td><td>The picture is on the wall.</td></tr>
+<tr><td><b>in</b></td><td>área, volume, ideia de conter</td><td>He's in Canton.</td></tr>
+<tr><td><b>at</b></td><td>ponto</td><td>She's at Canton. <span class='w'>(= no aeroporto, ou na estação)</span></td></tr>
+</tbody></table></div>
 </section>
 
 <section id="s09">
-<div class="snum">Lição 20 · acento da frase</div>
-<h2>Content words × function words</h2>
-<p class="sdesc">Dentro da frase, o inglês acentua só as palavras que <b>carregam sentido</b> e engole as gramaticais. É daí que vem o ritmo da língua — e é isso que o brasileiro não faz.</p>
+<div class="snum">Estrutura 09</div>
+<h2>As formas do verbo — e por que não existe futuro em inglês</h2>
+<p class="sdesc">Verbos regulares têm quatro formas; irregulares, de três a cinco (e o <i>be</i>, oito). E a afirmação que choca: <b>não há tempo futuro em inglês</b> — o tempo é marcado por flexão, e não existe flexão de futuro. <i>Will</i> é um auxiliar modal.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Forma</th><th>Como se faz</th></tr></thead>
+<tbody>
+<tr><td>forma básica</td><td>take</td></tr>
+<tr><td>terceira pessoa do singular</td><td>+ <b>-s</b> ou <b>-es</b>: takes</td></tr>
+<tr><td>particípio em -ing</td><td>+ <b>-ing</b> (apagando o e mudo): taking</td></tr>
+<tr><td>passado e particípio -ed</td><td>regulares têm a mesma forma: walked / walked</td></tr>
+</tbody></table></div>
+<div class='sdesc' style='margin-top:16px'><b>Cinco formas de falar do futuro</b> — e nenhuma delas é um tempo verbal:</div>
 <div class="items">
-<div class="i"><div class="en"><b>Content words</b> — nouns, verbs, adjectives, adverbs and question words. We normally <i>stress</i> them.</div><div class="pt">Palavras de conteúdo: substantivo, verbo, adjetivo, advérbio e palavra interrogativa. São as acentuadas.</div></div>
-<div class="i"><div class="en"><b>Function words</b> — articles (<i>the, a</i>), prepositions (<i>for, of, in, to</i>), pronouns (<i>I, her, him, he, she, you</i>), conjunctions (<i>but, as, and</i>), helping verbs (<i>is, was, are, were, has, can</i>). We normally do <i>not</i> stress them.</div><div class="pt">Palavras de função: artigo, preposição, pronome, conjunção e auxiliar. Não recebem acento.</div></div>
-<div class="i"><div class="en"><i>soon</i>er or <i>lat</i>er · in a <i>mo</i>ment · an <i>ap</i>ple a <i>day</i></div><div class="pt">mais cedo ou mais tarde · num instante · uma maçã por dia</div><div class="def">Só o que está em destaque recebe força.</div></div>
-<div class="i"><div class="en">to <i>tell</i> the <i>truth</i> · as <i>soft</i> as a <i>kit</i>ten</div><div class="pt">para dizer a verdade · macio como um gatinho</div></div>
-<div class="i"><div class="en"><i>Si</i>lence is <i>gold</i>en. · <i>Hon</i>esty is the <i>best</i> <i>pol</i>icy.</div><div class="pt">O silêncio é de ouro. · A honestidade é a melhor política.</div></div>
-<div class="i"><div class="en"><i>Truth</i> is <i>strang</i>er than <i>fic</i>tion. · A <i>pen</i>ny <i>saved</i> is a <i>pen</i>ny <i>earned</i>.</div><div class="pt">A realidade supera a ficção. · Um centavo economizado é um centavo ganho.</div></div>
-<div class="i"><div class="en">To <i>err</i> is <i>hu</i>man; to for<i>give</i> is di<i>vine</i>.</div><div class="pt">Errar é humano; perdoar é divino.</div></div>
-<div class="i"><span class="tag">ênfase</span><div class="en">I <i>bought</i> ten ties. (não me deram — eu comprei)</div><div class="pt">Eu comprei dez gravatas.</div><div class="def">Mudar a palavra acentuada muda o sentido sem mudar uma letra.</div></div>
-<div class="i"><span class="tag">ênfase</span><div class="en">I bought ten <i>ties</i>. (não camisas — gravatas)</div><div class="pt">Eu comprei dez gravatas.</div></div>
-<div class="i"><span class="tag">ênfase</span><div class="en">Who likes candy? ~ <i>Sam</i> likes candy. · What does Sam like? ~ Sam likes <i>candy</i>.</div><div class="pt">Quem gosta de doce? ~ O Sam. · Do que o Sam gosta? ~ De doce.</div><div class="def">A resposta acentua exatamente o que a pergunta pediu.</div></div>
-<div class="i"><span class="tag">ênfase</span><div class="en">Is that his car? ~ No, that's <i>her</i> car. · Will she stay? ~ No, she'll <i>leave</i>.</div><div class="pt">Esse carro é dele? ~ Não, é dela. · Ela vai ficar? ~ Não, vai embora.</div></div>
+<div class="i"><span class="tag">will</span><div class="en">You will do as you are told.</div><div class="pt">Você vai fazer o que mandarem.</div></div>
+<div class="i"><span class="tag">presente simples</span><div class="en">The train leaves in 15 minutes.</div><div class="pt">O trem sai em 15 minutos.</div></div>
+<div class="i"><span class="tag">presente progressivo</span><div class="en">I'm seeing him tonight. I'll tell him then.</div><div class="pt">Eu vou vê-lo hoje à noite. Aí eu conto para ele.</div></div>
+<div class="i"><span class="tag">going to</span><div class="en">They're going to sell their house.</div><div class="pt">Eles vão vender a casa deles.</div></div>
+<div class="i"><span class="tag">will de dedução</span><div class="en">(knock on door) That'll be Yoyo.</div><div class="pt">(batem à porta) Deve ser o Yoyo. <b>(aqui <i>will</i> nem se refere ao futuro)</b></div></div>
+</div>
+<div class='sdesc' style='margin-top:16px'><b>O subjuntivo</b> — raro, formal, e sempre nos mesmos três contextos:</div>
+<div class="items">
+<div class="i"><span class="tag">depois de if, as though, wish</span><div class="en">If I were rich . . .</div><div class="pt">Se eu fosse rico...</div></div>
+<div class="i"><div class="en">It's as though he were looking for trouble.</div><div class="pt">É como se ele estivesse procurando encrenca. <b>(a forma esperada, <i>was</i>, também é possível)</b></div></div>
+<div class="i"><span class="tag">depois de recommend, suggest, advise</span><div class="en">I suggest that he leave immediately.</div><div class="pt">Eu sugiro que ele saia imediatamente.</div></div>
+<div class="i"><span class="tag">em frases fixas de desejo</span><div class="en">God save the Queen. Long live the King.</div><div class="pt">Deus salve a Rainha. Vida longa ao Rei.</div></div>
 </div>
 </section>
 
 <section id="s10">
-<div class="snum">Lição 21 · ritmo</div>
-<h2>Contração, blending e redução</h2>
-<p class="sdesc">Não usar contração deixa a fala <b>dura e artificial</b>. E, na conversa, as palavras se colam umas nas outras e sons somem. Isso é inglês correto — só nunca se escreve assim.</p>
+<div class="snum">Estrutura 10</div>
+<h2>Auxiliares e a estrutura do sintagma verbal</h2>
+<p class="sdesc">Há dois tipos de auxiliar: os <b>modais</b> (<i>will, would, shall, should, may, might, can, could, must</i>) e os <b>primários</b> (<i>be, have, do</i>). A ordem dos elementos é fixa, e o segredo é o princípio das <b>terminações que pulam</b>: cada auxiliar exige uma forma do que vem depois.</p>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you stress each word equally: "He will leave at three" will sound like "He. Will. Leave. At. Three."</div><div class="pt">Acentuar cada palavra igual produz aquele ritmo picotado de sotaque.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you avoid contractions: "I can't go" will sound like "I can not go" · "He likes ham'n eggs" will sound like "He likes ham and eggs".</div><div class="pt">Evitar contração soa formal demais e não natural.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you pause in the wrong place: "I don't know Joan" will sound like "I don't know, Joan".</div><div class="pt">Pausa no lugar errado muda o sentido: "não conheço a Joan" vira "não sei, Joan".</div></div>
-<div class="i"><div class="en">I am late again. → <i>I'm</i> late again.</div><div class="pt">Estou atrasado de novo.</div></div>
-<div class="i"><div class="en">Mary does not know. → Mary <i>doesn't</i> know. · You are next in line. → <i>You're</i> next in line.</div><div class="pt">A Mary não sabe. · Você é o próximo da fila.</div></div>
-<div class="i"><div class="en">We have already met. → <i>We've</i> already met. · That is right! → <i>That's</i> right!</div><div class="pt">A gente já se conheceu. · Isso mesmo!</div></div>
-<div class="i"><div class="en">They will not sing. → They <i>won't</i> sing. · Steve has not eaten. → Steve <i>hasn't</i> eaten.</div><div class="pt">Eles não vão cantar. · O Steve não comeu.</div></div>
-<div class="i"><div class="en">He is very nice. → <i>He's</i> very nice. · Please do not yell. → Please <i>don't</i> yell. · We will be there. → <i>We'll</i> be there.</div><div class="pt">Ele é muito legal. · Por favor, não grite. · A gente vai estar lá.</div></div>
-<div class="i"><span class="tag">blending</span><div class="en">"How are you?" → <i>Howaryou?</i> · "Do it now!" → <i>Doitnow!</i></div><div class="pt">Na conversa, as palavras se colam como se fossem uma só.</div><div class="def">Isso acontece <b>só na fala</b> — nunca se escreve assim.</div></div>
-<div class="i"><span class="tag">blending</span><div class="en">"I miss Sam" → <i>I misam</i> · "Don't take it" → <i>Don'take it</i></div><div class="pt">Sons somem completamente na junção das palavras.</div></div>
-<div class="i"><span class="tag">redução</span><div class="en"><i>cream'n sugar</i> (cream and sugar) · <i>bread'n butter</i> (bread and butter) · <i>ham'n cheese</i> (ham and cheese)</div><div class="pt">creme e açúcar · pão com manteiga · presunto com queijo</div><div class="def">O <b>and</b> vira só um /n/.</div></div>
-<div class="i"><span class="tag">redução</span><div class="en"><i>pieceapie</i> (piece of pie) · <i>He had a cupacoffee</i> (a cup of coffee)</div><div class="pt">um pedaço de torta · Ele tomou uma xícara de café</div><div class="def">O <b>of</b> vira só um /ə/.</div></div>
-<div class="i"><span class="tag">redução</span><div class="en"><i>I gota school</i> (I go to school) · <i>I wanna takeabreak</i> (I want to take a break)</div><div class="pt">Eu vou para a escola · Quero dar uma pausa</div></div>
-<div class="i"><span class="tag">redução</span><div class="en"><i>Seeyalater</i> (See you later) · <i>Leavmealone</i> (Leave me alone) · <i>Whatimeisit?</i> (What time is it?)</div><div class="pt">Até mais · Me deixa em paz · Que horas são?</div></div>
-<div class="i"><span class="tag">linking</span><div class="en">Linking is connecting the last sound of one word to the first sound of the next.</div><div class="pt">Ligação é conectar o último som de uma palavra ao primeiro som da seguinte.</div><div class="def">É o que faz o inglês soar contínuo em vez de picotado.</div></div>
+<div class="i"><span class="tag">simples</span><div class="en">They sang.</div><div class="pt">Eles cantaram.</div></div>
+<div class="i"><span class="tag">progressivo — be + -ing</span><div class="en">They are singing.</div><div class="pt">Eles estão cantando.</div></div>
+<div class="i"><span class="tag">perfeito — have + particípio</span><div class="en">They have sung.</div><div class="pt">Eles cantaram / já cantaram.</div></div>
+<div class="i"><span class="tag">passivo — be + particípio</span><div class="en">It is sung.</div><div class="pt">É cantado.</div></div>
+<div class="i"><span class="tag">combinação</span><div class="en">They have been laughing.</div><div class="pt">Eles estão rindo há um tempo.</div></div>
+<div class="i"><span class="tag">passivo progressivo</span><div class="en">We are being laughed at.</div><div class="pt">Estão rindo da gente.</div></div>
+<div class="i"><span class="tag">passivo perfeito progressivo</span><div class="en">They had been being laughed at.</div><div class="pt">Vinham rindo deles. <b>(gramaticalmente possível, mas o limite prático)</b></div></div>
+<div class="i"><div class="en">I have never laughed so much.</div><div class="pt">Eu nunca ri tanto.</div></div>
+<div class="i"><div class="en">You were laughing all the time.</div><div class="pt">Você ficou rindo o tempo todo.</div></div>
 </div>
+<div class="tablewrap"><table>
+<thead><tr><th>Combinação</th><th>Exemplo com <i>take</i> (sujeito <i>he</i>)</th></tr></thead>
+<tbody>
+<tr><td>present simple passive</td><td>he is taken</td></tr>
+<tr><td>present progressive passive</td><td>he is being taken</td></tr>
+<tr><td>present perfect passive</td><td>he has been taken</td></tr>
+<tr><td>past simple passive</td><td>he was taken</td></tr>
+<tr><td>past progressive passive</td><td>he was being taken</td></tr>
+<tr><td>past perfect passive</td><td>he had been taken</td></tr>
+</tbody></table></div>
 </section>
 
 <section id="s11">
-<div class="snum">Lição 22 · entonação</div>
-<h2>Quando a voz sobe e quando desce</h2>
-<p class="sdesc">Descer no fim = <b>afirmação, confiança</b>. Subir = <b>pergunta de sim/não, dúvida</b>. Voz parada no meio = soa entediado ou como se a frase não tivesse acabado.</p>
+<div class="snum">Estrutura 11</div>
+<h2>Negativa e interrogativa — o auxiliar <i>do</i> entra em cena</h2>
+<p class="sdesc">Quando não há auxiliar na frase, o inglês insere <b>do / does / did</b> para formar a negativa e a interrogativa. Ele também serve para <b>enfatizar</b>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Afirmativa</th><th>Negativa</th><th>Interrogativa</th><th>Enfática</th></tr></thead>
+<tbody>
+<tr><td>She likes it.</td><td>She does not like it.</td><td>Does she like it?</td><td>She <b>does</b> like it.</td></tr>
+<tr><td>I hated it.</td><td>I did not hate it.</td><td>Did you hate it?</td><td>I <b>did</b> hate it.</td></tr>
+<tr><td>I have been unwell.</td><td>I have not been unwell.</td><td>Have you been unwell?</td><td>—</td></tr>
+<tr><td>They believed me.</td><td>They did not believe me.</td><td>Did they believe me?</td><td>—</td></tr>
+<tr><td>I do yoga once a week.</td><td>I do not do yoga once a week.</td><td>Do you do yoga once a week?</td><td>—</td></tr>
+<tr><td>He should have listened to me.</td><td>He should not have listened to me.</td><td>Should he have listened to me?</td><td>—</td></tr>
+<tr><td>She is coming.</td><td>She is not coming. · She isn't coming.</td><td>Is she coming? · Is she not coming? · Isn't she coming?</td><td>—</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>be, do e have se comportam de forma diferente</th></tr></thead>
+<tbody>
+<tr><td><b>do</b>: I did it. · I did not do it. · Did I do it?</td></tr>
+<tr><td><b>have</b>: We have the time. · We do not have the time. / We haven't the time. · Do we have the time? / Have we the time?</td></tr>
+</tbody></table></div>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If your voice rises when it should fall: "That's Bill's car" will sound like "That's Bill's car?"</div><div class="pt">Subir onde deveria descer transforma afirmação em pergunta — ou soa duvidoso e irritado.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If your voice stays level: "I went home" will sound like "I went home... and...".</div><div class="pt">Voz parada soa entediada e faz o ouvinte achar que você não terminou.</div></div>
-<div class="i"><span class="tag">desce ↘</span><div class="en">Linda is my sister. ↘ · He is not going. ↘</div><div class="pt">A Linda é minha irmã. · Ele não vai.</div><div class="def">Frase declarativa termina com a voz caindo.</div></div>
-<div class="i"><span class="tag">desce ↘</span><div class="en">Where is my book? ↘ · When did he leave? ↘</div><div class="pt">Cadê meu livro? · Quando ele saiu?</div><div class="def">Pergunta com <b>who, what, when, why, where, which, how</b> também desce.</div></div>
-<div class="i"><span class="tag">desce ↘</span><div class="en">I have four brothers. ↘ · He is not my friend. ↘ · We like ice cream. ↘</div><div class="pt">Tenho quatro irmãos. · Ele não é meu amigo. · A gente gosta de sorvete.</div></div>
-<div class="i"><span class="tag">desce ↘</span><div class="en">What is your name? ↘ · How is your family? ↘ · Who will drive you home? ↘ · Why did he leave? ↘</div><div class="pt">Qual é o seu nome? · Como vai sua família? · Quem vai te levar em casa? · Por que ele foi embora?</div></div>
-<div class="i"><span class="tag">sobe ↗</span><div class="en">Will you stay? ↗ (No, I can't. ↘) · Do you like school? ↗ (Yes, I do. ↘)</div><div class="pt">Você vai ficar? (Não, não posso.) · Você gosta da escola? (Gosto.)</div><div class="def">Pergunta de sim/não sobe; a resposta desce.</div></div>
-<div class="i"><span class="tag">sobe ↗</span><div class="en">Can you see? ↗ · Does he play golf? ↗ · May I borrow it? ↗ · Did he arrive? ↗</div><div class="pt">Está enxergando? · Ele joga golfe? · Posso pegar emprestado? · Ele chegou?</div><div class="def">Perguntas com can, do, will, would, may e is.</div></div>
-<div class="i"><span class="tag">sobe ↗</span><div class="en">I'm not positive. ↗ · I think he's coming. ↗</div><div class="pt">Não tenho certeza. · Acho que ele vem.</div><div class="def">Afirmação que expressa dúvida também sobe.</div></div>
-<div class="i"><span class="tag">confiança</span><div class="en">They have twenty children. ↘ (afirmando um fato) × They have twenty children. ↗ (com dúvida ou espanto)</div><div class="pt">Eles têm vinte filhos.</div><div class="def">A mesma frase: descendo você soa seguro; subindo, incrédulo.</div></div>
+<div class="i"><span class="tag">modal + negativa mudam o sentido</span><div class="en">I do not have to do it.</div><div class="pt">Eu não sou obrigado a fazer. <b>(a obrigação é que é negada)</b></div></div>
+<div class="i"><div class="en">I must not do it.</div><div class="pt">Eu não posso fazer. <b>(a ação é que é proibida)</b></div></div>
+<div class="i"><span class="tag">formal</span><div class="en">Can you not wait? Do you not know her?</div><div class="pt">Você não pode esperar? Você não conhece ela?</div></div>
+<div class="i"><span class="tag">bem mais comum, sobretudo na fala</span><div class="en">Can't you wait? Don't you know her?</div><div class="pt">Não dá para esperar? Você não conhece ela?</div></div>
+<div class="i"><span class="tag">transferência da negação</span><div class="en">We didn't think you were coming.</div><div class="pt">A gente não achou que você vinha. <b>(o inglês nega o verbo principal, não o subordinado)</b></div></div>
+<div class="i"><div class="en">We thought you weren't coming.</div><div class="pt">A gente achou que você não vinha.</div></div>
+<div class="i"><div class="en">He doesn't seem to know me.</div><div class="pt">Ele parece não me conhecer.</div></div>
+<div class="i"><div class="en">I don't plan to attend.</div><div class="pt">Eu não pretendo comparecer.</div></div>
 </div>
 </section>
 
 <section id="s12">
-<div class="snum">Lições 24–25 · /s/ × /z/</div>
-<h2>O <i>z</i> que o brasileiro apaga — e o <i>e</i> que ele inventa</h2>
-<p class="sdesc">Dois problemas de uma vez: pôr um <b>e</b> antes do s inicial (<i>estate</i> em vez de <i>state</i>) e não vibrar as cordas vocais no /z/, transformando <i>eyes</i> em <i>ice</i>.</p>
-<div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you produce /ɛ/ before /s/: <i>state</i> will sound like <i>estate</i>.</div><div class="pt">Se você puser um "e" antes do s, "estado" vira "propriedade".</div><div class="def">É o erro mais audível do brasileiro em inglês: <b>e</b>sport, <b>e</b>special, <b>e</b>student.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʃ/ instead of /s/: <i>sip</i> will sound like <i>ship</i>.</div><div class="pt">Se você disser /ʃ/ no lugar de /s/, "gole" vira "navio".</div><div class="def">Mantenha o ar firme, como o chiado de uma cobra: ssssssss.</div></div>
-<div class="i"><span class="tag">/s/</span><div class="en">skip · snake · sky · lesson · castle · custom · history · basket · bus · face · course · makes</div><div class="pt">O /s/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /s/ instead of /z/: <i>zoo</i> will sound like <i>Sue</i> · <i>eyes</i> will sound like <i>ice</i>.</div><div class="pt">"Zoológico" vira "Sue"; "olhos" vira "gelo".</div><div class="def">/z/ é <b>sonoro</b> — as cordas vocais TÊM de vibrar. Pense no zumbido da abelha: bzzzzz.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /dʒ/ instead of /z/: <i>zest</i> will sound like <i>jest</i>.</div><div class="pt">Se você disser /dʒ/ no lugar de /z/, "entusiasmo" vira "gracejo".</div></div>
-<div class="i"><div class="en">We finally won the (<i>race</i> / <i>raise</i>).</div><div class="pt">Finalmente ganhamos a corrida. / Finalmente conseguimos o aumento.</div></div>
-<div class="i"><div class="en">I know that (<i>face</i> / <i>phase</i>).</div><div class="pt">Conheço esse rosto. / Conheço essa fase.</div></div>
-<div class="i"><div class="en">He gave me a good (<i>price</i> / <i>prize</i>).</div><div class="pt">Ele me deu um bom preço. / Ele me deu um bom prêmio.</div></div>
-<div class="i"><div class="en">Look at her small (<i>niece</i> / <i>knees</i>).</div><div class="pt">Olha a sobrinha pequena dela. / Olha os joelhos pequenos dela.</div></div>
-<div class="i"><div class="en">We must accept the (<i>loss</i> / <i>laws</i>).</div><div class="pt">Temos de aceitar a perda. / Temos de aceitar as leis.</div></div>
-<div class="i"><div class="en">The sheep have (<i>fleece</i> / <i>fleas</i>).</div><div class="pt">As ovelhas têm lã. / As ovelhas têm pulgas.</div></div>
-<div class="i"><div class="en">Did you hear the (<i>bus</i> / <i>buzz</i>)?</div><div class="pt">Você ouviu o ônibus? / Você ouviu o zumbido?</div></div>
-<div class="i"><div class="en">His dog has a large (<i>muscle</i> / <i>muzzle</i>).</div><div class="pt">O cachorro dele tem um músculo grande. / O cachorro dele tem um focinho grande.</div></div>
-<div class="i"><div class="en">How much is the (<i>sink</i> / <i>zinc</i>)?</div><div class="pt">Quanto custa a pia? / Quanto custa o zinco?</div></div>
-<div class="i"><div class="en">I can identify the (<i>spice</i> / <i>spies</i>).</div><div class="pt">Consigo identificar o tempero. / Consigo identificar os espiões.</div></div>
-</div>
+<div class="snum">Estrutura 12</div>
+<h2>Contrações — e a dupla negação</h2>
+<p class="sdesc">Todos os três auxiliares primários podem virar <b>-'s</b>. Mas não se contrai duas coisas na mesma sequência: existe <i>She's not coming</i> e <i>She isn't coming</i>, não <i class='x'>She'sn't coming</i>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Contraído</th><th>Por extenso</th></tr></thead>
+<tbody>
+<tr><td>She's satisfied.</td><td>She is satisfied.</td></tr>
+<tr><td>She's satisfied the examiners.</td><td>She <b>has</b> satisfied the examiners.</td></tr>
+<tr><td>What's he mean?</td><td>What <b>does</b> he mean? <span class='w'>(fala casual)</span></td></tr>
+<tr><td>We'll be there soon.</td><td>We will be there soon.</td></tr>
+<tr><td>I'd rather stay at home.</td><td>I would rather stay at home.</td></tr>
+<tr><td>I couldn't've done it without your help.</td><td>I could not have done it without your help.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Padrão</th><th>Não padrão</th><th>Observação</th></tr></thead>
+<tbody>
+<tr><td>She isn't here.</td><td><b class='x'>She ain't here.</b></td><td><i>ain't</i> é muito comum na fala e em transcrições, mas não é padrão</td></tr>
+<tr><td>I haven't done anything.</td><td><b class='x'>I ain't done nothing.</b></td><td>muitos dialetos permitem dupla negação; o inglês padrão, não</td></tr>
+</tbody></table></div>
 </section>
 
 <section id="s13">
-<div class="snum">Lições 26–27 · /t/ e /d/</div>
-<h2>A aspiração do <i>t</i> e o final sonoro do <i>d</i></h2>
-<p class="sdesc">Duas coisas que o português não faz: o /t/ inicial sai com <b>sopro de ar</b>, e o /d/ final precisa de <b>voz</b>. Sem sopro, <i>two</i> vira <i>do</i>; sem voz, <i>bed</i> vira <i>bet</i>. E a ponta da língua vai na <b>gengiva</b>, nunca nos dentes.</p>
+<div class="snum">Estrutura 13</div>
+<h2>Os elementos da oração — sujeito, verbo, objeto, predicativo, adjunto</h2>
+<p class="sdesc">Uma oração tem, no mínimo, sujeito (exceto no imperativo) e verbo, e <b>um só</b> verbo finito. Os demais elementos entram conforme o padrão do verbo.</p>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /d/ instead of /t/: <i>two</i> will sound like <i>do</i>.</div><div class="pt">Sem aspiração, "dois" vira "fazer".</div><div class="def">Teste: segure um lenço de papel solto na frente da boca. Se o /t/ estiver certo, o papel treme.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ts/ instead of /t/: <i>tune</i> will sound like <i>tsune</i>. · If you say /tʃ/ instead of /t/: <i>tease</i> will sound like <i>cheese</i>.</div><div class="pt">O "tchi" brasileiro antes de i e u destrói o /t/ inglês.</div><div class="def">Erro clássico de quem fala português: <b>ti</b> virando <b>tchi</b>.</div></div>
-<div class="i"><div class="en">The tongue tip should touch the <i>upper gum ridge</i>, NOT the back of your upper front teeth.</div><div class="pt">A ponta da língua toca a gengiva acima dos dentes — não os dentes.</div></div>
-<div class="i"><span class="tag">/t/</span><div class="en">time · to · talk · between · until · attend · it · went</div><div class="pt">O /t/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ð/ instead of /d/: <i>ladder</i> will sound like <i>lather</i> · <i>breeding</i> will sound like <i>breathing</i>.</div><div class="pt">"Escada" vira "espuma"; "reprodução" vira "respiração".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /t/ instead of /d/: <i>card</i> will sound like <i>cart</i> · <i>bed</i> will sound like <i>bet</i>.</div><div class="pt">"Cartão" vira "carrinho"; "cama" vira "aposta".</div><div class="def">No fim da palavra, muita gente esquece de vibrar as cordas vocais.</div></div>
-<div class="i"><span class="tag">/d/</span><div class="en">day · body · pudding · food · bad · bed</div><div class="pt">O /d/ no começo, no meio e no fim.</div></div>
-<div class="i"><div class="en">I can't find the (<i>belt</i> / <i>bell</i>).</div><div class="pt">Não acho o cinto. / Não acho o sino.</div></div>
-<div class="i"><div class="en">My son is (<i>five</i> / <i>fine</i>). · I think he's (<i>dead</i> / <i>deaf</i>).</div><div class="pt">Meu filho tem cinco anos. / Meu filho está bem. · Acho que ele está morto. / Acho que ele é surdo.</div></div>
-<div class="i"><div class="en">Tim bought another (<i>car</i> / <i>card</i>).</div><div class="pt">O Tim comprou outro carro. / O Tim comprou outro cartão.</div><div class="def">A consoante final <b>existe</b> em inglês. Em português ela some — e aí some o sentido.</div></div>
-<div class="i"><div class="en">The (<i>pack</i> / <i>pact</i>) · There's a (<i>lake</i> / <i>lane</i>) · The (<i>den</i> / <i>dent</i>) · The (<i>coal</i> / <i>colt</i>)</div><div class="pt">pacote × pacto · lago × faixa · toca × amassado · carvão × potro</div></div>
-<div class="i"><div class="en">The men cut the (<i>tree</i> / <i>trees</i>). · He repaired the (<i>watch</i> / <i>watches</i>).</div><div class="pt">Os homens cortaram a árvore. / …as árvores. · Ele consertou o relógio. / …os relógios.</div><div class="def">O plural também depende de uma consoante final que o brasileiro tende a comer.</div></div>
-<div class="i"><div class="en">Did they finally make (<i>peace</i> / <i>peas</i>)? · Did you see the little (<i>cups</i> / <i>cubs</i>)?</div><div class="pt">Eles finalmente fizeram as pazes? / Eles finalmente fizeram ervilhas? · Você viu as xicrinhas? / Você viu os filhotinhos?</div></div>
+<div class="i"><span class="tag">sujeito</span><div class="en">The house stands on top of a hill.</div><div class="pt">A casa fica no alto de uma colina.</div></div>
+<div class="i"><div class="en">It has excellent views.</div><div class="pt">Ela tem vistas excelentes.</div></div>
+<div class="i"><div class="en">What you did is unforgivable.</div><div class="pt">O que você fez é imperdoável. <b>(uma oração inteira como sujeito)</b></div></div>
+<div class="i"><span class="tag">objeto direto</span><div class="en">They've found my credit card.</div><div class="pt">Eles acharam meu cartão de crédito.</div></div>
+<div class="i"><div class="en">I hate work.</div><div class="pt">Eu odeio trabalho.</div></div>
+<div class="i"><div class="en">We saw you at the show.</div><div class="pt">A gente viu você no show.</div></div>
+<div class="i"><div class="en">I know him.</div><div class="pt">Eu conheço ele. <b>(pronome objeto: <i>him</i>, não <i>he</i>)</b></div></div>
+<div class="i"><span class="tag">objeto indireto</span><div class="en">I wrote them a letter.</div><div class="pt">Eu escrevi uma carta para eles.</div></div>
+<div class="i"><div class="en">I gave her a good reference.</div><div class="pt">Eu dei uma boa recomendação para ela.</div></div>
+<div class="i"><div class="en">I threw him the ball.</div><div class="pt">Eu joguei a bola para ele.</div></div>
+<div class="i"><div class="en">We bought her a bike.</div><div class="pt">A gente comprou uma bicicleta para ela.</div></div>
+<div class="i"><div class="en">What did you buy him?</div><div class="pt">O que você comprou para ele?</div></div>
+<div class="i"><span class="tag">objeto preposicionado</span><div class="en">I can't stop looking at her.</div><div class="pt">Eu não consigo parar de olhar para ela.</div></div>
+<div class="i"><div class="en">I threw the ball to him.</div><div class="pt">Eu joguei a bola para ele.</div></div>
+<div class="i"><div class="en">We bought a bike for her.</div><div class="pt">A gente comprou uma bicicleta para ela.</div></div>
+<div class="i"><span class="tag">predicativo do sujeito</span><div class="en">He became a teacher.</div><div class="pt">Ele virou professor.</div></div>
+<div class="i"><div class="en">He is very happy.</div><div class="pt">Ele está muito feliz.</div></div>
+<div class="i"><div class="en">He seems alright.</div><div class="pt">Ele parece bem.</div></div>
+<div class="i"><span class="tag">predicativo do objeto</span><div class="en">We elected her class representative.</div><div class="pt">A gente elegeu ela representante de turma.</div></div>
+<div class="i"><div class="en">I painted the wall black.</div><div class="pt">Eu pintei a parede de preto.</div></div>
+<div class="i"><div class="en">She considers me her friend.</div><div class="pt">Ela me considera amiga dela.</div></div>
 </div>
+<div class="tablewrap"><table>
+<thead><tr><th>O adjunto (adverbial) pode ser…</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>sintagma adverbial</td><td>He left <b>very quickly</b>.</td></tr>
+<tr><td>frase preposicional</td><td>I left it <b>on the table</b>.</td></tr>
+<tr><td>oração</td><td>I fell asleep <b>because I was tired</b>.</td></tr>
+<tr><td>sintagma nominal</td><td>I'll see you <b>next week</b>.</td></tr>
+<tr><td>oração não-finita</td><td><b>Recovering his composure</b>, he turned and left.</td></tr>
+<tr><td></td><td><b>Breathing heavily</b>, I slowly walked to the car.</td></tr>
+</tbody></table></div>
+<div class='sdesc' style='margin-top:16px'>Duas duplas que se parecem, mas têm funções diferentes:</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Objeto preposicionado</th><th>Adjunto</th></tr></thead>
+<tbody>
+<tr><td>He looked <b>into the room</b>. <span class='w'>(onde ele olhou)</span></td><td>I'll look <b>into the matter</b> later. <span class='w'>(o que ele vai investigar)</span></td></tr>
+<tr><td>We started the day <b>with a strong coffee</b>.</td><td>We'll meet <b>this evening</b>.</td></tr>
+</tbody></table></div>
 </section>
 
 <section id="s14">
-<div class="snum">Lição 28 · /θ/</div>
-<h2>O <i>th</i> surdo — <i>think</i>, não <i>sink</i></h2>
-<p class="sdesc">Som que não existe em português. A língua vai <b>entre os dentes</b> e o ar sai contínuo. Quatro substituições possíveis, quatro palavras diferentes.</p>
+<div class="snum">Estrutura 14</div>
+<h2>Concordância — quando gramática e sentido discordam</h2>
+<p class="sdesc">O sujeito determina a forma do verbo finito no presente. Mas há casos em que o número gramatical e o número real não batem.</p>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /s/ instead of /θ/: <i>thank</i> will sound like <i>sank</i>.</div><div class="pt">"Agradecer" vira "afundou".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʃ/ instead of /θ/: <i>thin</i> will sound like <i>shin</i>.</div><div class="pt">"Magro" vira "canela (da perna)".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /f/ instead of /θ/: <i>Ruth</i> will sound like <i>roof</i>.</div><div class="pt">"Ruth" vira "telhado".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /t/ instead of /θ/: <i>path</i> will sound like <i>pat</i>.</div><div class="pt">"Trilha" vira "tapinha".</div><div class="def">Esse é o mais comum entre brasileiros.</div></div>
-<div class="i"><div class="en">Concentrate on placing your tongue <i>between your teeth</i>. Look in a mirror, and keep the airstream continuous.</div><div class="pt">Ponha a língua entre os dentes. Olhe no espelho e mantenha o ar saindo sem parar.</div></div>
-<div class="i"><span class="tag">/θ/</span><div class="en">think · theory · theme · thaw · truth</div><div class="pt">O /θ/ no começo da palavra.</div></div>
-<div class="i"><span class="tag">/θ/</span><div class="en">anything · healthy · wealthy · bathtub</div><div class="pt">No meio da palavra.</div></div>
-<div class="i"><span class="tag">/θ/</span><div class="en">teeth · bath · mouth · truth · path</div><div class="pt">No fim da palavra.</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">thank × sank · thin × shin · Ruth × roof · path × pat · thought × sought · both × boat</div><div class="pt">A grade completa de confusão do th surdo.</div></div>
+<div class="i"><span class="tag">coletivo: as duas formas</span><div class="en">The team has decided not to play. / The team have decided not to play.</div><div class="pt">O time decidiu não jogar. <b>(bloco / indivíduos)</b></div></div>
+<div class="i"><span class="tag">plural que conta como um</span><div class="en">Ten years is a long time.</div><div class="pt">Dez anos é muito tempo.</div></div>
+<div class="i"><span class="tag">sujeito composto como unidade</span><div class="en">Their defeat and subsequent surrender means that the war is over.</div><div class="pt">A derrota e a rendição seguinte significam que a guerra acabou.</div></div>
+<div class="i"><span class="tag">o verbo segue o antecedente do relativo</span><div class="en">He is the only one of the students who know the answer.</div><div class="pt">Ele é o único dos alunos que sabem a resposta.</div></div>
+<div class="i"><span class="tag">existencial there</span><div class="en">There are many cases of absentee landlords.</div><div class="pt">Há muitos casos de proprietários ausentes.</div></div>
+<div class="i"><span class="tag">na fala corrente</span><div class="en">There's many ways of doing it.</div><div class="pt">Tem muito jeito de fazer isso. <b>(comum na fala, apesar do sujeito plural)</b></div></div>
+<div class="i"><div class="en">There is a book on the table.</div><div class="pt">Tem um livro na mesa.</div></div>
+<div class="i"><div class="en">There were about 2,000 people there.</div><div class="pt">Tinha umas 2.000 pessoas lá.</div></div>
+<div class="i"><span class="tag">variação em curso</span><div class="en">Students have less chances of finding work nowadays.</div><div class="pt">Os estudantes têm menos chances de achar trabalho hoje em dia. <b>(<i>fewer</i> é a forma prescrita para contáveis)</b></div></div>
 </div>
 </section>
 
 <section id="s15">
-<div class="snum">Lição 29 · /ð/</div>
-<h2>O <i>th</i> sonoro — <i>they</i>, não <i>day</i></h2>
-<p class="sdesc">Mesma posição de língua do /θ/, mas <b>com voz</b>. É o som de <i>the</i>, <i>this</i>, <i>that</i> — as palavras mais frequentes da língua.</p>
+<div class="snum">Estrutura 15</div>
+<h2>Tipos de frase — simples, composta e complexa</h2>
+<p class="sdesc">Frases <b>maiores</b> têm a estrutura completa; as <b>menores</b> (placas, manchetes) não. Entre as maiores, a <b>composta</b> junta orações de igual peso; a <b>complexa</b> encaixa uma oração dentro da outra.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Tipo</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td><b>Maior</b> (regular)</td><td>She will come in the afternoon.</td></tr>
+<tr><td><b>Menor</b> (irregular)</td><td>No smoking. · Silence! · Because she is generous.</td></tr>
+<tr><td><b>Composta</b></td><td>She works hard, has an enquiring mind and is popular with her colleagues.</td></tr>
+<tr><td><b>Complexa</b></td><td>I like him because he is different.</td></tr>
+<tr><td></td><td>He said that he wasn't coming.</td></tr>
+<tr><td>Oração dentro de um elemento</td><td>Where did you put the pen <b>I lent you</b>? <span class='w'>(a oração é parte do objeto)</span></td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Manchete</th><th>Maior ou menor?</th></tr></thead>
+<tbody>
+<tr><td>Ailing Maggie in hospital.</td><td>menor — não tem verbo finito</td></tr>
+<tr><td>Save our schools by restoring teachers' authority.</td><td>maior — imperativo</td></tr>
+<tr><td>End to reading classes.</td><td>menor</td></tr>
+<tr><td>How your money is spent by the state.</td><td>menor — é só um sintagma nominal; a versão maior seria <i>This article shows how your money is spent by the state.</i></td></tr>
+</tbody></table></div>
+<div class='sdesc' style='margin-top:16px'><b>Quatro maneiras de dizer a mesma coisa</b> — mudando só o conector:</div>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /d/ instead of /ð/: <i>they</i> will sound like <i>day</i>.</div><div class="pt">"Eles" vira "dia".</div><div class="def">Substituição mais comum de todas.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /z/ instead of /ð/: <i>bathe</i> will sound like <i>bays</i>.</div><div class="pt">"Banhar-se" vira "baías".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /dʒ/ instead of /ð/: <i>than</i> will sound like <i>Jan</i>.</div><div class="pt">"Do que" vira "Jan".</div></div>
-<div class="i"><div class="en">Look in the mirror as you pronounce /ð/. Make sure you can <i>see the tip of your tongue</i>.</div><div class="pt">Olhe no espelho: você tem de conseguir ver a ponta da própria língua.</div><div class="def">Assim não sobra problema com <b>these, them</b> e <b>those</b>.</div></div>
-<div class="i"><span class="tag">/ð/</span><div class="en">the · that · there · they · this · those · them · these</div><div class="pt">O /ð/ no começo — as palavras mais usadas do inglês.</div></div>
-<div class="i"><span class="tag">/ð/</span><div class="en">other · leather · gather · father · mother · weather</div><div class="pt">No meio da palavra.</div></div>
-<div class="i"><span class="tag">/ð/</span><div class="en">bathe · smooth · breathe · with</div><div class="pt">No fim da palavra.</div></div>
-<div class="i"><div class="en">I loathe this wet (<i>weather</i> / <i>whether</i>).</div><div class="pt">Detesto esse tempo úmido. / Detesto esse "se".</div></div>
-<div class="i"><div class="en">The family will be (<i>there</i> / <i>their</i>). · Mother told (<i>they</i> / <i>them</i>).</div><div class="pt">A família vai estar lá. / A família vai ser deles. · A mãe contou para eles.</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">they × day · bathe × bays · than × Jan · breathe × breed · with × wit</div><div class="pt">A grade completa de confusão do th sonoro.</div></div>
+<div class="i"><div class="en">He's stubborn but I still like him.</div><div class="pt">Ele é teimoso, mas eu gosto dele mesmo assim.</div></div>
+<div class="i"><div class="en">I still like him although he's stubborn.</div><div class="pt">Eu gosto dele mesmo assim, embora ele seja teimoso.</div></div>
+<div class="i"><div class="en">He's stubborn; however, I still like him.</div><div class="pt">Ele é teimoso; mesmo assim, eu gosto dele.</div></div>
+<div class="i"><div class="en">In spite of his stubbornness I still like him.</div><div class="pt">Apesar da teimosia dele, eu gosto dele mesmo assim.</div></div>
+<div class="i"><span class="tag">coordenação</span><div class="en">He's clever and hard-working with it.</div><div class="pt">Ele é inteligente e ainda por cima trabalhador.</div></div>
+<div class="i"><div class="en">Should I see a doctor or a dentist?</div><div class="pt">Eu devo procurar um médico ou um dentista?</div></div>
+<div class="i"><div class="en">I was laughing and crying at the same time.</div><div class="pt">Eu estava rindo e chorando ao mesmo tempo.</div></div>
+<div class="i"><div class="en">We'll leave when the job is done and when we've been paid.</div><div class="pt">A gente vai embora quando o serviço estiver pronto e quando tivermos sido pagos.</div></div>
+<div class="i"><span class="tag">na fala</span><div class="en">She's got a lot of nerve, she has.</div><div class="pt">Ela tem cada cara de pau, ela tem.</div></div>
 </div>
 </section>
 
 <section id="s16">
-<div class="snum">Lições 30–31 · /ʃ/ × /tʃ/</div>
-<h2><i>she</i> × <i>see</i> × <i>chew</i></h2>
-<p class="sdesc">No /ʃ/ a língua <b>não toca</b> o céu da boca — é um chiado contínuo. No /tʃ/ ela <b>encosta na gengiva</b> e solta de uma vez, como um espirro.</p>
+<div class="snum">Estrutura 16</div>
+<h2>Orações subordinadas finitas</h2>
+<p class="sdesc">A oração subordinada finita pode ser <b>nominal</b> (faz papel de substantivo), <b>adverbial</b> (faz papel de adjunto) ou <b>apositiva</b> (explica um substantivo).</p>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /s/ instead of /ʃ/: <i>she</i> will sound like <i>see</i>.</div><div class="pt">"Ela" vira "ver".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /tʃ/ instead of /ʃ/: <i>shoe</i> will sound like <i>chew</i>.</div><div class="pt">"Sapato" vira "mastigar".</div><div class="def">Não deixe a língua tocar os dentes nem a gengiva, ou sai /tʃ/ por engano.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʃ/ instead of /tʃ/: <i>chair</i> will sound like <i>share</i> · <i>which</i> will sound like <i>wish</i>.</div><div class="pt">"Cadeira" vira "compartilhar"; "qual" vira "desejo".</div><div class="def">Comece o /tʃ/ com a língua na mesma posição do /t/. É um som explosivo — pense em "atchim".</div></div>
-<div class="i"><span class="tag">/ʃ/</span><div class="en">shy · shoe · shop · shape · official · nation · sugar · ocean · foolish · dish · rush</div><div class="pt">O /ʃ/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag">/tʃ/</span><div class="en">chew · chest · chicken · butcher · question · itch · reach</div><div class="pt">O /tʃ/ no começo, no meio e no fim.</div></div>
-<div class="i"><div class="en">I didn't see the (<i>dish</i> / <i>ditch</i>).</div><div class="pt">Não vi o prato. / Não vi a vala.</div></div>
-<div class="i"><div class="en">He hurt his (<i>shin</i> / <i>chin</i>).</div><div class="pt">Ele machucou a canela. / Ele machucou o queixo.</div></div>
-<div class="i"><div class="en">Did you hear that (<i>shatter</i> / <i>chatter</i>)?</div><div class="pt">Você ouviu aquilo estilhaçar? / Você ouviu aquela tagarelice?</div></div>
-<div class="i"><div class="en">It's a silly (<i>wish</i> / <i>witch</i>).</div><div class="pt">É um desejo bobo. / É uma bruxa boba.</div></div>
-<div class="i"><div class="en">She brought me the (<i>wash</i> / <i>watch</i>).</div><div class="pt">Ela me trouxe a roupa lavada. / Ela me trouxe o relógio.</div></div>
-<div class="i"><div class="en">You have a large (<i>share</i> / <i>chair</i>).</div><div class="pt">Você tem uma parte grande. / Você tem uma cadeira grande.</div></div>
-<div class="i"><div class="en">We must fix the (<i>ship</i> / <i>chip</i>).</div><div class="pt">Temos de consertar o navio. / Temos de consertar o chip.</div></div>
-<div class="i"><div class="en">Does she have a new (<i>crush</i> / <i>crutch</i>)?</div><div class="pt">Ela está de paixão nova? / Ela tem uma muleta nova?</div></div>
-<div class="i"><div class="en">You completed the (<i>shore</i> / <i>chore</i>).</div><div class="pt">Você terminou a orla. / Você terminou a tarefa.</div></div>
+<div class="i"><span class="tag">nominal como sujeito</span><div class="en">That she is brilliant is well-known.</div><div class="pt">Que ela é brilhante é sabido.</div></div>
+<div class="i"><span class="tag">nominal como objeto</span><div class="en">She said that she is retiring next year.</div><div class="pt">Ela disse que vai se aposentar no ano que vem.</div></div>
+<div class="i"><div class="en">She said she is retiring next year.</div><div class="pt">Ela disse que vai se aposentar no ano que vem. <b>(o <i>that</i> pode cair)</b></div></div>
+<div class="i"><div class="en">I told her what you like.</div><div class="pt">Eu contei a ela do que você gosta.</div></div>
+<div class="i"><div class="en">I know you're unhappy.</div><div class="pt">Eu sei que você está infeliz.</div></div>
+<div class="i"><div class="en">I know that you don't like him.</div><div class="pt">Eu sei que você não gosta dele.</div></div>
+<div class="i"><div class="en">I know what you mean.</div><div class="pt">Eu sei o que você quer dizer.</div></div>
+<div class="i"><div class="en">I wonder if / whether she's coming.</div><div class="pt">Eu me pergunto se ela vem.</div></div>
+<div class="i"><span class="tag">adverbial de causa</span><div class="en">She got the job because she has a lot of experience.</div><div class="pt">Ela conseguiu o emprego porque tem muita experiência.</div></div>
+<div class="i"><div class="en">Because she has a lot of experience she got the job.</div><div class="pt">Como ela tem muita experiência, conseguiu o emprego.</div></div>
+<div class="i"><span class="tag">adverbial concessiva</span><div class="en">Although he's rich, he has few friends.</div><div class="pt">Embora ele seja rico, tem poucos amigos.</div></div>
+<div class="i"><div class="en">He has few friends although he's rich.</div><div class="pt">Ele tem poucos amigos embora seja rico.</div></div>
+<div class="i"><div class="en">Despite his wealth, he has few friends.</div><div class="pt">Apesar da riqueza dele, ele tem poucos amigos.</div></div>
+<div class="i"><span class="tag">adverbial condicional</span><div class="en">I won't go if the weather's bad.</div><div class="pt">Eu não vou se o tempo estiver ruim.</div></div>
+<div class="i"><span class="tag">adverbial de tempo</span><div class="en">Tell me when the concert finishes.</div><div class="pt">Me avisa quando o show acabar.</div></div>
+<div class="i"><span class="tag">apositiva</span><div class="en">The news that he has recovered has cheered everyone up.</div><div class="pt">A notícia de que ele se recuperou animou todo mundo.</div></div>
+<div class="i"><div class="en">There is a fear that the recession will cause more job losses.</div><div class="pt">Há um medo de que a recessão cause mais perda de empregos.</div></div>
+<div class="i"><div class="en">The belief that it prevents ageing is widespread.</div><div class="pt">A crença de que isso previne o envelhecimento é generalizada.</div></div>
+<div class="i"><span class="tag">compare: aqui é objeto</span><div class="en">They believe that it prevents ageing.</div><div class="pt">Eles acreditam que isso previne o envelhecimento.</div></div>
+<div class="i"><div class="en">The idea that we should leave our homes is outrageous.</div><div class="pt">A ideia de que devemos deixar nossas casas é ultrajante.</div></div>
+<div class="i"><div class="en">She made a statement that the allegations were false.</div><div class="pt">Ela fez uma declaração de que as acusações eram falsas.</div></div>
+<div class="i"><div class="en">The boss claimed that we were responsible.</div><div class="pt">O chefe alegou que nós éramos os responsáveis.</div></div>
 </div>
 </section>
 
 <section id="s17">
-<div class="snum">Lições 32–33 · /ʒ/ /dʒ/ /j/</div>
-<h2><i>vision</i>, <i>jam</i> e <i>yes</i> — os três que se cruzam</h2>
-<p class="sdesc">O /ʒ/ é o nosso "j" de <i>já</i>. O /dʒ/ começa como /d/ e explode. O /j/ é o "i" de <i>ioga</i> — e some com facilidade na boca de quem fala português.</p>
+<div class="snum">Estrutura 17</div>
+<h2>Orações não-finitas e incompletas</h2>
+<p class="sdesc">Sem verbo finito, a oração fica <b>incompleta</b> — e o leitor recupera o sujeito e o verbo pelo contexto. São três tipos: infinitivo, particípio em <b>-ing</b> e particípio em <b>-ed</b>.</p>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʃ/ instead of /ʒ/: <i>vision</i> will sound like <i>vishion</i>. · If you say /dʒ/: <i>pleasure</i> will sound like <i>pledger</i>.</div><div class="pt">O /ʒ/ é sonoro: ponha a mão na garganta e sinta a vibração.</div></div>
-<div class="i"><span class="tag">/ʒ/</span><div class="en">measure · pleasure · vision · division · usual · Asia · decision · occasion · television</div><div class="pt">O /ʒ/ no meio da palavra.</div></div>
-<div class="i"><span class="tag">/ʒ/</span><div class="en">rouge · garage · prestige · beige · corsage · camouflage</div><div class="pt">No fim da palavra — quase sempre em palavra de origem francesa.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /j/ instead of /dʒ/: <i>Jell-O</i> will sound like <i>yellow</i>.</div><div class="pt">"Gelatina" vira "amarelo".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /ʒ/ instead of /dʒ/: <i>legion</i> will sound like <i>lesion</i>. · If you say /tʃ/: <i>badge</i> will sound like <i>batch</i>.</div><div class="pt">"Legião" vira "lesão"; "crachá" vira "lote".</div><div class="def">Comece o /dʒ/ com a língua na posição do /d/, pressionada na gengiva, e com as cordas vibrando.</div></div>
-<div class="i"><span class="tag">/dʒ/</span><div class="en">jam · jar · agent · adjust · enjoy · angel · magic · age · edge · cage</div><div class="pt">O /dʒ/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /dʒ/ instead of /j/: <i>yet</i> will sound like <i>jet</i>. · If you omit /j/: <i>year</i> will sound like <i>ear</i>.</div><div class="pt">"Ainda" vira "jato"; "ano" vira "orelha".</div><div class="def">No /j/ a ponta da língua fica atrás dos dentes <b>inferiores</b> e NÃO toca o céu da boca.</div></div>
-<div class="i"><span class="tag">/j/</span><div class="en">you · yes · yell · young · use · youth · year · yesterday</div><div class="pt">O /j/ no começo da palavra.</div></div>
-<div class="i"><span class="tag">/j/</span><div class="en">onion · beyond · backyard · canyon · values · formula</div><div class="pt">No meio da palavra.</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">Jell-O × yellow · yet × jet · year × ear · legion × lesion · badge × batch</div><div class="pt">A grade de confusão entre os três.</div></div>
+<div class="i"><span class="tag">infinitivo</span><div class="en">I saw her leave the room.</div><div class="pt">Eu vi ela sair da sala.</div></div>
+<div class="i"><div class="en">To live so long must be terrible.</div><div class="pt">Viver tanto tempo deve ser terrível.</div></div>
+<div class="i"><div class="en">I know where to go.</div><div class="pt">Eu sei aonde ir.</div></div>
+<div class="i"><span class="tag">-ing</span><div class="en">I heard someone shouting for help.</div><div class="pt">Eu ouvi alguém gritando por ajuda.</div></div>
+<div class="i"><div class="en">Making money is easy.</div><div class="pt">Ganhar dinheiro é fácil.</div></div>
+<div class="i"><div class="en">I noticed a boy lying on the grass.</div><div class="pt">Eu notei um menino deitado na grama.</div></div>
+<div class="i"><span class="tag">compare com a relativa</span><div class="en">I noticed a boy who was lying on the grass.</div><div class="pt">Eu notei um menino que estava deitado na grama.</div></div>
+<div class="i"><span class="tag">-ed</span><div class="en">I got the watch repaired in town.</div><div class="pt">Eu mandei consertar o relógio na cidade.</div></div>
+<div class="i"><div class="en">I read a book which is called The White Hotel.</div><div class="pt">Eu li um livro que se chama <i>The White Hotel</i>.</div></div>
+<div class="i"><span class="tag">no início da frase</span><div class="en">To cut a long story short, I've lost everything.</div><div class="pt">Para encurtar a história, eu perdi tudo.</div></div>
+<div class="i"><div class="en">Shaken by this experience, he decided to resign.</div><div class="pt">Abalado por essa experiência, ele decidiu se demitir.</div></div>
+<div class="i"><div class="en">Using this principle, we can solve many problems.</div><div class="pt">Usando esse princípio, a gente consegue resolver muitos problemas.</div></div>
+<div class="i"><div class="en">On hearing this, the crowd gave a big roar.</div><div class="pt">Ao ouvir isso, a multidão soltou um urro.</div></div>
+<div class="i"><div class="en">By applying early, you increase your chances of success.</div><div class="pt">Inscrevendo-se cedo, você aumenta suas chances de sucesso.</div></div>
+<div class="i"><span class="tag">sem verbo nenhum</span><div class="en">Although sleepy, she still managed to finish her homework.</div><div class="pt">Embora com sono, ela ainda conseguiu terminar o dever.</div></div>
+<div class="i"><div class="en">Slippery when wet.</div><div class="pt">Escorregadio quando molhado.</div></div>
+<div class="i"><div class="en">If possible, place all plastic in a separate container.</div><div class="pt">Se possível, coloque todo o plástico num recipiente separado. <b>(= If it is possible)</b></div></div>
+<div class="i"><div class="en">The man, described as being 6 foot tall, is in his late forties.</div><div class="pt">O homem, descrito como tendo 1,83 m, está no fim dos quarenta. <b>(= who was described)</b></div></div>
+<div class="i"><div class="en">They stood there as if shell-shocked.</div><div class="pt">Eles ficaram ali parados como se estivessem em choque.</div></div>
+<div class="i"><div class="en">Once lost, your reputation can never be fully recovered.</div><div class="pt">Uma vez perdida, sua reputação nunca se recupera por completo. <b>(= Once it is lost)</b></div></div>
 </div>
 </section>
 
 <section id="s18">
-<div class="snum">Lições 36–37 · /p/ × /b/</div>
-<h2>A explosão do <i>p</i> e a voz do <i>b</i></h2>
-<p class="sdesc">O /p/ inglês é <b>muito mais explosivo</b> que o português. Sem o sopro, <i>pear</i> vira <i>bear</i>. E o /b/ final precisa de voz, senão <i>robe</i> vira <i>rope</i>.</p>
+<div class="snum">Estrutura 18</div>
+<h2>Ordem das palavras — e as inversões obrigatórias</h2>
+<p class="sdesc">A ordem básica do inglês é <b>SVO</b>. Ela se altera na passiva, na interrogativa, nas relativas e — o caso mais surpreendente — quando a frase começa com uma expressão negativa ou restritiva. Aí a inversão é <b>obrigatória</b>.</p>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you forget to aspirate /p/: <i>pear</i> will sound like <i>bear</i> · <i>pat</i> will sound like <i>bat</i>.</div><div class="pt">"Pera" vira "urso"; "tapinha" vira "morcego".</div><div class="def">Teste do lenço de papel de novo: se o /p/ estiver certo, o papel treme.</div></div>
-<div class="i"><div class="en">When <i>p</i> follows <i>s</i> (spot, spend, spy), it is <i>NOT</i> aspirated.</div><div class="pt">Depois de s, o p não é aspirado.</div><div class="def">Mesma regra do /k/: <i>sky, skin, skate</i>.</div></div>
-<div class="i"><span class="tag">/p/</span><div class="en">pain · pay · pen · pipe · happy · open · supper · top · map</div><div class="pt">O /p/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /v/ instead of /b/: <i>boat</i> will sound like <i>vote</i>.</div><div class="pt">"Barco" vira "voto".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /p/ instead of /b/: <i>robe</i> will sound like <i>rope</i> · <i>cab</i> will sound like <i>cap</i>.</div><div class="pt">"Roupão" vira "corda"; "táxi" vira "boné".</div><div class="def">No fim da palavra, faça as cordas vibrarem e pressione bem os lábios.</div></div>
-<div class="i"><span class="tag">/b/</span><div class="en">boat · best · be · obey · label · rubber · rib · cab</div><div class="pt">O /b/ no começo, no meio e no fim.</div></div>
-<div class="i"><div class="en">I like rye (<i>bread</i> / <i>bred</i>). · Don't walk in your (<i>bear</i> / <i>bare</i>).</div><div class="pt">Gosto de pão de centeio. / Gosto de centeio criado. · Não ande de urso. / Não ande descalço.</div></div>
-<div class="i"><div class="en">Bob has (<i>been</i> / <i>bin</i>). · Please store the beans in the (<i>been</i> / <i>bin</i>).</div><div class="pt">O Bob esteve. / O Bob tem uma caixa. · Guarde os feijões na caixa.</div></div>
-<div class="i"><div class="en">The wind (<i>blew</i> / <i>blue</i>). · Betty's (<i>blue</i> / <i>blew</i>).</div><div class="pt">O vento soprou. / O vento azul. · A Betty está triste. / A Betty soprou.</div></div>
-<div class="i"><div class="en">The dog will (<i>berry</i> / <i>bury</i>).</div><div class="pt">O cachorro vai enterrar.</div></div>
-<div class="i"><div class="en">My brother watches baseball when he's (<i>bored</i> / <i>board</i>). · The builder needs a bigger (<i>bored</i> / <i>board</i>).</div><div class="pt">Meu irmão vê beisebol quando está entediado. · O construtor precisa de uma tábua maior.</div></div>
+<div class="i"><span class="tag">passiva</span><div class="en">Your question will be answered soon.</div><div class="pt">Sua pergunta será respondida em breve.</div></div>
+<div class="i"><span class="tag">interrogativa</span><div class="en">Will you answer my question?</div><div class="pt">Você vai responder minha pergunta?</div></div>
+<div class="i"><div class="en">What were you thinking?</div><div class="pt">O que você estava pensando?</div></div>
+<div class="i"><div class="en">How are they feeling?</div><div class="pt">Como eles estão se sentindo?</div></div>
+<div class="i"><span class="tag">oração nominal</span><div class="en">What you did is unforgivable.</div><div class="pt">O que você fez é imperdoável.</div></div>
+<div class="i"><span class="tag">negativa no início — inversão</span><div class="en">Not only did we win, we also played well.</div><div class="pt">Não só a gente ganhou, como jogou bem.</div></div>
+<div class="i"><div class="en">Nowhere else can you find such beauty.</div><div class="pt">Em nenhum outro lugar você encontra tanta beleza.</div></div>
+<div class="i"><div class="en">I haven't paid my rent. Nor have we.</div><div class="pt">Eu não paguei meu aluguel. Nem a gente.</div></div>
+<div class="i"><div class="en">Seldom have I seen such bravery.</div><div class="pt">Raramente vi tamanha coragem.</div></div>
+<div class="i"><span class="tag">condicional sem if</span><div class="en">Had I known, I wouldn't have come.</div><div class="pt">Se eu soubesse, não teria vindo.</div></div>
+<div class="i"><div class="en">Were he to come, he would not be welcome.</div><div class="pt">Se ele viesse, não seria bem-vindo.</div></div>
+<div class="i"><div class="en">Should you change your mind, there would be a financial penalty.</div><div class="pt">Caso você mude de ideia, haveria uma multa.</div></div>
+<div class="i"><div class="en">So disappointing have the results been that…</div><div class="pt">Tão decepcionantes têm sido os resultados que…</div></div>
+<div class="i"><div class="en">Such has been the demand for our products that…</div><div class="pt">Tamanha tem sido a demanda pelos nossos produtos que…</div></div>
+<div class="i"><span class="tag">inversão de lugar</span><div class="en">In the middle was situated a large table.</div><div class="pt">No meio ficava uma mesa grande. <b>(= A large table was situated in the middle.)</b></div></div>
+<div class="i"><div class="en">Opposite him sat the Queen.</div><div class="pt">À frente dele sentava-se a Rainha. <b>(= The Queen sat opposite him.)</b></div></div>
 </div>
 </section>
 
 <section id="s19">
-<div class="snum">Lições 38–39 · /f/ × /v/ × /b/</div>
-<h2><i>very</i> × <i>berry</i> — o <i>v</i> que vira <i>b</i></h2>
-<p class="sdesc">Os dentes de cima têm de <b>tocar o lábio de baixo</b>. Trocar /v/ por /b/ é, segundo o livro, o erro que mais confunde o ouvinte americano.</p>
+<div class="snum">Estrutura 19</div>
+<h2>Redesenhando a frase — passiva, <i>there</i>, clivagem e ordem da informação</h2>
+<p class="sdesc">O inglês reorganiza a frase por três razões: pôr no fim o que é longo, pôr no fim o que é <b>novo</b>, e escolher qual elemento vira o tema. As técnicas são a passiva, o <b>existential there</b>, o <b>it</b> antecipatório e as construções clivadas.</p>
 <div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /b/ instead of /v/: <i>very</i> will sound like <i>berry</i> · <i>vest</i> will sound like <i>best</i>.</div><div class="pt">"Muito" vira "frutinha"; "colete" vira "melhor".</div><div class="def">"This can greatly confuse the listener!" — o alerta é do próprio livro.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /f/ instead of /v/: <i>save</i> will sound like <i>safe</i> · <i>leave</i> will sound like <i>leaf</i>.</div><div class="pt">"Salvar" vira "seguro"; "partir" vira "folha".</div><div class="def">No fim da palavra, é o esquecimento da voz que faz o /v/ virar /f/.</div></div>
-<div class="i"><div class="en">Look in the mirror as you practice /v/: place your <i>upper teeth over your bottom lip</i> and make your vocal cords vibrate.</div><div class="pt">No espelho: dentes de cima sobre o lábio de baixo, cordas vocais vibrando.</div></div>
-<div class="i"><span class="tag">/v/</span><div class="en">very · valley · vest · cover · movie · of · move · save · leave</div><div class="pt">O /v/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /h/ instead of /f/: <i>fat</i> will sound like <i>hat</i>. · If you say /p/ instead of /f/: <i>cuff</i> will sound like <i>cup</i>.</div><div class="pt">"Gordo" vira "chapéu"; "punho" vira "xícara".</div><div class="def">Alguns deixam os lábios abertos (sai /h/); outros fecham demais (sai /p/).</div></div>
-<div class="i"><span class="tag">/f/</span><div class="en">for · fast · five · from · face · before · awful · sofa · offer · if · leaf · laugh</div><div class="pt">O /f/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">very × berry · vest × best · boat × vote · save × safe · leave × leaf · fat × hat · cuff × cup</div><div class="pt">A grade completa de /f/, /v/ e /b/.</div></div>
+<div class="i"><span class="tag">o pesado vai para o fim</span><div class="en">He was followed by a sense of doom that affected him all day.</div><div class="pt">Ele foi seguido por uma sensação de fatalidade que o afetou o dia inteiro. <b>(melhor que <i>A sense of doom that affected him all day followed him.</i>)</b></div></div>
+<div class="i"><span class="tag">a passiva escolhe o tema</span><div class="en">Macbeth was written by Shakespeare.</div><div class="pt"><i>Macbeth</i> foi escrito por Shakespeare.</div></div>
+<div class="i"><span class="tag">existential there</span><div class="en">There is a book on the table.</div><div class="pt">Tem um livro na mesa.</div></div>
+<div class="i"><span class="tag">it antecipatório</span><div class="en">It is well-known that she is brilliant.</div><div class="pt">É sabido que ela é brilhante. <b>(= That she is brilliant is well-known.)</b></div></div>
+<div class="i"><div class="en">It must be terrible to live so long in such awful conditions.</div><div class="pt">Deve ser terrível viver tanto tempo em condições tão horríveis.</div></div>
+<div class="i"><span class="tag">it obrigatório depois de certos verbos</span><div class="en">I like it when you read to me.</div><div class="pt">Eu gosto quando você lê para mim.</div></div>
+<div class="i"><div class="en">I would appreciate it if you could phone me.</div><div class="pt">Eu agradeceria se você me ligasse.</div></div>
+<div class="i"><span class="tag">frontalização</span><div class="en">The pain you must forget.</div><div class="pt">A dor você tem que esquecer. <b>(= You must forget the pain.)</b></div></div>
+<div class="i"><div class="en">This I knew.</div><div class="pt">Isso eu sabia. <b>(= I knew this.)</b></div></div>
+<div class="i"><div class="en">On Wednesday I'll tell you more about the exam.</div><div class="pt">Na quarta eu te conto mais sobre a prova.</div></div>
+<div class="i"><span class="tag">exclamativa</span><div class="en">How sweet it is!</div><div class="pt">Como é doce!</div></div>
 </div>
+<div class='sdesc' style='margin-top:16px'><b>Clivagem</b> — a mesma frase, três focos diferentes:</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Frase base</th><th>John noticed the damage later.</th></tr></thead>
+<tbody>
+<tr><td>foco no <b>sujeito</b></td><td>It was <b>John</b> who noticed the damage later.</td></tr>
+<tr><td>foco no <b>objeto</b></td><td>It was <b>the damage</b> that John noticed later.</td></tr>
+<tr><td>foco no <b>tempo</b></td><td>It was <b>later</b> that John noticed the damage.</td></tr>
+<tr><td>pseudo-clivada</td><td><b>What I hate most is</b> the violence. · <b>It's the violence that</b> I hate most.</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Mesma ideia, sujeitos trocados</th></tr></thead>
+<tbody>
+<tr><td>The customers liked the new design. × The new design pleased the customers.</td></tr>
+<tr><td>I gave them the money. × I gave the money to them.</td></tr>
+<tr><td>All of my friends were there. × My friends were all there. <span class='w'>(no segundo, <i>all</i> é informação nova)</span></td></tr>
+</tbody></table></div>
 </section>
 
-<section id="s20">
-<div class="snum">Lições 40–41 · /h/ e /w/</div>
-<h2>O <i>h</i> que não pode sumir e o <i>w</i> que não é <i>v</i></h2>
-<p class="sdesc">Em português o h é mudo — e o hábito faz o brasileiro apagá-lo em inglês. Já o /w/ pede lábios <b>redondos</b>, sem encostar nos dentes.</p>
-<div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you omit /h/: <i>hat</i> will sound like <i>at</i> · <i>hand</i> will sound like <i>and</i>.</div><div class="pt">"Chapéu" vira "em"; "mão" vira "e".</div><div class="def">Relaxe a garganta e a língua e solte um sopro de ar, como um suspiro.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /f/ instead of /h/: <i>Hugh</i> will sound like <i>few</i>.</div><div class="pt">"Hugh" vira "poucos".</div></div>
-<div class="i"><span class="tag">/h/</span><div class="en">he · here · home · how · heat · hello · heart · ahead · inhale · perhaps · behind · anyhow · inherit</div><div class="pt">O /h/ no começo e no meio da palavra.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /v/ instead of /w/: <i>went</i> will sound like <i>vent</i> · <i>wheel</i> will sound like <i>veal</i>.</div><div class="pt">"Foi" vira "respiradouro"; "roda" vira "vitela".</div><div class="def">Isso muda completamente o sentido da palavra.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you omit /w/: <i>wool</i> will sound like <i>ool</i> · <i>wood</i> will sound like <i>ood</i>.</div><div class="pt">Alguns falantes apagam o /w/ antes de /u/ e /ʊ/.</div></div>
-<div class="i"><div class="en">Round your lips as for /uː/. Be sure your <i>lower lip does NOT touch your upper teeth</i>, or you'll make a /v/.</div><div class="pt">Arredonde os lábios como no /uː/ e não deixe o lábio de baixo tocar os dentes de cima.</div></div>
-<div class="i"><span class="tag">/w/</span><div class="en">we · word · work · wool · away · anyway · someone</div><div class="pt">O /w/ no começo e no meio da palavra.</div></div>
-<div class="i"><span class="tag">par mínimo</span><div class="en">hat × at · hand × and · Hugh × few · went × vent · wheel × veal</div><div class="pt">A grade de /h/ e /w/.</div></div>
-</div>
-</section>
-
-<section id="s21">
-<div class="snum">Lições 42–43 · /l/ × /r/</div>
-<h2><i>rice</i> × <i>lice</i> — a língua não pode encostar</h2>
-<p class="sdesc">O /r/ do português é feito tocando o céu da boca — e é exatamente isso que <b>não</b> pode acontecer no inglês. A ponta da língua se curva para cima <b>sem tocar</b> em nada. Se tocar, sai /l/.</p>
-<div class="items">
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /r/ instead of /l/: <i>flight</i> will sound like <i>fright</i> · <i>late</i> will sound like <i>rate</i>.</div><div class="pt">"Voo" vira "susto"; "atrasado" vira "taxa".</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /l/ instead of /r/: <i>berry</i> will sound like <i>belly</i> · <i>rice</i> will sound like <i>lice</i>.</div><div class="pt">"Frutinha" vira "barriga"; "arroz" vira "piolhos".</div><div class="def">Acontece porque o r de muitas línguas é uma mistura de /r/ e /l/, feita tocando o céu da boca.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /w/ instead of /r/: <i>red</i> will sound like <i>wed</i> · <i>right</i> will sound like <i>white</i>.</div><div class="pt">"Vermelho" vira "casar"; "certo" vira "branco".</div></div>
-<div class="i"><div class="en">Make sure the tip of your tongue <i>never touches your upper gum ridge</i> but curls upward toward the roof of your mouth.</div><div class="pt">A ponta da língua nunca toca a gengiva — ela se curva para cima, para o céu da boca.</div></div>
-<div class="i"><span class="tag">/r/</span><div class="en">red · right · sorry · orange · rice · very</div><div class="pt">O /r/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag">/l/</span><div class="en">leg · long · let · leave · asleep · only · alone · hello · all · call · able</div><div class="pt">O /l/ no começo, no meio e no fim.</div><div class="def">No fim da palavra, a parte de trás da língua sobe mais do que no começo.</div></div>
-<div class="i"><div class="en">Don't step on the (<i>glass</i> / <i>grass</i>).</div><div class="pt">Não pise no vidro. / Não pise na grama.</div></div>
-<div class="i"><div class="en">Please put this on your (<i>list</i> / <i>wrist</i>).</div><div class="pt">Ponha isto na sua lista. / Ponha isto no seu pulso.</div></div>
-<div class="i"><div class="en">The entire family is (<i>pleasant</i> / <i>present</i>).</div><div class="pt">A família inteira é agradável. / A família inteira está presente.</div></div>
-<div class="i"><div class="en">It was a terrible (<i>climb</i> / <i>crime</i>).</div><div class="pt">Foi uma escalada terrível. / Foi um crime terrível.</div></div>
-<div class="i"><div class="en">Look at the bright red (<i>flame</i> / <i>frame</i>).</div><div class="pt">Olha a chama vermelha viva. / Olha a moldura vermelha viva.</div></div>
-<div class="i"><div class="en">He likes black (<i>clothes</i> / <i>crows</i>).</div><div class="pt">Ele gosta de roupa preta. / Ele gosta de corvos pretos.</div></div>
-<div class="i"><div class="en">She has the (<i>blues</i> / <i>bruise</i>).</div><div class="pt">Ela está deprimida. / Ela está com um hematoma.</div></div>
-<div class="i"><div class="en">That's a new (<i>bloom</i> / <i>broom</i>). · I lost the (<i>lock</i> / <i>rock</i>). · We need new (<i>tiles</i> / <i>tires</i>).</div><div class="pt">É uma flor nova. / É uma vassoura nova. · Perdi o cadeado. / Perdi a pedra. · Precisamos de azulejos novos. / …de pneus novos.</div></div>
-</div>
-</section>
-
-<section id="s22">
-<div class="snum">Lições 44–47 · /k/ /g/ /m/ /n/ /ŋ/</div>
-<h2>Oclusivas finais e as três nasais</h2>
-<p class="sdesc">O /k/ inicial é explosivo; o /g/ final precisa de voz. E as três nasais se embolam justamente onde o português as apaga: <b>no fim da palavra</b>.</p>
-<div class="items">
-<div class="i"><div class="en">/k/ is very explosive in English. When it begins a word it must be said with strong aspiration. When <i>k</i> follows <i>s</i> (sky, skin, skate) it is <i>NOT</i> aspirated.</div><div class="pt">O /k/ inicial sai com sopro forte; depois de s, não.</div></div>
-<div class="i"><span class="tag">/k/</span><div class="en">come · can · car · key · quick · clock · walking · cookie · become · because · mechanic · like · make · took</div><div class="pt">O /k/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /k/ instead of /g/: <i>bag</i> will sound like <i>back</i>. · If you say /ŋ/ instead of /g/: <i>rug</i> will sound like <i>rung</i>.</div><div class="pt">"Bolsa" vira "costas"; "tapete" vira "tocou (sino)".</div><div class="def">Sempre faça as cordas vibrarem no /g/ final.</div></div>
-<div class="i"><span class="tag">/g/</span><div class="en">go · guess · get · green · bigger · cigar · hungry · agree · beg · dog · pig</div><div class="pt">O /g/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /n/ instead of /m/: <i>some</i> will sound like <i>sun</i>. · If you say /ŋ/ instead of /m/: <i>swim</i> will sound like <i>swing</i>.</div><div class="pt">"Algum" vira "sol"; "nadar" vira "balanço".</div><div class="def">No /m/, os lábios se juntam na posição de cantarolar: mmmmm.</div></div>
-<div class="i"><span class="tag">/m/</span><div class="en">me · mean · may · month · summer · army · hammer · among · am · time · him · room</div><div class="pt">O /m/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /m/ instead of /n/: <i>sun</i> will sound like <i>some</i>. · If you say /ŋ/ instead of /n/: <i>ran</i> will sound like <i>rang</i>.</div><div class="pt">"Sol" vira "algum"; "correu" vira "tocou".</div><div class="def">Pressione SEMPRE a ponta da língua na gengiva atrás dos dentes de cima, principalmente no fim da palavra.</div></div>
-<div class="i"><span class="tag">/n/</span><div class="en">nail · no · neck · new · dinner · any · many · tennis · in · fine · begin</div><div class="pt">O /n/ no começo, no meio e no fim.</div></div>
-<div class="i"><span class="tag err">o erro</span><div class="en">If you say /n/ instead of /ŋ/: <i>sung</i> will sound like <i>son/sun</i> · <i>rang</i> will sound like <i>ran</i>.</div><div class="pt">"Cantado" vira "filho/sol"; "tocou" vira "correu".</div><div class="def">A chave do /ŋ/ é levantar a parte <b>de trás</b> da língua — não a ponta.</div></div>
-<div class="i"><span class="tag">/ŋ/</span><div class="en">sting · running · anger · youngest · single · tongue · strong</div><div class="pt">O /ŋ/ no meio e no fim da palavra.</div></div>
-<div class="i"><div class="en">I'll call (<i>them</i> / <i>then</i>). · That (<i>bun</i> / <i>bum</i>). · We got (<i>some</i> / <i>sun</i>).</div><div class="pt">Vou ligar para eles. / Vou ligar depois. · Aquele pãozinho. / Aquele vagabundo. · A gente conseguiu um pouco. / A gente pegou sol.</div></div>
-<div class="i"><div class="en">I heard a (<i>bam</i> / <i>bang</i>). · You shouldn't (<i>sing</i> / <i>sin</i>).</div><div class="pt">Ouvi um baque. / Ouvi um estrondo. · Você não devia cantar. / Você não devia pecar.</div></div>
-<div class="i"><div class="en">The children like (<i>swinging</i> / <i>swimming</i>). · It's a small (<i>ping</i> / <i>pin</i>).</div><div class="pt">As crianças gostam de balanço. / As crianças gostam de nadar. · É um tinido pequeno. / É um alfinete pequeno.</div></div>
-<div class="i"><div class="en">Get rid of the (<i>gum</i> / <i>gun</i>). · Buy another (<i>hammer</i> / <i>hanger</i>).</div><div class="pt">Jogue fora o chiclete. / Jogue fora a arma. · Compre outro martelo. / Compre outro cabide.</div></div>
-</div>
-</section>
-
-  </main>
+</main>
 </div>
 
-<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês, o português e as notas de todos os itens.</div>
+<div class="empty" id="empty"><b>Nada encontrado</b>Tente outro termo &mdash; a busca cobre o inglês e o português de todos os itens e tabelas.</div>
 </div>
 
-<footer>Sistema 13 V02 · Livro 05 · English Pronunciation Made Simple &mdash; inglês real, tirado da fonte</footer>
+<footer>Sistema 24 V10 · Livro 04 · English Grammar: A Resource Book for Students — inglês real, tirado da fonte</footer>
 
 <script>
 (function(){
@@ -555,33 +722,41 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
         toclist=document.getElementById('toclist');
   const secs=[...art.querySelectorAll('section')];
 
+  // ── TOC gerado a partir das seções ──
   secs.forEach(s=>{
     const a=document.createElement('a');
-    a.href='#'+s.id;
-    a.textContent=s.querySelector('.snum').textContent+' — '+s.querySelector('h2').textContent;
+    a.href='#'+s.id; a.textContent=s.querySelector('h2').textContent;
     toclist.appendChild(a);
   });
   const links=[...toclist.querySelectorAll('a')];
 
+  // ── Unidades de busca: cada .i e cada <tr> do corpo das tabelas ──
   const units=[];
   secs.forEach(s=>{
-    s.querySelectorAll('.i').forEach(el=>{
+    s.querySelectorAll('.i, tbody tr').forEach(el=>{
       units.push({el, sec:s, txt:el.textContent.toLowerCase()});
     });
   });
   document.getElementById('m-total').textContent=units.length;
 
-  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
   units.forEach(u=>u.norm=norm(u.txt));
+
+  // Tabelas inteiras somem quando nenhuma das suas linhas casa com a busca,
+  // senão sobra um cabeçalho de tabela flutuando sem conteúdo.
+  const wraps=[...art.querySelectorAll('.tablewrap')].map(w=>({
+    el:w, rows:[...w.querySelectorAll('tbody tr')]
+  }));
 
   function run(){
     const raw=q.value.trim();
     sbox.classList.toggle('has-q', raw.length>0);
     if(!raw){
       units.forEach(u=>u.el.style.display='');
+      wraps.forEach(w=>w.el.style.display='');
       secs.forEach(s=>s.style.display='');
       empty.style.display='none';
-      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' blocos.';
+      info.innerHTML='<b>'+units.length+'</b> itens em '+secs.length+' estruturas gramaticais.';
       return;
     }
     const needle=norm(raw);
@@ -592,10 +767,13 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
       u.el.style.display=on?'':'none';
       if(on){hits++;live.add(u.sec);}
     });
+    wraps.forEach(w=>{
+      w.el.style.display=w.rows.some(r=>r.style.display!=='none')?'':'none';
+    });
     secs.forEach(s=>{s.style.display=live.has(s)?'':'none';});
     empty.style.display=hits?'none':'block';
     info.innerHTML=hits
-      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'bloco':'blocos')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
+      ? '<b>'+hits+'</b> '+(hits===1?'item':'itens')+' em <b>'+live.size+'</b> '+(live.size===1?'estrutura':'estruturas')+' para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;'
       : 'Nenhum resultado para &ldquo;'+raw.replace(/[<>&]/g,'')+'&rdquo;';
   }
   q.addEventListener('input',run);
@@ -603,6 +781,7 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
   q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run();}});
   run();
 
+  // ── Marca a seção visível no TOC ──
   const obs=new IntersectionObserver(es=>{
     es.forEach(e=>{
       if(e.isIntersecting){

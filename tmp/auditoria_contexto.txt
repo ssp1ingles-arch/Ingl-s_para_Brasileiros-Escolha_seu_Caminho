@@ -1,0 +1,578 @@
+AUDITORIA DE PAINEIS FORA DE CONTEXTO — 2026-08-06
+================================================================================
+
+METODO
+  Fonte: index.html dos 25 sistemas (eyebrow do card = hc-num, titulo = hc-title,
+  descricao = hc-desc, meta = hc-meta) + sistemas.json + tmp/relatorio_redistribuicao.txt.
+  136 paineis inventariados. Nenhum arquivo foi alterado.
+
+CAUSA-RAIZ CONFIRMADA
+  O relatorio da redistribuicao anterior (tmp/relatorio_redistribuicao.txt)
+  mostra que a classificacao produzia FAIXAS de sistemas, nao sistemas:
+
+      classificacao: c1c2 | faixa: S21-S25 | decisao: MOVER -> S21-S25
+
+  Dentro da faixa, o sistema final parece ter sido escolhido sem checar o tema.
+  Exemplos textuais do proprio relatorio:
+
+    - "04_nglish Grammar A Resource Book for Students.md"
+        classificacao c1c2 (justificativa: "LINGUISTICA universitaria")
+        -> faixa S21-S25 -> caiu no S24
+        Mas o card dele declara meta "A2-B1" num sistema declarado C1-C2.
+        Foi classificado pelo REGISTRO ACADEMICO, nao pelo nivel do aluno.
+
+    - "05_Perfecting your english pronunciation Susan Cameron.md"
+        classificacao c1c2 -> faixa S21-S25 -> caiu no S22 (Gramatica Avancada)
+        Livro de PRONUNCIA num sistema de GRAMATICA.
+
+    - "03_English Vocabulary in Use Upper-Intermediate.md" (duas edicoes)
+        classificacao b2 ("UPPER-INTERMEDIATE - declarado no titulo")
+        -> faixa S16-S20 -> cairam no S18 (Accent Training)
+        Dois livros de VOCABULARIO num sistema de SOTAQUE.
+
+    - "sistema10_conteudo.md" (Teste de nivel A1 ate C2)
+        decisao: INDEFINIDO ("cobre todos os niveis por definicao")
+        Ficou no S06 (Situar a Frase) sem relacao tematica nenhuma.
+
+  Ou seja: o problema descrito no pedido esta documentado no proprio historico.
+
+
+================================================================================
+PASSO 1 — MAPEAMENTO DOS 25 SISTEMAS
+================================================================================
+
+SISTEMA 01 — Criancas · Kids Box
+Tema central: cursos infantis (Cambridge/Oxford/DK) aproveitados pelo adulto iniciante
+Paineis:
+  [Livro 01] Kid's Box · Level 3
+  [Livro 02] Kid's Box · Level 4
+  [Livro 03] Grammar For Young Learners
+  [Livro 04] Junior — Beginner's Course
+SUSPEITOS: nenhum. Eyebrow uniforme, quatro cursos infantis.
+
+--------------------------------------------------------------------------------
+SISTEMA 02 — Criancas · Desenho Animado
+Tema central: aprender por cenas de serie animada, A1 -> B2
+Paineis: (nenhum painel-arquivo; o conteudo e inline no proprio index)
+SUSPEITOS: nenhum painel a auditar. NOTA ESTRUTURAL: unico sistema sem paineis.
+
+--------------------------------------------------------------------------------
+SISTEMA 03 — Ingles do Zero · Base Completa
+Tema central: "a base de tudo" — fundacao A1, consulta rapida, orientacao da plataforma
+Paineis:
+  [Material distribuido] Gramatica em Tabelas
+  [Material distribuido] Pronomes e Artigos
+  [Bloco 2026]          Tempos verbais e contrastes de uso
+SUSPEITOS:
+  - "Tempos verbais e contrastes de uso": eyebrow fora do padrao (unico Bloco 2026)
+    e conteudo parcialmente fora do A1 — a desc cita "rather x quite, want x crave",
+    que sao contrastes de registro B1-B2, nao base A1.
+
+--------------------------------------------------------------------------------
+SISTEMA 04 — Gramatica Basica
+Tema central: cinco livros de gramatica inicial em linguagem acessivel, A1-B1
+Paineis:
+  [Livro 01] Basic English Grammar Workbook For Dummies
+  [Livro 02] Big Fat Notebook — English Language Arts
+  [Livro 03] English Grammar For Dummies
+  [Livro 04] Grammar And Usage For Better Writing
+  [Livro 05] The Infographic Guide to Grammar
+SUSPEITOS: nenhum. Eyebrow uniforme, tema coeso.
+
+--------------------------------------------------------------------------------
+SISTEMA 05 — Motor de Verbos
+Tema central: o verbo ingles em todas as formas — 12 tempos, familias, modais
+Paineis:
+  [Material]    Familias de Verbos
+  [Modulo]      Gramatica Viva · 12 Tempos
+  [Material]    Dicionario de Verbos
+  [Material]    Modais e Phrasal Verbs
+  [Material]    Colocacoes Verbais
+  [Bloco 2026]  Be used to e os phrasal verbs
+  [Material]    GET Coloquial
+SUSPEITOS:
+  - Eyebrow inconsistente (Material x Modulo x Bloco 2026) — cosmetico, tema OK.
+  - "Colocacoes Verbais" e DUPLICATA do painel "Colocacoes Naturais" do S07:
+    a descricao dos dois e a mesma lista (make, do, have, get, take).
+
+--------------------------------------------------------------------------------
+SISTEMA 06 — Situar a Frase
+Tema central: preposicoes, quantificadores e estruturas fixas — lugar, tempo, quantidade
+Paineis:
+  [Material]    Preposicoes em Mapa
+  [Modulo]      Ingles do Zero · Preposicoes, Tempos e Estruturas
+  [Modulo]      Teste seu Nivel · 30 questoes A1->C2
+  [Modulo]      Went ou Gone · a duvida do passado
+  [Material]    Estruturas Fixas · chunks que montam a frase
+  [Material]    Preposicoes, Quantificadores e Frequencia
+  [Bloco 2026]  In, on, at e os quantificadores
+SUSPEITOS:
+  - "Teste seu Nivel · 30 questoes A1->C2": zero relacao com preposicoes. E um
+    instrumento de diagnostico da plataforma inteira. O relatorio anterior marcou
+    este arquivo como "INDEFINIDO - cobre todos os niveis por definicao".
+  - "Went ou Gone · a duvida do passado": duvida de forma verbal (past simple x
+    participio), nao de situar a frase.
+
+--------------------------------------------------------------------------------
+SISTEMA 07 — Conectar Frases
+Tema central: question words, conectivos e discourse markers — o que liga ideias
+Paineis:
+  [Material]    EVEN, SO e os Conectores
+  [Modulo]      Conversas do Dia a Dia · Question Words
+  [Modulo]      Colocacoes Naturais · make, do, have, get, take
+  [Modulo]      Expressoes Idiomaticas
+  [Material]    Conectivos e Question Words · referencia
+  [Bloco 2026]  A palavra exata
+SUSPEITOS:
+  - "Colocacoes Naturais · make, do, have, get, take": colocacao verbal nao e
+    conector. Alem disso duplica o "Colocacoes Verbais" do S05.
+  - "Expressoes Idiomaticas": idiom nao liga ideias. O S08 e o S12 ja tem
+    paineis dedicados a expressoes idiomaticas.
+  - "A palavra exata": parcial. "what x which" e question word (cabe), mas
+    "stop x cease / show x demonstrate" e contraste de registro (cabe no S15).
+
+--------------------------------------------------------------------------------
+SISTEMA 08 — Conversacao & Frases
+Tema central: seis livros de frases prontas, conversacao e erros do brasileiro
+Paineis:
+  [Livro 01] 1.006 Frases de Ingles
+  [Livro 02] Conversacao para Viagem
+  [Livro 03] 120 Frases para Conversa
+  [Livro 04] Frases & Musica
+  [Livro 05] Palavras, Numeros & Datas
+  [Livro 06] Erros que os Brasileiros Cometem
+SUSPEITOS: nenhum. Eyebrow uniforme, tema coeso.
+
+--------------------------------------------------------------------------------
+SISTEMA 09 — English for Everyone
+Tema central: colecao visual DK English for Everyone — fundamentos A1-A2
+Paineis:
+  [Livro 01] English Grammar Guide
+  [Livro 02] English Vocabulary Builder
+  [Livro 03] Practice Book · Nivel 1
+  [Livro 04] Practice Book · Nivel 2
+SUSPEITOS: nenhum. Sistema definido por COLECAO (DK), e os quatro sao DK.
+
+--------------------------------------------------------------------------------
+SISTEMA 10 — Reducoes e Pronuncia
+Tema central: o ingles falado real — reducoes, fala ligada, sistema de sons
+Paineis:
+  [Material]  Livro x Rua
+  [Modulo]    Os 5 Tipos de Reducao
+  [Material]  Como Entender Nativos
+  [Modulo]    Um Verbo, Todos os Tempos — Think
+  [Livro 01]  Rachel's English · Fala Ligada
+  [Livro 02]  Rachel's English · Sistema de Sons
+  [Material]  Erros de Som do Brasileiro
+SUSPEITOS:
+  - Eyebrow inconsistente (Material x Modulo x Livro) — cosmetico, tema OK.
+  - "Um Verbo, Todos os Tempos — Think": formato de tempos verbais, mas a coluna
+    "escrito -> falado" e reducao. Fica. Suspeita fraca.
+
+--------------------------------------------------------------------------------
+SISTEMA 11 — American English File
+Tema central: curso AEF (Oxford) 3a ed., niveis 1 a 4 — a colecao e nada alem
+Paineis:
+  [Livro 01] American English File 1
+  [Livro 02] American English File 2
+  [Livro 03] American English File 3
+  [Livro 04] American English File 4
+SUSPEITOS: nenhum. O sistema mais coeso do projeto.
+
+--------------------------------------------------------------------------------
+SISTEMA 12 — Exercicios e Vocabulario
+Tema central: series "in Use" (Cambridge) + Practice Makes Perfect, nivel intermediario
+Paineis:
+  [Livro 01] Grammar in Use — Supplementary
+  [Livro 02] Essential Grammar in Use
+  [Livro 03] English Collocations in Use
+  [Livro 04] English Idioms in Use
+  [Livro 05] English Phrasal Verbs in Use
+  [Livro 06] Practice Makes Perfect — English Conversation
+SUSPEITOS:
+  - "Essential Grammar in Use" e o MESMO livro do "Livro 04" do S13
+    (Murphy · Cambridge · versao elementar). Duplicata entre sistemas.
+
+--------------------------------------------------------------------------------
+SISTEMA 13 — Gramatica em Uso
+Tema central: livros de GRAMATICA em painel de exemplos reais, A1-B2
+Paineis:
+  [Livro 01] English Grammar in Use
+  [Livro 02] Grammar Practice for Intermediate
+  [Livro 03] Oxford Guide to English Grammar
+  [Livro 04] Essential Grammar in Use
+  [Livro 05] English Pronunciation Made Simple
+SUSPEITOS:
+  - "English Pronunciation Made Simple": PRONUNCIA num sistema declarado de
+    gramatica ("Livros de gramatica do ingles transformados em paineis").
+    A desc e pares minimos e erro de som — exatamente o escopo do S10.
+  - "Essential Grammar in Use": duplicata do Livro 02 do S12.
+
+--------------------------------------------------------------------------------
+SISTEMA 14 — In Use Series
+Tema central: serie "in Use" (Cambridge) + Practice Makes Perfect (McGraw-Hill)
+Paineis:
+  [Livro 01] PMP — Complete English All-in-One for ESL     -> aponta p/ livro02.html
+  [Livro 02] English Vocabulary in Use — Elementary        -> aponta p/ livro01.html
+  [Livro 03] English Pronunciation in Use — Elementary
+  [Livro 04] Grammar in Use — Intermediate
+  [Livro 05] PMP — English Vocabulary for Beginning ESL
+  [Livro 06] PMP — English Verbs
+SUSPEITOS:
+  - DEFEITO ESTRUTURAL: os cards "Livro 01" e "Livro 02" tem os hrefs TROCADOS.
+    O card rotulado Livro 01 abre livro02.html e vice-versa. O rotulo mente
+    sobre o arquivo. (Nao quebra o link — so desalinha a numeracao.)
+  - Tema coeso: o sistema e definido por SERIE editorial, e os seis sao da serie.
+
+--------------------------------------------------------------------------------
+SISTEMA 15 — Duvidas Pontuais
+Tema central: fichas de referencia rapida — a duvida, a regra, o erro classico
+Paineis:
+  [Material]    Falar Melhor
+  [Referencia]  Duvidas de Gramatica
+  [Referencia]  Vocabulario de Referencia
+  [Bloco 2026]  Contrastes de vocabulario
+  [Bloco 2026]  Descrever com precisao
+  [Material]    Falsos Cognatos
+SUSPEITOS:
+  - Eyebrow inconsistente (Material x Referencia x Bloco 2026) — cosmetico.
+  - "Falar Melhor": nao e duvida pontual, e registro + frase pronta de situacao
+    (hotel, restaurante, entrevista). Isso e literalmente a definicao do S21.
+  - "Vocabulario de Referencia": banco de vocabulario, nao ficha de duvida.
+    Suspeita fraca — cabe como "referencia".
+
+--------------------------------------------------------------------------------
+SISTEMA 16 — Pratica Completa · 4 Pilares
+Tema central: treino de PRODUCAO em quatro pilares — estrutura fechada e nomeada
+Paineis:
+  [PILAR 1]     Frases Crescentes
+  [PILAR 2]     1.000 Frases do Ingles Real
+  [PILAR 3]     Padroes que Desbloqueiam Tudo
+  [PILAR 4]     150 Textos com Contexto Visual
+  [Bloco 2026]  Presente e as palavras do trabalho
+SUSPEITOS:
+  - "Presente e as palavras do trabalho": O CASO MAIS EVIDENTE DO PROJETO.
+    O sistema se chama "4 Pilares" e os eyebrows sao PILAR 1..4 — uma estrutura
+    fechada. Um quinto card com eyebrow "Bloco 2026" quebra a promessa do titulo.
+    Alem disso o conteudo (present simple x continuous, work/job/career) e
+    gramatica+vocabulario A2, nao treino de producao B1-B2.
+
+--------------------------------------------------------------------------------
+SISTEMA 17 — Transcricoes e Canais
+Tema central: transcricoes reais de canais e podcasts, revisadas fala por fala
+Paineis: 16 cards, todos [Canal] — All Ears English, Kendry, Basic English Speaking,
+  Daily American English, Derek Polyglot, English Coach Chad, English Cozy Chat,
+  English Evolution Step 1, English Speaking TV, English With Collins,
+  English With Kayla, English is EZ with Connor, Fale ingles agora,
+  Ingles com Frases, Luke's English Podcast, The Whole Human Experience
+SUSPEITOS: nenhum. 16/16 com eyebrow identico e tema identico.
+
+--------------------------------------------------------------------------------
+SISTEMA 18 — Accent Training
+Tema central declarado no titulo/pasta: TREINO DE SOTAQUE americano
+Paineis:
+  [Livro 01] American Accent Training                                  (sotaque)
+  [Livro 02] Mastering the American Accent                             (sotaque)
+  [Livro 03] English Vocabulary in Use — Upper-Intermediate 2a ed 2001 (vocabulario)
+  [Livro 04] English Vocabulary in Use — Upper-Intermediate 1a ed 1994 (vocabulario)
+SUSPEITOS:
+  - Livro 03 e Livro 04: dois livros de VOCABULARIO num sistema de SOTAQUE.
+    A desc do Livro 03 e "formacao de palavras, conectores, contaveis e
+    incontaveis, expressoes idiomaticas" — nada de pronuncia.
+  - EVIDENCIA FORTE: o H1 do sistema teve de ser reescrito para
+    "Baseado em Livros — Sotaque & Vocabulario" para acomodar os intrusos,
+    enquanto a PASTA e o titulo em sistemas.json continuam "Accent Training".
+    Quando o sistema precisa mudar de nome para caber o painel, o painel e que
+    esta no lugar errado.
+
+--------------------------------------------------------------------------------
+SISTEMA 19 — Business & Avancado
+Tema central: braco profissional/alto da colecao DK English for Everyone
+Paineis:
+  [Livro 01] Business English · Nivel 1
+  [Livro 02] Business English · Nivel 2
+  [Livro 03] Course Book · Nivel 3
+  [Livro 04] Practice Book · Nivel 4
+SUSPEITOS:
+  - Livro 03 e 04 nao sao "business", sao curso geral DK nivel 3 e 4. Mas o
+    sistema e definido por COLECAO e o titulo ja diz "& Avancado". Aceitavel.
+    Suspeita fraca, sem proposta de movimento.
+
+--------------------------------------------------------------------------------
+SISTEMA 20 — B2 First
+Tema central: a serie completa B2 First (Cambridge), cinco volumes
+Paineis:
+  [Livro 01] B2 First 1 — with Answers
+  [Livro 02] B2 First 2 — with Answers
+  [Livro 03] B2 First 3 — with Answers
+  [Livro 04] B2 First 4 — for Schools
+  [Livro 05] B2 First 5 — Student's Book with Answers
+SUSPEITOS: nenhum. Serie fechada, cinco de cinco.
+
+--------------------------------------------------------------------------------
+SISTEMA 21 — Pronuncia & Conversacao
+Tema central: a frase pronta para a situacao inteira + pares minimos
+Paineis:
+  [Livro 01] Speak English: 30 Days to Better English
+  [Livro 03] Everyday Dialogues
+  [Livro 04] Pronouncing American English
+SUSPEITOS:
+  - DEFEITO ESTRUTURAL: nao existe "Livro 02". A numeracao pula de 01 para 03.
+    O lead explica (English Pronunciation in Use Intermediate aguarda reconversao
+    do OCR), mas o card ausente deixa um buraco visivel na sequencia.
+  - Tema coeso nos tres paineis existentes.
+
+--------------------------------------------------------------------------------
+SISTEMA 22 — Gramatica Avancada · Proficiency
+Tema central: GRAMATICA C1-C2 — nuance de uso, o maior dos sistemas avancados
+Paineis:
+  [Livro 01] Objective Proficiency                      (gramatica)
+  [Livro 02] Advanced Grammar in Use                    (gramatica)
+  [Livro 03] Grammar and Vocabulary for Advanced        (gramatica+vocab)
+  [Livro 04] Advanced Language Practice                 (gramatica+colocacao)
+  [Livro 05] Complete Advanced                          (gramatica)
+  [Livro 06] English Vocabulary in Use — Advanced       (vocabulario)
+  [Livro 07] English Pronunciation in Use — Advanced    (pronuncia)
+  [Livro 08] Reactivate Your Grammar & Vocabulary C1/C2 (gramatica)
+  [Livro 09] Perfecting Your English Pronunciation      (pronuncia)
+SUSPEITOS:
+  - Livro 09 (Susan Cameron): pronuncia num sistema de gramatica, E com conteudo
+    de nivel BASICO para brasileiro — a desc cita "th x t/d, r x l, b x v x w,
+    ship x sheep", que e exatamente o painel "Erros de Som do Brasileiro" do S10.
+    Foi classificado c1c2 no relatorio anterior por ser "coaching de fala para
+    atores" — registro profissional, nao dificuldade linguistica.
+  - Livro 07 (EPIU Advanced): pronuncia num sistema de gramatica. O NIVEL bate
+    (C1-C2, stress shift, prosodia), so o tema e que nao. Suspeita media.
+
+--------------------------------------------------------------------------------
+SISTEMA 23 — Gramatica Avancada · Oxford
+Tema central: segundo volume C1-C2 — Oxford, Cambridge CAE/CPE, Close-up
+Paineis:
+  [Livro 01] Oxford English Grammar Course — Advanced
+  [Livro 02] English Vocabulary in Use — Advanced
+  [Livro 03] Grammar and Vocabulary for Cambridge Advanced and Proficiency
+  [Livro 04] New English File — Advanced
+  [Livro 05] Close-up C1
+  [Livro 06] Close-up C2
+SUSPEITOS: nenhum acionavel.
+  - Livro 02 coincide com o Livro 06 do S22 (ambos EVIU Advanced), mas a propria
+    desc explica que sao edicoes diferentes com recorte complementar. Justificado.
+
+--------------------------------------------------------------------------------
+SISTEMA 24 — Gramatica Avancada · Cambridge
+Tema central: terceiro volume C1-C2 — vocabulario alto, ingles academico
+Paineis:
+  [Livro 01] Advancing Vocabulary Skills                        meta: C1-C2
+  [Livro 02] English Advancing — A Bridge to Success            meta: C1
+  [Livro 03] New Cambridge Advanced English                     meta: C1-C2
+  [Livro 04] English Grammar — A Resource Book for Students     meta: A2-B1  <<<
+SUSPEITOS:
+  - Livro 04: o proprio card declara "A2-B1" dentro de um sistema declarado
+    "C1-C2" no eyebrow da pagina. Contradicao explicita na propria metadata.
+    O relatorio anterior o classificou como c1c2 pela justificativa
+    "LINGUISTICA universitaria" — ou seja, pelo registro do texto, nao pelo
+    nivel de ingles exigido do aluno.
+
+--------------------------------------------------------------------------------
+SISTEMA 25 — Vocabulario & Oratoria
+Tema central: a palavra certa (raiz grega/latina) e o jeito de dize-la (oratoria)
+Paineis:
+  [Livro 01] Vocabulary Builder
+  [Livro 02] Talk Like TED
+  [Livro 03] The Art of Public Speaking
+  [Livro 04] 4000 Essential English Words · Book 6
+SUSPEITOS: nenhum. Os quatro cabem em "vocabulario" ou "oratoria".
+
+
+================================================================================
+PASSO 2 — CLASSIFICACAO DOS DESLOCADOS
+================================================================================
+
+CRITERIO (a) — EYEBROW FORA DO PADRAO DO SISTEMA
+  S16  Presente e as palavras do trabalho      [Bloco 2026] entre PILAR 1..4   CRITICO
+  S03  Tempos verbais e contrastes de uso      [Bloco 2026] entre Material distribuido
+  S05  Be used to e os phrasal verbs           [Bloco 2026] entre Material/Modulo
+  S06  In, on, at e os quantificadores         [Bloco 2026] entre Material/Modulo
+  S07  A palavra exata                         [Bloco 2026] entre Material/Modulo
+  S15  Contrastes de vocabulario               [Bloco 2026] entre Material/Referencia
+  S15  Descrever com precisao                  [Bloco 2026] entre Material/Referencia
+
+  NOTA: os 7 paineis "Bloco 2026" sao um LOTE unico (mesma meta: "N blocos /
+  M itens / + traducao") que foi fatiado por nivel entre 6 sistemas. Nem todos
+  estao no lugar errado — S05, S06 e S15 receberam paineis que batem com o tema.
+  So o do S16 e tematicamente incompativel. Os demais sao ruido visual de rotulo.
+
+CRITERIO (b) — TEMA NAO BATE COM O PROPOSITO DO SISTEMA
+  S18  EVIU Upper-Intermediate 2a ed        vocabulario em sistema de sotaque   CRITICO
+  S18  EVIU Upper-Intermediate 1a ed        vocabulario em sistema de sotaque   CRITICO
+  S22  Perfecting Your English Pronunciation pronuncia em sistema de gramatica  CRITICO
+  S13  English Pronunciation Made Simple     pronuncia em sistema de gramatica  ALTO
+  S06  Teste seu Nivel A1->C2                diagnostico em sistema de preposicoes ALTO
+  S16  Presente e as palavras do trabalho    gramatica A2 em sistema de producao ALTO
+  S07  Expressoes Idiomaticas                idioms em sistema de conectores     MEDIO
+  S06  Went ou Gone                          forma verbal em sistema de preposicoes MEDIO
+  S15  Falar Melhor                          frase de situacao em sistema de duvidas MEDIO
+  S22  English Pronunciation in Use Advanced pronuncia em sistema de gramatica  MEDIO
+  S07  A palavra exata                       parcialmente contraste de registro  BAIXO
+  S03  Tempos verbais e contrastes de uso    parcialmente acima do A1            BAIXO
+
+CRITERIO (c) — CAIU SO PORQUE O NIVEL BATIA, EXISTINDO SISTEMA MAIS ESPECIFICO
+  S24  English Grammar — A Resource Book     declara A2-B1 em sistema C1-C2      CRITICO
+  S07  Colocacoes Naturais                   S05 ja tem o painel identico        ALTO
+
+DEFEITOS ESTRUTURAIS (nao sao deslocamento, mas apareceram na auditoria)
+  S14  cards "Livro 01"/"Livro 02" com hrefs trocados
+  S21  numeracao pula o "Livro 02" (arquivo nao existe)
+  S05/S07  "Colocacoes Verbais" e "Colocacoes Naturais" sao o mesmo conteudo
+  S12/S13  "Essential Grammar in Use" duplicado nos dois sistemas
+  S02  unico sistema sem nenhum painel-arquivo
+
+
+================================================================================
+PASSO 3 — PROPOSTA DE REDISTRIBUICAO
+================================================================================
+(nenhum movimento executado — so proposta)
+
+--- PRIORIDADE 1 — CRITICOS ------------------------------------------------
+
+PAINEL: English Vocabulary in Use — Upper-Intermediate · 2a edicao (2001)
+SISTEMA ATUAL: Sistema 18 — Accent Training (livro03.html)
+MOTIVO DO DESLOCAMENTO: livro de vocabulario num sistema de treino de sotaque; entrou por faixa b2 -> S16-S20
+SISTEMA SUGERIDO: Sistema 14 — In Use Series
+MOTIVO: e a casa declarada da serie "in Use" da Cambridge, que ja hospeda o volume Elementary
+
+PAINEL: English Vocabulary in Use — Upper-Intermediate · 1a edicao (1994)
+SISTEMA ATUAL: Sistema 18 — Accent Training (livro04.html)
+MOTIVO DO DESLOCAMENTO: mesma causa do anterior; as duas edicoes viajaram juntas
+SISTEMA SUGERIDO: Sistema 14 — In Use Series
+MOTIVO: manter as duas edicoes lado a lado na serie a que pertencem, como ja estao hoje
+
+  >> Efeito colateral desejado: o S18 volta a ser so "Accent Training" (2 paineis)
+     e o H1 pode voltar de "Sotaque & Vocabulario" para "Sotaque".
+
+PAINEL: Perfecting Your English Pronunciation
+SISTEMA ATUAL: Sistema 22 — Gramatica Avancada · Proficiency (livro09.html)
+MOTIVO DO DESLOCAMENTO: livro de pronuncia num sistema de gramatica; classificado c1c2 por ser "coaching para atores", nao por dificuldade
+SISTEMA SUGERIDO: Sistema 18 — Accent Training
+MOTIVO: e exatamente o mesmo genero de Ann Cook e Lisa Mojsin — treino de sotaque com contraste de sons e ritmo
+
+PAINEL: English Grammar — A Resource Book for Students
+SISTEMA ATUAL: Sistema 24 — Gramatica Avancada · Cambridge (livro04.html)
+MOTIVO DO DESLOCAMENTO: o card declara A2-B1 num sistema cujo eyebrow declara C1-C2
+SISTEMA SUGERIDO: Sistema 13 — Gramatica em Uso
+MOTIVO: gramatica descritiva de referencia, ao lado do Oxford Guide (Eastwood), na faixa de nivel que ele mesmo declara
+
+PAINEL: Presente e as palavras do trabalho
+SISTEMA ATUAL: Sistema 16 — Pratica Completa · 4 Pilares (presente-e-palavras-do-trabalho.html)
+MOTIVO DO DESLOCAMENTO: quinto card num sistema cujo nome e estrutura prometem exatamente quatro pilares
+SISTEMA SUGERIDO: Sistema 15 — Duvidas Pontuais
+MOTIVO: o conteudo e contraste (present simple x continuous) e distincao lexical (work/job/career) — o formato dos outros "Bloco 2026" do S15
+
+--- PRIORIDADE 2 — ALTOS ---------------------------------------------------
+
+PAINEL: English Pronunciation Made Simple
+SISTEMA ATUAL: Sistema 13 — Gramatica em Uso (livro05.html)
+MOTIVO DO DESLOCAMENTO: pronuncia num sistema declarado "livros de gramatica"
+SISTEMA SUGERIDO: Sistema 10 — Reducoes e Pronuncia
+MOTIVO: pares minimos e mapa de erro de som sao o escopo exato do painel "Erros de Som do Brasileiro"; mesmo nivel (nivel-03), sem mudanca de faixa
+
+PAINEL: Teste seu Nivel · 30 questoes A1->C2
+SISTEMA ATUAL: Sistema 06 — Situar a Frase (teste-seu-nivel.html)
+MOTIVO DO DESLOCAMENTO: instrumento de diagnostico da plataforma inteira alojado num sistema de preposicoes
+SISTEMA SUGERIDO: Sistema 03 — Ingles do Zero · Base Completa
+MOTIVO: e o sistema de orientacao ("a base de tudo", o mapa dos 25 sistemas) — o lugar onde o aluno decide por onde comecar
+ALTERNATIVA MELHOR: promover para a raiz (link no index.html ou nas paginas de nivel), ja que o teste nao pertence a nivel nenhum
+
+PAINEL: Colocacoes Naturais · make, do, have, get, take
+SISTEMA ATUAL: Sistema 07 — Conectar Frases (colocacoes-naturais.html)
+MOTIVO DO DESLOCAMENTO: colocacao verbal nao e conector; e duplicata do "Colocacoes Verbais" do S05
+SISTEMA SUGERIDO: Sistema 05 — Motor de Verbos (com FUSAO no painel existente)
+MOTIVO: os dois paineis descrevem a mesma lista de verbos; manter dois e dividir o mesmo conteudo entre dois sistemas
+
+--- PRIORIDADE 3 — MEDIOS --------------------------------------------------
+
+PAINEL: Expressoes Idiomaticas
+SISTEMA ATUAL: Sistema 07 — Conectar Frases (expressoes-idiomaticas.html)
+MOTIVO DO DESLOCAMENTO: idiom nao liga ideias; nao pertence ao tema "conectar frases"
+SISTEMA SUGERIDO: Sistema 08 — Conversacao & Frases
+MOTIVO: o S08 ja tem "120 Frases para Conversa · 60 expressoes idiomaticas"; mesmo nivel (nivel-02), sem mudanca de faixa
+
+PAINEL: Went ou Gone · a duvida do passado
+SISTEMA ATUAL: Sistema 06 — Situar a Frase (went-ou-gone.html)
+MOTIVO DO DESLOCAMENTO: duvida de forma verbal alojada num sistema de preposicoes
+SISTEMA SUGERIDO: Sistema 15 — Duvidas Pontuais
+MOTIVO: o titulo do painel e literalmente "a duvida do passado" — o template do S15 e "a duvida, a regra, o erro classico"
+ALTERNATIVA: Sistema 05 — Motor de Verbos, se o criterio for topico (forma verbal) e nao formato
+
+PAINEL: Falar Melhor
+SISTEMA ATUAL: Sistema 15 — Duvidas Pontuais (falar-melhor.html)
+MOTIVO DO DESLOCAMENTO: nao e ficha de duvida, e registro + frase pronta por situacao
+SISTEMA SUGERIDO: Sistema 21 — Pronuncia & Conversacao
+MOTIVO: o lead do S21 e "a frase pronta para a situacao inteira"; "Falar Melhor" traz hotel, restaurante e entrevista. Mesmo nivel (nivel-03). Bonus: preenche o buraco do "Livro 02" ausente
+
+PAINEL: English Pronunciation in Use — Advanced
+SISTEMA ATUAL: Sistema 22 — Gramatica Avancada · Proficiency (livro07.html)
+MOTIVO DO DESLOCAMENTO: pronuncia num sistema de gramatica
+SISTEMA SUGERIDO: manter, OU mover para Sistema 18 junto com o Cameron
+MOTIVO: o nivel (C1-C2, stress shift, prosodia) casa com o S22 e nao casa com o S18 (nivel-04). Unico caso em que mover piora o nivel — decisao sua
+
+--- NAO PROPOR MOVIMENTO (suspeita fraca, registrada para conhecimento) ----
+
+  S07  A palavra exata                    metade cabe (what x which), metade nao
+  S03  Tempos verbais e contrastes de uso  so os pares rather/quite fogem do A1
+  S15  Vocabulario de Referencia           banco, mas "Referencia" e eyebrow valido
+  S10  Um Verbo, Todos os Tempos — Think   a coluna escrito->falado justifica ficar
+  S19  Course Book 3 / Practice Book 4     nao sao business, mas sao a colecao DK
+
+
+================================================================================
+PASSO 4 — RESUMO
+================================================================================
+
+TOTAL DE SISTEMAS COM PAINEIS SUSPEITOS: 11 de 25
+
+  Sistema 03, 05, 06, 07, 13, 14, 15, 16, 18, 22, 24
+  (S14 e S21 entram so por defeito estrutural, nao por deslocamento tematico)
+
+PAINEIS DESLOCADOS COM PROPOSTA DE MOVIMENTO: 12
+
+  CRITICO (5)   S18 livro03  EVIU Upper-Int 2a ed          -> S14
+                S18 livro04  EVIU Upper-Int 1a ed          -> S14
+                S22 livro09  Perfecting Your Pronunciation -> S18
+                S24 livro04  English Grammar Resource Book -> S13
+                S16          Presente e palavras do trabalho -> S15
+
+  ALTO (3)      S13 livro05  English Pronunciation Made Simple -> S10
+                S06          Teste seu Nivel A1->C2        -> S03 (ou raiz)
+                S07          Colocacoes Naturais           -> S05 (fusao)
+
+  MEDIO (4)     S07          Expressoes Idiomaticas        -> S08
+                S06          Went ou Gone                  -> S15
+                S15          Falar Melhor                  -> S21
+                S22 livro07  EPIU Advanced                 -> S18 (ou manter)
+
+SISTEMAS 100% COERENTES (sem nenhum suspeito): 11 de 25
+
+  Sistema 01 — Criancas · Kids Box
+  Sistema 04 — Gramatica Basica
+  Sistema 08 — Conversacao & Frases
+  Sistema 09 — English for Everyone
+  Sistema 11 — American English File          (o mais coeso do projeto)
+  Sistema 17 — Transcricoes e Canais          (16/16 identicos)
+  Sistema 20 — B2 First
+  Sistema 23 — Gramatica Avancada · Oxford
+  Sistema 25 — Vocabulario & Oratoria
+  Sistema 02 — Criancas · Desenho Animado     (coerente, mas nao tem paineis)
+  Sistema 19 — Business & Avancado            (coerente por colecao; ressalva fraca)
+
+SISTEMAS COERENTES NO TEMA, INCONSISTENTES SO NO ROTULO (eyebrow): 3
+  Sistema 05, Sistema 10, Sistema 12
+  (Material x Modulo x Livro x Referencia misturados — correcao cosmetica,
+   nao exige mover nada)
+
+PADRAO ENCONTRADO
+  Dos 12 deslocados, 4 sao livros de PRONUNCIA espalhados por sistemas de
+  gramatica e vocabulario (S13, S22 x2, e o proprio S18 recebendo vocabulario
+  em troca). Existem hoje SEIS sistemas hospedando conteudo de pronuncia:
+  S10, S13, S14, S18, S21 e S22. Se houver um segundo passo depois deste,
+  consolidar pronuncia e o ganho estrutural maior do projeto.

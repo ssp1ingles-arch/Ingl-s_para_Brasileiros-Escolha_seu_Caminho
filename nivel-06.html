@@ -74,13 +74,26 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 .breadcrumb{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 24px 2px;}
 @media(max-width:560px){.breadcrumb{padding-left:20px;padding-right:20px;}}
 </style>
-</head>
+<style id="tb-css">
+.topbar{position:sticky;top:0;z-index:1000;background:#0a0a0a;border-bottom:1px solid #1f2937;}
+.topbar-in{display:flex;align-items:center;gap:.9rem;min-height:59px;max-width:1180px;margin:0 auto;padding:1rem 1.5rem;}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;flex:none;font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:600;color:#6b7280;text-decoration:none;padding:.4rem .75rem;border:1px solid #1f2937;border-radius:6px;white-space:nowrap;transition:color .15s,border-color .15s;}
+.back-btn:hover{color:#e5e7eb;border-color:#374151;}
+.topbar-t{min-width:0;font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.searchbar{top:60px;background:#0a0a0a;}
+.toc-wrap{top:60px;height:calc(100vh - 60px);}
+.search-wrap{position:sticky;top:60px;z-index:90;background:#0a0a0a;padding:10px 0 4px;}
+@media(max-width:560px){
+  .topbar-in{gap:.6rem;min-height:50px;padding:.7rem 1rem;}
+  .searchbar,.toc-wrap,.search-wrap{top:51px;}
+  .toc-wrap{height:calc(100vh - 51px);}
+}
+</style></head>
 <body>
 
 <div class="bg-glow"></div>
 
-<a href="index.html" class="back">← Voltar aos níveis</a>
-
+<div class="topbar"><div class="topbar-in"><a href="index.html" class="back-btn">&#8592; Voltar aos n&iacute;veis</a><span class="topbar-t">Nível 6 · Kids</span></div></div>
 <header class="painel-header">
   <div class="marca"><span>🧒</span> Inglês para Brasileiros</div>
   <h1><em>Nível 6 · Kids — Aprendizado Infantil</em></h1>
@@ -96,7 +109,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
           <div class="portal-icon">🧸</div>
         </div>
         <h2 class="portal-title">Crianças · Kids Box</h2>
-        <p class="portal-desc">Kid&#x27;s Box (Cambridge), níveis 3 e 4, mais dois cursos infantis que entraram na reorganização por nível: o Grammar For Young Learners (Oxford) e o English for Everyone Junior (DK). Inglês feito para criança — e por isso mesmo ideal para o adulto que está começando: frases curtas, canções e chants, uma estrutura por vez. Quatro livros, quatro painéis, do vocabulário básico ao passado completo e às orações com who, where, because e so.</p>
+        <p class="portal-desc">Kid's Box (Cambridge), níveis 3 e 4, mais dois cursos infantis que entraram na reorganização por nível: o Grammar For Young Learners (Oxford) e o English for Everyone Junior (DK). Inglês feito para criança — e por isso mesmo ideal para o adulto que está começando: frases curtas, canções e chants, uma estrutura por vez. Quatro livros, quatro painéis, do vocabulário básico ao passado completo e às orações com who, where, because e so.</p>
         <div class="portal-meta"><span>4 livros</span><span>631 frases</span><span>Kids</span></div>
         <div class="portal-cta">Entrar →</div>
       </a>

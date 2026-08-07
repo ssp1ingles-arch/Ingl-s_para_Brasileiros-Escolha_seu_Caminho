@@ -104,10 +104,24 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
 .breadcrumb .cur{color:#9ca3af;}
 .breadcrumb{margin:4px 0 18px;}
 </style>
-</head>
+<style id="tb-css">
+.topbar{position:sticky;top:0;z-index:1000;background:#0a0a0a;border-bottom:1px solid #1f2937;}
+.topbar-in{display:flex;align-items:center;gap:.9rem;min-height:59px;max-width:1180px;margin:0 auto;padding:1rem 1.5rem;}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;flex:none;font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:600;color:#6b7280;text-decoration:none;padding:.4rem .75rem;border:1px solid #1f2937;border-radius:6px;white-space:nowrap;transition:color .15s,border-color .15s;}
+.back-btn:hover{color:#e5e7eb;border-color:#374151;}
+.topbar-t{min-width:0;font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.searchbar{top:60px;background:#0a0a0a;}
+.toc-wrap{top:60px;height:calc(100vh - 60px);}
+.search-wrap{position:sticky;top:60px;z-index:90;background:#0a0a0a;padding:10px 0 4px;}
+@media(max-width:560px){
+  .topbar-in{gap:.6rem;min-height:50px;padding:.7rem 1rem;}
+  .searchbar,.toc-wrap,.search-wrap{top:51px;}
+  .toc-wrap{height:calc(100vh - 51px);}
+}
+</style></head>
 <body>
 <div class="bg-glow"></div>
-<a href="./index.html" class="back">&#8592; Voltar ao Sistema 20</a>
+<div class="topbar"><div class="topbar-in"><a href="./index.html" class="back-btn">&#8592; Voltar ao Sistema 20</a><span class="topbar-t">B2 First 4 — for Schools</span></div></div>
 <div class="wrap">
 <nav class="breadcrumb" aria-label="Trilha"><a href="../index.html">Inglês para Brasileiros</a><span class="sep">&rsaquo;</span><a href="../nivel-04.html">Nível 4 · B2</a><span class="sep">&rsaquo;</span><a href="./index.html">B2 First</a><span class="sep">&rsaquo;</span><span class="cur">B2 First 4 — for Schools</span></nav>
 

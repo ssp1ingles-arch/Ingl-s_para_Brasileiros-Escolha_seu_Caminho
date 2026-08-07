@@ -74,13 +74,26 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 .breadcrumb{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 24px 2px;}
 @media(max-width:560px){.breadcrumb{padding-left:20px;padding-right:20px;}}
 </style>
-</head>
+<style id="tb-css">
+.topbar{position:sticky;top:0;z-index:1000;background:#0a0a0a;border-bottom:1px solid #1f2937;}
+.topbar-in{display:flex;align-items:center;gap:.9rem;min-height:59px;max-width:1180px;margin:0 auto;padding:1rem 1.5rem;}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;flex:none;font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:600;color:#6b7280;text-decoration:none;padding:.4rem .75rem;border:1px solid #1f2937;border-radius:6px;white-space:nowrap;transition:color .15s,border-color .15s;}
+.back-btn:hover{color:#e5e7eb;border-color:#374151;}
+.topbar-t{min-width:0;font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.searchbar{top:60px;background:#0a0a0a;}
+.toc-wrap{top:60px;height:calc(100vh - 60px);}
+.search-wrap{position:sticky;top:60px;z-index:90;background:#0a0a0a;padding:10px 0 4px;}
+@media(max-width:560px){
+  .topbar-in{gap:.6rem;min-height:50px;padding:.7rem 1rem;}
+  .searchbar,.toc-wrap,.search-wrap{top:51px;}
+  .toc-wrap{height:calc(100vh - 51px);}
+}
+</style></head>
 <body>
 
 <div class="bg-glow"></div>
 
-<a href="index.html" class="back">← Voltar aos níveis</a>
-
+<div class="topbar"><div class="topbar-in"><a href="index.html" class="back-btn">&#8592; Voltar aos n&iacute;veis</a><span class="topbar-t">Nível 3 · B1</span></div></div>
 <header class="painel-header">
   <div class="marca"><span>📘</span> Inglês para Brasileiros</div>
   <h1><em>Nível 3 · B1 — Intermediário</em></h1>
@@ -96,8 +109,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
           <div class="portal-icon">🎙️</div>
         </div>
         <h2 class="portal-title">Reduções e Pronúncia</h2>
-        <p class="portal-desc">O inglês que nativos falam — não o que ensinam. Wanna, gonna, gotta e as reduções do dia a dia, com músicas, filmes e treino de ouvido. Mais o livro Rachel&#x27;s English em 2 painéis: fala ligada (208 itens) e o sistema de sons — vogais, ditongos, consoantes, encontros e tônica (183 itens), tudo com fonética. E o painel Livro x Rua: 118 itens com a frase do livro ao lado da que o nativo realmente fala, respostas curtas automáticas e as siglas da internet.</p>
-        <div class="portal-meta"><span>3 módulos + 2 livros + 1 painel</span><span>B1–B2</span><span>Reduções + IPA</span></div>
+        <p class="portal-desc">O inglês que nativos falam — não o que ensinam. Wanna, gonna, gotta e as reduções do dia a dia, com músicas, filmes e treino de ouvido. Mais o livro Rachel's English em 2 painéis: fala ligada (208 itens) e o sistema de sons — vogais, ditongos, consoantes, encontros e tônica (183 itens), tudo com fonética. O painel Livro x Rua: 118 itens com a frase do livro ao lado da que o nativo realmente fala. E o English Pronunciation Made Simple (Dale &amp; Poms), vindo do Sistema 13: pares mínimos e o mapa das confusões de som do brasileiro.</p>
+        <div class="portal-meta"><span>3 livros + 5 painéis</span><span>B1–B2</span><span>Reduções + IPA</span></div>
         <div class="portal-cta">Entrar →</div>
       </a>
       <a href="Sistema%2011%20%E2%80%94%20American%20English%20File/index.html" class="portal-card" style="--accent:#22D3EE">
@@ -126,7 +139,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
           <div class="portal-icon">📐</div>
         </div>
         <h2 class="portal-title">Gramática em Uso</h2>
-        <p class="portal-desc">Cinco livros de gramática e pronúncia em painéis de exemplos reais: English Grammar in Use (Murphy), Grammar Practice for Intermediate Students, o Oxford Guide to English Grammar, o Essential Grammar in Use e o English Pronunciation Made Simple. Do A1 ao B2 — da gramática essencial à referência britânica de Eastwood, passando pela pronúncia americana por pares mínimos. O Reactivate C1/C2 foi para o Sistema 22.</p>
+        <p class="portal-desc">Cinco livros de gramática em painéis de exemplos reais: English Grammar in Use (Murphy), Grammar Practice for Intermediate Students, o Oxford Guide to English Grammar, o Essential Grammar in Use e o English Grammar: A Resource Book for Students (Routledge), que veio do Sistema 24. Do A1 ao B2 — da gramática essencial à referência britânica de Eastwood, até a gramática descritiva. O English Pronunciation Made Simple foi para o Sistema 10.</p>
         <div class="portal-meta"><span>5 livros</span><span>5 disponíveis</span><span>Intermediário+</span></div>
         <div class="portal-cta">Entrar →</div>
       </a>
@@ -136,8 +149,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
           <div class="portal-icon">🔤</div>
         </div>
         <h2 class="portal-title">In Use Series</h2>
-        <p class="portal-desc">A série &#x27;in Use&#x27; da Cambridge (vocabulário, pronúncia e gramática) ao lado da série Practice Makes Perfect (McGraw-Hill). Vocabulary in Use Elementary já disponível: 58 unidades, 431 itens em contexto com tradução.</p>
-        <div class="portal-meta"><span>6 livros</span><span>6 disponíveis</span><span>Vocab + Pronúncia</span></div>
+        <p class="portal-desc">A série 'in Use' da Cambridge (vocabulário, pronúncia e gramática) ao lado da série Practice Makes Perfect (McGraw-Hill). Oito livros, do Elementary ao Upper-Intermediate — incluindo as duas edições do English Vocabulary in Use Upper-Intermediate, a de 1994 e a de 2001, que vieram do Sistema 18.</p>
+        <div class="portal-meta"><span>8 livros</span><span>8 disponíveis</span><span>Vocab + Pronúncia</span></div>
         <div class="portal-cta">Entrar →</div>
       </a>
       <a href="Sistema%2015%20%E2%80%94%20D%C3%BAvidas%20Pontuais/index.html" class="portal-card" style="--accent:#F97316">
@@ -146,8 +159,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
           <div class="portal-icon">🎯</div>
         </div>
         <h2 class="portal-title">Dúvidas Pontuais</h2>
-        <p class="portal-desc">Gramática sob medida — os pontos específicos que você quis dominar. DID, WENT e mais, cada um num card de referência rápida. Mais o painel Falar Melhor: 168 itens com a mesma ideia dita em básico, avançado, profissional e natural, e o inglês pronto de hotel, restaurante, perguntas do dia a dia e apresentação em entrevista.</p>
-        <div class="portal-meta"><span>DID, WENT + Falar Melhor</span><span>A1</span><span>Referência</span></div>
+        <p class="portal-desc">Gramática sob medida — os pontos específicos que você quis dominar, cada um num card de referência rápida: falsos cognatos, contrastes de vocabulário e descrever com precisão. Mais o Went ou Gone, vindo do Sistema 06, e o Presente e as palavras do trabalho, vindo do Sistema 16. O painel Falar Melhor foi para o Sistema 21.</p>
+        <div class="portal-meta"><span>7 painéis</span><span>A1–B1</span><span>Referência</span></div>
         <div class="portal-cta">Entrar →</div>
       </a>
       <a href="Sistema%2021%20%E2%80%94%20Pron%C3%BAncia%20%26%20Conversa%C3%A7%C3%A3o/index.html" class="portal-card" style="--accent:#8B5CF6">
@@ -156,7 +169,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
           <div class="portal-icon">🗣️</div>
         </div>
         <h2 class="portal-title">Pronúncia &amp; Conversação</h2>
-        <p class="portal-desc">A frase pronta para a situação inteira. Speak English: 30 Days to Better English organiza a conversação em trinta dias temáticos — apresentar-se, pedir ajuda na rua, comer fora, telefonar. Everyday Dialogues traz trinta diálogos completos do cotidiano, do cumprimento formal ao pronto-socorro. E o Pronouncing American English trabalha pares mínimos em frase inteira. Três painéis prontos de quatro livros: o English Pronunciation in Use Intermediate depende de transcrição fonética e aguarda reconversão do OCR.</p>
+        <p class="portal-desc">A frase pronta para a situação inteira. Speak English: 30 Days to Better English organiza a conversação em trinta dias temáticos — apresentar-se, pedir ajuda na rua, comer fora, telefonar. Everyday Dialogues traz trinta diálogos completos do cotidiano. E o Pronouncing American English trabalha pares mínimos em frase inteira. Mais o painel Falar Melhor, vindo do Sistema 15: a mesma ideia em básico, avançado, profissional e natural, com o inglês pronto de hotel, restaurante e entrevista. O English Pronunciation in Use Intermediate aguarda reconversão do OCR.</p>
         <div class="portal-meta"><span>pronúncia</span><span>conversação</span><span>diálogo real</span></div>
         <div class="portal-cta">Entrar →</div>
       </a>

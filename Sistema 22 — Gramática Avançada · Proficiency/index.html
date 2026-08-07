@@ -15,7 +15,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 .bg-glow::before{content:'';position:absolute;top:-12%;left:8%;width:46%;height:55%;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 8%,transparent),transparent 70%);border-radius:50%;}
 .wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 22px;}
 .back{position:fixed;top:10px;left:12px;z-index:1000;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 18px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);text-decoration:none;background:rgba(18,18,18,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:border-color .2s,color .2s;}
-body{padding-top:58px;}
+
 .back:hover{color:var(--accent);border-color:var(--accent);}
 .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-top:34px;}
 h1.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.08;margin:12px 0;}
@@ -51,19 +51,33 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
 .breadcrumb .cur{color:#9ca3af;}
 .breadcrumb{margin:4px 0 18px;}
 </style>
-</head>
+<style id="tb-css">
+.topbar{position:sticky;top:0;z-index:1000;background:#0a0a0a;border-bottom:1px solid #1f2937;}
+.topbar-in{display:flex;align-items:center;gap:.9rem;min-height:59px;max-width:1180px;margin:0 auto;padding:1rem 1.5rem;}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;flex:none;font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:600;color:#6b7280;text-decoration:none;padding:.4rem .75rem;border:1px solid #1f2937;border-radius:6px;white-space:nowrap;transition:color .15s,border-color .15s;}
+.back-btn:hover{color:#e5e7eb;border-color:#374151;}
+.topbar-t{min-width:0;font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.searchbar{top:60px;background:#0a0a0a;}
+.toc-wrap{top:60px;height:calc(100vh - 60px);}
+.search-wrap{position:sticky;top:60px;z-index:90;background:#0a0a0a;padding:10px 0 4px;}
+@media(max-width:560px){
+  .topbar-in{gap:.6rem;min-height:50px;padding:.7rem 1rem;}
+  .searchbar,.toc-wrap,.search-wrap{top:51px;}
+  .toc-wrap{height:calc(100vh - 51px);}
+}
+</style></head>
 <body>
 <div class="bg-glow"></div>
+<div class="topbar"><div class="topbar-in"><a href="../nivel-05.html" class="back-btn">&#8592; Voltar ao N&iacute;vel 5</a><span class="topbar-t">Gramática Avançada · Proficiency</span></div></div>
 <div class="wrap">
 <nav class="breadcrumb" aria-label="Trilha"><a href="../index.html">Inglês para Brasileiros</a><span class="sep">&rsaquo;</span><a href="../nivel-05.html">Nível 5 · C1/C2</a><span class="sep">&rsaquo;</span><span class="cur">Gramática Avançada · Proficiency</span></nav>
-<a href="../nivel-05.html" class="back">&#8592; Voltar ao Nível 5</a>
 <div class="eyebrow">Sistema 22 · V11 · gramática avançada · C1–C2</div>
 <h1 class="title">Gramática <em>Avançada</em> &#8212; V11</h1>
 <p class="lead"><b>Nível avançado &mdash; para quem já tem base sólida.</b> Aqui a gramática deixa de ser regra decorada e vira <b>nuance</b>: por que uma estrutura soa formal e a outra não, o que muda entre <i>would</i>, <i>could</i> e <i>might</i>, o que o nativo escreve mas não fala. Explicação completa, comparação entre estruturas parecidas e exemplos em contexto estendido. Se você ainda está montando a base, comece pelos Sistemas 01, 04 e 11.</p>
 <div class="metrics">
-  <div class="metric"><b>9</b><span>livros</span></div>
+  <div class="metric"><b>8</b><span>livros</span></div>
   <div class="metric"><b>C1–C2</b><span>nível</span></div>
-  <div class="metric"><b>9</b><span>disponíveis</span></div>
+  <div class="metric"><b>8</b><span>disponíveis</span></div>
 </div>
 <div class="hub-grid">
   <a class="hub-card" href="livro01.html">
@@ -120,13 +134,6 @@ footer{position:relative;z-index:1;text-align:center;color:var(--dim);font-famil
     <h2 class="hc-title">Reactivate Your Grammar &amp; Vocabulary — C1/C2</h2>
     <p class="hc-desc">Hamilton House · preparação para exames C1/C2. O nível mais alto do Sistema: <em>wish</em> e <em>if only</em> nos cinco padrões, <em>would rather</em>, subjuntivo, discurso indireto com o padrão de cada verbo de relato, passiva avançada, causativo, inversão, clivadas, <em>fronting</em>, conectores e as expressões idiomáticas do livro.</p>
     <div class="hc-meta"><span>21 blocos</span><span>253 itens</span><span>C1–C2</span></div>
-    <span class="hc-cta">Abrir livro &#8594;</span>
-  </a>
-  <a class="hub-card" href="livro09.html">
-    <div class="hc-top"><span class="hc-num">Livro 09</span><span class="hc-icon">&#127908;</span></div>
-    <h2 class="hc-title">Perfecting Your English Pronunciation</h2>
-    <p class="hc-desc">Susan Cameron · McGraw-Hill. Frases de treino carregadas de um só som, os contrastes que derrubam o brasileiro (<i>th × t/d</i>, <i>r × l</i>, <i>b × v × w</i>, <i>ship × sheep</i>) e o ritmo do inglês: palavras operativas, formas fracas e entonação.</p>
-    <div class="hc-meta"><span>18 blocos</span><span>297 itens</span><span>+ tradução</span></div>
     <span class="hc-cta">Abrir livro &#8594;</span>
   </a>
 </div>

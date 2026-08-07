@@ -77,7 +77,7 @@
     "cor": "#EC4899",
     "icone": "📍",
     "tags": [
-      "3 módulos + 1 painel",
+      "6 painéis",
       "A2–B1",
       "23 estruturas"
     ],
@@ -91,7 +91,7 @@
     "cor": "#10B981",
     "icone": "🔗",
     "tags": [
-      "3 módulos + 1 painel",
+      "4 painéis",
       "A2–B1",
       "41 conectores"
     ],
@@ -101,12 +101,12 @@
     "numero": "08",
     "nivel": "n2",
     "titulo": "Conversação & Frases",
-    "descricao": "Seis livros virando painel de inglês real: 1.006 dicas, conversação para viagem, expressões idiomáticas, música (Queen), palavras/números/datas e os erros clássicos do brasileiro. 3.513 itens.",
+    "descricao": "Seis livros virando painel de inglês real: 1.006 dicas, conversação para viagem, expressões idiomáticas, música (Queen), palavras/números/datas e os erros clássicos do brasileiro. Mais o painel Expressões Idiomáticas, que veio do Sistema 07.",
     "cor": "#0EA5E9",
     "icone": "📖",
     "tags": [
-      "6 livros",
-      "6 disponíveis",
+      "6 livros + 1 painel",
+      "7 painéis",
       "Conversação"
     ],
     "pasta": "Sistema 08 — Conversação & Frases"
@@ -129,11 +129,11 @@
     "numero": "10",
     "nivel": "n3",
     "titulo": "Reduções e Pronúncia",
-    "descricao": "O inglês que nativos falam — não o que ensinam. Wanna, gonna, gotta e as reduções do dia a dia, com músicas, filmes e treino de ouvido. Mais o livro Rachel's English em 2 painéis: fala ligada (208 itens) e o sistema de sons — vogais, ditongos, consoantes, encontros e tônica (183 itens), tudo com fonética. E o painel Livro x Rua: 118 itens com a frase do livro ao lado da que o nativo realmente fala, respostas curtas automáticas e as siglas da internet.",
+    "descricao": "O inglês que nativos falam — não o que ensinam. Wanna, gonna, gotta e as reduções do dia a dia, com músicas, filmes e treino de ouvido. Mais o livro Rachel's English em 2 painéis: fala ligada (208 itens) e o sistema de sons — vogais, ditongos, consoantes, encontros e tônica (183 itens), tudo com fonética. O painel Livro x Rua: 118 itens com a frase do livro ao lado da que o nativo realmente fala. E o English Pronunciation Made Simple (Dale & Poms), vindo do Sistema 13: pares mínimos e o mapa das confusões de som do brasileiro.",
     "cor": "#F59E0B",
     "icone": "🎙️",
     "tags": [
-      "3 módulos + 2 livros + 1 painel",
+      "3 livros + 5 painéis",
       "B1–B2",
       "Reduções + IPA"
     ],
@@ -171,7 +171,7 @@
     "numero": "13",
     "nivel": "n3",
     "titulo": "Gramática em Uso",
-    "descricao": "Cinco livros de gramática e pronúncia em painéis de exemplos reais: English Grammar in Use (Murphy), Grammar Practice for Intermediate Students, o Oxford Guide to English Grammar, o Essential Grammar in Use e o English Pronunciation Made Simple. Do A1 ao B2 — da gramática essencial à referência britânica de Eastwood, passando pela pronúncia americana por pares mínimos. O Reactivate C1/C2 foi para o Sistema 22.",
+    "descricao": "Cinco livros de gramática em painéis de exemplos reais: English Grammar in Use (Murphy), Grammar Practice for Intermediate Students, o Oxford Guide to English Grammar, o Essential Grammar in Use e o English Grammar: A Resource Book for Students (Routledge), que veio do Sistema 24. Do A1 ao B2 — da gramática essencial à referência britânica de Eastwood, até a gramática descritiva. O English Pronunciation Made Simple foi para o Sistema 10.",
     "cor": "#4A9EFF",
     "icone": "📐",
     "tags": [
@@ -185,12 +185,12 @@
     "numero": "14",
     "nivel": "n3",
     "titulo": "In Use Series",
-    "descricao": "A série 'in Use' da Cambridge (vocabulário, pronúncia e gramática) ao lado da série Practice Makes Perfect (McGraw-Hill). Vocabulary in Use Elementary já disponível: 58 unidades, 431 itens em contexto com tradução.",
+    "descricao": "A série 'in Use' da Cambridge (vocabulário, pronúncia e gramática) ao lado da série Practice Makes Perfect (McGraw-Hill). Oito livros, do Elementary ao Upper-Intermediate — incluindo as duas edições do English Vocabulary in Use Upper-Intermediate, a de 1994 e a de 2001, que vieram do Sistema 18.",
     "cor": "#A3E635",
     "icone": "🔤",
     "tags": [
-      "6 livros",
-      "6 disponíveis",
+      "8 livros",
+      "8 disponíveis",
       "Vocab + Pronúncia"
     ],
     "pasta": "Sistema 14 — In Use Series"
@@ -199,12 +199,12 @@
     "numero": "15",
     "nivel": "n3",
     "titulo": "Dúvidas Pontuais",
-    "descricao": "Gramática sob medida — os pontos específicos que você quis dominar. DID, WENT e mais, cada um num card de referência rápida. Mais o painel Falar Melhor: 168 itens com a mesma ideia dita em básico, avançado, profissional e natural, e o inglês pronto de hotel, restaurante, perguntas do dia a dia e apresentação em entrevista.",
+    "descricao": "Gramática sob medida — os pontos específicos que você quis dominar, cada um num card de referência rápida: falsos cognatos, contrastes de vocabulário e descrever com precisão. Mais o Went ou Gone, vindo do Sistema 06, e o Presente e as palavras do trabalho, vindo do Sistema 16. O painel Falar Melhor foi para o Sistema 21.",
     "cor": "#F97316",
     "icone": "🎯",
     "tags": [
-      "DID, WENT + Falar Melhor",
-      "A1",
+      "7 painéis",
+      "A1–B1",
       "Referência"
     ],
     "pasta": "Sistema 15 — Dúvidas Pontuais"
@@ -241,13 +241,13 @@
     "numero": "18",
     "nivel": "n4",
     "titulo": "Accent Training",
-    "descricao": "Os dois clássicos de sotaque americano — American Accent Training (Ann Cook) e Mastering the American Accent (Lisa Mojsin) — mais duas edições do English Vocabulary in Use Upper-Intermediate, que se complementam. Entonação em escada, ligações entre palavras, redução de vogais, o T americano, as 15 vogais e as consoantes problemáticas, com o vocabulário de nível médio-alto em uso. Quatro painéis.",
+    "descricao": "Os três clássicos de sotaque americano: American Accent Training (Ann Cook), Mastering the American Accent (Lisa Mojsin) e o Perfecting Your English Pronunciation (Susan Cameron), que veio do Sistema 22. Entonação em escada, ligações entre palavras, redução de vogais, o T americano, as 15 vogais e as consoantes problemáticas. As duas edições do English Vocabulary in Use Upper-Intermediate foram para o Sistema 14. Três painéis.",
     "cor": "#F472B6",
     "icone": "🗣️",
     "tags": [
-      "4 livros",
-      "Sotaque + Vocab",
-      "37 seções"
+      "3 livros",
+      "Sotaque",
+      "Accent training"
     ],
     "pasta": "Sistema 18 — Accent Training"
   },
@@ -283,7 +283,7 @@
     "numero": "21",
     "nivel": "n3",
     "titulo": "Pronúncia & Conversação",
-    "descricao": "A frase pronta para a situação inteira. Speak English: 30 Days to Better English organiza a conversação em trinta dias temáticos — apresentar-se, pedir ajuda na rua, comer fora, telefonar. Everyday Dialogues traz trinta diálogos completos do cotidiano, do cumprimento formal ao pronto-socorro. E o Pronouncing American English trabalha pares mínimos em frase inteira. Três painéis prontos de quatro livros: o English Pronunciation in Use Intermediate depende de transcrição fonética e aguarda reconversão do OCR.",
+    "descricao": "A frase pronta para a situação inteira. Speak English: 30 Days to Better English organiza a conversação em trinta dias temáticos — apresentar-se, pedir ajuda na rua, comer fora, telefonar. Everyday Dialogues traz trinta diálogos completos do cotidiano. E o Pronouncing American English trabalha pares mínimos em frase inteira. Mais o painel Falar Melhor, vindo do Sistema 15: a mesma ideia em básico, avançado, profissional e natural, com o inglês pronto de hotel, restaurante e entrevista. O English Pronunciation in Use Intermediate aguarda reconversão do OCR.",
     "cor": "#8B5CF6",
     "icone": "🗣️",
     "tags": [
@@ -297,11 +297,11 @@
     "numero": "22",
     "nivel": "n5",
     "titulo": "Gramática Avançada · Proficiency",
-    "descricao": "Nível avançado, para quem já tem base sólida — o maior dos sistemas C1/C2, com nove livros em painel. Objective Proficiency, Advanced Grammar in Use, Grammar and Vocabulary for Advanced, Advanced Language Practice (Michael Vince), Complete Advanced, English Vocabulary in Use Advanced e Pronunciation in Use Advanced, mais o Reactivate C1/C2 e o Perfecting Your English Pronunciation. Aqui a gramática deixa de ser regra decorada e vira nuance de uso.",
+    "descricao": "Nível avançado, para quem já tem base sólida — o maior dos sistemas C1/C2, com oito livros em painel. Objective Proficiency, Advanced Grammar in Use, Grammar and Vocabulary for Advanced, Advanced Language Practice (Michael Vince), Complete Advanced, English Vocabulary in Use Advanced e Pronunciation in Use Advanced, mais o Reactivate C1/C2. O Perfecting Your English Pronunciation foi para o Sistema 18. Aqui a gramática deixa de ser regra decorada e vira nuance de uso.",
     "cor": "#F59E0B",
     "icone": "🏆",
     "tags": [
-      "9 livros",
+      "8 livros",
       "C1–C2",
       "Avançado"
     ],
@@ -325,11 +325,11 @@
     "numero": "24",
     "nivel": "n5",
     "titulo": "Gramática Avançada · Cambridge",
-    "descricao": "Nível avançado, terceiro volume: Advancing Vocabulary Skills (Nist), English Advancing — A Bridge to Success, o New Cambridge Advanced English (Leo Jones) e o English Grammar: A Resource Book for Students (Routledge). Vocabulário de nível alto em contexto estendido, inglês acadêmico e gramática descritiva — como a língua funciona de verdade, não como a regra manda. Quatro livros, quatro painéis.",
+    "descricao": "Nível avançado, terceiro volume: Advancing Vocabulary Skills (Nist), English Advancing — A Bridge to Success e o New Cambridge Advanced English (Leo Jones). Vocabulário de nível alto em contexto estendido e inglês acadêmico, com as diferenças finas entre sinônimos. O English Grammar: A Resource Book for Students (Routledge), que declarava A2–B1, foi para o Sistema 13. Três livros, três painéis.",
     "cor": "#F59E0B",
     "icone": "📜",
     "tags": [
-      "4 livros",
+      "3 livros",
       "C1–C2",
       "Avançado"
     ],
