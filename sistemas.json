@@ -31,11 +31,11 @@
     "numero": "03",
     "nivel": "n1",
     "titulo": "Inglês do Zero · Base Completa",
-    "descricao": "Do inglês de escola ao inglês que nativos falam. 25 sistemas do A1 ao C2 e uma jornada guiada de 120 passos — do zero à fluência. Mais o painel Gramática em Tabelas: 192 itens em 16 tabelas de consulta rápida — a concordância de be/have/do, os 12 tempos lado a lado, o TO BE nos nove tempos, irregulares, pronomes, determinantes, classes gramaticais, plural e opostos.",
+    "descricao": "Do inglês de escola ao inglês que nativos falam. 25 sistemas do A1 ao C2 e uma jornada guiada de 120 passos — do zero à fluência. Mais o painel Gramática em Tabelas: 192 itens em 16 tabelas de consulta rápida — a concordância de be/have/do, os 12 tempos lado a lado, o TO BE nos nove tempos, irregulares, pronomes, determinantes, classes gramaticais, plural e opostos. O painel Tempos verbais e contrastes de uso foi para o Sistema 05.",
     "cor": "#64DFDF",
     "icone": "📚",
     "tags": [
-      "25 sistemas + 1 painel",
+      "25 sistemas + 2 painéis",
       "A1 → C1",
       "Completo"
     ],
@@ -59,11 +59,11 @@
     "numero": "05",
     "nivel": "n2",
     "titulo": "Motor de Verbos",
-    "descricao": "100 verbos, 142 sentidos. Cada verbo no tempo certo — afirmativo, negativo e pergunta, do jeito que o brasileiro precisa ver. Mais o painel Famílias de Verbos: 211 itens com GO, BE, DO, GET, MAKE, LOVE e STOP em todas as formas lado a lado, o quarteto SAY/TELL/SPEAK/TALK, a família WOULD e a grade dos modais.",
+    "descricao": "100 verbos, 142 sentidos. Cada verbo no tempo certo — afirmativo, negativo e pergunta, do jeito que o brasileiro precisa ver. Mais o painel Famílias de Verbos: 211 itens com GO, BE, DO, GET, MAKE, LOVE e STOP em todas as formas lado a lado, o quarteto SAY/TELL/SPEAK/TALK, a família WOULD e a grade dos modais. Mais o painel Tempos verbais e contrastes de uso, vindo do Sistema 03: passado, presente e futuro dos verbos mais usados, present simple × continuous e os pares que confundem.",
     "cor": "#6366F1",
     "icone": "⚡",
     "tags": [
-      "5 grupos + 1 painel",
+      "8 painéis",
       "A2–B1",
       "142 sentidos"
     ],
